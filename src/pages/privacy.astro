@@ -1,0 +1,117 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+const lang = 'en';
+---
+
+<LegalLayout lang={lang} title="Privacy Policy" description="How Veilus collects, uses, and protects your data." lastUpdated="March 6, 2026">
+
+<h2>1. Introduction</h2>
+<p>Veilus ("we", "our", "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use the Veilus application and website (collectively, the "Service").</p>
+
+<h2>2. Data We Collect</h2>
+
+<h3>2.1 Account Data</h3>
+<p>When you create an account, we collect:</p>
+<ul>
+  <li><strong>Email address</strong> — for authentication and communication</li>
+  <li><strong>Payment information</strong> — processed securely by Stripe; we do not store credit card numbers</li>
+</ul>
+
+<h3>2.2 Usage Data (Opt-in Only)</h3>
+<p>If you opt in to telemetry, we collect <strong>aggregate, anonymized</strong> usage statistics:</p>
+<ul>
+  <li>Feature usage frequency (e.g., how often automation is used)</li>
+  <li>Application performance metrics (startup time, error rates)</li>
+  <li>Operating system and Veilus version</li>
+</ul>
+<p><strong>We never collect:</strong></p>
+<ul>
+  <li>Browsing history or visited URLs</li>
+  <li>Profile contents or fingerprint configurations</li>
+  <li>Automation scripts or workflow data</li>
+  <li>IP addresses for tracking purposes</li>
+  <li>Any personally identifiable information (PII) through telemetry</li>
+</ul>
+
+<h3>2.3 Browser Profile Data</h3>
+<p>All browser profile data (fingerprints, cookies, sessions, automation scripts) is stored <strong>locally on your device</strong>. If you use Veilus Sync, data is encrypted end-to-end before transmission — <strong>we cannot read your synced data</strong>.</p>
+
+<h2>3. How We Use Your Data</h2>
+<table>
+  <thead>
+    <tr><th>Purpose</th><th>Legal Basis</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Provide and maintain the Service</td><td>Contract performance</td></tr>
+    <tr><td>Process payments</td><td>Contract performance</td></tr>
+    <tr><td>Send important service updates</td><td>Legitimate interest</td></tr>
+    <tr><td>Improve the product (if telemetry opted in)</td><td>Consent</td></tr>
+    <tr><td>Respond to support requests</td><td>Legitimate interest</td></tr>
+  </tbody>
+</table>
+
+<h2>4. Data Storage & Security</h2>
+<ul>
+  <li><strong>Local storage:</strong> Profile data, scripts, and settings are stored on your local machine.</li>
+  <li><strong>Cloud infrastructure:</strong> Account data is stored on Supabase (PostgreSQL) with encryption at rest.</li>
+  <li><strong>Sync encryption:</strong> Veilus Sync uses hierarchical end-to-end encryption (AES-256-GCM). Encryption keys are derived locally and never transmitted to our servers.</li>
+  <li><strong>Edge hosting:</strong> Our website and API run on Cloudflare Workers/Pages with global edge distribution.</li>
+</ul>
+
+<h2>5. Third-Party Services</h2>
+<p>We use the following third-party services:</p>
+<table>
+  <thead>
+    <tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Stripe</td><td>Payment processing</td><td>Payment details (handled by Stripe directly)</td></tr>
+    <tr><td>Supabase</td><td>Authentication & database</td><td>Email, account metadata</td></tr>
+    <tr><td>Resend</td><td>Transactional email</td><td>Email address</td></tr>
+    <tr><td>Plausible Analytics</td><td>Website analytics</td><td>Aggregated, cookieless page views (no PII)</td></tr>
+    <tr><td>Cloudflare</td><td>Hosting & CDN</td><td>Standard web request data</td></tr>
+  </tbody>
+</table>
+<p>We do not sell, rent, or share your personal data with third parties for advertising purposes.</p>
+
+<h2>6. Your Rights (GDPR & Global)</h2>
+<p>You have the right to:</p>
+<ul>
+  <li><strong>Access</strong> your personal data</li>
+  <li><strong>Correct</strong> inaccurate information</li>
+  <li><strong>Delete</strong> your account and associated data</li>
+  <li><strong>Export</strong> your data in a portable format</li>
+  <li><strong>Withdraw consent</strong> for telemetry at any time</li>
+  <li><strong>Object</strong> to processing based on legitimate interest</li>
+</ul>
+<p>To exercise any of these rights, contact us at <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
+
+<h2>7. Data Retention</h2>
+<ul>
+  <li><strong>Active accounts:</strong> Data is retained while your account is active.</li>
+  <li><strong>Deleted accounts:</strong> All personal data is deleted within 30 days of account deletion. Payment records may be retained for up to 7 years for legal and tax compliance.</li>
+  <li><strong>Telemetry data:</strong> Aggregate analytics are retained for 24 months.</li>
+</ul>
+
+<h2>8. Cookies</h2>
+<p>The Veilus website uses <strong>minimal cookies</strong>:</p>
+<ul>
+  <li><strong>Essential cookies:</strong> Session authentication only</li>
+  <li><strong>Analytics:</strong> We use Plausible Analytics, which is cookieless and GDPR-compliant by design</li>
+</ul>
+<p>We do not use advertising cookies or third-party tracking cookies.</p>
+
+<h2>9. Children's Privacy</h2>
+<p>Veilus is not intended for use by individuals under 16 years of age. We do not knowingly collect personal data from children.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. We will notify registered users via email of any material changes at least 14 days before they take effect.</p>
+
+<h2>11. Contact</h2>
+<p>If you have questions about this Privacy Policy:</p>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:privacy@veilus.io">privacy@veilus.io</a></li>
+  <li><strong>Website:</strong> <a href="https://veilus.io">veilus.io</a></li>
+</ul>
+
+</LegalLayout>

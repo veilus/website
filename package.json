@@ -1,0 +1,16 @@
+{
+  "name": "veilus-website",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Veilus - Anti-detect browser landing page",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.17.1"
+  }
+}

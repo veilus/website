@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import SocialProof from '../components/SocialProof.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Comparison from '../components/Comparison.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const lang = 'en';
+---
+
+<Layout lang={lang}>
+  <Navbar lang={lang} />
+  <main>
+    <Hero lang={lang} />
+    <SocialProof lang={lang} />
+    <Features lang={lang} />
+    <HowItWorks lang={lang} />
+    <Comparison lang={lang} />
+    <Pricing lang={lang} />
+    <FAQ lang={lang} />
+    <FinalCTA lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</Layout>
+
+<script>
+  // Auto-detect browser language and redirect on first visit
+  (function() {
+    const STORAGE_KEY = 'veilus_lang_detected';
+    const SUPPORTED = ['vi', 'zh', 'ru', 'es', 'pt', 'tr', 'id'];
+    
+    // Skip if already detected or user manually navigated here
+    if (localStorage.getItem(STORAGE_KEY)) return;
+    
+    // Get browser language (e.g., 'vi', 'zh-CN', 'pt-BR')
+    const browserLang = navigator.language || (navigator as any).userLanguage || '';
+    const primary = browserLang.split('-')[0].toLowerCase();
+    
+    // Mark as detected so we don't redirect again
+    localStorage.setItem(STORAGE_KEY, primary);
+    
+    // Redirect if matches a supported non-English language
+    if (SUPPORTED.includes(primary)) {
+      window.location.replace('/' + primary + '/');
+    }
+  })();
+</script>
+

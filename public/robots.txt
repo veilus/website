@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veilus.io/sitemap-index.xml

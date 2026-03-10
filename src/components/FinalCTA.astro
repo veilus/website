@@ -1,0 +1,156 @@
+---
+import type { Lang } from "../i18n/utils";
+import { t, defaultLang } from "../i18n/utils";
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+---
+
+<section class="section final-cta" id="download" data-animate>
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <h2>
+          {i.finalCta.title}
+          <span class="text-gradient">{i.finalCta.titleHighlight}</span>
+        </h2>
+        <p
+          class="cta-desc"
+          set:html={i.finalCta.desc.replace(/\n/g, "<br />")}
+        />
+        <div class="cta-actions">
+          <a href="/download" class="btn btn-primary btn-large">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+              ></path><polyline points="7 10 12 15 17 10"></polyline><line
+                x1="12"
+                y1="15"
+                x2="12"
+                y2="3"></line></svg
+            >
+            {i.finalCta.cta}
+          </a>
+        </div>
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><rect x="3" y="11" width="18" height="11" rx="2" ry="2"
+              ></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
+            >
+            <span>No personal data collected</span>
+          </div>
+          <div class="trust-badge">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><rect x="1" y="4" width="22" height="16" rx="2" ry="2"
+              ></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg
+            >
+            <span>No credit card required</span>
+          </div>
+          <div class="trust-badge">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+              ></path><circle cx="12" cy="7" r="4"></circle></svg
+            >
+            <span>5 free profiles forever</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .final-cta {
+    padding: var(--space-3xl) 0 var(--space-4xl);
+  }
+  .cta-card {
+    position: relative;
+    text-align: center;
+    padding: var(--space-4xl) var(--space-xl);
+    border-radius: var(--radius-xl);
+    background: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+  .cta-glow {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse,
+      rgba(0, 212, 255, 0.12),
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+  .cta-content {
+    position: relative;
+    z-index: 1;
+  }
+  .cta-content h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+  .cta-desc {
+    font-size: 1.125rem;
+    margin: var(--space-lg) auto 0;
+    max-width: 42ch;
+    line-height: 1.7;
+  }
+  .cta-actions {
+    margin-top: var(--space-xl);
+  }
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+    flex-wrap: wrap;
+  }
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+  }
+  .trust-badge svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    stroke: var(--color-accent);
+  }
+</style>

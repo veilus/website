@@ -1,0 +1,348 @@
+{
+    "meta": {
+        "title": "Veilus — Otomasyon entegre anti-tespit tarayıcısı",
+        "description": "Yerel performanslı ücretsiz anti-tespit tarayıcısı. 5 profil sonsuza kadar. Eylemleri kaydedin, otomatik script oluşturun. Hemen indirin."
+    },
+    "nav": {
+        "features": "Özellikler",
+        "compare": "Karşılaştır",
+        "pricing": "Fiyatlar",
+        "faq": "SSS",
+        "download": "Ücretsiz indir"
+    },
+    "hero": {
+        "badge": "Anti-Tespit Tarayıcısı",
+        "title1": "Görünmez.",
+        "title2": "İzsiz.",
+        "title3": "Sizin.",
+        "subtitle": "Tamamen entegre otomasyon platformuna sahip <strong>tek</strong> anti-tespit tarayıcısı. Yerel motor — 3 kat hızlı, %80 daha az RAM.",
+        "check1": "5 profil sonsuza kadar ücretsiz — kredi kartı gerekmez",
+        "check2": "Her profilin benzersiz parmak izi — tespit edilemez",
+        "check3": "Eylemleri kaydet → 1 tıkla otomatik script oluştur",
+        "ctaPrimary": "Ücretsiz indir",
+        "ctaSecondary": "90 sn demo izle",
+        "note": "Windows, macOS, Linux"
+    },
+    "proof": {
+        "test": "Testleri geçer",
+        "testSub": "creepjs.com ve iphey.com",
+        "speed": "3 kat hızlı",
+        "speedSub": "than alternatives",
+        "users": "500+",
+        "usersSub": "beta test kullanıcısı",
+        "open": "Açık Kaynak",
+        "openSub": "Chromium yamaları"
+    },
+    "features": {
+        "badge": "Özellikler",
+        "title": "İhtiyacınız olan her şey,",
+        "titleHighlight": "tek uygulamada",
+        "subtitle": "Anti-tespit tarayıcısı + Otomasyon platformu. Rakipler 2 araca ihtiyaç duyar, siz sadece Veilus'a.",
+        "items": [
+            {
+                "title": "Parmak İzi Motoru",
+                "desc": "Her profil için 20+ parametre ile benzersiz parmak izleri — Canvas, WebGL, AudioContext, Client Hints. Maksimum gizlilik için en derin seviyede tasarlandı.",
+                "badge": "creepjs.com onaylı"
+            },
+            {
+                "title": "Veilus Flow",
+                "desc": "\"Kaydet\"e basın, web'de gezinin, \"Durdur\"a basın — Veilus otomatik YAML + Playwright scriptleri oluşturur. 20+ eylem türü desteği.",
+                "badge": "Kod gerektirmez"
+            },
+            {
+                "title": "Görsel Canvas",
+                "desc": "Sürükle-bırak ile otomasyon akışları oluşturun. Dallanma, döngü ve yeniden kullanılabilir bileşen desteği.",
+                "badge": "Low-code"
+            },
+            {
+                "title": "Veilus Sync",
+                "desc": "Git veya Google Drive ile profil senkronizasyonu. Hiyerarşik uçtan uca şifreleme — biz bile verilerinizi okuyamayız.",
+                "badge": "E2E Şifreleme"
+            },
+            {
+                "title": "Zamanlama",
+                "desc": "Scriptleri saatlik, günlük veya haftalık çalıştırın. Kaçırılan çalıştırmaları otomatik algılayıp telafi eder. Akıllı kaynak izleme.",
+                "badge": "Akıllı zamanlama"
+            },
+            {
+                "title": "AI Ajan (BYOK)",
+                "desc": "Kendi AI API anahtarınızı kullanın — GPT-4, Claude, Gemini. AI DOM'u analiz eder, eylem planlar ve otomatik yürütür.",
+                "badge": "Kendi Anahtarınız"
+            }
+        ]
+    },
+    "howItWorks": {
+        "badge": "Nasıl çalışır",
+        "title": "3 adımda",
+        "titleHighlight": "başlayın",
+        "subtitle": "İndirmeden tam otomasyona sadece birkaç dakika.",
+        "steps": [
+            {
+                "title": "İndirin ve profil oluşturun",
+                "desc": "Veilus'u ücretsiz indirin. 10 saniyede benzersiz parmak izli profil oluşturun. Her profil = tamamen yeni bir kimlik."
+            },
+            {
+                "title": "Eylemleri kaydedin",
+                "desc": "\"Kaydet\"e basın, normal şekilde gezinin — tıklayın, yazın, kaydırın. Veilus her şeyi otomasyon scriptine dönüştürür."
+            },
+            {
+                "title": "Otomatikleştirin ve ölçeklendirin",
+                "desc": "Scriptleri birden fazla profilde aynı anda çalıştırın. Otomasyonu zamanlayın. Akıllı izleme — gerisini Veilus halleder."
+            }
+        ]
+    },
+    "comparison": {
+        "badge": "Karşılaştırma",
+        "title": "Neden",
+        "titleHighlight": "Veilus?",
+        "subtitle": "Lider rakiplerle doğrudan karşılaştırma.",
+        "headers": [
+            "",
+            "Veilus",
+            "Multilogin",
+            "GoLogin",
+            "AdsPower"
+        ],
+        "rows": [
+            {
+                "feature": "Ücretsiz plan",
+                "values": [
+                    "5 profil sonsuza kadar",
+                    "7 gün deneme",
+                    "3 (sınırlı)",
+                    "5 (sınırlı)"
+                ]
+            },
+            {
+                "feature": "Motor",
+                "values": [
+                    "Native",
+                    "Electron",
+                    "Electron",
+                    "Electron"
+                ]
+            },
+            {
+                "feature": "Otomasyon",
+                "values": [
+                    "Entegre",
+                    "Ayrı",
+                    "Yok",
+                    "Temel RPA"
+                ]
+            },
+            {
+                "feature": "Görsel Canvas",
+                "values": [
+                    "Evet",
+                    "Hayır",
+                    "Hayır",
+                    "Hayır"
+                ]
+            },
+            {
+                "feature": "AI Ajan",
+                "values": [
+                    "BYOK",
+                    "Hayır",
+                    "Hayır",
+                    "Hayır"
+                ]
+            },
+            {
+                "feature": "RAM / profil",
+                "values": [
+                    "~100MB",
+                    "~500MB",
+                    "~400MB",
+                    "~350MB"
+                ]
+            },
+            {
+                "feature": "Pro fiyat",
+                "values": [
+                    "$49/ay",
+                    "$99/ay",
+                    "$49/ay",
+                    "$9/ay"
+                ]
+            }
+        ]
+    },
+    "pricing": {
+        "badge": "Fiyatlar",
+        "title": "Basit,",
+        "titleHighlight": "şeffaf",
+        "subtitle": "Ücretsiz başlayın. Hazır olduğunuzda yükseltin. Yıllık planda %40 tasarruf.",
+        "popular": "En popüler",
+        "plans": [
+            {
+                "name": "Ücretsiz",
+                "price": "0",
+                "period": "sonsuza kadar",
+                "desc": "Hemen başlayın, kart gerekmez",
+                "features": [
+                    "5 profil",
+                    "Temel parmak izi",
+                    "Proxy desteği",
+                    "Topluluk desteği"
+                ],
+                "cta": "Ücretsiz başla"
+            },
+            {
+                "name": "Starter",
+                "price": "15",
+                "period": "/ay",
+                "desc": "Otomasyona başlayın",
+                "features": [
+                    "30 profil",
+                    "Temel Veilus Flow",
+                    "5 betik şablonu",
+                    "Zamanlama",
+                    "E-posta desteği"
+                ],
+                "cta": "Şimdi yükselt"
+            },
+            {
+                "name": "Pro",
+                "price": "49",
+                "period": "/ay",
+                "desc": "Bireyler ve freelancerlar için",
+                "features": [
+                    "200 profil",
+                    "Tam Veilus Flow",
+                    "Veilus Sync",
+                    "AI Ajan (BYOK)",
+                    "Sınırsız şablon",
+                    "Öncelikli destek"
+                ],
+                "cta": "Yükselt",
+                "popular": true
+            },
+            {
+                "name": "Business",
+                "price": "99",
+                "period": "/ay",
+                "desc": "Ekipler ve ajanslar için",
+                "features": [
+                    "1,000 profil",
+                    "Sınırsız üye",
+                    "Tüm Pro özellikleri",
+                    "Sınırsız işlem",
+                    "7/24 destek"
+                ],
+                "cta": "Yükselt"
+            },
+            {
+                "name": "Enterprise",
+                "price": "İletişim",
+                "period": "",
+                "desc": "İşletmeler için özel çözümler",
+                "features": [
+                    "Sınırsız profil",
+                    "Tam API",
+                    "White-label",
+                    "SLA"
+                ],
+                "cta": "İletişime geç"
+            }
+        ]
+    },
+    "faq": {
+        "badge": "SSS",
+        "title": "Sık sorulan",
+        "titleHighlight": "sorular",
+        "subtitle": "Başlamadan önce bilmeniz gereken her şey.",
+        "items": [
+            {
+                "q": "Veilus gerçekten tespit edilemez mi?",
+                "a": "Evet. Parmak izi motorumuz en derin seviyede tasarlandı, sadece user-agent değiştirmiyor. creepjs.com ve iphey.com'da \"benzersiz\" sonuçlarla test edildi."
+            },
+            {
+                "q": "Gerçekten ücretsiz mi?",
+                "a": "Tamamen ücretsiz. 5 profil sonsuza kadar, süre sınırı yok, kredi kartı gerekmez."
+            },
+            {
+                "q": "Multilogin'den farkı ne?",
+                "a": "Veilus, Electron yerine yerel motor kullanır — 3 kat hızlı, %80 daha az RAM. Dahili otomasyon — rakipler ayrı araçlar gerektirir."
+            },
+            {
+                "q": "Windows ve Linux destekliyor mu?",
+                "a": "Şu anda macOS. Windows ve Linux geliştirme aşamasında, Q2 2026 bekleniyor."
+            },
+            {
+                "q": "Verilerim güvende mi?",
+                "a": "Tüm veriler yerel olarak saklanır. Veilus Sync E2E şifreleme kullanır — biz bile okuyamayız."
+            },
+            {
+                "q": "Kendi proxy'lerimi kullanabilir miyim?",
+                "a": "Evet. HTTP, HTTPS, SOCKS5 desteği. Her profil için ayrı proxy yapılandırması."
+            },
+            {
+                "q": "Veilus Flow nasıl çalışıyor?",
+                "a": "\"Kaydet\" → gezin → \"Durdur\". Veilus YAML ve Playwright scriptleri oluşturur. Düzenleyin ve birden fazla profilde çalıştırın."
+            },
+            {
+                "q": "Çok RAM kullanıyor mu?",
+                "a": "Profil başına yaklaşık 100MB — Electron tarayıcılardan 3-5 kat daha az. Akıllı izleme otomatik olarak yükü azaltır."
+            }
+        ]
+    },
+    "finalCta": {
+        "title": "Görünmez olmaya",
+        "titleHighlight": "hazır mısınız?",
+        "desc": "Veilus'u bugün ücretsiz indirin.\n5 profil. Benzersiz parmak izi. Kartsız. Denemesiz. Sonsuza kadar.",
+        "cta": "Ücretsiz indir",
+        "note": "Kişisel veri toplanmaz"
+    },
+    "footer": {
+        "tagline": "Tasarımla görünmez.",
+        "product": "Ürün",
+        "productLinks": [
+            "Özellikler",
+            "Fiyatlar"
+        ],
+        "resources": "Kaynaklar",
+        "resourceLinks": [
+            "Dokümantasyon",
+            "Blog",
+            "API Docs"
+        ],
+        "community": "Topluluk",
+        "communityLinks": [
+            "Telegram",
+            "Twitter/X",
+            "GitHub"
+        ],
+        "legal": [
+            "Şartlar",
+            "Gizlilik",
+            "İade",
+            "Çerezler"
+        ],
+        "copyright": "© 2026 Veilus. Tasarımla görünmez."
+    },
+    "download": {
+        "title": "İndir",
+        "titleHighlight": "Veilus",
+        "subtitle": "5 profille sonsuza kadar ücretsiz.",
+        "win64": "Windows 10/11 64-bit",
+        "macUniversal": "macOS 12+ Universal",
+        "linuxX64": "Ubuntu 20+ / Fedora 36+",
+        "downloadBtn": "İndir",
+        "note": "Kişisel veri toplanmaz · Kredi kartı gerekmez",
+        "reqTitle": "Sistem Gereksinimleri"
+    },
+    "waitlist": {
+        "title": "Erken Erişim",
+        "subtitle": "Veilus indirmeye hazır olduğunda ilk siz öğrenin.",
+        "placeholder": "E-postanızı girin",
+        "cta": "Listeye Katıl",
+        "success": "Listedesiniz! 🎉",
+        "successSub": "Veilus hazır olduğunda size e-posta göndereceğiz.",
+        "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+        "duplicate": "Zaten listedesiniz!",
+        "counter": "{count}+ kişi bekliyor",
+        "invalid": "Geçerli bir e-posta girin"
+    }
+}

@@ -1,0 +1,155 @@
+---
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  lang?: Lang;
+  title: string;
+  description?: string;
+  lastUpdated?: string;
+}
+
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+const { title, description, lastUpdated } = Astro.props;
+---
+
+<Layout lang={lang} title={`${title} — Veilus`} description={description}>
+  <Navbar lang={lang} />
+  <main class="legal-page">
+    <div class="container">
+      <div class="legal-header">
+        <h1>{title}</h1>
+        {lastUpdated && <p class="legal-date">Last updated: {lastUpdated}</p>}
+      </div>
+      <div class="legal-content">
+        <slot />
+      </div>
+      <div class="legal-back">
+        <a href={getLocalizedPath('/', lang)} class="btn btn-secondary">← {i.nav.features ? 'Back to home' : 'Back'}</a>
+      </div>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</Layout>
+
+<style>
+  .legal-page {
+    padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-4xl);
+    min-height: 80vh;
+  }
+
+  .legal-header {
+    margin-bottom: var(--space-3xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .legal-header h1 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    background: linear-gradient(135deg, var(--color-cyan), var(--color-indigo));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .legal-date {
+    margin-top: var(--space-sm);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .legal-content {
+    max-width: 780px;
+  }
+
+  .legal-content :global(h2) {
+    font-size: 1.375rem;
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .legal-content :global(h3) {
+    font-size: 1.125rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .legal-content :global(p) {
+    margin-bottom: var(--space-md);
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    max-width: none;
+  }
+
+  .legal-content :global(ul),
+  .legal-content :global(ol) {
+    margin-bottom: var(--space-md);
+    padding-left: var(--space-xl);
+    color: var(--color-text-secondary);
+  }
+
+  .legal-content :global(li) {
+    margin-bottom: var(--space-xs);
+    line-height: 1.7;
+  }
+
+  .legal-content :global(strong) {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .legal-content :global(a) {
+    color: var(--color-cyan);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .legal-content :global(a:hover) {
+    color: var(--color-cyan-hover);
+  }
+
+  .legal-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+    font-size: 0.9375rem;
+  }
+
+  .legal-content :global(th),
+  .legal-content :global(td) {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+  }
+
+  .legal-content :global(th) {
+    color: var(--color-text);
+    font-weight: 600;
+    background: var(--bg-elevated);
+  }
+
+  .legal-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-2xl) 0;
+  }
+
+  .legal-back {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 768px) {
+    .legal-page {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+    }
+  }
+</style>

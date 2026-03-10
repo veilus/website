@@ -1,0 +1,19 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { supportedLangs, defaultLang } from '../../i18n/utils';
+import type { Lang } from '../../i18n/utils';
+import { termsTranslations } from '../../i18n/legal/terms';
+
+export function getStaticPaths() {
+  return supportedLangs
+    .filter((l) => l !== defaultLang)
+    .map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const t = termsTranslations[lang] || termsTranslations['en'];
+---
+
+<LegalLayout lang={lang} title={t.title} description={t.description} lastUpdated={t.lastUpdated}>
+  <Fragment set:html={t.content} />
+</LegalLayout>

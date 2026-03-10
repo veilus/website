@@ -1,0 +1,348 @@
+{
+    "meta": {
+        "title": "Veilus — Navegador antidetecção com automação integrada",
+        "description": "Navegador antidetecção gratuito com performance nativa. 5 perfis para sempre. Grave ações e gere scripts automaticamente. Baixe agora."
+    },
+    "nav": {
+        "features": "Recursos",
+        "compare": "Comparar",
+        "pricing": "Preços",
+        "faq": "FAQ",
+        "download": "Baixar grátis"
+    },
+    "hero": {
+        "badge": "Navegador Antidetecção",
+        "title1": "Invisível.",
+        "title2": "Sem rastros.",
+        "title3": "Seu.",
+        "subtitle": "O <strong>único</strong> navegador antidetecção com plataforma de automação totalmente integrada. Motor nativo — 3x mais rápido, 80% menos RAM.",
+        "check1": "5 perfis grátis para sempre — sem cartão de crédito",
+        "check2": "Cada perfil com fingerprint único — indetectável",
+        "check3": "Grave ações → gere scripts automaticamente em 1 clique",
+        "ctaPrimary": "Baixar gratis",
+        "ctaSecondary": "Ver demo de 90s",
+        "note": "Windows, macOS, Linux"
+    },
+    "proof": {
+        "test": "Aprovado nos testes",
+        "testSub": "creepjs.com e iphey.com",
+        "speed": "3x mais rápido",
+        "speedSub": "than alternatives",
+        "users": "500+",
+        "usersSub": "beta testers",
+        "open": "Open Source",
+        "openSub": "Patches do Chromium"
+    },
+    "features": {
+        "badge": "Recursos",
+        "title": "Tudo que você precisa,",
+        "titleHighlight": "em um só app",
+        "subtitle": "Navegador antidetecção + plataforma de automação. Concorrentes precisam de 2 ferramentas, você só precisa do Veilus.",
+        "items": [
+            {
+                "title": "Motor de Fingerprint",
+                "desc": "Fingerprints únicos para cada perfil com 20+ parâmetros — Canvas, WebGL, AudioContext, Client Hints. Projetado no nível mais profundo para máxima furtividade.",
+                "badge": "Aprovado no creepjs.com"
+            },
+            {
+                "title": "Veilus Flow",
+                "desc": "Clique \"Gravar\", navegue na web, clique \"Parar\" — Veilus gera scripts YAML + Playwright automaticamente. Suporta 20+ tipos de ações.",
+                "badge": "Sem programação"
+            },
+            {
+                "title": "Canvas Visual",
+                "desc": "Arraste e solte para criar fluxos de automação como fluxogramas. Suporta ramificação, loops e componentes reutilizáveis.",
+                "badge": "Low-code"
+            },
+            {
+                "title": "Veilus Sync",
+                "desc": "Sincronize perfis via Git ou Google Drive. Criptografia hierárquica de ponta a ponta — nem nós podemos ler seus dados.",
+                "badge": "Criptografia E2E"
+            },
+            {
+                "title": "Agendamento",
+                "desc": "Agende scripts por hora, dia ou semana. Detecta execuções perdidas automaticamente. Monitoramento inteligente de recursos.",
+                "badge": "Agendamento inteligente"
+            },
+            {
+                "title": "Agente IA (BYOK)",
+                "desc": "Use sua própria chave de API — GPT-4, Claude, Gemini. A IA analisa o DOM, planeja ações e executa automaticamente.",
+                "badge": "Traga sua chave"
+            }
+        ]
+    },
+    "howItWorks": {
+        "badge": "Como funciona",
+        "title": "Comece em",
+        "titleHighlight": "3 passos",
+        "subtitle": "Do download à automação completa em poucos minutos.",
+        "steps": [
+            {
+                "title": "Baixe e crie perfil",
+                "desc": "Baixe Veilus grátis. Crie um perfil com fingerprint único em 10 segundos. Cada perfil = uma identidade completamente nova."
+            },
+            {
+                "title": "Grave ações",
+                "desc": "Clique \"Gravar\", navegue normalmente — clique, digite, role. Veilus transforma tudo em script de automação."
+            },
+            {
+                "title": "Automatize e escale",
+                "desc": "Execute scripts em múltiplos perfis simultaneamente. Agende automações. Monitoramento inteligente — Veilus cuida do resto."
+            }
+        ]
+    },
+    "comparison": {
+        "badge": "Comparação",
+        "title": "Por que escolher",
+        "titleHighlight": "Veilus?",
+        "subtitle": "Comparação direta com os principais concorrentes.",
+        "headers": [
+            "",
+            "Veilus",
+            "Multilogin",
+            "GoLogin",
+            "AdsPower"
+        ],
+        "rows": [
+            {
+                "feature": "Plano grátis",
+                "values": [
+                    "5 perfis para sempre",
+                    "7 dias teste",
+                    "3 (limitado)",
+                    "5 (limitado)"
+                ]
+            },
+            {
+                "feature": "Motor",
+                "values": [
+                    "Native",
+                    "Electron",
+                    "Electron",
+                    "Electron"
+                ]
+            },
+            {
+                "feature": "Automação",
+                "values": [
+                    "Integrada",
+                    "Separada",
+                    "Não",
+                    "RPA básico"
+                ]
+            },
+            {
+                "feature": "Canvas Visual",
+                "values": [
+                    "Sim",
+                    "Não",
+                    "Não",
+                    "Não"
+                ]
+            },
+            {
+                "feature": "Agente IA",
+                "values": [
+                    "BYOK",
+                    "Não",
+                    "Não",
+                    "Não"
+                ]
+            },
+            {
+                "feature": "RAM / perfil",
+                "values": [
+                    "~100MB",
+                    "~500MB",
+                    "~400MB",
+                    "~350MB"
+                ]
+            },
+            {
+                "feature": "Preço Pro",
+                "values": [
+                    "$49/mês",
+                    "$99/mês",
+                    "$49/mês",
+                    "$9/mês"
+                ]
+            }
+        ]
+    },
+    "pricing": {
+        "badge": "Preços",
+        "title": "Simples,",
+        "titleHighlight": "transparente",
+        "subtitle": "Comece grátis. Atualize quando estiver pronto. Economize 40% no plano anual.",
+        "popular": "Mais popular",
+        "plans": [
+            {
+                "name": "Grátis",
+                "price": "0",
+                "period": "para sempre",
+                "desc": "Comece agora, sem cartão",
+                "features": [
+                    "5 perfis",
+                    "Fingerprint básico",
+                    "Suporte a proxy",
+                    "Suporte da comunidade"
+                ],
+                "cta": "Começar grátis"
+            },
+            {
+                "name": "Starter",
+                "price": "15",
+                "period": "/mês",
+                "desc": "Comece com automação",
+                "features": [
+                    "30 perfis",
+                    "Veilus Flow básico",
+                    "5 templates",
+                    "Agendamento",
+                    "Suporte email"
+                ],
+                "cta": "Atualizar agora"
+            },
+            {
+                "name": "Pro",
+                "price": "49",
+                "period": "/mês",
+                "desc": "Para indivíduos e freelancers",
+                "features": [
+                    "200 perfis",
+                    "Veilus Flow completo",
+                    "Veilus Sync",
+                    "Agente IA (BYOK)",
+                    "Templates ilimitados",
+                    "Suporte prioritário"
+                ],
+                "cta": "Atualizar agora",
+                "popular": true
+            },
+            {
+                "name": "Business",
+                "price": "99",
+                "period": "/mês",
+                "desc": "Para equipes e agências",
+                "features": [
+                    "1,000 perfis",
+                    "Membros ilimitados",
+                    "Tudo no Pro",
+                    "Operações ilimitadas",
+                    "Suporte 24/7"
+                ],
+                "cta": "Atualizar agora"
+            },
+            {
+                "name": "Enterprise",
+                "price": "Contato",
+                "period": "",
+                "desc": "Soluções personalizadas",
+                "features": [
+                    "Perfis ilimitados",
+                    "API completa",
+                    "White-label",
+                    "SLA"
+                ],
+                "cta": "Contato"
+            }
+        ]
+    },
+    "faq": {
+        "badge": "FAQ",
+        "title": "Perguntas",
+        "titleHighlight": "frequentes",
+        "subtitle": "Tudo que você precisa saber antes de começar.",
+        "items": [
+            {
+                "q": "O Veilus é realmente indetectável?",
+                "a": "Sim. Nosso motor de fingerprint é projetado no nível mais profundo, não apenas alterando user-agent. Testado e verificado no creepjs.com e iphey.com com resultados \"único\" para cada perfil."
+            },
+            {
+                "q": "É realmente grátis?",
+                "a": "Totalmente grátis. 5 perfis para sempre, sem limite de tempo, sem cartão. Atualize apenas quando precisar de mais."
+            },
+            {
+                "q": "Qual a diferença do Multilogin?",
+                "a": "Veilus usa um motor nativo em vez de Electron — 3x mais rápido, 80% menos RAM. Além disso, automação integrada (gravação, canvas visual, agente IA) — concorrentes precisam de ferramentas separadas."
+            },
+            {
+                "q": "Suporta Windows e Linux?",
+                "a": "Atualmente macOS. Windows e Linux em desenvolvimento, previsão Q2 2026."
+            },
+            {
+                "q": "Meus dados estão seguros?",
+                "a": "Todos os dados são armazenados localmente. Veilus Sync usa criptografia E2E — nem nós podemos ler seus dados."
+            },
+            {
+                "q": "Posso usar meus próprios proxies?",
+                "a": "Sim. Suporta HTTP, HTTPS, SOCKS5. Cada perfil pode ter sua própria configuração de proxy, incluindo rotação."
+            },
+            {
+                "q": "Como funciona o Veilus Flow?",
+                "a": "\"Gravar\" → navegar → \"Parar\". Veilus gera scripts YAML e Playwright. Edite, adicione variáveis e execute em múltiplos perfis."
+            },
+            {
+                "q": "Usa muita RAM?",
+                "a": "Cerca de 100MB por perfil — 3-5x menos que navegadores Electron. Monitoramento inteligente reduz carga automaticamente."
+            }
+        ]
+    },
+    "finalCta": {
+        "title": "Pronto para se tornar",
+        "titleHighlight": "invisível?",
+        "desc": "Baixe Veilus grátis hoje.\n5 perfis. Fingerprint único. Sem cartão. Sem trial. Para sempre.",
+        "cta": "Baixar gratis",
+        "note": "Não coletamos dados pessoais"
+    },
+    "footer": {
+        "tagline": "Invisível por design.",
+        "product": "Produto",
+        "productLinks": [
+            "Recursos",
+            "Preços"
+        ],
+        "resources": "Recursos",
+        "resourceLinks": [
+            "Documentação",
+            "Blog",
+            "API Docs"
+        ],
+        "community": "Comunidade",
+        "communityLinks": [
+            "Telegram",
+            "Twitter/X",
+            "GitHub"
+        ],
+        "legal": [
+            "Termos",
+            "Privacidade",
+            "Reembolso",
+            "Cookies"
+        ],
+        "copyright": "© 2026 Veilus. Invisível por design."
+    },
+    "download": {
+        "title": "Baixar",
+        "titleHighlight": "Veilus",
+        "subtitle": "Gratis com 5 perfis para sempre.",
+        "win64": "Windows 10/11 64-bit",
+        "macUniversal": "macOS 12+ Universal",
+        "linuxX64": "Ubuntu 20+ / Fedora 36+",
+        "downloadBtn": "Baixar",
+        "note": "Sem coleta de dados.",
+        "reqTitle": "Requisitos do sistema"
+    },
+    "waitlist": {
+        "title": "Acesso Antecipado",
+        "subtitle": "Seja o primeiro a saber quando o Veilus estiver pronto para download.",
+        "placeholder": "Digite seu email",
+        "cta": "Entrar na lista",
+        "success": "Você está na lista! 🎉",
+        "successSub": "Enviaremos um email quando o Veilus estiver pronto.",
+        "error": "Algo deu errado. Tente novamente.",
+        "duplicate": "Você já está na lista!",
+        "counter": "{count}+ pessoas esperando",
+        "invalid": "Digite um email válido"
+    }
+}

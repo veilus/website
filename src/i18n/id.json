@@ -1,0 +1,348 @@
+{
+    "meta": {
+        "title": "Veilus — Browser anti-deteksi dengan otomasi terintegrasi",
+        "description": "Browser anti-deteksi gratis dengan performa native. 5 profil selamanya. Rekam aksi dan buat script otomatis. Unduh sekarang."
+    },
+    "nav": {
+        "features": "Fitur",
+        "compare": "Bandingkan",
+        "pricing": "Harga",
+        "faq": "FAQ",
+        "download": "Unduh gratis"
+    },
+    "hero": {
+        "badge": "Browser Anti-Deteksi",
+        "title1": "Tak Terlihat.",
+        "title2": "Tanpa Jejak.",
+        "title3": "Milik Anda.",
+        "subtitle": "Browser anti-deteksi <strong>satu-satunya</strong> dengan platform otomasi terintegrasi penuh. Engine native — 3x lebih cepat, RAM 80% lebih sedikit.",
+        "check1": "5 profil gratis selamanya — tanpa kartu kredit",
+        "check2": "Setiap profil memiliki fingerprint unik — tidak terdeteksi",
+        "check3": "Rekam aksi → buat script otomatis dalam 1 klik",
+        "ctaPrimary": "Unduh gratis",
+        "ctaSecondary": "Tonton demo 90 detik",
+        "note": "Windows, macOS, Linux"
+    },
+    "proof": {
+        "test": "Lolos pengujian",
+        "testSub": "creepjs.com & iphey.com",
+        "speed": "3x lebih cepat",
+        "speedSub": "than alternatives",
+        "users": "500+",
+        "usersSub": "beta tester",
+        "open": "Open Source",
+        "openSub": "Patch Chromium"
+    },
+    "features": {
+        "badge": "Fitur",
+        "title": "Semua yang Anda butuhkan,",
+        "titleHighlight": "dalam satu aplikasi",
+        "subtitle": "Browser anti-deteksi + platform otomasi. Kompetitor butuh 2 alat, Anda hanya butuh Veilus.",
+        "items": [
+            {
+                "title": "Mesin Fingerprint",
+                "desc": "Buat fingerprint unik untuk setiap profil dengan 20+ parameter — Canvas, WebGL, AudioContext, Client Hints. Dirancang di level terdalam untuk kesamaran maksimal.",
+                "badge": "Lolos creepjs.com"
+            },
+            {
+                "title": "Veilus Flow",
+                "desc": "Tekan \"Rekam\", jelajahi web, tekan \"Stop\" — Veilus otomatis membuat script YAML + Playwright. Mendukung 20+ jenis aksi.",
+                "badge": "Tanpa coding"
+            },
+            {
+                "title": "Canvas Visual",
+                "desc": "Seret dan lepas untuk membuat alur otomasi. Mendukung percabangan, perulangan, dan komponen yang dapat digunakan ulang.",
+                "badge": "Low-code"
+            },
+            {
+                "title": "Veilus Sync",
+                "desc": "Sinkronisasi profil via Git atau Google Drive. Enkripsi hierarkis end-to-end — bahkan kami tidak bisa membaca data Anda.",
+                "badge": "Enkripsi E2E"
+            },
+            {
+                "title": "Penjadwalan",
+                "desc": "Jadwalkan script per jam, hari, atau minggu. Otomatis mendeteksi eksekusi yang terlewat. Pemantauan sumber daya cerdas.",
+                "badge": "Penjadwalan cerdas"
+            },
+            {
+                "title": "Agen AI (BYOK)",
+                "desc": "Gunakan API key AI Anda sendiri — GPT-4, Claude, Gemini. AI menganalisis DOM, merencanakan aksi, dan mengeksekusi otomatis.",
+                "badge": "Bawa Kunci Sendiri"
+            }
+        ]
+    },
+    "howItWorks": {
+        "badge": "Cara kerja",
+        "title": "Mulai dalam",
+        "titleHighlight": "3 langkah",
+        "subtitle": "Dari unduh hingga otomasi penuh hanya dalam hitungan menit.",
+        "steps": [
+            {
+                "title": "Unduh & Buat Profil",
+                "desc": "Unduh Veilus gratis. Buat profil dengan fingerprint unik dalam 10 detik. Setiap profil = identitas yang benar-benar baru."
+            },
+            {
+                "title": "Rekam aksi",
+                "desc": "Tekan \"Rekam\", jelajahi web seperti biasa — klik, ketik, gulir. Veilus mengubah semuanya menjadi script otomasi."
+            },
+            {
+                "title": "Otomatisasi & Skalakan",
+                "desc": "Jalankan script di beberapa profil secara bersamaan. Jadwalkan otomasi. Pemantauan cerdas — Veilus menangani sisanya."
+            }
+        ]
+    },
+    "comparison": {
+        "badge": "Perbandingan",
+        "title": "Mengapa memilih",
+        "titleHighlight": "Veilus?",
+        "subtitle": "Perbandingan langsung dengan kompetitor terkemuka.",
+        "headers": [
+            "",
+            "Veilus",
+            "Multilogin",
+            "GoLogin",
+            "AdsPower"
+        ],
+        "rows": [
+            {
+                "feature": "Paket gratis",
+                "values": [
+                    "5 profil selamanya",
+                    "Uji coba 7 hari",
+                    "3 (terbatas)",
+                    "5 (terbatas)"
+                ]
+            },
+            {
+                "feature": "Mesin",
+                "values": [
+                    "Native",
+                    "Electron",
+                    "Electron",
+                    "Electron"
+                ]
+            },
+            {
+                "feature": "Otomasi",
+                "values": [
+                    "Terintegrasi",
+                    "Terpisah",
+                    "Tidak ada",
+                    "RPA dasar"
+                ]
+            },
+            {
+                "feature": "Canvas Visual",
+                "values": [
+                    "Ya",
+                    "Tidak",
+                    "Tidak",
+                    "Tidak"
+                ]
+            },
+            {
+                "feature": "Agen AI",
+                "values": [
+                    "BYOK",
+                    "Tidak",
+                    "Tidak",
+                    "Tidak"
+                ]
+            },
+            {
+                "feature": "RAM / profil",
+                "values": [
+                    "~100MB",
+                    "~500MB",
+                    "~400MB",
+                    "~350MB"
+                ]
+            },
+            {
+                "feature": "Harga Pro",
+                "values": [
+                    "$49/bln",
+                    "$99/bln",
+                    "$49/bln",
+                    "$9/bln"
+                ]
+            }
+        ]
+    },
+    "pricing": {
+        "badge": "Harga",
+        "title": "Sederhana,",
+        "titleHighlight": "transparan",
+        "subtitle": "Mulai gratis. Tingkatkan saat siap. Hemat 40% dengan paket tahunan.",
+        "popular": "Paling populer",
+        "plans": [
+            {
+                "name": "Gratis",
+                "price": "0",
+                "period": "selamanya",
+                "desc": "Mulai sekarang, tanpa kartu",
+                "features": [
+                    "5 profil",
+                    "Fingerprint dasar",
+                    "Dukungan proxy",
+                    "Dukungan komunitas"
+                ],
+                "cta": "Mulai gratis"
+            },
+            {
+                "name": "Starter",
+                "price": "15",
+                "period": "/bulan",
+                "desc": "Mulai dengan otomatisasi",
+                "features": [
+                    "30 profil",
+                    "Veilus Flow dasar",
+                    "5 template skrip",
+                    "Penjadwalan",
+                    "Dukungan email"
+                ],
+                "cta": "Tingkatkan"
+            },
+            {
+                "name": "Pro",
+                "price": "49",
+                "period": "/bulan",
+                "desc": "Untuk individu dan freelancer",
+                "features": [
+                    "200 profil",
+                    "Veilus Flow lengkap",
+                    "Veilus Sync",
+                    "Agen AI (BYOK)",
+                    "Template tak terbatas",
+                    "Dukungan prioritas"
+                ],
+                "cta": "Tingkatkan",
+                "popular": true
+            },
+            {
+                "name": "Business",
+                "price": "99",
+                "period": "/bulan",
+                "desc": "Untuk tim dan agensi",
+                "features": [
+                    "1,000 profil",
+                    "Anggota tak terbatas",
+                    "Semua fitur Pro",
+                    "Operasi tak terbatas",
+                    "Dukungan 24/7"
+                ],
+                "cta": "Tingkatkan"
+            },
+            {
+                "name": "Enterprise",
+                "price": "Hubungi",
+                "period": "",
+                "desc": "Solusi khusus untuk bisnis",
+                "features": [
+                    "Profil tak terbatas",
+                    "API lengkap",
+                    "White-label",
+                    "SLA"
+                ],
+                "cta": "Hubungi kami"
+            }
+        ]
+    },
+    "faq": {
+        "badge": "FAQ",
+        "title": "Pertanyaan",
+        "titleHighlight": "yang sering diajukan",
+        "subtitle": "Semua yang perlu Anda ketahui sebelum memulai.",
+        "items": [
+            {
+                "q": "Apakah Veilus benar-benar tidak terdeteksi?",
+                "a": "Ya. Mesin fingerprint kami dirancang di level terdalam, bukan hanya mengubah user-agent. Teruji di creepjs.com dan iphey.com dengan hasil \"unik\" untuk setiap profil."
+            },
+            {
+                "q": "Benar-benar gratis?",
+                "a": "Benar-benar gratis. 5 profil selamanya, tanpa batas waktu, tanpa kartu kredit."
+            },
+            {
+                "q": "Apa bedanya dengan Multilogin?",
+                "a": "Veilus menggunakan engine native, bukan Electron — 3x lebih cepat, RAM 80% lebih sedikit. Otomasi terintegrasi — kompetitor memerlukan alat terpisah."
+            },
+            {
+                "q": "Mendukung Windows dan Linux?",
+                "a": "Saat ini macOS. Windows dan Linux sedang dikembangkan, diperkirakan Q2 2026."
+            },
+            {
+                "q": "Apakah data saya aman?",
+                "a": "Semua data disimpan secara lokal. Veilus Sync menggunakan enkripsi E2E — bahkan kami tidak bisa membaca data Anda."
+            },
+            {
+                "q": "Bisa pakai proxy sendiri?",
+                "a": "Ya. Mendukung HTTP, HTTPS, SOCKS5. Setiap profil bisa memiliki konfigurasi proxy sendiri."
+            },
+            {
+                "q": "Bagaimana Veilus Flow bekerja?",
+                "a": "\"Rekam\" → jelajahi web → \"Stop\". Veilus membuat script YAML dan Playwright. Edit, tambahkan variabel, dan jalankan di banyak profil."
+            },
+            {
+                "q": "Apakah menggunakan banyak RAM?",
+                "a": "Sekitar 100MB per profil — 3-5x lebih sedikit dari browser Electron. Pemantauan cerdas otomatis mengurangi beban."
+            }
+        ]
+    },
+    "finalCta": {
+        "title": "Siap menjadi",
+        "titleHighlight": "tak terlihat?",
+        "desc": "Unduh Veilus gratis hari ini.\n5 profil. Fingerprint unik. Tanpa kartu. Bukan trial. Selamanya.",
+        "cta": "Unduh gratis",
+        "note": "Tidak mengumpulkan data pribadi"
+    },
+    "footer": {
+        "tagline": "Tak terlihat secara desain.",
+        "product": "Produk",
+        "productLinks": [
+            "Fitur",
+            "Harga"
+        ],
+        "resources": "Sumber Daya",
+        "resourceLinks": [
+            "Dokumentasi",
+            "Blog",
+            "API Docs"
+        ],
+        "community": "Komunitas",
+        "communityLinks": [
+            "Telegram",
+            "Twitter/X",
+            "GitHub"
+        ],
+        "legal": [
+            "Ketentuan",
+            "Privasi",
+            "Pengembalian",
+            "Cookie"
+        ],
+        "copyright": "© 2026 Veilus. Tak terlihat secara desain."
+    },
+    "download": {
+        "title": "Unduh",
+        "titleHighlight": "Veilus",
+        "subtitle": "Gratis selamanya dengan 5 profil.",
+        "win64": "Windows 10/11 64-bit",
+        "macUniversal": "macOS 12+ Universal",
+        "linuxX64": "Ubuntu 20+ / Fedora 36+",
+        "downloadBtn": "Unduh",
+        "note": "Tidak mengumpulkan data.",
+        "reqTitle": "Persyaratan Sistem"
+    },
+    "waitlist": {
+        "title": "Akses Awal",
+        "subtitle": "Jadi yang pertama tahu saat Veilus siap diunduh.",
+        "placeholder": "Masukkan email Anda",
+        "cta": "Gabung Daftar Tunggu",
+        "success": "Anda sudah terdaftar! 🎉",
+        "successSub": "Kami akan mengirim email saat Veilus siap.",
+        "error": "Terjadi kesalahan. Silakan coba lagi.",
+        "duplicate": "Anda sudah terdaftar!",
+        "counter": "{count}+ orang sedang menunggu",
+        "invalid": "Masukkan email yang valid"
+    }
+}

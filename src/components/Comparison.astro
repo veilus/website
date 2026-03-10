@@ -1,0 +1,47 @@
+---
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+interface Props { lang?: Lang; }
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+---
+<section class="section comparison" id="comparison" data-animate>
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">{i.comparison.badge}</span>
+      <h2 class="mt-md">{i.comparison.title} <span class="text-gradient">{i.comparison.titleHighlight}</span></h2>
+      <p>{i.comparison.subtitle}</p>
+    </div>
+    <div class="table-wrap">
+      <table class="comp-table">
+        <thead><tr>{i.comparison.headers.map((h, idx) => (<th class={idx === 1 ? 'highlight-col' : idx === 0 ? 'feature-col' : ''}>{h}</th>))}</tr></thead>
+        <tbody>
+          {i.comparison.rows.map((row) => (
+            <tr>
+              <td class="feature-col">{row.feature}</td>
+              {row.values.map((val, idx) => (
+                <td class={idx === 0 ? 'highlight-col' : ''}>
+                  <span class={idx === 0 ? 'cell-win' : 'cell-neutral'}>{val}</span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<style>
+  .table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; min-width: 640px; }
+  .comp-table th, .comp-table td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .comp-table thead th { background: var(--bg-elevated); font-weight: 600; color: var(--color-text-secondary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .comp-table tbody tr:last-child td { border-bottom: none; }
+  .comp-table tbody tr:hover { background: rgba(0,212,255,0.03); }
+  .feature-col { font-weight: 600; color: var(--color-text); min-width: 130px; }
+  .highlight-col { background: rgba(0,212,255,0.05); border-left: 2px solid var(--color-cyan); }
+  thead .highlight-col { color: var(--color-cyan) !important; font-size: 1rem !important; }
+  .cell-win { color: var(--color-success); font-weight: 600; }
+  .cell-neutral { color: var(--color-text-secondary); }
+  @media (max-width: 768px) { .comp-table { font-size: 0.8125rem; } .comp-table th, .comp-table td { padding: 10px 12px; } }
+</style>

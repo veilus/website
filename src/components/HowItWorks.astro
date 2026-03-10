@@ -1,0 +1,45 @@
+---
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+interface Props { lang?: Lang; }
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+const icons = [
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>`,
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+];
+---
+<section class="section how-it-works" data-animate>
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">{i.howItWorks.badge}</span>
+      <h2 class="mt-md">{i.howItWorks.title} <span class="text-gradient">{i.howItWorks.titleHighlight}</span></h2>
+      <p>{i.howItWorks.subtitle}</p>
+    </div>
+    <div class="steps-grid">
+      {i.howItWorks.steps.map((step, idx) => (
+        <div class="step-card">
+          <div class="step-number">{String(idx + 1).padStart(2, '0')}</div>
+          <div class="step-icon" set:html={icons[idx]} />
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-desc">{step.desc}</p>
+          {idx < i.howItWorks.steps.length - 1 && <div class="step-connector" />}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .how-it-works { background: var(--bg-surface); }
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2xl); position: relative; }
+  .step-card { text-align: center; position: relative; }
+  .step-number { font-size: 4rem; font-weight: 700; line-height: 1; background: linear-gradient(135deg, var(--color-cyan), var(--color-indigo)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: 0.2; margin-bottom: var(--space-md); }
+  .step-icon { width: 48px; height: 48px; margin: 0 auto var(--space-lg); color: var(--color-cyan); }
+  .step-icon :global(svg) { width: 48px; height: 48px; }
+  .step-title { font-size: 1.25rem; margin-bottom: var(--space-sm); }
+  .step-desc { font-size: 0.9375rem; max-width: 32ch; margin: 0 auto; }
+  .step-connector { display: none; }
+  @media (min-width: 769px) { .step-connector { display: block; position: absolute; top: 4.5rem; right: -2rem; width: 4rem; height: 2px; background: linear-gradient(90deg, var(--color-cyan), transparent); } }
+  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; gap: var(--space-xl); max-width: 400px; margin: 0 auto; } }
+</style>

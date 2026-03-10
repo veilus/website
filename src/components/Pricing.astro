@@ -1,0 +1,62 @@
+---
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+interface Props { lang?: Lang; }
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+---
+<section class="section pricing" id="pricing" data-animate>
+  <div class="container">
+    <div class="section-header">
+      <span class="badge badge-gold">{i.pricing.badge}</span>
+      <h2 class="mt-md">{i.pricing.title} <span class="text-gradient">{i.pricing.titleHighlight}</span></h2>
+      <p>{i.pricing.subtitle}</p>
+    </div>
+    <div class="pricing-grid">
+      {i.pricing.plans.map((plan) => (
+        <div class={`pricing-card card ${(plan as any).popular ? 'popular' : ''}`}>
+          {(plan as any).popular && <div class="popular-badge">{i.pricing.popular}</div>}
+          <div class="plan-header"><h3 class="plan-name">{plan.name}</h3><p class="plan-desc">{plan.desc}</p></div>
+          <div class="plan-price">
+            {plan.price !== 'Contact' && plan.price !== 'Liên hệ' && plan.price !== '联系我们' && plan.price !== 'Свяжитесь' && plan.price !== 'Contato' && plan.price !== 'Contacto' && plan.price !== 'İletişim' && plan.price !== 'Hubungi' ? (
+              <><span class="price-currency">$</span><span class="price-value">{plan.price}</span><span class="price-period">{plan.period}</span></>
+            ) : (
+              <span class="price-value price-contact">{plan.price}</span>
+            )}
+          </div>
+          <ul class="plan-features">
+            {plan.features.map((f) => (
+              <li>
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a href="/download" class={`btn ${(plan as any).popular ? 'btn-primary' : 'btn-secondary'} plan-cta`}>{plan.cta}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .pricing-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-lg); align-items: start; }
+  .pricing-card { display: flex; flex-direction: column; position: relative; cursor: default; }
+  .pricing-card.popular { border-color: var(--color-cyan); box-shadow: var(--shadow-glow); transform: scale(1.03); }
+  .pricing-card.popular:hover { transform: scale(1.04); }
+  .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--color-cyan), var(--color-indigo)); color: white; font-size: 0.75rem; font-weight: 600; padding: 4px 16px; border-radius: var(--radius-full); white-space: nowrap; }
+  .plan-header { margin-bottom: var(--space-lg); }
+  .plan-name { font-size: 1.25rem; font-weight: 700; }
+  .plan-desc { font-size: 0.875rem; margin-top: var(--space-xs); }
+  .plan-price { display: flex; align-items: baseline; gap: 2px; margin-bottom: var(--space-lg); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .price-currency { font-size: 1.5rem; font-weight: 700; color: var(--color-text); }
+  .price-value { font-size: 3rem; font-weight: 700; color: var(--color-text); line-height: 1; }
+  .price-contact { font-size: 1.75rem; }
+  .price-period { font-size: 1rem; color: var(--color-text-muted); }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-xl); flex-grow: 1; }
+  .plan-features li { display: flex; align-items: center; gap: var(--space-sm); font-size: 0.9375rem; color: var(--color-text-secondary); }
+  .check-icon { width: 18px; height: 18px; flex-shrink: 0; }
+  .plan-cta { width: 100%; justify-content: center; text-align: center; }
+  @media (max-width: 1200px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } .pricing-card.popular { transform: none; } }
+  @media (max-width: 768px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+</style>

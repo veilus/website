@@ -1,0 +1,43 @@
+---
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+interface Props { lang?: Lang; }
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+---
+<section class="social-proof">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-item">
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="proof-text"><span class="proof-value">{i.proof.test}</span><span class="proof-label">{i.proof.testSub}</span></div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div class="proof-text"><span class="proof-value">{i.proof.speed}</span><span class="proof-label">{i.proof.speedSub}</span></div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="proof-text"><span class="proof-value">{i.proof.users}</span><span class="proof-label">{i.proof.usersSub}</span></div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="var(--color-indigo)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="proof-text"><span class="proof-value">{i.proof.open}</span><span class="proof-label">{i.proof.openSub}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .social-proof { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); background: var(--bg-surface); }
+  .proof-grid { display: flex; align-items: center; justify-content: center; gap: var(--space-xl); flex-wrap: wrap; }
+  .proof-item { display: flex; align-items: center; gap: var(--space-sm); }
+  .proof-icon { width: 24px; height: 24px; flex-shrink: 0; }
+  .proof-text { display: flex; flex-direction: column; }
+  .proof-value { font-size: 0.9375rem; font-weight: 700; color: var(--color-text); }
+  .proof-label { font-size: 0.75rem; color: var(--color-text-muted); }
+  .proof-divider { width: 1px; height: 32px; background: var(--color-border-light); }
+  @media (max-width: 768px) { .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); } .proof-divider { display: none; } }
+</style>

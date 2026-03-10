@@ -1,0 +1,348 @@
+{
+    "meta": {
+        "title": "Veilus — 集成自动化的反检测浏览器",
+        "description": "免费反检测浏览器，原生高性能。５个配置文件永久免费。录制操作自动生成脚本。立即下载。"
+    },
+    "nav": {
+        "features": "功能",
+        "compare": "对比",
+        "pricing": "价格",
+        "faq": "常见问题",
+        "download": "免费下载"
+    },
+    "hero": {
+        "badge": "反检测浏览器",
+        "title1": "隐形。",
+        "title2": "无痕。",
+        "title3": "你的。",
+        "subtitle": "<strong>唯一</strong>集成完整自动化平台的反检测浏览器。原生引擎 — 快3倍，内存减少80%。",
+        "check1": "5个配置文件永久免费 — 无需信用卡",
+        "check2": "每个配置文件独立指纹 — 不可检测",
+        "check3": "录制操作 → 一键自动生成脚本",
+        "ctaPrimary": "免费下载",
+        "ctaSecondary": "观看90秒演示",
+        "note": "Windows, macOS, Linux"
+    },
+    "proof": {
+        "test": "通过检测",
+        "testSub": "creepjs.com 和 iphey.com",
+        "speed": "快3倍",
+        "speedSub": "than alternatives",
+        "users": "500+",
+        "usersSub": "测试用户",
+        "open": "开源",
+        "openSub": "Chromium 补丁"
+    },
+    "features": {
+        "badge": "功能",
+        "title": "你需要的一切，",
+        "titleHighlight": "尽在一个应用",
+        "subtitle": "反检测浏览器 + 自动化平台。竞品需要2个工具，你只需要 Veilus。",
+        "items": [
+            {
+                "title": "指纹引擎",
+                "desc": "为每个配置文件创建独特指纹，支持20+参数 — Canvas、WebGL、AudioContext、Client Hints。在最深层级精心设计，实现最大隐匿性。",
+                "badge": "通过 creepjs.com"
+            },
+            {
+                "title": "Veilus Flow",
+                "desc": "点击\"录制\"，正常浏览网页，点击\"停止\" — Veilus 自动生成 YAML + Playwright 脚本。支持20+操作类型。",
+                "badge": "无需编程"
+            },
+            {
+                "title": "可视化画布",
+                "desc": "拖放创建自动化流程图。支持分支、循环和可复用组件。完全低代码。",
+                "badge": "低代码"
+            },
+            {
+                "title": "Veilus Sync",
+                "desc": "通过 Git 或 Google Drive 同步配置文件。分层端到端加密 — 连我们也无法读取你的数据。",
+                "badge": "端到端加密"
+            },
+            {
+                "title": "定时调度",
+                "desc": "按小时、天或周定时运行脚本。自动检测错过的运行并补执行。智能资源监控。",
+                "badge": "智能调度"
+            },
+            {
+                "title": "AI 代理 (BYOK)",
+                "desc": "使用你自己的 AI API 密钥 — GPT-4、Claude、Gemini。AI 分析 DOM，规划操作，自动执行。",
+                "badge": "自带密钥"
+            }
+        ]
+    },
+    "howItWorks": {
+        "badge": "使用方法",
+        "title": "三步",
+        "titleHighlight": "即可开始",
+        "subtitle": "从下载到完全自动化只需几分钟。",
+        "steps": [
+            {
+                "title": "下载并创建配置",
+                "desc": "免费下载 Veilus。10秒内创建具有独特指纹的配置文件。每个配置 = 一个全新身份。"
+            },
+            {
+                "title": "录制操作",
+                "desc": "点击\"录制\"，正常浏览网页 — 点击、输入、滚动。Veilus 将一切转化为自动化脚本。"
+            },
+            {
+                "title": "自动化与扩展",
+                "desc": "同时在多个配置文件上运行脚本。设置定时自动化。智能监控 — Veilus 处理一切。"
+            }
+        ]
+    },
+    "comparison": {
+        "badge": "对比",
+        "title": "为什么选择",
+        "titleHighlight": "Veilus？",
+        "subtitle": "与市场领先竞品的直接对比。",
+        "headers": [
+            "",
+            "Veilus",
+            "Multilogin",
+            "GoLogin",
+            "AdsPower"
+        ],
+        "rows": [
+            {
+                "feature": "免费版",
+                "values": [
+                    "5配置永久",
+                    "7天试用",
+                    "3个(受限)",
+                    "5个(受限)"
+                ]
+            },
+            {
+                "feature": "引擎",
+                "values": [
+                    "Native",
+                    "Electron",
+                    "Electron",
+                    "Electron"
+                ]
+            },
+            {
+                "feature": "自动化",
+                "values": [
+                    "内置",
+                    "独立",
+                    "无",
+                    "基础RPA"
+                ]
+            },
+            {
+                "feature": "可视化画布",
+                "values": [
+                    "有",
+                    "无",
+                    "无",
+                    "无"
+                ]
+            },
+            {
+                "feature": "AI 代理",
+                "values": [
+                    "BYOK",
+                    "无",
+                    "无",
+                    "无"
+                ]
+            },
+            {
+                "feature": "内存/配置",
+                "values": [
+                    "~100MB",
+                    "~500MB",
+                    "~400MB",
+                    "~350MB"
+                ]
+            },
+            {
+                "feature": "Pro 价格",
+                "values": [
+                    "$49/月",
+                    "$99/月",
+                    "$49/月",
+                    "$9/月"
+                ]
+            }
+        ]
+    },
+    "pricing": {
+        "badge": "价格",
+        "title": "简单，",
+        "titleHighlight": "透明",
+        "subtitle": "免费开始。准备好再升级。年付省40%。",
+        "popular": "最受欢迎",
+        "plans": [
+            {
+                "name": "免费版",
+                "price": "0",
+                "period": "永久",
+                "desc": "立即开始，无需信用卡",
+                "features": [
+                    "5个配置文件",
+                    "基础指纹",
+                    "代理支持",
+                    "社区支持"
+                ],
+                "cta": "免费开始"
+            },
+            {
+                "name": "Starter",
+                "price": "15",
+                "period": "/月",
+                "desc": "开始自动化之旅",
+                "features": [
+                    "30个配置文件",
+                    "基础 Veilus Flow",
+                    "5个脚本模板",
+                    "定时任务",
+                    "电子邮件支持"
+                ],
+                "cta": "立即升级"
+            },
+            {
+                "name": "专业版",
+                "price": "49",
+                "period": "/月",
+                "desc": "适合个人和自由职业者",
+                "features": [
+                    "200个配置文件",
+                    "完整 Veilus Flow",
+                    "Veilus Sync",
+                    "AI 代理 (BYOK)",
+                    "无限模板",
+                    "优先支持"
+                ],
+                "cta": "立即升级",
+                "popular": true
+            },
+            {
+                "name": "商业版",
+                "price": "99",
+                "period": "/月",
+                "desc": "适合团队和代理商",
+                "features": [
+                    "1,000个配置文件",
+                    "无限团队成员",
+                    "所有Pro功能",
+                    "无限批处理",
+                    "24/7优先支持"
+                ],
+                "cta": "立即升级"
+            },
+            {
+                "name": "企业版",
+                "price": "联系我们",
+                "period": "",
+                "desc": "企业定制解决方案",
+                "features": [
+                    "无限配置文件",
+                    "完整API",
+                    "白标",
+                    "SLA和合规"
+                ],
+                "cta": "联系我们"
+            }
+        ]
+    },
+    "faq": {
+        "badge": "常见问题",
+        "title": "常见",
+        "titleHighlight": "问题解答",
+        "subtitle": "开始之前你需要了解的一切。",
+        "items": [
+            {
+                "q": "Veilus 真的不可检测吗？",
+                "a": "是的。我们的指纹引擎在最深层级精心设计，不仅仅是更改 user-agent 或注入 JavaScript。已在 creepjs.com 和 iphey.com 上测试验证，每个配置文件都显示\"唯一\"结果。"
+            },
+            {
+                "q": "真的免费吗？需要信用卡吗？",
+                "a": "真正免费。5个配置文件永久使用，无时间限制，不需要信用卡。只有当你需要更多配置文件或自动化功能时才需要升级。"
+            },
+            {
+                "q": "和 Multilogin 或 GoLogin 有什么区别？",
+                "a": "Veilus 使用原生引擎而非 Electron — 速度快3倍，内存占用减少80%。此外，Veilus 内置完整自动化平台（操作录制、可视化画布、AI代理）— 竞品需要购买额外工具。"
+            },
+            {
+                "q": "支持 Windows 和 Linux 吗？",
+                "a": "目前 Veilus 支持 macOS。Windows 和 Linux 版本正在开发中，预计2026年第二季度推出。"
+            },
+            {
+                "q": "我的数据安全吗？",
+                "a": "所有数据存储在你的本地机器上。Veilus Sync 使用分层端到端加密 — 连我们也无法读取你的数据。"
+            },
+            {
+                "q": "可以使用自己的代理吗？",
+                "a": "可以。Veilus 支持 HTTP、HTTPS、SOCKS5 代理。每个配置文件可以拥有独立的代理配置，包括代理轮换。"
+            },
+            {
+                "q": "Veilus Flow 如何工作？",
+                "a": "点击\"录制\" → 正常浏览网页（点击、输入、滚动...）→ 点击\"停止\"。Veilus 自动生成 YAML 和 Playwright JavaScript 格式的脚本。你可以编辑、添加变量，然后在多个配置文件上运行。"
+            },
+            {
+                "q": "占用很多内存吗？",
+                "a": "每个配置文件只使用约100MB内存 — 比基于 Electron 的反检测浏览器少3-5倍。Veilus 还具有智能资源监控功能，在系统负载过高时自动限速。"
+            }
+        ]
+    },
+    "finalCta": {
+        "title": "准备好变得",
+        "titleHighlight": "隐形了吗？",
+        "desc": "今天就免费下载 Veilus。\n5个配置文件。独特指纹。无需信用卡。不是试用。永久免费。",
+        "cta": "免费下载",
+        "note": "不收集个人数据"
+    },
+    "footer": {
+        "tagline": "隐形，源于设计。",
+        "product": "产品",
+        "productLinks": [
+            "功能",
+            "价格"
+        ],
+        "resources": "资源",
+        "resourceLinks": [
+            "文档",
+            "博客",
+            "API文档"
+        ],
+        "community": "社区",
+        "communityLinks": [
+            "Telegram",
+            "Twitter/X",
+            "GitHub"
+        ],
+        "legal": [
+            "条款",
+            "隐私",
+            "退款",
+            "Cookie"
+        ],
+        "copyright": "© 2026 Veilus. 隐形，源于设计。"
+    },
+    "download": {
+        "title": "下载",
+        "titleHighlight": "Veilus",
+        "subtitle": "5个配置文件永久免费。选择您的平台。",
+        "win64": "Windows 10/11 64-bit",
+        "macUniversal": "macOS 12+ Universal",
+        "linuxX64": "Ubuntu 20+ / Fedora 36+",
+        "downloadBtn": "下载",
+        "note": "不收集个人数据 · 无需信用卡",
+        "reqTitle": "系统要求"
+    },
+    "waitlist": {
+        "title": "抢先体验",
+        "subtitle": "第一时间获知 Veilus 何时可以下载。",
+        "placeholder": "输入您的邮箱",
+        "cta": "加入等待名单",
+        "success": "注册成功！🎉",
+        "successSub": "Veilus 准备就绪时我们会通过邮件通知您。",
+        "error": "出了点问题，请重试。",
+        "duplicate": "您已在名单中！",
+        "counter": "{count}+ 人正在等待",
+        "invalid": "请输入有效的邮箱地址"
+    }
+}

@@ -1,0 +1,71 @@
+---
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
+interface Props { lang?: Lang; }
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+
+const legalLinks = [
+  { name: i.footer.legal[0], href: getLocalizedPath('/terms', lang) },
+  { name: i.footer.legal[1], href: getLocalizedPath('/privacy', lang) },
+  { name: i.footer.legal[2] || 'Refund', href: getLocalizedPath('/refund', lang) },
+  { name: i.footer.legal[3] || 'Cookies', href: getLocalizedPath('/cookies', lang) },
+];
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href={getLocalizedPath('/', lang)} class="footer-logo">
+          <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="footer-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00D4FF" /><stop offset="100%" style="stop-color:#6366F1" /></linearGradient></defs><path d="M16 2L4 28h5.5L16 14l6.5 14H28L16 2z" fill="url(#footer-logo-grad)" /></svg>
+          <span>Veilus</span>
+        </a>
+        <p class="footer-tagline">{i.footer.tagline}</p>
+      </div>
+      <div class="footer-col">
+        <h4>{i.footer.product}</h4>
+        <ul>{i.footer.productLinks.map((link) => <li><a href="#">{link}</a></li>)}</ul>
+      </div>
+      <div class="footer-col">
+        <h4>{i.footer.resources}</h4>
+        <ul>
+          <li><a href="https://docs.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[0]}</a></li>
+          <li><a href="#">{i.footer.resourceLinks[1]}</a></li>
+          <li><a href="#">{i.footer.resourceLinks[2]}</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>{i.footer.community}</h4>
+        <ul>
+          <li><a href="https://t.me/veilusbrowser" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+          <li><a href="https://x.com/veilusbrowser" target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
+          <li><a href="https://github.com/veilus" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>{i.footer.copyright}</p>
+      <div class="footer-legal">{legalLinks.map((link) => <a href={link.href}>{link.name}</a>)}</div>
+    </div>
+  </div>
+</footer>
+<style>
+  .footer { background: var(--bg-surface); border-top: 1px solid var(--color-border); padding: var(--space-3xl) 0 var(--space-xl); }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: var(--space-2xl); }
+  .footer-brand { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .footer-logo { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-text); font-size: 1.25rem; font-weight: 700; }
+  .footer-logo:hover { color: var(--color-text); }
+  .footer-logo .logo-icon { width: 24px; height: 24px; }
+  .footer-tagline { font-size: 0.875rem; color: var(--color-text-muted); }
+  .footer-col h4 { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: var(--space-md); }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); }
+  .footer-col a { color: var(--color-text-secondary); font-size: 0.9375rem; transition: color var(--transition-fast); }
+  .footer-col a:hover { color: var(--color-text); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-xl); margin-top: var(--space-2xl); border-top: 1px solid var(--color-border); }
+  .footer-bottom p { font-size: 0.8125rem; color: var(--color-text-muted); }
+  .footer-legal { display: flex; gap: var(--space-lg); }
+  .footer-legal a { font-size: 0.8125rem; color: var(--color-text-muted); }
+  .footer-legal a:hover { color: var(--color-text-secondary); }
+  @media (max-width: 1024px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } .footer-brand { grid-column: 1 / -1; } }
+  @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-bottom { flex-direction: column; gap: var(--space-md); text-align: center; } }
+</style>

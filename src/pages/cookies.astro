@@ -1,0 +1,10 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { cookieTranslations } from '../i18n/legal/cookies';
+const lang = 'en';
+const t = cookieTranslations[lang];
+---
+
+<LegalLayout lang={lang} title={t.title} description={t.description} lastUpdated={t.lastUpdated}>
+  <Fragment set:html={t.content} />
+</LegalLayout>

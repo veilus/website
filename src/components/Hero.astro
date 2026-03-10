@@ -1,0 +1,597 @@
+---
+import type { Lang } from "../i18n/utils";
+import { t, defaultLang } from "../i18n/utils";
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const i = t(lang);
+---
+
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="badge badge-gold animate-fade-in">
+        <svg
+          class="icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="width:14px;height:14px"
+          ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg
+        >
+        {i.hero.badge}
+      </div>
+
+      <h1 class="hero-title animate-fade-in animate-delay-1">
+        {i.hero.title1}<br />
+        {i.hero.title2}<br />
+        <span class="text-gradient">{i.hero.title3}</span>
+      </h1>
+
+      <p
+        class="hero-subtitle animate-fade-in animate-delay-2"
+        set:html={i.hero.subtitle}
+      />
+
+      <ul class="hero-checks animate-fade-in animate-delay-3">
+        {
+          [i.hero.check1, i.hero.check2, i.hero.check3].map((check) => (
+            <li>
+              <svg
+                class="check-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="var(--color-success)"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              {check}
+            </li>
+          ))
+        }
+      </ul>
+
+      <!-- Waitlist Form -->
+      <div class="waitlist-section animate-fade-in animate-delay-4">
+        <h3 class="waitlist-title">{i.waitlist.title}</h3>
+        <p class="waitlist-subtitle">{i.waitlist.subtitle}</p>
+
+        <form
+          class="waitlist-form"
+          id="hero-waitlist"
+          data-source="hero"
+          data-lang={lang}
+        >
+          <div class="waitlist-input-group">
+            <input
+              type="email"
+              id="hero-email"
+              placeholder={i.waitlist.placeholder}
+              required
+              autocomplete="email"
+            />
+            <button type="submit" class="btn btn-primary waitlist-btn">
+              <span class="btn-text">{i.waitlist.cta}</span>
+              <span class="btn-loader" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="waitlist-message" id="hero-message" aria-live="polite"></p>
+        </form>
+
+        <p class="waitlist-counter animate-fade-in" id="hero-counter"></p>
+
+        <a
+          href="#demo"
+          class="btn btn-secondary btn-large"
+          style="margin-top: var(--space-md);"
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><polygon points="5 3 19 12 5 21 5 3"></polygon></svg
+          >
+          {i.hero.ctaSecondary}
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual animate-fade-in animate-delay-2">
+      <div class="hero-app-frame">
+        <div class="app-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="app-title">Veilus</span>
+        </div>
+        <div class="app-content">
+          <div class="app-sidebar">
+            <div class="sidebar-item active">
+              <div
+                class="profile-avatar"
+                style="background: linear-gradient(135deg, #00D4FF, #6366F1)"
+              >
+              </div>
+              <div class="profile-info">
+                <span class="profile-name">Marketing VN</span><span
+                  class="profile-badge">#fp-a8k2</span>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div
+                class="profile-avatar"
+                style="background: linear-gradient(135deg, #22C55E, #16A34A)"
+              >
+              </div>
+              <div class="profile-info">
+                <span class="profile-name">Shop Shopee 01</span><span
+                  class="profile-badge">#fp-m3j7</span>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div
+                class="profile-avatar"
+                style="background: linear-gradient(135deg, #F59E0B, #D97706)"
+              >
+              </div>
+              <div class="profile-info">
+                <span class="profile-name">Ads Manager</span><span
+                  class="profile-badge">#fp-x9q1</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-main">
+            <div class="app-placeholder">
+              <div class="placeholder-line w80"></div>
+              <div class="placeholder-line w60"></div>
+              <div class="placeholder-block"></div>
+              <div class="placeholder-line w70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const API_BASE = "https://api.veilus.io";
+
+  document.querySelectorAll(".waitlist-form").forEach((form) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const f = e.target as HTMLFormElement;
+      const input = f.querySelector('input[type="email"]') as HTMLInputElement;
+      const btn = f.querySelector(".waitlist-btn") as HTMLButtonElement;
+      const msg = f.parentElement?.querySelector(
+        ".waitlist-message",
+      ) as HTMLElement;
+      const email = input.value.trim();
+      const source = f.dataset.source || "hero";
+      const lang = f.dataset.lang || "en";
+
+      if (!email) return;
+
+      // Loading state
+      btn.classList.add("loading");
+      btn.disabled = true;
+      msg.textContent = "";
+      msg.className = "waitlist-message";
+
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/waitlist`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, source, lang }),
+        });
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          f.classList.add("success");
+          msg.className = "waitlist-message show success";
+          msg.innerHTML = data.duplicate
+            ? `✅ ${document.documentElement.dataset.wlDuplicate || "You're already on the list!"}`
+            : `🎉 ${document.documentElement.dataset.wlSuccess || "You're on the list!"}<br><small>${document.documentElement.dataset.wlSuccessSub || ""}</small>`;
+          input.disabled = true;
+          btn.style.display = "none";
+          // Refresh counter
+          loadWaitlistCount();
+        } else {
+          msg.className = "waitlist-message show error";
+          msg.textContent =
+            data.error ||
+            document.documentElement.dataset.wlError ||
+            "Something went wrong.";
+        }
+      } catch {
+        msg.className = "waitlist-message show error";
+        msg.textContent =
+          document.documentElement.dataset.wlError || "Something went wrong.";
+      } finally {
+        btn.classList.remove("loading");
+        btn.disabled = false;
+      }
+    });
+  });
+
+  // Load counter
+  async function loadWaitlistCount() {
+    try {
+      const res = await fetch(`${API_BASE}/api/v1/waitlist/count`);
+      const data = await res.json();
+      if (data.count > 0) {
+        const tpl =
+          document.documentElement.dataset.wlCounter ||
+          "{count}+ people are waiting";
+        document.querySelectorAll(".waitlist-counter").forEach((el) => {
+          el.textContent = tpl.replace("{count}", data.count.toString());
+          el.classList.add("show");
+        });
+      }
+    } catch {
+      /* silent */
+    }
+  }
+  loadWaitlistCount();
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-3xl);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        rgba(0, 212, 255, 0.12),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 80% 60%,
+        rgba(99, 102, 241, 0.08),
+        transparent
+      ),
+      var(--bg-primary);
+    z-index: 0;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+  .hero-title {
+    font-size: clamp(2.75rem, 5.5vw, 4.25rem);
+    line-height: 1.1;
+    margin-top: var(--space-lg);
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-top: var(--space-lg);
+    max-width: 48ch;
+  }
+  .hero-subtitle :global(strong) {
+    color: var(--color-text);
+  }
+  .hero-checks {
+    list-style: none;
+    margin-top: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .hero-checks li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+  }
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Waitlist Form */
+  .waitlist-section {
+    margin-top: var(--space-xl);
+  }
+  .waitlist-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-xs);
+  }
+  .waitlist-subtitle {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-lg);
+  }
+  .waitlist-input-group {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast);
+  }
+  .waitlist-input-group:focus-within {
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+  .waitlist-input-group input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 14px 16px;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    outline: none;
+    min-width: 0;
+  }
+  .waitlist-input-group input::placeholder {
+    color: var(--color-text-muted);
+  }
+  .waitlist-btn {
+    border: none;
+    padding: 14px 24px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    border-radius: 0;
+  }
+  .waitlist-btn .btn-loader {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+  .waitlist-btn.loading .btn-text {
+    display: none;
+  }
+  .waitlist-btn.loading .btn-loader {
+    display: inline-block;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .waitlist-message {
+    font-size: 0.8125rem;
+    margin-top: var(--space-sm);
+    min-height: 1.5em;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+  .waitlist-message.show {
+    opacity: 1;
+  }
+  .waitlist-message.success {
+    color: var(--color-success, #22c55e);
+  }
+  .waitlist-message.error {
+    color: #ef4444;
+  }
+  .waitlist-message :global(small) {
+    color: var(--color-text-muted);
+  }
+
+  .waitlist-counter {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+  .waitlist-counter.show {
+    opacity: 1;
+  }
+
+  .waitlist-form.success .waitlist-input-group {
+    border-color: rgba(34, 197, 94, 0.4);
+    background: rgba(34, 197, 94, 0.05);
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-app-frame {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+  }
+  .app-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .dot-red {
+    background: #ff5f57;
+  }
+  .dot-yellow {
+    background: #febc2e;
+  }
+  .dot-green {
+    background: #28c840;
+  }
+  .app-title {
+    margin-left: 8px;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+  .app-content {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    min-height: 280px;
+  }
+  .app-sidebar {
+    padding: 12px;
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+  .sidebar-item:hover,
+  .sidebar-item.active {
+    background: rgba(0, 212, 255, 0.08);
+  }
+  .sidebar-item.active {
+    border: 1px solid rgba(0, 212, 255, 0.15);
+  }
+  .profile-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    overflow: hidden;
+  }
+  .profile-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .profile-badge {
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+  }
+  .app-main {
+    padding: 20px;
+  }
+  .app-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .placeholder-line {
+    height: 10px;
+    border-radius: 4px;
+    background: var(--color-border);
+  }
+  .placeholder-block {
+    height: 80px;
+    border-radius: 8px;
+    background: var(--color-border);
+  }
+  .w80 {
+    width: 80%;
+  }
+  .w70 {
+    width: 70%;
+  }
+  .w60 {
+    width: 60%;
+  }
+  @media (max-width: 1024px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-checks {
+      align-items: center;
+    }
+    .waitlist-input-group {
+      margin: 0 auto;
+    }
+    .hero-visual {
+      order: -1;
+    }
+    .hero-app-frame {
+      max-width: 420px;
+    }
+  }
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+    }
+    .app-content {
+      grid-template-columns: 1fr;
+    }
+    .app-sidebar {
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+      flex-direction: row;
+      overflow-x: auto;
+    }
+    .sidebar-item {
+      min-width: 140px;
+    }
+    .waitlist-input-group {
+      flex-direction: column;
+    }
+    .waitlist-btn {
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+  }
+</style>
