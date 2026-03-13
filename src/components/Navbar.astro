@@ -55,9 +55,9 @@ if (basePath !== "/" && basePath.endsWith("/")) {
             y2="100%"
             ><stop offset="0%" style="stop-color:#00D4FF"></stop><stop
               offset="100%"
-              style="stop-color:#6366F1"></stop></linearGradient
-          ></defs
-        >
+              style="stop-color:#6366F1"></stop>
+          </linearGradient>
+        </defs>
         <path
           d="M16 2L4 28h5.5L16 14l6.5 14H28L16 2z"
           fill="url(#logo-gradient)"></path>
@@ -70,7 +70,7 @@ if (basePath !== "/" && basePath.endsWith("/")) {
       <a href="#comparison">{i.nav.compare}</a>
       <a href="#pricing">{i.nav.pricing}</a>
       <a href="#faq">{i.nav.faq}</a>
-      <a href="/blog">Blog</a>
+      <a href="https://blog.veilus.io">Blog</a>
     </div>
 
     <div class="nav-actions">
@@ -86,8 +86,8 @@ if (basePath !== "/" && basePath.endsWith("/")) {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            ><polyline points="6 9 12 15 18 9"></polyline></svg
-          >
+            ><polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </button>
         <div class="lang-dropdown" id="lang-dropdown">
           {
@@ -118,8 +118,8 @@ if (basePath !== "/" && basePath.endsWith("/")) {
             x1="12"
             y1="15"
             x2="12"
-            y2="3"></line></svg
-        >
+            y2="3"></line>
+        </svg>
         {i.nav.download}
       </a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
@@ -133,8 +133,8 @@ if (basePath !== "/" && basePath.endsWith("/")) {
             x1="3"
             y1="12"
             x2="21"
-            y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg
-        >
+            y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
       </button>
     </div>
   </div>
@@ -151,7 +151,7 @@ if (basePath !== "/" && basePath.endsWith("/")) {
   links
     ?.querySelectorAll("a")
     .forEach((link) =>
-      link.addEventListener("click", () => links?.classList.remove("open")),
+      link.addEventListener("click", () => links?.classList.remove("open"))
     );
 
   // Language dropdown
@@ -160,7 +160,7 @@ if (basePath !== "/" && basePath.endsWith("/")) {
     langDropdown?.classList.toggle("open");
   });
   document.addEventListener("click", () =>
-    langDropdown?.classList.remove("open"),
+    langDropdown?.classList.remove("open")
   );
 
   window.addEventListener(
@@ -168,7 +168,7 @@ if (basePath !== "/" && basePath.endsWith("/")) {
     () => {
       navbar?.classList.toggle("scrolled", window.scrollY > 50);
     },
-    { passive: true },
+    { passive: true }
   );
 </script>
 
