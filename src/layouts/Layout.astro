@@ -112,93 +112,88 @@ const faqJsonLd = {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0B0F1A" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="index, follow" />
-  </head>{
-    GA_ID && (
-      <Fragment>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        />
-        <script
-          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
-        />
-      </Fragment>
-    )
-  }
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href={canonicalUrl} />
+    <!-- Google Analytics -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+    ></script>
+    <script
+      set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
+    ></script>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonicalUrl} />
-  <meta property="og:image" content={`${siteUrl}/og-image.png`} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Veilus — Anti-detect browser" />
-  <meta property="og:site_name" content="Veilus" />
-  <meta property="og:locale" content={lang === "en" ? "en_US" : lang} />
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Veilus — Anti-detect browser" />
+    <meta property="og:site_name" content="Veilus" />
+    <meta property="og:locale" content={lang === "en" ? "en_US" : lang} />
 
-  <!-- Hreflang for SEO -->
-  {
-    hreflangs.map(({ lang: l, href }) => (
-      <link rel="alternate" hreflang={l} href={href} />
-    ))
-  }
-  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
-  <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)}
-  ></script>
-  <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)}
-  ></script>
-  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}
-  ></script>
+    <!-- Hreflang for SEO -->
+    {
+      hreflangs.map(({ lang: l, href }) => (
+        <link rel="alternate" hreflang={l} href={href} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
 
-  <!-- Fonts (preconnect for performance) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap"
-    rel="stylesheet"
-  />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}
+    ></script>
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)}
+    ></script>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)}
+    ></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}
+    ></script>
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <title>{title}</title>
+    <!-- Fonts (preconnect for performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
 
-  <slot />
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
+      document
+        .querySelectorAll("[data-animate]")
+        .forEach((el) => observer.observe(el));
+    </script>
 
-  <script>
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-    document
-      .querySelectorAll("[data-animate]")
-      .forEach((el) => observer.observe(el));
-  </script>
-
-  <!-- GA4 Custom Events -->
-  <script src="/analytics.js" defer></script>
+    <!-- GA4 Custom Events -->
+    <script src="/analytics.js" defer></script>
+  </body>
 </html>
 
 <style is:global>
