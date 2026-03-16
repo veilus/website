@@ -24,14 +24,17 @@ const legalLinks = [
       </div>
       <div class="footer-col">
         <h4>{i.footer.product}</h4>
-        <ul>{i.footer.productLinks.map((link) => <li><a href="#">{link}</a></li>)}</ul>
+        <ul>
+          <li><a href={getLocalizedPath('/', lang) + '#features'}>{i.footer.productLinks[0]}</a></li>
+          <li><a href={getLocalizedPath('/', lang) + '#pricing'}>{i.footer.productLinks[1]}</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>{i.footer.resources}</h4>
         <ul>
           <li><a href="https://docs.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[0]}</a></li>
-          <li><a href="#">{i.footer.resourceLinks[1]}</a></li>
-          <li><a href="#">{i.footer.resourceLinks[2]}</a></li>
+          <li><a href="https://blog.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[1]}</a></li>
+          <li><a href="https://docs.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[2]}</a></li>
         </ul>
       </div>
       <div class="footer-col">

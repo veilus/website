@@ -1,0 +1,39 @@
+# Veilus
+> Anti-detect browser with built-in automation platform. Native Chromium engine — 3x faster, 80% less RAM.
+
+## Key Facts
+- Free tier: 5 browser profiles forever, no credit card required
+- Native engine built with Tauri + Rust (not Electron)
+- Each profile has a unique fingerprint: Canvas, WebGL, AudioContext, Client Hints (20+ parameters)
+- Built-in automation: action recorder, visual canvas flow builder, AI agent (BYOK)
+- End-to-end encrypted sync via Git or Google Drive
+- Currently available on macOS; Windows and Linux expected Q2 2026
+
+## Main Pages
+- [Homepage](https://veilus.io): Product overview, features, pricing, FAQ
+- [Download](https://veilus.io/download): Download Veilus for macOS
+- [Documentation](https://docs.veilus.io): User guides, API reference
+- [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy
+- [Privacy Policy](https://veilus.io/privacy): Data collection and protection
+- [Terms of Service](https://veilus.io/terms): Usage terms
+- [Refund Policy](https://veilus.io/refund): Refund conditions
+
+## Core Features
+- Fingerprint Engine: 20+ browser parameters customized per profile
+- VeilusFlow: Record actions → auto-generate YAML + Playwright scripts
+- Visual Canvas: Drag-and-drop automation flow builder (low-code)
+- VeilusSync: Hierarchical end-to-end encrypted profile sync
+- Scheduling: Hourly/daily/weekly automation with missed-run catch-up
+- AI Agent: BYOK (GPT-4, Claude, Gemini) for DOM analysis and auto-execution
+
+## Pricing
+- Free: 5 profiles, basic fingerprinting
+- Starter ($15/mo): 50 profiles, automation
+- Pro ($49/mo): 200 profiles, team features
+- Business ($99/mo): Unlimited profiles, API access, priority support
+
+## Contact
+- Website: https://veilus.io
+- Telegram: https://t.me/veilusbrowser
+- Twitter/X: https://x.com/veilusbrowser
+- GitHub: https://github.com/veilus

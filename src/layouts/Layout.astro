@@ -1,6 +1,13 @@
 ---
-import type { Lang } from '../i18n/utils';
-import { t, languages, supportedLangs, defaultLang, getLocalizedPath, getHreflangs } from '../i18n/utils';
+import type { Lang } from "../i18n/utils";
+import {
+  t,
+  languages,
+  supportedLangs,
+  defaultLang,
+  getLocalizedPath,
+  getHreflangs,
+} from "../i18n/utils";
 
 interface Props {
   lang?: Lang;
@@ -10,19 +17,15 @@ interface Props {
 
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
-const {
-  title = i.meta.title,
-  description = i.meta.description,
-} = Astro.props;
+const { title = i.meta.title, description = i.meta.description } = Astro.props;
 
-const siteUrl = 'https://veilus.io';
+const siteUrl = "https://veilus.io";
 const hreflangs = getHreflangs(Astro.url.pathname, siteUrl);
-const canonicalUrl = lang === defaultLang
-  ? `${siteUrl}/`
-  : `${siteUrl}/${lang}/`;
+const canonicalUrl =
+  lang === defaultLang ? `${siteUrl}/` : `${siteUrl}/${lang}/`;
 
 // Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID
-const GA_ID = 'G-CZ9G6B0L4M';
+const GA_ID = "G-CZ9G6B0L4M";
 
 // JSON-LD Structured Data
 const jsonLd = {
@@ -62,8 +65,28 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "Veilus",
   url: siteUrl,
-  logo: `${siteUrl}/og-image.png`,
-  sameAs: [],
+  logo: `${siteUrl}/logo-512.png`,
+  description:
+    "Anti-detect browser with built-in automation platform. Native Chromium engine — 3x faster, 80% less RAM.",
+  sameAs: [
+    "https://t.me/veilusbrowser",
+    "https://x.com/veilusbrowser",
+    "https://github.com/veilus",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    url: "https://t.me/veilusbrowser",
+  },
+};
+
+// WebSite JSON-LD (sitelinks search box)
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Veilus",
+  url: siteUrl,
+  description: i.meta.description,
 };
 
 // FAQ JSON-LD (for rich snippets)
@@ -81,7 +104,7 @@ const faqJsonLd = {
 };
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang={lang} dir={languages[lang].dir}>
   <head>
     <meta charset="UTF-8" />
@@ -90,81 +113,94 @@ const faqJsonLd = {
     <meta name="theme-color" content="#0B0F1A" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="index, follow" />
-
-    {GA_ID && (
+  </head>{
+    GA_ID && (
       <Fragment>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-        <script set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}></script>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        />
+        <script
+          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        />
       </Fragment>
-    )}
+    )
+  }
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalUrl} />
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Veilus — Anti-detect browser" />
-    <meta property="og:site_name" content="Veilus" />
-    <meta property="og:locale" content={lang === 'en' ? 'en_US' : lang} />
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Veilus — Anti-detect browser" />
+  <meta property="og:site_name" content="Veilus" />
+  <meta property="og:locale" content={lang === "en" ? "en_US" : lang} />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
 
-    <!-- Hreflang for SEO -->
-    {hreflangs.map(({ lang: l, href }) => (
+  <!-- Hreflang for SEO -->
+  {
+    hreflangs.map(({ lang: l, href }) => (
       <link rel="alternate" hreflang={l} href={href} />
-    ))}
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+    ))
+  }
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)}
+  ></script>
+  <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)}
+  ></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}
+  ></script>
 
-    <!-- Fonts (preconnect for performance) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Fonts (preconnect for performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <title>{title}</title>
 
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-      );
-      document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
-    </script>
 
-    <!-- GA4 Custom Events -->
-    <script src="/analytics.js" defer></script>
-  </body>
+  <slot />
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+    document
+      .querySelectorAll("[data-animate]")
+      .forEach((el) => observer.observe(el));
+  </script>
+
+  <!-- GA4 Custom Events -->
+  <script src="/analytics.js" defer></script>
 </html>
 
 <style is:global>
-  @import '../styles/global.css';
+  @import "../styles/global.css";
 </style>

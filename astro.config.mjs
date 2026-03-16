@@ -7,6 +7,9 @@ export default defineConfig({
     output: 'static',
     integrations: [
         sitemap({
+            filter: (page) =>
+                !page.includes('/blog/') &&
+                !page.includes('/en/download'),
             i18n: {
                 defaultLocale: 'en',
                 locales: {
