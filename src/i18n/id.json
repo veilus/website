@@ -159,9 +159,9 @@
                 ]
             },
             {
-                "feature": "Harga Pro",
+                "feature": "Paket berbayar",
                 "values": [
-                    "$49/bln",
+                    "$9/bln · $99 seumur hidup",
                     "$99/bln",
                     "$49/bln",
                     "$9/bln"
@@ -173,80 +173,46 @@
         "badge": "Harga",
         "title": "Sederhana,",
         "titleHighlight": "transparan",
-        "subtitle": "Mulai gratis. Tingkatkan saat siap. Hemat 40% dengan paket tahunan.",
-        "popular": "Paling populer",
-        "plans": [
-            {
-                "name": "Gratis",
-                "price": "0",
-                "period": "selamanya",
-                "desc": "Mulai sekarang, tanpa kartu",
-                "features": [
-                    "5 profil",
-                    "Fingerprint dasar",
-                    "Dukungan proxy",
-                    "Dukungan komunitas"
-                ],
-                "cta": "Mulai gratis"
-            },
-            {
-                "name": "Starter",
-                "price": "15",
-                "period": "/bulan",
-                "desc": "Mulai dengan otomatisasi",
-                "features": [
-                    "30 profil",
-                    "Veilus Flow dasar",
-                    "5 template skrip",
-                    "Penjadwalan",
-                    "Dukungan email"
-                ],
-                "cta": "Tingkatkan"
-            },
-            {
-                "name": "Pro",
-                "price": "49",
-                "period": "/bulan",
-                "desc": "Untuk individu dan freelancer",
-                "features": [
-                    "200 profil",
-                    "Veilus Flow lengkap",
-                    "Veilus Sync",
-                    "Agen AI (BYOK)",
-                    "Template tak terbatas",
-                    "Dukungan prioritas"
-                ],
-                "cta": "Tingkatkan",
-                "popular": true
-            },
-            {
-                "name": "Business",
-                "price": "99",
-                "period": "/bulan",
-                "desc": "Untuk tim dan agensi",
-                "features": [
-                    "1,000 profil",
-                    "Anggota tak terbatas",
-                    "Semua fitur Pro",
-                    "Operasi tak terbatas",
-                    "Dukungan 24/7"
-                ],
-                "cta": "Tingkatkan"
-            },
-            {
-                "name": "Enterprise",
-                "price": "Hubungi",
-                "period": "",
-                "desc": "Solusi khusus untuk bisnis",
-                "features": [
-                    "Profil tak terbatas",
-                    "API lengkap",
-                    "White-label",
-                    "SLA"
-                ],
-                "cta": "Hubungi kami"
-            }
-        ]
+        "subtitle": "Mulai gratis. Bayar bulanan, atau bayar sekali dan pakai selamanya.",
+        "perMonth": "/ bulan per perangkat",
+        "orUsd": "atau {usd}",
+        "free": {
+            "name": "Gratis",
+            "period": "selamanya",
+            "desc": "Coba Veilus di satu perangkat",
+            "features": [
+                "5 profil",
+                "1 perangkat",
+                "Mesin browser terbaru",
+                "Dukungan proxy"
+            ],
+            "excluded": "Tanpa Veilus Flow, penjadwalan, eksekusi massal, dan API lokal",
+            "cta": "Mulai gratis"
+        },
+        "monthly": {
+            "name": "Bulanan",
+            "desc": "Semua fitur, bayar bulanan per perangkat",
+            "cta": "Beli bulanan"
+        },
+        "lifetime": {
+            "name": "Seumur hidup",
+            "desc": "Bayar sekali, pakai selamanya",
+            "everything": "Semua fitur paket Bulanan",
+            "terms": "Pembaruan seumur hidup · dukungan 3 tahun (perpanjangan: 40% harga paket setiap 3 tahun)"
+        },
+        "paidFeatures": [
+            "Profil tanpa batas",
+            "Otomasi Veilus Flow",
+            "Penjadwalan dan eksekusi massal",
+            "REST API lokal",
+            "Veilus Sync",
+            "Template skrip",
+            "Mesin browser terbaru"
+        ],
+        "device": "1 perangkat",
+        "devices": "{n} perangkat",
+        "contact": "Lebih dari 20 perangkat?",
+        "contactCta": "Hubungi kami"
     },
     "faq": {
         "badge": "FAQ",

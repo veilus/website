@@ -159,9 +159,9 @@
                 ]
             },
             {
-                "feature": "Giá Pro",
+                "feature": "Gói trả phí",
                 "values": [
-                    "$49/tháng",
+                    "$9/tháng · $99 trọn đời",
                     "$99/tháng",
                     "$49/tháng",
                     "$9/tháng"
@@ -173,80 +173,46 @@
         "badge": "Bảng giá",
         "title": "Đơn giản,",
         "titleHighlight": "minh bạch",
-        "subtitle": "Bắt đầu miễn phí. Nâng cấp khi sẵn sàng. Tiết kiệm 40% với gói năm.",
-        "popular": "Phổ biến nhất",
-        "plans": [
-            {
-                "name": "Free",
-                "price": "0",
-                "period": "mãi mãi",
-                "desc": "Bắt đầu ngay, không thẻ tín dụng",
-                "features": [
-                    "5 profiles",
-                    "Fingerprint cơ bản",
-                    "Proxy support",
-                    "Cộng đồng hỗ trợ"
-                ],
-                "cta": "Bắt đầu miễn phí"
-            },
-            {
-                "name": "Starter",
-                "price": "15",
-                "period": "/tháng",
-                "desc": "Bắt đầu với tự động hóa",
-                "features": [
-                    "30 profiles",
-                    "Veilus Flow cơ bản",
-                    "5 mẫu script",
-                    "Lên lịch chạy",
-                    "Hỗ trợ email"
-                ],
-                "cta": "Nâng cấp ngay"
-            },
-            {
-                "name": "Pro",
-                "price": "49",
-                "period": "/tháng",
-                "desc": "Dành cho cá nhân và freelancer",
-                "features": [
-                    "200 profiles",
-                    "Veilus Flow đầy đủ",
-                    "Veilus Sync",
-                    "AI Agent (BYOK)",
-                    "Template không giới hạn",
-                    "Hỗ trợ ưu tiên"
-                ],
-                "cta": "Nâng cấp ngay",
-                "popular": true
-            },
-            {
-                "name": "Business",
-                "price": "99",
-                "period": "/tháng",
-                "desc": "Dành cho team và agency",
-                "features": [
-                    "1,000 profiles",
-                    "Team không giới hạn",
-                    "Mọi tính năng Pro",
-                    "Batch không giới hạn",
-                    "Hỗ trợ 24/7"
-                ],
-                "cta": "Nâng cấp ngay"
-            },
-            {
-                "name": "Enterprise",
-                "price": "Liên hệ",
-                "period": "",
-                "desc": "Giải pháp tùy chỉnh cho doanh nghiệp",
-                "features": [
-                    "Profiles không giới hạn",
-                    "API đầy đủ",
-                    "White-label",
-                    "SLA & Compliance"
-                ],
-                "cta": "Liên hệ"
-            }
-        ]
+        "subtitle": "Bắt đầu miễn phí. Trả theo tháng, hoặc trả một lần dùng mãi.",
+        "perMonth": "/ tháng mỗi máy",
+        "orUsd": "hoặc {usd}",
+        "free": {
+            "name": "Free",
+            "period": "mãi mãi",
+            "desc": "Dùng thử Veilus trên một máy",
+            "features": [
+                "5 hồ sơ",
+                "1 máy",
+                "Engine trình duyệt mới nhất",
+                "Hỗ trợ proxy"
+            ],
+            "excluded": "Không có Veilus Flow, lịch chạy, chạy hàng loạt và API cục bộ",
+            "cta": "Bắt đầu miễn phí"
+        },
+        "monthly": {
+            "name": "Thuê tháng",
+            "desc": "Đủ mọi tính năng, trả theo tháng cho từng máy",
+            "cta": "Thuê tháng"
+        },
+        "lifetime": {
+            "name": "Trọn đời",
+            "desc": "Trả một lần, dùng mãi",
+            "everything": "Mọi thứ của gói Thuê tháng",
+            "terms": "Cập nhật trọn đời · hỗ trợ 3 năm (gia hạn 40% giá gói mỗi 3 năm)"
+        },
+        "paidFeatures": [
+            "Hồ sơ không giới hạn",
+            "Tự động hoá Veilus Flow",
+            "Lịch chạy và chạy hàng loạt",
+            "REST API cục bộ",
+            "Veilus Sync",
+            "Template kịch bản",
+            "Engine trình duyệt mới nhất"
+        ],
+        "device": "1 máy",
+        "devices": "{n} máy",
+        "contact": "Trên 20 máy?",
+        "contactCta": "Liên hệ"
     },
     "faq": {
         "badge": "FAQ",

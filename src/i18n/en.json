@@ -159,9 +159,9 @@
                 ]
             },
             {
-                "feature": "Pro price",
+                "feature": "Paid plan",
                 "values": [
-                    "$49/mo",
+                    "$9/mo · $99 lifetime",
                     "$99/mo",
                     "$49/mo",
                     "$9/mo"
@@ -173,80 +173,46 @@
         "badge": "Pricing",
         "title": "Simple,",
         "titleHighlight": "transparent",
-        "subtitle": "Start free. Upgrade when ready. Save 40% with annual plan.",
-        "popular": "Most popular",
-        "plans": [
-            {
-                "name": "Free",
-                "price": "0",
-                "period": "forever",
-                "desc": "Get started now, no credit card",
-                "features": [
-                    "5 profiles",
-                    "Basic fingerprint",
-                    "Proxy support",
-                    "Community support"
-                ],
-                "cta": "Start free"
-            },
-            {
-                "name": "Starter",
-                "price": "15",
-                "period": "/month",
-                "desc": "For getting started with automation",
-                "features": [
-                    "30 profiles",
-                    "Basic Veilus Flow",
-                    "5 script templates",
-                    "Scheduling",
-                    "Email support"
-                ],
-                "cta": "Upgrade now"
-            },
-            {
-                "name": "Pro",
-                "price": "49",
-                "period": "/month",
-                "desc": "For individuals and freelancers",
-                "features": [
-                    "200 profiles",
-                    "Full Veilus Flow automation",
-                    "Veilus Sync cloud sync",
-                    "AI Agent (BYOK)",
-                    "Unlimited templates",
-                    "Priority support"
-                ],
-                "cta": "Upgrade now",
-                "popular": true
-            },
-            {
-                "name": "Business",
-                "price": "99",
-                "period": "/month",
-                "desc": "For teams and agencies",
-                "features": [
-                    "1,000 profiles",
-                    "Unlimited team members",
-                    "Everything in Pro",
-                    "Unlimited batch ops",
-                    "24/7 priority support"
-                ],
-                "cta": "Upgrade now"
-            },
-            {
-                "name": "Enterprise",
-                "price": "Contact",
-                "period": "",
-                "desc": "Custom solutions for businesses",
-                "features": [
-                    "Unlimited profiles",
-                    "Full API",
-                    "White-label",
-                    "SLA & Compliance"
-                ],
-                "cta": "Contact us"
-            }
-        ]
+        "subtitle": "Start free. Pay monthly, or pay once and keep it forever.",
+        "perMonth": "/ month per device",
+        "orUsd": "or {usd}",
+        "free": {
+            "name": "Free",
+            "period": "forever",
+            "desc": "Try Veilus on one device",
+            "features": [
+                "5 profiles",
+                "1 device",
+                "Latest browser engine",
+                "Proxy support"
+            ],
+            "excluded": "No Veilus Flow, scheduling, batch runs or local API",
+            "cta": "Start free"
+        },
+        "monthly": {
+            "name": "Monthly",
+            "desc": "Every feature, paid monthly per device",
+            "cta": "Buy monthly"
+        },
+        "lifetime": {
+            "name": "Lifetime",
+            "desc": "Pay once, use it forever",
+            "everything": "Everything in Monthly",
+            "terms": "Lifetime updates · 3 years of support (renewal: 40% of the plan price per 3 years)"
+        },
+        "paidFeatures": [
+            "Unlimited profiles",
+            "Veilus Flow automation",
+            "Scheduling and batch runs",
+            "Local REST API",
+            "Veilus Sync",
+            "Script templates",
+            "Latest browser engine"
+        ],
+        "device": "1 device",
+        "devices": "{n} devices",
+        "contact": "More than 20 devices?",
+        "contactCta": "Contact us"
     },
     "faq": {
         "badge": "FAQ",
@@ -291,7 +257,7 @@
     "finalCta": {
         "title": "Ready to become",
         "titleHighlight": "invisible?",
-        "desc": "Download Veilus for free today.\n3 profiles. Unique fingerprint. No card. No trial. Forever.",
+        "desc": "Download Veilus for free today.\n5 profiles. Unique fingerprint. No card. No trial. Forever.",
         "cta": "Download free",
         "note": "No personal data collected"
     },

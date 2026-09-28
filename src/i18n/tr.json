@@ -159,9 +159,9 @@
                 ]
             },
             {
-                "feature": "Pro fiyat",
+                "feature": "Ücretli plan",
                 "values": [
-                    "$49/ay",
+                    "$9/ay · $99 ömür boyu",
                     "$99/ay",
                     "$49/ay",
                     "$9/ay"
@@ -173,80 +173,46 @@
         "badge": "Fiyatlar",
         "title": "Basit,",
         "titleHighlight": "şeffaf",
-        "subtitle": "Ücretsiz başlayın. Hazır olduğunuzda yükseltin. Yıllık planda %40 tasarruf.",
-        "popular": "En popüler",
-        "plans": [
-            {
-                "name": "Ücretsiz",
-                "price": "0",
-                "period": "sonsuza kadar",
-                "desc": "Hemen başlayın, kart gerekmez",
-                "features": [
-                    "5 profil",
-                    "Temel parmak izi",
-                    "Proxy desteği",
-                    "Topluluk desteği"
-                ],
-                "cta": "Ücretsiz başla"
-            },
-            {
-                "name": "Starter",
-                "price": "15",
-                "period": "/ay",
-                "desc": "Otomasyona başlayın",
-                "features": [
-                    "30 profil",
-                    "Temel Veilus Flow",
-                    "5 betik şablonu",
-                    "Zamanlama",
-                    "E-posta desteği"
-                ],
-                "cta": "Şimdi yükselt"
-            },
-            {
-                "name": "Pro",
-                "price": "49",
-                "period": "/ay",
-                "desc": "Bireyler ve freelancerlar için",
-                "features": [
-                    "200 profil",
-                    "Tam Veilus Flow",
-                    "Veilus Sync",
-                    "AI Ajan (BYOK)",
-                    "Sınırsız şablon",
-                    "Öncelikli destek"
-                ],
-                "cta": "Yükselt",
-                "popular": true
-            },
-            {
-                "name": "Business",
-                "price": "99",
-                "period": "/ay",
-                "desc": "Ekipler ve ajanslar için",
-                "features": [
-                    "1,000 profil",
-                    "Sınırsız üye",
-                    "Tüm Pro özellikleri",
-                    "Sınırsız işlem",
-                    "7/24 destek"
-                ],
-                "cta": "Yükselt"
-            },
-            {
-                "name": "Enterprise",
-                "price": "İletişim",
-                "period": "",
-                "desc": "İşletmeler için özel çözümler",
-                "features": [
-                    "Sınırsız profil",
-                    "Tam API",
-                    "White-label",
-                    "SLA"
-                ],
-                "cta": "İletişime geç"
-            }
-        ]
+        "subtitle": "Ücretsiz başlayın. Aylık ödeyin ya da bir kez ödeyip sonsuza kadar kullanın.",
+        "perMonth": "/ ay, cihaz başına",
+        "orUsd": "veya {usd}",
+        "free": {
+            "name": "Ücretsiz",
+            "period": "sonsuza kadar",
+            "desc": "Veilus'u tek cihazda deneyin",
+            "features": [
+                "5 profil",
+                "1 cihaz",
+                "En yeni tarayıcı motoru",
+                "Proxy desteği"
+            ],
+            "excluded": "Veilus Flow, zamanlama, toplu çalıştırma ve yerel API yok",
+            "cta": "Ücretsiz başla"
+        },
+        "monthly": {
+            "name": "Aylık",
+            "desc": "Tüm özellikler, cihaz başına aylık ödeme",
+            "cta": "Aylık satın al"
+        },
+        "lifetime": {
+            "name": "Ömür boyu",
+            "desc": "Bir kez ödeyin, sonsuza kadar kullanın",
+            "everything": "Aylık plandaki her şey",
+            "terms": "Ömür boyu güncelleme · 3 yıl destek (yenileme: her 3 yıl için plan fiyatının %40'ı)"
+        },
+        "paidFeatures": [
+            "Sınırsız profil",
+            "Veilus Flow otomasyonu",
+            "Zamanlama ve toplu çalıştırma",
+            "Yerel REST API",
+            "Veilus Sync",
+            "Betik şablonları",
+            "En yeni tarayıcı motoru"
+        ],
+        "device": "1 cihaz",
+        "devices": "{n} cihaz",
+        "contact": "20'den fazla cihaz mı?",
+        "contactCta": "Bize ulaşın"
     },
     "faq": {
         "badge": "SSS",

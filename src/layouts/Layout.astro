@@ -1,5 +1,6 @@
 ---
 import type { Lang } from "../i18n/utils";
+import { SKUS } from "../data/skus.js";
 import {
   t,
   languages,
@@ -34,6 +35,9 @@ const canonicalUrl =
 const GA_ID = "G-CZ9G6B0L4M";
 
 // JSON-LD Structured Data
+const soldUsd = Object.values(SKUS)
+  .filter((s) => s.kind !== "addon")
+  .map((s) => s.usd);
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -42,12 +46,13 @@ const jsonLd = {
   operatingSystem: "Windows, macOS, Linux",
   description: i.meta.description,
   url: siteUrl,
+  // Free (0) + các gói bán trực tiếp (thuê tháng, trọn đời); gói thêm máy không tính.
   offers: {
     "@type": "AggregateOffer",
     lowPrice: "0",
-    highPrice: "79",
+    highPrice: String(Math.max(...soldUsd)),
     priceCurrency: "USD",
-    offerCount: "4",
+    offerCount: String(soldUsd.length + 1),
   },
   aggregateRating: {
     "@type": "AggregateRating",

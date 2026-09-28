@@ -159,9 +159,9 @@
                 ]
             },
             {
-                "feature": "Precio Pro",
+                "feature": "Plan de pago",
                 "values": [
-                    "$49/mes",
+                    "$9/mes · $99 de por vida",
                     "$99/mes",
                     "$49/mes",
                     "$9/mes"
@@ -173,80 +173,46 @@
         "badge": "Precios",
         "title": "Simple,",
         "titleHighlight": "transparente",
-        "subtitle": "Comienza gratis. Actualiza cuando estés listo. Ahorra 40% con el plan anual.",
-        "popular": "Más popular",
-        "plans": [
-            {
-                "name": "Gratis",
-                "price": "0",
-                "period": "siempre",
-                "desc": "Empieza ahora, sin tarjeta",
-                "features": [
-                    "5 perfiles",
-                    "Fingerprint básico",
-                    "Soporte proxy",
-                    "Soporte comunidad"
-                ],
-                "cta": "Empezar gratis"
-            },
-            {
-                "name": "Starter",
-                "price": "15",
-                "period": "/mes",
-                "desc": "Empieza con automatización",
-                "features": [
-                    "30 perfiles",
-                    "Veilus Flow básico",
-                    "5 plantillas",
-                    "Programación",
-                    "Soporte email"
-                ],
-                "cta": "Actualizar"
-            },
-            {
-                "name": "Pro",
-                "price": "49",
-                "period": "/mes",
-                "desc": "Para individuos y freelancers",
-                "features": [
-                    "200 perfiles",
-                    "Veilus Flow completo",
-                    "Veilus Sync",
-                    "Agente IA (BYOK)",
-                    "Templates ilimitados",
-                    "Soporte prioritario"
-                ],
-                "cta": "Actualizar",
-                "popular": true
-            },
-            {
-                "name": "Business",
-                "price": "99",
-                "period": "/mes",
-                "desc": "Para equipos y agencias",
-                "features": [
-                    "1,000 perfiles",
-                    "Miembros ilimitados",
-                    "Todo en Pro",
-                    "Operaciones ilimitadas",
-                    "Soporte 24/7"
-                ],
-                "cta": "Actualizar"
-            },
-            {
-                "name": "Enterprise",
-                "price": "Contacto",
-                "period": "",
-                "desc": "Soluciones personalizadas",
-                "features": [
-                    "Perfiles ilimitados",
-                    "API completa",
-                    "White-label",
-                    "SLA"
-                ],
-                "cta": "Contactar"
-            }
-        ]
+        "subtitle": "Empieza gratis. Paga cada mes o paga una vez y úsalo para siempre.",
+        "perMonth": "/ mes por dispositivo",
+        "orUsd": "o {usd}",
+        "free": {
+            "name": "Gratis",
+            "period": "siempre",
+            "desc": "Prueba Veilus en un dispositivo",
+            "features": [
+                "5 perfiles",
+                "1 dispositivo",
+                "Motor de navegador más reciente",
+                "Soporte de proxy"
+            ],
+            "excluded": "Sin Veilus Flow, programación, ejecución por lotes ni API local",
+            "cta": "Empezar gratis"
+        },
+        "monthly": {
+            "name": "Mensual",
+            "desc": "Todas las funciones, pago mensual por dispositivo",
+            "cta": "Comprar mensual"
+        },
+        "lifetime": {
+            "name": "De por vida",
+            "desc": "Paga una vez, úsalo para siempre",
+            "everything": "Todo lo del plan Mensual",
+            "terms": "Actualizaciones de por vida · 3 años de soporte (renovación: 40% del precio del plan cada 3 años)"
+        },
+        "paidFeatures": [
+            "Perfiles ilimitados",
+            "Automatización con Veilus Flow",
+            "Programación y ejecución por lotes",
+            "API REST local",
+            "Veilus Sync",
+            "Plantillas de scripts",
+            "Motor de navegador más reciente"
+        ],
+        "device": "1 dispositivo",
+        "devices": "{n} dispositivos",
+        "contact": "¿Más de 20 dispositivos?",
+        "contactCta": "Contáctanos"
     },
     "faq": {
         "badge": "FAQ",
