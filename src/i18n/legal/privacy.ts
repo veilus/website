@@ -89,7 +89,7 @@ export const privacyTranslations: Record<string, {
 <p>The Veilus website uses <strong>minimal cookies</strong>:</p>
 <ul>
   <li><strong>Essential cookies:</strong> Session authentication only</li>
-  <li><strong>Analytics:</strong> We use Google Analytics 4, configured with IP anonymization and GDPR-compliant settings</li>
+  <li><strong>Analytics:</strong> We use Google Analytics 4, configured with IP anonymization</li>
 </ul>
 <p>We do not use advertising cookies or third-party tracking cookies.</p>
 
@@ -191,7 +191,7 @@ export const privacyTranslations: Record<string, {
 <p>Website Veilus sử dụng <strong>cookie tối thiểu</strong>:</p>
 <ul>
   <li><strong>Cookie thiết yếu:</strong> Chỉ xác thực phiên</li>
-  <li><strong>Phân tích:</strong> Chúng tôi sử dụng Google Analytics 4, cấu hình ẩn danh IP và tuân thủ GDPR</li>
+  <li><strong>Phân tích:</strong> Chúng tôi sử dụng Google Analytics 4, cấu hình ẩn danh IP</li>
 </ul>
 <p>Chúng tôi không sử dụng cookie quảng cáo hoặc cookie theo dõi bên thứ ba.</p>
 
@@ -243,7 +243,7 @@ export const privacyTranslations: Record<string, {
 <ul><li>活跃账户：在账户活跃期间保留。</li><li>已删除账户：30天内删除所有个人数据。</li></ul>
 
 <h2>8. Cookie</h2>
-<p>我们使用必要的会话Cookie，以及启用IP匿名化的Google Analytics 4用于分析，符合GDPR。</p>
+<p>我们使用必要的会话Cookie，以及启用IP匿名化的Google Analytics 4用于分析。</p>
 
 <h2>9. 儿童隐私</h2>
 <p>Veilus不面向16岁以下用户。</p>
