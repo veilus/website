@@ -171,7 +171,7 @@
                 "Motor de navegador más reciente",
                 "Soporte de proxy"
             ],
-            "excluded": "Sin Veilus Flow, programación, ejecución por lotes ni API local",
+            "excluded": "Sin Veilus Flow, programación, ejecución por lotes ni API/MCP local",
             "cta": "Empezar gratis",
             "trial": "Descarga y prueba Pro gratis durante 7 días en la app"
         },
@@ -190,7 +190,7 @@
             "Perfiles ilimitados",
             "Automatización con Veilus Flow",
             "Programación y ejecución por lotes",
-            "API REST local",
+            "API REST local y MCP",
             "Veilus Sync",
             "Plantillas de scripts",
             "Motor de navegador más reciente"
@@ -243,7 +243,7 @@
     "finalCta": {
         "title": "¿Listo para ser",
         "titleHighlight": "invisible?",
-        "desc": "Descarga Veilus gratis hoy.\n5 perfiles. Fingerprint único. Sin tarjeta. Sin prueba. Para siempre.",
+        "desc": "Descarga Veilus gratis hoy.\n5 perfiles. Fingerprint único. Sin tarjeta. Para siempre.",
         "cta": "Descargar gratis",
         "note": "No recopilamos datos personales"
     },

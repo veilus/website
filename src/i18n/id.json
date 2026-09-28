@@ -171,7 +171,7 @@
                 "Mesin browser terbaru",
                 "Dukungan proxy"
             ],
-            "excluded": "Tanpa Veilus Flow, penjadwalan, eksekusi massal, dan API lokal",
+            "excluded": "Tanpa Veilus Flow, penjadwalan, eksekusi massal, dan API/MCP lokal",
             "cta": "Mulai gratis",
             "trial": "Unduh dan coba Pro gratis 7 hari di aplikasi"
         },
@@ -190,7 +190,7 @@
             "Profil tanpa batas",
             "Otomasi Veilus Flow",
             "Penjadwalan dan eksekusi massal",
-            "REST API lokal",
+            "REST API lokal dan MCP",
             "Veilus Sync",
             "Template skrip",
             "Mesin browser terbaru"
@@ -243,7 +243,7 @@
     "finalCta": {
         "title": "Siap menjadi",
         "titleHighlight": "tak terlihat?",
-        "desc": "Unduh Veilus gratis hari ini.\n5 profil. Fingerprint unik. Tanpa kartu. Bukan trial. Selamanya.",
+        "desc": "Unduh Veilus gratis hari ini.\n5 profil. Fingerprint unik. Tanpa kartu. Selamanya.",
         "cta": "Unduh gratis",
         "note": "Tidak mengumpulkan data pribadi"
     },

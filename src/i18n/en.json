@@ -171,7 +171,7 @@
                 "Latest browser engine",
                 "Proxy support"
             ],
-            "excluded": "No Veilus Flow, scheduling, batch runs or local API",
+            "excluded": "No Veilus Flow, scheduling, batch runs or local API/MCP",
             "cta": "Start free",
             "trial": "Download and try Pro free for 7 days in the app"
         },
@@ -190,7 +190,7 @@
             "Unlimited profiles",
             "Veilus Flow automation",
             "Scheduling and batch runs",
-            "Local REST API",
+            "Local REST API and MCP",
             "Veilus Sync",
             "Script templates",
             "Latest browser engine"
@@ -243,7 +243,7 @@
     "finalCta": {
         "title": "Ready to become",
         "titleHighlight": "invisible?",
-        "desc": "Download Veilus for free today.\n5 profiles. Unique fingerprint. No card. No trial. Forever.",
+        "desc": "Download Veilus for free today.\n5 profiles. Unique fingerprint. No card. Forever.",
         "cta": "Download free",
         "note": "No personal data collected"
     },

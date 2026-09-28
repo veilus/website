@@ -36,6 +36,20 @@ test("parseQuery: renew rỗng hoặc rác thì chỉ hỏi key", () => {
   assert.deepEqual(parseQuery("?renew=<script>"), { sku: null, licenseKey: null, askKey: true });
 });
 
+test("parseQuery: renew=1&sku=monthly sống sót qua reload (URL đã gỡ key)", () => {
+  assert.deepEqual(parseQuery("?renew=1&sku=monthly"), {
+    sku: "monthly",
+    licenseKey: null,
+    askKey: true,
+  });
+});
+
+test("formRequiresKey: renew=1 (không key, sau reload) vẫn buộc nhập key ở thuê tháng và thêm máy", () => {
+  const q = parseQuery("?renew=1&sku=monthly");
+  assert.equal(formRequiresKey("monthly", q), true);
+  assert.equal(formRequiresKey("device_solo", q), true);
+});
+
 test("parseQuery: không có renew thì không hỏi key; sku lạ bị bỏ", () => {
   assert.deepEqual(parseQuery("?sku=solo"), { sku: "solo", licenseKey: null, askKey: false });
   assert.deepEqual(parseQuery("?sku=../x"), { sku: null, licenseKey: null, askKey: false });

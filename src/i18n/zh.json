@@ -171,7 +171,7 @@
                 "最新浏览器引擎",
                 "支持代理"
             ],
-            "excluded": "不含 Veilus Flow、定时任务、批量运行和本地 API",
+            "excluded": "不含 Veilus Flow、定时任务、批量运行和本地 API/MCP",
             "cta": "免费开始",
             "trial": "下载后可在应用内免费试用 Pro 7 天"
         },
@@ -190,7 +190,7 @@
             "无限配置文件",
             "Veilus Flow 自动化",
             "定时任务与批量运行",
-            "本地 REST API",
+            "本地 REST API 和 MCP",
             "Veilus Sync",
             "脚本模板",
             "最新浏览器引擎"
@@ -243,7 +243,7 @@
     "finalCta": {
         "title": "准备好变得",
         "titleHighlight": "隐形了吗？",
-        "desc": "今天就免费下载 Veilus。\n5个配置文件。独特指纹。无需信用卡。不是试用。永久免费。",
+        "desc": "今天就免费下载 Veilus。\n5个配置文件。独特指纹。无需信用卡。永久免费。",
         "cta": "免费下载",
         "note": "不收集个人数据"
     },

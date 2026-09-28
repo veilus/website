@@ -171,7 +171,7 @@
                 "En yeni tarayıcı motoru",
                 "Proxy desteği"
             ],
-            "excluded": "Veilus Flow, zamanlama, toplu çalıştırma ve yerel API yok",
+            "excluded": "Veilus Flow, zamanlama, toplu çalıştırma ve yerel API/MCP yok",
             "cta": "Ücretsiz başla",
             "trial": "İndirin ve uygulamada Pro'yu 7 gün ücretsiz deneyin"
         },
@@ -190,7 +190,7 @@
             "Sınırsız profil",
             "Veilus Flow otomasyonu",
             "Zamanlama ve toplu çalıştırma",
-            "Yerel REST API",
+            "Yerel REST API ve MCP",
             "Veilus Sync",
             "Betik şablonları",
             "En yeni tarayıcı motoru"
@@ -243,7 +243,7 @@
     "finalCta": {
         "title": "Görünmez olmaya",
         "titleHighlight": "hazır mısınız?",
-        "desc": "Veilus'u bugün ücretsiz indirin.\n5 profil. Benzersiz parmak izi. Kartsız. Denemesiz. Sonsuza kadar.",
+        "desc": "Veilus'u bugün ücretsiz indirin.\n5 profil. Benzersiz parmak izi. Kartsız. Sonsuza kadar.",
         "cta": "Ücretsiz indir",
         "note": "Kişisel veri toplanmaz"
     },

@@ -159,10 +159,14 @@ const skusOf = (kind: string) =>
       .split(".")
       .reduce((o: any, p) => o?.[p], dict) ?? dict.err.generic;
 
-  // 1. Key ra khỏi thanh địa chỉ trước mọi việc khác.
+  // 1. Key ra khỏi thanh địa chỉ trước mọi việc khác — giữ lại `renew=1` (không
+  // key) để tải lại trang vẫn nhận ra đang ở luồng gia hạn (xem parseQuery).
   const q = parseQuery(location.search);
   if (q.askKey) {
-    history.replaceState(null, "", location.pathname + (q.sku ? "?sku=" + q.sku : ""));
+    const params = new URLSearchParams();
+    if (q.sku) params.set("sku", q.sku);
+    params.set("renew", "1");
+    history.replaceState(null, "", location.pathname + "?" + params.toString());
   }
 
   const form = $("buy-form") as HTMLFormElement;

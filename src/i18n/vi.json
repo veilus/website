@@ -171,7 +171,7 @@
                 "Engine trình duyệt mới nhất",
                 "Hỗ trợ proxy"
             ],
-            "excluded": "Không có Veilus Flow, lịch chạy, chạy hàng loạt và API cục bộ",
+            "excluded": "Không có Veilus Flow, lịch chạy, chạy hàng loạt và API/MCP cục bộ",
             "cta": "Bắt đầu miễn phí",
             "trial": "Tải về và dùng thử Pro 7 ngày trong app"
         },
@@ -190,7 +190,7 @@
             "Hồ sơ không giới hạn",
             "Tự động hoá Veilus Flow",
             "Lịch chạy và chạy hàng loạt",
-            "REST API cục bộ",
+            "REST API cục bộ và MCP",
             "Veilus Sync",
             "Template kịch bản",
             "Engine trình duyệt mới nhất"
@@ -243,7 +243,7 @@
     "finalCta": {
         "title": "Sẵn sàng trở nên",
         "titleHighlight": "vô hình?",
-        "desc": "Tải Veilus miễn phí ngay hôm nay.\n5 profiles. Fingerprint riêng. Không thẻ. Không trial. Mãi mãi.",
+        "desc": "Tải Veilus miễn phí ngay hôm nay.\n5 profiles. Fingerprint riêng. Không thẻ. Mãi mãi.",
         "cta": "Tải miễn phí",
         "note": "Không thu thập dữ liệu cá nhân"
     },

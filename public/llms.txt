@@ -26,10 +26,10 @@
 - Scheduling: Hourly/daily/weekly automation with missed-run catch-up
 
 ## Pricing
-- Free: 5 profiles, 1 device, latest browser engine; no Veilus Flow, scheduling, batch runs or local API
+- Free: 5 profiles, 1 device, latest browser engine; no Veilus Flow, scheduling, batch runs or local API/MCP
 - Monthly: 200,000 VND or $9 per device per month
 - Lifetime (one-time): Solo 1 device 2,500,000 VND / $99; Team 5 5,000,000 VND / $199; Team 10 8,500,000 VND / $345; Team 20 16,000,000 VND / $650
-- Paid plans: unlimited profiles, Veilus Flow, scheduling, batch runs, local REST API, Veilus Sync, script templates
+- Paid plans: unlimited profiles, Veilus Flow, scheduling, batch runs, local REST API and MCP, Veilus Sync, script templates
 - Lifetime includes updates forever and 3 years of support (renewal: 40% of the plan price per 3 years)
 - More than 20 devices: contact us
 - Buy: https://veilus.io/mua
