@@ -2,11 +2,15 @@
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang } from '../i18n/utils';
 import { SKUS } from '../data/skus.js';
+import { currencyForLang, formatPrice } from '../scripts/purchase-core.js';
 interface Props { lang?: Lang; }
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
 // Giá trong bảng so sánh lấy từ SKUS để không lệch với trang giá.
-const fillPrices = (v: string) => v.replace('{monthly}', `$${SKUS.monthly.usd}`).replace('{lifetime}', `$${SKUS.solo.usd}`);
+// Một loại tiền mỗi ngôn ngữ, như trang giá.
+const cur = currencyForLang(lang);
+const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
+const fillPrices = (v: string) => v.replace('{monthly}', price(SKUS.monthly)).replace('{lifetime}', price(SKUS.solo));
 ---
 <section class="section comparison" id="comparison" data-animate>
   <div class="container">

@@ -175,7 +175,6 @@
         "titleHighlight": "minh bạch",
         "subtitle": "Bắt đầu miễn phí. Trả theo tháng, hoặc trả một lần dùng mãi.",
         "perMonth": "/ tháng mỗi máy",
-        "orUsd": "hoặc {usd}",
         "free": {
             "name": "Free",
             "period": "mãi mãi",
@@ -187,7 +186,8 @@
                 "Hỗ trợ proxy"
             ],
             "excluded": "Không có Veilus Flow, lịch chạy, chạy hàng loạt và API cục bộ",
-            "cta": "Bắt đầu miễn phí"
+            "cta": "Bắt đầu miễn phí",
+            "trial": "Tải về và dùng thử Pro 7 ngày trong app"
         },
         "monthly": {
             "name": "Thuê tháng",
@@ -313,7 +313,8 @@
     },
     "buy": {
         "title": "Mua Veilus",
-        "subtitle": "Chọn gói, rồi chuyển khoản VNĐ hoặc trả bằng thẻ quốc tế (USD).",
+        "subtitleVnd": "Chọn gói, rồi chuyển khoản VNĐ.",
+        "subtitleUsd": "Chọn gói, rồi trả bằng thẻ quốc tế (USD).",
         "choose": "Chọn gói",
         "group": {
             "lifetime": "Trọn đời",

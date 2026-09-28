@@ -175,7 +175,6 @@
         "titleHighlight": "透明",
         "subtitle": "免费开始。按月付费，或一次买断永久使用。",
         "perMonth": "/ 月 / 每台设备",
-        "orUsd": "或 {usd}",
         "free": {
             "name": "免费版",
             "period": "永久",
@@ -187,7 +186,8 @@
                 "支持代理"
             ],
             "excluded": "不含 Veilus Flow、定时任务、批量运行和本地 API",
-            "cta": "免费开始"
+            "cta": "免费开始",
+            "trial": "下载后可在应用内免费试用 Pro 7 天"
         },
         "monthly": {
             "name": "月付",
@@ -313,7 +313,8 @@
     },
     "buy": {
         "title": "购买 Veilus",
-        "subtitle": "选择套餐，然后以越南盾银行转账或国际信用卡（美元）付款。",
+        "subtitleVnd": "选择套餐，然后以越南盾银行转账付款。",
+        "subtitleUsd": "选择套餐，然后以国际信用卡（美元）付款。",
         "choose": "选择套餐",
         "group": {
             "lifetime": "永久",

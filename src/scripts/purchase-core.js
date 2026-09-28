@@ -73,3 +73,17 @@ const SLOW_AFTER_MS = 30 * 60 * 1000;
 export function pollDelay(msSinceChange) {
   return msSinceChange >= SLOW_AFTER_MS ? 30_000 : 4_000;
 }
+
+/** Một loại tiền mỗi ngôn ngữ trang: tiếng Việt trả VNĐ (chuyển khoản), còn lại USD (thẻ). */
+export function currencyForLang(lang) {
+  return lang === "vi" ? "VND" : "USD";
+}
+
+/** Gia hạn từ app (`?renew=`) là key thuê tháng VNĐ — luôn đi luồng VNĐ dù trang ngôn ngữ nào. */
+export function payCurrency(lang, query) {
+  return query?.askKey || query?.licenseKey ? "VND" : currencyForLang(lang);
+}
+
+export function formatPrice(amount, currency, lang) {
+  return currency === "VND" ? `${new Intl.NumberFormat(lang).format(amount)} đ` : `$${amount}`;
+}

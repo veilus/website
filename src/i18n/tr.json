@@ -175,7 +175,6 @@
         "titleHighlight": "şeffaf",
         "subtitle": "Ücretsiz başlayın. Aylık ödeyin ya da bir kez ödeyip sonsuza kadar kullanın.",
         "perMonth": "/ ay, cihaz başına",
-        "orUsd": "veya {usd}",
         "free": {
             "name": "Ücretsiz",
             "period": "sonsuza kadar",
@@ -187,7 +186,8 @@
                 "Proxy desteği"
             ],
             "excluded": "Veilus Flow, zamanlama, toplu çalıştırma ve yerel API yok",
-            "cta": "Ücretsiz başla"
+            "cta": "Ücretsiz başla",
+            "trial": "İndirin ve uygulamada Pro'yu 7 gün ücretsiz deneyin"
         },
         "monthly": {
             "name": "Aylık",
@@ -313,7 +313,8 @@
     },
     "buy": {
         "title": "Veilus satın al",
-        "subtitle": "Bir plan seçin, ardından VND ile banka havalesi veya USD ile uluslararası kartla ödeyin.",
+        "subtitleVnd": "Bir plan seçin, ardından VND ile banka havalesiyle ödeyin.",
+        "subtitleUsd": "Bir plan seçin, ardından USD ile uluslararası kartla ödeyin.",
         "choose": "Plan seçin",
         "group": {
             "lifetime": "Ömür boyu",

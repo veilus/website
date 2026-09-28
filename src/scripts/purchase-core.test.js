@@ -10,6 +10,9 @@ import {
   safeCheckoutUrl,
   pollDelay,
   hasValidAmount,
+  currencyForLang,
+  payCurrency,
+  formatPrice,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -106,4 +109,26 @@ test("pollDelay: 4 giây, sau 30 phút không đổi thì 30 giây", () => {
   assert.equal(pollDelay(0), 4000);
   assert.equal(pollDelay(30 * 60 * 1000 - 1), 4000);
   assert.equal(pollDelay(30 * 60 * 1000), 30000);
+});
+
+const OTHER_LANGS = ["en", "zh", "ru", "pt", "es", "tr", "id"];
+
+test("currencyForLang: vi ra VND, bảy ngôn ngữ còn lại ra USD", () => {
+  assert.equal(currencyForLang("vi"), "VND");
+  for (const lang of OTHER_LANGS) assert.equal(currencyForLang(lang), "USD", lang);
+});
+
+test("payCurrency: có renew thì luôn VND bất kể ngôn ngữ trang", () => {
+  for (const lang of [...OTHER_LANGS, "vi"]) {
+    assert.equal(payCurrency(lang, parseQuery("?renew=vl_pro_x")), "VND", lang);
+    assert.equal(payCurrency(lang, parseQuery("?renew=1")), "VND", lang);
+  }
+  assert.equal(payCurrency("en", parseQuery("?sku=monthly")), "USD");
+  assert.equal(payCurrency("vi", parseQuery("?sku=monthly")), "VND");
+});
+
+test("formatPrice: VND có dấu nhóm và đ, USD có $", () => {
+  assert.equal(formatPrice(200_000, "VND", "vi"), "200.000 đ");
+  assert.equal(formatPrice(9, "USD", "en"), "$9");
+  assert.equal(formatPrice(0, "USD", "zh"), "$0");
 });

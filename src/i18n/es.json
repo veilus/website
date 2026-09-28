@@ -175,7 +175,6 @@
         "titleHighlight": "transparente",
         "subtitle": "Empieza gratis. Paga cada mes o paga una vez y úsalo para siempre.",
         "perMonth": "/ mes por dispositivo",
-        "orUsd": "o {usd}",
         "free": {
             "name": "Gratis",
             "period": "siempre",
@@ -187,7 +186,8 @@
                 "Soporte de proxy"
             ],
             "excluded": "Sin Veilus Flow, programación, ejecución por lotes ni API local",
-            "cta": "Empezar gratis"
+            "cta": "Empezar gratis",
+            "trial": "Descarga y prueba Pro gratis durante 7 días en la app"
         },
         "monthly": {
             "name": "Mensual",
@@ -313,7 +313,8 @@
     },
     "buy": {
         "title": "Comprar Veilus",
-        "subtitle": "Elige un plan y paga por transferencia bancaria en VND o con tarjeta internacional en USD.",
+        "subtitleVnd": "Elige un plan y paga por transferencia bancaria en VND.",
+        "subtitleUsd": "Elige un plan y paga con tarjeta internacional en USD.",
         "choose": "Elige un plan",
         "group": {
             "lifetime": "De por vida",

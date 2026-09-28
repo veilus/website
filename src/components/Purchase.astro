@@ -7,13 +7,16 @@
 import type { Lang } from "../i18n/utils";
 import { t } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
+import { currencyForLang, formatPrice } from "../scripts/purchase-core.js";
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const b = t(lang).buy;
-const vnd = new Intl.NumberFormat(lang);
+// Một loại tiền mỗi trang; `?renew=` đổi sang VNĐ ở client (xem payCurrency).
+const cur = currencyForLang(lang);
+const vnd = cur === "VND";
 const groups = ["lifetime", "monthly", "addon"] as const;
 const skusOf = (kind: string) =>
   Object.entries(SKUS).filter(([, s]) => s.kind === kind);
@@ -22,7 +25,7 @@ const skusOf = (kind: string) =>
 <section class="buy" id="buy" data-lang={lang} data-i18n={JSON.stringify(b)}>
   <div class="container buy-inner">
     <h1>{b.title}</h1>
-    <p class="buy-sub">{b.subtitle}</p>
+    <p class="buy-sub" id="buy-sub">{vnd ? b.subtitleVnd : b.subtitleUsd}</p>
 
     <form id="buy-form" class="buy-form" novalidate>
       <fieldset class="buy-choose">
@@ -44,8 +47,9 @@ const skusOf = (kind: string) =>
                         {b.devices.replace("{n}", String(s.devices))}
                       </span>
                     )}
-                    <span class="buy-sku-price">{vnd.format(s.vnd)} đ</span>
-                    <span class="buy-sku-usd">${s.usd}</span>
+                    <span class="buy-sku-price" data-vnd={s.vnd}
+                      >{formatPrice(vnd ? s.vnd : s.usd, cur, lang)}</span
+                    >
                   </label>
                 ))}
               </div>
@@ -78,11 +82,11 @@ const skusOf = (kind: string) =>
       </div>
 
       <div class="buy-actions">
-        <button type="button" class="btn btn-primary" id="buy-vnd"
-          >{b.payVnd}</button
-        >
-        <button type="button" class="btn btn-secondary" id="buy-usd"
-          >{b.payUsd}</button
+        <button
+          type="button"
+          class="btn btn-primary"
+          id={vnd ? "buy-vnd" : "buy-usd"}
+          data-currency={cur}>{vnd ? b.payVnd : b.payUsd}</button
         >
       </div>
       <p class="buy-msg" id="buy-msg" role="alert" aria-live="polite"></p>
@@ -139,6 +143,8 @@ const skusOf = (kind: string) =>
     safeCheckoutUrl,
     pollDelay,
     hasValidAmount,
+    payCurrency,
+    formatPrice,
   } from "../scripts/purchase-core.js";
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
@@ -160,6 +166,18 @@ const skusOf = (kind: string) =>
   }
 
   const form = $("buy-form") as HTMLFormElement;
+  const payBtn = form.querySelector(".buy-actions button") as HTMLButtonElement;
+  const currency = payCurrency(lang, q);
+  // Trang tiếng khác mở bằng ?renew= (key thuê tháng VNĐ từ app): chuyển trang sang luồng VNĐ.
+  if (currency !== payBtn.dataset.currency) {
+    payBtn.id = "buy-vnd";
+    payBtn.dataset.currency = currency;
+    payBtn.textContent = dict.payVnd;
+    $("buy-sub").textContent = dict.subtitleVnd;
+    form.querySelectorAll<HTMLElement>(".buy-sku-price").forEach((el) => {
+      el.textContent = formatPrice(Number(el.dataset.vnd), "VND", lang);
+    });
+  }
   const emailEl = $("buy-email") as HTMLInputElement;
   const keyRow = $("buy-key-row");
   const keyEl = $("buy-key") as HTMLInputElement;
@@ -234,46 +252,44 @@ const skusOf = (kind: string) =>
     }
   }
 
-  $("buy-vnd").addEventListener("click", () =>
-    withBusy(async () => {
-      const f = readForm();
-      if (!f || !f.email || !emailEl.checkValidity()) return void showErr("buy.err.input");
-      const r = await post("/api/v1/orders", buildOrderBody(f));
-      if (!r) return;
-      if (
-        r.res.status !== 201 ||
-        typeof r.data.id !== "string" ||
-        !hasValidAmount(r.data.amount)
-      ) {
-        return void showErr(errorKey(r.res.status, r.data.code));
-      }
-      const order = {
-        id: r.data.id,
-        code: r.data.code,
-        amount: r.data.amount,
-        qr_url: r.data.qr_url,
-      };
-      try {
-        sessionStorage.setItem(STORE, JSON.stringify(order));
-      } catch {
-        /* storage bị chặn: tải lại trang thì mất theo dõi, đơn vẫn còn */
-      }
-      showOrder(order);
-    }),
-  );
+  async function payVnd() {
+    const f = readForm();
+    if (!f || !f.email || !emailEl.checkValidity()) return void showErr("buy.err.input");
+    const r = await post("/api/v1/orders", buildOrderBody(f));
+    if (!r) return;
+    if (
+      r.res.status !== 201 ||
+      typeof r.data.id !== "string" ||
+      !hasValidAmount(r.data.amount)
+    ) {
+      return void showErr(errorKey(r.res.status, r.data.code));
+    }
+    const order = {
+      id: r.data.id,
+      code: r.data.code,
+      amount: r.data.amount,
+      qr_url: r.data.qr_url,
+    };
+    try {
+      sessionStorage.setItem(STORE, JSON.stringify(order));
+    } catch {
+      /* storage bị chặn: tải lại trang thì mất theo dõi, đơn vẫn còn */
+    }
+    showOrder(order);
+  }
 
-  $("buy-usd").addEventListener("click", () =>
-    withBusy(async () => {
-      const f = readForm();
-      if (!f || (f.email && !emailEl.checkValidity())) return void showErr("buy.err.input");
-      const r = await post("/api/v1/checkout", buildOrderBody(f));
-      if (!r) return;
-      if (!r.res.ok) return void showErr(errorKey(r.res.status, r.data.code));
-      const url = safeCheckoutUrl(r.data.url);
-      if (!url) return void showErr("buy.err.generic");
-      location.assign(url);
-    }),
-  );
+  async function payUsd() {
+    const f = readForm();
+    if (!f || (f.email && !emailEl.checkValidity())) return void showErr("buy.err.input");
+    const r = await post("/api/v1/checkout", buildOrderBody(f));
+    if (!r) return;
+    if (!r.res.ok) return void showErr(errorKey(r.res.status, r.data.code));
+    const url = safeCheckoutUrl(r.data.url);
+    if (!url) return void showErr("buy.err.generic");
+    location.assign(url);
+  }
+
+  payBtn.addEventListener("click", () => withBusy(currency === "VND" ? payVnd : payUsd));
 
   type Order = { id: string; code: string; amount: number; qr_url: string };
 
@@ -288,7 +304,7 @@ const skusOf = (kind: string) =>
     ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
     const qr = safeCheckoutUrl(o.qr_url);
     if (qr) ($("buy-qr") as HTMLImageElement).src = qr;
-    $("buy-amount").textContent = `${new Intl.NumberFormat(lang).format(o.amount)} đ`;
+    $("buy-amount").textContent = formatPrice(o.amount, "VND", lang);
     $("buy-code").textContent = o.code;
     poll(o.id);
   }
@@ -442,8 +458,7 @@ const skusOf = (kind: string) =>
     font-weight: 600;
     color: var(--color-text);
   }
-  .buy-sku-meta,
-  .buy-sku-usd {
+  .buy-sku-meta {
     font-size: 0.875rem;
     color: var(--color-text-muted);
   }

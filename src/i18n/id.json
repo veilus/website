@@ -175,7 +175,6 @@
         "titleHighlight": "transparan",
         "subtitle": "Mulai gratis. Bayar bulanan, atau bayar sekali dan pakai selamanya.",
         "perMonth": "/ bulan per perangkat",
-        "orUsd": "atau {usd}",
         "free": {
             "name": "Gratis",
             "period": "selamanya",
@@ -187,7 +186,8 @@
                 "Dukungan proxy"
             ],
             "excluded": "Tanpa Veilus Flow, penjadwalan, eksekusi massal, dan API lokal",
-            "cta": "Mulai gratis"
+            "cta": "Mulai gratis",
+            "trial": "Unduh dan coba Pro gratis 7 hari di aplikasi"
         },
         "monthly": {
             "name": "Bulanan",
@@ -313,7 +313,8 @@
     },
     "buy": {
         "title": "Beli Veilus",
-        "subtitle": "Pilih paket, lalu bayar dengan transfer bank dalam VND atau kartu internasional dalam USD.",
+        "subtitleVnd": "Pilih paket, lalu bayar dengan transfer bank dalam VND.",
+        "subtitleUsd": "Pilih paket, lalu bayar dengan kartu internasional dalam USD.",
         "choose": "Pilih paket",
         "group": {
             "lifetime": "Seumur hidup",
