@@ -382,6 +382,58 @@
             "badSub": "birini yasakla, dördünü kaybet",
             "goodTitle": "4 hesap = 4 kişi",
             "goodSub": "her hesap kendi başına"
+        },
+        "profileName": "PROFİL 07",
+        "fig3": {
+            "figNo": "Şekil 3",
+            "fig": "bir profilin anatomisi",
+            "title": "Her profil farklı bir kişi — en ince ayrıntısına kadar.",
+            "fields": "parmak izi alanı",
+            "patched": "Chromium kaynak kodunda doğrudan yamalı",
+            "left": [
+                {
+                    "t": "User-Agent · Client Hints",
+                    "v": "Chrome · Windows 11"
+                },
+                {
+                    "t": "Ekran",
+                    "v": "1920 × 1080 · 24-bit"
+                },
+                {
+                    "t": "GPU · WebGL · WebGPU",
+                    "v": "NVIDIA GeForce RTX 3060"
+                },
+                {
+                    "t": "Canvas · Audio",
+                    "v": "bu profile özgü gürültü"
+                },
+                {
+                    "t": "Yazı Tipleri",
+                    "v": "Windows yazı tipi seti"
+                }
+            ],
+            "right": [
+                {
+                    "t": "Saat dilimi",
+                    "v": "Asia/Tokyo · proxy ile eşleşiyor"
+                },
+                {
+                    "t": "Dil",
+                    "v": "ja-JP · Accept-Language"
+                },
+                {
+                    "t": "WebRTC",
+                    "v": "gerçek IP açığa çıkmaz"
+                },
+                {
+                    "t": "GPS konumu",
+                    "v": "35.68, 139.69"
+                },
+                {
+                    "t": "Proxy · Cookie",
+                    "v": "SOCKS5 · yalnızca bu profil"
+                }
+            ]
         }
     }
 }

@@ -382,6 +382,58 @@
             "badSub": "una baneada, las cuatro perdidas",
             "goodTitle": "4 cuentas = 4 personas",
             "goodSub": "cada cuenta por su cuenta"
+        },
+        "profileName": "PERFIL 07",
+        "fig3": {
+            "figNo": "Figura 3",
+            "fig": "anatomía de un perfil",
+            "title": "Cada perfil es una persona diferente — hasta los detalles.",
+            "fields": "campos de huella",
+            "patched": "parcheado directo en el código de Chromium",
+            "left": [
+                {
+                    "t": "User-Agent · Client Hints",
+                    "v": "Chrome · Windows 11"
+                },
+                {
+                    "t": "Pantalla",
+                    "v": "1920 × 1080 · 24-bit"
+                },
+                {
+                    "t": "GPU · WebGL · WebGPU",
+                    "v": "NVIDIA GeForce RTX 3060"
+                },
+                {
+                    "t": "Canvas · Audio",
+                    "v": "ruido exclusivo de este perfil"
+                },
+                {
+                    "t": "Fuentes",
+                    "v": "las fuentes de Windows"
+                }
+            ],
+            "right": [
+                {
+                    "t": "Zona horaria",
+                    "v": "Asia/Tokyo · coincide con el proxy"
+                },
+                {
+                    "t": "Idioma",
+                    "v": "ja-JP · Accept-Language"
+                },
+                {
+                    "t": "WebRTC",
+                    "v": "IP real no expuesta"
+                },
+                {
+                    "t": "Ubicación GPS",
+                    "v": "35.68, 139.69"
+                },
+                {
+                    "t": "Proxy · Cookie",
+                    "v": "SOCKS5 · solo este perfil"
+                }
+            ]
         }
     }
 }

@@ -382,6 +382,58 @@
             "badSub": "khoá một, mất cả bốn",
             "goodTitle": "4 tài khoản = 4 người",
             "goodSub": "mỗi tài khoản đứng riêng"
+        },
+        "profileName": "HỒ SƠ 07",
+        "fig3": {
+            "figNo": "Hình 3",
+            "fig": "giải phẫu một hồ sơ",
+            "title": "Mỗi hồ sơ là một người khác — tới từng chi tiết.",
+            "fields": "trường fingerprint",
+            "patched": "sửa ngay trong mã nguồn Chromium",
+            "left": [
+                {
+                    "t": "User-Agent · Client Hints",
+                    "v": "Chrome · Windows 11"
+                },
+                {
+                    "t": "Màn hình",
+                    "v": "1920 × 1080 · 24-bit"
+                },
+                {
+                    "t": "GPU · WebGL · WebGPU",
+                    "v": "NVIDIA GeForce RTX 3060"
+                },
+                {
+                    "t": "Canvas · Audio",
+                    "v": "nhiễu riêng theo hồ sơ"
+                },
+                {
+                    "t": "Phông chữ",
+                    "v": "đúng bộ của Windows"
+                }
+            ],
+            "right": [
+                {
+                    "t": "Múi giờ",
+                    "v": "Asia/Tokyo · khớp proxy"
+                },
+                {
+                    "t": "Ngôn ngữ",
+                    "v": "ja-JP · Accept-Language"
+                },
+                {
+                    "t": "WebRTC",
+                    "v": "không lộ IP thật"
+                },
+                {
+                    "t": "Vị trí GPS",
+                    "v": "35.68, 139.69"
+                },
+                {
+                    "t": "Proxy · Cookie",
+                    "v": "SOCKS5 · riêng hồ sơ này"
+                }
+            ]
         }
     }
 }

@@ -382,6 +382,58 @@
             "badSub": "ban one, lose all four",
             "goodTitle": "4 accounts = 4 people",
             "goodSub": "each account stands alone"
+        },
+        "profileName": "PROFILE 07",
+        "fig3": {
+            "figNo": "Figure 3",
+            "fig": "anatomy of a profile",
+            "title": "Every profile is a different person — down to the details.",
+            "fields": "fingerprint fields",
+            "patched": "patched right in the Chromium source",
+            "left": [
+                {
+                    "t": "User-Agent · Client Hints",
+                    "v": "Chrome · Windows 11"
+                },
+                {
+                    "t": "Screen",
+                    "v": "1920 × 1080 · 24-bit"
+                },
+                {
+                    "t": "GPU · WebGL · WebGPU",
+                    "v": "NVIDIA GeForce RTX 3060"
+                },
+                {
+                    "t": "Canvas · Audio",
+                    "v": "noise unique to this profile"
+                },
+                {
+                    "t": "Fonts",
+                    "v": "the Windows font set"
+                }
+            ],
+            "right": [
+                {
+                    "t": "Timezone",
+                    "v": "Asia/Tokyo · matches the proxy"
+                },
+                {
+                    "t": "Language",
+                    "v": "ja-JP · Accept-Language"
+                },
+                {
+                    "t": "WebRTC",
+                    "v": "real IP not exposed"
+                },
+                {
+                    "t": "GPS location",
+                    "v": "35.68, 139.69"
+                },
+                {
+                    "t": "Proxy · Cookie",
+                    "v": "SOCKS5 · this profile only"
+                }
+            ]
         }
     }
 }

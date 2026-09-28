@@ -382,6 +382,58 @@
             "badSub": "封一个，四个全丢了",
             "goodTitle": "4 个账户 = 4 个人",
             "goodSub": "每个账户各自独立"
+        },
+        "profileName": "配置文件 07",
+        "fig3": {
+            "figNo": "图 3",
+            "fig": "解剖一份配置文件",
+            "title": "每个配置文件都是不同的人——连细节都不一样。",
+            "fields": "指纹字段",
+            "patched": "在 Chromium 源码中直接修改",
+            "left": [
+                {
+                    "t": "User-Agent · Client Hints",
+                    "v": "Chrome · Windows 11"
+                },
+                {
+                    "t": "屏幕",
+                    "v": "1920 × 1080 · 24-bit"
+                },
+                {
+                    "t": "GPU · WebGL · WebGPU",
+                    "v": "NVIDIA GeForce RTX 3060"
+                },
+                {
+                    "t": "Canvas · Audio",
+                    "v": "该配置文件独有的噪声"
+                },
+                {
+                    "t": "字体",
+                    "v": "Windows 的那套字体"
+                }
+            ],
+            "right": [
+                {
+                    "t": "时区",
+                    "v": "Asia/Tokyo · 与代理一致"
+                },
+                {
+                    "t": "语言",
+                    "v": "ja-JP · Accept-Language"
+                },
+                {
+                    "t": "WebRTC",
+                    "v": "不暴露真实 IP"
+                },
+                {
+                    "t": "GPS 位置",
+                    "v": "35.68, 139.69"
+                },
+                {
+                    "t": "Proxy · Cookie",
+                    "v": "SOCKS5 · 仅此配置文件"
+                }
+            ]
         }
     }
 }

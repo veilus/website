@@ -382,6 +382,58 @@
             "badSub": "blokir satu, hilang keempatnya",
             "goodTitle": "4 akun = 4 orang",
             "goodSub": "tiap akun berdiri sendiri"
+        },
+        "profileName": "PROFIL 07",
+        "fig3": {
+            "figNo": "Gambar 3",
+            "fig": "anatomi sebuah profil",
+            "title": "Setiap profil adalah orang yang berbeda — sampai ke detailnya.",
+            "fields": "bidang sidik jari",
+            "patched": "ditambal langsung di source code Chromium",
+            "left": [
+                {
+                    "t": "User-Agent · Client Hints",
+                    "v": "Chrome · Windows 11"
+                },
+                {
+                    "t": "Layar",
+                    "v": "1920 × 1080 · 24-bit"
+                },
+                {
+                    "t": "GPU · WebGL · WebGPU",
+                    "v": "NVIDIA GeForce RTX 3060"
+                },
+                {
+                    "t": "Canvas · Audio",
+                    "v": "derau unik untuk profil ini"
+                },
+                {
+                    "t": "Font",
+                    "v": "set font Windows"
+                }
+            ],
+            "right": [
+                {
+                    "t": "Zona waktu",
+                    "v": "Asia/Tokyo · cocok dengan proxy"
+                },
+                {
+                    "t": "Bahasa",
+                    "v": "ja-JP · Accept-Language"
+                },
+                {
+                    "t": "WebRTC",
+                    "v": "IP asli tidak terekspos"
+                },
+                {
+                    "t": "Lokasi GPS",
+                    "v": "35.68, 139.69"
+                },
+                {
+                    "t": "Proxy · Cookie",
+                    "v": "SOCKS5 · khusus profil ini"
+                }
+            ]
         }
     }
 }
