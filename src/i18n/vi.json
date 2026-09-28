@@ -451,6 +451,31 @@
             "connectTitle": "Một lệnh MCP",
             "anyClient": "mọi client MCP",
             "local": "chỉ máy của bạn · có token"
+        },
+        "fig5": {
+            "figNo": "Hình 5",
+            "fig": "sao lưu hồ sơ",
+            "title": "Hồ sơ nuôi lâu, không mất vì một lần hỏng máy.",
+            "snapTitle": "Bản chụp trên máy",
+            "snaps": [
+                "hôm nay 08:00",
+                "hôm qua 08:00",
+                "3 ngày trước"
+            ],
+            "latest": "mới nhất",
+            "restore": "khôi phục về bản bất kỳ",
+            "snapNote": "ZIP nằm trên máy bạn · khôi phục khi hồ sơ đang đóng",
+            "packTitle": "Gói .veiluspack",
+            "machineA": "máy A",
+            "machineB": "máy B",
+            "packFile": "hoso-07.veiluspack",
+            "packLock": "mật khẩu tuỳ chọn · AES-256",
+            "packNote": "Chuyển hồ sơ sang máy khác, kèm cookie và cấu hình",
+            "syncTitle": "Đồng bộ Git · Google Drive",
+            "thisMachine": "máy này",
+            "otherMachine": "máy khác",
+            "repo": "kho của bạn",
+            "syncNote": "Hai chiều giữa các máy của bạn · token truy cập được mã hoá"
         }
     }
 }

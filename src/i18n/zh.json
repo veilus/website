@@ -451,6 +451,31 @@
             "connectTitle": "一条 MCP 命令",
             "anyClient": "任意 MCP 客户端",
             "local": "仅限本机 · 需要令牌"
+        },
+        "fig5": {
+            "figNo": "图 5",
+            "fig": "配置文件备份",
+            "title": "配置文件养了几个月，不会因为一次电脑故障就丢失。",
+            "snapTitle": "本地快照",
+            "snaps": [
+                "今天 08:00",
+                "昨天 08:00",
+                "3 天前"
+            ],
+            "latest": "最新",
+            "restore": "恢复到任意版本",
+            "snapNote": "ZIP 保存在你的电脑上 · 配置文件关闭时才能恢复",
+            "packTitle": ".veiluspack 文件包",
+            "machineA": "电脑 A",
+            "machineB": "电脑 B",
+            "packFile": "peizhi-07.veiluspack",
+            "packLock": "可选密码 · AES-256",
+            "packNote": "把配置文件连同 cookie 和设置转移到另一台电脑",
+            "syncTitle": "通过 Git · Google Drive 同步",
+            "thisMachine": "这台电脑",
+            "otherMachine": "另一台电脑",
+            "repo": "你的仓库",
+            "syncNote": "在你的电脑之间双向同步 · 仅访问令牌会被加密"
         }
     }
 }

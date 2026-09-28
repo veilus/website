@@ -451,6 +451,31 @@
             "connectTitle": "Tek bir MCP komutu",
             "anyClient": "herhangi bir MCP istemcisi",
             "local": "yalnızca cihazınızda · token gerekir"
+        },
+        "fig5": {
+            "figNo": "Şekil 5",
+            "fig": "profil yedekleme",
+            "title": "Aylarca emek verdiğiniz profiller, tek bir bozuk bilgisayar yüzünden kaybolmaz.",
+            "snapTitle": "Yerel anlık görüntüler",
+            "snaps": [
+                "bugün 08:00",
+                "dün 08:00",
+                "3 gün önce"
+            ],
+            "latest": "en son",
+            "restore": "herhangi bir sürümü geri yükleyin",
+            "snapNote": "ZIP dosyaları bilgisayarınızda kalır · profil kapalıyken geri yükleyin",
+            "packTitle": ".veiluspack paketi",
+            "machineA": "bilgisayar A",
+            "machineB": "bilgisayar B",
+            "packFile": "profil-07.veiluspack",
+            "packLock": "isteğe bağlı parola · AES-256",
+            "packNote": "Bir profili çerezleri ve ayarlarıyla birlikte başka bir bilgisayara taşıyın",
+            "syncTitle": "Git · Google Drive ile senkronizasyon",
+            "thisMachine": "bu bilgisayar",
+            "otherMachine": "başka bir bilgisayar",
+            "repo": "deponuz",
+            "syncNote": "Bilgisayarlarınız arasında çift yönlü · yalnızca erişim token'ları şifrelenir"
         }
     }
 }

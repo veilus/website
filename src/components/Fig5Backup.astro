@@ -1,0 +1,123 @@
+---
+/**
+ * Hình 5 — sao lưu hồ sơ (spec trang chủ §4 dòng 5). Nguồn:
+ * - quyết định 0074: bản chụp ZIP cục bộ, không mã hoá, khôi phục khi hồ sơ đóng;
+ * - quyết định 0073: .veiluspack, mật khẩu tuỳ chọn, AES-256-GCM;
+ * - quyết định 0024: đồng bộ không mã hoá dữ liệu, chỉ token truy cập được mã hoá.
+ * Không câu nào ở đây được nói dữ liệu đồng bộ được mã hoá.
+ */
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const h = t(lang).home;
+const f = h.fig5;
+const delay = (s: number) => `--d:${s.toFixed(2)}s`;
+---
+
+<section class="k-wrap k-sec" id="backup" data-reveal>
+  <div class="k-fig"><b>{f.figNo}</b> — {f.fig}</div>
+  <h2 class="k-h2">{f.title}</h2>
+  <div class="k-bk">
+    <div class="k-bkp">
+      <div class="k-bkh"><span class="ms" aria-hidden="true">history</span><b>{f.snapTitle}</b></div>
+      <div class="k-bkd">
+        <div class="k-win k-win-lg">
+          <div class="k-wbar"><i></i><i></i><i></i></div>
+          <div class="k-wbd"><span class="ms" aria-hidden="true">fingerprint</span><b>{h.profileName}</b></div>
+        </div>
+        <div class="k-drop"></div>
+        <div class="k-snaps">
+          <div class="k-snap k-rise" style={delay(0.6)}><span class="ms" aria-hidden="true">folder_zip</span>{f.snaps[0]}<em>{f.latest}</em></div>
+          <div class="k-snap k-snap-old k-rise" style={delay(0.45)}><span class="ms" aria-hidden="true">folder_zip</span>{f.snaps[1]}</div>
+          <div class="k-snap k-snap-older k-rise" style={delay(0.3)}><span class="ms" aria-hidden="true">folder_zip</span>{f.snaps[2]}</div>
+        </div>
+        <div class="k-restore k-pop" style={delay(0.95)}><span class="ms" aria-hidden="true">settings_backup_restore</span>{f.restore}</div>
+      </div>
+      <div class="k-bkc">{f.snapNote}</div>
+    </div>
+
+    <div class="k-bkp">
+      <div class="k-bkh"><span class="ms" aria-hidden="true">inventory_2</span><b>{f.packTitle}</b></div>
+      <div class="k-bkd">
+        <div class="k-move">
+          <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.machineA}</small></div>
+          <div class="k-ar k-draw" style={delay(0.3)}><i class="k-pulse" aria-hidden="true"></i></div>
+          <div class="k-file k-pop" style={delay(0.55)}>
+            <span class="ms" aria-hidden="true">lock</span><b>{f.packFile}</b><small>{f.packLock}</small>
+          </div>
+          <div class="k-ar k-draw" style={delay(0.8)}><i class="k-pulse" aria-hidden="true" style="--pd:1.2s"></i></div>
+          <div class="k-dev"><span class="ms" aria-hidden="true">desktop_windows</span><small>{f.machineB}</small></div>
+        </div>
+      </div>
+      <div class="k-bkc">{f.packNote}</div>
+    </div>
+
+    <div class="k-bkp">
+      <div class="k-bkh"><span class="ms" aria-hidden="true">cloud_sync</span><b>{f.syncTitle}</b></div>
+      <div class="k-bkd">
+        <div class="k-move">
+          <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.thisMachine}</small></div>
+          <span class="ms k-sw" aria-hidden="true">sync_alt</span>
+          <div class="k-file k-pop" style={delay(0.5)}>
+            <span class="ms" aria-hidden="true">cloud</span><b>{f.repo}</b><small>Git · Google Drive</small>
+          </div>
+          <span class="ms k-sw k-sw-r" aria-hidden="true">sync_alt</span>
+          <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.otherMachine}</small></div>
+        </div>
+      </div>
+      <div class="k-bkc">{f.syncNote}</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .k-bk { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .k-bkp { display: flex; flex-direction: column; gap: 18px; min-height: 330px; padding: 20px 20px 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); }
+  .k-bkh { display: flex; align-items: center; gap: 10px; }
+  .k-bkh .ms { font-size: 26px; }
+  .k-bkh b { font-size: 16px; font-weight: 600; }
+  .k-bkd { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .k-win-lg { width: 170px; }
+  .k-win-lg .k-wbd { padding: 8px 10px; font-size: 12px; }
+  .k-snaps { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+  .k-snap { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border: 1.5px solid var(--ink); background: var(--paper); font-family: var(--font-mono); font-size: 11.5px; }
+  .k-snap .ms { font-size: 17px; }
+  .k-snap em { margin-left: auto; font-style: normal; font-weight: 600; font-size: 10.5px; color: var(--acc); }
+  /* Bản cũ nhạt dần bằng màu, không bằng opacity: opacity thuộc về hiệu ứng k-rise */
+  .k-snap-old { color: rgba(27, 34, 48, 0.72); border-color: rgba(27, 34, 48, 0.72); }
+  .k-snap-older { color: rgba(27, 34, 48, 0.5); border-color: rgba(27, 34, 48, 0.5); }
+  .k-restore { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; color: var(--acc); }
+  .k-restore .ms { font-size: 18px; }
+  .k-move { display: flex; align-items: center; width: 100%; }
+  /* flex-shrink mặc định (không "flex: none"): nhãn dài ("another machine", "другой компьютер")
+     phải co, xuống dòng ở khoảng trắng thay vì đẩy hàng tràn ngang ở 390px. */
+  .k-move .k-dev { flex: 0 1 auto; margin-top: 0; }
+  .k-move .k-dev .ms { font-size: 34px; }
+  .k-move .k-ar { flex: 1; min-width: 16px; }
+  .k-file { display: flex; flex: none; flex-direction: column; align-items: center; gap: 3px; max-width: 150px; padding: 10px 10px 9px; border: 1.5px solid var(--ink); background: var(--paper); text-align: center; }
+  .k-file .ms { font-size: 24px; }
+  .k-file b { font-family: var(--font-mono); font-size: 11px; font-weight: 600; word-break: break-all; }
+  .k-file small { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
+  .k-sw { flex: none; margin: 0 6px; font-size: 22px; }
+  .k-bkc { padding-top: 12px; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 11.5px; line-height: 1.55; color: var(--muted); }
+
+  /* Mũi tên đồng bộ chạy hai chiều: hai icon lắc ngược pha nhau */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .k-sw { animation: k-nudge 1.6s ease-in-out infinite alternate; animation-play-state: paused; }
+    :global(.js) .k-sw-r { animation-direction: alternate-reverse; }
+    :global(.js) [data-reveal].is-live .k-sw { animation-play-state: running; }
+  }
+
+  @media (max-width: 1080px) {
+    .k-bk { grid-template-columns: 1fr; }
+    .k-bkp { min-height: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .k-file { max-width: 120px; }
+  }
+</style>

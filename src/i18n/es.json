@@ -451,6 +451,31 @@
             "connectTitle": "Un comando MCP",
             "anyClient": "cualquier cliente MCP",
             "local": "solo en tu equipo · requiere token"
+        },
+        "fig5": {
+            "figNo": "Figura 5",
+            "fig": "respaldo de perfil",
+            "title": "Los perfiles que llevas meses cultivando no desaparecen por un solo equipo dañado.",
+            "snapTitle": "Instantáneas locales",
+            "snaps": [
+                "hoy 08:00",
+                "ayer 08:00",
+                "hace 3 días"
+            ],
+            "latest": "más reciente",
+            "restore": "restaurar cualquier versión",
+            "snapNote": "Los ZIP se quedan en tu equipo · restaura con el perfil cerrado",
+            "packTitle": "Paquete .veiluspack",
+            "machineA": "equipo A",
+            "machineB": "equipo B",
+            "packFile": "perfil-07.veiluspack",
+            "packLock": "contraseña opcional · AES-256",
+            "packNote": "Lleva un perfil a otro equipo, con sus cookies y su configuración",
+            "syncTitle": "Sincronización vía Git · Google Drive",
+            "thisMachine": "este equipo",
+            "otherMachine": "otro equipo",
+            "repo": "tu repositorio",
+            "syncNote": "En ambos sentidos entre tus equipos · solo se cifran los tokens de acceso"
         }
     }
 }

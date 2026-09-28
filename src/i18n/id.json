@@ -451,6 +451,31 @@
             "connectTitle": "Satu perintah MCP",
             "anyClient": "klien MCP apa pun",
             "local": "hanya di perangkat Anda · butuh token"
+        },
+        "fig5": {
+            "figNo": "Gambar 5",
+            "fig": "cadangan profil",
+            "title": "Profil yang sudah Anda rawat berbulan-bulan tidak hilang hanya karena satu komputer rusak.",
+            "snapTitle": "Snapshot lokal",
+            "snaps": [
+                "hari ini 08:00",
+                "kemarin 08:00",
+                "3 hari lalu"
+            ],
+            "latest": "terbaru",
+            "restore": "pulihkan versi mana pun",
+            "snapNote": "ZIP tetap di komputer Anda · pulihkan saat profil sedang tertutup",
+            "packTitle": "Paket .veiluspack",
+            "machineA": "komputer A",
+            "machineB": "komputer B",
+            "packFile": "profil-07.veiluspack",
+            "packLock": "kata sandi opsional · AES-256",
+            "packNote": "Pindahkan profil ke komputer lain, lengkap dengan cookie dan pengaturannya",
+            "syncTitle": "Sinkronisasi lewat Git · Google Drive",
+            "thisMachine": "komputer ini",
+            "otherMachine": "komputer lain",
+            "repo": "repository Anda",
+            "syncNote": "Dua arah antar-komputer Anda · hanya token akses yang dienkripsi"
         }
     }
 }

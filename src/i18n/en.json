@@ -451,6 +451,31 @@
             "connectTitle": "One MCP command",
             "anyClient": "any MCP client",
             "local": "your machine only · token required"
+        },
+        "fig5": {
+            "figNo": "Figure 5",
+            "fig": "profile backup",
+            "title": "Profiles you've warmed up for months don't die with one broken machine.",
+            "snapTitle": "On-device snapshots",
+            "snaps": [
+                "today 08:00",
+                "yesterday 08:00",
+                "3 days ago"
+            ],
+            "latest": "latest",
+            "restore": "restore any version",
+            "snapNote": "ZIPs stay on your machine · restore while the profile is closed",
+            "packTitle": ".veiluspack bundle",
+            "machineA": "machine A",
+            "machineB": "machine B",
+            "packFile": "profile-07.veiluspack",
+            "packLock": "optional password · AES-256",
+            "packNote": "Move a profile to another machine, with its cookies and settings",
+            "syncTitle": "Sync via Git · Google Drive",
+            "thisMachine": "this machine",
+            "otherMachine": "another machine",
+            "repo": "your repository",
+            "syncNote": "Two-way between your machines · access tokens are encrypted"
         }
     }
 }

@@ -105,3 +105,4 @@ a.k-btn-o:hover { background: var(--paper); }
 @keyframes k-run-y { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(100%); opacity: 0; } }
 @keyframes k-step { 0%, 100% { opacity: 0; } 3%, 14% { opacity: 1; } 18% { opacity: 0; } }
 @keyframes k-spin { to { transform: rotate(360deg); } }
+@keyframes k-nudge { from { transform: translateX(-3px); } to { transform: translateX(3px); } }
