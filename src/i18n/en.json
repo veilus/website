@@ -49,26 +49,6 @@
             }
         ]
     },
-    "howItWorks": {
-        "badge": "How it works",
-        "title": "From download to automation",
-        "titleHighlight": "in 3 steps",
-        "subtitle": "Start free. Automation needs Pro — the 7-day trial includes it.",
-        "steps": [
-            {
-                "title": "Download and create profiles",
-                "desc": "Install on macOS or Windows. Each new profile gets its own fingerprint; add a proxy if you have one."
-            },
-            {
-                "title": "Write the script once",
-                "desc": "Tell your AI assistant what to automate — log in, post, check orders. Over MCP it writes the script, tries it, reads the errors and fixes them. Or write it yourself."
-            },
-            {
-                "title": "Run it on every profile",
-                "desc": "Approve the script in Veilus Flow, then pick the profiles and run it as a batch, or put it on a schedule."
-            }
-        ]
-    },
     "comparison": {
         "badge": "Compare",
         "title": "How Veilus",
@@ -434,6 +414,43 @@
                     "v": "SOCKS5 · this profile only"
                 }
             ]
+        },
+        "fig4": {
+            "figNo": "Figure 4",
+            "fig": "the loop with your AI assistant",
+            "title": "You give the order. The AI writes, tests, fixes. You approve once.",
+            "steps": [
+                {
+                    "title": "You give the order",
+                    "tool": "one sentence"
+                },
+                {
+                    "title": "The AI writes a script",
+                    "tool": "save_script"
+                },
+                {
+                    "title": "Test run on 3 profiles",
+                    "tool": "run_script"
+                },
+                {
+                    "title": "Reads errors, fixes itself",
+                    "tool": "get_run_result"
+                },
+                {
+                    "title": "You approve",
+                    "tool": "Veilus Flow"
+                },
+                {
+                    "title": "Schedule the whole batch",
+                    "tool": "create_schedule"
+                }
+            ],
+            "soon": "coming soon",
+            "repeat": "repeat until it works",
+            "connect": "Connect",
+            "connectTitle": "One MCP command",
+            "anyClient": "any MCP client",
+            "local": "your machine only · token required"
         }
     }
 }

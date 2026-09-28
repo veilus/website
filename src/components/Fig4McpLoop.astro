@@ -1,0 +1,128 @@
+---
+/**
+ * Hình 4 — vòng làm việc với trợ lý AI (spec trang chủ §4 dòng 4). Tên tool là tên thật trong
+ * api-catalog của app; create_schedule chưa có (VEIL-962) nên mang nhãn "sắp có".
+ * Hiệu ứng: sáu bước hiện theo thứ tự, rồi sáng lần lượt 01→06 và lặp khi phần này trên màn hình.
+ */
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const f = t(lang).home.fig4;
+// --d: độ trễ khi hiện; --i: thứ tự sáng trong vòng lặp
+const node = (n: number) => `--d:${(0.15 + n * 0.25).toFixed(2)}s;--i:${n}`;
+const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
+---
+
+<section class="k-wrap k-sec" id="mcp" data-reveal>
+  <div class="k-fig"><b>{f.figNo}</b> — {f.fig}</div>
+  <h2 class="k-h2">{f.title}</h2>
+  <div class="k-mcp">
+    <div class="k-loop">
+      <div class="k-node k-n1 k-rise" style={node(0)}>
+        <div class="k-nh"><span class="ms" aria-hidden="true">chat</span><em>01</em></div>
+        <b>{f.steps[0].title}</b><span class="k-tool">{f.steps[0].tool}</span>
+      </div>
+      <div class="k-ar k-a1 k-draw" style={arrow(0)}></div>
+      <div class="k-node k-n2 k-rise" style={node(1)}>
+        <div class="k-nh"><span class="ms" aria-hidden="true">smart_toy</span><em>02</em></div>
+        <b>{f.steps[1].title}</b><span class="k-tool">{f.steps[1].tool}</span>
+      </div>
+      <div class="k-ar k-a2 k-draw" style={arrow(1)}></div>
+      <div class="k-node k-n3 k-rise" style={node(2)}>
+        <div class="k-nh"><span class="ms" aria-hidden="true">play_circle</span><em>03</em></div>
+        <b>{f.steps[2].title}</b><span class="k-tool">{f.steps[2].tool}</span>
+      </div>
+      <div class="k-ard k-a3 k-draw-down" style={arrow(2)}>
+        <span><span class="ms" aria-hidden="true">autorenew</span>{f.repeat}</span>
+      </div>
+      <div class="k-node k-n4 k-rise" style={node(3)}>
+        <div class="k-nh"><span class="ms" aria-hidden="true">build</span><em>04</em></div>
+        <b>{f.steps[3].title}</b><span class="k-tool">{f.steps[3].tool}</span>
+      </div>
+      <div class="k-ar k-ar-l k-a4 k-draw-l" style={arrow(3)}></div>
+      <div class="k-node k-node-ink k-n5 k-rise" style={node(4)}>
+        <div class="k-nh"><span class="ms" aria-hidden="true">verified_user</span><em>05</em></div>
+        <b>{f.steps[4].title}</b><span class="k-tool">{f.steps[4].tool}</span>
+      </div>
+      <div class="k-ar k-ar-l k-a5 k-draw-l" style={arrow(4)}></div>
+      <div class="k-node k-n6 k-rise" style={node(5)}>
+        <div class="k-nh"><span class="ms" aria-hidden="true">event_repeat</span><em>06</em></div>
+        <b>{f.steps[5].title}</b><span class="k-tool k-tool-soon">{f.steps[5].tool} · {f.soon}</span>
+      </div>
+    </div>
+
+    <div class="k-conn k-rise" style="--d:0.3s">
+      <div class="k-fig">{f.connect}</div>
+      <div class="k-conn-big"><span class="ms" aria-hidden="true">cable</span>{f.connectTitle}</div>
+      <pre class="k-code">veilus mcp</pre>
+      <div class="k-clients">
+        <span class="k-chip">Claude Code</span><span class="k-chip">Cursor</span><span class="k-chip">{f.anyClient}</span>
+      </div>
+      <div class="k-conn-foot"><span class="ms" aria-hidden="true">lock</span>{f.local}</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .k-mcp { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: stretch; }
+  .k-loop { display: grid; grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr) 48px minmax(0, 1fr); grid-template-areas: 'n1 a1 n2 a2 n3' '. . . . a3' 'n6 a5 n5 a4 n4'; align-items: center; padding: 34px 30px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); }
+  .k-n1 { grid-area: n1; }
+  .k-n2 { grid-area: n2; }
+  .k-n3 { grid-area: n3; }
+  .k-n4 { grid-area: n4; }
+  .k-n5 { grid-area: n5; }
+  .k-n6 { grid-area: n6; }
+  .k-a1 { grid-area: a1; }
+  .k-a2 { grid-area: a2; }
+  .k-a3 { grid-area: a3; }
+  .k-a4 { grid-area: a4; }
+  .k-a5 { grid-area: a5; }
+  .k-node { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 14px 14px 12px; border: 1.5px solid var(--ink); background: var(--paper); }
+  .k-nh { display: flex; align-items: center; justify-content: space-between; }
+  .k-nh .ms { font-size: 28px; }
+  .k-nh em { font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--acc); }
+  .k-node b { font-size: 15.5px; font-weight: 600; }
+  .k-tool { align-self: flex-start; padding: 3px 7px; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: 11.5px; }
+  .k-tool-soon { border: 1.5px dashed var(--acc); color: var(--acc); }
+  .k-node-ink { background: var(--ink); color: var(--paper); }
+  .k-node-ink .k-tool { border-color: var(--paper); }
+  /* Lớp phủ sáng lên khi tới lượt bước này trong vòng lặp */
+  .k-node::after { content: ''; position: absolute; inset: -1.5px; border: 2px solid var(--acc); background: var(--acc-soft); opacity: 0; pointer-events: none; }
+  .k-ard { position: relative; justify-self: center; width: 0; height: 56px; border-left: 1.5px solid var(--ink); }
+  .k-ard::after { content: ''; position: absolute; left: -5.5px; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); }
+  .k-ard > span { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; font-family: var(--font-mono); font-size: 11px; color: var(--acc); }
+  .k-ard .ms { font-size: 16px; }
+  .k-conn { display: flex; flex-direction: column; gap: 16px; padding: 24px 22px; border: 1.5px solid var(--ink); background: var(--ink); color: var(--paper); }
+  .k-conn .k-fig { color: rgba(242, 239, 231, 0.7); }
+  .k-conn-big { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 600; }
+  .k-conn-big .ms { font-size: 30px; }
+  .k-clients { display: flex; flex-wrap: wrap; gap: 8px; }
+  .k-clients .k-chip { background: transparent; color: var(--paper); border-color: rgba(242, 239, 231, 0.6); }
+  .k-conn .k-code { padding: 12px 14px; border: 1px solid rgba(242, 239, 231, 0.25); background: rgba(242, 239, 231, 0.08); }
+  .k-conn-foot { display: flex; align-items: center; gap: 6px; margin-top: auto; font-family: var(--font-mono); font-size: 11.5px; color: rgba(242, 239, 231, 0.75); }
+  .k-conn-foot .ms { font-size: 16px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .k-node::after { animation: k-step 6s linear infinite; animation-delay: calc(var(--i) * 1s + 1.6s); animation-play-state: paused; }
+    :global(.js) .k-ard .ms { animation: k-spin 2.4s linear infinite; animation-play-state: paused; }
+    :global(.js) [data-reveal].is-live .k-node::after,
+    :global(.js) [data-reveal].is-live .k-ard .ms { animation-play-state: running; }
+  }
+
+  @media (max-width: 1080px) {
+    .k-mcp { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    .k-loop { grid-template-columns: 1fr; grid-template-areas: none; padding: 24px 18px; }
+    .k-n1, .k-n2, .k-n3, .k-n4, .k-n5, .k-n6, .k-a1, .k-a2, .k-a3, .k-a4, .k-a5 { grid-area: auto; }
+    .k-loop .k-ar { justify-self: center; width: 0; height: 28px; margin: 2px 0; border-top: 0; border-left: 1.5px solid var(--ink); }
+    .k-loop .k-ar::after { right: auto; left: -5.5px; top: auto; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); }
+    .k-ard { height: 40px; }
+    .k-ard > span { right: auto; left: 14px; }
+  }
+</style>

@@ -49,26 +49,6 @@
             }
         ]
     },
-    "howItWorks": {
-        "badge": "Cara kerja",
-        "title": "Dari unduh sampai otomasi",
-        "titleHighlight": "dalam 3 langkah",
-        "subtitle": "Mulai gratis. Otomasi butuh Pro — uji coba 7 hari sudah mencakupnya.",
-        "steps": [
-            {
-                "title": "Unduh dan buat profil",
-                "desc": "Instal di macOS atau Windows. Setiap profil baru mendapat sidik jari sendiri; tambahkan proxy jika Anda punya."
-            },
-            {
-                "title": "Tulis skripnya sekali",
-                "desc": "Beri tahu asisten AI Anda apa yang ingin diotomatiskan — login, posting, cek pesanan. Lewat MCP ia menulis skrip, mencobanya, membaca error, lalu memperbaikinya. Atau tulis sendiri."
-            },
-            {
-                "title": "Jalankan di semua profil",
-                "desc": "Setujui skrip di Veilus Flow, lalu pilih profil dan jalankan secara massal, atau jadwalkan."
-            }
-        ]
-    },
     "comparison": {
         "badge": "Bandingkan",
         "title": "Veilus",
@@ -434,6 +414,43 @@
                     "v": "SOCKS5 · khusus profil ini"
                 }
             ]
+        },
+        "fig4": {
+            "figNo": "Gambar 4",
+            "fig": "alur kerja dengan asisten AI Anda",
+            "title": "Anda memberi perintah. AI menulis, menguji, memperbaiki. Anda menyetujui sekali.",
+            "steps": [
+                {
+                    "title": "Anda memberi perintah",
+                    "tool": "satu kalimat"
+                },
+                {
+                    "title": "AI menulis skrip",
+                    "tool": "save_script"
+                },
+                {
+                    "title": "Uji coba di 3 profil",
+                    "tool": "run_script"
+                },
+                {
+                    "title": "Baca error, perbaiki sendiri",
+                    "tool": "get_run_result"
+                },
+                {
+                    "title": "Anda menyetujui",
+                    "tool": "Veilus Flow"
+                },
+                {
+                    "title": "Jadwalkan seluruh batch",
+                    "tool": "create_schedule"
+                }
+            ],
+            "soon": "segera hadir",
+            "repeat": "ulangi sampai berhasil",
+            "connect": "Sambungkan",
+            "connectTitle": "Satu perintah MCP",
+            "anyClient": "klien MCP apa pun",
+            "local": "hanya di perangkat Anda · butuh token"
         }
     }
 }

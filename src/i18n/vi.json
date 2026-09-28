@@ -49,26 +49,6 @@
             }
         ]
     },
-    "howItWorks": {
-        "badge": "Cách hoạt động",
-        "title": "Từ lúc tải về đến tự động hóa",
-        "titleHighlight": "trong 3 bước",
-        "subtitle": "Bắt đầu miễn phí. Tự động hóa cần Pro — bản dùng thử 7 ngày có đủ.",
-        "steps": [
-            {
-                "title": "Tải về và tạo profile",
-                "desc": "Cài trên macOS hoặc Windows. Mỗi profile mới có fingerprint riêng; gắn proxy nếu bạn có."
-            },
-            {
-                "title": "Viết script một lần",
-                "desc": "Nói với trợ lý AI việc cần tự động — đăng nhập, đăng bài, kiểm đơn. Qua MCP, nó viết script, chạy thử, đọc lỗi rồi tự sửa. Hoặc bạn tự viết."
-            },
-            {
-                "title": "Chạy trên mọi profile",
-                "desc": "Duyệt script trong Veilus Flow, rồi chọn các profile để chạy hàng loạt, hoặc đặt lịch để nó tự chạy."
-            }
-        ]
-    },
     "comparison": {
         "badge": "So sánh",
         "title": "Veilus so với",
@@ -434,6 +414,43 @@
                     "v": "SOCKS5 · riêng hồ sơ này"
                 }
             ]
+        },
+        "fig4": {
+            "figNo": "Hình 4",
+            "fig": "vòng làm việc với trợ lý AI",
+            "title": "Bạn ra lệnh. AI viết, thử, sửa. Bạn duyệt một lần.",
+            "steps": [
+                {
+                    "title": "Bạn ra lệnh",
+                    "tool": "một câu"
+                },
+                {
+                    "title": "AI viết script",
+                    "tool": "save_script"
+                },
+                {
+                    "title": "Chạy thử 3 hồ sơ",
+                    "tool": "run_script"
+                },
+                {
+                    "title": "Đọc lỗi, tự sửa",
+                    "tool": "get_run_result"
+                },
+                {
+                    "title": "Bạn duyệt",
+                    "tool": "Veilus Flow"
+                },
+                {
+                    "title": "Lên lịch cả lô",
+                    "tool": "create_schedule"
+                }
+            ],
+            "soon": "sắp có",
+            "repeat": "lặp đến khi ổn",
+            "connect": "Kết nối",
+            "connectTitle": "Một lệnh MCP",
+            "anyClient": "mọi client MCP",
+            "local": "chỉ máy của bạn · có token"
         }
     }
 }

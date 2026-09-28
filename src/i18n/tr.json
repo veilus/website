@@ -49,26 +49,6 @@
             }
         ]
     },
-    "howItWorks": {
-        "badge": "Nasıl çalışır",
-        "title": "İndirmeden otomasyona",
-        "titleHighlight": "3 adımda",
-        "subtitle": "Ücretsiz başlayın. Otomasyon Pro gerektirir — 7 günlük deneme bunu kapsar.",
-        "steps": [
-            {
-                "title": "İndirin ve profil oluşturun",
-                "desc": "macOS veya Windows'a kurun. Her yeni profil kendi parmak izini alır; proxy'niz varsa ekleyin."
-            },
-            {
-                "title": "Betiği bir kez yazın",
-                "desc": "Yapay zekâ asistanınıza neyi otomatikleştireceğini söyleyin — giriş, paylaşım, sipariş kontrolü. MCP üzerinden betiği yazar, dener, hataları okur ve düzeltir. Ya da kendiniz yazın."
-            },
-            {
-                "title": "Tüm profillerde çalıştırın",
-                "desc": "Betiği Veilus Flow'da onaylayın, sonra profilleri seçip toplu çalıştırın ya da zamanlayın."
-            }
-        ]
-    },
     "comparison": {
         "badge": "Karşılaştır",
         "title": "Veilus",
@@ -434,6 +414,43 @@
                     "v": "SOCKS5 · yalnızca bu profil"
                 }
             ]
+        },
+        "fig4": {
+            "figNo": "Şekil 4",
+            "fig": "yapay zekâ asistanınızla döngü",
+            "title": "Siz talimat verirsiniz. Yapay zekâ yazar, dener, düzeltir. Siz bir kez onaylarsınız.",
+            "steps": [
+                {
+                    "title": "Siz talimat verirsiniz",
+                    "tool": "tek cümle"
+                },
+                {
+                    "title": "Yapay zekâ betik yazar",
+                    "tool": "save_script"
+                },
+                {
+                    "title": "3 profilde deneme",
+                    "tool": "run_script"
+                },
+                {
+                    "title": "Hataları okur, kendini düzeltir",
+                    "tool": "get_run_result"
+                },
+                {
+                    "title": "Siz onaylarsınız",
+                    "tool": "Veilus Flow"
+                },
+                {
+                    "title": "Tümünü toplu zamanlar",
+                    "tool": "create_schedule"
+                }
+            ],
+            "soon": "yakında",
+            "repeat": "çalışana kadar tekrar",
+            "connect": "Bağlan",
+            "connectTitle": "Tek bir MCP komutu",
+            "anyClient": "herhangi bir MCP istemcisi",
+            "local": "yalnızca cihazınızda · token gerekir"
         }
     }
 }

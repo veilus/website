@@ -49,26 +49,6 @@
             }
         ]
     },
-    "howItWorks": {
-        "badge": "使用方式",
-        "title": "从下载到自动化",
-        "titleHighlight": "只需 3 步",
-        "subtitle": "免费开始。自动化功能需要 Pro——7 天试用已包含。",
-        "steps": [
-            {
-                "title": "下载并创建配置文件",
-                "desc": "在 macOS 或 Windows 上安装。每个新配置文件都有独立指纹；如果有代理，可以直接添加。"
-            },
-            {
-                "title": "把脚本写一次",
-                "desc": "告诉 AI 助手要自动化什么——登录、发帖、查订单。它通过 MCP 编写脚本、试运行、读取报错并修复。你也可以自己写。"
-            },
-            {
-                "title": "在所有配置文件上运行",
-                "desc": "在 Veilus Flow 中审核脚本，然后选择配置文件批量运行，或设置定时计划。"
-            }
-        ]
-    },
     "comparison": {
         "badge": "对比",
         "title": "Veilus",
@@ -434,6 +414,43 @@
                     "v": "SOCKS5 · 仅此配置文件"
                 }
             ]
+        },
+        "fig4": {
+            "figNo": "图 4",
+            "fig": "AI 助手的工作循环",
+            "title": "你下指令，AI 编写、测试、修复，你只需审核一次。",
+            "steps": [
+                {
+                    "title": "你下指令",
+                    "tool": "一句话"
+                },
+                {
+                    "title": "AI 编写脚本",
+                    "tool": "save_script"
+                },
+                {
+                    "title": "3 个配置文件试运行",
+                    "tool": "run_script"
+                },
+                {
+                    "title": "读取报错并自动修复",
+                    "tool": "get_run_result"
+                },
+                {
+                    "title": "你审核",
+                    "tool": "Veilus Flow"
+                },
+                {
+                    "title": "整批定时运行",
+                    "tool": "create_schedule"
+                }
+            ],
+            "soon": "即将推出",
+            "repeat": "循环直到通过",
+            "connect": "连接",
+            "connectTitle": "一条 MCP 命令",
+            "anyClient": "任意 MCP 客户端",
+            "local": "仅限本机 · 需要令牌"
         }
     }
 }

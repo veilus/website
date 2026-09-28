@@ -49,26 +49,6 @@
             }
         ]
     },
-    "howItWorks": {
-        "badge": "Cómo funciona",
-        "title": "De la descarga a la automatización",
-        "titleHighlight": "en 3 pasos",
-        "subtitle": "Empieza gratis. La automatización requiere Pro, y la prueba de 7 días la incluye.",
-        "steps": [
-            {
-                "title": "Descarga y crea perfiles",
-                "desc": "Instálalo en macOS o Windows. Cada perfil nuevo recibe su propia huella; añade un proxy si tienes uno."
-            },
-            {
-                "title": "Escribe el script una vez",
-                "desc": "Dile a tu asistente de IA qué automatizar: iniciar sesión, publicar, revisar pedidos. Por MCP escribe el script, lo prueba, lee los errores y los corrige. O escríbelo tú."
-            },
-            {
-                "title": "Ejecútala en todos los perfiles",
-                "desc": "Aprueba el script en Veilus Flow, elige los perfiles y lánzalo por lotes, o prográmalo."
-            }
-        ]
-    },
     "comparison": {
         "badge": "Comparar",
         "title": "Cómo se compara",
@@ -434,6 +414,43 @@
                     "v": "SOCKS5 · solo este perfil"
                 }
             ]
+        },
+        "fig4": {
+            "figNo": "Figura 4",
+            "fig": "el ciclo con tu asistente de IA",
+            "title": "Tú das la orden. La IA escribe, prueba, corrige. Tú apruebas una vez.",
+            "steps": [
+                {
+                    "title": "Tú das la orden",
+                    "tool": "una frase"
+                },
+                {
+                    "title": "La IA escribe un script",
+                    "tool": "save_script"
+                },
+                {
+                    "title": "Prueba en 3 perfiles",
+                    "tool": "run_script"
+                },
+                {
+                    "title": "Lee errores y se corrige",
+                    "tool": "get_run_result"
+                },
+                {
+                    "title": "Tú apruebas",
+                    "tool": "Veilus Flow"
+                },
+                {
+                    "title": "Programa todo el lote",
+                    "tool": "create_schedule"
+                }
+            ],
+            "soon": "próximamente",
+            "repeat": "repite hasta funcionar",
+            "connect": "Conectar",
+            "connectTitle": "Un comando MCP",
+            "anyClient": "cualquier cliente MCP",
+            "local": "solo en tu equipo · requiere token"
         }
     }
 }
