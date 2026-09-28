@@ -161,7 +161,7 @@
             {
                 "feature": "Plano pago",
                 "values": [
-                    "$9/mês · $99 vitalício",
+                    "{monthly}/mês · {lifetime} vitalício",
                     "$99/mês",
                     "$49/mês",
                     "$9/mês"

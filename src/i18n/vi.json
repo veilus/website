@@ -161,7 +161,7 @@
             {
                 "feature": "Gói trả phí",
                 "values": [
-                    "$9/tháng · $99 trọn đời",
+                    "{monthly}/tháng · {lifetime} trọn đời",
                     "$99/tháng",
                     "$49/tháng",
                     "$9/tháng"

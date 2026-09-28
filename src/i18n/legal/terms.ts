@@ -8,7 +8,7 @@ export const termsTranslations: Record<string, {
     en: {
         title: "Terms of Service",
         description: "Terms and conditions for using the Veilus anti-detect browser and platform.",
-        lastUpdated: "March 6, 2026",
+        lastUpdated: "September 28, 2026",
         content: `
 <h2>1. Agreement to Terms</h2>
 <p>By downloading, installing, or using Veilus ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Service.</p>
@@ -34,24 +34,25 @@ export const termsTranslations: Record<string, {
   <li>One person or entity may not maintain more than one free account.</li>
 </ul>
 
-<h2>4. Subscription Plans & Payment</h2>
-<h3>4.1 Plan Tiers</h3>
-<table><thead><tr><th>Plan</th><th>Price</th><th>Profiles</th></tr></thead><tbody>
-  <tr><td>Free</td><td>$0 forever</td><td>5</td></tr>
-  <tr><td>Starter</td><td>$15/month</td><td>30</td></tr>
-  <tr><td>Pro</td><td>$49/month</td><td>200</td></tr>
-  <tr><td>Business</td><td>$99/month</td><td>1,000</td></tr>
-  <tr><td>Enterprise</td><td>Custom</td><td>Unlimited</td></tr>
-</tbody></table>
-<h3>4.2 Billing</h3>
+<h2>4. Plans & Payment</h2>
+<h3>4.1 Plans</h3>
 <ul>
-  <li>Paid plans are billed monthly or annually (40% discount for annual plans).</li>
-  <li>Payments are processed by Stripe. We do not store your payment card details.</li>
-  <li>Subscriptions auto-renew unless canceled before the next billing cycle.</li>
+  <li><strong>Free:</strong> free forever; 5 profiles on 1 device.</li>
+  <li><strong>Monthly:</strong> priced per device per month. Orders in VND are renewed manually by bank transfer; each payment adds 30 days. Orders in USD renew automatically through LemonSqueezy; you can cancel at any time and keep access until the end of the period you have paid for.</li>
+  <li><strong>Lifetime:</strong> a one-time payment that includes updates forever and 3 years of support. Support can be renewed for 40% of the plan's current price for each further 3 years.</li>
+  <li><strong>Extra devices</strong> can be added to lifetime keys only.</li>
+</ul>
+<p>Current prices are shown on our <a href="/#pricing">pricing page</a>.</p>
+<h3>4.2 Payment</h3>
+<ul>
+  <li>International card payments are processed by LemonSqueezy, which acts as the merchant of record for those payments.</li>
+  <li>Orders in Vietnamese dong (VND) are paid by bank transfer (VietQR).</li>
+  <li>Veilus does not store your payment card details.</li>
+  <li>After payment, your license key is shown on the purchase page and sent to your email.</li>
   <li>Prices may change with 30 days' notice to existing subscribers.</li>
 </ul>
-<h3>4.3 Downgrades</h3>
-<p>If you downgrade or cancel a paid plan, your account will revert to the Free tier at the end of the current billing period. Profiles exceeding the Free tier limit will become read-only (not deleted).</p>
+<h3>4.3 Expiry</h3>
+<p>If a monthly key is not renewed, the app falls back to the Free plan at the end of the paid period. Profiles you have created are kept (not deleted).</p>
 
 <h2>5. Acceptable Use</h2>
 <p>You agree <strong>not</strong> to use the Service to:</p>
@@ -105,7 +106,7 @@ export const termsTranslations: Record<string, {
 
 <h2>11. Termination</h2>
 <ul>
-  <li><strong>By you:</strong> Cancel at any time from your account settings.</li>
+  <li><strong>By you:</strong> You may stop using the Service at any time. A USD monthly subscription can be cancelled at any time and stays active until the end of the paid period.</li>
   <li><strong>By us:</strong> We may suspend or terminate for Terms violations. Serious violations may result in immediate termination without refund.</li>
 </ul>
 
@@ -125,7 +126,7 @@ export const termsTranslations: Record<string, {
     vi: {
         title: "Điều khoản Dịch vụ",
         description: "Điều khoản và điều kiện sử dụng trình duyệt chống phát hiện Veilus.",
-        lastUpdated: "6 tháng 3, 2026",
+        lastUpdated: "28 tháng 9, 2026",
         content: `
 <h2>1. Đồng ý với Điều khoản</h2>
 <p>Bằng việc tải, cài đặt hoặc sử dụng Veilus ("Dịch vụ"), bạn đồng ý tuân theo các Điều khoản Dịch vụ này. Nếu bạn không đồng ý, vui lòng không sử dụng Dịch vụ.</p>
@@ -150,24 +151,25 @@ export const termsTranslations: Record<string, {
   <li>Mỗi người chỉ được duy trì một tài khoản miễn phí.</li>
 </ul>
 
-<h2>4. Gói đăng ký & Thanh toán</h2>
+<h2>4. Gói & Thanh toán</h2>
 <h3>4.1 Các gói</h3>
-<table><thead><tr><th>Gói</th><th>Giá</th><th>Profiles</th></tr></thead><tbody>
-  <tr><td>Free</td><td>$0 mãi mãi</td><td>5</td></tr>
-  <tr><td>Starter</td><td>$15/tháng</td><td>30</td></tr>
-  <tr><td>Pro</td><td>$49/tháng</td><td>200</td></tr>
-  <tr><td>Business</td><td>$99/tháng</td><td>1.000</td></tr>
-  <tr><td>Enterprise</td><td>Tùy chỉnh</td><td>Không giới hạn</td></tr>
-</tbody></table>
+<ul>
+  <li><strong>Free:</strong> miễn phí mãi mãi; 5 profiles trên 1 máy.</li>
+  <li><strong>Thuê tháng:</strong> tính theo mỗi máy mỗi tháng. Đơn VNĐ gia hạn tay bằng chuyển khoản; mỗi lần thanh toán cộng thêm 30 ngày. Đơn USD tự động gia hạn qua LemonSqueezy; bạn có thể huỷ bất kỳ lúc nào và vẫn dùng được đến hết kỳ đã trả.</li>
+  <li><strong>Trọn đời:</strong> trả một lần, cập nhật vĩnh viễn và hỗ trợ 3 năm. Hỗ trợ có thể gia hạn với giá bằng 40% giá hiện tại của gói cho mỗi 3 năm tiếp theo.</li>
+  <li><strong>Thêm máy</strong> chỉ áp dụng cho key trọn đời.</li>
+</ul>
+<p>Giá hiện hành xem tại <a href="/vi/#pricing">trang giá</a>.</p>
 <h3>4.2 Thanh toán</h3>
 <ul>
-  <li>Gói trả phí tính theo tháng hoặc năm (giảm 40% cho gói năm).</li>
-  <li>Thanh toán qua Stripe. Chúng tôi không lưu thông tin thẻ.</li>
-  <li>Tự động gia hạn trừ khi hủy trước chu kỳ tiếp theo.</li>
+  <li>Thanh toán bằng thẻ quốc tế do LemonSqueezy xử lý; LemonSqueezy là bên bán chính thức (merchant of record) cho các khoản thanh toán này.</li>
+  <li>Đơn bằng VNĐ thanh toán qua chuyển khoản ngân hàng (VietQR).</li>
+  <li>Veilus không lưu thông tin thẻ của bạn.</li>
+  <li>Sau khi thanh toán, key license hiện ngay trên trang mua và được gửi tới email của bạn.</li>
   <li>Giá có thể thay đổi với thông báo trước 30 ngày.</li>
 </ul>
-<h3>4.3 Hạ cấp</h3>
-<p>Khi hạ cấp hoặc hủy, tài khoản sẽ chuyển về gói Free cuối chu kỳ thanh toán. Profiles vượt giới hạn sẽ chỉ đọc (không bị xóa).</p>
+<h3>4.3 Hết hạn</h3>
+<p>Nếu key thuê tháng không được gia hạn, ứng dụng rơi về gói Free khi hết kỳ đã trả. Profiles đã tạo được giữ nguyên (không bị xoá).</p>
 
 <h2>5. Sử dụng được chấp nhận</h2>
 <p>Bạn đồng ý <strong>không</strong> sử dụng Dịch vụ để:</p>
@@ -212,7 +214,7 @@ export const termsTranslations: Record<string, {
 
 <h2>11. Chấm dứt</h2>
 <ul>
-  <li><strong>Bởi bạn:</strong> Hủy bất kỳ lúc nào từ cài đặt tài khoản.</li>
+  <li><strong>Bởi bạn:</strong> Ngừng sử dụng bất kỳ lúc nào. Thuê bao tháng bằng USD có thể huỷ bất kỳ lúc nào và vẫn hoạt động đến hết kỳ đã trả.</li>
   <li><strong>Bởi chúng tôi:</strong> Có thể đình chỉ hoặc chấm dứt nếu vi phạm Điều khoản.</li>
 </ul>
 
@@ -232,7 +234,7 @@ export const termsTranslations: Record<string, {
     zh: {
         title: "服务条款",
         description: "使用Veilus反检测浏览器的条款和条件。",
-        lastUpdated: "2026年3月6日",
+        lastUpdated: "2026年9月28日",
         content: `
 <h2>1. 同意条款</h2>
 <p>下载、安装或使用Veilus即表示您同意本服务条款。</p>
@@ -240,8 +242,16 @@ export const termsTranslations: Record<string, {
 <p>Veilus是一款集成自动化功能的反检测浏览器，包括桌面应用、浏览器配置文件管理、自动化工具、配置文件同步和Cloud API。</p>
 <h2>3. 账户注册</h2>
 <p>年满16岁，提供有效邮箱，负责账户安全。每人限一个免费账户。</p>
-<h2>4. 订阅计划</h2>
-<table><thead><tr><th>计划</th><th>价格</th><th>配置文件</th></tr></thead><tbody><tr><td>Free</td><td>永久免费</td><td>5</td></tr><tr><td>Starter</td><td>$15/月</td><td>30</td></tr><tr><td>Pro</td><td>$49/月</td><td>200</td></tr><tr><td>Business</td><td>$99/月</td><td>1,000</td></tr><tr><td>Enterprise</td><td>定制</td><td>无限</td></tr></tbody></table>
+<h2>4. 计划与付款</h2>
+<ul>
+  <li><strong>Free：</strong>永久免费，5个配置文件，1台设备。</li>
+  <li><strong>月付：</strong>按每台设备每月计费。越南盾（VND）订单通过银行转账手动续费，每次付款增加30天；美元（USD）订单通过LemonSqueezy自动续费，可随时取消，并可使用至已付费周期结束。</li>
+  <li><strong>终身：</strong>一次性付款，永久更新，含3年支持；此后每3年可按该计划当前价格的40%续期支持。</li>
+  <li>额外设备仅适用于终身密钥。</li>
+  <li>国际银行卡付款由LemonSqueezy处理，LemonSqueezy是此类付款的记录商家（merchant of record）。越南盾订单通过银行转账（VietQR）支付。Veilus不存储您的银行卡信息。</li>
+  <li>付款后，许可证密钥会显示在购买页面上并发送到您的邮箱。</li>
+  <li>月付密钥未续费时，应用在已付费周期结束后恢复为Free计划，已创建的配置文件会保留。</li>
+</ul>
 <h2>5. 可接受使用</h2>
 <p>禁止：违法、欺诈、未授权访问、恶意软件、骚扰、CSAM、恐怖主义等。</p>
 <h2>6-7. 知识产权和数据所有权</h2>
@@ -255,7 +265,7 @@ export const termsTranslations: Record<string, {
     ru: {
         title: "Условия использования",
         description: "Условия использования антидетект-браузера Veilus.",
-        lastUpdated: "6 марта 2026",
+        lastUpdated: "28 сентября 2026",
         content: `
 <h2>1. Согласие с условиями</h2>
 <p>Скачивая или используя Veilus, вы соглашаетесь с настоящими Условиями.</p>
@@ -263,8 +273,16 @@ export const termsTranslations: Record<string, {
 <p>Veilus — антидетект-браузер с автоматизацией, управлением профилями, синхронизацией и Cloud API.</p>
 <h2>3. Регистрация</h2>
 <p>Возраст от 16 лет. Один бесплатный аккаунт на человека.</p>
-<h2>4. Подписки</h2>
-<table><thead><tr><th>План</th><th>Цена</th><th>Профили</th></tr></thead><tbody><tr><td>Free</td><td>Бесплатно</td><td>5</td></tr><tr><td>Starter</td><td>$15/мес</td><td>30</td></tr><tr><td>Pro</td><td>$49/мес</td><td>200</td></tr><tr><td>Business</td><td>$99/мес</td><td>1 000</td></tr><tr><td>Enterprise</td><td>Индивидуально</td><td>Без ограничений</td></tr></tbody></table>
+<h2>4. Планы и оплата</h2>
+<ul>
+  <li><strong>Free:</strong> бесплатно навсегда, 5 профилей, 1 устройство.</li>
+  <li><strong>Помесячно:</strong> оплата за каждое устройство в месяц. Заказы в VND продлеваются вручную банковским переводом, каждый платёж добавляет 30 дней; заказы в USD продлеваются автоматически через LemonSqueezy, отменить можно в любой момент, доступ сохраняется до конца оплаченного периода.</li>
+  <li><strong>Бессрочно:</strong> разовый платёж, обновления навсегда и 3 года поддержки; поддержку можно продлить за 40% текущей цены плана на каждые следующие 3 года.</li>
+  <li>Дополнительные устройства доступны только для бессрочных ключей.</li>
+  <li>Оплата международными картами обрабатывается LemonSqueezy, который выступает продавцом (merchant of record) по этим платежам. Заказы в VND оплачиваются банковским переводом (VietQR). Veilus не хранит данные ваших карт.</li>
+  <li>После оплаты лицензионный ключ показывается на странице покупки и отправляется на вашу почту.</li>
+  <li>Если помесячный ключ не продлён, по окончании оплаченного периода приложение возвращается к плану Free; созданные профили сохраняются.</li>
+</ul>
 <h2>5. Допустимое использование</h2>
 <p>Запрещено: нарушение законов, мошенничество, вредоносное ПО, CSAM, терроризм.</p>
 <h2>6-14. Прочее</h2>
@@ -274,7 +292,7 @@ export const termsTranslations: Record<string, {
     es: {
         title: "Términos de Servicio",
         description: "Términos y condiciones de uso del navegador anti-detección Veilus.",
-        lastUpdated: "6 de marzo de 2026",
+        lastUpdated: "28 de septiembre de 2026",
         content: `
 <h2>1. Aceptación</h2>
 <p>Al usar Veilus, acepta estos Términos de Servicio.</p>
@@ -282,8 +300,16 @@ export const termsTranslations: Record<string, {
 <p>Veilus es un navegador anti-detección con automatización, gestión de perfiles, sincronización y API en la nube.</p>
 <h2>3. Registro</h2>
 <p>Mínimo 16 años. Una cuenta gratuita por persona.</p>
-<h2>4. Planes</h2>
-<table><thead><tr><th>Plan</th><th>Precio</th><th>Perfiles</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>5</td></tr><tr><td>Starter</td><td>$15/mes</td><td>30</td></tr><tr><td>Pro</td><td>$49/mes</td><td>200</td></tr><tr><td>Business</td><td>$99/mes</td><td>1.000</td></tr><tr><td>Enterprise</td><td>Personalizado</td><td>Ilimitado</td></tr></tbody></table>
+<h2>4. Planes y pagos</h2>
+<ul>
+  <li><strong>Free:</strong> gratis para siempre; 5 perfiles, 1 dispositivo.</li>
+  <li><strong>Mensual:</strong> precio por dispositivo y mes. Los pedidos en VND se renuevan manualmente por transferencia bancaria; cada pago añade 30 días. Los pedidos en USD se renuevan automáticamente a través de LemonSqueezy; puede cancelar en cualquier momento y conserva el acceso hasta el final del periodo pagado.</li>
+  <li><strong>De por vida:</strong> pago único, actualizaciones para siempre y 3 años de soporte; el soporte puede renovarse por el 40% del precio actual del plan por cada 3 años adicionales.</li>
+  <li>Los dispositivos adicionales solo están disponibles para claves de por vida.</li>
+  <li>Los pagos con tarjeta internacional los procesa LemonSqueezy, que actúa como comerciante registrado (merchant of record) de esos pagos. Los pedidos en VND se pagan por transferencia bancaria (VietQR). Veilus no almacena los datos de su tarjeta.</li>
+  <li>Tras el pago, la clave de licencia se muestra en la página de compra y se envía a su correo electrónico.</li>
+  <li>Si una clave mensual no se renueva, la aplicación vuelve al plan Free al final del periodo pagado; los perfiles creados se conservan.</li>
+</ul>
 <h2>5. Uso aceptable</h2>
 <p>Prohibido: fraude, malware, acoso, CSAM, terrorismo.</p>
 <h2>6-14. Otros</h2>
@@ -293,14 +319,22 @@ export const termsTranslations: Record<string, {
     pt: {
         title: "Termos de Serviço",
         description: "Termos e condições de uso do navegador anti-detecção Veilus.",
-        lastUpdated: "6 de março de 2026",
+        lastUpdated: "28 de setembro de 2026",
         content: `
 <h2>1. Aceitação</h2>
 <p>Ao usar o Veilus, você concorda com estes Termos.</p>
 <h2>2. Descrição</h2>
 <p>Veilus é um navegador anti-detecção com automação, gerenciamento de perfis e API na nuvem.</p>
 <h2>3-4. Registro e Planos</h2>
-<table><thead><tr><th>Plano</th><th>Preço</th><th>Perfis</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>5</td></tr><tr><td>Starter</td><td>$15/mês</td><td>30</td></tr><tr><td>Pro</td><td>$49/mês</td><td>200</td></tr><tr><td>Business</td><td>$99/mês</td><td>1.000</td></tr><tr><td>Enterprise</td><td>Personalizado</td><td>Ilimitado</td></tr></tbody></table>
+<ul>
+  <li><strong>Free:</strong> gratuito para sempre; 5 perfis, 1 dispositivo.</li>
+  <li><strong>Mensal:</strong> preço por dispositivo por mês. Pedidos em VND são renovados manualmente por transferência bancária; cada pagamento adiciona 30 dias. Pedidos em USD são renovados automaticamente pelo LemonSqueezy; você pode cancelar a qualquer momento e mantém o acesso até o fim do período pago.</li>
+  <li><strong>Vitalício:</strong> pagamento único, atualizações para sempre e 3 anos de suporte; o suporte pode ser renovado por 40% do preço atual do plano a cada 3 anos adicionais.</li>
+  <li>Dispositivos adicionais estão disponíveis apenas para chaves vitalícias.</li>
+  <li>Pagamentos com cartão internacional são processados pelo LemonSqueezy, que atua como comerciante registrado (merchant of record) desses pagamentos. Pedidos em VND são pagos por transferência bancária (VietQR). A Veilus não armazena os dados do seu cartão.</li>
+  <li>Após o pagamento, a chave de licença é exibida na página de compra e enviada para o seu e-mail.</li>
+  <li>Se uma chave mensal não for renovada, o aplicativo volta ao plano Free ao fim do período pago; os perfis criados são mantidos.</li>
+</ul>
 <h2>5. Uso aceitável</h2>
 <p>Proibido: fraude, malware, assédio, CSAM, terrorismo.</p>
 <h2>6-14. Outros</h2>
@@ -310,14 +344,22 @@ export const termsTranslations: Record<string, {
     id: {
         title: "Ketentuan Layanan",
         description: "Syarat dan ketentuan penggunaan browser anti-deteksi Veilus.",
-        lastUpdated: "6 Maret 2026",
+        lastUpdated: "28 September 2026",
         content: `
 <h2>1. Persetujuan</h2>
 <p>Dengan menggunakan Veilus, Anda setuju dengan Ketentuan Layanan ini.</p>
 <h2>2. Deskripsi</h2>
 <p>Veilus adalah browser anti-deteksi dengan otomasi, manajemen profil, sinkronisasi, dan Cloud API.</p>
 <h2>3-4. Registrasi dan Paket</h2>
-<table><thead><tr><th>Paket</th><th>Harga</th><th>Profil</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>5</td></tr><tr><td>Starter</td><td>$15/bulan</td><td>30</td></tr><tr><td>Pro</td><td>$49/bulan</td><td>200</td></tr><tr><td>Business</td><td>$99/bulan</td><td>1.000</td></tr><tr><td>Enterprise</td><td>Kustom</td><td>Tak terbatas</td></tr></tbody></table>
+<ul>
+  <li><strong>Free:</strong> gratis selamanya; 5 profil, 1 perangkat.</li>
+  <li><strong>Bulanan:</strong> harga per perangkat per bulan. Pesanan VND diperpanjang secara manual melalui transfer bank; setiap pembayaran menambah 30 hari. Pesanan USD diperpanjang otomatis melalui LemonSqueezy; Anda dapat membatalkan kapan saja dan tetap memiliki akses hingga akhir periode yang telah dibayar.</li>
+  <li><strong>Seumur hidup:</strong> pembayaran satu kali, pembaruan selamanya dan dukungan 3 tahun; dukungan dapat diperpanjang dengan 40% dari harga paket saat ini untuk setiap 3 tahun berikutnya.</li>
+  <li>Perangkat tambahan hanya tersedia untuk kunci seumur hidup.</li>
+  <li>Pembayaran kartu internasional diproses oleh LemonSqueezy, yang bertindak sebagai merchant of record untuk pembayaran tersebut. Pesanan VND dibayar melalui transfer bank (VietQR). Veilus tidak menyimpan data kartu Anda.</li>
+  <li>Setelah pembayaran, kunci lisensi ditampilkan di halaman pembelian dan dikirim ke email Anda.</li>
+  <li>Jika kunci bulanan tidak diperpanjang, aplikasi kembali ke paket Free di akhir periode yang dibayar; profil yang telah dibuat tetap tersimpan.</li>
+</ul>
 <h2>5. Penggunaan</h2>
 <p>Dilarang: penipuan, malware, pelecehan, CSAM, terorisme.</p>
 <h2>6-14. Lainnya</h2>
@@ -327,14 +369,22 @@ export const termsTranslations: Record<string, {
     tr: {
         title: "Hizmet Şartları",
         description: "Veilus anti-detect tarayıcı kullanım şartları ve koşulları.",
-        lastUpdated: "6 Mart 2026",
+        lastUpdated: "28 Eylül 2026",
         content: `
 <h2>1. Kabul</h2>
 <p>Veilus'u kullanarak bu Hizmet Şartlarını kabul etmiş olursunuz.</p>
 <h2>2. Hizmet</h2>
 <p>Veilus, otomasyon, profil yönetimi, senkronizasyon ve Cloud API içeren bir anti-detect tarayıcısıdır.</p>
 <h2>3-4. Kayıt ve Planlar</h2>
-<table><thead><tr><th>Plan</th><th>Fiyat</th><th>Profiller</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>5</td></tr><tr><td>Starter</td><td>$15/ay</td><td>30</td></tr><tr><td>Pro</td><td>$49/ay</td><td>200</td></tr><tr><td>Business</td><td>$99/ay</td><td>1.000</td></tr><tr><td>Enterprise</td><td>Özel</td><td>Sınırsız</td></tr></tbody></table>
+<ul>
+  <li><strong>Free:</strong> sonsuza kadar ücretsiz; 5 profil, 1 cihaz.</li>
+  <li><strong>Aylık:</strong> cihaz başına aylık ücretlendirilir. VND siparişleri banka havalesiyle elle yenilenir; her ödeme 30 gün ekler. USD siparişleri LemonSqueezy üzerinden otomatik yenilenir; istediğiniz zaman iptal edebilir, ödenen dönemin sonuna kadar erişiminizi korursunuz.</li>
+  <li><strong>Ömür boyu:</strong> tek seferlik ödeme, süresiz güncellemeler ve 3 yıl destek; destek, sonraki her 3 yıl için planın güncel fiyatının %40'ı karşılığında yenilenebilir.</li>
+  <li>Ek cihazlar yalnızca ömür boyu anahtarlar için satın alınabilir.</li>
+  <li>Uluslararası kart ödemeleri, bu ödemelerde satıcı (merchant of record) olarak hareket eden LemonSqueezy tarafından işlenir. VND siparişleri banka havalesiyle (VietQR) ödenir. Veilus kart bilgilerinizi saklamaz.</li>
+  <li>Ödemeden sonra lisans anahtarı satın alma sayfasında gösterilir ve e-postanıza gönderilir.</li>
+  <li>Aylık anahtar yenilenmezse uygulama ödenen dönemin sonunda Free plana döner; oluşturduğunuz profiller korunur.</li>
+</ul>
 <h2>5. Kabul Edilebilir Kullanım</h2>
 <p>Yasak: dolandırıcılık, kötü amaçlı yazılım, taciz, CSAM, terörizm.</p>
 <h2>6-14. Diğer</h2>

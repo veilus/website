@@ -161,7 +161,7 @@
             {
                 "feature": "Plan de pago",
                 "values": [
-                    "$9/mes · $99 de por vida",
+                    "{monthly}/mes · {lifetime} de por vida",
                     "$99/mes",
                     "$49/mes",
                     "$9/mes"

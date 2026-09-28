@@ -161,7 +161,7 @@
             {
                 "feature": "Ücretli plan",
                 "values": [
-                    "$9/ay · $99 ömür boyu",
+                    "{monthly}/ay · {lifetime} ömür boyu",
                     "$99/ay",
                     "$49/ay",
                     "$9/ay"

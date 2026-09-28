@@ -161,7 +161,7 @@
             {
                 "feature": "Paket berbayar",
                 "values": [
-                    "$9/bln · $99 seumur hidup",
+                    "{monthly}/bln · {lifetime} seumur hidup",
                     "$99/bln",
                     "$49/bln",
                     "$9/bln"

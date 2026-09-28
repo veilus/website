@@ -1,9 +1,12 @@
 ---
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang } from '../i18n/utils';
+import { SKUS } from '../data/skus.js';
 interface Props { lang?: Lang; }
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
+// Giá trong bảng so sánh lấy từ SKUS để không lệch với trang giá.
+const fillPrices = (v: string) => v.replace('{monthly}', `$${SKUS.monthly.usd}`).replace('{lifetime}', `$${SKUS.solo.usd}`);
 ---
 <section class="section comparison" id="comparison" data-animate>
   <div class="container">
@@ -21,7 +24,7 @@ const i = t(lang);
               <td class="feature-col">{row.feature}</td>
               {row.values.map((val, idx) => (
                 <td class={idx === 0 ? 'highlight-col' : ''}>
-                  <span class={idx === 0 ? 'cell-win' : 'cell-neutral'}>{val}</span>
+                  <span class={idx === 0 ? 'cell-win' : 'cell-neutral'}>{fillPrices(val)}</span>
                 </td>
               ))}
             </tr>
