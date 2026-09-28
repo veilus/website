@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Anti-detect browser with built-in automation",
-        "description": "Free anti-detect browser with native performance. 5 profiles forever. Record actions to auto-generate scripts. Download now."
+        "description": "Free anti-detect browser with native performance. 5 profiles forever. Automate with scripts your AI assistant can write via MCP. Download now."
     },
     "nav": {
         "features": "Features",
@@ -18,7 +18,7 @@
         "subtitle": "The <strong>only</strong> anti-detect browser with a fully integrated automation platform. Native engine — 3x faster, 80% less RAM.",
         "check1": "Free 5 profiles forever — no credit card",
         "check2": "Each profile has unique fingerprint — undetectable",
-        "check3": "Record actions → auto-generate scripts in 1 click",
+        "check3": "Let your AI assistant write and run scripts via MCP — or write them yourself",
         "ctaPrimary": "Download free",
         "ctaSecondary": "Watch 90s demo",
         "note": "Windows, macOS, Linux"
@@ -46,7 +46,7 @@
             },
             {
                 "title": "Veilus Flow",
-                "desc": "Press \"Record\", interact with the web, press \"Stop\" — Veilus auto-generates YAML + Playwright scripts. Supports 20+ action types.",
+                "desc": "Write Playwright scripts yourself, or let your AI assistant (Claude, Cursor…) write, test and fix them via MCP — then run them across profiles. You approve a script before it runs at scale.",
                 "badge": "No coding required"
             },
             {
@@ -77,8 +77,8 @@
                 "desc": "Download Veilus for free. Create a profile with unique fingerprint in 10 seconds. Each profile = a completely new identity."
             },
             {
-                "title": "Record actions",
-                "desc": "Press \"Record\", browse the web normally — click, type, scroll. Veilus converts everything into an automation script."
+                "title": "Build your flow",
+                "desc": "Ask your AI assistant via MCP to write the script, or write it yourself."
             },
             {
                 "title": "Automate & Scale",
@@ -216,7 +216,7 @@
             },
             {
                 "q": "How is it different from Multilogin or GoLogin?",
-                "a": "Veilus uses a native engine instead of Electron — 3x faster, 80% less RAM. Plus, Veilus includes a built-in automation platform (action recorder, visual canvas) — competitors require separate tools."
+                "a": "Veilus uses a native engine instead of Electron — 3x faster, 80% less RAM. Plus, Veilus includes a built-in automation platform (scripts, local REST API and MCP) — competitors require separate tools."
             },
             {
                 "q": "Does it support Windows and Linux?",
@@ -232,7 +232,7 @@
             },
             {
                 "q": "How does Veilus Flow work?",
-                "a": "Press \"Record\" → interact with the web normally (click, type, scroll...) → press \"Stop\". Veilus auto-generates scripts in YAML and Playwright JavaScript formats. You can edit, add variables, then run across multiple profiles."
+                "a": "Write a Playwright script yourself, or ask your AI assistant to write, test and fix one via MCP, then run it across profiles in batch or on a schedule. Scripts nobody has approved yet run on at most 3 profiles per run — approve a script in Veilus Flow to run it at scale or on a schedule."
             },
             {
                 "q": "Does it use a lot of RAM?",

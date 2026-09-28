@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetecção com automação integrada",
-        "description": "Navegador antidetecção gratuito com performance nativa. 5 perfis para sempre. Grave ações e gere scripts automaticamente. Baixe agora."
+        "description": "Navegador antidetecção gratuito com performance nativa. 5 perfis para sempre. Automatize com scripts que seu assistente de IA pode escrever via MCP. Baixe agora."
     },
     "nav": {
         "features": "Recursos",
@@ -18,7 +18,7 @@
         "subtitle": "O <strong>único</strong> navegador antidetecção com plataforma de automação totalmente integrada. Motor nativo — 3x mais rápido, 80% menos RAM.",
         "check1": "5 perfis grátis para sempre — sem cartão de crédito",
         "check2": "Cada perfil com fingerprint único — indetectável",
-        "check3": "Grave ações → gere scripts automaticamente em 1 clique",
+        "check3": "Deixe seu assistente de IA escrever e rodar scripts via MCP — ou escreva você mesmo",
         "ctaPrimary": "Baixar gratis",
         "ctaSecondary": "Ver demo de 90s",
         "note": "Windows, macOS, Linux"
@@ -46,7 +46,7 @@
             },
             {
                 "title": "Veilus Flow",
-                "desc": "Clique \"Gravar\", navegue na web, clique \"Parar\" — Veilus gera scripts YAML + Playwright automaticamente. Suporta 20+ tipos de ações.",
+                "desc": "Escreva scripts Playwright você mesmo, ou deixe seu assistente de IA (Claude, Cursor…) escrever, testar e corrigir via MCP — depois rode em vários perfis. Você aprova o script antes de rodar em escala.",
                 "badge": "Sem programação"
             },
             {
@@ -77,8 +77,8 @@
                 "desc": "Baixe Veilus grátis. Crie um perfil com fingerprint único em 10 segundos. Cada perfil = uma identidade completamente nova."
             },
             {
-                "title": "Grave ações",
-                "desc": "Clique \"Gravar\", navegue normalmente — clique, digite, role. Veilus transforma tudo em script de automação."
+                "title": "Monte seu fluxo",
+                "desc": "Peça ao seu assistente de IA para escrever o script via MCP, ou escreva você mesmo."
             },
             {
                 "title": "Automatize e escale",
@@ -216,7 +216,7 @@
             },
             {
                 "q": "Qual a diferença do Multilogin?",
-                "a": "Veilus usa um motor nativo em vez de Electron — 3x mais rápido, 80% menos RAM. Além disso, automação integrada (gravação, canvas visual) — concorrentes precisam de ferramentas separadas."
+                "a": "Veilus usa um motor nativo em vez de Electron — 3x mais rápido, 80% menos RAM. Além disso, automação integrada (scripts, API REST local e MCP) — concorrentes precisam de ferramentas separadas."
             },
             {
                 "q": "Suporta Windows e Linux?",
@@ -232,7 +232,7 @@
             },
             {
                 "q": "Como funciona o Veilus Flow?",
-                "a": "\"Gravar\" → navegar → \"Parar\". Veilus gera scripts YAML e Playwright. Edite, adicione variáveis e execute em múltiplos perfis."
+                "a": "Escreva um script Playwright você mesmo, ou peça ao seu assistente de IA para escrever, testar e corrigir via MCP, depois rode em vários perfis, em lote ou agendado. Um script ainda não aprovado roda em no máximo 3 perfis por vez — aprove-o no Veilus Flow para rodar em escala ou agendado."
             },
             {
                 "q": "Usa muita RAM?",

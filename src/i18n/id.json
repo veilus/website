@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Browser anti-deteksi dengan otomasi terintegrasi",
-        "description": "Browser anti-deteksi gratis dengan performa native. 5 profil selamanya. Rekam aksi dan buat script otomatis. Unduh sekarang."
+        "description": "Browser anti-deteksi gratis dengan performa native. 5 profil selamanya. Otomatisasi dengan script yang bisa ditulis asisten AI Anda via MCP. Unduh sekarang."
     },
     "nav": {
         "features": "Fitur",
@@ -18,7 +18,7 @@
         "subtitle": "Browser anti-deteksi <strong>satu-satunya</strong> dengan platform otomasi terintegrasi penuh. Engine native — 3x lebih cepat, RAM 80% lebih sedikit.",
         "check1": "5 profil gratis selamanya — tanpa kartu kredit",
         "check2": "Setiap profil memiliki fingerprint unik — tidak terdeteksi",
-        "check3": "Rekam aksi → buat script otomatis dalam 1 klik",
+        "check3": "Biarkan asisten AI menulis dan menjalankan script via MCP — atau tulis sendiri",
         "ctaPrimary": "Unduh gratis",
         "ctaSecondary": "Tonton demo 90 detik",
         "note": "Windows, macOS, Linux"
@@ -46,7 +46,7 @@
             },
             {
                 "title": "Veilus Flow",
-                "desc": "Tekan \"Rekam\", jelajahi web, tekan \"Stop\" — Veilus otomatis membuat script YAML + Playwright. Mendukung 20+ jenis aksi.",
+                "desc": "Tulis script Playwright sendiri, atau biarkan asisten AI (Claude, Cursor…) menulis, menguji, dan memperbaikinya via MCP — lalu jalankan di banyak profil. Anda menyetujui script sebelum dijalankan dalam skala besar.",
                 "badge": "Tanpa coding"
             },
             {
@@ -77,8 +77,8 @@
                 "desc": "Unduh Veilus gratis. Buat profil dengan fingerprint unik dalam 10 detik. Setiap profil = identitas yang benar-benar baru."
             },
             {
-                "title": "Rekam aksi",
-                "desc": "Tekan \"Rekam\", jelajahi web seperti biasa — klik, ketik, gulir. Veilus mengubah semuanya menjadi script otomasi."
+                "title": "Bangun alur Anda",
+                "desc": "Minta asisten AI menulis script via MCP, atau tulis sendiri."
             },
             {
                 "title": "Otomatisasi & Skalakan",
@@ -232,7 +232,7 @@
             },
             {
                 "q": "Bagaimana Veilus Flow bekerja?",
-                "a": "\"Rekam\" → jelajahi web → \"Stop\". Veilus membuat script YAML dan Playwright. Edit, tambahkan variabel, dan jalankan di banyak profil."
+                "a": "Tulis script Playwright sendiri, atau minta asisten AI menulis, menguji, dan memperbaikinya via MCP, lalu jalankan di banyak profil — massal atau terjadwal. Script yang belum disetujui hanya berjalan di maksimal 3 profil per eksekusi — setujui script di Veilus Flow untuk menjalankannya dalam skala besar atau terjadwal."
             },
             {
                 "q": "Apakah menggunakan banyak RAM?",

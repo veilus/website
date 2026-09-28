@@ -5,7 +5,7 @@
 - Free tier: 5 browser profiles forever, no credit card required
 - Native engine built with Tauri + Rust (not Electron)
 - Each profile has a unique fingerprint: Canvas, WebGL, AudioContext, Client Hints (20+ parameters)
-- Built-in automation: action recorder, visual canvas flow builder
+- Built-in automation: Playwright scripts written by you or your AI assistant via MCP
 - End-to-end encrypted sync via Git or Google Drive
 - Currently available on macOS; Windows and Linux expected Q2 2026
 
@@ -20,7 +20,7 @@
 
 ## Core Features
 - Fingerprint Engine: 20+ browser parameters customized per profile
-- VeilusFlow: Record actions → auto-generate YAML + Playwright scripts
+- VeilusFlow: Write Playwright scripts yourself or via your AI assistant over MCP; run across profiles in batch or on schedule
 - Visual Canvas: Drag-and-drop automation flow builder (low-code)
 - VeilusSync: Hierarchical end-to-end encrypted profile sync
 - Scheduling: Hourly/daily/weekly automation with missed-run catch-up

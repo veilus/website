@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Otomasyon entegre anti-tespit tarayıcısı",
-        "description": "Yerel performanslı ücretsiz anti-tespit tarayıcısı. 5 profil sonsuza kadar. Eylemleri kaydedin, otomatik script oluşturun. Hemen indirin."
+        "description": "Yerel performanslı ücretsiz anti-tespit tarayıcısı. 5 profil sonsuza kadar. AI asistanınızın MCP üzerinden yazdığı scriptlerle otomasyon. Hemen indirin."
     },
     "nav": {
         "features": "Özellikler",
@@ -18,7 +18,7 @@
         "subtitle": "Tamamen entegre otomasyon platformuna sahip <strong>tek</strong> anti-tespit tarayıcısı. Yerel motor — 3 kat hızlı, %80 daha az RAM.",
         "check1": "5 profil sonsuza kadar ücretsiz — kredi kartı gerekmez",
         "check2": "Her profilin benzersiz parmak izi — tespit edilemez",
-        "check3": "Eylemleri kaydet → 1 tıkla otomatik script oluştur",
+        "check3": "AI asistanınız MCP üzerinden script yazsın ve çalıştırsın — ya da kendiniz yazın",
         "ctaPrimary": "Ücretsiz indir",
         "ctaSecondary": "90 sn demo izle",
         "note": "Windows, macOS, Linux"
@@ -46,7 +46,7 @@
             },
             {
                 "title": "Veilus Flow",
-                "desc": "\"Kaydet\"e basın, web'de gezinin, \"Durdur\"a basın — Veilus otomatik YAML + Playwright scriptleri oluşturur. 20+ eylem türü desteği.",
+                "desc": "Playwright scriptlerini kendiniz yazın veya AI asistanınız (Claude, Cursor…) MCP üzerinden yazsın, test etsin ve düzeltsin — sonra birden fazla profilde çalıştırın. Büyük ölçekte çalıştırmadan önce scripti onaylarsınız.",
                 "badge": "Kod gerektirmez"
             },
             {
@@ -77,8 +77,8 @@
                 "desc": "Veilus'u ücretsiz indirin. 10 saniyede benzersiz parmak izli profil oluşturun. Her profil = tamamen yeni bir kimlik."
             },
             {
-                "title": "Eylemleri kaydedin",
-                "desc": "\"Kaydet\"e basın, normal şekilde gezinin — tıklayın, yazın, kaydırın. Veilus her şeyi otomasyon scriptine dönüştürür."
+                "title": "Akışınızı oluşturun",
+                "desc": "AI asistanınızdan MCP üzerinden scripti yazmasını isteyin, ya da kendiniz yazın."
             },
             {
                 "title": "Otomatikleştirin ve ölçeklendirin",
@@ -232,7 +232,7 @@
             },
             {
                 "q": "Veilus Flow nasıl çalışıyor?",
-                "a": "\"Kaydet\" → gezin → \"Durdur\". Veilus YAML ve Playwright scriptleri oluşturur. Düzenleyin ve birden fazla profilde çalıştırın."
+                "a": "Playwright scriptini kendiniz yazın, ya da AI asistanınızdan MCP üzerinden yazmasını, test etmesini ve düzeltmesini isteyin, sonra profillerde toplu veya zamanlanmış şekilde çalıştırın. Onaylanmamış bir script her çalıştırmada en fazla 3 profilde çalışır — büyük ölçekte veya zamanlanmış çalıştırmak için scripti Veilus Flow'da onaylayın."
             },
             {
                 "q": "Çok RAM kullanıyor mu?",

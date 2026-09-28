@@ -19,7 +19,7 @@ export const termsTranslations: Record<string, {
 <ul>
   <li>Desktop application (macOS, with Windows and Linux planned)</li>
   <li>Browser profile management with fingerprint customization</li>
-  <li>Automation tools (Veilus Flow recorder, Visual Canvas)</li>
+  <li>Automation tools (Veilus Flow, Visual Canvas)</li>
   <li>Profile synchronization (Veilus Sync)</li>
   <li>Script scheduling and batch execution</li>
   <li>Cloud API for account and license management</li>

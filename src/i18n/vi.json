@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Trình duyệt chống phát hiện với automation tích hợp",
-        "description": "Anti-detect browser miễn phí, hiệu suất vượt trội. 5 profiles vĩnh viễn. Ghi thao tác tạo script tự động. Tải ngay."
+        "description": "Anti-detect browser miễn phí, hiệu suất vượt trội. 5 profiles vĩnh viễn. Tự động hóa bằng script do trợ lý AI viết qua MCP. Tải ngay."
     },
     "nav": {
         "features": "Tính năng",
@@ -18,7 +18,7 @@
         "subtitle": "Trình duyệt chống phát hiện <strong>duy nhất</strong> tích hợp nền tảng tự động hóa hoàn chỉnh. Engine gốc — nhanh hơn 3x, ít RAM hơn 80%.",
         "check1": "Miễn phí 5 profiles vĩnh viễn — không thẻ tín dụng",
         "check2": "Mỗi profile có fingerprint riêng biệt — undetectable",
-        "check3": "Ghi thao tác → tạo script tự động trong 1 click",
+        "check3": "Để trợ lý AI viết và chạy script qua MCP — hoặc tự viết lấy",
         "ctaPrimary": "Tải miễn phí",
         "ctaSecondary": "Xem demo 90 giây",
         "note": "Windows, macOS, Linux"
@@ -46,7 +46,7 @@
             },
             {
                 "title": "Veilus Flow",
-                "desc": "Nhấn \"Ghi\", thao tác trên web, nhấn \"Dừng\" — Veilus tự tạo script YAML + Playwright. Hỗ trợ 20+ loại hành động.",
+                "desc": "Tự viết script Playwright, hoặc để trợ lý AI (Claude, Cursor…) viết, kiểm tra và sửa qua MCP — rồi chạy trên nhiều profiles. Bạn duyệt script trước khi chạy quy mô lớn.",
                 "badge": "Không cần viết code"
             },
             {
@@ -77,8 +77,8 @@
                 "desc": "Tải Veilus miễn phí. Tạo profile với fingerprint riêng biệt trong 10 giây. Mỗi profile = một danh tính hoàn toàn mới."
             },
             {
-                "title": "Ghi thao tác",
-                "desc": "Nhấn \"Ghi\", sử dụng web bình thường — click, nhập liệu, cuộn. Veilus tự chuyển thành script tự động hóa."
+                "title": "Xây dựng flow",
+                "desc": "Nhờ trợ lý AI viết script qua MCP, hoặc tự viết lấy."
             },
             {
                 "title": "Tự động hóa & Scale",
@@ -216,7 +216,7 @@
             },
             {
                 "q": "Khác gì so với Multilogin hay GoLogin?",
-                "a": "Veilus dùng engine gốc thay vì Electron — nhanh hơn 3x, ít RAM hơn 80%. Tích hợp sẵn automation (ghi thao tác, visual canvas) — đối thủ cần mua thêm tool."
+                "a": "Veilus dùng engine gốc thay vì Electron — nhanh hơn 3x, ít RAM hơn 80%. Tích hợp sẵn automation (script, REST API cục bộ và MCP) — đối thủ cần mua thêm tool."
             },
             {
                 "q": "Hỗ trợ Windows và Linux không?",
@@ -232,7 +232,7 @@
             },
             {
                 "q": "Veilus Flow hoạt động thế nào?",
-                "a": "\"Ghi\" → thao tác web → \"Dừng\". Veilus tạo script YAML + Playwright. Chỉnh sửa, thêm biến, chạy trên nhiều profiles."
+                "a": "Tự viết script Playwright, hoặc nhờ trợ lý AI viết, kiểm tra và sửa qua MCP, rồi chạy trên nhiều profiles — hàng loạt hoặc theo lịch. Script chưa được duyệt chỉ chạy tối đa 3 profiles mỗi lần; duyệt script trong Veilus Flow để chạy quy mô lớn hoặc theo lịch."
             },
             {
                 "q": "Có tốn nhiều RAM không?",

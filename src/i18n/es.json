@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetección con automatización integrada",
-        "description": "Navegador antidetección gratuito con rendimiento nativo. 5 perfiles para siempre. Graba acciones y genera scripts automáticamente. Descárgalo ahora."
+        "description": "Navegador antidetección gratuito con rendimiento nativo. 5 perfiles para siempre. Automatiza con scripts que tu asistente de IA puede escribir vía MCP. Descárgalo ahora."
     },
     "nav": {
         "features": "Funciones",
@@ -18,7 +18,7 @@
         "subtitle": "El <strong>único</strong> navegador antidetección con plataforma de automatización completamente integrada. Motor nativo — 3x más rápido, 80% menos RAM.",
         "check1": "5 perfiles gratis para siempre — sin tarjeta de crédito",
         "check2": "Cada perfil con fingerprint único — indetectable",
-        "check3": "Graba acciones → genera scripts automáticamente en 1 clic",
+        "check3": "Deja que tu asistente de IA escriba y ejecute scripts vía MCP — o escríbelos tú mismo",
         "ctaPrimary": "Descargar gratis",
         "ctaSecondary": "Ver demo de 90s",
         "note": "Windows, macOS, Linux"
@@ -46,7 +46,7 @@
             },
             {
                 "title": "Veilus Flow",
-                "desc": "Pulsa \"Grabar\", navega por la web, pulsa \"Parar\" — Veilus genera scripts YAML + Playwright automáticamente. Soporta 20+ tipos de acciones.",
+                "desc": "Escribe scripts de Playwright tú mismo, o deja que tu asistente de IA (Claude, Cursor…) los escriba, pruebe y corrija vía MCP — luego ejecútalos en varios perfiles. Apruebas el script antes de ejecutarlo a gran escala.",
                 "badge": "Sin programar"
             },
             {
@@ -77,8 +77,8 @@
                 "desc": "Descarga Veilus gratis. Crea un perfil con fingerprint único en 10 segundos. Cada perfil = una identidad completamente nueva."
             },
             {
-                "title": "Graba acciones",
-                "desc": "Pulsa \"Grabar\", navega normalmente — clic, escribe, desplázate. Veilus transforma todo en un script de automatización."
+                "title": "Crea tu flujo",
+                "desc": "Pide a tu asistente de IA que escriba el script vía MCP, o escríbelo tú mismo."
             },
             {
                 "title": "Automatiza y escala",
@@ -232,7 +232,7 @@
             },
             {
                 "q": "¿Cómo funciona Veilus Flow?",
-                "a": "\"Grabar\" → navegar → \"Parar\". Veilus genera scripts YAML y Playwright. Edita, agrega variables y ejecuta en múltiples perfiles."
+                "a": "Escribe un script de Playwright tú mismo, o pide a tu asistente de IA que lo escriba, pruebe y corrija vía MCP, luego ejecútalo en varios perfiles, por lotes o programado. Un script sin aprobar se ejecuta en máximo 3 perfiles por vez — apruébalo en Veilus Flow para ejecutarlo a gran escala o programado."
             },
             {
                 "q": "¿Usa mucha RAM?",
