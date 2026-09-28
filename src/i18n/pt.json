@@ -16,70 +16,6 @@
         "menu": "Abrir menu",
         "language": "Idioma"
     },
-    "pain": {
-        "badge": "O problema",
-        "title": "Cuidar de muitas contas na mão",
-        "titleHighlight": "dá errado em três pontos",
-        "items": [
-            {
-                "title": "Um banimento derruba as outras",
-                "desc": "As plataformas ligam contas que compartilham impressão digital do navegador, IP ou cookies. Uma conta é sinalizada e as outras vão junto."
-            },
-            {
-                "title": "Os mesmos cliques, cinquenta vezes por dia",
-                "desc": "Entrar, postar, responder, conferir pedidos — e repetir tudo no próximo perfil. Horas indo para um trabalho que um script faria."
-            },
-            {
-                "title": "Proxies e cookies numa planilha",
-                "desc": "Qual proxy é de qual conta? Quais cookies ainda valem? Uma confusão e duas contas ficam ligadas."
-            }
-        ],
-        "bridge": "O Veilus coloca cada conta em seu próprio perfil e faz o trabalho repetitivo por você."
-    },
-    "audience": {
-        "badge": "Para quem é",
-        "title": "Feito para quem cuida de",
-        "titleHighlight": "muitas contas ao mesmo tempo",
-        "subtitle": "Encontre o seu tipo de trabalho. Veja o que muda com o Veilus.",
-        "items": [
-            {
-                "title": "Redes sociais e MMO",
-                "outcome": "Mantenha dezenas de contas sociais separadas e publique em todas sem fazer tudo na mão.",
-                "features": [
-                    "Impressão digital e proxy próprios por perfil",
-                    "Veilus Flow para posts e respostas diárias",
-                    "Agendamentos que rodam sem você"
-                ]
-            },
-            {
-                "title": "Anúncios e afiliados",
-                "outcome": "Cada conta de anúncios e cada cliente com seu perfil e seu proxy — logins, cookies e IPs nunca se misturam.",
-                "features": [
-                    "Um perfil por conta de anúncios",
-                    "Proxies HTTP, HTTPS e SOCKS5",
-                    "Importar/exportar para mover perfis"
-                ]
-            },
-            {
-                "title": "Vendedores de e-commerce",
-                "outcome": "Gerencie várias lojas na Shopee, Amazon ou Etsy em um só computador, cada uma com sua identidade.",
-                "features": [
-                    "Um perfil por loja",
-                    "Um só script para conferir pedidos e mensagens",
-                    "Execução em lote em todas as lojas"
-                ]
-            },
-            {
-                "title": "Desenvolvedores",
-                "outcome": "Controle perfis de navegador pelos seus scripts ou ferramentas de IA, com a parte de impressão digital já resolvida.",
-                "features": [
-                    "API REST local",
-                    "MCP para ferramentas de IA",
-                    "Execução em lote e agendada"
-                ]
-            }
-        ]
-    },
     "features": {
         "badge": "Recursos",
         "title": "Tudo o que você precisa,",
@@ -431,6 +367,21 @@
                 "Você aprova uma vez no Veilus Flow.",
                 "Um agendamento às 08:00 roda os 10 navegadores."
             ]
+        },
+        "fig2": {
+            "figNo": "Figura 2",
+            "fig": "o que um site vê",
+            "title": "Um dispositivo. O site vê quatro pessoas diferentes.",
+            "plain": "Navegador comum",
+            "machine": "1 dispositivo",
+            "machineVeilus": "1 dispositivo · Veilus",
+            "account": "Conta {n}",
+            "shared": "mesma impressão digital · mesmo IP",
+            "site": "Site",
+            "badTitle": "4 contas = 1 pessoa",
+            "badSub": "uma banida, as quatro perdidas",
+            "goodTitle": "4 contas = 4 pessoas",
+            "goodSub": "cada conta por conta própria"
         }
     }
 }

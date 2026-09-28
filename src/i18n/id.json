@@ -16,70 +16,6 @@
         "menu": "Buka menu",
         "language": "Bahasa"
     },
-    "pain": {
-        "badge": "Masalahnya",
-        "title": "Mengurus banyak akun secara manual",
-        "titleHighlight": "bermasalah di tiga titik",
-        "items": [
-            {
-                "title": "Satu akun diblokir, yang lain ikut terseret",
-                "desc": "Platform menghubungkan akun yang berbagi sidik jari browser, IP, atau cookie. Satu akun ditandai, sisanya ikut menyusul."
-            },
-            {
-                "title": "Klik yang sama, lima puluh kali sehari",
-                "desc": "Login, posting, balas pesan, cek pesanan — lalu ulangi semuanya di profil berikutnya. Berjam-jam habis untuk pekerjaan yang bisa dikerjakan skrip."
-            },
-            {
-                "title": "Proxy dan cookie di spreadsheet",
-                "desc": "Proxy mana untuk akun mana? Cookie mana yang masih berlaku? Sekali tertukar, dua akun langsung terhubung."
-            }
-        ],
-        "bridge": "Veilus menaruh tiap akun di profilnya sendiri dan mengerjakan pekerjaan berulang untuk Anda."
-    },
-    "audience": {
-        "badge": "Untuk siapa",
-        "title": "Dibuat untuk yang mengelola",
-        "titleHighlight": "banyak akun sekaligus",
-        "subtitle": "Temukan jenis pekerjaan Anda. Ini yang berubah dengan Veilus.",
-        "items": [
-            {
-                "title": "MMO & media sosial",
-                "outcome": "Jaga puluhan akun media sosial tetap terpisah, dan posting ke semuanya tanpa kerja manual.",
-                "features": [
-                    "Sidik jari dan proxy sendiri per profil",
-                    "Veilus Flow untuk posting dan balasan harian",
-                    "Jadwal yang berjalan saat Anda pergi"
-                ]
-            },
-            {
-                "title": "Iklan & afiliasi",
-                "outcome": "Setiap akun iklan dan setiap klien punya profil dan proxy sendiri — login, cookie, dan IP tidak pernah tercampur.",
-                "features": [
-                    "Satu profil per akun iklan",
-                    "Proxy HTTP, HTTPS, dan SOCKS5",
-                    "Impor/ekspor untuk memindahkan profil"
-                ]
-            },
-            {
-                "title": "Penjual e-commerce",
-                "outcome": "Kelola beberapa toko Shopee, Amazon, atau Etsy dari satu komputer, masing-masing dengan identitasnya sendiri.",
-                "features": [
-                    "Satu profil per toko",
-                    "Satu skrip untuk cek pesanan dan chat",
-                    "Jalankan massal di semua toko"
-                ]
-            },
-            {
-                "title": "Developer",
-                "outcome": "Kendalikan profil browser dari skrip atau alat AI Anda sendiri, dengan urusan sidik jari yang sudah beres.",
-                "features": [
-                    "REST API lokal",
-                    "MCP untuk alat AI",
-                    "Jalankan massal dan terjadwal"
-                ]
-            }
-        ]
-    },
     "features": {
         "badge": "Fitur",
         "title": "Semua yang Anda butuhkan,",
@@ -431,6 +367,21 @@
                 "Anda menyetujuinya sekali di Veilus Flow.",
                 "Jadwal pukul 08:00 menjalankan ke-10 browser."
             ]
+        },
+        "fig2": {
+            "figNo": "Gambar 2",
+            "fig": "yang dilihat situs web",
+            "title": "Satu perangkat. Situs web melihat empat orang berbeda.",
+            "plain": "Browser biasa",
+            "machine": "1 perangkat",
+            "machineVeilus": "1 perangkat · Veilus",
+            "account": "Akun {n}",
+            "shared": "sidik jari sama · IP sama",
+            "site": "Situs web",
+            "badTitle": "4 akun = 1 orang",
+            "badSub": "blokir satu, hilang keempatnya",
+            "goodTitle": "4 akun = 4 orang",
+            "goodSub": "tiap akun berdiri sendiri"
         }
     }
 }

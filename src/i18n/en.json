@@ -16,70 +16,6 @@
         "menu": "Open menu",
         "language": "Language"
     },
-    "pain": {
-        "badge": "The problem",
-        "title": "Running many accounts by hand",
-        "titleHighlight": "goes wrong in three places",
-        "items": [
-            {
-                "title": "One ban drags the others down",
-                "desc": "Platforms link accounts that share a browser fingerprint, an IP or cookies. One account gets flagged, and the rest follow."
-            },
-            {
-                "title": "The same clicks, fifty times a day",
-                "desc": "Log in, post, reply, check orders — then do it all again in the next profile. Hours go to work a script could do."
-            },
-            {
-                "title": "Proxies and cookies in a spreadsheet",
-                "desc": "Which proxy belongs to which account? Which cookies still work? One mix-up and two accounts are linked."
-            }
-        ],
-        "bridge": "Veilus keeps each account in its own profile and does the repeat work for you."
-    },
-    "audience": {
-        "badge": "Who it's for",
-        "title": "Made for people who run",
-        "titleHighlight": "many accounts at once",
-        "subtitle": "Find your kind of work. Here is what changes with Veilus.",
-        "items": [
-            {
-                "title": "MMO & social media",
-                "outcome": "Keep dozens of social accounts apart, and post to all of them without doing it by hand.",
-                "features": [
-                    "Own fingerprint and proxy per profile",
-                    "Veilus Flow for daily posts and replies",
-                    "Schedules that run while you're away"
-                ]
-            },
-            {
-                "title": "Ads & affiliate",
-                "outcome": "Give every ad account and every client its own profile and proxy, so logins, cookies and IPs never mix.",
-                "features": [
-                    "One profile per ad account",
-                    "HTTP, HTTPS and SOCKS5 proxies",
-                    "Import/export to move profiles"
-                ]
-            },
-            {
-                "title": "E-commerce sellers",
-                "outcome": "Run several Shopee, Amazon or Etsy stores from one computer, each on its own identity.",
-                "features": [
-                    "One profile per store",
-                    "One script for order and message checks",
-                    "Batch runs across every store"
-                ]
-            },
-            {
-                "title": "Developers",
-                "outcome": "Drive browser profiles from your own scripts or AI tools, with the fingerprint work already done.",
-                "features": [
-                    "Local REST API",
-                    "MCP for AI tools",
-                    "Batch runs and schedules"
-                ]
-            }
-        ]
-    },
     "features": {
         "badge": "Features",
         "title": "Everything you need,",
@@ -431,6 +367,21 @@
                 "You approve it once in Veilus Flow.",
                 "An 08:00 schedule runs all 10 browsers."
             ]
+        },
+        "fig2": {
+            "figNo": "Figure 2",
+            "fig": "what a website sees",
+            "title": "One machine. The website sees four different people.",
+            "plain": "Regular browser",
+            "machine": "1 machine",
+            "machineVeilus": "1 machine · Veilus",
+            "account": "Acct {n}",
+            "shared": "same fingerprint · same IP",
+            "site": "Website",
+            "badTitle": "4 accounts = 1 person",
+            "badSub": "ban one, lose all four",
+            "goodTitle": "4 accounts = 4 people",
+            "goodSub": "each account stands alone"
         }
     }
 }

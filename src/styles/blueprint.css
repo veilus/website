@@ -55,6 +55,15 @@ a.k-btn-o:hover { background: var(--paper); }
 .k-wbd b { font-weight: 600; }
 .k-wbd em { font-style: normal; color: var(--muted); margin-left: auto; }
 
+/* ---------- Nhãn, máy, mũi tên thả ---------- */
+.k-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1.5px solid var(--ink); background: var(--paper); font-family: var(--font-mono); font-size: 11.5px; white-space: nowrap; }
+.k-chip .ms { font-size: 15px; }
+.k-dev { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 24px; }
+.k-dev .ms { font-size: 44px; }
+.k-dev small { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.k-drop { position: relative; width: 0; height: 26px; margin: 4px 0; border-left: 1.5px solid var(--ink); }
+.k-drop::after { content: ''; position: absolute; left: -5.5px; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); }
+
 /* ---------- Chấm chạy dọc mũi tên ----------
    Khung .k-pulse phủ cả chiều dài mũi tên; dời khung đúng 100% bề rộng của chính nó = chấm đi hết mũi tên.
    Không JS hoặc giảm chuyển động: không có chấm (nó chỉ để trang trí). */

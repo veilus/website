@@ -16,70 +16,6 @@
         "menu": "Mở menu",
         "language": "Ngôn ngữ"
     },
-    "pain": {
-        "badge": "Vấn đề",
-        "title": "Chạy nhiều tài khoản bằng tay",
-        "titleHighlight": "hỏng ở ba chỗ",
-        "items": [
-            {
-                "title": "Một tài khoản bị khoá, cả loạt bị kéo theo",
-                "desc": "Nền tảng nối các tài khoản dùng chung fingerprint, IP hay cookie. Một tài khoản bị đánh dấu là những tài khoản còn lại đi theo."
-            },
-            {
-                "title": "Cùng một thao tác, lặp lại năm mươi lần mỗi ngày",
-                "desc": "Đăng nhập, đăng bài, trả lời tin nhắn, kiểm đơn — rồi làm lại y hệt ở profile kế tiếp. Hàng giờ trôi vào việc mà một script làm được."
-            },
-            {
-                "title": "Proxy và cookie quản bằng file Excel",
-                "desc": "Proxy nào đi với tài khoản nào? Cookie nào còn dùng được? Nhầm một lần là hai tài khoản dính nhau."
-            }
-        ],
-        "bridge": "Veilus tách mỗi tài khoản vào một profile riêng và làm thay bạn phần việc lặp lại."
-    },
-    "audience": {
-        "badge": "Dành cho bạn",
-        "title": "Làm cho người chạy",
-        "titleHighlight": "nhiều tài khoản cùng lúc",
-        "subtitle": "Tìm đúng việc của bạn. Đây là thứ Veilus thay đổi.",
-        "items": [
-            {
-                "title": "MMO & mạng xã hội",
-                "outcome": "Giữ hàng chục tài khoản mạng xã hội tách biệt, và đăng bài cho tất cả mà không phải làm tay.",
-                "features": [
-                    "Fingerprint và proxy riêng cho từng profile",
-                    "Veilus Flow cho việc đăng bài, trả lời hằng ngày",
-                    "Lịch chạy tự động khi bạn vắng mặt"
-                ]
-            },
-            {
-                "title": "Quảng cáo & affiliate",
-                "outcome": "Mỗi tài khoản quảng cáo, mỗi khách hàng một profile và proxy riêng — đăng nhập, cookie và IP không bao giờ lẫn.",
-                "features": [
-                    "Một profile cho mỗi tài khoản quảng cáo",
-                    "Proxy HTTP, HTTPS và SOCKS5",
-                    "Nhập/xuất để chuyển profile"
-                ]
-            },
-            {
-                "title": "Bán hàng TMĐT",
-                "outcome": "Quản lý nhiều shop Shopee, Amazon, Etsy trên một máy, mỗi shop một danh tính.",
-                "features": [
-                    "Một profile cho mỗi shop",
-                    "Một script kiểm đơn, tin nhắn cho mọi shop",
-                    "Chạy hàng loạt trên mọi shop"
-                ]
-            },
-            {
-                "title": "Lập trình viên",
-                "outcome": "Điều khiển profile trình duyệt từ script hoặc công cụ AI của bạn, phần fingerprint đã có sẵn.",
-                "features": [
-                    "REST API cục bộ",
-                    "MCP cho công cụ AI",
-                    "Chạy hàng loạt và theo lịch"
-                ]
-            }
-        ]
-    },
     "features": {
         "badge": "Tính năng",
         "title": "Mọi thứ bạn cần,",
@@ -431,6 +367,21 @@
                 "Bạn duyệt một lần trong Veilus Flow.",
                 "Lịch 08:00 chạy cả 10 trình duyệt."
             ]
+        },
+        "fig2": {
+            "figNo": "Hình 2",
+            "fig": "trang web thấy gì",
+            "title": "Cùng một máy. Trang web thấy bốn người khác nhau.",
+            "plain": "Trình duyệt thường",
+            "machine": "1 máy",
+            "machineVeilus": "1 máy · Veilus",
+            "account": "TK {n}",
+            "shared": "cùng fingerprint · cùng IP",
+            "site": "Trang web",
+            "badTitle": "4 tài khoản = 1 người",
+            "badSub": "khoá một, mất cả bốn",
+            "goodTitle": "4 tài khoản = 4 người",
+            "goodSub": "mỗi tài khoản đứng riêng"
         }
     }
 }

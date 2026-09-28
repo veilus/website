@@ -16,70 +16,6 @@
         "menu": "Menüyü aç",
         "language": "Dil"
     },
-    "pain": {
-        "badge": "Sorun",
-        "title": "Çok sayıda hesabı elle yönetmek",
-        "titleHighlight": "üç yerde aksar",
-        "items": [
-            {
-                "title": "Bir ban diğerlerini de götürür",
-                "desc": "Platformlar aynı tarayıcı parmak izini, IP'yi veya çerezleri paylaşan hesapları birbirine bağlar. Biri işaretlenir, gerisi de peşinden gider."
-            },
-            {
-                "title": "Günde elli kez aynı tıklamalar",
-                "desc": "Giriş yap, paylaş, yanıtla, siparişleri kontrol et — sonra hepsini bir sonraki profilde tekrarla. Bir betiğin yapabileceği işe saatler gider."
-            },
-            {
-                "title": "Proxy'ler ve çerezler bir tabloda",
-                "desc": "Hangi proxy hangi hesaba ait? Hangi çerezler hâlâ geçerli? Tek bir karışıklık ve iki hesap birbirine bağlanır."
-            }
-        ],
-        "bridge": "Veilus her hesabı kendi profilinde tutar ve tekrarlayan işleri sizin yerinize yapar."
-    },
-    "audience": {
-        "badge": "Kimler için",
-        "title": "Aynı anda",
-        "titleHighlight": "çok sayıda hesap yönetenler için",
-        "subtitle": "İşinizi bulun. Veilus ile değişen şey şu.",
-        "items": [
-            {
-                "title": "MMO ve sosyal medya",
-                "outcome": "Onlarca sosyal medya hesabını birbirinden ayrı tutun ve hepsine elle uğraşmadan paylaşım yapın.",
-                "features": [
-                    "Her profile ayrı parmak izi ve proxy",
-                    "Günlük paylaşım ve yanıtlar için Veilus Flow",
-                    "Siz yokken çalışan zamanlamalar"
-                ]
-            },
-            {
-                "title": "Reklam ve affiliate",
-                "outcome": "Her reklam hesabına ve her müşteriye ayrı profil ve proxy — oturumlar, çerezler ve IP'ler asla karışmaz.",
-                "features": [
-                    "Her reklam hesabına bir profil",
-                    "HTTP, HTTPS ve SOCKS5 proxy",
-                    "Profilleri taşımak için içe/dışa aktarma"
-                ]
-            },
-            {
-                "title": "E-ticaret satıcıları",
-                "outcome": "Birden fazla Shopee, Amazon veya Etsy mağazasını tek bilgisayardan, her birini kendi kimliğiyle yönetin.",
-                "features": [
-                    "Her mağazaya bir profil",
-                    "Sipariş ve mesaj kontrolü için tek bir betik",
-                    "Tüm mağazalarda toplu çalıştırma"
-                ]
-            },
-            {
-                "title": "Geliştiriciler",
-                "outcome": "Tarayıcı profillerini kendi betiklerinizden veya yapay zekâ araçlarınızdan yönetin; parmak izi işi zaten hazır.",
-                "features": [
-                    "Yerel REST API",
-                    "Yapay zekâ araçları için MCP",
-                    "Toplu ve zamanlanmış çalıştırma"
-                ]
-            }
-        ]
-    },
     "features": {
         "badge": "Özellikler",
         "title": "İhtiyacınız olan her şey",
@@ -431,6 +367,21 @@
                 "Veilus Flow'da bir kez onaylarsınız.",
                 "08:00 zamanlaması 10 tarayıcının tümünü çalıştırır."
             ]
+        },
+        "fig2": {
+            "figNo": "Şekil 2",
+            "fig": "bir site ne görür",
+            "title": "Bir cihaz. Web sitesi dört farklı kişi görüyor.",
+            "plain": "Normal tarayıcı",
+            "machine": "1 cihaz",
+            "machineVeilus": "1 cihaz · Veilus",
+            "account": "Hesap {n}",
+            "shared": "aynı parmak izi · aynı IP",
+            "site": "Web sitesi",
+            "badTitle": "4 hesap = 1 kişi",
+            "badSub": "birini yasakla, dördünü kaybet",
+            "goodTitle": "4 hesap = 4 kişi",
+            "goodSub": "her hesap kendi başına"
         }
     }
 }
