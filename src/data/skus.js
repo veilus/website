@@ -1,7 +1,7 @@
 /**
- * Bảng SKU hiển thị — bản sao NGUYÊN VĂN `api/src/config/skus.ts` (SKUS).
- * API mới là nơi quyết định số tiền thu; bảng này chỉ để hiển thị. Đổi giá ở
- * API thì sửa cả đây (cổng gốc `tools/sku-price-parity` canh ba bảng khớp).
+ * Bảng SKU hiển thị — bản sao NGUYÊN VĂN bảng SKU của API thanh toán (nơi
+ * quyết định số tiền thu; bảng này chỉ để hiển thị). Đổi giá ở API thì sửa
+ * cả đây (một cổng ở monorepo private canh hai bảng khớp nhau).
  */
 export const SKUS = {
   solo: { kind: "lifetime", devices: 1, vnd: 2_500_000, usd: 99 },

@@ -26,6 +26,21 @@ export function needsKey(sku, renewing = false) {
   return kind === "addon" || (kind === "monthly" && renewing);
 }
 
+/**
+ * Buộc nhập key hay không, tính từ query của URL lúc vào trang (`parseQuery`).
+ * `askKey`/`licenseKey` không đổi khi người dùng đổi SKU trong form, nên đây
+ * là nguồn sự thật duy nhất cho "đang gia hạn" — không suy lại từ ô key.
+ */
+export function formRequiresKey(sku, query) {
+  const renewing = Boolean(query?.askKey) || Boolean(query?.licenseKey);
+  return needsKey(sku, renewing);
+}
+
+/** Số tiền hợp lệ để hiển thị — chặn "NaN đ" từ response hỏng hoặc sessionStorage cũ. */
+export function hasValidAmount(amount) {
+  return typeof amount === "number" && Number.isFinite(amount) && amount > 0;
+}
+
 /** API trả 400 nếu gói trọn đời mang license_key — nên bỏ hẳn ở đây. */
 export function buildOrderBody({ sku, email, licenseKey }) {
   const body = { sku, email: (email ?? "").trim() };

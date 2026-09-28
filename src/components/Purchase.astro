@@ -133,10 +133,12 @@ const skusOf = (kind: string) =>
     API_BASE,
     parseQuery,
     needsKey,
+    formRequiresKey,
     buildOrderBody,
     errorKey,
     safeCheckoutUrl,
     pollDelay,
+    hasValidAmount,
   } from "../scripts/purchase-core.js";
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
@@ -170,7 +172,7 @@ const skusOf = (kind: string) =>
   function syncKeyRow() {
     const sku = selectedSku();
     keyRow.hidden = !needsKey(sku, true);
-    keyEl.required = needsKey(sku);
+    keyEl.required = formRequiresKey(sku, q);
   }
 
   const initial = q.sku ?? (q.askKey ? "monthly" : "solo");
@@ -217,7 +219,7 @@ const skusOf = (kind: string) =>
   function readForm() {
     const sku = selectedSku();
     const key = keyRow.hidden ? "" : keyEl.value.trim();
-    if (needsKey(sku) && !key) return null;
+    if (formRequiresKey(sku, q) && !key) return null;
     return { sku, email: emailEl.value.trim(), licenseKey: key || null };
   }
 
@@ -238,7 +240,11 @@ const skusOf = (kind: string) =>
       if (!f || !f.email || !emailEl.checkValidity()) return void showErr("buy.err.input");
       const r = await post("/api/v1/orders", buildOrderBody(f));
       if (!r) return;
-      if (r.res.status !== 201 || typeof r.data.id !== "string") {
+      if (
+        r.res.status !== 201 ||
+        typeof r.data.id !== "string" ||
+        !hasValidAmount(r.data.amount)
+      ) {
         return void showErr(errorKey(r.res.status, r.data.code));
       }
       const order = {
@@ -287,18 +293,26 @@ const skusOf = (kind: string) =>
     poll(o.id);
   }
 
-  function finish() {
+  function clearStore() {
     try {
       sessionStorage.removeItem(STORE);
     } catch {
       /* không có gì để dọn */
     }
+  }
+
+  // Đơn đã trả vẫn giữ id trong sessionStorage để tải lại còn hỏi lại được
+  // key (GET /orders/:id); chỉ xoá khi hết hạn/404 hoặc người dùng bấm "đơn mới".
+  function finish(clear: boolean) {
+    if (clear) clearStore();
     show("buy-pending", false);
   }
 
   let timer: ReturnType<typeof setTimeout> | undefined;
+  let pollGen = 0; // huỷ hiệu lực response của vòng poll cũ khi vòng mới đã bắt đầu
 
   function poll(id: string) {
+    const gen = ++pollGen;
     let last: string | null = null;
     let changedAt = Date.now();
     const tick = async () => {
@@ -310,13 +324,14 @@ const skusOf = (kind: string) =>
       } catch {
         /* mất mạng tạm thời: poll tiếp */
       }
+      if (gen !== pollGen) return; // vòng poll khác đã thay thế vòng này
       if (d) {
         if (d.status !== last) {
           last = d.status;
           changedAt = Date.now();
         }
         if (d.status === "paid") {
-          finish();
+          finish(false);
           if (typeof d.key === "string" && d.key) {
             $("buy-new-key").textContent = d.key;
             show("buy-paid-key", true);
@@ -324,7 +339,7 @@ const skusOf = (kind: string) =>
           return;
         }
         if (d.status === "expired") {
-          finish();
+          finish(true);
           show("buy-expired", true);
           return;
         }
@@ -336,6 +351,7 @@ const skusOf = (kind: string) =>
   }
 
   $("buy-new-order").addEventListener("click", () => {
+    clearStore();
     show("buy-order", false);
     form.hidden = false;
   });
@@ -343,7 +359,11 @@ const skusOf = (kind: string) =>
   // 6. Tải lại trang vẫn theo dõi đơn đang chờ.
   try {
     const saved = JSON.parse(sessionStorage.getItem(STORE) || "null");
-    if (saved && typeof saved.id === "string") showOrder(saved);
+    if (saved && typeof saved.id === "string" && hasValidAmount(saved.amount)) {
+      showOrder(saved);
+    } else if (saved) {
+      clearStore(); // bản ghi hỏng (amount thiếu/NaN) — bỏ, quay lại form
+    }
   } catch {
     /* storage bị chặn hoặc hỏng: bắt đầu từ form */
   }

@@ -4,10 +4,12 @@ import {
   API_BASE,
   parseQuery,
   needsKey,
+  formRequiresKey,
   buildOrderBody,
   errorKey,
   safeCheckoutUrl,
   pollDelay,
+  hasValidAmount,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -44,6 +46,23 @@ test("needsKey: thêm máy luôn cần key, thuê tháng cần khi gia hạn, tr
   assert.equal(needsKey("monthly", true), true);
   assert.equal(needsKey("solo"), false);
   assert.equal(needsKey("solo", true), false);
+});
+
+test("formRequiresKey: renew=1 buộc key ở thuê tháng, không renew thì không", () => {
+  assert.equal(formRequiresKey("monthly", { askKey: true, licenseKey: null }), true);
+  assert.equal(formRequiresKey("monthly", { askKey: false, licenseKey: null }), false);
+  assert.equal(formRequiresKey("monthly", { askKey: false, licenseKey: "vl_pro_x" }), true);
+  assert.equal(formRequiresKey("device_solo", { askKey: false, licenseKey: null }), true);
+  assert.equal(formRequiresKey("solo", { askKey: true, licenseKey: null }), false);
+});
+
+test("hasValidAmount: chỉ nhận số hữu hạn dương", () => {
+  assert.equal(hasValidAmount(2_500_000), true);
+  assert.equal(hasValidAmount(NaN), false);
+  assert.equal(hasValidAmount(Infinity), false);
+  assert.equal(hasValidAmount("2500000"), false);
+  assert.equal(hasValidAmount(undefined), false);
+  assert.equal(hasValidAmount(0), false);
 });
 
 test("buildOrderBody: bỏ license_key khi null hoặc gói trọn đời", () => {
