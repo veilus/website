@@ -344,5 +344,62 @@
         "duplicate": "¡Ya estás en la lista!",
         "counter": "{count}+ personas esperando",
         "invalid": "Ingresa un email válido"
+    },
+    "buy": {
+        "title": "Comprar Veilus",
+        "subtitle": "Elige un plan y paga por transferencia bancaria en VND o con tarjeta internacional en USD.",
+        "choose": "Elige un plan",
+        "group": {
+            "lifetime": "De por vida",
+            "monthly": "Mensual",
+            "addon": "Dispositivo extra"
+        },
+        "sku": {
+            "solo": "Solo",
+            "team5": "Team 5",
+            "team10": "Team 10",
+            "team20": "Team 20",
+            "monthly": "Mensual",
+            "device_solo": "+1 dispositivo (clave de 1 dispositivo)",
+            "device_team5": "+1 dispositivo (clave de 2–5 dispositivos)",
+            "device_team10": "+1 dispositivo (clave de 6+ dispositivos)"
+        },
+        "devices": "Dispositivos: {n}",
+        "note": {
+            "lifetime": "Actualizaciones de por vida · 3 años de soporte",
+            "monthly": "30 días. Introduce tu clave solo al renovar.",
+            "addon": "Solo para claves de por vida de pago."
+        },
+        "email": "Correo",
+        "emailHint": "Obligatorio para transferencia bancaria.",
+        "key": "Clave de licencia",
+        "keyHint": "La clave de la app Veilus.",
+        "show": "Mostrar",
+        "hide": "Ocultar",
+        "payVnd": "Transferencia bancaria (VND)",
+        "payUsd": "Tarjeta internacional (USD)",
+        "qrTitle": "Escanea para pagar",
+        "amount": "Importe",
+        "code": "Concepto de la transferencia",
+        "copy": "Copiar",
+        "copied": "Copiado",
+        "expires": "Este pedido caduca en 24 horas.",
+        "qrHint": "Usa el concepto exactamente como se muestra. Esta página se actualiza cuando llega el pago.",
+        "waiting": "Esperando el pago…",
+        "paidKey": "Pago recibido. Tu clave de licencia:",
+        "paidKeyHint": "Pégala en la app Veilus para activarla.",
+        "paidAdded": "Añadido a tu clave. Vuelve a abrir la app para actualizar.",
+        "expired": "Este pedido ha caducado.",
+        "newOrder": "Crear un pedido nuevo",
+        "err": {
+            "input": "Revisa tu correo y la clave de licencia.",
+            "wrongSku": "Esta opción no corresponde a tu clave.",
+            "addonNotAllowed": "Los dispositivos extra son solo para claves de por vida de pago.",
+            "keyNotFound": "Clave de licencia no encontrada.",
+            "rateLimited": "Demasiadas solicitudes. Inténtalo más tarde.",
+            "unavailable": "Este método de pago aún no está disponible.",
+            "generic": "Algo salió mal. Inténtalo de nuevo.",
+            "network": "Error de red. Revisa tu conexión e inténtalo de nuevo."
+        }
     }
 }

@@ -344,5 +344,62 @@
         "duplicate": "Zaten listedesiniz!",
         "counter": "{count}+ kişi bekliyor",
         "invalid": "Geçerli bir e-posta girin"
+    },
+    "buy": {
+        "title": "Veilus satın al",
+        "subtitle": "Bir plan seçin, ardından VND ile banka havalesi veya USD ile uluslararası kartla ödeyin.",
+        "choose": "Plan seçin",
+        "group": {
+            "lifetime": "Ömür boyu",
+            "monthly": "Aylık",
+            "addon": "Ek cihaz"
+        },
+        "sku": {
+            "solo": "Solo",
+            "team5": "Team 5",
+            "team10": "Team 10",
+            "team20": "Team 20",
+            "monthly": "Aylık",
+            "device_solo": "+1 cihaz (1 cihazlık anahtar)",
+            "device_team5": "+1 cihaz (2–5 cihazlık anahtar)",
+            "device_team10": "+1 cihaz (6+ cihazlık anahtar)"
+        },
+        "devices": "Cihaz: {n}",
+        "note": {
+            "lifetime": "Ömür boyu güncelleme · 3 yıl destek",
+            "monthly": "30 gün. Anahtarınızı yalnızca yenilerken girin.",
+            "addon": "Yalnızca ücretli ömür boyu anahtarlar için."
+        },
+        "email": "E-posta",
+        "emailHint": "Banka havalesi için zorunlu.",
+        "key": "Lisans anahtarı",
+        "keyHint": "Veilus uygulamasındaki anahtar.",
+        "show": "Göster",
+        "hide": "Gizle",
+        "payVnd": "Banka havalesi (VND)",
+        "payUsd": "Uluslararası kart (USD)",
+        "qrTitle": "Ödemek için tarayın",
+        "amount": "Tutar",
+        "code": "Havale açıklaması",
+        "copy": "Kopyala",
+        "copied": "Kopyalandı",
+        "expires": "Bu sipariş 24 saat sonra sona erer.",
+        "qrHint": "Açıklamayı gösterildiği gibi aynen yazın. Ödeme ulaşınca bu sayfa güncellenir.",
+        "waiting": "Ödeme bekleniyor…",
+        "paidKey": "Ödeme alındı. Lisans anahtarınız:",
+        "paidKeyHint": "Etkinleştirmek için Veilus uygulamasına yapıştırın.",
+        "paidAdded": "Anahtarınıza eklendi. Güncellemek için uygulamayı yeniden açın.",
+        "expired": "Bu siparişin süresi doldu.",
+        "newOrder": "Yeni sipariş oluştur",
+        "err": {
+            "input": "E-postanızı ve lisans anahtarınızı kontrol edin.",
+            "wrongSku": "Bu seçenek anahtarınızla eşleşmiyor.",
+            "addonNotAllowed": "Ek cihaz yalnızca ücretli ömür boyu anahtarlar içindir.",
+            "keyNotFound": "Lisans anahtarı bulunamadı.",
+            "rateLimited": "Çok fazla istek. Lütfen daha sonra tekrar deneyin.",
+            "unavailable": "Bu ödeme yöntemi henüz kullanılamıyor.",
+            "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+            "network": "Ağ hatası. Bağlantınızı kontrol edip tekrar deneyin."
+        }
     }
 }

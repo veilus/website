@@ -1,0 +1,4 @@
+/mua*
+  Referrer-Policy: no-referrer
+/*/mua*
+  Referrer-Policy: no-referrer

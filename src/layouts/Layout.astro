@@ -13,11 +13,17 @@ interface Props {
   lang?: Lang;
   title?: string;
   description?: string;
+  /** Trang mang key license trên URL (/mua): không GA, không analytics.js, không Referer. */
+  noTracking?: boolean;
 }
 
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
-const { title = i.meta.title, description = i.meta.description } = Astro.props;
+const {
+  title = i.meta.title,
+  description = i.meta.description,
+  noTracking = false,
+} = Astro.props;
 
 const siteUrl = "https://veilus.io";
 const hreflangs = getHreflangs(Astro.url.pathname, siteUrl);
@@ -108,17 +114,28 @@ const faqJsonLd = {
 <html lang={lang} dir={languages[lang].dir}>
   <head>
     <meta charset="UTF-8" />
+    {noTracking && <meta name="referrer" content="no-referrer" />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0B0F1A" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Google Analytics -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-    ></script>
-    <script
-      set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
-    ></script>
+    <!-- Google Analytics — tắt trên trang noTracking: page_view gửi cả URL, kể cả ?renew=<key> -->
+    {
+      !noTracking && (
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        />
+      )
+    }
+    {
+      !noTracking && (
+        <script
+          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        />
+      )
+    }
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -192,7 +209,7 @@ const faqJsonLd = {
     </script>
 
     <!-- GA4 Custom Events -->
-    <script src="/analytics.js" defer></script>
+    {!noTracking && <script src="/analytics.js" defer />}
   </body>
 </html>
 

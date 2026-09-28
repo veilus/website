@@ -344,5 +344,62 @@
         "duplicate": "Você já está na lista!",
         "counter": "{count}+ pessoas esperando",
         "invalid": "Digite um email válido"
+    },
+    "buy": {
+        "title": "Comprar Veilus",
+        "subtitle": "Escolha um plano e pague por transferência bancária em VND ou cartão internacional em USD.",
+        "choose": "Escolha um plano",
+        "group": {
+            "lifetime": "Vitalício",
+            "monthly": "Mensal",
+            "addon": "Dispositivo extra"
+        },
+        "sku": {
+            "solo": "Solo",
+            "team5": "Team 5",
+            "team10": "Team 10",
+            "team20": "Team 20",
+            "monthly": "Mensal",
+            "device_solo": "+1 dispositivo (chave de 1 dispositivo)",
+            "device_team5": "+1 dispositivo (chave de 2–5 dispositivos)",
+            "device_team10": "+1 dispositivo (chave de 6+ dispositivos)"
+        },
+        "devices": "Dispositivos: {n}",
+        "note": {
+            "lifetime": "Atualizações vitalícias · 3 anos de suporte",
+            "monthly": "30 dias. Informe sua chave só ao renovar.",
+            "addon": "Apenas para chaves vitalícias pagas."
+        },
+        "email": "E-mail",
+        "emailHint": "Obrigatório para transferência bancária.",
+        "key": "Chave de licença",
+        "keyHint": "A chave do app Veilus.",
+        "show": "Mostrar",
+        "hide": "Ocultar",
+        "payVnd": "Transferência bancária (VND)",
+        "payUsd": "Cartão internacional (USD)",
+        "qrTitle": "Escaneie para pagar",
+        "amount": "Valor",
+        "code": "Descrição da transferência",
+        "copy": "Copiar",
+        "copied": "Copiado",
+        "expires": "Este pedido expira em 24 horas.",
+        "qrHint": "Use a descrição exatamente como mostrada. Esta página atualiza quando o pagamento chegar.",
+        "waiting": "Aguardando pagamento…",
+        "paidKey": "Pagamento recebido. Sua chave de licença:",
+        "paidKeyHint": "Cole-a no app Veilus para ativar.",
+        "paidAdded": "Adicionado à sua chave. Reabra o app para atualizar.",
+        "expired": "Este pedido expirou.",
+        "newOrder": "Criar novo pedido",
+        "err": {
+            "input": "Verifique seu e-mail e a chave de licença.",
+            "wrongSku": "Esta opção não corresponde à sua chave.",
+            "addonNotAllowed": "Dispositivos extras só para chaves vitalícias pagas.",
+            "keyNotFound": "Chave de licença não encontrada.",
+            "rateLimited": "Muitas solicitações. Tente novamente mais tarde.",
+            "unavailable": "Este método de pagamento ainda não está disponível.",
+            "generic": "Algo deu errado. Tente novamente.",
+            "network": "Erro de rede. Verifique sua conexão e tente novamente."
+        }
     }
 }

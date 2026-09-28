@@ -1,0 +1,518 @@
+---
+/**
+ * Trang mua dùng chung cho /mua và /[lang]/mua. Logic thuần ở
+ * `scripts/purchase-core.js`; ở đây chỉ gắn vào DOM và poll trạng thái đơn.
+ * Key license chỉ sống trong biến bộ nhớ và ô nhập — không ghi vào storage/URL.
+ */
+import type { Lang } from "../i18n/utils";
+import { t } from "../i18n/utils";
+import { SKUS } from "../data/skus.js";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const b = t(lang).buy;
+const vnd = new Intl.NumberFormat(lang);
+const groups = ["lifetime", "monthly", "addon"] as const;
+const skusOf = (kind: string) =>
+  Object.entries(SKUS).filter(([, s]) => s.kind === kind);
+---
+
+<section class="buy" id="buy" data-lang={lang} data-i18n={JSON.stringify(b)}>
+  <div class="container buy-inner">
+    <h1>{b.title}</h1>
+    <p class="buy-sub">{b.subtitle}</p>
+
+    <form id="buy-form" class="buy-form" novalidate>
+      <fieldset class="buy-choose">
+        <legend>{b.choose}</legend>
+        {
+          groups.map((g) => (
+            <div class="buy-group">
+              <h2>{b.group[g]}</h2>
+              <p class="buy-note">{b.note[g]}</p>
+              <div class="buy-skus">
+                {skusOf(g).map(([id, s]) => (
+                  <label class="buy-sku">
+                    <input type="radio" name="sku" value={id} data-kind={s.kind} />
+                    <span class="buy-sku-name">
+                      {b.sku[id as keyof typeof b.sku]}
+                    </span>
+                    {g === "lifetime" && (
+                      <span class="buy-sku-meta">
+                        {b.devices.replace("{n}", String(s.devices))}
+                      </span>
+                    )}
+                    <span class="buy-sku-price">{vnd.format(s.vnd)} đ</span>
+                    <span class="buy-sku-usd">${s.usd}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </fieldset>
+
+      <div class="buy-field">
+        <label for="buy-email">{b.email}</label>
+        <input type="email" id="buy-email" autocomplete="email" required />
+        <small>{b.emailHint}</small>
+      </div>
+
+      <div class="buy-field" id="buy-key-row" hidden>
+        <label for="buy-key">{b.key}</label>
+        <div class="buy-key-input">
+          <input
+            type="password"
+            id="buy-key"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="vl_…"
+          />
+          <button type="button" class="btn btn-secondary" id="buy-key-toggle"
+            >{b.show}</button
+          >
+        </div>
+        <small>{b.keyHint}</small>
+      </div>
+
+      <div class="buy-actions">
+        <button type="button" class="btn btn-primary" id="buy-vnd"
+          >{b.payVnd}</button
+        >
+        <button type="button" class="btn btn-secondary" id="buy-usd"
+          >{b.payUsd}</button
+        >
+      </div>
+      <p class="buy-msg" id="buy-msg" role="alert" aria-live="polite"></p>
+    </form>
+
+    <div class="buy-order" id="buy-order" hidden>
+      <div id="buy-pending">
+        <h2>{b.qrTitle}</h2>
+        <img id="buy-qr" alt={b.qrTitle} width="280" height="280" />
+        <dl>
+          <dt>{b.amount}</dt>
+          <dd id="buy-amount"></dd>
+          <dt>{b.code}</dt>
+          <dd>
+            <code id="buy-code"></code>
+            <button type="button" class="btn btn-secondary buy-copy" data-copy="buy-code"
+              >{b.copy}</button
+            >
+          </dd>
+        </dl>
+        <p>{b.expires}</p>
+        <p>{b.qrHint}</p>
+        <p class="buy-status">{b.waiting}</p>
+      </div>
+      <div id="buy-paid-key" hidden>
+        <p>{b.paidKey}</p>
+        <p>
+          <code id="buy-new-key"></code>
+          <button type="button" class="btn btn-secondary buy-copy" data-copy="buy-new-key"
+            >{b.copy}</button
+          >
+        </p>
+        <p>{b.paidKeyHint}</p>
+      </div>
+      <p id="buy-paid-added" hidden>{b.paidAdded}</p>
+      <div id="buy-expired" hidden>
+        <p>{b.expired}</p>
+        <button type="button" class="btn btn-primary" id="buy-new-order"
+          >{b.newOrder}</button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import {
+    API_BASE,
+    parseQuery,
+    needsKey,
+    buildOrderBody,
+    errorKey,
+    safeCheckoutUrl,
+    pollDelay,
+  } from "../scripts/purchase-core.js";
+
+  const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
+
+  const root = document.getElementById("buy") as HTMLElement;
+  const dict = JSON.parse(root.dataset.i18n || "{}");
+  const lang = root.dataset.lang || "en";
+  const $ = (id: string) => document.getElementById(id) as HTMLElement;
+  const tr = (k: string): string =>
+    k
+      .replace(/^buy\./, "")
+      .split(".")
+      .reduce((o: any, p) => o?.[p], dict) ?? dict.err.generic;
+
+  // 1. Key ra khỏi thanh địa chỉ trước mọi việc khác.
+  const q = parseQuery(location.search);
+  if (q.askKey) {
+    history.replaceState(null, "", location.pathname + (q.sku ? "?sku=" + q.sku : ""));
+  }
+
+  const form = $("buy-form") as HTMLFormElement;
+  const emailEl = $("buy-email") as HTMLInputElement;
+  const keyRow = $("buy-key-row");
+  const keyEl = $("buy-key") as HTMLInputElement;
+  const msg = $("buy-msg");
+  const radios = [...form.querySelectorAll<HTMLInputElement>('input[name="sku"]')];
+
+  const selectedSku = () => radios.find((r) => r.checked)?.value ?? "solo";
+  const showErr = (k: string) => (msg.textContent = tr(k));
+
+  function syncKeyRow() {
+    const sku = selectedSku();
+    keyRow.hidden = !needsKey(sku, true);
+    keyEl.required = needsKey(sku);
+  }
+
+  const initial = q.sku ?? (q.askKey ? "monthly" : "solo");
+  radios.forEach((r) => {
+    r.checked = r.value === initial;
+    r.addEventListener("change", syncKeyRow);
+  });
+  if (q.licenseKey) keyEl.value = q.licenseKey;
+  syncKeyRow();
+
+  $("buy-key-toggle").addEventListener("click", (e) => {
+    const show = keyEl.type === "password";
+    keyEl.type = show ? "text" : "password";
+    (e.currentTarget as HTMLElement).textContent = show ? dict.hide : dict.show;
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".buy-copy").forEach((btn) =>
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText($(btn.dataset.copy!).textContent || "");
+        btn.textContent = dict.copied;
+      } catch {
+        /* trình duyệt chặn clipboard: người dùng vẫn chép tay được */
+      }
+    }),
+  );
+
+  /** POST JSON; lỗi mạng hiện `buy.err.network` và trả null. */
+  async function post(path: string, body: object) {
+    try {
+      const res = await fetch(`${API_BASE}${path}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json().catch(() => ({}));
+      return { res, data };
+    } catch {
+      showErr("buy.err.network");
+      return null;
+    }
+  }
+
+  function readForm() {
+    const sku = selectedSku();
+    const key = keyRow.hidden ? "" : keyEl.value.trim();
+    if (needsKey(sku) && !key) return null;
+    return { sku, email: emailEl.value.trim(), licenseKey: key || null };
+  }
+
+  async function withBusy(fn: () => Promise<void>) {
+    const btns = form.querySelectorAll<HTMLButtonElement>(".buy-actions button");
+    btns.forEach((b) => (b.disabled = true));
+    msg.textContent = "";
+    try {
+      await fn();
+    } finally {
+      btns.forEach((b) => (b.disabled = false));
+    }
+  }
+
+  $("buy-vnd").addEventListener("click", () =>
+    withBusy(async () => {
+      const f = readForm();
+      if (!f || !f.email || !emailEl.checkValidity()) return void showErr("buy.err.input");
+      const r = await post("/api/v1/orders", buildOrderBody(f));
+      if (!r) return;
+      if (r.res.status !== 201 || typeof r.data.id !== "string") {
+        return void showErr(errorKey(r.res.status, r.data.code));
+      }
+      const order = {
+        id: r.data.id,
+        code: r.data.code,
+        amount: r.data.amount,
+        qr_url: r.data.qr_url,
+      };
+      try {
+        sessionStorage.setItem(STORE, JSON.stringify(order));
+      } catch {
+        /* storage bị chặn: tải lại trang thì mất theo dõi, đơn vẫn còn */
+      }
+      showOrder(order);
+    }),
+  );
+
+  $("buy-usd").addEventListener("click", () =>
+    withBusy(async () => {
+      const f = readForm();
+      if (!f || (f.email && !emailEl.checkValidity())) return void showErr("buy.err.input");
+      const r = await post("/api/v1/checkout", buildOrderBody(f));
+      if (!r) return;
+      if (!r.res.ok) return void showErr(errorKey(r.res.status, r.data.code));
+      const url = safeCheckoutUrl(r.data.url);
+      if (!url) return void showErr("buy.err.generic");
+      location.assign(url);
+    }),
+  );
+
+  type Order = { id: string; code: string; amount: number; qr_url: string };
+
+  function show(id: string, on: boolean) {
+    $(id).hidden = !on;
+  }
+
+  function showOrder(o: Order) {
+    form.hidden = true;
+    show("buy-order", true);
+    show("buy-pending", true);
+    ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
+    const qr = safeCheckoutUrl(o.qr_url);
+    if (qr) ($("buy-qr") as HTMLImageElement).src = qr;
+    $("buy-amount").textContent = `${new Intl.NumberFormat(lang).format(o.amount)} đ`;
+    $("buy-code").textContent = o.code;
+    poll(o.id);
+  }
+
+  function finish() {
+    try {
+      sessionStorage.removeItem(STORE);
+    } catch {
+      /* không có gì để dọn */
+    }
+    show("buy-pending", false);
+  }
+
+  let timer: ReturnType<typeof setTimeout> | undefined;
+
+  function poll(id: string) {
+    let last: string | null = null;
+    let changedAt = Date.now();
+    const tick = async () => {
+      let d: any = null;
+      try {
+        const res = await fetch(`${API_BASE}/api/v1/orders/${encodeURIComponent(id)}`);
+        if (res.status === 404) d = { status: "expired" };
+        else if (res.ok) d = await res.json();
+      } catch {
+        /* mất mạng tạm thời: poll tiếp */
+      }
+      if (d) {
+        if (d.status !== last) {
+          last = d.status;
+          changedAt = Date.now();
+        }
+        if (d.status === "paid") {
+          finish();
+          if (typeof d.key === "string" && d.key) {
+            $("buy-new-key").textContent = d.key;
+            show("buy-paid-key", true);
+          } else show("buy-paid-added", true);
+          return;
+        }
+        if (d.status === "expired") {
+          finish();
+          show("buy-expired", true);
+          return;
+        }
+      }
+      timer = setTimeout(tick, pollDelay(Date.now() - changedAt));
+    };
+    clearTimeout(timer);
+    tick();
+  }
+
+  $("buy-new-order").addEventListener("click", () => {
+    show("buy-order", false);
+    form.hidden = false;
+  });
+
+  // 6. Tải lại trang vẫn theo dõi đơn đang chờ.
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(STORE) || "null");
+    if (saved && typeof saved.id === "string") showOrder(saved);
+  } catch {
+    /* storage bị chặn hoặc hỏng: bắt đầu từ form */
+  }
+</script>
+
+<style>
+  /* `display` bên dưới đè thuộc tính `hidden` nếu không có dòng này */
+  .buy [hidden] {
+    display: none !important;
+  }
+  .buy {
+    padding: calc(var(--nav-height) + var(--space-2xl)) 0 var(--space-3xl);
+  }
+  .buy-inner {
+    max-width: 880px;
+  }
+  .buy h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: var(--space-sm);
+  }
+  .buy-sub {
+    margin-bottom: var(--space-xl);
+  }
+  .buy-choose {
+    border: none;
+  }
+  .buy-choose legend {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+  .buy-group {
+    margin-bottom: var(--space-xl);
+  }
+  .buy-group h2 {
+    font-size: 1.25rem;
+  }
+  .buy-note {
+    font-size: 0.875rem;
+    margin: var(--space-xs) 0 var(--space-md);
+  }
+  .buy-skus {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-md);
+  }
+  .buy-sku {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+  }
+  .buy-sku:hover {
+    border-color: var(--color-border-light);
+  }
+  .buy-sku:has(input:checked) {
+    border-color: var(--color-cyan);
+    box-shadow: var(--shadow-glow);
+  }
+  .buy-sku:has(input:focus-visible) {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+  }
+  .buy-sku input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .buy-sku-name {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .buy-sku-meta,
+  .buy-sku-usd {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+  .buy-sku-price {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .buy-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    max-width: 480px;
+    margin-bottom: var(--space-lg);
+  }
+  .buy-field label {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .buy-field input {
+    width: 100%;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--color-text);
+    background: var(--bg-elevated);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+  }
+  .buy-field input:focus {
+    outline: none;
+    border-color: var(--color-cyan);
+  }
+  .buy-field small {
+    color: var(--color-text-muted);
+  }
+  .buy-key-input {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .buy-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  .buy-actions button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+  .buy-msg {
+    min-height: 1.5em;
+    margin-top: var(--space-md);
+    color: #ef4444;
+  }
+  .buy-order {
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .buy-order img {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    margin: var(--space-md) 0;
+  }
+  .buy-order dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-sm) var(--space-md);
+    align-items: center;
+    margin-bottom: var(--space-md);
+  }
+  .buy-order dt {
+    color: var(--color-text-muted);
+  }
+  .buy-order dd,
+  .buy-order code {
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    word-break: break-all;
+  }
+  .buy-copy {
+    margin-left: var(--space-sm);
+    padding: 4px 12px;
+    font-size: 0.8125rem;
+  }
+  .buy-status {
+    color: var(--color-cyan);
+  }
+</style>

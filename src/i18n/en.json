@@ -344,5 +344,62 @@
         "duplicate": "You're already on the list!",
         "counter": "{count}+ people are waiting",
         "invalid": "Please enter a valid email"
+    },
+    "buy": {
+        "title": "Buy Veilus",
+        "subtitle": "Pick a plan, then pay by bank transfer in VND or by international card in USD.",
+        "choose": "Choose a plan",
+        "group": {
+            "lifetime": "Lifetime",
+            "monthly": "Monthly",
+            "addon": "Extra device"
+        },
+        "sku": {
+            "solo": "Solo",
+            "team5": "Team 5",
+            "team10": "Team 10",
+            "team20": "Team 20",
+            "monthly": "Monthly",
+            "device_solo": "+1 device (key with 1 device)",
+            "device_team5": "+1 device (key with 2–5 devices)",
+            "device_team10": "+1 device (key with 6+ devices)"
+        },
+        "devices": "Devices: {n}",
+        "note": {
+            "lifetime": "Lifetime updates · 3 years of support",
+            "monthly": "30 days. Enter your key only when renewing.",
+            "addon": "For paid lifetime keys only."
+        },
+        "email": "Email",
+        "emailHint": "Required for bank transfer.",
+        "key": "License key",
+        "keyHint": "The key from the Veilus app.",
+        "show": "Show",
+        "hide": "Hide",
+        "payVnd": "Bank transfer (VND)",
+        "payUsd": "International card (USD)",
+        "qrTitle": "Scan to pay",
+        "amount": "Amount",
+        "code": "Transfer note",
+        "copy": "Copy",
+        "copied": "Copied",
+        "expires": "This order expires in 24 hours.",
+        "qrHint": "Keep the transfer note exactly as shown. This page updates when the payment arrives.",
+        "waiting": "Waiting for payment…",
+        "paidKey": "Payment received. Your license key:",
+        "paidKeyHint": "Paste it into the Veilus app to activate.",
+        "paidAdded": "Added to your key. Reopen the app to update.",
+        "expired": "This order has expired.",
+        "newOrder": "Create a new order",
+        "err": {
+            "input": "Please check your email and license key.",
+            "wrongSku": "This option does not match your key.",
+            "addonNotAllowed": "Extra devices are only for paid lifetime keys.",
+            "keyNotFound": "License key not found.",
+            "rateLimited": "Too many requests. Please try again later.",
+            "unavailable": "This payment method is not available yet.",
+            "generic": "Something went wrong. Please try again.",
+            "network": "Network error. Check your connection and try again."
+        }
     }
 }

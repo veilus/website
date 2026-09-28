@@ -344,5 +344,62 @@
         "duplicate": "您已在名单中！",
         "counter": "{count}+ 人正在等待",
         "invalid": "请输入有效的邮箱地址"
+    },
+    "buy": {
+        "title": "购买 Veilus",
+        "subtitle": "选择套餐，然后以越南盾银行转账或国际信用卡（美元）付款。",
+        "choose": "选择套餐",
+        "group": {
+            "lifetime": "永久",
+            "monthly": "按月",
+            "addon": "增加设备"
+        },
+        "sku": {
+            "solo": "Solo",
+            "team5": "Team 5",
+            "team10": "Team 10",
+            "team20": "Team 20",
+            "monthly": "按月",
+            "device_solo": "+1 台设备（1 台设备的密钥）",
+            "device_team5": "+1 台设备（2–5 台设备的密钥）",
+            "device_team10": "+1 台设备（6 台以上设备的密钥）"
+        },
+        "devices": "设备数：{n}",
+        "note": {
+            "lifetime": "终身更新 · 3 年支持",
+            "monthly": "30 天。仅续费时输入密钥。",
+            "addon": "仅限付费永久密钥。"
+        },
+        "email": "邮箱",
+        "emailHint": "银行转账时必填。",
+        "key": "许可证密钥",
+        "keyHint": "Veilus 应用中的密钥。",
+        "show": "显示",
+        "hide": "隐藏",
+        "payVnd": "银行转账（越南盾）",
+        "payUsd": "国际信用卡（美元）",
+        "qrTitle": "扫码付款",
+        "amount": "金额",
+        "code": "转账备注",
+        "copy": "复制",
+        "copied": "已复制",
+        "expires": "订单 24 小时后过期。",
+        "qrHint": "请保持转账备注完全一致。收到付款后本页会自动更新。",
+        "waiting": "等待付款…",
+        "paidKey": "已收到付款。您的许可证密钥：",
+        "paidKeyHint": "将其粘贴到 Veilus 应用中激活。",
+        "paidAdded": "已添加到您的密钥。重新打开应用即可更新。",
+        "expired": "订单已过期。",
+        "newOrder": "创建新订单",
+        "err": {
+            "input": "请检查邮箱和许可证密钥。",
+            "wrongSku": "此选项与您的密钥不匹配。",
+            "addonNotAllowed": "仅付费永久密钥可增加设备。",
+            "keyNotFound": "未找到许可证密钥。",
+            "rateLimited": "请求过多，请稍后再试。",
+            "unavailable": "此付款方式暂未开放。",
+            "generic": "出现错误，请重试。",
+            "network": "网络错误，请检查连接后重试。"
+        }
     }
 }

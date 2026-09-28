@@ -344,5 +344,62 @@
         "duplicate": "Anda sudah terdaftar!",
         "counter": "{count}+ orang sedang menunggu",
         "invalid": "Masukkan email yang valid"
+    },
+    "buy": {
+        "title": "Beli Veilus",
+        "subtitle": "Pilih paket, lalu bayar dengan transfer bank dalam VND atau kartu internasional dalam USD.",
+        "choose": "Pilih paket",
+        "group": {
+            "lifetime": "Seumur hidup",
+            "monthly": "Bulanan",
+            "addon": "Perangkat tambahan"
+        },
+        "sku": {
+            "solo": "Solo",
+            "team5": "Team 5",
+            "team10": "Team 10",
+            "team20": "Team 20",
+            "monthly": "Bulanan",
+            "device_solo": "+1 perangkat (kunci 1 perangkat)",
+            "device_team5": "+1 perangkat (kunci 2–5 perangkat)",
+            "device_team10": "+1 perangkat (kunci 6+ perangkat)"
+        },
+        "devices": "Perangkat: {n}",
+        "note": {
+            "lifetime": "Pembaruan seumur hidup · dukungan 3 tahun",
+            "monthly": "30 hari. Masukkan kunci hanya saat memperpanjang.",
+            "addon": "Hanya untuk kunci seumur hidup berbayar."
+        },
+        "email": "Email",
+        "emailHint": "Wajib untuk transfer bank.",
+        "key": "Kunci lisensi",
+        "keyHint": "Kunci dari aplikasi Veilus.",
+        "show": "Tampilkan",
+        "hide": "Sembunyikan",
+        "payVnd": "Transfer bank (VND)",
+        "payUsd": "Kartu internasional (USD)",
+        "qrTitle": "Pindai untuk membayar",
+        "amount": "Jumlah",
+        "code": "Berita transfer",
+        "copy": "Salin",
+        "copied": "Tersalin",
+        "expires": "Pesanan ini kedaluwarsa dalam 24 jam.",
+        "qrHint": "Tulis berita transfer persis seperti yang ditampilkan. Halaman ini diperbarui saat pembayaran masuk.",
+        "waiting": "Menunggu pembayaran…",
+        "paidKey": "Pembayaran diterima. Kunci lisensi Anda:",
+        "paidKeyHint": "Tempelkan ke aplikasi Veilus untuk mengaktifkan.",
+        "paidAdded": "Ditambahkan ke kunci Anda. Buka ulang aplikasi untuk memperbarui.",
+        "expired": "Pesanan ini sudah kedaluwarsa.",
+        "newOrder": "Buat pesanan baru",
+        "err": {
+            "input": "Periksa email dan kunci lisensi Anda.",
+            "wrongSku": "Opsi ini tidak cocok dengan kunci Anda.",
+            "addonNotAllowed": "Perangkat tambahan hanya untuk kunci seumur hidup berbayar.",
+            "keyNotFound": "Kunci lisensi tidak ditemukan.",
+            "rateLimited": "Terlalu banyak permintaan. Coba lagi nanti.",
+            "unavailable": "Metode pembayaran ini belum tersedia.",
+            "generic": "Terjadi kesalahan. Silakan coba lagi.",
+            "network": "Kesalahan jaringan. Periksa koneksi lalu coba lagi."
+        }
     }
 }

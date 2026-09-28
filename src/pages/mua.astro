@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Purchase from "../components/Purchase.astro";
+import { t, defaultLang } from "../i18n/utils";
+
+const i = t(defaultLang);
+---
+
+<Layout lang={defaultLang} title={`${i.buy.title} — Veilus`} noTracking>
+  <Navbar lang={defaultLang} />
+  <main>
+    <Purchase lang={defaultLang} />
+  </main>
+  <Footer lang={defaultLang} />
+</Layout>

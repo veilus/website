@@ -9,7 +9,8 @@ export default defineConfig({
         sitemap({
             filter: (page) =>
                 !page.includes('/blog/') &&
-                !page.includes('/en/download'),
+                !page.includes('/en/download') &&
+                !page.includes('/mua'),
             i18n: {
                 defaultLocale: 'en',
                 locales: {
