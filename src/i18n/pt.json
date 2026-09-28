@@ -56,8 +56,8 @@
             },
             {
                 "title": "Veilus Sync",
-                "desc": "Sincronize perfis via Git ou Google Drive. Criptografia hierárquica de ponta a ponta — nem nós podemos ler seus dados.",
-                "badge": "Criptografia E2E"
+                "desc": "Sincronize perfis entre seus dispositivos via Git ou Google Drive — os dados ficam no seu próprio repositório.",
+                "badge": "Git · Google Drive"
             },
             {
                 "title": "Agendamento",
@@ -224,7 +224,7 @@
             },
             {
                 "q": "Meus dados estão seguros?",
-                "a": "Todos os dados são armazenados localmente. Veilus Sync usa criptografia E2E — nem nós podemos ler seus dados."
+                "a": "Os dados de perfil são armazenados localmente no seu dispositivo. Se você ativar o Veilus Sync, os perfis são sincronizados com um repositório Git ou Google Drive escolhido por você — use um privado. Ao exportar um perfil para um arquivo .veiluspack, você pode definir uma senha para criptografar o arquivo."
             },
             {
                 "q": "Posso usar meus próprios proxies?",

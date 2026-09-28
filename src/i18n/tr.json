@@ -56,8 +56,8 @@
             },
             {
                 "title": "Veilus Sync",
-                "desc": "Git veya Google Drive ile profil senkronizasyonu. Hiyerarşik uçtan uca şifreleme — biz bile verilerinizi okuyamayız.",
-                "badge": "E2E Şifreleme"
+                "desc": "Cihazlarınız arasında Git veya Google Drive ile profil senkronizasyonu — veriler kendi deponuzda kalır.",
+                "badge": "Git · Google Drive"
             },
             {
                 "title": "Zamanlama",
@@ -224,7 +224,7 @@
             },
             {
                 "q": "Verilerim güvende mi?",
-                "a": "Tüm veriler yerel olarak saklanır. Veilus Sync E2E şifreleme kullanır — biz bile okuyamayız."
+                "a": "Profil verileri cihazınızda yerel olarak saklanır. Veilus Sync'i açarsanız profiller seçtiğiniz bir Git deposuna veya Google Drive'a senkronize edilir — özel (private) bir tane kullanın. Bir profili .veiluspack dosyasına dışa aktardığınızda, dosyayı şifrelemek için bir parola belirleyebilirsiniz."
             },
             {
                 "q": "Kendi proxy'lerimi kullanabilir miyim?",

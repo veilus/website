@@ -56,8 +56,8 @@
             },
             {
                 "title": "Veilus Sync",
-                "desc": "Đồng bộ profiles qua Git hoặc Google Drive. Mã hóa phân cấp end-to-end — ngay cả chúng tôi cũng không đọc được.",
-                "badge": "E2E Encrypted"
+                "desc": "Đồng bộ profiles giữa các máy của bạn qua Git hoặc Google Drive — dữ liệu nằm trong repository của riêng bạn.",
+                "badge": "Git · Google Drive"
             },
             {
                 "title": "Lên lịch chạy",
@@ -224,7 +224,7 @@
             },
             {
                 "q": "Dữ liệu có an toàn không?",
-                "a": "Tất cả dữ liệu lưu local. Veilus Sync mã hóa end-to-end — ngay cả chúng tôi cũng không đọc được."
+                "a": "Dữ liệu profile được lưu cục bộ trên máy của bạn. Nếu bật Veilus Sync, profiles sẽ đồng bộ tới Git repository hoặc Google Drive do bạn chọn — nên dùng loại riêng tư. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu để mã hóa file."
             },
             {
                 "q": "Có dùng proxy riêng được không?",

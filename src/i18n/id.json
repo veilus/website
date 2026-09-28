@@ -56,8 +56,8 @@
             },
             {
                 "title": "Veilus Sync",
-                "desc": "Sinkronisasi profil via Git atau Google Drive. Enkripsi hierarkis end-to-end — bahkan kami tidak bisa membaca data Anda.",
-                "badge": "Enkripsi E2E"
+                "desc": "Sinkronisasi profil antar perangkat Anda via Git atau Google Drive — data tersimpan di repository Anda sendiri.",
+                "badge": "Git · Google Drive"
             },
             {
                 "title": "Penjadwalan",
@@ -224,7 +224,7 @@
             },
             {
                 "q": "Apakah data saya aman?",
-                "a": "Semua data disimpan secara lokal. Veilus Sync menggunakan enkripsi E2E — bahkan kami tidak bisa membaca data Anda."
+                "a": "Data profil disimpan secara lokal di perangkat Anda. Jika Anda mengaktifkan Veilus Sync, profil akan disinkronkan ke repository Git atau Google Drive pilihan Anda — gunakan yang privat. Saat mengekspor profil ke file .veiluspack, Anda bisa mengatur kata sandi untuk mengenkripsi file tersebut."
             },
             {
                 "q": "Bisa pakai proxy sendiri?",

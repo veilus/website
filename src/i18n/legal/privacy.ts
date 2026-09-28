@@ -36,7 +36,7 @@ export const privacyTranslations: Record<string, {
   <li>Any personally identifiable information (PII) through telemetry</li>
 </ul>
 <h3>2.3 Browser Profile Data</h3>
-<p>All browser profile data (fingerprints, cookies, sessions, automation scripts) is stored <strong>locally on your device</strong>. If you use Veilus Sync, data is encrypted end-to-end before transmission — <strong>we cannot read your synced data</strong>.</p>
+<p>All browser profile data (fingerprints, cookies, sessions, automation scripts) is stored <strong>locally on your device</strong>. If you use Veilus Sync, profile data is synced to a Git repository or Google Drive that you choose — <strong>that data is not encrypted by Veilus, so use a private repository or drive</strong>. Only the remote access token is encrypted, locally on your device.</p>
 
 <h2>3. How We Use Your Data</h2>
 <table><thead><tr><th>Purpose</th><th>Legal Basis</th></tr></thead><tbody>
@@ -51,7 +51,7 @@ export const privacyTranslations: Record<string, {
 <ul>
   <li><strong>Local storage:</strong> Profile data, scripts, and settings are stored on your local machine.</li>
   <li><strong>Cloud infrastructure:</strong> Account data is stored on Supabase (PostgreSQL) with encryption at rest.</li>
-  <li><strong>Sync encryption:</strong> Veilus Sync uses hierarchical end-to-end encryption (AES-256-GCM). Encryption keys are derived locally and never transmitted to our servers.</li>
+  <li><strong>Sync:</strong> Veilus Sync stores profile data in a Git repository or Google Drive you choose; that data is not encrypted by Veilus. Only the remote access token is encrypted, locally on your device, and never transmitted to our servers. Exporting a profile to a .veiluspack file lets you set an optional password, which encrypts the file with AES-256-GCM.</li>
   <li><strong>Edge hosting:</strong> Our website and API run on Cloudflare Workers/Pages with global edge distribution.</li>
 </ul>
 
@@ -139,7 +139,7 @@ export const privacyTranslations: Record<string, {
   <li>Bất kỳ thông tin nhận dạng cá nhân (PII) nào qua telemetry</li>
 </ul>
 <h3>2.3 Dữ liệu Browser Profile</h3>
-<p>Tất cả dữ liệu browser profile (fingerprint, cookie, session, script automation) được lưu <strong>cục bộ trên thiết bị của bạn</strong>. Nếu bạn sử dụng Veilus Sync, dữ liệu được mã hóa đầu-cuối trước khi truyền — <strong>chúng tôi không thể đọc dữ liệu đồng bộ của bạn</strong>.</p>
+<p>Tất cả dữ liệu browser profile (fingerprint, cookie, session, script automation) được lưu <strong>cục bộ trên thiết bị của bạn</strong>. Nếu bạn sử dụng Veilus Sync, dữ liệu profile được đồng bộ tới Git repository hoặc Google Drive do bạn chọn — <strong>dữ liệu đó không được Veilus mã hóa, nên hãy dùng repository hoặc drive ở chế độ riêng tư</strong>. Chỉ riêng access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn.</p>
 
 <h2>3. Cách chúng tôi sử dụng dữ liệu</h2>
 <table><thead><tr><th>Mục đích</th><th>Cơ sở pháp lý</th></tr></thead><tbody>
@@ -154,7 +154,7 @@ export const privacyTranslations: Record<string, {
 <ul>
   <li><strong>Lưu trữ cục bộ:</strong> Dữ liệu profile, script và cài đặt được lưu trên máy tính của bạn.</li>
   <li><strong>Hạ tầng đám mây:</strong> Dữ liệu tài khoản được lưu trên Supabase (PostgreSQL) với mã hóa dữ liệu nghỉ.</li>
-  <li><strong>Mã hóa đồng bộ:</strong> Veilus Sync sử dụng mã hóa đầu-cuối theo cấp bậc (AES-256-GCM). Khóa mã hóa được tạo cục bộ và không bao giờ truyền đến máy chủ.</li>
+  <li><strong>Đồng bộ:</strong> Veilus Sync lưu dữ liệu profile trong Git repository hoặc Google Drive do bạn chọn; dữ liệu đó không được Veilus mã hóa. Chỉ access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn, và không bao giờ truyền đến máy chủ. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu tùy chọn để mã hóa file bằng AES-256-GCM.</li>
   <li><strong>Hosting biên:</strong> Website và API chạy trên Cloudflare Workers/Pages với phân phối biên toàn cầu.</li>
 </ul>
 
@@ -227,13 +227,13 @@ export const privacyTranslations: Record<string, {
 <p>如果您选择加入遥测，我们收集<strong>汇总的匿名</strong>使用统计数据。</p>
 <p><strong>我们从不收集：</strong>浏览历史、配置文件内容、自动化脚本、IP地址或任何个人身份信息。</p>
 <h3>2.3 浏览器配置文件数据</h3>
-<p>所有浏览器配置文件数据存储在<strong>您的本地设备</strong>上。Veilus Sync使用端到端加密 — <strong>我们无法读取您的同步数据</strong>。</p>
+<p>所有浏览器配置文件数据存储在<strong>您的本地设备</strong>上。如果您使用 Veilus Sync，配置文件数据会同步到您选择的 Git 仓库或 Google Drive — <strong>该数据不会被 Veilus 加密，请使用私有仓库或私有云盘</strong>。只有远程访问令牌会被加密，且仅在您的设备本地完成。</p>
 
 <h2>3. 数据使用方式</h2>
 <table><thead><tr><th>目的</th><th>法律依据</th></tr></thead><tbody><tr><td>提供和维护服务</td><td>合同履行</td></tr><tr><td>处理付款</td><td>合同履行</td></tr><tr><td>发送重要服务更新</td><td>合法利益</td></tr><tr><td>改进产品</td><td>同意</td></tr></tbody></table>
 
 <h2>4. 数据存储与安全</h2>
-<ul><li><strong>本地存储：</strong>配置文件数据存储在您的本地计算机上。</li><li><strong>云基础设施：</strong>账户数据存储在Supabase（PostgreSQL），具有静态加密。</li><li><strong>同步加密：</strong>Veilus Sync使用AES-256-GCM端到端加密。</li></ul>
+<ul><li><strong>本地存储：</strong>配置文件数据存储在您的本地计算机上。</li><li><strong>云基础设施：</strong>账户数据存储在Supabase（PostgreSQL），具有静态加密。</li><li><strong>同步：</strong>Veilus Sync 将配置文件数据存储在您选择的 Git 仓库或 Google Drive 中；该数据不会被 Veilus 加密。只有远程访问令牌会被加密（仅在本地设备完成），且不会传输到我们的服务器。将配置文件导出为 .veiluspack 文件时，您可以设置可选密码，使用 AES-256-GCM 加密该文件。</li></ul>
 
 <h2>5. 第三方服务</h2>
 <p>我们使用LemonSqueezy（银行卡支付，记录商家）、银行（越南盾转账）、Supabase（认证）、Resend（邮件）、Plausible Analytics（分析）和Cloudflare（托管）。我们不出售或分享您的个人数据用于广告目的。</p>
@@ -271,13 +271,13 @@ export const privacyTranslations: Record<string, {
 <h3>2.2 Данные использования (только по согласию)</h3>
 <p>Анонимная агрегированная статистика. <strong>Мы никогда не собираем:</strong> историю посещений, содержимое профилей, скрипты автоматизации, IP-адреса.</p>
 <h3>2.3 Данные профилей браузера</h3>
-<p>Все данные хранятся <strong>локально на вашем устройстве</strong>. Veilus Sync использует сквозное шифрование — <strong>мы не можем прочитать ваши синхронизированные данные</strong>.</p>
+<p>Все данные хранятся <strong>локально на вашем устройстве</strong>. Если вы используете Veilus Sync, данные профиля синхронизируются с Git-репозиторием или Google Drive по вашему выбору — <strong>эти данные не шифруются Veilus, используйте приватный репозиторий или диск</strong>. Шифруется только токен удалённого доступа, локально на вашем устройстве.</p>
 
 <h2>3. Использование данных</h2>
 <table><thead><tr><th>Цель</th><th>Правовое основание</th></tr></thead><tbody><tr><td>Предоставление Сервиса</td><td>Исполнение договора</td></tr><tr><td>Обработка платежей</td><td>Исполнение договора</td></tr><tr><td>Обновления сервиса</td><td>Законный интерес</td></tr><tr><td>Улучшение продукта</td><td>Согласие</td></tr></tbody></table>
 
 <h2>4. Хранение и безопасность</h2>
-<ul><li>Локальное хранение данных профилей</li><li>Облако: Supabase с шифрованием</li><li>Синхронизация: AES-256-GCM</li></ul>
+<ul><li>Локальное хранение данных профилей</li><li>Облако: Supabase с шифрованием</li><li>Синхронизация: данные в вашем Git-репозитории или Google Drive не шифруются Veilus; шифруется только токен удалённого доступа. При экспорте профиля в файл .veiluspack можно задать пароль, тогда файл шифруется AES-256-GCM</li></ul>
 
 <h2>5. Сторонние сервисы</h2>
 <p>LemonSqueezy (оплата картой), банк (переводы VND), Supabase, Resend, Plausible Analytics, Cloudflare. Мы не продаём ваши данные.</p>
@@ -315,7 +315,7 @@ export const privacyTranslations: Record<string, {
 <h3>2.2 Datos de uso (solo con consentimiento)</h3>
 <p>Estadísticas anónimas agregadas. <strong>Nunca recopilamos:</strong> historial de navegación, contenido de perfiles, scripts de automatización, direcciones IP.</p>
 <h3>2.3 Datos de perfiles del navegador</h3>
-<p>Todos los datos se almacenan <strong>localmente en su dispositivo</strong>. Veilus Sync usa cifrado de extremo a extremo.</p>
+<p>Todos los datos se almacenan <strong>localmente en su dispositivo</strong>. Si usa Veilus Sync, los datos se sincronizan con un repositorio Git o Google Drive que usted elija; esos datos no están cifrados por Veilus, use uno privado. Solo el token de acceso remoto se cifra, localmente en su dispositivo. Al exportar un perfil a un archivo .veiluspack, puede establecer una contraseña opcional para cifrar el archivo (AES-256-GCM).</p>
 
 <h2>3-5. Uso de datos, Almacenamiento y Terceros</h2>
 <p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos LemonSqueezy (pagos con tarjeta), nuestro banco (transferencias en VND), Supabase, Resend, Plausible Analytics y Cloudflare. No vendemos sus datos.</p>
@@ -340,7 +340,7 @@ export const privacyTranslations: Record<string, {
 
 <h2>2. Dados que coletamos</h2>
 <ul><li><strong>Email</strong> — autenticação e comunicação</li><li><strong>Pagamento</strong> — pagamentos com cartão são processados diretamente pela LemonSqueezy (comerciante registrado, merchant of record): nome, email e dados do cartão; não armazenamos números de cartão. Para transferências em VND, nosso banco nos envia os dados da transferência recebida, incluindo o nome do remetente e o descritivo.</li></ul>
-<p>Dados de perfil armazenados <strong>localmente</strong>. Veilus Sync com criptografia ponta a ponta.</p>
+<p>Dados de perfil armazenados <strong>localmente</strong>. Se você usar o Veilus Sync, os dados são sincronizados com um repositório Git ou Google Drive escolhido por você; esses dados não são criptografados pela Veilus, use um repositório privado. Apenas o token de acesso remoto é criptografado, localmente no seu dispositivo. Ao exportar um perfil para um arquivo .veiluspack, você pode definir uma senha opcional para criptografar o arquivo (AES-256-GCM).</p>
 <p><strong>Nunca coletamos:</strong> histórico de navegação, conteúdo de perfis, scripts, endereços IP.</p>
 
 <h2>3-5. Uso, Armazenamento e Terceiros</h2>
@@ -363,7 +363,7 @@ export const privacyTranslations: Record<string, {
 
 <h2>2. Data yang Kami Kumpulkan</h2>
 <ul><li><strong>Alamat email</strong> — untuk autentikasi dan komunikasi</li><li><strong>Informasi pembayaran</strong> — pembayaran kartu diproses langsung oleh LemonSqueezy (merchant of record): nama, email, dan detail kartu; kami tidak menyimpan nomor kartu. Untuk transfer VND, bank kami mengirimkan detail transfer yang diterima, termasuk nama pengirim dan berita transfer.</li></ul>
-<p>Data profil browser disimpan <strong>secara lokal</strong>. Veilus Sync menggunakan enkripsi end-to-end.</p>
+<p>Data profil browser disimpan <strong>secara lokal</strong>. Jika Anda menggunakan Veilus Sync, data disinkronkan ke repository Git atau Google Drive pilihan Anda; data tersebut tidak dienkripsi oleh Veilus, gunakan yang privat. Hanya token akses jarak jauh yang dienkripsi, secara lokal di perangkat Anda. Saat mengekspor profil ke file .veiluspack, Anda bisa mengatur kata sandi opsional untuk mengenkripsi file (AES-256-GCM).</p>
 <p><strong>Tidak pernah mengumpulkan:</strong> riwayat browsing, konten profil, skrip, alamat IP.</p>
 
 <h2>3-5. Penggunaan, Penyimpanan, dan Pihak Ketiga</h2>
@@ -386,7 +386,7 @@ export const privacyTranslations: Record<string, {
 
 <h2>2. Topladığımız Veriler</h2>
 <ul><li><strong>E-posta adresi</strong> — kimlik doğrulama ve iletişim</li><li><strong>Ödeme bilgileri</strong> — kart ödemeleri doğrudan LemonSqueezy (merchant of record) tarafından işlenir: ad, e-posta ve kart bilgileri; kart numaralarını saklamayız. VND havaleleri için bankamız, gönderenin adı ve havale açıklaması dahil aldığı havale bilgilerini bize iletir.</li></ul>
-<p>Profil verileri <strong>yerel olarak</strong> saklanır. Veilus Sync uçtan uca şifreleme kullanır.</p>
+<p>Profil verileri <strong>yerel olarak</strong> saklanır. Veilus Sync'i kullanırsanız veriler, seçtiğiniz bir Git deposuna veya Google Drive'a senkronize edilir; bu veriler Veilus tarafından şifrelenmez, özel (private) bir tane kullanın. Yalnızca uzaktan erişim token'ı, cihazınızda yerel olarak şifrelenir. Bir profili .veiluspack dosyasına dışa aktarırken dosyayı şifrelemek için isteğe bağlı bir parola belirleyebilirsiniz (AES-256-GCM).</p>
 <p><strong>Asla toplamayız:</strong> tarama geçmişi, profil içeriği, otomasyon betikleri, IP adresleri.</p>
 
 <h2>3-5. Kullanım, Depolama ve Üçüncü Taraflar</h2>
