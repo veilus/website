@@ -18,9 +18,8 @@ export const refundTranslations: Record<string, {
 
 <h2>3. Monthly Plan</h2>
 <table><thead><tr><th>Condition</th><th>Refund</th></tr></thead><tbody>
-  <tr><td>Within 7 days of purchase (first billing cycle)</td><td>Full refund</td></tr>
-  <tr><td>Within 7 days of renewal (subsequent cycles)</td><td>Prorated refund for unused days</td></tr>
-  <tr><td>After 7 days</td><td>No refund; the key stays active until the end of the paid period</td></tr>
+  <tr><td>Within 7 days of a payment (first purchase or any renewal)</td><td>Full refund</td></tr>
+  <tr><td>After 7 days of that payment</td><td>No refund; the key stays active until the end of the paid period</td></tr>
 </tbody></table>
 
 <h2>4. Lifetime Plans</h2>
@@ -65,9 +64,8 @@ export const refundTranslations: Record<string, {
 
 <h2>3. Gói thuê tháng</h2>
 <table><thead><tr><th>Điều kiện</th><th>Hoàn tiền</th></tr></thead><tbody>
-  <tr><td>Trong 7 ngày đầu (chu kỳ đầu tiên)</td><td>Hoàn tiền 100%</td></tr>
-  <tr><td>Trong 7 ngày sau gia hạn</td><td>Hoàn tiền theo tỷ lệ ngày chưa dùng</td></tr>
-  <tr><td>Sau 7 ngày</td><td>Không hoàn tiền; key hoạt động đến hết kỳ đã trả</td></tr>
+  <tr><td>Trong 7 ngày kể từ một lần thanh toán (lần đầu hoặc mỗi lần gia hạn)</td><td>Hoàn tiền 100%</td></tr>
+  <tr><td>Sau 7 ngày kể từ lần thanh toán đó</td><td>Không hoàn tiền; key hoạt động đến hết kỳ đã trả</td></tr>
 </tbody></table>
 
 <h2>4. Gói trọn đời</h2>
@@ -107,7 +105,7 @@ export const refundTranslations: Record<string, {
 <p>我们希望您对Veilus满意。如不满意，可按以下条件申请退款。</p>
 <h2>2. 免费方案</h2><p>免费方案永久免费，无需退款。</p>
 <h2>3. 月付</h2>
-<table><thead><tr><th>条件</th><th>退款</th></tr></thead><tbody><tr><td>购买后7天内</td><td>全额退款</td></tr><tr><td>续费后7天内</td><td>按比例退款</td></tr><tr><td>7天后</td><td>不退款</td></tr></tbody></table>
+<table><thead><tr><th>条件</th><th>退款</th></tr></thead><tbody><tr><td>任一次付款（首次购买或每次续费）后7天内</td><td>全额退款</td></tr><tr><td>该次付款7天后</td><td>不退款</td></tr></tbody></table>
 <h2>4. 终身计划</h2>
 <p>直接从Veilus购买的终身计划，14天后不可退款。</p>
 <h2>5. 退款方式</h2>

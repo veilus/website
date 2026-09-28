@@ -18,7 +18,7 @@ export const privacyTranslations: Record<string, {
 <p>When you create an account, we collect:</p>
 <ul>
   <li><strong>Email address</strong> — for authentication and communication</li>
-  <li><strong>Payment information</strong> — processed securely by Stripe; we do not store credit card numbers</li>
+  <li><strong>Payment information</strong> — for card payments, LemonSqueezy (our merchant of record) processes your name, email, and card details directly; we do not store card numbers. For VND bank transfers, our bank sends us the transfer details it receives, including the sender's name and the transfer content.</li>
 </ul>
 <h3>2.2 Usage Data (Opt-in Only)</h3>
 <p>If you opt in to telemetry, we collect <strong>aggregate, anonymized</strong> usage statistics:</p>
@@ -58,7 +58,8 @@ export const privacyTranslations: Record<string, {
 <h2>5. Third-Party Services</h2>
 <p>We use the following third-party services:</p>
 <table><thead><tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr></thead><tbody>
-  <tr><td>Stripe</td><td>Payment processing</td><td>Payment details (handled by Stripe directly)</td></tr>
+  <tr><td>LemonSqueezy</td><td>Card payment processing (merchant of record)</td><td>Name, email, and card details (handled by LemonSqueezy directly)</td></tr>
+  <tr><td>Bank (VND transfers)</td><td>Bank transfer payment processing</td><td>The transfer details our bank sends us, including the sender's name and transfer content</td></tr>
   <tr><td>Supabase</td><td>Authentication & database</td><td>Email, account metadata</td></tr>
   <tr><td>Resend</td><td>Transactional email</td><td>Email address</td></tr>
   <tr><td>Plausible Analytics</td><td>Website analytics</td><td>Aggregated, cookieless page views (no PII)</td></tr>
@@ -120,7 +121,7 @@ export const privacyTranslations: Record<string, {
 <p>Khi bạn tạo tài khoản, chúng tôi thu thập:</p>
 <ul>
   <li><strong>Địa chỉ email</strong> — để xác thực và liên lạc</li>
-  <li><strong>Thông tin thanh toán</strong> — được xử lý bảo mật bởi Stripe; chúng tôi không lưu trữ số thẻ tín dụng</li>
+  <li><strong>Thông tin thanh toán</strong> — với thanh toán thẻ, LemonSqueezy (bên bán chính thức - merchant of record) xử lý trực tiếp tên, email và chi tiết thẻ của bạn; chúng tôi không lưu số thẻ. Với chuyển khoản VNĐ, ngân hàng của chúng tôi gửi cho chúng tôi chi tiết giao dịch nhận được, gồm tên người chuyển và nội dung chuyển khoản.</li>
 </ul>
 <h3>2.2 Dữ liệu sử dụng (Chỉ khi bạn đồng ý)</h3>
 <p>Nếu bạn bật telemetry, chúng tôi thu thập thống kê sử dụng <strong>tổng hợp, ẩn danh</strong>:</p>
@@ -160,7 +161,8 @@ export const privacyTranslations: Record<string, {
 <h2>5. Dịch vụ bên thứ ba</h2>
 <p>Chúng tôi sử dụng các dịch vụ bên thứ ba sau:</p>
 <table><thead><tr><th>Dịch vụ</th><th>Mục đích</th><th>Dữ liệu chia sẻ</th></tr></thead><tbody>
-  <tr><td>Stripe</td><td>Xử lý thanh toán</td><td>Chi tiết thanh toán (do Stripe xử lý trực tiếp)</td></tr>
+  <tr><td>LemonSqueezy</td><td>Xử lý thanh toán thẻ (merchant of record)</td><td>Tên, email và chi tiết thẻ (do LemonSqueezy xử lý trực tiếp)</td></tr>
+  <tr><td>Ngân hàng (chuyển khoản VNĐ)</td><td>Xử lý thanh toán chuyển khoản</td><td>Chi tiết giao dịch ngân hàng gửi cho chúng tôi, gồm tên người chuyển và nội dung chuyển khoản</td></tr>
   <tr><td>Supabase</td><td>Xác thực & cơ sở dữ liệu</td><td>Email, metadata tài khoản</td></tr>
   <tr><td>Resend</td><td>Email giao dịch</td><td>Địa chỉ email</td></tr>
   <tr><td>Plausible Analytics</td><td>Phân tích website</td><td>Lượt xem tổng hợp, không cookie (không PII)</td></tr>
@@ -220,7 +222,7 @@ export const privacyTranslations: Record<string, {
 <h2>2. 我们收集的数据</h2>
 <h3>2.1 账户数据</h3>
 <p>创建账户时，我们收集：</p>
-<ul><li><strong>电子邮件地址</strong> — 用于身份验证和通信</li><li><strong>付款信息</strong> — 由Stripe安全处理；我们不存储信用卡号</li></ul>
+<ul><li><strong>电子邮件地址</strong> — 用于身份验证和通信</li><li><strong>付款信息</strong> — 银行卡付款由LemonSqueezy（记录商家，merchant of record）直接处理您的姓名、邮箱和卡信息；我们不存储卡号。越南盾银行转账由我们的银行提供收到的转账信息，包括汇款人姓名和转账备注。</li></ul>
 <h3>2.2 使用数据（仅限选择加入）</h3>
 <p>如果您选择加入遥测，我们收集<strong>汇总的匿名</strong>使用统计数据。</p>
 <p><strong>我们从不收集：</strong>浏览历史、配置文件内容、自动化脚本、IP地址或任何个人身份信息。</p>
@@ -234,7 +236,7 @@ export const privacyTranslations: Record<string, {
 <ul><li><strong>本地存储：</strong>配置文件数据存储在您的本地计算机上。</li><li><strong>云基础设施：</strong>账户数据存储在Supabase（PostgreSQL），具有静态加密。</li><li><strong>同步加密：</strong>Veilus Sync使用AES-256-GCM端到端加密。</li></ul>
 
 <h2>5. 第三方服务</h2>
-<p>我们使用Stripe（支付）、Supabase（认证）、Resend（邮件）、Plausible Analytics（分析）和Cloudflare（托管）。我们不出售或分享您的个人数据用于广告目的。</p>
+<p>我们使用LemonSqueezy（银行卡支付，记录商家）、银行（越南盾转账）、Supabase（认证）、Resend（邮件）、Plausible Analytics（分析）和Cloudflare（托管）。我们不出售或分享您的个人数据用于广告目的。</p>
 
 <h2>6. 您的权利（GDPR及全球）</h2>
 <p>您有权：访问、更正、删除、导出您的数据，撤回同意，以及反对处理。联系 <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>。</p>
@@ -265,7 +267,7 @@ export const privacyTranslations: Record<string, {
 
 <h2>2. Данные, которые мы собираем</h2>
 <h3>2.1 Данные аккаунта</h3>
-<ul><li><strong>Адрес электронной почты</strong> — для аутентификации и связи</li><li><strong>Платёжная информация</strong> — обрабатывается Stripe; мы не храним номера карт</li></ul>
+<ul><li><strong>Адрес электронной почты</strong> — для аутентификации и связи</li><li><strong>Платёжная информация</strong> — платежи картой обрабатывает напрямую LemonSqueezy (продавец по договору, merchant of record): имя, email и данные карты; мы не храним номера карт. При переводах в VND наш банк передаёт нам полученные данные перевода, включая имя отправителя и назначение платежа.</li></ul>
 <h3>2.2 Данные использования (только по согласию)</h3>
 <p>Анонимная агрегированная статистика. <strong>Мы никогда не собираем:</strong> историю посещений, содержимое профилей, скрипты автоматизации, IP-адреса.</p>
 <h3>2.3 Данные профилей браузера</h3>
@@ -278,7 +280,7 @@ export const privacyTranslations: Record<string, {
 <ul><li>Локальное хранение данных профилей</li><li>Облако: Supabase с шифрованием</li><li>Синхронизация: AES-256-GCM</li></ul>
 
 <h2>5. Сторонние сервисы</h2>
-<p>Stripe, Supabase, Resend, Plausible Analytics, Cloudflare. Мы не продаём ваши данные.</p>
+<p>LemonSqueezy (оплата картой), банк (переводы VND), Supabase, Resend, Plausible Analytics, Cloudflare. Мы не продаём ваши данные.</p>
 
 <h2>6. Ваши права (GDPR)</h2>
 <p>Доступ, исправление, удаление, экспорт, отзыв согласия. Контакт: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -309,14 +311,14 @@ export const privacyTranslations: Record<string, {
 
 <h2>2. Datos que recopilamos</h2>
 <h3>2.1 Datos de cuenta</h3>
-<ul><li><strong>Correo electrónico</strong> — para autenticación y comunicación</li><li><strong>Información de pago</strong> — procesada por Stripe; no almacenamos números de tarjetas</li></ul>
+<ul><li><strong>Correo electrónico</strong> — para autenticación y comunicación</li><li><strong>Información de pago</strong> — los pagos con tarjeta son procesados directamente por LemonSqueezy (comerciante registrado, merchant of record): nombre, correo y datos de la tarjeta; no almacenamos números de tarjeta. Para transferencias en VND, nuestro banco nos envía los datos de la transferencia recibida, incluyendo el nombre del remitente y el concepto.</li></ul>
 <h3>2.2 Datos de uso (solo con consentimiento)</h3>
 <p>Estadísticas anónimas agregadas. <strong>Nunca recopilamos:</strong> historial de navegación, contenido de perfiles, scripts de automatización, direcciones IP.</p>
 <h3>2.3 Datos de perfiles del navegador</h3>
 <p>Todos los datos se almacenan <strong>localmente en su dispositivo</strong>. Veilus Sync usa cifrado de extremo a extremo.</p>
 
 <h2>3-5. Uso de datos, Almacenamiento y Terceros</h2>
-<p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos Stripe, Supabase, Resend, Plausible Analytics y Cloudflare. No vendemos sus datos.</p>
+<p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos LemonSqueezy (pagos con tarjeta), nuestro banco (transferencias en VND), Supabase, Resend, Plausible Analytics y Cloudflare. No vendemos sus datos.</p>
 
 <h2>6. Sus derechos (GDPR)</h2>
 <p>Acceso, corrección, eliminación, exportación, retiro de consentimiento. Contacto: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -337,12 +339,12 @@ export const privacyTranslations: Record<string, {
 <p>Veilus ("nós") respeita sua privacidade e compromete-se a proteger seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações ao usar o aplicativo e website Veilus (o "Serviço").</p>
 
 <h2>2. Dados que coletamos</h2>
-<ul><li><strong>Email</strong> — autenticação e comunicação</li><li><strong>Pagamento</strong> — processado pelo Stripe</li></ul>
+<ul><li><strong>Email</strong> — autenticação e comunicação</li><li><strong>Pagamento</strong> — pagamentos com cartão são processados diretamente pela LemonSqueezy (comerciante registrado, merchant of record): nome, email e dados do cartão; não armazenamos números de cartão. Para transferências em VND, nosso banco nos envia os dados da transferência recebida, incluindo o nome do remetente e o descritivo.</li></ul>
 <p>Dados de perfil armazenados <strong>localmente</strong>. Veilus Sync com criptografia ponta a ponta.</p>
 <p><strong>Nunca coletamos:</strong> histórico de navegação, conteúdo de perfis, scripts, endereços IP.</p>
 
 <h2>3-5. Uso, Armazenamento e Terceiros</h2>
-<p>Stripe, Supabase, Resend, Plausible, Cloudflare. Não vendemos seus dados.</p>
+<p>LemonSqueezy (pagamento com cartão), banco (transferências VND), Supabase, Resend, Plausible, Cloudflare. Não vendemos seus dados.</p>
 
 <h2>6. Seus direitos (GDPR)</h2>
 <p>Acesso, correção, exclusão, exportação. Contato: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -360,12 +362,12 @@ export const privacyTranslations: Record<string, {
 <p>Veilus ("kami") menghormati privasi Anda dan berkomitmen melindungi data pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan aplikasi dan situs web Veilus ("Layanan").</p>
 
 <h2>2. Data yang Kami Kumpulkan</h2>
-<ul><li><strong>Alamat email</strong> — untuk autentikasi dan komunikasi</li><li><strong>Informasi pembayaran</strong> — diproses oleh Stripe</li></ul>
+<ul><li><strong>Alamat email</strong> — untuk autentikasi dan komunikasi</li><li><strong>Informasi pembayaran</strong> — pembayaran kartu diproses langsung oleh LemonSqueezy (merchant of record): nama, email, dan detail kartu; kami tidak menyimpan nomor kartu. Untuk transfer VND, bank kami mengirimkan detail transfer yang diterima, termasuk nama pengirim dan berita transfer.</li></ul>
 <p>Data profil browser disimpan <strong>secara lokal</strong>. Veilus Sync menggunakan enkripsi end-to-end.</p>
 <p><strong>Tidak pernah mengumpulkan:</strong> riwayat browsing, konten profil, skrip, alamat IP.</p>
 
 <h2>3-5. Penggunaan, Penyimpanan, dan Pihak Ketiga</h2>
-<p>Stripe, Supabase, Resend, Plausible, Cloudflare. Kami tidak menjual data Anda.</p>
+<p>LemonSqueezy (pembayaran kartu), bank (transfer VND), Supabase, Resend, Plausible, Cloudflare. Kami tidak menjual data Anda.</p>
 
 <h2>6. Hak Anda (GDPR)</h2>
 <p>Akses, koreksi, hapus, ekspor data. Hubungi: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -383,12 +385,12 @@ export const privacyTranslations: Record<string, {
 <p>Veilus ("biz") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu Gizlilik Politikası, Veilus uygulamasını ve web sitesini ("Hizmet") kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>
 
 <h2>2. Topladığımız Veriler</h2>
-<ul><li><strong>E-posta adresi</strong> — kimlik doğrulama ve iletişim</li><li><strong>Ödeme bilgileri</strong> — Stripe tarafından işlenir</li></ul>
+<ul><li><strong>E-posta adresi</strong> — kimlik doğrulama ve iletişim</li><li><strong>Ödeme bilgileri</strong> — kart ödemeleri doğrudan LemonSqueezy (merchant of record) tarafından işlenir: ad, e-posta ve kart bilgileri; kart numaralarını saklamayız. VND havaleleri için bankamız, gönderenin adı ve havale açıklaması dahil aldığı havale bilgilerini bize iletir.</li></ul>
 <p>Profil verileri <strong>yerel olarak</strong> saklanır. Veilus Sync uçtan uca şifreleme kullanır.</p>
 <p><strong>Asla toplamayız:</strong> tarama geçmişi, profil içeriği, otomasyon betikleri, IP adresleri.</p>
 
 <h2>3-5. Kullanım, Depolama ve Üçüncü Taraflar</h2>
-<p>Stripe, Supabase, Resend, Plausible, Cloudflare. Verilerinizi satmıyoruz.</p>
+<p>LemonSqueezy (kart ödemesi), banka (VND havaleleri), Supabase, Resend, Plausible, Cloudflare. Verilerinizi satmıyoruz.</p>
 
 <h2>6. Haklarınız (GDPR)</h2>
 <p>Erişim, düzeltme, silme, dışa aktarma. İletişim: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
