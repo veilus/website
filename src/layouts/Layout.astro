@@ -115,7 +115,7 @@ const faqJsonLd = {
     {noTracking && <meta name="referrer" content="no-referrer" />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0B0F1A" />
+    <meta name="theme-color" content="#F2EFE7" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Google Analytics — tắt trên trang noTracking: page_view gửi cả URL, kể cả ?renew=<key> -->
@@ -178,7 +178,7 @@ const faqJsonLd = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -188,23 +188,6 @@ const faqJsonLd = {
   </head>
   <body>
     <slot />
-
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate-fade-in");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-      );
-      document
-        .querySelectorAll("[data-animate]")
-        .forEach((el) => observer.observe(el));
-    </script>
 
     <!-- GA4 Custom Events -->
     {!noTracking && <script src="/analytics.js" defer />}

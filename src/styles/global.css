@@ -1,32 +1,43 @@
 /* ============================================
-   VEILUS — Design System
-   Dark premium theme with cyan + gold accents
+   VEILUS — hệ "bản vẽ" (spec trang chủ §3, VEIL-955)
+   Nền giấy, mực, một màu nhấn. Tên biến cũ (--bg-*, --color-*) trỏ về token mới, để các trang
+   chưa vẽ lại (/download, /mua, pháp lý) đổi màu theo. Thành phần trang chủ ở blueprint.css.
    ============================================ */
 
-/* ---------- CSS Variables ---------- */
 :root {
-  /* Colors */
-  --bg-primary: #0B0F1A;
-  --bg-surface: #141B2D;
-  --bg-elevated: #1A2332;
-  --color-cyan: #00D4FF;
-  --color-cyan-hover: #00B8D9;
-  --color-indigo: #6366F1;
-  --color-gold: #CA8A04;
-  --color-gold-light: #EAB308;
-  --color-success: #22C55E;
-  --color-text: #F1F5F9;
-  --color-text-secondary: #94A3B8;
-  --color-text-muted: #64748B;
-  --color-border: #1E293B;
-  --color-border-light: #334155;
+  /* Token bản vẽ */
+  --paper: #F2EFE7;
+  --ink: #1B2230;
+  --muted: #596172;
+  --rule: rgba(27, 34, 48, 0.2);
+  --grid: rgba(27, 34, 48, 0.055);
+  --grid2: rgba(27, 34, 48, 0.1);
+  --acc: oklch(0.6 0.18 33);
+  --acc-soft: oklch(0.6 0.18 33 / 0.12);
+  --panel: rgba(242, 239, 231, 0.92);
+
+  /* Tên cũ → token mới */
+  --bg-primary: var(--paper);
+  --bg-surface: #EAE6DC;
+  --bg-elevated: #E2DDD1;
+  --color-cyan: var(--ink);
+  --color-cyan-hover: var(--acc);
+  --color-indigo: var(--ink);
+  --color-gold: var(--acc);
+  --color-gold-light: var(--acc);
+  --color-success: #1F7A4D;
+  --color-text: var(--ink);
+  --color-text-secondary: var(--muted);
+  --color-text-muted: var(--muted);
+  --color-border: var(--rule);
+  --color-border-light: rgba(27, 34, 48, 0.4);
   --color-white: #FFFFFF;
 
-  /* Typography */
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Chữ — IBM Plex có bộ tiếng Việt và Cyrillic; chữ Hán rơi về font hệ thống */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Spacing */
+  /* Khoảng cách */
   --space-xs: 0.25rem;   /* 4px */
   --space-sm: 0.5rem;    /* 8px */
   --space-md: 1rem;      /* 16px */
@@ -36,28 +47,26 @@
   --space-3xl: 4rem;     /* 64px */
   --space-4xl: 6rem;     /* 96px */
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.15);
-  --shadow-glow-strong: 0 0 30px rgba(0, 212, 255, 0.25);
+  /* Bản vẽ không có quầng sáng — chỉ còn bóng lệch phẳng */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 10px 10px 0 var(--grid2);
+  --shadow-xl: 10px 10px 0 var(--grid2);
+  --shadow-glow: none;
+  --shadow-glow-strong: none;
 
-  /* Borders */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  /* Góc vuông */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
   --radius-full: 9999px;
 
-  /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
   --transition-slow: 400ms ease;
 
-  /* Layout */
-  --max-width: 1200px;
+  --max-width: 1240px;
   --nav-height: 72px;
 }
 
@@ -76,23 +85,29 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Không đặt overflow-x: hidden — trang tràn ngang phải lộ ra để lượt đo 390px bắt được. */
 body {
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--color-text);
-  background: var(--bg-primary);
-  overflow-x: hidden;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid2) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
 }
 
 a {
-  color: var(--color-cyan);
+  color: var(--ink);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--color-cyan-hover);
+  color: var(--acc);
 }
 
 img {
@@ -101,12 +116,12 @@ img {
   display: block;
 }
 
-/* ---------- Typography ---------- */
+/* ---------- Chữ ---------- */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--ink);
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
@@ -114,11 +129,11 @@ h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 p {
-  color: var(--color-text-secondary);
+  color: var(--muted);
   max-width: 60ch;
 }
 
-/* ---------- Container ---------- */
+/* ---------- Khung của các trang cũ ---------- */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -126,7 +141,6 @@ p {
   padding: 0 var(--space-lg);
 }
 
-/* ---------- Section ---------- */
 .section {
   padding: var(--space-4xl) 0;
 }
@@ -141,51 +155,46 @@ p {
   font-size: 1.125rem;
 }
 
-/* ---------- Buttons ---------- */
+/* ---------- Nút của các trang cũ ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 14px 28px;
+  padding: 13px 24px;
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 600;
-  border: none;
-  border-radius: var(--radius-md);
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: background var(--transition-fast), color var(--transition-fast);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-cyan), var(--color-indigo));
-  color: var(--color-white);
-  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.4);
-  color: var(--color-white);
+  background: #2B3548;
+  color: var(--paper);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-text);
-  border: 1.5px solid var(--color-border-light);
+  color: var(--ink);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-cyan);
-  color: var(--color-cyan);
-  transform: translateY(-1px);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .btn-large {
-  padding: 18px 36px;
-  font-size: 1.125rem;
-  border-radius: var(--radius-lg);
+  padding: 16px 32px;
+  font-size: 1.0625rem;
 }
 
 /* Nút dài (CTA dùng thử) không được đẩy trang rộng hơn màn hình điện thoại */
@@ -195,48 +204,38 @@ p {
     white-space: normal;
     justify-content: center;
     text-align: center;
-    padding: 16px 20px;
+    padding: 14px 18px;
   }
 }
 
-/* ---------- Cards ---------- */
+/* ---------- Thẻ và nhãn của các trang cũ ---------- */
 .card {
-  background: var(--bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background: var(--panel);
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
   padding: var(--space-xl);
-  transition: all var(--transition-normal);
 }
 
-.card:hover {
-  border-color: var(--color-border-light);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
-}
-
-/* ---------- Badge ---------- */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: 4px 12px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: var(--radius-full);
-  background: rgba(0, 212, 255, 0.1);
-  color: var(--color-cyan);
-  border: 1px solid rgba(0, 212, 255, 0.2);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  border: 1.5px solid var(--ink);
+  background: transparent;
 }
 
 .badge-gold {
-  background: rgba(202, 138, 4, 0.1);
-  color: var(--color-gold-light);
-  border-color: rgba(202, 138, 4, 0.2);
+  color: var(--acc);
+  border-color: var(--acc);
 }
 
-/* ---------- Icon ---------- */
 .icon {
   width: 24px;
   height: 24px;
@@ -248,16 +247,12 @@ p {
   height: 32px;
 }
 
-/* ---------- Utilities ---------- */
+/* ---------- Tiện ích ---------- */
 .text-center { text-align: center; }
-.text-cyan { color: var(--color-cyan); }
-.text-gold { color: var(--color-gold-light); }
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-cyan), var(--color-indigo));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+.text-cyan { color: var(--ink); }
+.text-gold { color: var(--acc); }
+/* Tên cũ của chữ chuyển màu; bản vẽ chỉ có mực */
+.text-gradient { color: var(--ink); }
 
 .mx-auto { margin-left: auto; margin-right: auto; }
 .mt-sm { margin-top: var(--space-sm); }
@@ -279,34 +274,7 @@ p {
 .gap-md { gap: var(--space-md); }
 .gap-lg { gap: var(--space-lg); }
 
-/* ---------- Animations ---------- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.animate-fade-in {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.animate-delay-1 { animation-delay: 0.1s; }
-.animate-delay-2 { animation-delay: 0.2s; }
-.animate-delay-3 { animation-delay: 0.3s; }
-.animate-delay-4 { animation-delay: 0.4s; }
-
-/* ---------- Reduced Motion ---------- */
+/* ---------- Giảm chuyển động ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -317,7 +285,7 @@ p {
   }
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Bề rộng ---------- */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
