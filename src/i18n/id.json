@@ -63,11 +63,6 @@
                 "title": "Penjadwalan",
                 "desc": "Jadwalkan script per jam, hari, atau minggu. Otomatis mendeteksi eksekusi yang terlewat. Pemantauan sumber daya cerdas.",
                 "badge": "Penjadwalan cerdas"
-            },
-            {
-                "title": "Agen AI (BYOK)",
-                "desc": "Gunakan API key AI Anda sendiri — GPT-4, Claude, Gemini. AI menganalisis DOM, merencanakan aksi, dan mengeksekusi otomatis.",
-                "badge": "Bawa Kunci Sendiri"
             }
         ]
     },
@@ -135,15 +130,6 @@
                 "feature": "Canvas Visual",
                 "values": [
                     "Ya",
-                    "Tidak",
-                    "Tidak",
-                    "Tidak"
-                ]
-            },
-            {
-                "feature": "Agen AI",
-                "values": [
-                    "BYOK",
                     "Tidak",
                     "Tidak",
                     "Tidak"

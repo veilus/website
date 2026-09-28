@@ -63,11 +63,6 @@
                 "title": "Programación",
                 "desc": "Programa scripts por hora, día o semana. Detecta ejecuciones perdidas automáticamente. Monitoreo inteligente de recursos.",
                 "badge": "Programación inteligente"
-            },
-            {
-                "title": "Agente IA (BYOK)",
-                "desc": "Usa tu propia clave API — GPT-4, Claude, Gemini. La IA analiza el DOM, planifica acciones y ejecuta automáticamente.",
-                "badge": "Trae tu clave"
             }
         ]
     },
@@ -135,15 +130,6 @@
                 "feature": "Canvas Visual",
                 "values": [
                     "Sí",
-                    "No",
-                    "No",
-                    "No"
-                ]
-            },
-            {
-                "feature": "Agente IA",
-                "values": [
-                    "BYOK",
                     "No",
                     "No",
                     "No"

@@ -19,7 +19,7 @@ export const termsTranslations: Record<string, {
 <ul>
   <li>Desktop application (macOS, with Windows and Linux planned)</li>
   <li>Browser profile management with fingerprint customization</li>
-  <li>Automation tools (Veilus Flow recorder, Visual Canvas, AI Agent)</li>
+  <li>Automation tools (Veilus Flow recorder, Visual Canvas)</li>
   <li>Profile synchronization (Veilus Sync)</li>
   <li>Script scheduling and batch execution</li>
   <li>Cloud API for account and license management</li>
@@ -136,7 +136,7 @@ export const termsTranslations: Record<string, {
 <ul>
   <li>Ứng dụng desktop (macOS, Windows và Linux sẽ có sau)</li>
   <li>Quản lý browser profile với tùy chỉnh fingerprint</li>
-  <li>Công cụ automation (Veilus Flow, Visual Canvas, AI Agent)</li>
+  <li>Công cụ automation (Veilus Flow, Visual Canvas)</li>
   <li>Đồng bộ profile (Veilus Sync)</li>
   <li>Lập lịch script và thực thi hàng loạt</li>
   <li>Cloud API cho quản lý tài khoản và license</li>

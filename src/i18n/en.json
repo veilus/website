@@ -63,11 +63,6 @@
                 "title": "Scheduling",
                 "desc": "Schedule scripts to run hourly, daily, or weekly. Auto-detects missed runs and catches up. Smart resource monitoring.",
                 "badge": "Smart scheduling"
-            },
-            {
-                "title": "AI Agent (BYOK)",
-                "desc": "Use your own AI API key — GPT-4, Claude, Gemini. AI analyzes DOM, plans actions, and executes automatically.",
-                "badge": "Bring Your Own Key"
             }
         ]
     },
@@ -135,15 +130,6 @@
                 "feature": "Visual Canvas",
                 "values": [
                     "Yes",
-                    "No",
-                    "No",
-                    "No"
-                ]
-            },
-            {
-                "feature": "AI Agent",
-                "values": [
-                    "BYOK",
                     "No",
                     "No",
                     "No"
@@ -230,7 +216,7 @@
             },
             {
                 "q": "How is it different from Multilogin or GoLogin?",
-                "a": "Veilus uses a native engine instead of Electron — 3x faster, 80% less RAM. Plus, Veilus includes a built-in automation platform (action recorder, visual canvas, AI agent) — competitors require separate tools."
+                "a": "Veilus uses a native engine instead of Electron — 3x faster, 80% less RAM. Plus, Veilus includes a built-in automation platform (action recorder, visual canvas) — competitors require separate tools."
             },
             {
                 "q": "Does it support Windows and Linux?",

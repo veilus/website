@@ -63,11 +63,6 @@
                 "title": "Zamanlama",
                 "desc": "Scriptleri saatlik, günlük veya haftalık çalıştırın. Kaçırılan çalıştırmaları otomatik algılayıp telafi eder. Akıllı kaynak izleme.",
                 "badge": "Akıllı zamanlama"
-            },
-            {
-                "title": "AI Ajan (BYOK)",
-                "desc": "Kendi AI API anahtarınızı kullanın — GPT-4, Claude, Gemini. AI DOM'u analiz eder, eylem planlar ve otomatik yürütür.",
-                "badge": "Kendi Anahtarınız"
             }
         ]
     },
@@ -135,15 +130,6 @@
                 "feature": "Görsel Canvas",
                 "values": [
                     "Evet",
-                    "Hayır",
-                    "Hayır",
-                    "Hayır"
-                ]
-            },
-            {
-                "feature": "AI Ajan",
-                "values": [
-                    "BYOK",
                     "Hayır",
                     "Hayır",
                     "Hayır"

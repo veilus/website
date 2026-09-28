@@ -63,11 +63,6 @@
                 "title": "Agendamento",
                 "desc": "Agende scripts por hora, dia ou semana. Detecta execuções perdidas automaticamente. Monitoramento inteligente de recursos.",
                 "badge": "Agendamento inteligente"
-            },
-            {
-                "title": "Agente IA (BYOK)",
-                "desc": "Use sua própria chave de API — GPT-4, Claude, Gemini. A IA analisa o DOM, planeja ações e executa automaticamente.",
-                "badge": "Traga sua chave"
             }
         ]
     },
@@ -135,15 +130,6 @@
                 "feature": "Canvas Visual",
                 "values": [
                     "Sim",
-                    "Não",
-                    "Não",
-                    "Não"
-                ]
-            },
-            {
-                "feature": "Agente IA",
-                "values": [
-                    "BYOK",
                     "Não",
                     "Não",
                     "Não"
@@ -230,7 +216,7 @@
             },
             {
                 "q": "Qual a diferença do Multilogin?",
-                "a": "Veilus usa um motor nativo em vez de Electron — 3x mais rápido, 80% menos RAM. Além disso, automação integrada (gravação, canvas visual, agente IA) — concorrentes precisam de ferramentas separadas."
+                "a": "Veilus usa um motor nativo em vez de Electron — 3x mais rápido, 80% menos RAM. Além disso, automação integrada (gravação, canvas visual) — concorrentes precisam de ferramentas separadas."
             },
             {
                 "q": "Suporta Windows e Linux?",

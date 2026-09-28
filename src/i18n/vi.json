@@ -63,11 +63,6 @@
                 "title": "Lên lịch chạy",
                 "desc": "Đặt lịch chạy script theo giờ, ngày, hoặc tuần. Tự phát hiện lần chạy bị lỡ và chạy bù. Giám sát tài nguyên thông minh.",
                 "badge": "Smart scheduling"
-            },
-            {
-                "title": "AI Agent (BYOK)",
-                "desc": "Dùng API key AI riêng — GPT-4, Claude, Gemini. AI tự phân tích DOM, lên kế hoạch hành động, và thực thi tự động.",
-                "badge": "Bring Your Own Key"
             }
         ]
     },
@@ -135,15 +130,6 @@
                 "feature": "Visual Canvas",
                 "values": [
                     "Có",
-                    "Không",
-                    "Không",
-                    "Không"
-                ]
-            },
-            {
-                "feature": "AI Agent",
-                "values": [
-                    "BYOK",
                     "Không",
                     "Không",
                     "Không"
@@ -230,7 +216,7 @@
             },
             {
                 "q": "Khác gì so với Multilogin hay GoLogin?",
-                "a": "Veilus dùng engine gốc thay vì Electron — nhanh hơn 3x, ít RAM hơn 80%. Tích hợp sẵn automation (ghi thao tác, visual canvas, AI agent) — đối thủ cần mua thêm tool."
+                "a": "Veilus dùng engine gốc thay vì Electron — nhanh hơn 3x, ít RAM hơn 80%. Tích hợp sẵn automation (ghi thao tác, visual canvas) — đối thủ cần mua thêm tool."
             },
             {
                 "q": "Hỗ trợ Windows và Linux không?",
