@@ -42,8 +42,8 @@ export const BANNED = [
   },
   {
     id: 'ram',
-    re: /(?:\bRAM\b|内存|ОЗУ)\D{0,15}\d+\s?%|%\s?\d+\D{0,15}\bRAM\b|\d+\s?%\D{0,15}(?:\bRAM\b|内存|ОЗУ)|\d+\s?MB\D{0,20}(?:profile|профил|配置文件)|(?:profile|профил|配置文件)\D{0,20}\d+\s?MB\b/i,
-    why: '"ít RAM 80%", "~100MB mỗi profile" chưa từng đo — MB đứng riêng (cỡ file cài đặt, dung lượng đĩa) không phải khẳng định RAM mỗi profile',
+    re: /(?:\bRAM\b|内存|ОЗУ)\D{0,15}\d+\s?%|%\s?\d+\D{0,15}\bRAM\b|\d+\s?%\D{0,15}(?:\bRAM\b|内存|ОЗУ)|\d+\s?MB\b/i,
+    why: '"ít RAM 80%", "~100MB mỗi profile" chưa từng đo',
   },
   {
     id: 'electron',
@@ -87,6 +87,12 @@ export const ALLOWED = [
     text: 'We do not guarantee that browser fingerprints will be undetectable by all detection systems.',
     why: 'miễn trừ trách nhiệm: nói rõ KHÔNG hứa',
   },
+  { file: 'src/pages/download.astro', text: '.exe · ~120MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/pages/download.astro', text: '.dmg · ~150MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/pages/download.astro', text: '500 MB disk space', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/pages/[lang]/download.astro', text: '.exe · ~120MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/pages/[lang]/download.astro', text: '.dmg · ~150MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/pages/[lang]/download.astro', text: '500 MB disk space', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
 ];
 
 /** Bỏ thẻ HTML để câu "The <strong>only</strong> …" khớp đúng như chữ người đọc thấy. */

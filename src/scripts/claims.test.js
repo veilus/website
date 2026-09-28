@@ -72,6 +72,12 @@ const HISTORIC = [
   ['ram', 'Engine native — 3x lebih cepat, RAM 80% lebih sedikit.'],
   ['ram', 'Около 100MB на профиль — в 3-5 раз меньше чем браузеры на Electron.'],
   ['ram', '每个配置文件只使用约100MB内存'],
+  ['ram', 'Cerca de 100MB por perfil'],
+  ['ram', 'Unos 100MB por perfil'],
+  ['ram', 'Profil başına yaklaşık 100MB'],
+  ['ram', 'Sekitar 100MB per profil'],
+  ['ram', 'Mỗi hồ sơ dùng khoảng 100MB RAM'],
+  ['ram', 'Each profile uses only about 100MB RAM'],
   ['electron', 'Native engine built with Tauri + Rust (not Electron)'],
   ['user-count', '"users": "500+"'],
   ['linux', 'operatingSystem: "Windows, macOS, Linux",'],
@@ -95,9 +101,6 @@ const NEAR_MISS = [
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
   'Our affiliate program pays 20% per sale',
-  '.exe · ~120MB',
-  '.dmg · ~150MB',
-  '500 MB disk space',
 ];
 
 test('quét đủ mẫu số: 8 ngôn ngữ, 4 trang pháp lý, llms.txt, layout, component, trang', () => {
