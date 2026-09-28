@@ -71,6 +71,7 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
         <p class="contact">{p.contact} <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer">{p.contactCta}</a></p>
       </div>
     </div>
+    <p class="refund-note"><a href={getLocalizedPath('/refund', lang)}>{p.refund}</a></p>
   </div>
 </section>
 <style>
@@ -98,5 +99,7 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
   .tier-price { text-align: right; font-weight: 700; white-space: nowrap; }
   .tier-go { color: var(--color-text-muted); }
   .contact { font-size: 0.875rem; color: var(--color-text-muted); }
+  .refund-note { margin: var(--space-lg) auto 0; max-width: none; text-align: center; font-size: 0.875rem; color: var(--color-text-muted); }
+  .refund-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 1024px) { .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
 </style>

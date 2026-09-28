@@ -8,6 +8,7 @@ const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
 // Giá trong bảng so sánh lấy từ SKUS để không lệch với trang giá.
 // Một loại tiền mỗi ngôn ngữ, như trang giá.
+// Chỉ còn cột Veilus: ô của đối thủ không kiểm chứng được từ trang giá công khai của họ (VEIL-955).
 const cur = currencyForLang(lang);
 const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
 const fillPrices = (v: string) => v.replace('{monthly}', price(SKUS.monthly)).replace('{lifetime}', price(SKUS.solo));
@@ -39,8 +40,8 @@ const fillPrices = (v: string) => v.replace('{monthly}', price(SKUS.monthly)).re
   </div>
 </section>
 <style>
-  .table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
-  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; min-width: 640px; }
+  .table-wrap { max-width: 720px; margin: 0 auto; overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem;  }
   .comp-table th, .comp-table td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--color-border); }
   .comp-table thead th { background: var(--bg-elevated); font-weight: 600; color: var(--color-text-secondary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; }
   .comp-table tbody tr:last-child td { border-bottom: none; }

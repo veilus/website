@@ -1,7 +1,7 @@
 {
     "meta": {
-        "title": "Veilus — 集成自动化的反检测浏览器",
-        "description": "免费反检测浏览器，原生高性能。５个配置文件永久免费。通过 MCP 让 AI 助手编写脚本实现自动化。立即下载。"
+        "title": "Veilus — 内置自动化的反检测浏览器",
+        "description": "在一台电脑上运行多个账号，每个账号都有独立的指纹和代理。操作录制一次，即可在所有配置文件上重放。5 个配置文件永久免费。"
     },
     "nav": {
         "features": "功能",
@@ -11,146 +11,183 @@
         "download": "免费下载"
     },
     "hero": {
-        "badge": "反检测浏览器",
-        "title1": "隐形。",
-        "title2": "无痕。",
-        "title3": "你的。",
-        "subtitle": "<strong>唯一</strong>集成完整自动化平台的反检测浏览器。原生引擎 — 快3倍，内存减少80%。",
-        "check1": "5个配置文件永久免费 — 无需信用卡",
-        "check2": "每个配置文件独立指纹 — 不可检测",
-        "check3": "让 AI 助手通过 MCP 编写并运行脚本 — 或自己编写",
-        "ctaPrimary": "免费下载",
-        "ctaSecondary": "观看90秒演示",
-        "note": "Windows, macOS, Linux"
+        "badge": "为多账号运营打造的反检测浏览器",
+        "title": "一台电脑运行数百个账号——",
+        "titleHighlight": "每个账号都有独立身份。",
+        "subtitle": "操作只需录制一次，Veilus 就会在每个配置文件上自动执行。每个配置文件拥有独立的指纹和代理，账号之间互不关联。",
+        "cta": "下载并免费试用 Pro 7 天",
+        "micro": "试用结束后仍可免费使用 5 个配置文件，无需绑卡。",
+        "platforms": "macOS · Windows"
     },
     "proof": {
-        "test": "通过检测",
-        "testSub": "creepjs.com 和 iphey.com",
-        "speed": "快3倍",
-        "speedSub": "than alternatives",
-        "users": "500+",
-        "usersSub": "测试用户",
-        "open": "开源",
-        "openSub": "Chromium 补丁"
+        "items": [
+            {
+                "value": "经 creepjs 和 iphey 测试",
+                "sub": "指纹检测"
+            },
+            {
+                "value": "自研 Chromium 内核",
+                "sub": "由 Veilus 构建并打补丁"
+            },
+            {
+                "value": "数据留在你的电脑上",
+                "sub": "配置文件本地存储"
+            },
+            {
+                "value": "macOS · Windows",
+                "sub": "桌面应用"
+            }
+        ]
+    },
+    "pain": {
+        "badge": "痛点",
+        "title": "手动管理多个账号",
+        "titleHighlight": "总会在这三处出问题",
+        "items": [
+            {
+                "title": "一个号被封，其他号跟着遭殃",
+                "desc": "平台会把共用浏览器指纹、IP 或 Cookie 的账号关联起来。一个账号被标记，其余账号也会被牵连。"
+            },
+            {
+                "title": "同样的点击，一天重复五十遍",
+                "desc": "登录、发帖、回复、查订单——再到下一个配置文件里从头来一遍。大把时间花在了脚本就能完成的事情上。"
+            },
+            {
+                "title": "代理和 Cookie 全靠表格管理",
+                "desc": "哪个代理对应哪个账号？哪些 Cookie 还有效？弄错一次，两个账号就关联上了。"
+            }
+        ],
+        "bridge": "Veilus 把每个账号放进独立的配置文件，并替你完成重复的工作。"
+    },
+    "audience": {
+        "badge": "适用人群",
+        "title": "专为同时运营",
+        "titleHighlight": "多个账号的人打造",
+        "subtitle": "找到你的业务类型，看看 Veilus 能带来什么变化。",
+        "items": [
+            {
+                "title": "MMO 与社交媒体",
+                "outcome": "让几十个社交账号彼此隔离，并且不用手动操作就能给所有账号发内容。",
+                "features": [
+                    "每个配置文件独立的指纹和代理",
+                    "用 Veilus Flow 完成日常发帖和回复",
+                    "离开电脑时按计划自动运行"
+                ]
+            },
+            {
+                "title": "广告与联盟营销",
+                "outcome": "每个广告账户、每个客户都有自己的配置文件和代理，登录信息、Cookie 和 IP 互不混用。",
+                "features": [
+                    "一个广告账户一个配置文件",
+                    "支持 HTTP、HTTPS 和 SOCKS5 代理",
+                    "导入/导出，轻松迁移配置文件"
+                ]
+            },
+            {
+                "title": "电商卖家",
+                "outcome": "在一台电脑上管理多个 Shopee、Amazon 或 Etsy 店铺，每个店铺使用独立身份。",
+                "features": [
+                    "一个店铺一个配置文件",
+                    "查订单、回消息只需录制一次",
+                    "对所有店铺批量运行"
+                ]
+            },
+            {
+                "title": "开发者",
+                "outcome": "用你自己的脚本或 AI 工具控制浏览器配置文件，指纹部分已经替你处理好。",
+                "features": [
+                    "本地 REST API",
+                    "面向 AI 工具的 MCP",
+                    "批量运行与定时任务"
+                ]
+            }
+        ]
     },
     "features": {
         "badge": "功能",
         "title": "你需要的一切，",
-        "titleHighlight": "尽在一个应用",
-        "subtitle": "反检测浏览器 + 自动化平台。竞品需要2个工具，你只需要 Veilus。",
+        "titleHighlight": "都在一个应用里",
+        "subtitle": "反检测浏览器和自动化，放在同一个地方。",
         "items": [
             {
-                "title": "指纹引擎",
-                "desc": "为每个配置文件创建独特指纹，支持20+参数 — Canvas、WebGL、AudioContext、Client Hints。在最深层级精心设计，实现最大隐匿性。",
-                "badge": "通过 creepjs.com"
+                "title": "每个配置文件都像另一个人",
+                "desc": "每个配置文件拥有独立的指纹，以及独立的 HTTP、HTTPS 或 SOCKS5 代理。配置文件运行在 Veilus 自行构建并打补丁的 Chromium 内核上。",
+                "badge": "经 creepjs 和 iphey 测试"
             },
             {
-                "title": "Veilus Flow",
-                "desc": "自己编写 Playwright 脚本，或让 AI 助手（Claude、Cursor 等）通过 MCP 编写、测试并修复 — 然后在多个配置文件上运行。大规模运行前需你审批脚本。",
-                "badge": "无需编程"
+                "title": "做一次，处处重复",
+                "desc": "Veilus Flow 记录你的点击和输入，然后作为脚本在任意数量的配置文件上重放。无需写代码即可编辑步骤。",
+                "badge": "Veilus Flow · Pro"
             },
             {
-                "title": "可视化画布",
-                "desc": "拖放创建自动化流程图。支持分支、循环和可复用组件。完全低代码。",
-                "badge": "低代码"
+                "title": "你不在时，工作照常进行",
+                "desc": "为脚本设置定时计划，或一次性对多个配置文件批量运行。",
+                "badge": "定时 · 批量运行 · Pro"
             },
             {
-                "title": "Veilus Sync",
-                "desc": "通过 Git 或 Google Drive 在你的设备之间同步配置文件 — 数据保存在你自己的仓库中。",
-                "badge": "Git · Google Drive"
+                "title": "接入你自己的工具",
+                "desc": "本地 REST API 和 MCP 让你的代码和 AI 工具可以打开配置文件并运行自动化。",
+                "badge": "REST API · MCP · Pro"
             },
             {
-                "title": "定时调度",
-                "desc": "按小时、天或周定时运行脚本。自动检测错过的运行并补执行。智能资源监控。",
-                "badge": "智能调度"
+                "title": "配置随你迁移",
+                "desc": "Veilus Sync 加密同步配置文件。可以从模板开始编写脚本，换电脑时导入或导出配置文件。",
+                "badge": "加密同步 · Pro"
             }
         ]
     },
     "howItWorks": {
-        "badge": "使用方法",
-        "title": "三步",
-        "titleHighlight": "即可开始",
-        "subtitle": "从下载到完全自动化只需几分钟。",
+        "badge": "使用方式",
+        "title": "从下载到自动化",
+        "titleHighlight": "只需 3 步",
+        "subtitle": "免费开始。自动化功能需要 Pro——7 天试用已包含。",
         "steps": [
             {
-                "title": "下载并创建配置",
-                "desc": "免费下载 Veilus。10秒内创建具有独特指纹的配置文件。每个配置 = 一个全新身份。"
+                "title": "下载并创建配置文件",
+                "desc": "在 macOS 或 Windows 上安装。每个新配置文件都有独立指纹；如果有代理，可以直接添加。"
             },
             {
-                "title": "构建你的流程",
-                "desc": "让 AI 助手通过 MCP 编写脚本，或自己编写。"
+                "title": "把任务录制一次",
+                "desc": "点击“录制”，在一个配置文件里手动完成任务——登录、发帖、查订单。Veilus 会把步骤保存为脚本。"
             },
             {
-                "title": "自动化与扩展",
-                "desc": "同时在多个配置文件上运行脚本。设置定时自动化。智能监控 — Veilus 处理一切。"
+                "title": "在所有配置文件上运行",
+                "desc": "选择配置文件批量运行脚本，或设置定时计划。"
             }
         ]
     },
     "comparison": {
         "badge": "对比",
-        "title": "为什么选择",
-        "titleHighlight": "Veilus？",
-        "subtitle": "与市场领先竞品的直接对比。",
+        "title": "选择之前",
+        "titleHighlight": "先看这几点",
+        "subtitle": "这些是反检测浏览器之间差异最大的地方。竞品的套餐经常变化，建议把它们当前的价格页和这张表放在一起对照。",
         "headers": [
             "",
-            "Veilus",
-            "Multilogin",
-            "GoLogin",
-            "AdsPower"
+            "Veilus"
         ],
         "rows": [
             {
                 "feature": "免费版",
                 "values": [
-                    "5配置永久",
-                    "7天试用",
-                    "3个(受限)",
-                    "5个(受限)"
+                    "5 个配置文件，永久免费"
                 ]
             },
             {
-                "feature": "引擎",
+                "feature": "内置自动化",
                 "values": [
-                    "Native",
-                    "Electron",
-                    "Electron",
-                    "Electron"
+                    "有——录制、重放、定时"
                 ]
             },
             {
-                "feature": "自动化",
+                "feature": "一次性买断",
                 "values": [
-                    "内置",
-                    "独立",
-                    "无",
-                    "基础RPA"
+                    "有——{lifetime} 起"
                 ]
             },
             {
-                "feature": "可视化画布",
+                "feature": "价格",
                 "values": [
-                    "有",
-                    "无",
-                    "无",
-                    "无"
-                ]
-            },
-            {
-                "feature": "内存/配置",
-                "values": [
-                    "~100MB",
-                    "~500MB",
-                    "~400MB",
-                    "~350MB"
-                ]
-            },
-            {
-                "feature": "付费版价格",
-                "values": [
-                    "{monthly}/月 · 终身 {lifetime}",
-                    "$99/月",
-                    "$49/月",
-                    "$9/月"
+                    "{monthly}/月/台设备 · 买断 {lifetime}"
                 ]
             }
         ]
@@ -198,54 +235,63 @@
         "device": "1 台设备",
         "devices": "{n} 台设备",
         "contact": "超过 20 台设备？",
-        "contactCta": "联系我们"
+        "contactCta": "联系我们",
+        "refund": "月付 7 天内、买断 14 天内可申请退款。"
     },
     "faq": {
-        "badge": "常见问题",
+        "badge": "FAQ",
         "title": "常见",
-        "titleHighlight": "问题解答",
-        "subtitle": "开始之前你需要了解的一切。",
+        "titleHighlight": "问题",
+        "subtitle": "大家在下载前最常问的问题。",
         "items": [
             {
-                "q": "Veilus 真的不可检测吗？",
-                "a": "是的。我们的指纹引擎在最深层级精心设计，不仅仅是更改 user-agent 或注入 JavaScript。已在 creepjs.com 和 iphey.com 上测试验证，每个配置文件都显示\"唯一\"结果。"
+                "q": "平台会检测到我的配置文件吗？",
+                "a": "没有任何工具能做出这种保证，我们也不做。每个配置文件运行在 Veilus 自行打补丁的 Chromium 上，拥有独立的指纹和代理，我们会用 creepjs 和 iphey 测试配置文件。账号会受到怎样的对待，也取决于你如何使用它们。"
             },
             {
-                "q": "真的免费吗？需要信用卡吗？",
-                "a": "真正免费。5个配置文件永久使用，无时间限制，不需要信用卡。只有当你需要更多配置文件或自动化功能时才需要升级。"
+                "q": "真的免费吗？需要绑卡吗？",
+                "a": "是的。免费版提供 1 台设备上的 5 个配置文件，没有时间限制，也不需要绑卡。Veilus Flow、定时任务、批量运行和本地 API/MCP 需要 Pro。"
             },
             {
-                "q": "和 Multilogin 或 GoLogin 有什么区别？",
-                "a": "Veilus 使用原生引擎而非 Electron — 速度快3倍，内存占用减少80%。此外，Veilus 内置完整自动化平台（脚本、本地 REST API 和 MCP）— 竞品需要购买额外工具。"
+                "q": "7 天 Pro 试用怎么用？",
+                "a": "在应用内用你的邮箱申请试用。我们会通过邮件发送密钥，把它粘贴到应用中即可解锁 Pro。7 天后自动回到免费版，你的配置文件都会保留。"
             },
             {
-                "q": "支持 Windows 和 Linux 吗？",
-                "a": "目前 Veilus 支持 macOS。Windows 和 Linux 版本正在开发中，预计2026年第二季度推出。"
+                "q": "支持哪些操作系统？",
+                "a": "macOS 和 Windows。没有 Linux 版本。"
             },
             {
-                "q": "我的数据安全吗？",
-                "a": "配置文件数据存储在你的本地机器上。如果开启 Veilus Sync，配置文件会同步到你选择的 Git 仓库或 Google Drive — 请使用私有仓库或私有云盘。将配置文件导出为 .veiluspack 文件时，你可以设置密码来加密该文件。"
+                "q": "我的数据存在哪里？",
+                "a": "存在你的电脑上。配置文件及其数据都保存在本地。如果开启 Veilus Sync，同步的数据会被加密。"
             },
             {
-                "q": "可以使用自己的代理吗？",
-                "a": "可以。Veilus 支持 HTTP、HTTPS、SOCKS5 代理。每个配置文件可以拥有独立的代理配置，包括代理轮换。"
+                "q": "可以用自己的代理吗？",
+                "a": "可以。支持 HTTP、HTTPS 和 SOCKS5，每个配置文件都可以设置自己的代理。"
             },
             {
-                "q": "Veilus Flow 如何工作？",
-                "a": "自己编写 Playwright 脚本，或让 AI 助手通过 MCP 编写、测试并修复，然后在多个配置文件上运行 — 支持批量或定时执行。未经审批的脚本每次最多在3个配置文件上运行；在 Veilus Flow 中审批脚本后即可大规模或定时运行。"
+                "q": "Veilus Flow 是怎么工作的？",
+                "a": "点击“录制”，在一个配置文件里手动完成任务，然后点击“停止”。Veilus 会把步骤保存为脚本。你可以编辑它，在任意数量的配置文件上运行，或设置定时计划。"
             },
             {
-                "q": "占用很多内存吗？",
-                "a": "每个配置文件只使用约100MB内存 — 比基于 Electron 的反检测浏览器少3-5倍。Veilus 还具有智能资源监控功能，在系统负载过高时自动限速。"
+                "q": "Veilus 和其他反检测浏览器有什么不同？",
+                "a": "自动化是内置的：录制一次任务即可在多个配置文件上重放，定时任务、批量运行和本地 API/MCP 都在同一个应用里。你也可以一次性买断，而不是按月订阅。"
+            },
+            {
+                "q": "可以退款吗？",
+                "a": "可以。月付可在 7 天内退款，买断可在 14 天内退款。"
             }
         ]
     },
     "finalCta": {
-        "title": "准备好变得",
-        "titleHighlight": "隐形了吗？",
-        "desc": "今天就免费下载 Veilus。\n5个配置文件。独特指纹。无需信用卡。永久免费。",
-        "cta": "免费下载",
-        "note": "不收集个人数据"
+        "title": "免费试用全部 Pro 功能",
+        "titleHighlight": "7 天",
+        "desc": "下载 Veilus，在应用内申请试用，然后录制你的第一个任务。\n不合适的话，仍可免费保留 5 个配置文件。",
+        "cta": "下载并免费试用 Pro 7 天",
+        "badges": [
+            "无需绑卡",
+            "数据留在你的电脑上",
+            "5 个配置文件永久免费"
+        ]
     },
     "footer": {
         "tagline": "隐形，源于设计。",
@@ -280,7 +326,6 @@
         "subtitle": "5个配置文件永久免费。选择您的平台。",
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
-        "linuxX64": "Ubuntu 20+ / Fedora 36+",
         "downloadBtn": "下载",
         "note": "不收集个人数据 · 无需信用卡",
         "reqTitle": "系统要求"

@@ -188,6 +188,17 @@ p {
   border-radius: var(--radius-lg);
 }
 
+/* Nút dài (CTA dùng thử) không được đẩy trang rộng hơn màn hình điện thoại */
+@media (max-width: 480px) {
+  .btn-large {
+    max-width: 100%;
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
+    padding: 16px 20px;
+  }
+}
+
 /* ---------- Cards ---------- */
 .card {
   background: var(--bg-surface);

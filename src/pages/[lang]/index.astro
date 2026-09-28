@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Hero from '../../components/Hero.astro';
 import SocialProof from '../../components/SocialProof.astro';
+import Pain from '../../components/Pain.astro';
+import Audience from '../../components/Audience.astro';
 import Features from '../../components/Features.astro';
 import HowItWorks from '../../components/HowItWorks.astro';
 import Comparison from '../../components/Comparison.astro';
@@ -28,6 +30,8 @@ const lang = Astro.params.lang as Lang;
   <main>
     <Hero lang={lang} />
     <SocialProof lang={lang} />
+    <Pain lang={lang} />
+    <Audience lang={lang} />
     <Features lang={lang} />
     <HowItWorks lang={lang} />
     <Comparison lang={lang} />

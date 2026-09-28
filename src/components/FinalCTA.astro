@@ -1,6 +1,6 @@
 ---
 import type { Lang } from "../i18n/utils";
-import { t, defaultLang } from "../i18n/utils";
+import { t, defaultLang, getLocalizedPath } from "../i18n/utils";
 interface Props {
   lang?: Lang;
 }
@@ -22,7 +22,7 @@ const i = t(lang);
           set:html={i.finalCta.desc.replace(/\n/g, "<br />")}
         />
         <div class="cta-actions">
-          <a href="/download" class="btn btn-primary btn-large">
+          <a href={getLocalizedPath("/download", lang)} class="btn btn-primary btn-large">
             <svg
               class="icon"
               viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ const i = t(lang);
               ><rect x="3" y="11" width="18" height="11" rx="2" ry="2"
               ></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
             >
-            <span>No personal data collected</span>
+            <span>{i.finalCta.badges[1]}</span>
           </div>
           <div class="trust-badge">
             <svg
@@ -66,7 +66,7 @@ const i = t(lang);
               ><rect x="1" y="4" width="22" height="16" rx="2" ry="2"
               ></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg
             >
-            <span>No credit card required</span>
+            <span>{i.finalCta.badges[0]}</span>
           </div>
           <div class="trust-badge">
             <svg
@@ -79,7 +79,7 @@ const i = t(lang);
               ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               ></path><circle cx="12" cy="7" r="4"></circle></svg
             >
-            <span>5 free profiles forever</span>
+            <span>{i.finalCta.badges[2]}</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ const i = t(lang);
   .cta-desc {
     font-size: 1.125rem;
     margin: var(--space-lg) auto 0;
-    max-width: 42ch;
+    max-width: 52ch;
     line-height: 1.7;
   }
   .cta-actions {
@@ -151,6 +151,6 @@ const i = t(lang);
     width: 16px;
     height: 16px;
     flex-shrink: 0;
-    stroke: var(--color-accent);
+    stroke: var(--color-cyan);
   }
 </style>

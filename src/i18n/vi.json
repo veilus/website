@@ -1,7 +1,7 @@
 {
     "meta": {
-        "title": "Veilus — Trình duyệt chống phát hiện với automation tích hợp",
-        "description": "Anti-detect browser miễn phí, hiệu suất vượt trội. 5 profiles vĩnh viễn. Tự động hóa bằng script do trợ lý AI viết qua MCP. Tải ngay."
+        "title": "Veilus — Trình duyệt anti-detect có sẵn tự động hóa",
+        "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Ghi thao tác một lần, chạy lại trên mọi profile. Miễn phí 5 profile."
     },
     "nav": {
         "features": "Tính năng",
@@ -11,146 +11,183 @@
         "download": "Tải miễn phí"
     },
     "hero": {
-        "badge": "Anti-Detect Browser",
-        "title1": "Vô hình.",
-        "title2": "Không dấu vết.",
-        "title3": "Của bạn.",
-        "subtitle": "Trình duyệt chống phát hiện <strong>duy nhất</strong> tích hợp nền tảng tự động hóa hoàn chỉnh. Engine gốc — nhanh hơn 3x, ít RAM hơn 80%.",
-        "check1": "Miễn phí 5 profiles vĩnh viễn — không thẻ tín dụng",
-        "check2": "Mỗi profile có fingerprint riêng biệt — undetectable",
-        "check3": "Để trợ lý AI viết và chạy script qua MCP — hoặc tự viết lấy",
-        "ctaPrimary": "Tải miễn phí",
-        "ctaSecondary": "Xem demo 90 giây",
-        "note": "Windows, macOS, Linux"
+        "badge": "Trình duyệt anti-detect cho người chạy nhiều tài khoản",
+        "title": "Chạy hàng trăm tài khoản trên một máy —",
+        "titleHighlight": "mỗi tài khoản một danh tính riêng.",
+        "subtitle": "Ghi thao tác một lần, Veilus chạy lại trên mọi profile. Mỗi profile có fingerprint và proxy riêng, nên các tài khoản không dính vào nhau.",
+        "cta": "Tải về & dùng thử Pro 7 ngày",
+        "micro": "Hết 7 ngày vẫn dùng tiếp 5 profile miễn phí — không cần thẻ.",
+        "platforms": "macOS · Windows"
     },
     "proof": {
-        "test": "Qua kiểm tra",
-        "testSub": "creepjs.com & iphey.com",
-        "speed": "Nhanh hơn 3x",
-        "speedSub": "so với đối thủ",
-        "users": "500+",
-        "usersSub": "beta testers",
-        "open": "Open Source",
-        "openSub": "vân tay đã xác minh"
+        "items": [
+            {
+                "value": "Đã kiểm với creepjs & iphey",
+                "sub": "kiểm tra fingerprint"
+            },
+            {
+                "value": "Engine Chromium tự build",
+                "sub": "Veilus tự build và vá"
+            },
+            {
+                "value": "Dữ liệu nằm trên máy bạn",
+                "sub": "profile lưu cục bộ"
+            },
+            {
+                "value": "macOS · Windows",
+                "sub": "ứng dụng desktop"
+            }
+        ]
+    },
+    "pain": {
+        "badge": "Vấn đề",
+        "title": "Chạy nhiều tài khoản bằng tay",
+        "titleHighlight": "hỏng ở ba chỗ",
+        "items": [
+            {
+                "title": "Một tài khoản bị khoá, cả loạt bị kéo theo",
+                "desc": "Nền tảng nối các tài khoản dùng chung fingerprint, IP hay cookie. Một tài khoản bị đánh dấu là những tài khoản còn lại đi theo."
+            },
+            {
+                "title": "Cùng một thao tác, lặp lại năm mươi lần mỗi ngày",
+                "desc": "Đăng nhập, đăng bài, trả lời tin nhắn, kiểm đơn — rồi làm lại y hệt ở profile kế tiếp. Hàng giờ trôi vào việc mà một script làm được."
+            },
+            {
+                "title": "Proxy và cookie quản bằng file Excel",
+                "desc": "Proxy nào đi với tài khoản nào? Cookie nào còn dùng được? Nhầm một lần là hai tài khoản dính nhau."
+            }
+        ],
+        "bridge": "Veilus tách mỗi tài khoản vào một profile riêng và làm thay bạn phần việc lặp lại."
+    },
+    "audience": {
+        "badge": "Dành cho bạn",
+        "title": "Làm cho người chạy",
+        "titleHighlight": "nhiều tài khoản cùng lúc",
+        "subtitle": "Tìm đúng việc của bạn. Đây là thứ Veilus thay đổi.",
+        "items": [
+            {
+                "title": "MMO & mạng xã hội",
+                "outcome": "Giữ hàng chục tài khoản mạng xã hội tách biệt, và đăng bài cho tất cả mà không phải làm tay.",
+                "features": [
+                    "Fingerprint và proxy riêng cho từng profile",
+                    "Veilus Flow cho việc đăng bài, trả lời hằng ngày",
+                    "Lịch chạy tự động khi bạn vắng mặt"
+                ]
+            },
+            {
+                "title": "Quảng cáo & affiliate",
+                "outcome": "Mỗi tài khoản quảng cáo, mỗi khách hàng một profile và proxy riêng — đăng nhập, cookie và IP không bao giờ lẫn.",
+                "features": [
+                    "Một profile cho mỗi tài khoản quảng cáo",
+                    "Proxy HTTP, HTTPS và SOCKS5",
+                    "Nhập/xuất để chuyển profile"
+                ]
+            },
+            {
+                "title": "Bán hàng TMĐT",
+                "outcome": "Quản lý nhiều shop Shopee, Amazon, Etsy trên một máy, mỗi shop một danh tính.",
+                "features": [
+                    "Một profile cho mỗi shop",
+                    "Ghi thao tác kiểm đơn, tin nhắn một lần",
+                    "Chạy hàng loạt trên mọi shop"
+                ]
+            },
+            {
+                "title": "Lập trình viên",
+                "outcome": "Điều khiển profile trình duyệt từ script hoặc công cụ AI của bạn, phần fingerprint đã có sẵn.",
+                "features": [
+                    "REST API cục bộ",
+                    "MCP cho công cụ AI",
+                    "Chạy hàng loạt và theo lịch"
+                ]
+            }
+        ]
     },
     "features": {
         "badge": "Tính năng",
         "title": "Mọi thứ bạn cần,",
         "titleHighlight": "trong một ứng dụng",
-        "subtitle": "Anti-detect browser + Automation platform. Đối thủ cần 2 tool, bạn chỉ cần Veilus.",
+        "subtitle": "Trình duyệt anti-detect và tự động hóa nằm chung một chỗ.",
         "items": [
             {
-                "title": "Fingerprint Engine",
-                "desc": "Tạo dấu vân tay riêng cho mỗi profile với 20+ tham số — Canvas, WebGL, AudioContext, Client Hints. Được thiết kế ở tầng sâu nhất để đạt khả năng ẩn danh tối đa.",
-                "badge": "Qua kiểm tra creepjs.com"
+                "title": "Mỗi profile là một người khác nhau",
+                "desc": "Mỗi profile có fingerprint riêng và proxy HTTP, HTTPS hoặc SOCKS5 riêng. Profile chạy trên engine Chromium do Veilus tự build và vá.",
+                "badge": "Đã kiểm với creepjs & iphey"
             },
             {
-                "title": "Veilus Flow",
-                "desc": "Tự viết script Playwright, hoặc để trợ lý AI (Claude, Cursor…) viết, kiểm tra và sửa qua MCP — rồi chạy trên nhiều profiles. Bạn duyệt script trước khi chạy quy mô lớn.",
-                "badge": "Không cần viết code"
+                "title": "Làm một lần, lặp lại ở mọi nơi",
+                "desc": "Veilus Flow ghi lại những gì bạn bấm và gõ, rồi chạy lại như một script trên bao nhiêu profile tùy bạn. Sửa các bước mà không cần viết code.",
+                "badge": "Veilus Flow · Pro"
             },
             {
-                "title": "Visual Canvas",
-                "desc": "Kéo thả tạo luồng tự động như sơ đồ. Hỗ trợ rẽ nhánh, lặp, và các thành phần tái sử dụng. Low-code hoàn toàn.",
-                "badge": "Low-code"
+                "title": "Việc tự chạy khi bạn vắng mặt",
+                "desc": "Đặt lịch cho script, hoặc chạy hàng loạt trên nhiều profile cùng lúc.",
+                "badge": "Lịch · Chạy hàng loạt · Pro"
             },
             {
-                "title": "Veilus Sync",
-                "desc": "Đồng bộ profiles giữa các máy của bạn qua Git hoặc Google Drive — dữ liệu nằm trong repository của riêng bạn.",
-                "badge": "Git · Google Drive"
+                "title": "Nối với công cụ của bạn",
+                "desc": "REST API và MCP chạy cục bộ để code và công cụ AI của bạn mở profile và chạy tự động hóa.",
+                "badge": "REST API · MCP · Pro"
             },
             {
-                "title": "Lên lịch chạy",
-                "desc": "Đặt lịch chạy script theo giờ, ngày, hoặc tuần. Tự phát hiện lần chạy bị lỡ và chạy bù. Giám sát tài nguyên thông minh.",
-                "badge": "Smart scheduling"
+                "title": "Mang cả thiết lập theo",
+                "desc": "Veilus Sync đồng bộ profile có mã hóa. Bắt đầu script từ mẫu có sẵn, nhập hoặc xuất profile khi đổi máy.",
+                "badge": "Đồng bộ mã hóa · Pro"
             }
         ]
     },
     "howItWorks": {
         "badge": "Cách hoạt động",
-        "title": "Bắt đầu trong",
-        "titleHighlight": "3 bước",
-        "subtitle": "Từ tải app đến tự động hóa hoàn toàn chỉ mất vài phút.",
+        "title": "Từ lúc tải về đến tự động hóa",
+        "titleHighlight": "trong 3 bước",
+        "subtitle": "Bắt đầu miễn phí. Tự động hóa cần Pro — bản dùng thử 7 ngày có đủ.",
         "steps": [
             {
-                "title": "Tải & Tạo Profile",
-                "desc": "Tải Veilus miễn phí. Tạo profile với fingerprint riêng biệt trong 10 giây. Mỗi profile = một danh tính hoàn toàn mới."
+                "title": "Tải về và tạo profile",
+                "desc": "Cài trên macOS hoặc Windows. Mỗi profile mới có fingerprint riêng; gắn proxy nếu bạn có."
             },
             {
-                "title": "Xây dựng flow",
-                "desc": "Nhờ trợ lý AI viết script qua MCP, hoặc tự viết lấy."
+                "title": "Ghi lại việc một lần",
+                "desc": "Bấm Record và tự làm việc đó trong một profile — đăng nhập, đăng bài, kiểm đơn. Veilus lưu các bước thành script."
             },
             {
-                "title": "Tự động hóa & Scale",
-                "desc": "Chạy script trên nhiều profiles cùng lúc. Lên lịch tự động. Giám sát thông minh — Veilus lo phần còn lại."
+                "title": "Chạy trên mọi profile",
+                "desc": "Chọn các profile và chạy script hàng loạt, hoặc đặt lịch để nó tự chạy."
             }
         ]
     },
     "comparison": {
         "badge": "So sánh",
-        "title": "Tại sao chọn",
-        "titleHighlight": "Veilus?",
-        "subtitle": "So sánh trực tiếp với các đối thủ hàng đầu.",
+        "title": "Nên xem gì",
+        "titleHighlight": "trước khi chọn",
+        "subtitle": "Những điểm khác nhau nhiều nhất giữa các trình duyệt anti-detect. Gói của đối thủ đổi thường xuyên, nên hãy mở trang giá hiện tại của họ cạnh bảng này.",
         "headers": [
             "",
-            "Veilus",
-            "Multilogin",
-            "GoLogin",
-            "AdsPower"
+            "Veilus"
         ],
         "rows": [
             {
-                "feature": "Free tier",
+                "feature": "Gói miễn phí",
                 "values": [
-                    "5 profiles vĩnh viễn",
-                    "Trial 7 ngày",
-                    "3 (hạn chế)",
-                    "5 (hạn chế)"
+                    "5 profile, vĩnh viễn"
                 ]
             },
             {
-                "feature": "Engine",
+                "feature": "Tự động hóa có sẵn",
                 "values": [
-                    "Native",
-                    "Electron",
-                    "Electron",
-                    "Electron"
+                    "Có — ghi, chạy lại, đặt lịch"
                 ]
             },
             {
-                "feature": "Automation",
+                "feature": "Mua một lần, dùng trọn đời",
                 "values": [
-                    "Tích hợp sẵn",
-                    "Riêng biệt",
-                    "Không",
-                    "RPA cơ bản"
+                    "Có — từ {lifetime}"
                 ]
             },
             {
-                "feature": "Visual Canvas",
+                "feature": "Giá",
                 "values": [
-                    "Có",
-                    "Không",
-                    "Không",
-                    "Không"
-                ]
-            },
-            {
-                "feature": "RAM / profile",
-                "values": [
-                    "~100MB",
-                    "~500MB",
-                    "~400MB",
-                    "~350MB"
-                ]
-            },
-            {
-                "feature": "Gói trả phí",
-                "values": [
-                    "{monthly}/tháng · {lifetime} trọn đời",
-                    "$99/tháng",
-                    "$49/tháng",
-                    "$9/tháng"
+                    "{monthly}/tháng mỗi máy · {lifetime} trọn đời"
                 ]
             }
         ]
@@ -198,54 +235,63 @@
         "device": "1 máy",
         "devices": "{n} máy",
         "contact": "Trên 20 máy?",
-        "contactCta": "Liên hệ"
+        "contactCta": "Liên hệ",
+        "refund": "Hoàn tiền trong 7 ngày (gói tháng) hoặc 14 ngày (gói trọn đời)."
     },
     "faq": {
         "badge": "FAQ",
         "title": "Câu hỏi",
         "titleHighlight": "thường gặp",
-        "subtitle": "Mọi thứ bạn cần biết trước khi bắt đầu.",
+        "subtitle": "Những gì mọi người hỏi trước khi tải về.",
         "items": [
             {
-                "q": "Veilus có thực sự undetectable không?",
-                "a": "Có. Fingerprint engine được thiết kế ở tầng sâu nhất, không chỉ đổi user-agent. Đã qua kiểm tra creepjs.com và iphey.com với kết quả \"unique\" cho mỗi profile."
+                "q": "Nền tảng có phát hiện được profile của tôi không?",
+                "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi profile chạy trên bản Chromium do Veilus tự vá, có fingerprint và proxy riêng, và chúng tôi kiểm profile bằng creepjs và iphey. Tài khoản bị đối xử thế nào còn tùy vào cách bạn dùng."
             },
             {
-                "q": "Miễn phí thật không? Có bắt nhập thẻ không?",
-                "a": "Miễn phí thật. 5 profiles vĩnh viễn, không giới hạn thời gian, không cần thẻ tín dụng."
+                "q": "Có thật sự miễn phí? Có cần thẻ không?",
+                "a": "Có. Gói Free cho 5 profile trên 1 máy, không giới hạn thời gian, không cần thẻ. Veilus Flow, lịch chạy, chạy hàng loạt và API/MCP cục bộ cần gói Pro."
             },
             {
-                "q": "Khác gì so với Multilogin hay GoLogin?",
-                "a": "Veilus dùng engine gốc thay vì Electron — nhanh hơn 3x, ít RAM hơn 80%. Tích hợp sẵn automation (script, REST API cục bộ và MCP) — đối thủ cần mua thêm tool."
+                "q": "Dùng thử Pro 7 ngày hoạt động thế nào?",
+                "a": "Yêu cầu dùng thử ngay trong app bằng email của bạn. Chúng tôi gửi key qua email; dán key vào app là mở khóa Pro. Sau 7 ngày, bạn về lại gói Free và giữ nguyên các profile."
             },
             {
-                "q": "Hỗ trợ Windows và Linux không?",
-                "a": "Hiện tại hỗ trợ macOS. Windows và Linux đang phát triển, dự kiến Q2 2026."
+                "q": "Veilus chạy trên hệ điều hành nào?",
+                "a": "macOS và Windows. Không có bản Linux."
             },
             {
-                "q": "Dữ liệu có an toàn không?",
-                "a": "Dữ liệu profile được lưu cục bộ trên máy của bạn. Nếu bật Veilus Sync, profiles sẽ đồng bộ tới Git repository hoặc Google Drive do bạn chọn — nên dùng loại riêng tư. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu để mã hóa file."
+                "q": "Dữ liệu của tôi lưu ở đâu?",
+                "a": "Trên máy của bạn. Profile và dữ liệu của chúng được lưu cục bộ. Nếu bật Veilus Sync, dữ liệu đồng bộ được mã hóa."
             },
             {
-                "q": "Có dùng proxy riêng được không?",
-                "a": "Có. Hỗ trợ HTTP, HTTPS, SOCKS5. Mỗi profile cấu hình proxy riêng, bao gồm rotation."
+                "q": "Tôi dùng proxy riêng được không?",
+                "a": "Được. Veilus hỗ trợ HTTP, HTTPS và SOCKS5, mỗi profile có thể gắn proxy riêng."
             },
             {
                 "q": "Veilus Flow hoạt động thế nào?",
-                "a": "Tự viết script Playwright, hoặc nhờ trợ lý AI viết, kiểm tra và sửa qua MCP, rồi chạy trên nhiều profiles — hàng loạt hoặc theo lịch. Script chưa được duyệt chỉ chạy tối đa 3 profiles mỗi lần; duyệt script trong Veilus Flow để chạy quy mô lớn hoặc theo lịch."
+                "a": "Bấm Record, tự làm việc đó trong một profile, rồi bấm Stop. Veilus lưu các bước thành script. Bạn sửa, chạy trên bao nhiêu profile tùy ý, hoặc đặt lịch."
             },
             {
-                "q": "Có tốn nhiều RAM không?",
-                "a": "Mỗi profile ~100MB RAM — ít hơn 3-5x so với Electron. Giám sát tài nguyên thông minh tự giảm tốc khi quá tải."
+                "q": "Veilus khác các trình duyệt anti-detect khác ở đâu?",
+                "a": "Tự động hóa có sẵn: ghi thao tác một lần rồi chạy lại trên nhiều profile, cùng lịch chạy, chạy hàng loạt và API/MCP cục bộ trong một ứng dụng. Bạn cũng có thể trả một lần để dùng trọn đời thay vì thuê bao."
+            },
+            {
+                "q": "Có được hoàn tiền không?",
+                "a": "Có. Gói tháng được hoàn tiền trong 7 ngày, gói trọn đời trong 14 ngày."
             }
         ]
     },
     "finalCta": {
-        "title": "Sẵn sàng trở nên",
-        "titleHighlight": "vô hình?",
-        "desc": "Tải Veilus miễn phí ngay hôm nay.\n5 profiles. Fingerprint riêng. Không thẻ. Mãi mãi.",
-        "cta": "Tải miễn phí",
-        "note": "Không thu thập dữ liệu cá nhân"
+        "title": "Dùng thử mọi tính năng Pro",
+        "titleHighlight": "miễn phí 7 ngày",
+        "desc": "Tải Veilus, yêu cầu dùng thử trong app, rồi ghi lại việc đầu tiên của bạn.\nKhông hợp thì vẫn giữ 5 profile miễn phí.",
+        "cta": "Tải về & dùng thử Pro 7 ngày",
+        "badges": [
+            "Không cần thẻ",
+            "Dữ liệu nằm trên máy bạn",
+            "5 profile miễn phí, vĩnh viễn"
+        ]
     },
     "footer": {
         "tagline": "Vô hình theo thiết kế.",
@@ -280,7 +326,6 @@
         "subtitle": "Miễn phí vĩnh viễn với 5 profiles. Chọn nền tảng của bạn.",
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
-        "linuxX64": "Ubuntu 20+ / Fedora 36+",
         "downloadBtn": "Tải xuống",
         "note": "Không thu thập dữ liệu cá nhân · Không cần thẻ tín dụng",
         "reqTitle": "Yêu cầu hệ thống"

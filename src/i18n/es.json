@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetección con automatización integrada",
-        "description": "Navegador antidetección gratuito con rendimiento nativo. 5 perfiles para siempre. Automatiza con scripts que tu asistente de IA puede escribir vía MCP. Descárgalo ahora."
+        "description": "Gestiona muchas cuentas en un solo ordenador, cada una con su huella y su proxy. Graba una tarea una vez y repítela en todos los perfiles. 5 perfiles gratis."
     },
     "nav": {
         "features": "Funciones",
@@ -11,146 +11,183 @@
         "download": "Descargar gratis"
     },
     "hero": {
-        "badge": "Navegador Antidetección",
-        "title1": "Invisible.",
-        "title2": "Sin rastro.",
-        "title3": "Tuyo.",
-        "subtitle": "El <strong>único</strong> navegador antidetección con plataforma de automatización completamente integrada. Motor nativo — 3x más rápido, 80% menos RAM.",
-        "check1": "5 perfiles gratis para siempre — sin tarjeta de crédito",
-        "check2": "Cada perfil con fingerprint único — indetectable",
-        "check3": "Deja que tu asistente de IA escriba y ejecute scripts vía MCP — o escríbelos tú mismo",
-        "ctaPrimary": "Descargar gratis",
-        "ctaSecondary": "Ver demo de 90s",
-        "note": "Windows, macOS, Linux"
+        "badge": "Navegador antidetección para trabajar con muchas cuentas",
+        "title": "Cientos de cuentas en un solo ordenador,",
+        "titleHighlight": "cada una con su propia identidad.",
+        "subtitle": "Graba una tarea una vez y Veilus la ejecuta en todos tus perfiles. Cada perfil tiene su propia huella y su propio proxy, así tus cuentas no quedan vinculadas.",
+        "cta": "Descarga y prueba Pro gratis 7 días",
+        "micro": "Después sigues con 5 perfiles gratis, sin tarjeta.",
+        "platforms": "macOS · Windows"
     },
     "proof": {
-        "test": "Pasa las pruebas",
-        "testSub": "creepjs.com e iphey.com",
-        "speed": "3x más rápido",
-        "speedSub": "than alternatives",
-        "users": "500+",
-        "usersSub": "beta testers",
-        "open": "Open Source",
-        "openSub": "Parches de Chromium"
+        "items": [
+            {
+                "value": "Probado con creepjs e iphey",
+                "sub": "pruebas de huella digital"
+            },
+            {
+                "value": "Motor Chromium propio",
+                "sub": "compilado y parcheado por Veilus"
+            },
+            {
+                "value": "Tus datos, en tu equipo",
+                "sub": "perfiles guardados en local"
+            },
+            {
+                "value": "macOS · Windows",
+                "sub": "app de escritorio"
+            }
+        ]
+    },
+    "pain": {
+        "badge": "El problema",
+        "title": "Llevar muchas cuentas a mano",
+        "titleHighlight": "falla en tres puntos",
+        "items": [
+            {
+                "title": "Un baneo arrastra a las demás",
+                "desc": "Las plataformas vinculan las cuentas que comparten huella de navegador, IP o cookies. Marcan una y el resto cae detrás."
+            },
+            {
+                "title": "Los mismos clics, cincuenta veces al día",
+                "desc": "Iniciar sesión, publicar, responder, revisar pedidos… y repetirlo todo en el siguiente perfil. Horas perdidas en algo que haría un script."
+            },
+            {
+                "title": "Proxies y cookies en una hoja de cálculo",
+                "desc": "¿Qué proxy va con qué cuenta? ¿Qué cookies siguen valiendo? Un despiste y dos cuentas quedan vinculadas."
+            }
+        ],
+        "bridge": "Veilus pone cada cuenta en su propio perfil y hace por ti el trabajo repetitivo."
+    },
+    "audience": {
+        "badge": "Para quién es",
+        "title": "Hecho para quien gestiona",
+        "titleHighlight": "muchas cuentas a la vez",
+        "subtitle": "Busca tu tipo de trabajo. Esto es lo que cambia con Veilus.",
+        "items": [
+            {
+                "title": "Redes sociales y MMO",
+                "outcome": "Mantén decenas de cuentas sociales separadas y publica en todas sin hacerlo a mano.",
+                "features": [
+                    "Huella y proxy propios en cada perfil",
+                    "Veilus Flow para publicaciones y respuestas diarias",
+                    "Programaciones que corren sin ti"
+                ]
+            },
+            {
+                "title": "Publicidad y afiliados",
+                "outcome": "Cada cuenta publicitaria y cada cliente con su propio perfil y proxy: sesiones, cookies e IP nunca se mezclan.",
+                "features": [
+                    "Un perfil por cuenta publicitaria",
+                    "Proxies HTTP, HTTPS y SOCKS5",
+                    "Importar/exportar para mover perfiles"
+                ]
+            },
+            {
+                "title": "Vendedores de e-commerce",
+                "outcome": "Gestiona varias tiendas en Shopee, Amazon o Etsy desde un ordenador, cada una con su propia identidad.",
+                "features": [
+                    "Un perfil por tienda",
+                    "Graba una vez la revisión de pedidos y mensajes",
+                    "Ejecución por lotes en todas las tiendas"
+                ]
+            },
+            {
+                "title": "Desarrolladores",
+                "outcome": "Controla perfiles de navegador desde tus scripts o herramientas de IA, con la parte de huellas ya resuelta.",
+                "features": [
+                    "API REST local",
+                    "MCP para herramientas de IA",
+                    "Ejecución por lotes y programada"
+                ]
+            }
+        ]
     },
     "features": {
         "badge": "Funciones",
         "title": "Todo lo que necesitas,",
         "titleHighlight": "en una sola app",
-        "subtitle": "Navegador antidetección + plataforma de automatización. La competencia necesita 2 herramientas, tú solo necesitas Veilus.",
+        "subtitle": "El navegador antidetección y la automatización, en el mismo sitio.",
         "items": [
             {
-                "title": "Motor de Fingerprint",
-                "desc": "Fingerprints únicos para cada perfil con 20+ parámetros — Canvas, WebGL, AudioContext, Client Hints. Diseñado al nivel más profundo para máximo sigilo.",
-                "badge": "Pasa creepjs.com"
+                "title": "Cada perfil parece otra persona",
+                "desc": "Cada perfil tiene su propia huella y su propio proxy HTTP, HTTPS o SOCKS5. Los perfiles funcionan sobre un motor Chromium que Veilus compila y parchea por su cuenta.",
+                "badge": "Probado con creepjs e iphey"
             },
             {
-                "title": "Veilus Flow",
-                "desc": "Escribe scripts de Playwright tú mismo, o deja que tu asistente de IA (Claude, Cursor…) los escriba, pruebe y corrija vía MCP — luego ejecútalos en varios perfiles. Apruebas el script antes de ejecutarlo a gran escala.",
-                "badge": "Sin programar"
+                "title": "Hazlo una vez, repítelo en todas partes",
+                "desc": "Veilus Flow graba tus clics y lo que escribes, y lo reproduce como script en tantos perfiles como elijas. Edita los pasos sin escribir código.",
+                "badge": "Veilus Flow · Pro"
             },
             {
-                "title": "Canvas Visual",
-                "desc": "Arrastra y suelta para crear flujos de automatización como diagramas. Soporta ramificaciones, bucles y componentes reutilizables.",
-                "badge": "Low-code"
+                "title": "El trabajo sigue aunque no estés",
+                "desc": "Programa tus scripts o ejecútalos por lotes en muchos perfiles a la vez.",
+                "badge": "Programación · Lotes · Pro"
             },
             {
-                "title": "Veilus Sync",
-                "desc": "Sincroniza perfiles entre tus dispositivos vía Git o Google Drive — los datos viven en tu propio repositorio.",
-                "badge": "Git · Google Drive"
+                "title": "Conecta tus propias herramientas",
+                "desc": "Una API REST local y MCP permiten que tu código y tus herramientas de IA abran perfiles y ejecuten automatizaciones.",
+                "badge": "API REST · MCP · Pro"
             },
             {
-                "title": "Programación",
-                "desc": "Programa scripts por hora, día o semana. Detecta ejecuciones perdidas automáticamente. Monitoreo inteligente de recursos.",
-                "badge": "Programación inteligente"
+                "title": "Lleva tu configuración contigo",
+                "desc": "Veilus Sync sincroniza los perfiles cifrados. Empieza scripts desde plantillas e importa o exporta perfiles al cambiar de equipo.",
+                "badge": "Sincronización cifrada · Pro"
             }
         ]
     },
     "howItWorks": {
         "badge": "Cómo funciona",
-        "title": "Empieza en",
-        "titleHighlight": "3 pasos",
-        "subtitle": "De la descarga a la automatización completa en minutos.",
+        "title": "De la descarga a la automatización",
+        "titleHighlight": "en 3 pasos",
+        "subtitle": "Empieza gratis. La automatización requiere Pro, y la prueba de 7 días la incluye.",
         "steps": [
             {
-                "title": "Descarga y crea perfil",
-                "desc": "Descarga Veilus gratis. Crea un perfil con fingerprint único en 10 segundos. Cada perfil = una identidad completamente nueva."
+                "title": "Descarga y crea perfiles",
+                "desc": "Instálalo en macOS o Windows. Cada perfil nuevo recibe su propia huella; añade un proxy si tienes uno."
             },
             {
-                "title": "Crea tu flujo",
-                "desc": "Pide a tu asistente de IA que escriba el script vía MCP, o escríbelo tú mismo."
+                "title": "Graba una tarea una vez",
+                "desc": "Pulsa Grabar y haz la tarea a mano en un perfil: iniciar sesión, publicar, revisar pedidos. Veilus guarda los pasos como script."
             },
             {
-                "title": "Automatiza y escala",
-                "desc": "Ejecuta scripts en múltiples perfiles simultáneamente. Programa automatizaciones. Monitoreo inteligente — Veilus se encarga del resto."
+                "title": "Ejecútala en todos los perfiles",
+                "desc": "Elige los perfiles y lanza el script por lotes, o prográmalo."
             }
         ]
     },
     "comparison": {
-        "badge": "Comparación",
-        "title": "¿Por qué elegir",
-        "titleHighlight": "Veilus?",
-        "subtitle": "Comparación directa con los principales competidores.",
+        "badge": "Comparar",
+        "title": "Qué revisar",
+        "titleHighlight": "antes de elegir",
+        "subtitle": "Los puntos en los que más se diferencian los navegadores antidetección. La competencia cambia sus planes a menudo, así que abre sus páginas de precios actuales junto a esta tabla.",
         "headers": [
             "",
-            "Veilus",
-            "Multilogin",
-            "GoLogin",
-            "AdsPower"
+            "Veilus"
         ],
         "rows": [
             {
-                "feature": "Plan gratis",
+                "feature": "Plan gratuito",
                 "values": [
-                    "5 perfiles siempre",
-                    "7 días prueba",
-                    "3 (limitado)",
-                    "5 (limitado)"
+                    "5 perfiles para siempre"
                 ]
             },
             {
-                "feature": "Motor",
+                "feature": "Automatización integrada",
                 "values": [
-                    "Native",
-                    "Electron",
-                    "Electron",
-                    "Electron"
+                    "Sí: grabar, repetir, programar"
                 ]
             },
             {
-                "feature": "Automatización",
+                "feature": "Pago único de por vida",
                 "values": [
-                    "Integrada",
-                    "Separada",
-                    "No",
-                    "RPA básico"
+                    "Sí, desde {lifetime}"
                 ]
             },
             {
-                "feature": "Canvas Visual",
+                "feature": "Precio",
                 "values": [
-                    "Sí",
-                    "No",
-                    "No",
-                    "No"
-                ]
-            },
-            {
-                "feature": "RAM / perfil",
-                "values": [
-                    "~100MB",
-                    "~500MB",
-                    "~400MB",
-                    "~350MB"
-                ]
-            },
-            {
-                "feature": "Plan de pago",
-                "values": [
-                    "{monthly}/mes · {lifetime} de por vida",
-                    "$99/mes",
-                    "$49/mes",
-                    "$9/mes"
+                    "{monthly}/mes por equipo · {lifetime} de por vida"
                 ]
             }
         ]
@@ -198,54 +235,63 @@
         "device": "1 dispositivo",
         "devices": "{n} dispositivos",
         "contact": "¿Más de 20 dispositivos?",
-        "contactCta": "Contáctanos"
+        "contactCta": "Contáctanos",
+        "refund": "Reembolso en 7 días (mensual) o 14 días (de por vida)."
     },
     "faq": {
         "badge": "FAQ",
         "title": "Preguntas",
         "titleHighlight": "frecuentes",
-        "subtitle": "Todo lo que necesitas saber antes de empezar.",
+        "subtitle": "Lo que la gente pregunta antes de descargar.",
         "items": [
             {
-                "q": "¿Es Veilus realmente indetectable?",
-                "a": "Sí. Nuestro motor está diseñado al nivel más profundo, no solo cambiando user-agent. Probado y verificado en creepjs.com e iphey.com con resultados \"único\" para cada perfil."
+                "q": "¿Las plataformas detectarán mis perfiles?",
+                "a": "Ninguna herramienta puede prometerlo, y nosotros tampoco. Cada perfil funciona sobre la compilación de Chromium parcheada por Veilus, con su propia huella y su propio proxy, y probamos los perfiles con creepjs e iphey. Cómo traten tus cuentas también depende de cómo las uses."
             },
             {
-                "q": "¿Es realmente gratis?",
-                "a": "Totalmente gratis. 5 perfiles para siempre, sin límite de tiempo, sin tarjeta de crédito."
+                "q": "¿De verdad es gratis? ¿Necesito tarjeta?",
+                "a": "Sí. El plan Free te da 5 perfiles en 1 equipo, sin límite de tiempo y sin tarjeta. Veilus Flow, la programación, la ejecución por lotes y la API/MCP local requieren Pro."
             },
             {
-                "q": "¿Cuál es la diferencia con Multilogin?",
-                "a": "Veilus usa un motor nativo en lugar de Electron — 3x más rápido, 80% menos RAM. Además, automatización integrada — la competencia necesita herramientas separadas."
+                "q": "¿Cómo funciona la prueba de Pro de 7 días?",
+                "a": "Solicítala en la app con tu email. Te enviamos una clave por correo; pégala en la app para desbloquear Pro. Pasados 7 días vuelves al plan Free y conservas tus perfiles."
             },
             {
-                "q": "¿Soporta Windows y Linux?",
-                "a": "Actualmente macOS. Windows y Linux en desarrollo, previsto Q2 2026."
+                "q": "¿En qué sistemas operativos funciona?",
+                "a": "macOS y Windows. No hay versión para Linux."
             },
             {
-                "q": "¿Mis datos están seguros?",
-                "a": "Los datos de perfil se almacenan localmente en tu dispositivo. Si activas Veilus Sync, los perfiles se sincronizan con un repositorio Git o Google Drive que tú elijas — usa uno privado. Al exportar un perfil a un archivo .veiluspack, puedes establecer una contraseña para cifrar el archivo."
+                "q": "¿Dónde se guardan mis datos?",
+                "a": "En tu equipo. Los perfiles y sus datos se guardan en local. Si activas Veilus Sync, los datos sincronizados van cifrados."
             },
             {
                 "q": "¿Puedo usar mis propios proxies?",
-                "a": "Sí. Soporta HTTP, HTTPS, SOCKS5. Cada perfil puede tener su propia configuración de proxy."
+                "a": "Sí. Admite HTTP, HTTPS y SOCKS5, y cada perfil puede tener su propio proxy."
             },
             {
                 "q": "¿Cómo funciona Veilus Flow?",
-                "a": "Escribe un script de Playwright tú mismo, o pide a tu asistente de IA que lo escriba, pruebe y corrija vía MCP, luego ejecútalo en varios perfiles, por lotes o programado. Un script sin aprobar se ejecuta en máximo 3 perfiles por vez — apruébalo en Veilus Flow para ejecutarlo a gran escala o programado."
+                "a": "Pulsa Grabar, haz la tarea a mano en un perfil y pulsa Detener. Veilus guarda los pasos como script. Edítalo, ejecútalo en tantos perfiles como quieras o prográmalo."
             },
             {
-                "q": "¿Usa mucha RAM?",
-                "a": "Unos 100MB por perfil — 3-5x menos que navegadores Electron. Monitoreo inteligente reduce la carga automáticamente."
+                "q": "¿En qué se diferencia Veilus de otros navegadores antidetección?",
+                "a": "La automatización viene integrada: grabas una tarea una vez y la repites en tus perfiles, con programación, ejecución por lotes y API/MCP local en la misma app. Además, puedes pagar una sola vez por una licencia de por vida en lugar de una suscripción."
+            },
+            {
+                "q": "¿Puedo pedir un reembolso?",
+                "a": "Sí. Los pagos mensuales se reembolsan dentro de 7 días y las licencias de por vida dentro de 14 días."
             }
         ]
     },
     "finalCta": {
-        "title": "¿Listo para ser",
-        "titleHighlight": "invisible?",
-        "desc": "Descarga Veilus gratis hoy.\n5 perfiles. Fingerprint único. Sin tarjeta. Para siempre.",
-        "cta": "Descargar gratis",
-        "note": "No recopilamos datos personales"
+        "title": "Prueba todas las funciones Pro",
+        "titleHighlight": "gratis durante 7 días",
+        "desc": "Descarga Veilus, solicita la prueba en la app y graba tu primera tarea.\nSi no te convence, te quedas con 5 perfiles gratis.",
+        "cta": "Descarga y prueba Pro gratis 7 días",
+        "badges": [
+            "Sin tarjeta",
+            "Tus datos, en tu equipo",
+            "5 perfiles gratis para siempre"
+        ]
     },
     "footer": {
         "tagline": "Invisible por diseño.",
@@ -280,7 +326,6 @@
         "subtitle": "Gratis para siempre con 5 perfiles.",
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
-        "linuxX64": "Ubuntu 20+ / Fedora 36+",
         "downloadBtn": "Descargar",
         "note": "Sin datos recopilados.",
         "reqTitle": "Requisitos del sistema"

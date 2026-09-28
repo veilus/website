@@ -1,7 +1,7 @@
 {
     "meta": {
-        "title": "Veilus — Browser anti-deteksi dengan otomasi terintegrasi",
-        "description": "Browser anti-deteksi gratis dengan performa native. 5 profil selamanya. Otomatisasi dengan script yang bisa ditulis asisten AI Anda via MCP. Unduh sekarang."
+        "title": "Veilus — Browser anti-deteksi dengan otomasi bawaan",
+        "description": "Jalankan banyak akun di satu komputer, masing-masing dengan sidik jari dan proxy sendiri. Rekam tugas sekali, putar ulang di semua profil. 5 profil gratis."
     },
     "nav": {
         "features": "Fitur",
@@ -11,146 +11,183 @@
         "download": "Unduh gratis"
     },
     "hero": {
-        "badge": "Browser Anti-Deteksi",
-        "title1": "Tak Terlihat.",
-        "title2": "Tanpa Jejak.",
-        "title3": "Milik Anda.",
-        "subtitle": "Browser anti-deteksi <strong>satu-satunya</strong> dengan platform otomasi terintegrasi penuh. Engine native — 3x lebih cepat, RAM 80% lebih sedikit.",
-        "check1": "5 profil gratis selamanya — tanpa kartu kredit",
-        "check2": "Setiap profil memiliki fingerprint unik — tidak terdeteksi",
-        "check3": "Biarkan asisten AI menulis dan menjalankan script via MCP — atau tulis sendiri",
-        "ctaPrimary": "Unduh gratis",
-        "ctaSecondary": "Tonton demo 90 detik",
-        "note": "Windows, macOS, Linux"
+        "badge": "Browser anti-deteksi untuk kerja multi-akun",
+        "title": "Ratusan akun di satu komputer —",
+        "titleHighlight": "masing-masing dengan identitasnya sendiri.",
+        "subtitle": "Rekam tugas sekali, lalu Veilus menjalankannya di setiap profil. Tiap profil punya sidik jari dan proxy sendiri, jadi akun-akun Anda tidak saling terhubung.",
+        "cta": "Unduh & coba Pro gratis 7 hari",
+        "micro": "Setelah itu, tetap pakai 5 profil gratis — tanpa kartu.",
+        "platforms": "macOS · Windows"
     },
     "proof": {
-        "test": "Lolos pengujian",
-        "testSub": "creepjs.com & iphey.com",
-        "speed": "3x lebih cepat",
-        "speedSub": "than alternatives",
-        "users": "500+",
-        "usersSub": "beta tester",
-        "open": "Open Source",
-        "openSub": "Patch Chromium"
+        "items": [
+            {
+                "value": "Diuji dengan creepjs & iphey",
+                "sub": "pengecekan sidik jari"
+            },
+            {
+                "value": "Mesin Chromium buatan sendiri",
+                "sub": "dibangun dan di-patch oleh Veilus"
+            },
+            {
+                "value": "Data tetap di komputer Anda",
+                "sub": "profil disimpan lokal"
+            },
+            {
+                "value": "macOS · Windows",
+                "sub": "aplikasi desktop"
+            }
+        ]
+    },
+    "pain": {
+        "badge": "Masalahnya",
+        "title": "Mengurus banyak akun secara manual",
+        "titleHighlight": "bermasalah di tiga titik",
+        "items": [
+            {
+                "title": "Satu akun diblokir, yang lain ikut terseret",
+                "desc": "Platform menghubungkan akun yang berbagi sidik jari browser, IP, atau cookie. Satu akun ditandai, sisanya ikut menyusul."
+            },
+            {
+                "title": "Klik yang sama, lima puluh kali sehari",
+                "desc": "Login, posting, balas pesan, cek pesanan — lalu ulangi semuanya di profil berikutnya. Berjam-jam habis untuk pekerjaan yang bisa dikerjakan skrip."
+            },
+            {
+                "title": "Proxy dan cookie di spreadsheet",
+                "desc": "Proxy mana untuk akun mana? Cookie mana yang masih berlaku? Sekali tertukar, dua akun langsung terhubung."
+            }
+        ],
+        "bridge": "Veilus menaruh tiap akun di profilnya sendiri dan mengerjakan pekerjaan berulang untuk Anda."
+    },
+    "audience": {
+        "badge": "Untuk siapa",
+        "title": "Dibuat untuk yang mengelola",
+        "titleHighlight": "banyak akun sekaligus",
+        "subtitle": "Temukan jenis pekerjaan Anda. Ini yang berubah dengan Veilus.",
+        "items": [
+            {
+                "title": "MMO & media sosial",
+                "outcome": "Jaga puluhan akun media sosial tetap terpisah, dan posting ke semuanya tanpa kerja manual.",
+                "features": [
+                    "Sidik jari dan proxy sendiri per profil",
+                    "Veilus Flow untuk posting dan balasan harian",
+                    "Jadwal yang berjalan saat Anda pergi"
+                ]
+            },
+            {
+                "title": "Iklan & afiliasi",
+                "outcome": "Setiap akun iklan dan setiap klien punya profil dan proxy sendiri — login, cookie, dan IP tidak pernah tercampur.",
+                "features": [
+                    "Satu profil per akun iklan",
+                    "Proxy HTTP, HTTPS, dan SOCKS5",
+                    "Impor/ekspor untuk memindahkan profil"
+                ]
+            },
+            {
+                "title": "Penjual e-commerce",
+                "outcome": "Kelola beberapa toko Shopee, Amazon, atau Etsy dari satu komputer, masing-masing dengan identitasnya sendiri.",
+                "features": [
+                    "Satu profil per toko",
+                    "Rekam pengecekan pesanan dan chat sekali saja",
+                    "Jalankan massal di semua toko"
+                ]
+            },
+            {
+                "title": "Developer",
+                "outcome": "Kendalikan profil browser dari skrip atau alat AI Anda sendiri, dengan urusan sidik jari yang sudah beres.",
+                "features": [
+                    "REST API lokal",
+                    "MCP untuk alat AI",
+                    "Jalankan massal dan terjadwal"
+                ]
+            }
+        ]
     },
     "features": {
         "badge": "Fitur",
         "title": "Semua yang Anda butuhkan,",
         "titleHighlight": "dalam satu aplikasi",
-        "subtitle": "Browser anti-deteksi + platform otomasi. Kompetitor butuh 2 alat, Anda hanya butuh Veilus.",
+        "subtitle": "Browser anti-deteksi dan otomasi ada di tempat yang sama.",
         "items": [
             {
-                "title": "Mesin Fingerprint",
-                "desc": "Buat fingerprint unik untuk setiap profil dengan 20+ parameter — Canvas, WebGL, AudioContext, Client Hints. Dirancang di level terdalam untuk kesamaran maksimal.",
-                "badge": "Lolos creepjs.com"
+                "title": "Tiap profil terlihat seperti orang yang berbeda",
+                "desc": "Setiap profil punya sidik jari sendiri dan proxy HTTP, HTTPS, atau SOCKS5 sendiri. Profil berjalan di mesin Chromium yang dibangun dan di-patch sendiri oleh Veilus.",
+                "badge": "Diuji dengan creepjs & iphey"
             },
             {
-                "title": "Veilus Flow",
-                "desc": "Tulis script Playwright sendiri, atau biarkan asisten AI (Claude, Cursor…) menulis, menguji, dan memperbaikinya via MCP — lalu jalankan di banyak profil. Anda menyetujui script sebelum dijalankan dalam skala besar.",
-                "badge": "Tanpa coding"
+                "title": "Kerjakan sekali, ulangi di mana saja",
+                "desc": "Veilus Flow merekam apa yang Anda klik dan ketik, lalu memutarnya ulang sebagai skrip di sebanyak mungkin profil yang Anda pilih. Edit langkahnya tanpa menulis kode.",
+                "badge": "Veilus Flow · Pro"
             },
             {
-                "title": "Canvas Visual",
-                "desc": "Seret dan lepas untuk membuat alur otomasi. Mendukung percabangan, perulangan, dan komponen yang dapat digunakan ulang.",
-                "badge": "Low-code"
+                "title": "Pekerjaan jalan saat Anda pergi",
+                "desc": "Jadwalkan skrip, atau jalankan secara massal di banyak profil sekaligus.",
+                "badge": "Jadwal · Jalankan massal · Pro"
             },
             {
-                "title": "Veilus Sync",
-                "desc": "Sinkronisasi profil antar perangkat Anda via Git atau Google Drive — data tersimpan di repository Anda sendiri.",
-                "badge": "Git · Google Drive"
+                "title": "Hubungkan alat Anda sendiri",
+                "desc": "REST API lokal dan MCP memungkinkan kode dan alat AI Anda membuka profil dan menjalankan otomasi.",
+                "badge": "REST API · MCP · Pro"
             },
             {
-                "title": "Penjadwalan",
-                "desc": "Jadwalkan script per jam, hari, atau minggu. Otomatis mendeteksi eksekusi yang terlewat. Pemantauan sumber daya cerdas.",
-                "badge": "Penjadwalan cerdas"
+                "title": "Bawa pengaturan Anda ke mana saja",
+                "desc": "Veilus Sync menyinkronkan profil secara terenkripsi. Mulai skrip dari template, dan impor atau ekspor profil saat ganti komputer.",
+                "badge": "Sinkronisasi terenkripsi · Pro"
             }
         ]
     },
     "howItWorks": {
         "badge": "Cara kerja",
-        "title": "Mulai dalam",
-        "titleHighlight": "3 langkah",
-        "subtitle": "Dari unduh hingga otomasi penuh hanya dalam hitungan menit.",
+        "title": "Dari unduh sampai otomasi",
+        "titleHighlight": "dalam 3 langkah",
+        "subtitle": "Mulai gratis. Otomasi butuh Pro — uji coba 7 hari sudah mencakupnya.",
         "steps": [
             {
-                "title": "Unduh & Buat Profil",
-                "desc": "Unduh Veilus gratis. Buat profil dengan fingerprint unik dalam 10 detik. Setiap profil = identitas yang benar-benar baru."
+                "title": "Unduh dan buat profil",
+                "desc": "Instal di macOS atau Windows. Setiap profil baru mendapat sidik jari sendiri; tambahkan proxy jika Anda punya."
             },
             {
-                "title": "Bangun alur Anda",
-                "desc": "Minta asisten AI menulis script via MCP, atau tulis sendiri."
+                "title": "Rekam tugas sekali",
+                "desc": "Tekan Rekam dan kerjakan tugasnya secara manual di satu profil — login, posting, cek pesanan. Veilus menyimpan langkahnya sebagai skrip."
             },
             {
-                "title": "Otomatisasi & Skalakan",
-                "desc": "Jalankan script di beberapa profil secara bersamaan. Jadwalkan otomasi. Pemantauan cerdas — Veilus menangani sisanya."
+                "title": "Jalankan di semua profil",
+                "desc": "Pilih profil lalu jalankan skrip secara massal, atau jadwalkan."
             }
         ]
     },
     "comparison": {
-        "badge": "Perbandingan",
-        "title": "Mengapa memilih",
-        "titleHighlight": "Veilus?",
-        "subtitle": "Perbandingan langsung dengan kompetitor terkemuka.",
+        "badge": "Bandingkan",
+        "title": "Yang perlu dicek",
+        "titleHighlight": "sebelum memilih",
+        "subtitle": "Poin yang paling membedakan browser anti-deteksi. Pesaing sering mengubah paket mereka, jadi buka halaman harga terbaru mereka di samping tabel ini.",
         "headers": [
             "",
-            "Veilus",
-            "Multilogin",
-            "GoLogin",
-            "AdsPower"
+            "Veilus"
         ],
         "rows": [
             {
                 "feature": "Paket gratis",
                 "values": [
-                    "5 profil selamanya",
-                    "Uji coba 7 hari",
-                    "3 (terbatas)",
-                    "5 (terbatas)"
+                    "5 profil, selamanya"
                 ]
             },
             {
-                "feature": "Mesin",
+                "feature": "Otomasi bawaan",
                 "values": [
-                    "Native",
-                    "Electron",
-                    "Electron",
-                    "Electron"
+                    "Ya — rekam, putar ulang, jadwalkan"
                 ]
             },
             {
-                "feature": "Otomasi",
+                "feature": "Beli sekali, pakai selamanya",
                 "values": [
-                    "Terintegrasi",
-                    "Terpisah",
-                    "Tidak ada",
-                    "RPA dasar"
+                    "Ya — mulai {lifetime}"
                 ]
             },
             {
-                "feature": "Canvas Visual",
+                "feature": "Harga",
                 "values": [
-                    "Ya",
-                    "Tidak",
-                    "Tidak",
-                    "Tidak"
-                ]
-            },
-            {
-                "feature": "RAM / profil",
-                "values": [
-                    "~100MB",
-                    "~500MB",
-                    "~400MB",
-                    "~350MB"
-                ]
-            },
-            {
-                "feature": "Paket berbayar",
-                "values": [
-                    "{monthly}/bln · {lifetime} seumur hidup",
-                    "$99/bln",
-                    "$49/bln",
-                    "$9/bln"
+                    "{monthly}/bln per perangkat · {lifetime} seumur hidup"
                 ]
             }
         ]
@@ -198,54 +235,63 @@
         "device": "1 perangkat",
         "devices": "{n} perangkat",
         "contact": "Lebih dari 20 perangkat?",
-        "contactCta": "Hubungi kami"
+        "contactCta": "Hubungi kami",
+        "refund": "Refund dalam 7 hari (bulanan) atau 14 hari (seumur hidup)."
     },
     "faq": {
         "badge": "FAQ",
-        "title": "Pertanyaan",
-        "titleHighlight": "yang sering diajukan",
-        "subtitle": "Semua yang perlu Anda ketahui sebelum memulai.",
+        "title": "Pertanyaan yang",
+        "titleHighlight": "sering diajukan",
+        "subtitle": "Yang paling sering ditanyakan sebelum mengunduh.",
         "items": [
             {
-                "q": "Apakah Veilus benar-benar tidak terdeteksi?",
-                "a": "Ya. Mesin fingerprint kami dirancang di level terdalam, bukan hanya mengubah user-agent. Teruji di creepjs.com dan iphey.com dengan hasil \"unik\" untuk setiap profil."
+                "q": "Apakah platform akan mendeteksi profil saya?",
+                "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Setiap profil berjalan di build Chromium yang di-patch sendiri oleh Veilus, dengan sidik jari dan proxy sendiri, dan kami menguji profil dengan creepjs dan iphey. Bagaimana akun Anda diperlakukan juga bergantung pada cara Anda memakainya."
             },
             {
-                "q": "Benar-benar gratis?",
-                "a": "Benar-benar gratis. 5 profil selamanya, tanpa batas waktu, tanpa kartu kredit."
+                "q": "Benar-benar gratis? Perlu kartu?",
+                "a": "Ya. Paket Free memberi 5 profil di 1 perangkat, tanpa batas waktu dan tanpa kartu. Veilus Flow, jadwal, jalankan massal, dan API/MCP lokal butuh Pro."
             },
             {
-                "q": "Apa bedanya dengan Multilogin?",
-                "a": "Veilus menggunakan engine native, bukan Electron — 3x lebih cepat, RAM 80% lebih sedikit. Otomasi terintegrasi — kompetitor memerlukan alat terpisah."
+                "q": "Bagaimana cara kerja uji coba Pro 7 hari?",
+                "a": "Minta uji coba di aplikasi dengan email Anda. Kami mengirim kunci lewat email; tempelkan di aplikasi untuk membuka Pro. Setelah 7 hari, Anda kembali ke paket Free dan profil Anda tetap ada."
             },
             {
-                "q": "Mendukung Windows dan Linux?",
-                "a": "Saat ini macOS. Windows dan Linux sedang dikembangkan, diperkirakan Q2 2026."
+                "q": "Berjalan di sistem operasi apa?",
+                "a": "macOS dan Windows. Tidak ada versi Linux."
             },
             {
-                "q": "Apakah data saya aman?",
-                "a": "Data profil disimpan secara lokal di perangkat Anda. Jika Anda mengaktifkan Veilus Sync, profil akan disinkronkan ke repository Git atau Google Drive pilihan Anda — gunakan yang privat. Saat mengekspor profil ke file .veiluspack, Anda bisa mengatur kata sandi untuk mengenkripsi file tersebut."
+                "q": "Di mana data saya disimpan?",
+                "a": "Di komputer Anda. Profil dan datanya disimpan secara lokal. Jika Anda mengaktifkan Veilus Sync, data yang disinkronkan dienkripsi."
             },
             {
-                "q": "Bisa pakai proxy sendiri?",
-                "a": "Ya. Mendukung HTTP, HTTPS, SOCKS5. Setiap profil bisa memiliki konfigurasi proxy sendiri."
+                "q": "Bisakah saya memakai proxy sendiri?",
+                "a": "Bisa. HTTP, HTTPS, dan SOCKS5 didukung, dan tiap profil bisa punya proxy sendiri."
             },
             {
                 "q": "Bagaimana Veilus Flow bekerja?",
-                "a": "Tulis script Playwright sendiri, atau minta asisten AI menulis, menguji, dan memperbaikinya via MCP, lalu jalankan di banyak profil — massal atau terjadwal. Script yang belum disetujui hanya berjalan di maksimal 3 profil per eksekusi — setujui script di Veilus Flow untuk menjalankannya dalam skala besar atau terjadwal."
+                "a": "Tekan Rekam, kerjakan tugasnya secara manual di satu profil, lalu tekan Berhenti. Veilus menyimpan langkahnya sebagai skrip. Edit, jalankan di sebanyak mungkin profil yang Anda mau, atau jadwalkan."
             },
             {
-                "q": "Apakah menggunakan banyak RAM?",
-                "a": "Sekitar 100MB per profil — 3-5x lebih sedikit dari browser Electron. Pemantauan cerdas otomatis mengurangi beban."
+                "q": "Apa bedanya Veilus dengan browser anti-deteksi lain?",
+                "a": "Otomasi sudah bawaan: rekam tugas sekali lalu putar ulang di banyak profil, dengan jadwal, jalankan massal, dan API/MCP lokal dalam satu aplikasi. Anda juga bisa bayar sekali untuk lisensi seumur hidup, bukan berlangganan."
+            },
+            {
+                "q": "Bisa refund?",
+                "a": "Bisa. Pembayaran bulanan bisa di-refund dalam 7 hari, lisensi seumur hidup dalam 14 hari."
             }
         ]
     },
     "finalCta": {
-        "title": "Siap menjadi",
-        "titleHighlight": "tak terlihat?",
-        "desc": "Unduh Veilus gratis hari ini.\n5 profil. Fingerprint unik. Tanpa kartu. Selamanya.",
-        "cta": "Unduh gratis",
-        "note": "Tidak mengumpulkan data pribadi"
+        "title": "Coba semua fitur Pro",
+        "titleHighlight": "gratis 7 hari",
+        "desc": "Unduh Veilus, minta uji coba di aplikasi, lalu rekam tugas pertama Anda.\nKalau tidak cocok, 5 profil tetap gratis.",
+        "cta": "Unduh & coba Pro gratis 7 hari",
+        "badges": [
+            "Tanpa kartu",
+            "Data tetap di komputer Anda",
+            "5 profil gratis selamanya"
+        ]
     },
     "footer": {
         "tagline": "Tak terlihat secara desain.",
@@ -280,7 +326,6 @@
         "subtitle": "Gratis selamanya dengan 5 profil.",
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
-        "linuxX64": "Ubuntu 20+ / Fedora 36+",
         "downloadBtn": "Unduh",
         "note": "Tidak mengumpulkan data.",
         "reqTitle": "Persyaratan Sistem"

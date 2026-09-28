@@ -2,7 +2,7 @@
  * Veilus GA4 Custom Events — Analytics Helper
  * 
  * Standard events tracked:
- * - download_click: User clicks download button (windows/macos/linux)
+ * - download_click: User clicks download button (windows/macos)
  * - cta_click: User clicks any CTA button (hero, pricing, final, navbar)
  * - pricing_view: User scrolls to pricing section
  * - faq_expand: User opens an FAQ item

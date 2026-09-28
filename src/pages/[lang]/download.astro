@@ -77,20 +77,6 @@ const i = t(lang);
             <span class="coming-soon-badge">Coming Soon</span>
             <span class="platform-size">.dmg · ~150MB</span>
           </div>
-
-          <div class="platform-card">
-            <div class="platform-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"
-                ><path
-                  d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.368 1.884 1.43.777.07 1.589-.267 2.08-.97.466-.668.47-1.534.186-2.233-.136-.336-.35-.682-.545-.878a.588.588 0 00-.207-.206c-1.476-2.03-2.96-4.667-3.156-7.173-.097-1.47-.162-2.944.076-4.108.238-1.173.733-1.967 1.38-2.433l.044-.03a4.322 4.322 0 001.595-2.148c.376-.936.372-2.14-.144-3.166-.534-1.064-1.756-1.4-2.768-1.349z"
-                ></path></svg
-              >
-            </div>
-            <h3>Linux</h3>
-            <p class="platform-version">{i.download.linuxX64}</p>
-            <span class="coming-soon-badge">Coming Soon</span>
-            <span class="platform-size">.AppImage · ~130MB</span>
-          </div>
         </div>
 
         <!-- Trust Badges -->
@@ -155,14 +141,6 @@ const i = t(lang);
             <ul>
               <li>macOS 12+ (Monterey)</li>
               <li>Apple Silicon & Intel</li>
-              <li>4 GB RAM minimum</li>
-            </ul>
-          </div>
-          <div class="req-card">
-            <h4>Linux</h4>
-            <ul>
-              <li>Ubuntu 20.04+ / Fedora 36+</li>
-              <li>X11 or Wayland</li>
               <li>4 GB RAM minimum</li>
             </ul>
           </div>
@@ -359,9 +337,9 @@ const i = t(lang);
 
   .platform-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
-    max-width: 900px;
+    max-width: 640px;
     margin: 0 auto;
   }
   .platform-card {
@@ -451,9 +429,9 @@ const i = t(lang);
   }
   .req-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
-    max-width: 900px;
+    max-width: 640px;
     margin: 0 auto;
   }
   .req-card {

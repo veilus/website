@@ -1,17 +1,18 @@
 # Veilus
-> Anti-detect browser with built-in automation platform. Native Chromium engine — 3x faster, 80% less RAM.
+> Anti-detect multi-account browser with built-in automation. Each profile gets its own fingerprint and proxy; record a task once and replay it across profiles.
 
 ## Key Facts
 - Free tier: 5 browser profiles forever, no credit card required
-- Native engine built with Tauri + Rust (not Electron)
-- Each profile has a unique fingerprint: Canvas, WebGL, AudioContext, Client Hints (20+ parameters)
-- Built-in automation: Playwright scripts written by you or your AI assistant via MCP
-- Profile sync via your own Git repository or Google Drive — not encrypted by Veilus
-- Currently available on macOS; Windows and Linux expected Q2 2026
+- 7-day Pro trial: request it in the app with your email; after 7 days you drop back to Free and keep your profiles
+- Browser engine: Chromium built and patched in-house by Veilus
+- Each profile has its own fingerprint and its own proxy (HTTP, HTTPS, SOCKS5)
+- Built-in automation: Veilus Flow records actions and replays them as scripts across profiles
+- Profile data is stored locally on your machine; Veilus Sync is encrypted
+- Platforms: macOS and Windows (no Linux version)
 
 ## Main Pages
 - [Homepage](https://veilus.io): Product overview, features, pricing, FAQ
-- [Download](https://veilus.io/download): Download Veilus for macOS
+- [Download](https://veilus.io/download): Download Veilus for macOS and Windows
 - [Documentation](https://docs.veilus.io): User guides, API reference
 - [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy
 - [Privacy Policy](https://veilus.io/privacy): Data collection and protection
@@ -19,11 +20,11 @@
 - [Refund Policy](https://veilus.io/refund): Refund conditions
 
 ## Core Features
-- Fingerprint Engine: 20+ browser parameters customized per profile
-- VeilusFlow: Write Playwright scripts yourself or via your AI assistant over MCP; run across profiles in batch or on schedule
-- Visual Canvas: Drag-and-drop automation flow builder (low-code)
-- VeilusSync: Syncs profiles via a Git repository or Google Drive you choose; profile data is not encrypted by Veilus, only the remote access token is (locally, on your device). Optional password encryption (AES-256-GCM) when exporting a profile to a .veiluspack file
-- Scheduling: Hourly/daily/weekly automation with missed-run catch-up
+- Profiles: own fingerprint and own proxy per profile
+- Veilus Flow: record actions, replay them as scripts across many profiles; edit steps visually
+- Schedules and batch runs
+- Local REST API and MCP for AI tools and developer automation
+- Veilus Sync (encrypted), script templates, import/export
 
 ## Pricing
 - Free: 5 profiles, 1 device, latest browser engine; no Veilus Flow, scheduling, batch runs or local API/MCP
@@ -32,6 +33,7 @@
 - Paid plans: unlimited profiles, Veilus Flow, scheduling, batch runs, local REST API and MCP, Veilus Sync, script templates
 - Lifetime includes updates forever and 3 years of support (renewal: 40% of the plan price per 3 years)
 - More than 20 devices: contact us
+- Refunds: within 7 days (monthly) or 14 days (lifetime)
 - Buy: https://veilus.io/mua
 
 ## Contact

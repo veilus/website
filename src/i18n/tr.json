@@ -1,7 +1,7 @@
 {
     "meta": {
-        "title": "Veilus — Otomasyon entegre anti-tespit tarayıcısı",
-        "description": "Yerel performanslı ücretsiz anti-tespit tarayıcısı. 5 profil sonsuza kadar. AI asistanınızın MCP üzerinden yazdığı scriptlerle otomasyon. Hemen indirin."
+        "title": "Veilus — Otomasyonu dahili anti-tespit tarayıcı",
+        "description": "Tek bilgisayarda çok sayıda hesap yönetin; her hesabın kendi parmak izi ve proxy'si olsun. Bir görevi bir kez kaydedin, tüm profillerde tekrarlayın. 5 profil ücretsiz."
     },
     "nav": {
         "features": "Özellikler",
@@ -11,146 +11,183 @@
         "download": "Ücretsiz indir"
     },
     "hero": {
-        "badge": "Anti-Tespit Tarayıcısı",
-        "title1": "Görünmez.",
-        "title2": "İzsiz.",
-        "title3": "Sizin.",
-        "subtitle": "Tamamen entegre otomasyon platformuna sahip <strong>tek</strong> anti-tespit tarayıcısı. Yerel motor — 3 kat hızlı, %80 daha az RAM.",
-        "check1": "5 profil sonsuza kadar ücretsiz — kredi kartı gerekmez",
-        "check2": "Her profilin benzersiz parmak izi — tespit edilemez",
-        "check3": "AI asistanınız MCP üzerinden script yazsın ve çalıştırsın — ya da kendiniz yazın",
-        "ctaPrimary": "Ücretsiz indir",
-        "ctaSecondary": "90 sn demo izle",
-        "note": "Windows, macOS, Linux"
+        "badge": "Çoklu hesap işleri için anti-tespit tarayıcı",
+        "title": "Tek bilgisayarda yüzlerce hesap —",
+        "titleHighlight": "her birinin kendi kimliği var.",
+        "subtitle": "Bir görevi bir kez kaydedin, Veilus onu her profilde çalıştırsın. Her profilin kendi parmak izi ve proxy'si olduğu için hesaplarınız birbirine bağlanmaz.",
+        "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
+        "micro": "Sonrasında 5 profili ücretsiz kullanmaya devam edin — kart gerekmez.",
+        "platforms": "macOS · Windows"
     },
     "proof": {
-        "test": "Testleri geçer",
-        "testSub": "creepjs.com ve iphey.com",
-        "speed": "3 kat hızlı",
-        "speedSub": "than alternatives",
-        "users": "500+",
-        "usersSub": "beta test kullanıcısı",
-        "open": "Açık Kaynak",
-        "openSub": "Chromium yamaları"
+        "items": [
+            {
+                "value": "creepjs ve iphey ile test edildi",
+                "sub": "parmak izi testleri"
+            },
+            {
+                "value": "Kendi Chromium motorumuz",
+                "sub": "Veilus tarafından derlenip yamalandı"
+            },
+            {
+                "value": "Veriler bilgisayarınızda kalır",
+                "sub": "profiller yerelde saklanır"
+            },
+            {
+                "value": "macOS · Windows",
+                "sub": "masaüstü uygulaması"
+            }
+        ]
+    },
+    "pain": {
+        "badge": "Sorun",
+        "title": "Çok sayıda hesabı elle yönetmek",
+        "titleHighlight": "üç yerde aksar",
+        "items": [
+            {
+                "title": "Bir ban diğerlerini de götürür",
+                "desc": "Platformlar aynı tarayıcı parmak izini, IP'yi veya çerezleri paylaşan hesapları birbirine bağlar. Biri işaretlenir, gerisi de peşinden gider."
+            },
+            {
+                "title": "Günde elli kez aynı tıklamalar",
+                "desc": "Giriş yap, paylaş, yanıtla, siparişleri kontrol et — sonra hepsini bir sonraki profilde tekrarla. Bir betiğin yapabileceği işe saatler gider."
+            },
+            {
+                "title": "Proxy'ler ve çerezler bir tabloda",
+                "desc": "Hangi proxy hangi hesaba ait? Hangi çerezler hâlâ geçerli? Tek bir karışıklık ve iki hesap birbirine bağlanır."
+            }
+        ],
+        "bridge": "Veilus her hesabı kendi profilinde tutar ve tekrarlayan işleri sizin yerinize yapar."
+    },
+    "audience": {
+        "badge": "Kimler için",
+        "title": "Aynı anda",
+        "titleHighlight": "çok sayıda hesap yönetenler için",
+        "subtitle": "İşinizi bulun. Veilus ile değişen şey şu.",
+        "items": [
+            {
+                "title": "MMO ve sosyal medya",
+                "outcome": "Onlarca sosyal medya hesabını birbirinden ayrı tutun ve hepsine elle uğraşmadan paylaşım yapın.",
+                "features": [
+                    "Her profile ayrı parmak izi ve proxy",
+                    "Günlük paylaşım ve yanıtlar için Veilus Flow",
+                    "Siz yokken çalışan zamanlamalar"
+                ]
+            },
+            {
+                "title": "Reklam ve affiliate",
+                "outcome": "Her reklam hesabına ve her müşteriye ayrı profil ve proxy — oturumlar, çerezler ve IP'ler asla karışmaz.",
+                "features": [
+                    "Her reklam hesabına bir profil",
+                    "HTTP, HTTPS ve SOCKS5 proxy",
+                    "Profilleri taşımak için içe/dışa aktarma"
+                ]
+            },
+            {
+                "title": "E-ticaret satıcıları",
+                "outcome": "Birden fazla Shopee, Amazon veya Etsy mağazasını tek bilgisayardan, her birini kendi kimliğiyle yönetin.",
+                "features": [
+                    "Her mağazaya bir profil",
+                    "Sipariş ve mesaj kontrolünü bir kez kaydedin",
+                    "Tüm mağazalarda toplu çalıştırma"
+                ]
+            },
+            {
+                "title": "Geliştiriciler",
+                "outcome": "Tarayıcı profillerini kendi betiklerinizden veya yapay zekâ araçlarınızdan yönetin; parmak izi işi zaten hazır.",
+                "features": [
+                    "Yerel REST API",
+                    "Yapay zekâ araçları için MCP",
+                    "Toplu ve zamanlanmış çalıştırma"
+                ]
+            }
+        ]
     },
     "features": {
         "badge": "Özellikler",
-        "title": "İhtiyacınız olan her şey,",
+        "title": "İhtiyacınız olan her şey",
         "titleHighlight": "tek uygulamada",
-        "subtitle": "Anti-tespit tarayıcısı + Otomasyon platformu. Rakipler 2 araca ihtiyaç duyar, siz sadece Veilus'a.",
+        "subtitle": "Anti-tespit tarayıcı ve otomasyon aynı yerde.",
         "items": [
             {
-                "title": "Parmak İzi Motoru",
-                "desc": "Her profil için 20+ parametre ile benzersiz parmak izleri — Canvas, WebGL, AudioContext, Client Hints. Maksimum gizlilik için en derin seviyede tasarlandı.",
-                "badge": "creepjs.com onaylı"
+                "title": "Her profil başka bir kişi gibi görünür",
+                "desc": "Her profilin kendi parmak izi ve kendi HTTP, HTTPS veya SOCKS5 proxy'si vardır. Profiller, Veilus'un kendi derleyip yamaladığı bir Chromium motorunda çalışır.",
+                "badge": "creepjs ve iphey ile test edildi"
             },
             {
-                "title": "Veilus Flow",
-                "desc": "Playwright scriptlerini kendiniz yazın veya AI asistanınız (Claude, Cursor…) MCP üzerinden yazsın, test etsin ve düzeltsin — sonra birden fazla profilde çalıştırın. Büyük ölçekte çalıştırmadan önce scripti onaylarsınız.",
-                "badge": "Kod gerektirmez"
+                "title": "Bir kez yapın, her yerde tekrarlayın",
+                "desc": "Veilus Flow tıkladıklarınızı ve yazdıklarınızı kaydeder, sonra bunu dilediğiniz kadar profilde betik olarak yeniden oynatır. Adımları kod yazmadan düzenleyin.",
+                "badge": "Veilus Flow · Pro"
             },
             {
-                "title": "Görsel Canvas",
-                "desc": "Sürükle-bırak ile otomasyon akışları oluşturun. Dallanma, döngü ve yeniden kullanılabilir bileşen desteği.",
-                "badge": "Low-code"
+                "title": "Siz yokken iş devam eder",
+                "desc": "Betikleri zamanlayın ya da birçok profilde aynı anda toplu çalıştırın.",
+                "badge": "Zamanlama · Toplu çalıştırma · Pro"
             },
             {
-                "title": "Veilus Sync",
-                "desc": "Cihazlarınız arasında Git veya Google Drive ile profil senkronizasyonu — veriler kendi deponuzda kalır.",
-                "badge": "Git · Google Drive"
+                "title": "Kendi araçlarınızı bağlayın",
+                "desc": "Yerel REST API ve MCP, kendi kodunuzun ve yapay zekâ araçlarınızın profilleri açıp otomasyon çalıştırmasını sağlar.",
+                "badge": "REST API · MCP · Pro"
             },
             {
-                "title": "Zamanlama",
-                "desc": "Scriptleri saatlik, günlük veya haftalık çalıştırın. Kaçırılan çalıştırmaları otomatik algılayıp telafi eder. Akıllı kaynak izleme.",
-                "badge": "Akıllı zamanlama"
+                "title": "Kurulumunuz sizinle gelsin",
+                "desc": "Veilus Sync profilleri şifreli olarak senkronize eder. Betiklere şablonlardan başlayın, bilgisayar değiştirirken profilleri içe veya dışa aktarın.",
+                "badge": "Şifreli senkronizasyon · Pro"
             }
         ]
     },
     "howItWorks": {
         "badge": "Nasıl çalışır",
-        "title": "3 adımda",
-        "titleHighlight": "başlayın",
-        "subtitle": "İndirmeden tam otomasyona sadece birkaç dakika.",
+        "title": "İndirmeden otomasyona",
+        "titleHighlight": "3 adımda",
+        "subtitle": "Ücretsiz başlayın. Otomasyon Pro gerektirir — 7 günlük deneme bunu kapsar.",
         "steps": [
             {
                 "title": "İndirin ve profil oluşturun",
-                "desc": "Veilus'u ücretsiz indirin. 10 saniyede benzersiz parmak izli profil oluşturun. Her profil = tamamen yeni bir kimlik."
+                "desc": "macOS veya Windows'a kurun. Her yeni profil kendi parmak izini alır; proxy'niz varsa ekleyin."
             },
             {
-                "title": "Akışınızı oluşturun",
-                "desc": "AI asistanınızdan MCP üzerinden scripti yazmasını isteyin, ya da kendiniz yazın."
+                "title": "Görevi bir kez kaydedin",
+                "desc": "Kaydet'e basın ve görevi bir profilde elle yapın — giriş, paylaşım, sipariş kontrolü. Veilus adımları betik olarak kaydeder."
             },
             {
-                "title": "Otomatikleştirin ve ölçeklendirin",
-                "desc": "Scriptleri birden fazla profilde aynı anda çalıştırın. Otomasyonu zamanlayın. Akıllı izleme — gerisini Veilus halleder."
+                "title": "Tüm profillerde çalıştırın",
+                "desc": "Profilleri seçip betiği toplu çalıştırın ya da zamanlayın."
             }
         ]
     },
     "comparison": {
-        "badge": "Karşılaştırma",
-        "title": "Neden",
-        "titleHighlight": "Veilus?",
-        "subtitle": "Lider rakiplerle doğrudan karşılaştırma.",
+        "badge": "Karşılaştır",
+        "title": "Seçmeden önce",
+        "titleHighlight": "nelere bakmalı",
+        "subtitle": "Anti-tespit tarayıcıların en çok ayrıştığı noktalar. Rakipler planlarını sık değiştirir; güncel fiyat sayfalarını bu tablonun yanında açın.",
         "headers": [
             "",
-            "Veilus",
-            "Multilogin",
-            "GoLogin",
-            "AdsPower"
+            "Veilus"
         ],
         "rows": [
             {
                 "feature": "Ücretsiz plan",
                 "values": [
-                    "5 profil sonsuza kadar",
-                    "7 gün deneme",
-                    "3 (sınırlı)",
-                    "5 (sınırlı)"
+                    "5 profil, süresiz"
                 ]
             },
             {
-                "feature": "Motor",
+                "feature": "Dahili otomasyon",
                 "values": [
-                    "Native",
-                    "Electron",
-                    "Electron",
-                    "Electron"
+                    "Var — kaydet, tekrarla, zamanla"
                 ]
             },
             {
-                "feature": "Otomasyon",
+                "feature": "Tek seferlik ömür boyu satın alma",
                 "values": [
-                    "Entegre",
-                    "Ayrı",
-                    "Yok",
-                    "Temel RPA"
+                    "Var — {lifetime} başlayan fiyatlarla"
                 ]
             },
             {
-                "feature": "Görsel Canvas",
+                "feature": "Fiyat",
                 "values": [
-                    "Evet",
-                    "Hayır",
-                    "Hayır",
-                    "Hayır"
-                ]
-            },
-            {
-                "feature": "RAM / profil",
-                "values": [
-                    "~100MB",
-                    "~500MB",
-                    "~400MB",
-                    "~350MB"
-                ]
-            },
-            {
-                "feature": "Ücretli plan",
-                "values": [
-                    "{monthly}/ay · {lifetime} ömür boyu",
-                    "$99/ay",
-                    "$49/ay",
-                    "$9/ay"
+                    "Cihaz başına {monthly}/ay · ömür boyu {lifetime}"
                 ]
             }
         ]
@@ -198,54 +235,63 @@
         "device": "1 cihaz",
         "devices": "{n} cihaz",
         "contact": "20'den fazla cihaz mı?",
-        "contactCta": "Bize ulaşın"
+        "contactCta": "Bize ulaşın",
+        "refund": "7 gün içinde (aylık) veya 14 gün içinde (ömür boyu) iade."
     },
     "faq": {
         "badge": "SSS",
-        "title": "Sık sorulan",
+        "title": "Sıkça sorulan",
         "titleHighlight": "sorular",
-        "subtitle": "Başlamadan önce bilmeniz gereken her şey.",
+        "subtitle": "İndirmeden önce en çok sorulanlar.",
         "items": [
             {
-                "q": "Veilus gerçekten tespit edilemez mi?",
-                "a": "Evet. Parmak izi motorumuz en derin seviyede tasarlandı, sadece user-agent değiştirmiyor. creepjs.com ve iphey.com'da \"benzersiz\" sonuçlarla test edildi."
+                "q": "Platformlar profillerimi tespit eder mi?",
+                "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Her profil, kendi parmak izi ve proxy'siyle Veilus'un yamaladığı Chromium sürümünde çalışır ve profilleri creepjs ile iphey'de test ediyoruz. Hesaplarınıza nasıl davranılacağı, onları nasıl kullandığınıza da bağlıdır."
             },
             {
-                "q": "Gerçekten ücretsiz mi?",
-                "a": "Tamamen ücretsiz. 5 profil sonsuza kadar, süre sınırı yok, kredi kartı gerekmez."
+                "q": "Gerçekten ücretsiz mi? Kart gerekiyor mu?",
+                "a": "Evet. Free plan, 1 cihazda 5 profili süre sınırı ve kart olmadan sunar. Veilus Flow, zamanlamalar, toplu çalıştırma ve yerel API/MCP için Pro gerekir."
             },
             {
-                "q": "Multilogin'den farkı ne?",
-                "a": "Veilus, Electron yerine yerel motor kullanır — 3 kat hızlı, %80 daha az RAM. Dahili otomasyon — rakipler ayrı araçlar gerektirir."
+                "q": "7 günlük Pro denemesi nasıl işler?",
+                "a": "Uygulama içinden e-postanızla talep edin. Anahtarı e-postayla göndeririz; uygulamaya yapıştırınca Pro açılır. 7 gün sonra Free plana dönersiniz ve profilleriniz kalır."
             },
             {
-                "q": "Windows ve Linux destekliyor mu?",
-                "a": "Şu anda macOS. Windows ve Linux geliştirme aşamasında, Q2 2026 bekleniyor."
+                "q": "Hangi işletim sistemlerinde çalışır?",
+                "a": "macOS ve Windows. Linux sürümü yoktur."
             },
             {
-                "q": "Verilerim güvende mi?",
-                "a": "Profil verileri cihazınızda yerel olarak saklanır. Veilus Sync'i açarsanız profiller seçtiğiniz bir Git deposuna veya Google Drive'a senkronize edilir — özel (private) bir tane kullanın. Bir profili .veiluspack dosyasına dışa aktardığınızda, dosyayı şifrelemek için bir parola belirleyebilirsiniz."
+                "q": "Verilerim nerede saklanıyor?",
+                "a": "Bilgisayarınızda. Profiller ve verileri yerelde saklanır. Veilus Sync'i açarsanız senkronize edilen veriler şifrelenir."
             },
             {
                 "q": "Kendi proxy'lerimi kullanabilir miyim?",
-                "a": "Evet. HTTP, HTTPS, SOCKS5 desteği. Her profil için ayrı proxy yapılandırması."
+                "a": "Evet. HTTP, HTTPS ve SOCKS5 desteklenir ve her profilin kendi proxy'si olabilir."
             },
             {
-                "q": "Veilus Flow nasıl çalışıyor?",
-                "a": "Playwright scriptini kendiniz yazın, ya da AI asistanınızdan MCP üzerinden yazmasını, test etmesini ve düzeltmesini isteyin, sonra profillerde toplu veya zamanlanmış şekilde çalıştırın. Onaylanmamış bir script her çalıştırmada en fazla 3 profilde çalışır — büyük ölçekte veya zamanlanmış çalıştırmak için scripti Veilus Flow'da onaylayın."
+                "q": "Veilus Flow nasıl çalışır?",
+                "a": "Kaydet'e basın, görevi bir profilde elle yapın, sonra Durdur'a basın. Veilus adımları betik olarak kaydeder. Düzenleyin, dilediğiniz kadar profilde çalıştırın ya da zamanlayın."
             },
             {
-                "q": "Çok RAM kullanıyor mu?",
-                "a": "Profil başına yaklaşık 100MB — Electron tarayıcılardan 3-5 kat daha az. Akıllı izleme otomatik olarak yükü azaltır."
+                "q": "Veilus'u diğer anti-tespit tarayıcılardan ayıran ne?",
+                "a": "Otomasyon dahili: bir görevi bir kez kaydedip profillerde tekrarlarsınız; zamanlama, toplu çalıştırma ve yerel API/MCP aynı uygulamadadır. Ayrıca abonelik yerine tek seferlik ödemeyle ömür boyu lisans alabilirsiniz."
+            },
+            {
+                "q": "İade alabilir miyim?",
+                "a": "Evet. Aylık ödemeler 7 gün, ömür boyu lisanslar 14 gün içinde iade edilebilir."
             }
         ]
     },
     "finalCta": {
-        "title": "Görünmez olmaya",
-        "titleHighlight": "hazır mısınız?",
-        "desc": "Veilus'u bugün ücretsiz indirin.\n5 profil. Benzersiz parmak izi. Kartsız. Sonsuza kadar.",
-        "cta": "Ücretsiz indir",
-        "note": "Kişisel veri toplanmaz"
+        "title": "Tüm Pro özelliklerini",
+        "titleHighlight": "7 gün ücretsiz deneyin",
+        "desc": "Veilus'u indirin, denemeyi uygulamadan talep edin ve ilk görevinizi kaydedin.\nSize göre değilse 5 profil ücretsiz kalır.",
+        "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
+        "badges": [
+            "Kart gerekmez",
+            "Veriler bilgisayarınızda kalır",
+            "5 profil süresiz ücretsiz"
+        ]
     },
     "footer": {
         "tagline": "Tasarımla görünmez.",
@@ -280,7 +326,6 @@
         "subtitle": "5 profille sonsuza kadar ücretsiz.",
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
-        "linuxX64": "Ubuntu 20+ / Fedora 36+",
         "downloadBtn": "İndir",
         "note": "Kişisel veri toplanmaz · Kredi kartı gerekmez",
         "reqTitle": "Sistem Gereksinimleri"

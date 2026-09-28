@@ -17,7 +17,7 @@ export const termsTranslations: Record<string, {
 <h2>2. Description of Service</h2>
 <p>Veilus is an anti-detect browser application with integrated automation capabilities. The Service includes:</p>
 <ul>
-  <li>Desktop application (macOS, with Windows and Linux planned)</li>
+  <li>Desktop application (macOS and Windows)</li>
   <li>Browser profile management with fingerprint customization</li>
   <li>Automation tools (Veilus Flow, Visual Canvas)</li>
   <li>Profile synchronization (Veilus Sync)</li>
@@ -134,7 +134,7 @@ export const termsTranslations: Record<string, {
 <h2>2. Mô tả Dịch vụ</h2>
 <p>Veilus là ứng dụng trình duyệt chống phát hiện với khả năng automation tích hợp, bao gồm:</p>
 <ul>
-  <li>Ứng dụng desktop (macOS, Windows và Linux sẽ có sau)</li>
+  <li>Ứng dụng desktop (macOS và Windows)</li>
   <li>Quản lý browser profile với tùy chỉnh fingerprint</li>
   <li>Công cụ automation (Veilus Flow, Visual Canvas)</li>
   <li>Đồng bộ profile (Veilus Sync)</li>

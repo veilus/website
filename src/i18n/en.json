@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Anti-detect browser with built-in automation",
-        "description": "Free anti-detect browser with native performance. 5 profiles forever. Automate with scripts your AI assistant can write via MCP. Download now."
+        "description": "Run many accounts on one computer, each with its own fingerprint and proxy. Record a task once, replay it on every profile. Free for 5 profiles."
     },
     "nav": {
         "features": "Features",
@@ -11,146 +11,183 @@
         "download": "Download free"
     },
     "hero": {
-        "badge": "Anti-Detect Browser",
-        "title1": "Invisible.",
-        "title2": "Untraceable.",
-        "title3": "Yours.",
-        "subtitle": "The <strong>only</strong> anti-detect browser with a fully integrated automation platform. Native engine — 3x faster, 80% less RAM.",
-        "check1": "Free 5 profiles forever — no credit card",
-        "check2": "Each profile has unique fingerprint — undetectable",
-        "check3": "Let your AI assistant write and run scripts via MCP — or write them yourself",
-        "ctaPrimary": "Download free",
-        "ctaSecondary": "Watch 90s demo",
-        "note": "Windows, macOS, Linux"
+        "badge": "Anti-detect browser for multi-account work",
+        "title": "Run hundreds of accounts on one computer —",
+        "titleHighlight": "each with its own identity.",
+        "subtitle": "Record a task once, and Veilus runs it across every profile. Each profile has its own fingerprint and proxy, so your accounts stay separate.",
+        "cta": "Download & try Pro free for 7 days",
+        "micro": "Then keep using 5 profiles free — no card needed.",
+        "platforms": "macOS · Windows"
     },
     "proof": {
-        "test": "Passes tests",
-        "testSub": "creepjs.com & iphey.com",
-        "speed": "3x faster",
-        "speedSub": "than alternatives",
-        "users": "500+",
-        "usersSub": "beta testers",
-        "open": "Open Source",
-        "openSub": "verified fingerprints"
+        "items": [
+            {
+                "value": "Tested with creepjs & iphey",
+                "sub": "fingerprint checks"
+            },
+            {
+                "value": "In-house Chromium engine",
+                "sub": "built and patched by Veilus"
+            },
+            {
+                "value": "Data stays on your machine",
+                "sub": "profiles are stored locally"
+            },
+            {
+                "value": "macOS · Windows",
+                "sub": "desktop app"
+            }
+        ]
+    },
+    "pain": {
+        "badge": "The problem",
+        "title": "Running many accounts by hand",
+        "titleHighlight": "goes wrong in three places",
+        "items": [
+            {
+                "title": "One ban drags the others down",
+                "desc": "Platforms link accounts that share a browser fingerprint, an IP or cookies. One account gets flagged, and the rest follow."
+            },
+            {
+                "title": "The same clicks, fifty times a day",
+                "desc": "Log in, post, reply, check orders — then do it all again in the next profile. Hours go to work a script could do."
+            },
+            {
+                "title": "Proxies and cookies in a spreadsheet",
+                "desc": "Which proxy belongs to which account? Which cookies still work? One mix-up and two accounts are linked."
+            }
+        ],
+        "bridge": "Veilus keeps each account in its own profile and does the repeat work for you."
+    },
+    "audience": {
+        "badge": "Who it's for",
+        "title": "Made for people who run",
+        "titleHighlight": "many accounts at once",
+        "subtitle": "Find your kind of work. Here is what changes with Veilus.",
+        "items": [
+            {
+                "title": "MMO & social media",
+                "outcome": "Keep dozens of social accounts apart, and post to all of them without doing it by hand.",
+                "features": [
+                    "Own fingerprint and proxy per profile",
+                    "Veilus Flow for daily posts and replies",
+                    "Schedules that run while you're away"
+                ]
+            },
+            {
+                "title": "Ads & affiliate",
+                "outcome": "Give every ad account and every client its own profile and proxy, so logins, cookies and IPs never mix.",
+                "features": [
+                    "One profile per ad account",
+                    "HTTP, HTTPS and SOCKS5 proxies",
+                    "Import/export to move profiles"
+                ]
+            },
+            {
+                "title": "E-commerce sellers",
+                "outcome": "Run several Shopee, Amazon or Etsy stores from one computer, each on its own identity.",
+                "features": [
+                    "One profile per store",
+                    "Record order and message checks once",
+                    "Batch runs across every store"
+                ]
+            },
+            {
+                "title": "Developers",
+                "outcome": "Drive browser profiles from your own scripts or AI tools, with the fingerprint work already done.",
+                "features": [
+                    "Local REST API",
+                    "MCP for AI tools",
+                    "Batch runs and schedules"
+                ]
+            }
+        ]
     },
     "features": {
         "badge": "Features",
         "title": "Everything you need,",
         "titleHighlight": "in one app",
-        "subtitle": "Anti-detect browser + Automation platform. Competitors need 2 tools, you only need Veilus.",
+        "subtitle": "The anti-detect browser and the automation live in the same place.",
         "items": [
             {
-                "title": "Fingerprint Engine",
-                "desc": "Create unique fingerprints for each profile with 20+ parameters — Canvas, WebGL, AudioContext, Client Hints. Engineered at the deepest level for maximum stealth.",
-                "badge": "Passes creepjs.com"
+                "title": "Each profile looks like a different person",
+                "desc": "Every profile gets its own fingerprint and its own HTTP, HTTPS or SOCKS5 proxy. Profiles run on a Chromium engine that Veilus builds and patches in-house.",
+                "badge": "Tested with creepjs & iphey"
             },
             {
-                "title": "Veilus Flow",
-                "desc": "Write Playwright scripts yourself, or let your AI assistant (Claude, Cursor…) write, test and fix them via MCP — then run them across profiles. You approve a script before it runs at scale.",
-                "badge": "No coding required"
+                "title": "Do a task once, repeat it everywhere",
+                "desc": "Veilus Flow records what you click and type, then replays it as a script across as many profiles as you choose. Edit the steps without writing code.",
+                "badge": "Veilus Flow · Pro"
             },
             {
-                "title": "Visual Canvas",
-                "desc": "Drag and drop to create automation flows like flowcharts. Supports branching, looping, and reusable components. Fully low-code.",
-                "badge": "Low-code"
+                "title": "Work runs while you're away",
+                "desc": "Put scripts on a schedule, or run them as a batch over many profiles at once.",
+                "badge": "Schedules · Batch runs · Pro"
             },
             {
-                "title": "Veilus Sync",
-                "desc": "Sync profiles between your machines via Git or Google Drive — the data lives in your own repository.",
-                "badge": "Git · Google Drive"
+                "title": "Connect your own tools",
+                "desc": "A local REST API and MCP let your own code and AI tools open profiles and run automation.",
+                "badge": "REST API · MCP · Pro"
             },
             {
-                "title": "Scheduling",
-                "desc": "Schedule scripts to run hourly, daily, or weekly. Auto-detects missed runs and catches up. Smart resource monitoring.",
-                "badge": "Smart scheduling"
+                "title": "Take your setup with you",
+                "desc": "Veilus Sync keeps profiles in sync, encrypted. Start scripts from templates, and import or export profiles when you change machines.",
+                "badge": "Encrypted sync · Pro"
             }
         ]
     },
     "howItWorks": {
         "badge": "How it works",
-        "title": "Get started in",
-        "titleHighlight": "3 steps",
-        "subtitle": "From download to full automation in just minutes.",
+        "title": "From download to automation",
+        "titleHighlight": "in 3 steps",
+        "subtitle": "Start free. Automation needs Pro — the 7-day trial includes it.",
         "steps": [
             {
-                "title": "Download & Create Profile",
-                "desc": "Download Veilus for free. Create a profile with unique fingerprint in 10 seconds. Each profile = a completely new identity."
+                "title": "Download and create profiles",
+                "desc": "Install on macOS or Windows. Each new profile gets its own fingerprint; add a proxy if you have one."
             },
             {
-                "title": "Build your flow",
-                "desc": "Ask your AI assistant via MCP to write the script, or write it yourself."
+                "title": "Record a task once",
+                "desc": "Press Record and do the task by hand in one profile — log in, post, check orders. Veilus saves the steps as a script."
             },
             {
-                "title": "Automate & Scale",
-                "desc": "Run scripts across multiple profiles simultaneously. Schedule automation. Smart monitoring — Veilus handles the rest."
+                "title": "Run it on every profile",
+                "desc": "Pick the profiles and run the script as a batch, or put it on a schedule."
             }
         ]
     },
     "comparison": {
         "badge": "Compare",
-        "title": "Why choose",
-        "titleHighlight": "Veilus?",
-        "subtitle": "Direct comparison with leading competitors.",
+        "title": "What to check",
+        "titleHighlight": "before you choose",
+        "subtitle": "The points that differ most between anti-detect browsers. Competitors change their plans often, so put their current pricing pages next to this table.",
         "headers": [
             "",
-            "Veilus",
-            "Multilogin",
-            "GoLogin",
-            "AdsPower"
+            "Veilus"
         ],
         "rows": [
             {
                 "feature": "Free tier",
                 "values": [
-                    "5 profiles forever",
-                    "7-day trial",
-                    "3 (limited)",
-                    "5 (limited)"
+                    "5 profiles, forever"
                 ]
             },
             {
-                "feature": "Engine",
+                "feature": "Built-in automation",
                 "values": [
-                    "Native",
-                    "Electron",
-                    "Electron",
-                    "Electron"
+                    "Yes — record, replay, schedule"
                 ]
             },
             {
-                "feature": "Automation",
+                "feature": "One-time lifetime purchase",
                 "values": [
-                    "Built-in",
-                    "Separate",
-                    "None",
-                    "Basic RPA"
+                    "Yes — from {lifetime}"
                 ]
             },
             {
-                "feature": "Visual Canvas",
+                "feature": "Price",
                 "values": [
-                    "Yes",
-                    "No",
-                    "No",
-                    "No"
-                ]
-            },
-            {
-                "feature": "RAM / profile",
-                "values": [
-                    "~100MB",
-                    "~500MB",
-                    "~400MB",
-                    "~350MB"
-                ]
-            },
-            {
-                "feature": "Paid plan",
-                "values": [
-                    "{monthly}/mo · {lifetime} lifetime",
-                    "$99/mo",
-                    "$49/mo",
-                    "$9/mo"
+                    "{monthly}/mo per device · {lifetime} lifetime"
                 ]
             }
         ]
@@ -198,54 +235,63 @@
         "device": "1 device",
         "devices": "{n} devices",
         "contact": "More than 20 devices?",
-        "contactCta": "Contact us"
+        "contactCta": "Contact us",
+        "refund": "Refund within 7 days (monthly) or 14 days (lifetime)."
     },
     "faq": {
         "badge": "FAQ",
         "title": "Frequently",
         "titleHighlight": "asked questions",
-        "subtitle": "Everything you need to know before getting started.",
+        "subtitle": "What people ask before they download.",
         "items": [
             {
-                "q": "Is Veilus really undetectable?",
-                "a": "Yes. Our fingerprint engine is engineered at the deepest level, not just changing user-agent or injecting JavaScript. Tested and verified on creepjs.com and iphey.com with \"unique\" results for each profile."
+                "q": "Will platforms detect my profiles?",
+                "a": "No tool can promise that, and we don't. Each profile runs on Veilus's own patched Chromium build with its own fingerprint and proxy, and we test profiles with creepjs and iphey. How your accounts are treated also depends on how you use them."
             },
             {
-                "q": "Is it really free? Do I need a credit card?",
-                "a": "Truly free. 5 profiles forever, no time limit, no credit card required. You only need to upgrade when you want more profiles or automation features."
+                "q": "Is it really free? Do I need a card?",
+                "a": "Yes. The Free plan gives you 5 profiles on 1 device, with no time limit and no card. Veilus Flow, schedules, batch runs and the local API/MCP need Pro."
             },
             {
-                "q": "How is it different from Multilogin or GoLogin?",
-                "a": "Veilus uses a native engine instead of Electron — 3x faster, 80% less RAM. Plus, Veilus includes a built-in automation platform (scripts, local REST API and MCP) — competitors require separate tools."
+                "q": "How does the 7-day Pro trial work?",
+                "a": "Request it in the app with your email. We send you a key by email; paste it into the app to unlock Pro. After 7 days you drop back to Free and keep your profiles."
             },
             {
-                "q": "Does it support Windows and Linux?",
-                "a": "Currently Veilus supports macOS. Windows and Linux versions are in development, expected Q2 2026."
+                "q": "Which operating systems does it run on?",
+                "a": "macOS and Windows. There is no Linux version."
             },
             {
-                "q": "Is my data safe?",
-                "a": "Profile data is stored locally on your machine. If you turn on Veilus Sync, profiles sync to a Git repository or Google Drive you choose — use a private one. When you export a profile to a .veiluspack file, you can set a password to encrypt the file."
+                "q": "Where is my data stored?",
+                "a": "On your machine. Profiles and their data are stored locally. If you turn on Veilus Sync, the synced data is encrypted."
             },
             {
                 "q": "Can I use my own proxies?",
-                "a": "Yes. Veilus supports HTTP, HTTPS, SOCKS5 proxies. Each profile can have its own proxy configuration, including proxy rotation."
+                "a": "Yes. HTTP, HTTPS and SOCKS5 are supported, and each profile can have its own proxy."
             },
             {
                 "q": "How does Veilus Flow work?",
-                "a": "Write a Playwright script yourself, or ask your AI assistant to write, test and fix one via MCP, then run it across profiles in batch or on a schedule. Scripts nobody has approved yet run on at most 3 profiles per run — approve a script in Veilus Flow to run it at scale or on a schedule."
+                "a": "Press Record, do the task by hand in one profile, then press Stop. Veilus saves the steps as a script. Edit it, run it across as many profiles as you choose, or put it on a schedule."
             },
             {
-                "q": "Does it use a lot of RAM?",
-                "a": "Each profile uses only about 100MB RAM — 3-5x less than Electron-based anti-detect browsers. Veilus also has smart resource monitoring that auto-throttles when your system is under load."
+                "q": "How is Veilus different from other anti-detect browsers?",
+                "a": "Automation is built in: record a task once and replay it across profiles, with schedules, batch runs and a local API/MCP in the same app. You can also pay once for a lifetime license instead of a subscription."
+            },
+            {
+                "q": "Can I get a refund?",
+                "a": "Yes. Monthly payments can be refunded within 7 days, lifetime licenses within 14 days."
             }
         ]
     },
     "finalCta": {
-        "title": "Ready to become",
-        "titleHighlight": "invisible?",
-        "desc": "Download Veilus for free today.\n5 profiles. Unique fingerprint. No card. Forever.",
-        "cta": "Download free",
-        "note": "No personal data collected"
+        "title": "Try every Pro feature",
+        "titleHighlight": "free for 7 days",
+        "desc": "Download Veilus, request the trial in the app, and record your first task.\nIf it's not for you, keep 5 profiles free.",
+        "cta": "Download & try Pro free for 7 days",
+        "badges": [
+            "No card needed",
+            "Data stays on your machine",
+            "5 profiles free, forever"
+        ]
     },
     "footer": {
         "tagline": "Invisible by design.",
@@ -280,7 +326,6 @@
         "subtitle": "Free forever with 5 profiles. Choose your platform.",
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
-        "linuxX64": "Ubuntu 20+ / Fedora 36+",
         "downloadBtn": "Download",
         "note": "No personal data collected. No credit card required.",
         "reqTitle": "System Requirements"

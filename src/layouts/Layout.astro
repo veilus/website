@@ -43,7 +43,7 @@ const jsonLd = {
   "@type": "SoftwareApplication",
   name: "Veilus",
   applicationCategory: "BrowserApplication",
-  operatingSystem: "Windows, macOS, Linux",
+  operatingSystem: "Windows, macOS",
   description: i.meta.description,
   url: siteUrl,
   // Free (0) + các gói bán trực tiếp (thuê tháng, trọn đời); gói thêm máy không tính.
@@ -54,18 +54,12 @@ const jsonLd = {
     priceCurrency: "USD",
     offerCount: String(soldUsd.length + 1),
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "127",
-    bestRating: "5",
-  },
   featureList: [
-    "Anti-detect fingerprinting",
-    "Built-in automation",
-    "Visual canvas flow builder",
-    "Profile sync via Git or Google Drive",
-    "Smart scheduling",
+    "Separate fingerprint and proxy per profile",
+    "Record and replay automation (Veilus Flow)",
+    "Schedules and batch runs",
+    "Local REST API and MCP",
+    "Encrypted sync (Veilus Sync)",
   ],
 };
 
@@ -77,7 +71,7 @@ const orgJsonLd = {
   url: siteUrl,
   logo: `${siteUrl}/logo-512.png`,
   description:
-    "Anti-detect browser with built-in automation platform. Native Chromium engine — 3x faster, 80% less RAM.",
+    "Anti-detect browser with built-in automation. Each profile gets its own fingerprint and proxy on an in-house Chromium engine.",
   sameAs: [
     "https://t.me/veilusbrowser",
     "https://x.com/veilusbrowser",
