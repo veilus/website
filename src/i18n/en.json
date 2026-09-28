@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Anti-detect browser with built-in automation",
-        "description": "Run many accounts on one computer, each with its own fingerprint and proxy. Record a task once, replay it on every profile. Free for 5 profiles."
+        "description": "Run many accounts on one computer, each with its own fingerprint and proxy. Build an automation once — drag and drop or write a script — and run it on every profile. Free for 5 profiles."
     },
     "nav": {
         "features": "Features",
@@ -14,7 +14,7 @@
         "badge": "Anti-detect browser for multi-account work",
         "title": "Run hundreds of accounts on one computer —",
         "titleHighlight": "each with its own identity.",
-        "subtitle": "Record a task once, and Veilus runs it across every profile. Each profile has its own fingerprint and proxy, so your accounts stay separate.",
+        "subtitle": "Build an automation once — drag and drop or write a script — and Veilus runs it across every profile. Each profile has its own fingerprint and proxy, so your accounts stay separate.",
         "cta": "Download & try Pro free for 7 days",
         "micro": "Then keep using 5 profiles free — no card needed.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Run several Shopee, Amazon or Etsy stores from one computer, each on its own identity.",
                 "features": [
                     "One profile per store",
-                    "Record order and message checks once",
+                    "One flow for order and message checks",
                     "Batch runs across every store"
                 ]
             },
@@ -115,8 +115,8 @@
                 "badge": "Tested with creepjs & iphey"
             },
             {
-                "title": "Do a task once, repeat it everywhere",
-                "desc": "Veilus Flow records what you click and type, then replays it as a script across as many profiles as you choose. Edit the steps without writing code.",
+                "title": "Build it once, run it everywhere",
+                "desc": "Build the steps on a drag-and-drop canvas or write them as a script, or start from a template. Veilus Flow runs them across as many profiles as you choose.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,8 +147,8 @@
                 "desc": "Install on macOS or Windows. Each new profile gets its own fingerprint; add a proxy if you have one."
             },
             {
-                "title": "Record a task once",
-                "desc": "Press Record and do the task by hand in one profile — log in, post, check orders. Veilus saves the steps as a script."
+                "title": "Build the flow once",
+                "desc": "Drag steps onto the canvas, write a script, or start from a template — log in, post, check orders."
             },
             {
                 "title": "Run it on every profile",
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Built-in automation",
                 "values": [
-                    "Yes — record, replay, schedule"
+                    "Yes — drag and drop or script, batch runs, schedules"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "How does Veilus Flow work?",
-                "a": "Press Record, do the task by hand in one profile, then press Stop. Veilus saves the steps as a script. Edit it, run it across as many profiles as you choose, or put it on a schedule."
+                "a": "Build a flow on the drag-and-drop canvas, or write it as a script in the built-in editor — or start from a template. Then run it across as many profiles as you choose, or put it on a schedule. Veilus Flow is part of Pro."
             },
             {
                 "q": "How is Veilus different from other anti-detect browsers?",
-                "a": "Automation is built in: record a task once and replay it across profiles, with schedules, batch runs and a local API/MCP in the same app. You can also pay once for a lifetime license instead of a subscription."
+                "a": "Automation is built in: build a flow once — drag and drop or script — and run it across profiles, with schedules, batch runs and a local API/MCP in the same app. You can also pay once for a lifetime license instead of a subscription."
             },
             {
                 "q": "Can I get a refund?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Try every Pro feature",
         "titleHighlight": "free for 7 days",
-        "desc": "Download Veilus, request the trial in the app, and record your first task.\nIf it's not for you, keep 5 profiles free.",
+        "desc": "Download Veilus, request the trial in the app, and build your first flow.\nIf it's not for you, keep 5 profiles free.",
         "cta": "Download & try Pro free for 7 days",
         "badges": [
             "No card needed",

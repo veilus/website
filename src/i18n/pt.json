@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetecção com automação integrada",
-        "description": "Rode várias contas em um só computador, cada uma com sua impressão digital e seu proxy. Grave uma tarefa uma vez e repita em todos os perfis. 5 perfis grátis."
+        "description": "Rode várias contas em um só computador, cada uma com sua impressão digital e seu proxy. Monte uma automação uma vez — arrastando blocos ou com script — e rode em todos os perfis. 5 perfis grátis."
     },
     "nav": {
         "features": "Recursos",
@@ -14,7 +14,7 @@
         "badge": "Navegador antidetecção para quem trabalha com muitas contas",
         "title": "Centenas de contas em um só computador —",
         "titleHighlight": "cada uma com sua própria identidade.",
-        "subtitle": "Grave uma tarefa uma vez e o Veilus executa em todos os perfis. Cada perfil tem sua própria impressão digital e seu próprio proxy, então suas contas não ficam ligadas.",
+        "subtitle": "Monte uma automação uma vez — arrastando blocos ou com script — e o Veilus executa em todos os perfis. Cada perfil tem sua própria impressão digital e seu próprio proxy, então suas contas não ficam ligadas.",
         "cta": "Baixe e teste o Pro grátis por 7 dias",
         "micro": "Depois, continue com 5 perfis grátis — sem cartão.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Gerencie várias lojas na Shopee, Amazon ou Etsy em um só computador, cada uma com sua identidade.",
                 "features": [
                     "Um perfil por loja",
-                    "Grave uma vez a conferência de pedidos e mensagens",
+                    "Um só fluxo para conferir pedidos e mensagens",
                     "Execução em lote em todas as lojas"
                 ]
             },
@@ -115,8 +115,8 @@
                 "badge": "Testado com creepjs e iphey"
             },
             {
-                "title": "Faça uma vez, repita em todo lugar",
-                "desc": "O Veilus Flow grava o que você clica e digita e reproduz como script em quantos perfis você quiser. Edite os passos sem escrever código.",
+                "title": "Monte uma vez, rode em todo lugar",
+                "desc": "Monte os passos em um canvas de arrastar e soltar ou escreva como script, ou comece de um modelo. O Veilus Flow executa em quantos perfis você quiser.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,8 +147,8 @@
                 "desc": "Instale no macOS ou no Windows. Cada perfil novo ganha sua própria impressão digital; adicione um proxy se tiver."
             },
             {
-                "title": "Grave a tarefa uma vez",
-                "desc": "Clique em Gravar e faça a tarefa na mão em um perfil — entrar, postar, conferir pedidos. O Veilus salva os passos como script."
+                "title": "Monte o fluxo uma vez",
+                "desc": "Arraste passos para o canvas, escreva um script ou comece de um modelo — entrar, postar, conferir pedidos."
             },
             {
                 "title": "Rode em todos os perfis",
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Automação integrada",
                 "values": [
-                    "Sim — gravar, repetir, agendar"
+                    "Sim — arrastar e soltar ou script, lote, agendamento"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "Como o Veilus Flow funciona?",
-                "a": "Clique em Gravar, faça a tarefa na mão em um perfil e clique em Parar. O Veilus salva os passos como script. Edite, rode em quantos perfis quiser ou agende."
+                "a": "Monte o fluxo no canvas de arrastar e soltar ou escreva como script no editor integrado — ou comece de um modelo. Depois rode em quantos perfis quiser ou agende. O Veilus Flow faz parte do Pro."
             },
             {
                 "q": "Qual a diferença do Veilus para outros navegadores antidetecção?",
-                "a": "A automação é integrada: grave uma tarefa uma vez e repita nos perfis, com agendamento, execução em lote e API/MCP local no mesmo app. Você também pode pagar uma única vez por uma licença vitalícia em vez de assinar."
+                "a": "A automação é integrada: monte um fluxo uma vez — arrastando blocos ou com script — e rode nos perfis, com agendamento, execução em lote e API/MCP local no mesmo app. Você também pode pagar uma única vez por uma licença vitalícia em vez de assinar."
             },
             {
                 "q": "Posso pedir reembolso?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Teste todos os recursos Pro",
         "titleHighlight": "grátis por 7 dias",
-        "desc": "Baixe o Veilus, peça o teste no app e grave sua primeira tarefa.\nSe não for para você, continue com 5 perfis grátis.",
+        "desc": "Baixe o Veilus, peça o teste no app e monte seu primeiro fluxo.\nSe não for para você, continue com 5 perfis grátis.",
         "cta": "Baixe e teste o Pro grátis por 7 dias",
         "badges": [
             "Sem cartão",

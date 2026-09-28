@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Otomasyonu dahili anti-tespit tarayıcı",
-        "description": "Tek bilgisayarda çok sayıda hesap yönetin; her hesabın kendi parmak izi ve proxy'si olsun. Bir görevi bir kez kaydedin, tüm profillerde tekrarlayın. 5 profil ücretsiz."
+        "description": "Tek bilgisayarda çok sayıda hesap yönetin; her hesabın kendi parmak izi ve proxy'si olsun. Bir otomasyonu bir kez kurun — sürükle-bırak ya da betikle — ve tüm profillerde çalıştırın. 5 profil ücretsiz."
     },
     "nav": {
         "features": "Özellikler",
@@ -14,7 +14,7 @@
         "badge": "Çoklu hesap işleri için anti-tespit tarayıcı",
         "title": "Tek bilgisayarda yüzlerce hesap —",
         "titleHighlight": "her birinin kendi kimliği var.",
-        "subtitle": "Bir görevi bir kez kaydedin, Veilus onu her profilde çalıştırsın. Her profilin kendi parmak izi ve proxy'si olduğu için hesaplarınız birbirine bağlanmaz.",
+        "subtitle": "Bir otomasyonu bir kez kurun — sürükle-bırak ya da betikle — Veilus onu her profilde çalıştırsın. Her profilin kendi parmak izi ve proxy'si olduğu için hesaplarınız birbirine bağlanmaz.",
         "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
         "micro": "Sonrasında 5 profili ücretsiz kullanmaya devam edin — kart gerekmez.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Birden fazla Shopee, Amazon veya Etsy mağazasını tek bilgisayardan, her birini kendi kimliğiyle yönetin.",
                 "features": [
                     "Her mağazaya bir profil",
-                    "Sipariş ve mesaj kontrolünü bir kez kaydedin",
+                    "Sipariş ve mesaj kontrolü için tek bir akış",
                     "Tüm mağazalarda toplu çalıştırma"
                 ]
             },
@@ -115,8 +115,8 @@
                 "badge": "creepjs ve iphey ile test edildi"
             },
             {
-                "title": "Bir kez yapın, her yerde tekrarlayın",
-                "desc": "Veilus Flow tıkladıklarınızı ve yazdıklarınızı kaydeder, sonra bunu dilediğiniz kadar profilde betik olarak yeniden oynatır. Adımları kod yazmadan düzenleyin.",
+                "title": "Bir kez kurun, her yerde çalıştırın",
+                "desc": "Adımları sürükle-bırak tuvalinde kurun ya da betik olarak yazın, isterseniz bir şablondan başlayın. Veilus Flow bunları dilediğiniz kadar profilde çalıştırır.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,8 +147,8 @@
                 "desc": "macOS veya Windows'a kurun. Her yeni profil kendi parmak izini alır; proxy'niz varsa ekleyin."
             },
             {
-                "title": "Görevi bir kez kaydedin",
-                "desc": "Kaydet'e basın ve görevi bir profilde elle yapın — giriş, paylaşım, sipariş kontrolü. Veilus adımları betik olarak kaydeder."
+                "title": "Akışı bir kez kurun",
+                "desc": "Adımları tuvale sürükleyin, betik yazın ya da bir şablondan başlayın — giriş, paylaşım, sipariş kontrolü."
             },
             {
                 "title": "Tüm profillerde çalıştırın",
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Dahili otomasyon",
                 "values": [
-                    "Var — kaydet, tekrarla, zamanla"
+                    "Var — sürükle-bırak ya da betik, toplu çalıştırma, zamanlama"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "Veilus Flow nasıl çalışır?",
-                "a": "Kaydet'e basın, görevi bir profilde elle yapın, sonra Durdur'a basın. Veilus adımları betik olarak kaydeder. Düzenleyin, dilediğiniz kadar profilde çalıştırın ya da zamanlayın."
+                "a": "Akışı sürükle-bırak tuvalinde kurun ya da yerleşik düzenleyicide betik olarak yazın — veya bir şablondan başlayın. Sonra dilediğiniz kadar profilde çalıştırın ya da zamanlayın. Veilus Flow, Pro'ya dahildir."
             },
             {
                 "q": "Veilus'u diğer anti-tespit tarayıcılardan ayıran ne?",
-                "a": "Otomasyon dahili: bir görevi bir kez kaydedip profillerde tekrarlarsınız; zamanlama, toplu çalıştırma ve yerel API/MCP aynı uygulamadadır. Ayrıca abonelik yerine tek seferlik ödemeyle ömür boyu lisans alabilirsiniz."
+                "a": "Otomasyon dahili: bir akışı bir kez kurup (sürükle-bırak ya da betikle) profillerde çalıştırırsınız; zamanlama, toplu çalıştırma ve yerel API/MCP aynı uygulamadadır. Ayrıca abonelik yerine tek seferlik ödemeyle ömür boyu lisans alabilirsiniz."
             },
             {
                 "q": "İade alabilir miyim?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Tüm Pro özelliklerini",
         "titleHighlight": "7 gün ücretsiz deneyin",
-        "desc": "Veilus'u indirin, denemeyi uygulamadan talep edin ve ilk görevinizi kaydedin.\nSize göre değilse 5 profil ücretsiz kalır.",
+        "desc": "Veilus'u indirin, denemeyi uygulamadan talep edin ve ilk akışınızı kurun.\nSize göre değilse 5 profil ücretsiz kalır.",
         "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
         "badges": [
             "Kart gerekmez",
