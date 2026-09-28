@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Browser anti-deteksi dengan otomasi bawaan",
-        "description": "Jalankan banyak akun di satu komputer, masing-masing dengan sidik jari dan proxy sendiri. Susun otomasi sekali — seret-lepas atau skrip — lalu jalankan di semua profil. 5 profil gratis."
+        "description": "Jalankan banyak akun di satu komputer, masing-masing dengan sidik jari dan proxy sendiri. Minta asisten AI Anda menulis skrip lewat MCP, atau tulis sendiri, lalu jalankan di semua profil. 5 profil gratis."
     },
     "nav": {
         "features": "Fitur",
@@ -14,7 +14,7 @@
         "badge": "Browser anti-deteksi untuk kerja multi-akun",
         "title": "Ratusan akun di satu komputer —",
         "titleHighlight": "masing-masing dengan identitasnya sendiri.",
-        "subtitle": "Susun otomasi sekali — seret-lepas atau tulis skrip — lalu Veilus menjalankannya di setiap profil. Tiap profil punya sidik jari dan proxy sendiri, jadi akun-akun Anda tidak saling terhubung.",
+        "subtitle": "Minta asisten AI Anda menulis dan menguji skrip lewat MCP — atau tulis sendiri — lalu jalankan di setiap profil. Tiap profil punya sidik jari dan proxy sendiri, jadi akun-akun Anda tidak saling terhubung.",
         "cta": "Unduh & coba Pro gratis 7 hari",
         "micro": "Setelah itu, tetap pakai 5 profil gratis — tanpa kartu.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Kelola beberapa toko Shopee, Amazon, atau Etsy dari satu komputer, masing-masing dengan identitasnya sendiri.",
                 "features": [
                     "Satu profil per toko",
-                    "Satu alur untuk cek pesanan dan chat",
+                    "Satu skrip untuk cek pesanan dan chat",
                     "Jalankan massal di semua toko"
                 ]
             },
@@ -115,8 +115,8 @@
                 "badge": "Diuji dengan creepjs & iphey"
             },
             {
-                "title": "Susun sekali, jalankan di mana saja",
-                "desc": "Susun langkahnya di kanvas seret-lepas atau tulis sebagai skrip, atau mulai dari templat. Veilus Flow menjalankannya di sebanyak mungkin profil yang Anda pilih.",
+                "title": "Tulis sekali, jalankan di mana saja",
+                "desc": "Minta asisten AI Anda menulis skripnya: lewat MCP ia mencobanya, membaca error tiap profil, lalu memperbaikinya. Atau tulis sendiri. Setelah itu Veilus Flow menjalankannya di sebanyak mungkin profil yang Anda pilih.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,12 +147,12 @@
                 "desc": "Instal di macOS atau Windows. Setiap profil baru mendapat sidik jari sendiri; tambahkan proxy jika Anda punya."
             },
             {
-                "title": "Susun alurnya sekali",
-                "desc": "Seret langkah ke kanvas, tulis skrip, atau mulai dari templat — login, posting, cek pesanan."
+                "title": "Tulis skripnya sekali",
+                "desc": "Beri tahu asisten AI Anda apa yang ingin diotomatiskan — login, posting, cek pesanan. Lewat MCP ia menulis skrip, mencobanya, membaca error, lalu memperbaikinya. Atau tulis sendiri."
             },
             {
                 "title": "Jalankan di semua profil",
-                "desc": "Pilih profil lalu jalankan skrip secara massal, atau jadwalkan."
+                "desc": "Setujui skrip di Veilus Flow, lalu pilih profil dan jalankan secara massal, atau jadwalkan."
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Otomasi bawaan",
                 "values": [
-                    "Ya — seret-lepas atau skrip, jalankan massal, jadwalkan"
+                    "Ya — skrip dari AI lewat MCP atau buatan sendiri, jalankan massal, jadwalkan"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "Bagaimana Veilus Flow bekerja?",
-                "a": "Susun alur di kanvas seret-lepas, atau tulis sebagai skrip di editor bawaan — atau mulai dari templat. Lalu jalankan di sebanyak mungkin profil yang Anda mau, atau jadwalkan. Veilus Flow termasuk dalam Pro."
+                "a": "Hubungkan asisten AI yang mendukung MCP, seperti Claude Code atau Cursor, lalu beri ia tugas. Ia menulis skrip Playwright, menjalankannya di beberapa profil, membaca error tiap profil, lalu memperbaikinya. Anda juga bisa menulis skrip sendiri dan menambahkannya lewat REST API lokal. Skrip yang ditambahkan lewat MCP atau REST hanya berjalan di maksimal 3 profil sekali jalan sampai Anda menyetujuinya di Veilus Flow; setelah itu, jalankan secara massal atau jadwalkan. Veilus Flow termasuk dalam Pro."
             },
             {
                 "q": "Apa bedanya Veilus dengan browser anti-deteksi lain?",
-                "a": "Otomasi sudah bawaan: susun alur sekali — seret-lepas atau skrip — lalu jalankan di banyak profil, dengan jadwal, jalankan massal, dan API/MCP lokal dalam satu aplikasi. Anda juga bisa bayar sekali untuk lisensi seumur hidup, bukan berlangganan."
+                "a": "Otomasi sudah bawaan: asisten AI Anda menulis dan memperbaiki skrip lewat MCP, atau Anda menulisnya sendiri, lalu Veilus menjalankannya di banyak profil, dengan jadwal, jalankan massal, dan REST API lokal dalam satu aplikasi. Anda juga bisa bayar sekali untuk lisensi seumur hidup, bukan berlangganan."
             },
             {
                 "q": "Bisa refund?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Coba semua fitur Pro",
         "titleHighlight": "gratis 7 hari",
-        "desc": "Unduh Veilus, minta uji coba di aplikasi, lalu susun alur pertama Anda.\nKalau tidak cocok, 5 profil tetap gratis.",
+        "desc": "Unduh Veilus, minta uji coba di aplikasi, lalu biarkan asisten AI Anda menulis skrip pertama Anda.\nKalau tidak cocok, 5 profil tetap gratis.",
         "cta": "Unduh & coba Pro gratis 7 hari",
         "badges": [
             "Tanpa kartu",

@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetecção com automação integrada",
-        "description": "Rode várias contas em um só computador, cada uma com sua impressão digital e seu proxy. Monte uma automação uma vez — arrastando blocos ou com script — e rode em todos os perfis. 5 perfis grátis."
+        "description": "Rode várias contas em um só computador, cada uma com sua impressão digital e seu proxy. Peça ao seu assistente de IA para escrever o script via MCP, ou escreva você mesmo, e rode em todos os perfis. 5 perfis grátis."
     },
     "nav": {
         "features": "Recursos",
@@ -14,7 +14,7 @@
         "badge": "Navegador antidetecção para quem trabalha com muitas contas",
         "title": "Centenas de contas em um só computador —",
         "titleHighlight": "cada uma com sua própria identidade.",
-        "subtitle": "Monte uma automação uma vez — arrastando blocos ou com script — e o Veilus executa em todos os perfis. Cada perfil tem sua própria impressão digital e seu próprio proxy, então suas contas não ficam ligadas.",
+        "subtitle": "Peça ao seu assistente de IA para escrever e testar scripts via MCP — ou escreva você mesmo — e rode em todos os perfis. Cada perfil tem sua própria impressão digital e seu próprio proxy, então suas contas não ficam ligadas.",
         "cta": "Baixe e teste o Pro grátis por 7 dias",
         "micro": "Depois, continue com 5 perfis grátis — sem cartão.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Gerencie várias lojas na Shopee, Amazon ou Etsy em um só computador, cada uma com sua identidade.",
                 "features": [
                     "Um perfil por loja",
-                    "Um só fluxo para conferir pedidos e mensagens",
+                    "Um só script para conferir pedidos e mensagens",
                     "Execução em lote em todas as lojas"
                 ]
             },
@@ -115,8 +115,8 @@
                 "badge": "Testado com creepjs e iphey"
             },
             {
-                "title": "Monte uma vez, rode em todo lugar",
-                "desc": "Monte os passos em um canvas de arrastar e soltar ou escreva como script, ou comece de um modelo. O Veilus Flow executa em quantos perfis você quiser.",
+                "title": "Escreva uma vez, rode em todo lugar",
+                "desc": "Peça o script ao seu assistente de IA: via MCP ele testa o script, lê os erros de cada perfil e corrige. Ou escreva você mesmo. Depois o Veilus Flow executa em quantos perfis você quiser.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,12 +147,12 @@
                 "desc": "Instale no macOS ou no Windows. Cada perfil novo ganha sua própria impressão digital; adicione um proxy se tiver."
             },
             {
-                "title": "Monte o fluxo uma vez",
-                "desc": "Arraste passos para o canvas, escreva um script ou comece de um modelo — entrar, postar, conferir pedidos."
+                "title": "Escreva o script uma vez",
+                "desc": "Diga ao seu assistente de IA o que automatizar — entrar, postar, conferir pedidos. Via MCP ele escreve o script, testa, lê os erros e corrige. Ou escreva você mesmo."
             },
             {
                 "title": "Rode em todos os perfis",
-                "desc": "Escolha os perfis e rode o script em lote, ou agende."
+                "desc": "Aprove o script no Veilus Flow, escolha os perfis e rode em lote, ou agende."
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Automação integrada",
                 "values": [
-                    "Sim — arrastar e soltar ou script, lote, agendamento"
+                    "Sim — scripts da sua IA via MCP ou seus, lote, agendamento"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "Como o Veilus Flow funciona?",
-                "a": "Monte o fluxo no canvas de arrastar e soltar ou escreva como script no editor integrado — ou comece de um modelo. Depois rode em quantos perfis quiser ou agende. O Veilus Flow faz parte do Pro."
+                "a": "Conecte um assistente de IA com suporte a MCP, como Claude Code ou Cursor, e dê uma tarefa a ele. Ele escreve um script Playwright, roda em alguns perfis, lê os erros de cada perfil e corrige. Você também pode escrever o script e adicioná-lo pela API REST local. Scripts adicionados via MCP ou REST rodam em no máximo 3 perfis por execução até você aprová-los no Veilus Flow; depois disso, rode em lote ou agende. O Veilus Flow faz parte do Pro."
             },
             {
                 "q": "Qual a diferença do Veilus para outros navegadores antidetecção?",
-                "a": "A automação é integrada: monte um fluxo uma vez — arrastando blocos ou com script — e rode nos perfis, com agendamento, execução em lote e API/MCP local no mesmo app. Você também pode pagar uma única vez por uma licença vitalícia em vez de assinar."
+                "a": "A automação é integrada: seu assistente de IA escreve e corrige scripts via MCP, ou você mesmo escreve, e o Veilus roda nos perfis, com agendamento, execução em lote e API REST local no mesmo app. Você também pode pagar uma única vez por uma licença vitalícia em vez de assinar."
             },
             {
                 "q": "Posso pedir reembolso?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Teste todos os recursos Pro",
         "titleHighlight": "grátis por 7 dias",
-        "desc": "Baixe o Veilus, peça o teste no app e monte seu primeiro fluxo.\nSe não for para você, continue com 5 perfis grátis.",
+        "desc": "Baixe o Veilus, peça o teste no app e deixe seu assistente de IA escrever seu primeiro script.\nSe não for para você, continue com 5 perfis grátis.",
         "cta": "Baixe e teste o Pro grátis por 7 dias",
         "badges": [
             "Sem cartão",

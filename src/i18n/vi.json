@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Trình duyệt anti-detect có sẵn tự động hóa",
-        "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Dựng quy trình tự động một lần — kéo thả hoặc viết script — rồi chạy trên mọi profile. Miễn phí 5 profile."
+        "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Nhờ trợ lý AI viết script qua MCP — hoặc tự viết — rồi chạy trên mọi profile. Miễn phí 5 profile."
     },
     "nav": {
         "features": "Tính năng",
@@ -14,7 +14,7 @@
         "badge": "Trình duyệt anti-detect cho người chạy nhiều tài khoản",
         "title": "Chạy hàng trăm tài khoản trên một máy —",
         "titleHighlight": "mỗi tài khoản một danh tính riêng.",
-        "subtitle": "Dựng quy trình tự động một lần — kéo thả hoặc viết script — rồi chạy trên mọi profile. Mỗi profile có fingerprint và proxy riêng, nên các tài khoản không dính vào nhau.",
+        "subtitle": "Nhờ trợ lý AI viết và chạy thử script qua MCP — hoặc tự viết — rồi chạy trên mọi profile. Mỗi profile có fingerprint và proxy riêng, nên các tài khoản không dính vào nhau.",
         "cta": "Tải về & dùng thử Pro 7 ngày",
         "micro": "Hết 7 ngày vẫn dùng tiếp 5 profile miễn phí — không cần thẻ.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Quản lý nhiều shop Shopee, Amazon, Etsy trên một máy, mỗi shop một danh tính.",
                 "features": [
                     "Một profile cho mỗi shop",
-                    "Một quy trình kiểm đơn, tin nhắn cho mọi shop",
+                    "Một script kiểm đơn, tin nhắn cho mọi shop",
                     "Chạy hàng loạt trên mọi shop"
                 ]
             },
@@ -116,7 +116,7 @@
             },
             {
                 "title": "Làm một lần, lặp lại ở mọi nơi",
-                "desc": "Dựng các bước trên canvas kéo thả hoặc viết thành script, hay bắt đầu từ mẫu có sẵn. Veilus Flow chạy quy trình đó trên bao nhiêu profile tùy bạn.",
+                "desc": "Nhờ trợ lý AI viết script: qua MCP, nó chạy thử, đọc lỗi của từng profile rồi tự sửa. Hoặc bạn tự viết. Sau đó Veilus Flow chạy script trên bao nhiêu profile tùy bạn.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,12 +147,12 @@
                 "desc": "Cài trên macOS hoặc Windows. Mỗi profile mới có fingerprint riêng; gắn proxy nếu bạn có."
             },
             {
-                "title": "Dựng quy trình một lần",
-                "desc": "Kéo thả các bước trên canvas, viết script, hoặc bắt đầu từ mẫu có sẵn — đăng nhập, đăng bài, kiểm đơn."
+                "title": "Viết script một lần",
+                "desc": "Nói với trợ lý AI việc cần tự động — đăng nhập, đăng bài, kiểm đơn. Qua MCP, nó viết script, chạy thử, đọc lỗi rồi tự sửa. Hoặc bạn tự viết."
             },
             {
                 "title": "Chạy trên mọi profile",
-                "desc": "Chọn các profile và chạy script hàng loạt, hoặc đặt lịch để nó tự chạy."
+                "desc": "Duyệt script trong Veilus Flow, rồi chọn các profile để chạy hàng loạt, hoặc đặt lịch để nó tự chạy."
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Tự động hóa có sẵn",
                 "values": [
-                    "Có — kéo thả hoặc script, chạy hàng loạt, đặt lịch"
+                    "Có — script do AI viết qua MCP hoặc tự viết, chạy hàng loạt, đặt lịch"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "Veilus Flow hoạt động thế nào?",
-                "a": "Bạn dựng quy trình trên canvas kéo thả, hoặc viết script trong trình soạn thảo có sẵn — hay bắt đầu từ một mẫu. Sau đó chạy trên bao nhiêu profile tùy ý, hoặc đặt lịch. Veilus Flow có trong gói Pro."
+                "a": "Kết nối một trợ lý AI có hỗ trợ MCP, như Claude Code hay Cursor, rồi giao việc. Nó viết script Playwright, chạy thử trên vài profile, đọc lỗi của từng profile rồi tự sửa. Bạn cũng có thể tự viết script rồi đưa vào qua REST API cục bộ. Script đưa vào qua MCP hay REST chỉ chạy trên tối đa 3 profile mỗi lượt cho tới khi bạn duyệt trong Veilus Flow; duyệt xong thì chạy hàng loạt hoặc đặt lịch. Veilus Flow có trong gói Pro."
             },
             {
                 "q": "Veilus khác các trình duyệt anti-detect khác ở đâu?",
-                "a": "Tự động hóa có sẵn: dựng quy trình một lần — kéo thả hoặc viết script — rồi chạy trên nhiều profile, cùng lịch chạy, chạy hàng loạt và API/MCP cục bộ trong một ứng dụng. Bạn cũng có thể trả một lần để dùng trọn đời thay vì thuê bao."
+                "a": "Tự động hóa có sẵn: trợ lý AI viết và sửa script qua MCP, hoặc bạn tự viết, rồi Veilus chạy trên nhiều profile, cùng lịch chạy, chạy hàng loạt và REST API cục bộ trong một ứng dụng. Bạn cũng có thể trả một lần để dùng trọn đời thay vì thuê bao."
             },
             {
                 "q": "Có được hoàn tiền không?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Dùng thử mọi tính năng Pro",
         "titleHighlight": "miễn phí 7 ngày",
-        "desc": "Tải Veilus, yêu cầu dùng thử trong app, rồi dựng quy trình đầu tiên của bạn.\nKhông hợp thì vẫn giữ 5 profile miễn phí.",
+        "desc": "Tải Veilus, yêu cầu dùng thử trong app, rồi nhờ trợ lý AI viết script đầu tiên của bạn.\nKhông hợp thì vẫn giữ 5 profile miễn phí.",
         "cta": "Tải về & dùng thử Pro 7 ngày",
         "badges": [
             "Không cần thẻ",

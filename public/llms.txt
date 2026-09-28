@@ -1,12 +1,13 @@
 # Veilus
-> Anti-detect multi-account browser with built-in automation. Each profile gets its own fingerprint and proxy; build an automation once (drag-and-drop canvas or script) and run it across profiles.
+> Anti-detect multi-account browser with built-in automation. Each profile gets its own fingerprint and proxy; your AI assistant writes and fixes automation scripts over MCP (or you write them), and Veilus runs them across profiles.
 
 ## Key Facts
 - Free tier: 5 browser profiles forever, no credit card required
 - 7-day Pro trial: request it in the app with your email; after 7 days you drop back to Free and keep your profiles
 - Browser engine: Chromium built and patched in-house by Veilus
 - Each profile has its own fingerprint and its own proxy (HTTP, HTTPS, SOCKS5)
-- Built-in automation: Veilus Flow — build flows on a visual drag-and-drop canvas or as scripts in a built-in editor, then run them across profiles
+- Built-in automation (Veilus Flow): an AI assistant with MCP support (e.g. Claude Code, Cursor) writes Playwright scripts, runs them, reads per-profile errors and fixes them; you can also write scripts yourself and add them through the local REST API
+- Scripts added over MCP or REST run on at most 3 profiles per run until the user approves them in the app; batch runs and schedules need that approval
 - Profile data is stored locally on your machine; Veilus Sync is encrypted
 - Platforms: macOS and Windows (no Linux version)
 
@@ -21,7 +22,8 @@
 
 ## Core Features
 - Profiles: own fingerprint and own proxy per profile
-- Veilus Flow: build flows on a drag-and-drop canvas or write them as scripts, start from templates, run them across many profiles
+- Veilus Flow: Playwright scripts written by your AI assistant over MCP or by you, run across many profiles
+- MCP tools: list and launch profiles, save and read scripts, run a script on profiles, read per-profile run results
 - Schedules and batch runs
 - Local REST API and MCP for AI tools and developer automation
 - Veilus Sync (encrypted), script templates, import/export

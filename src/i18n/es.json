@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetección con automatización integrada",
-        "description": "Gestiona muchas cuentas en un solo ordenador, cada una con su huella y su proxy. Crea una automatización una vez —arrastrando bloques o con un script— y ejecútala en todos los perfiles. 5 perfiles gratis."
+        "description": "Gestiona muchas cuentas en un solo ordenador, cada una con su huella y su proxy. Pide a tu asistente de IA que escriba el script por MCP, o escríbelo tú, y ejecútalo en todos los perfiles. 5 perfiles gratis."
     },
     "nav": {
         "features": "Funciones",
@@ -14,7 +14,7 @@
         "badge": "Navegador antidetección para trabajar con muchas cuentas",
         "title": "Cientos de cuentas en un solo ordenador,",
         "titleHighlight": "cada una con su propia identidad.",
-        "subtitle": "Crea una automatización una vez —arrastrando bloques o con un script— y Veilus la ejecuta en todos tus perfiles. Cada perfil tiene su propia huella y su propio proxy, así tus cuentas no quedan vinculadas.",
+        "subtitle": "Pide a tu asistente de IA que escriba y pruebe scripts por MCP —o escríbelos tú— y ejecútalos en todos tus perfiles. Cada perfil tiene su propia huella y su propio proxy, así tus cuentas no quedan vinculadas.",
         "cta": "Descarga y prueba Pro gratis 7 días",
         "micro": "Después sigues con 5 perfiles gratis, sin tarjeta.",
         "platforms": "macOS · Windows"
@@ -88,7 +88,7 @@
                 "outcome": "Gestiona varias tiendas en Shopee, Amazon o Etsy desde un ordenador, cada una con su propia identidad.",
                 "features": [
                     "Un perfil por tienda",
-                    "Un solo flujo para revisar pedidos y mensajes",
+                    "Un solo script para revisar pedidos y mensajes",
                     "Ejecución por lotes en todas las tiendas"
                 ]
             },
@@ -115,8 +115,8 @@
                 "badge": "Probado con creepjs e iphey"
             },
             {
-                "title": "Créalo una vez, ejecútalo en todas partes",
-                "desc": "Construye los pasos en un lienzo de arrastrar y soltar o escríbelos como script, o parte de una plantilla. Veilus Flow los ejecuta en tantos perfiles como elijas.",
+                "title": "Escríbelo una vez, ejecútalo en todas partes",
+                "desc": "Pide el script a tu asistente de IA: por MCP lo prueba, lee los errores de cada perfil y los corrige. O escríbelo tú. Después, Veilus Flow lo ejecuta en tantos perfiles como elijas.",
                 "badge": "Veilus Flow · Pro"
             },
             {
@@ -147,12 +147,12 @@
                 "desc": "Instálalo en macOS o Windows. Cada perfil nuevo recibe su propia huella; añade un proxy si tienes uno."
             },
             {
-                "title": "Crea el flujo una vez",
-                "desc": "Arrastra pasos al lienzo, escribe un script o parte de una plantilla: iniciar sesión, publicar, revisar pedidos."
+                "title": "Escribe el script una vez",
+                "desc": "Dile a tu asistente de IA qué automatizar: iniciar sesión, publicar, revisar pedidos. Por MCP escribe el script, lo prueba, lee los errores y los corrige. O escríbelo tú."
             },
             {
                 "title": "Ejecútala en todos los perfiles",
-                "desc": "Elige los perfiles y lanza el script por lotes, o prográmalo."
+                "desc": "Aprueba el script en Veilus Flow, elige los perfiles y lánzalo por lotes, o prográmalo."
             }
         ]
     },
@@ -177,7 +177,7 @@
                 "id": "automation",
                 "feature": "Automatización integrada",
                 "values": [
-                    "Sí: arrastrar y soltar o script, lotes, programación"
+                    "Sí: scripts de tu IA por MCP o tuyos, lotes, programación"
                 ]
             },
             {
@@ -296,11 +296,11 @@
             },
             {
                 "q": "¿Cómo funciona Veilus Flow?",
-                "a": "Crea el flujo en el lienzo de arrastrar y soltar o escríbelo como script en el editor integrado, o parte de una plantilla. Después ejecútalo en tantos perfiles como quieras o prográmalo. Veilus Flow está incluido en Pro."
+                "a": "Conecta un asistente de IA compatible con MCP, como Claude Code o Cursor, y dale una tarea. Escribe un script de Playwright, lo ejecuta en algunos perfiles, lee los errores de cada perfil y los corrige. También puedes escribir el script tú y añadirlo por la API REST local. Los scripts añadidos por MCP o REST se ejecutan en 3 perfiles como máximo por ejecución hasta que los apruebes en Veilus Flow; después, lánzalos por lotes o prográmalos. Veilus Flow está incluido en Pro."
             },
             {
                 "q": "¿En qué se diferencia Veilus de otros navegadores antidetección?",
-                "a": "La automatización viene integrada: creas un flujo una vez —arrastrando bloques o con un script— y lo ejecutas en tus perfiles, con programación, ejecución por lotes y API/MCP local en la misma app. Además, puedes pagar una sola vez por una licencia de por vida en lugar de una suscripción."
+                "a": "La automatización viene integrada: tu asistente de IA escribe y corrige scripts por MCP, o los escribes tú, y Veilus los ejecuta en tus perfiles, con programación, ejecución por lotes y API REST local en la misma app. Además, puedes pagar una sola vez por una licencia de por vida en lugar de una suscripción."
             },
             {
                 "q": "¿Puedo pedir un reembolso?",
@@ -311,7 +311,7 @@
     "finalCta": {
         "title": "Prueba todas las funciones Pro",
         "titleHighlight": "gratis durante 7 días",
-        "desc": "Descarga Veilus, solicita la prueba en la app y crea tu primer flujo.\nSi no te convence, te quedas con 5 perfiles gratis.",
+        "desc": "Descarga Veilus, solicita la prueba en la app y deja que tu asistente de IA escriba tu primer script.\nSi no te convence, te quedas con 5 perfiles gratis.",
         "cta": "Descarga y prueba Pro gratis 7 días",
         "badges": [
             "Sin tarjeta",
