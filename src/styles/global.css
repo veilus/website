@@ -67,7 +67,7 @@
   --transition-slow: 400ms ease;
 
   --max-width: 1240px;
-  --nav-height: 72px;
+  --nav-height: 0px;
 }
 
 /* ---------- Reset ---------- */

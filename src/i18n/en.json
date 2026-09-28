@@ -4,11 +4,17 @@
         "description": "Run many accounts on one computer, each with its own fingerprint and proxy. Have your AI assistant write the script over MCP, or write it yourself, then run it on every profile. Free for 5 profiles."
     },
     "nav": {
+        "antiDetect": "Anti-detect",
+        "profile": "Profile",
+        "mcp": "MCP",
+        "backup": "Backup",
         "features": "Features",
-        "compare": "Compare",
         "pricing": "Pricing",
         "faq": "FAQ",
-        "download": "Download free"
+        "download": "Download free",
+        "sheet": "DRAWING 02",
+        "menu": "Open menu",
+        "language": "Language"
     },
     "hero": {
         "badge": "Anti-detect browser for multi-account work",
@@ -320,7 +326,7 @@
         ]
     },
     "footer": {
-        "tagline": "Invisible by design.",
+        "tagline": "The anti-detect browser your AI assistant drives.",
         "product": "Product",
         "productLinks": [
             "Features",
@@ -344,7 +350,7 @@
             "Refund",
             "Cookies"
         ],
-        "copyright": "© 2026 Veilus. Invisible by design."
+        "copyright": "© 2026 Veilus."
     },
     "download": {
         "title": "Download",

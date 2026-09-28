@@ -1,74 +1,101 @@
 ---
+/**
+ * Chân trang dùng chung mọi trang: cột liên kết và "ô tên bản vẽ" (spec trang chủ §3) chứa liên kết
+ * pháp lý, số bản vẽ, bản quyền.
+ */
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
-interface Props { lang?: Lang; }
+
+interface Props {
+  lang?: Lang;
+}
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
+const f = i.footer;
+const home = getLocalizedPath('/', lang);
 
-const legalLinks = [
-  { name: i.footer.legal[0], href: getLocalizedPath('/terms', lang) },
-  { name: i.footer.legal[1], href: getLocalizedPath('/privacy', lang) },
-  { name: i.footer.legal[2] || 'Refund', href: getLocalizedPath('/refund', lang) },
-  { name: i.footer.legal[3] || 'Cookies', href: getLocalizedPath('/cookies', lang) },
+const COLUMNS = [
+  {
+    title: f.product,
+    links: [
+      [f.productLinks[0], `${home}#features`],
+      [f.productLinks[1], `${home}#pricing`],
+      [i.nav.download, getLocalizedPath('/download', lang)],
+    ],
+  },
+  {
+    title: f.resources,
+    links: [
+      [f.resourceLinks[0], 'https://docs.veilus.io'],
+      [f.resourceLinks[1], 'https://blog.veilus.io'],
+      [f.resourceLinks[2], 'https://docs.veilus.io'],
+    ],
+  },
+  {
+    title: f.community,
+    links: [
+      ['Telegram', 'https://t.me/veilusbrowser'],
+      ['Twitter/X', 'https://x.com/veilusbrowser'],
+      ['GitHub', 'https://github.com/veilus'],
+    ],
+  },
 ];
+const LEGAL = [
+  [f.legal[0], getLocalizedPath('/terms', lang)],
+  [f.legal[1], getLocalizedPath('/privacy', lang)],
+  [f.legal[2], getLocalizedPath('/refund', lang)],
+  [f.legal[3], getLocalizedPath('/cookies', lang)],
+];
+const external = (href: string) =>
+  href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 ---
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href={getLocalizedPath('/', lang)} class="footer-logo">
-          <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="footer-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00D4FF" /><stop offset="100%" style="stop-color:#6366F1" /></linearGradient></defs><path d="M16 2L4 28h5.5L16 14l6.5 14H28L16 2z" fill="url(#footer-logo-grad)" /></svg>
-          <span>Veilus</span>
-        </a>
-        <p class="footer-tagline">{i.footer.tagline}</p>
-      </div>
-      <div class="footer-col">
-        <h4>{i.footer.product}</h4>
-        <ul>
-          <li><a href={getLocalizedPath('/', lang) + '#features'}>{i.footer.productLinks[0]}</a></li>
-          <li><a href={getLocalizedPath('/', lang) + '#pricing'}>{i.footer.productLinks[1]}</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>{i.footer.resources}</h4>
-        <ul>
-          <li><a href="https://docs.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[0]}</a></li>
-          <li><a href="https://blog.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[1]}</a></li>
-          <li><a href="https://docs.veilus.io" target="_blank" rel="noopener noreferrer">{i.footer.resourceLinks[2]}</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>{i.footer.community}</h4>
-        <ul>
-          <li><a href="https://t.me/veilusbrowser" target="_blank" rel="noopener noreferrer">Telegram</a></li>
-          <li><a href="https://x.com/veilusbrowser" target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
-          <li><a href="https://github.com/veilus" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        </ul>
-      </div>
+
+<footer class="k-wrap">
+  <div class="k-fgrid">
+    <div class="k-fbrand">
+      <a class="k-mark" href={home}>VEILUS</a>
+      <p>{f.tagline}</p>
     </div>
-    <div class="footer-bottom">
-      <p>{i.footer.copyright}</p>
-      <div class="footer-legal">{legalLinks.map((link) => <a href={link.href}>{link.name}</a>)}</div>
-    </div>
+    {COLUMNS.map((col) => (
+      <div class="k-fcol">
+        <p class="k-ftitle">{col.title}</p>
+        <ul>
+          {col.links.map(([name, href]) => (
+            <li><a href={href} {...external(href)}>{name}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="k-foot">
+    <div class="k-legal">{LEGAL.map(([name, href]) => <a href={href}>{name}</a>)}</div>
+    <div>{i.nav.sheet}</div>
+    <div>{f.copyright}</div>
   </div>
 </footer>
+
 <style>
-  .footer { background: var(--bg-surface); border-top: 1px solid var(--color-border); padding: var(--space-3xl) 0 var(--space-xl); }
-  .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: var(--space-2xl); }
-  .footer-brand { display: flex; flex-direction: column; gap: var(--space-sm); }
-  .footer-logo { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-text); font-size: 1.25rem; font-weight: 700; }
-  .footer-logo:hover { color: var(--color-text); }
-  .footer-logo .logo-icon { width: 24px; height: 24px; }
-  .footer-tagline { font-size: 0.875rem; color: var(--color-text-muted); }
-  .footer-col h4 { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: var(--space-md); }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); }
-  .footer-col a { color: var(--color-text-secondary); font-size: 0.9375rem; transition: color var(--transition-fast); }
-  .footer-col a:hover { color: var(--color-text); }
-  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: var(--space-xl); margin-top: var(--space-2xl); border-top: 1px solid var(--color-border); }
-  .footer-bottom p { font-size: 0.8125rem; color: var(--color-text-muted); }
-  .footer-legal { display: flex; gap: var(--space-lg); }
-  .footer-legal a { font-size: 0.8125rem; color: var(--color-text-muted); }
-  .footer-legal a:hover { color: var(--color-text-secondary); }
-  @media (max-width: 1024px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } .footer-brand { grid-column: 1 / -1; } }
-  @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-bottom { flex-direction: column; gap: var(--space-md); text-align: center; } }
+  .k-fgrid { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 32px; padding: 32px 0; border-top: 1.5px solid var(--ink); }
+  .k-fbrand p { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .k-ftitle { margin-bottom: 12px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .k-fcol ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .k-fcol a { font-size: 14.5px; color: var(--ink); }
+  .k-fcol a:hover { color: var(--acc); }
+  .k-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; margin-bottom: 40px; border: 1.5px solid var(--ink); background: var(--paper); font-family: var(--font-mono); font-size: 11.5px; }
+  .k-foot > div { padding: 12px 16px; border-left: 1px solid var(--rule); }
+  .k-foot > div:first-child { border-left: 0; }
+  .k-legal { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .k-legal a { color: var(--ink); }
+
+  @media (max-width: 1080px) {
+    .k-fgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .k-fbrand { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 640px) {
+    .k-fgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .k-foot { grid-template-columns: 1fr; }
+    .k-foot > div { border-left: 0; border-top: 1px solid var(--rule); }
+    .k-foot > div:first-child { border-top: 0; }
+  }
 </style>

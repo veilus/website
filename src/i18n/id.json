@@ -4,11 +4,17 @@
         "description": "Jalankan banyak akun di satu komputer, masing-masing dengan sidik jari dan proxy sendiri. Minta asisten AI Anda menulis skrip lewat MCP, atau tulis sendiri, lalu jalankan di semua profil. 5 profil gratis."
     },
     "nav": {
+        "antiDetect": "Anti-detect",
+        "profile": "Profil",
+        "mcp": "MCP",
+        "backup": "Cadangan",
         "features": "Fitur",
-        "compare": "Bandingkan",
         "pricing": "Harga",
         "faq": "FAQ",
-        "download": "Unduh gratis"
+        "download": "Unduh gratis",
+        "sheet": "GAMBAR 02",
+        "menu": "Buka menu",
+        "language": "Bahasa"
     },
     "hero": {
         "badge": "Browser anti-deteksi untuk kerja multi-akun",
@@ -320,7 +326,7 @@
         ]
     },
     "footer": {
-        "tagline": "Tak terlihat secara desain.",
+        "tagline": "Browser anti-deteksi yang dikendalikan asisten AI Anda.",
         "product": "Produk",
         "productLinks": [
             "Fitur",
@@ -344,7 +350,7 @@
             "Pengembalian",
             "Cookie"
         ],
-        "copyright": "© 2026 Veilus. Tak terlihat secara desain."
+        "copyright": "© 2026 Veilus."
     },
     "download": {
         "title": "Unduh",

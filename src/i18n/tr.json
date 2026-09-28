@@ -4,11 +4,17 @@
         "description": "Tek bilgisayarda çok sayıda hesap yönetin; her hesabın kendi parmak izi ve proxy'si olsun. Betiği yapay zekâ asistanınıza MCP üzerinden yazdırın ya da kendiniz yazın, sonra tüm profillerde çalıştırın. 5 profil ücretsiz."
     },
     "nav": {
+        "antiDetect": "Anti-detect",
+        "profile": "Profil",
+        "mcp": "MCP",
+        "backup": "Yedekleme",
         "features": "Özellikler",
-        "compare": "Karşılaştır",
         "pricing": "Fiyatlar",
         "faq": "SSS",
-        "download": "Ücretsiz indir"
+        "download": "Ücretsiz indir",
+        "sheet": "ÇİZİM 02",
+        "menu": "Menüyü aç",
+        "language": "Dil"
     },
     "hero": {
         "badge": "Çoklu hesap işleri için anti-tespit tarayıcı",
@@ -320,7 +326,7 @@
         ]
     },
     "footer": {
-        "tagline": "Tasarımla görünmez.",
+        "tagline": "Yapay zekâ asistanınızın yönettiği anti-tespit tarayıcı.",
         "product": "Ürün",
         "productLinks": [
             "Özellikler",
@@ -344,7 +350,7 @@
             "İade",
             "Çerezler"
         ],
-        "copyright": "© 2026 Veilus. Tasarımla görünmez."
+        "copyright": "© 2026 Veilus."
     },
     "download": {
         "title": "İndir",

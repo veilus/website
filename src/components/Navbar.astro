@@ -1,340 +1,137 @@
 ---
-import type { Lang } from "../i18n/utils";
-import {
-  t,
-  languages,
-  supportedLangs,
-  defaultLang,
-  getLocalizedPath,
-} from "../i18n/utils";
+/**
+ * Thanh điều hướng dùng chung mọi trang (spec trang chủ §2): mark "VEILUS / BẢN VẼ 02", liên kết tới
+ * các phần của trang chủ, chọn ngôn ngữ, nút tải về. Dưới 1180px liên kết gập vào nút menu.
+ */
+import type { Lang } from '../i18n/utils';
+import { t, languages, supportedLangs, defaultLang, getLocalizedPath } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
 }
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
+const home = getLocalizedPath('/', lang);
 
-// Extract base path (without language prefix) for language switcher
+// Đường dẫn bỏ tiền tố ngôn ngữ (vd /vi/cookies → /cookies), để đổi ngôn ngữ mà vẫn ở trang đang xem
 const pathname = Astro.url.pathname;
 let basePath = pathname;
-// Strip lang prefix if present (e.g., /vi/cookies → /cookies)
 for (const l of supportedLangs) {
   if (l !== defaultLang && pathname.startsWith(`/${l}/`)) {
     basePath = pathname.slice(l.length + 1);
     break;
   } else if (l !== defaultLang && pathname === `/${l}`) {
-    basePath = "/";
+    basePath = '/';
     break;
   }
 }
-// Remove trailing slash for consistency (but keep root /)
-if (basePath !== "/" && basePath.endsWith("/")) {
-  basePath = basePath.slice(0, -1);
-}
+if (basePath !== '/' && basePath.endsWith('/')) basePath = basePath.slice(0, -1);
+
+// Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này
+const LINKS = [
+  ['anti-detect', i.nav.antiDetect],
+  ['profile', i.nav.profile],
+  ['mcp', i.nav.mcp],
+  ['backup', i.nav.backup],
+  ['features', i.nav.features],
+  ['pricing', i.nav.pricing],
+  ['faq', i.nav.faq],
+];
 ---
 
-<nav class="navbar" id="navbar">
-  <div class="nav-inner container">
-    <a
-      href={getLocalizedPath("/", lang)}
-      class="nav-logo"
-      aria-label="Veilus Home"
-    >
-      <svg
-        class="logo-icon"
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs
-          ><linearGradient
-            id="logo-gradient"
-            x1="0%"
-            y1="0%"
-            x2="100%"
-            y2="100%"
-            ><stop offset="0%" style="stop-color:#00D4FF"></stop><stop
-              offset="100%"
-              style="stop-color:#6366F1"></stop>
-          </linearGradient>
-        </defs>
-        <path
-          d="M16 2L4 28h5.5L16 14l6.5 14H28L16 2z"
-          fill="url(#logo-gradient)"></path>
-      </svg>
-      <span class="logo-text">Veilus</span>
-    </a>
-
-    <div class="nav-links" id="nav-links">
-      <a href="#features">{i.nav.features}</a>
-      <a href="#comparison">{i.nav.compare}</a>
-      <a href="#pricing">{i.nav.pricing}</a>
-      <a href="#faq">{i.nav.faq}</a>
-      <a href="https://blog.veilus.io">Blog</a>
+<header class="k-wrap">
+  <nav class="k-nav" aria-label="Veilus">
+    <a class="k-mark" href={home}>VEILUS <span>/ {i.nav.sheet}</span></a>
+    <div class="k-links" id="k-links">
+      {LINKS.map(([id, label]) => <a href={`${home}#${id}`}>{label}</a>)}
     </div>
-
-    <div class="nav-actions">
-      <!-- Language Switcher -->
-      <div class="lang-switcher" id="lang-switcher">
-        <button class="lang-btn" id="lang-btn" aria-label="Language">
-          <span class="lang-flag">{languages[lang].flag}</span>
-          <svg
-            class="lang-chevron"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+    <div class="k-act">
+      <div class="k-lang">
+        <button
+          class="k-lang-btn"
+          id="k-lang-btn"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="k-lang-menu"
+          aria-label={i.nav.language}
+        >
+          <span class="ms" aria-hidden="true">language</span>{lang.toUpperCase()}<span class="ms" aria-hidden="true">expand_more</span>
         </button>
-        <div class="lang-dropdown" id="lang-dropdown">
-          {
-            supportedLangs.map((l) => (
-              <a
-                href={getLocalizedPath(basePath, l)}
-                class={`lang-option ${l === lang ? "active" : ""}`}
-              >
-                <span class="lang-option-flag">{languages[l].flag}</span>
-                <span>{languages[l].label}</span>
-              </a>
-            ))
-          }
+        <div class="k-lang-menu" id="k-lang-menu">
+          {supportedLangs.map((l) => (
+            <a href={getLocalizedPath(basePath, l)} lang={l} hreflang={l} aria-current={l === lang ? 'true' : undefined}>
+              {languages[l].label}
+            </a>
+          ))}
         </div>
       </div>
-
-      <a href="/download" class="btn btn-primary nav-cta">
-        <svg
-          class="icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline
-            points="7 10 12 15 17 10"></polyline><line
-            x1="12"
-            y1="15"
-            x2="12"
-            y2="3"></line>
-        </svg>
-        {i.nav.download}
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-        <svg
-          class="icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          ><line x1="3" y1="6" x2="21" y2="6"></line><line
-            x1="3"
-            y1="12"
-            x2="21"
-            y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+      <a class="k-btn k-btn-sm" href={getLocalizedPath('/download', lang)} data-cta="navbar_download">{i.nav.download}</a>
+      <button class="k-menu-btn" id="k-menu-btn" type="button" aria-controls="k-links" aria-expanded="false" aria-label={i.nav.menu}>
+        <span class="ms" aria-hidden="true">menu</span>
       </button>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <script>
-  const toggle = document.getElementById("nav-toggle");
-  const links = document.getElementById("nav-links");
-  const navbar = document.getElementById("navbar");
-  const langBtn = document.getElementById("lang-btn");
-  const langDropdown = document.getElementById("lang-dropdown");
+  const langBtn = document.getElementById('k-lang-btn');
+  const langMenu = document.getElementById('k-lang-menu');
+  const menuBtn = document.getElementById('k-menu-btn');
+  const links = document.getElementById('k-links');
 
-  toggle?.addEventListener("click", () => links?.classList.toggle("open"));
-  links
-    ?.querySelectorAll("a")
-    .forEach((link) =>
-      link.addEventListener("click", () => links?.classList.remove("open"))
-    );
+  const setLang = (open: boolean) => {
+    langMenu?.classList.toggle('open', open);
+    langBtn?.setAttribute('aria-expanded', String(open));
+  };
+  const setMenu = (open: boolean) => {
+    links?.classList.toggle('open', open);
+    menuBtn?.setAttribute('aria-expanded', String(open));
+  };
 
-  // Language dropdown
-  langBtn?.addEventListener("click", (e) => {
+  langBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    langDropdown?.classList.toggle("open");
+    setLang(!langMenu?.classList.contains('open'));
   });
-  document.addEventListener("click", () =>
-    langDropdown?.classList.remove("open")
-  );
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      navbar?.classList.toggle("scrolled", window.scrollY > 50);
-    },
-    { passive: true }
-  );
+  document.addEventListener('click', () => setLang(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      setLang(false);
+      setMenu(false);
+    }
+  });
+  menuBtn?.addEventListener('click', () => setMenu(!links?.classList.contains('open')));
+  links?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 </script>
 
 <style>
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 0 var(--space-lg);
-    transition: all var(--transition-normal);
-    background: transparent;
-  }
-  .navbar.scrolled {
-    background: rgba(11, 15, 26, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--color-border);
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: var(--nav-height);
-  }
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    color: var(--color-text);
-  }
-  .nav-logo:hover {
-    color: var(--color-text);
-  }
-  .logo-icon {
-    width: 28px;
-    height: 28px;
-  }
-  .logo-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
-  }
-  .nav-links a {
-    color: var(--color-text-secondary);
-    font-size: 0.9375rem;
-    font-weight: 500;
-    transition: color var(--transition-fast);
-  }
-  .nav-links a:hover {
-    color: var(--color-text);
-  }
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-  }
-  .nav-cta {
-    padding: 10px 20px;
-    font-size: 0.875rem;
-  }
-  .nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--color-text);
-    cursor: pointer;
-    padding: var(--space-xs);
+  .k-nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1.5px solid var(--ink); }
+  .k-links { display: flex; gap: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .k-links a { color: var(--ink); white-space: nowrap; }
+  .k-links a:hover { color: var(--acc); }
+  .k-act { display: flex; align-items: center; gap: 12px; }
+  .k-lang { position: relative; }
+  .k-lang-btn { display: inline-flex; align-items: center; gap: 4px; padding: 7px 8px; background: transparent; border: 1.5px solid var(--ink); color: var(--ink); font: 600 12px/1 var(--font-mono); letter-spacing: 0.06em; cursor: pointer; }
+  .k-lang-btn .ms { font-size: 17px; }
+  .k-lang-menu { display: none; position: absolute; right: 0; top: calc(100% + 6px); min-width: 170px; background: var(--paper); border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--grid2); z-index: 20; }
+  .k-lang-menu.open { display: block; }
+  .k-lang-menu a { display: block; padding: 9px 14px; font-size: 14px; color: var(--ink); }
+  .k-lang-menu a + a { border-top: 1px solid var(--rule); }
+  .k-lang-menu a:hover,
+  .k-lang-menu a[aria-current='true'] { background: var(--ink); color: var(--paper); }
+  .k-menu-btn { display: none; padding: 5px; background: transparent; border: 1.5px solid var(--ink); color: var(--ink); cursor: pointer; }
+
+  @media (max-width: 1180px) {
+    .k-menu-btn { display: inline-flex; }
+    .k-links { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--paper); border: 1.5px solid var(--ink); border-top: 0; z-index: 20; }
+    .k-links.open { display: flex; }
+    .k-links a { padding: 14px 16px; }
+    .k-links a + a { border-top: 1px solid var(--rule); }
   }
 
-  /* Language Switcher */
-  .lang-switcher {
-    position: relative;
-  }
-  .lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background: none;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    padding: 6px 10px;
-    cursor: pointer;
-    color: var(--color-text);
-    font-size: 0.875rem;
-    transition: border-color var(--transition-fast);
-  }
-  .lang-btn:hover {
-    border-color: var(--color-border-light);
-  }
-  .lang-flag {
-    font-size: 1.1rem;
-  }
-  .lang-chevron {
-    width: 14px;
-    height: 14px;
-    color: var(--color-text-muted);
-    transition: transform var(--transition-fast);
-  }
-  .lang-dropdown {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background: var(--bg-elevated);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 4px;
-    min-width: 160px;
-    box-shadow: var(--shadow-lg);
-    z-index: 200;
-  }
-  .lang-dropdown.open {
-    display: flex;
-    flex-direction: column;
-  }
-  .lang-option {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: 8px 12px;
-    border-radius: var(--radius-sm);
-    color: var(--color-text-secondary);
-    font-size: 0.875rem;
-    transition: all var(--transition-fast);
-  }
-  .lang-option:hover {
-    background: rgba(0, 212, 255, 0.05);
-    color: var(--color-text);
-  }
-  .lang-option.active {
-    color: var(--color-cyan);
-    background: rgba(0, 212, 255, 0.08);
-  }
-  .lang-option-flag {
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: var(--nav-height);
-      left: 0;
-      right: 0;
-      background: rgba(11, 15, 26, 0.95);
-      backdrop-filter: blur(20px);
-      flex-direction: column;
-      padding: var(--space-lg);
-      gap: var(--space-lg);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .nav-links.open {
-      display: flex;
-    }
-    .nav-toggle {
-      display: block;
-    }
-    .nav-cta {
-      display: none;
-    }
+  @media (max-width: 640px) {
+    .k-nav { gap: 12px; }
+    .k-mark span { display: none; }
+    .k-act { gap: 8px; }
   }
 </style>

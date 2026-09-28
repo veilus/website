@@ -4,11 +4,17 @@
         "description": "Gestiona muchas cuentas en un solo ordenador, cada una con su huella y su proxy. Pide a tu asistente de IA que escriba el script por MCP, o escríbelo tú, y ejecútalo en todos los perfiles. 5 perfiles gratis."
     },
     "nav": {
+        "antiDetect": "Anti-detect",
+        "profile": "Perfil",
+        "mcp": "MCP",
+        "backup": "Respaldo",
         "features": "Funciones",
-        "compare": "Comparar",
         "pricing": "Precios",
         "faq": "FAQ",
-        "download": "Descargar gratis"
+        "download": "Descargar gratis",
+        "sheet": "PLANO 02",
+        "menu": "Abrir menú",
+        "language": "Idioma"
     },
     "hero": {
         "badge": "Navegador antidetección para trabajar con muchas cuentas",
@@ -320,7 +326,7 @@
         ]
     },
     "footer": {
-        "tagline": "Invisible por diseño.",
+        "tagline": "El navegador antidetección que controla tu asistente de IA.",
         "product": "Producto",
         "productLinks": [
             "Funciones",
@@ -344,7 +350,7 @@
             "Reembolso",
             "Cookies"
         ],
-        "copyright": "© 2026 Veilus. Invisible por diseño."
+        "copyright": "© 2026 Veilus."
     },
     "download": {
         "title": "Descargar",

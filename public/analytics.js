@@ -30,28 +30,16 @@
   });
 
   // ── CTA Button Clicks ────────────────────────────────────────────
-  var ctaSelectors = [
-    { selector: '.hero .btn-primary', label: 'hero_cta' },
-    { selector: '.nav-cta', label: 'navbar_download' },
-    { selector: '.final-cta .btn-primary', label: 'final_cta' },
-    { selector: '.plan-cta', label: 'pricing_cta' },
-  ];
-
-  ctaSelectors.forEach(function (item) {
-    document.querySelectorAll(item.selector).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var planName = '';
-        var planCard = this.closest('.plan-card');
-        if (planCard) {
-          var nameEl = planCard.querySelector('.plan-name');
-          planName = nameEl ? nameEl.textContent.trim() : '';
-        }
-        gtag('event', 'cta_click', {
-          event_category: 'engagement',
-          event_label: item.label,
-          cta_location: item.label,
-          plan_name: planName || undefined,
-        });
+  // Mỗi nút cần đếm gắn data-cta="<nhãn>" (hero_cta, navbar_download, final_cta, pricing_cta);
+  // nút trong bảng giá gắn thêm data-plan="<tên gói>". Không dựa vào tên lớp CSS.
+  document.querySelectorAll('[data-cta]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var label = this.getAttribute('data-cta');
+      gtag('event', 'cta_click', {
+        event_category: 'engagement',
+        event_label: label,
+        cta_location: label,
+        plan_name: this.getAttribute('data-plan') || undefined,
       });
     });
   });

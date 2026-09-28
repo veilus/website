@@ -4,11 +4,17 @@
         "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Nhờ trợ lý AI viết script qua MCP — hoặc tự viết — rồi chạy trên mọi profile. Miễn phí 5 profile."
     },
     "nav": {
+        "antiDetect": "Anti-detect",
+        "profile": "Một hồ sơ",
+        "mcp": "MCP",
+        "backup": "Sao lưu",
         "features": "Tính năng",
-        "compare": "So sánh",
         "pricing": "Giá",
         "faq": "FAQ",
-        "download": "Tải miễn phí"
+        "download": "Tải miễn phí",
+        "sheet": "BẢN VẼ 02",
+        "menu": "Mở menu",
+        "language": "Ngôn ngữ"
     },
     "hero": {
         "badge": "Trình duyệt anti-detect cho người chạy nhiều tài khoản",
@@ -320,7 +326,7 @@
         ]
     },
     "footer": {
-        "tagline": "Vô hình theo thiết kế.",
+        "tagline": "Trình duyệt anti-detect điều khiển bằng AI.",
         "product": "Sản phẩm",
         "productLinks": [
             "Tính năng",
@@ -344,7 +350,7 @@
             "Hoàn tiền",
             "Cookie"
         ],
-        "copyright": "© 2026 Veilus. Vô hình theo thiết kế."
+        "copyright": "© 2026 Veilus."
     },
     "download": {
         "title": "Tải",
