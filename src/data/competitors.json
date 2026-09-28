@@ -99,12 +99,14 @@
                 },
                 "lifetime": {
                     "key": "lifetimeFrom",
+                    "paramsByLang": { "vi": { "params": { "price": "3.000.000đ" }, "url": "https://gpmloginapp.com/vi", "quote": "SOLO 3.000.000đ / một lần 1 Thiết Bị" } },
                     "params": { "price": "$125" },
                     "url": "https://gpmloginapp.com/en",
                     "quote": "One-time payment. Lifetime license. No subscription, no hidden fees. SOLO $125 / one-time"
                 },
                 "price": {
                     "key": "oneTimeDevice",
+                    "paramsByLang": { "vi": { "params": { "price": "3.000.000đ" }, "url": "https://gpmloginapp.com/vi", "quote": "SOLO 3.000.000đ / một lần 1 Thiết Bị" } },
                     "params": { "price": "$125", "n": 1 },
                     "url": "https://gpmloginapp.com/en",
                     "quote": "SOLO $125 / one-time 1 Device … Unlimited profiles (trang /vi: 3.000.000đ / một lần)"

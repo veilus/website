@@ -14,9 +14,11 @@ const i = t(lang);
 const cur = currencyForLang(lang);
 const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
 const fillPrices = (v: string) => v.replace('{monthly}', price(SKUS.monthly)).replace('{lifetime}', price(SKUS.solo));
-type Cell = { key: keyof typeof i.comparison.cells; params: Record<string, string | number> } | null;
+type Params = Record<string, string | number>;
+// paramsByLang: hãng niêm yết giá riêng cho một ngôn ngữ (GPM Login: /vi ghi VNĐ) — kèm url + trích riêng trong competitors.json.
+type Cell = { key: keyof typeof i.comparison.cells; params: Params; paramsByLang?: Record<string, { params: Params }> } | null;
 const cellText = (c: Cell) =>
-  c && Object.entries(c.params).reduce((txt, [k, v]) => txt.replace(`{${k}}`, () => String(v)), i.comparison.cells[c.key]);
+  c && Object.entries({ ...c.params, ...c.paramsByLang?.[lang]?.params }).reduce((txt, [k, v]) => txt.replace(`{${k}}`, () => String(v)), i.comparison.cells[c.key]);
 const checked = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(competitors.checked));
 ---
 <section class="section comparison" id="comparison" data-animate>
