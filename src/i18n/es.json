@@ -16,35 +16,6 @@
         "menu": "Abrir menú",
         "language": "Idioma"
     },
-    "hero": {
-        "badge": "Navegador antidetección para trabajar con muchas cuentas",
-        "title": "Cientos de cuentas en un solo ordenador,",
-        "titleHighlight": "cada una con su propia identidad.",
-        "subtitle": "Pide a tu asistente de IA que escriba y pruebe scripts por MCP —o escríbelos tú— y ejecútalos en todos tus perfiles. Cada perfil tiene su propia huella y su propio proxy, así tus cuentas no quedan vinculadas.",
-        "cta": "Descarga y prueba Pro gratis 7 días",
-        "micro": "Después sigues con 5 perfiles gratis, sin tarjeta.",
-        "platforms": "macOS · Windows"
-    },
-    "proof": {
-        "items": [
-            {
-                "value": "Probado con creepjs e iphey",
-                "sub": "pruebas de huella digital"
-            },
-            {
-                "value": "Motor Chromium propio",
-                "sub": "compilado y parcheado por Veilus"
-            },
-            {
-                "value": "Tus datos, en tu equipo",
-                "sub": "perfiles guardados en local"
-            },
-            {
-                "value": "macOS · Windows",
-                "sub": "app de escritorio"
-            }
-        ]
-    },
     "pain": {
         "badge": "El problema",
         "title": "Llevar muchas cuentas a mano",
@@ -430,6 +401,36 @@
             "unavailable": "Este método de pago aún no está disponible.",
             "generic": "Algo salió mal. Inténtalo de nuevo.",
             "network": "Error de red. Revisa tu conexión e inténtalo de nuevo."
+        }
+    },
+    "home": {
+        "cta": "Descarga y prueba Pro gratis 7 días",
+        "fig1": {
+            "figNo": "Figura 1",
+            "fig": "navegador anti-detect controlado por IA",
+            "title": "Escribe una frase. Obtén un pipeline que se ejecuta cada mañana.",
+            "intro": "Cada perfil es un navegador con su propia identidad. Tu asistente de IA los controla a todos por MCP.",
+            "micro": "5 perfiles gratis para siempre · macOS · Windows",
+            "you": {
+                "tag": "A · PERSONA",
+                "name": "Tú",
+                "sub": "escribe una frase"
+            },
+            "prompt": "prompt",
+            "agent": {
+                "tag": "B · AGENT",
+                "name": "Asistente de IA"
+            },
+            "veilus": {
+                "tag": "C · EN TU EQUIPO",
+                "sub": "perfiles · proxies · programaciones"
+            },
+            "dim": "10 navegadores · 10 huellas · 10 proxies · zona horaria coincide con el proxy",
+            "notes": [
+                "La IA escribe un script, lo prueba en 3 perfiles y corrige sus propios errores.",
+                "Lo apruebas una vez en Veilus Flow.",
+                "Una programación a las 08:00 ejecuta los 10 navegadores."
+            ]
         }
     }
 }

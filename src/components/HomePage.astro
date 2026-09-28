@@ -1,0 +1,36 @@
+---
+/**
+ * Trang chủ, dùng chung cho / (en) và /[lang]/. Thứ tự các phần theo spec trang chủ §4.
+ */
+import type { Lang } from '../i18n/utils';
+import Navbar from './Navbar.astro';
+import Fig1Hero from './Fig1Hero.astro';
+import Pain from './Pain.astro';
+import Audience from './Audience.astro';
+import Features from './Features.astro';
+import HowItWorks from './HowItWorks.astro';
+import Comparison from './Comparison.astro';
+import Pricing from './Pricing.astro';
+import FAQ from './FAQ.astro';
+import FinalCTA from './FinalCTA.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<Navbar lang={lang} />
+<main>
+  <Fig1Hero lang={lang} />
+  <Pain lang={lang} />
+  <Audience lang={lang} />
+  <Features lang={lang} />
+  <HowItWorks lang={lang} />
+  <Comparison lang={lang} />
+  <Pricing lang={lang} />
+  <FAQ lang={lang} />
+  <FinalCTA lang={lang} />
+</main>
+<Footer lang={lang} />

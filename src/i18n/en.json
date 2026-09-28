@@ -16,35 +16,6 @@
         "menu": "Open menu",
         "language": "Language"
     },
-    "hero": {
-        "badge": "Anti-detect browser for multi-account work",
-        "title": "Run hundreds of accounts on one computer —",
-        "titleHighlight": "each with its own identity.",
-        "subtitle": "Have your AI assistant write and test scripts over MCP — or write them yourself — then run them on every profile. Each profile has its own fingerprint and proxy, so your accounts stay separate.",
-        "cta": "Download & try Pro free for 7 days",
-        "micro": "Then keep using 5 profiles free — no card needed.",
-        "platforms": "macOS · Windows"
-    },
-    "proof": {
-        "items": [
-            {
-                "value": "Tested with creepjs & iphey",
-                "sub": "fingerprint checks"
-            },
-            {
-                "value": "In-house Chromium engine",
-                "sub": "built and patched by Veilus"
-            },
-            {
-                "value": "Data stays on your machine",
-                "sub": "profiles are stored locally"
-            },
-            {
-                "value": "macOS · Windows",
-                "sub": "desktop app"
-            }
-        ]
-    },
     "pain": {
         "badge": "The problem",
         "title": "Running many accounts by hand",
@@ -430,6 +401,36 @@
             "unavailable": "This payment method is not available yet.",
             "generic": "Something went wrong. Please try again.",
             "network": "Network error. Check your connection and try again."
+        }
+    },
+    "home": {
+        "cta": "Download & try Pro free for 7 days",
+        "fig1": {
+            "figNo": "Figure 1",
+            "fig": "an anti-detect browser, driven by AI",
+            "title": "Write one sentence. Get a pipeline that runs every morning.",
+            "intro": "Each profile is a browser with its own identity. Your AI assistant drives them all over MCP.",
+            "micro": "5 free profiles forever · macOS · Windows",
+            "you": {
+                "tag": "A · YOU",
+                "name": "You",
+                "sub": "write one sentence"
+            },
+            "prompt": "prompt",
+            "agent": {
+                "tag": "B · AGENT",
+                "name": "AI assistant"
+            },
+            "veilus": {
+                "tag": "C · ON YOUR MACHINE",
+                "sub": "profiles · proxies · schedules"
+            },
+            "dim": "10 browsers · 10 fingerprints · 10 proxies · timezone matches the proxy",
+            "notes": [
+                "The AI writes a script, test-runs it on 3 profiles, fixes its own errors.",
+                "You approve it once in Veilus Flow.",
+                "An 08:00 schedule runs all 10 browsers."
+            ]
         }
     }
 }

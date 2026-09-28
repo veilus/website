@@ -1,0 +1,134 @@
+---
+/**
+ * Hình 1 — hero (spec trang chủ §4 dòng 1): Bạn → Trợ lý AI =MCP⇒ Veilus → 10 hồ sơ.
+ * Mã nước và múi giờ của 10 cửa sổ là minh hoạ, giữ nguyên ở mọi ngôn ngữ.
+ */
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const h = t(lang).home;
+const f = h.fig1;
+const NODES = [
+  ['VN', '+7'], ['SG', '+8'], ['TH', '+7'], ['MY', '+8'], ['ID', '+7'],
+  ['PH', '+8'], ['JP', '+9'], ['KR', '+9'], ['US', '−4'], ['DE', '+2'],
+];
+const delay = (s: number) => `--d:${s.toFixed(2)}s`;
+---
+
+<section class="k-wrap" data-reveal>
+  <div class="k-top">
+    <div>
+      <div class="k-fig"><b>{f.figNo}</b> — {f.fig}</div>
+      <h1 class="k-h1">{f.title}</h1>
+    </div>
+    <div>
+      <p class="k-intro">{f.intro}</p>
+      <div class="k-cta">
+        <a class="k-btn" href={getLocalizedPath('/download', lang)} data-cta="hero_cta">{h.cta}</a>
+        <span class="k-micro">{f.micro}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="k-sheet">
+    <div class="k-dia">
+      <div class="k-box k-draw" style={delay(0.2)}>
+        <small>{f.you.tag}</small>
+        <b><span class="ms" aria-hidden="true">person</span>{f.you.name}</b>
+        <small>{f.you.sub}</small>
+      </div>
+      <div class="k-arrow k-draw" style={delay(0.55)}><span>{f.prompt}</span></div>
+      <div class="k-box k-draw" style={delay(0.8)}>
+        <span class="k-co k-pop" style={delay(2.5)}>1</span>
+        <small>{f.agent.tag}</small>
+        <b><span class="ms" aria-hidden="true">smart_toy</span>{f.agent.name}</b>
+        <small>Claude · Cursor · …</small>
+      </div>
+      <div class="k-arrow k-arrow-dbl k-draw" style={delay(1.15)}>
+        <span>MCP</span>
+        <i class="k-pulse" aria-hidden="true"></i>
+      </div>
+      <div class="k-box k-box-ink k-draw" style={delay(1.4)}>
+        <span class="k-co k-pop" style={delay(2.75)}>2</span>
+        <small>{f.veilus.tag}</small>
+        <b><span class="ms" aria-hidden="true">hub</span>Veilus</b>
+        <small>{f.veilus.sub}</small>
+      </div>
+      <div class="k-fan k-draw" style={delay(1.75)}></div>
+      <div class="k-wins">
+        <span class="k-co k-co-w k-pop" style={delay(3.0)}>3</span>
+        {NODES.map(([cc, tz], n) => (
+          <div class="k-win k-pop" style={delay(1.95 + n * 0.06)}>
+            <div class="k-wbar"><i></i><i></i><i></i></div>
+            <div class="k-wbd"><span class="ms" aria-hidden="true">fingerprint</span><b>{cc}</b><em>UTC{tz}</em></div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="k-dim"><span>{f.dim}</span></div>
+    <div class="k-notes">
+      {f.notes.map((note, n) => <div class="k-note"><span class="k-cs">{n + 1}</span>{note}</div>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .k-top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: end; padding: 60px 0 36px; }
+  .k-h1 { font-weight: 600; font-size: clamp(34px, 4.4vw, 62px); line-height: 1.08; letter-spacing: -0.022em; margin: 16px 0 0; text-wrap: balance; }
+  .k-intro { font-size: 17.5px; line-height: 1.6; color: var(--muted); margin: 0 0 22px; max-width: none; text-wrap: pretty; }
+  .k-sheet { position: relative; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.9); }
+  .k-dia { display: grid; grid-template-columns: auto minmax(40px, 1fr) auto minmax(56px, 1.2fr) auto 44px auto; align-items: center; padding: 60px 40px 30px; }
+  .k-box { position: relative; min-width: 128px; padding: 12px 16px; border: 1.5px solid var(--ink); background: var(--paper); }
+  .k-box small { display: block; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.04em; }
+  .k-box b { display: flex; align-items: center; gap: 8px; margin: 3px 0 2px; font-size: 17px; font-weight: 600; }
+  .k-box b .ms { font-size: 20px; }
+  .k-box-ink { background: var(--ink); color: var(--paper); }
+  .k-box-ink small { color: rgba(242, 239, 231, 0.7); }
+  .k-arrow { position: relative; height: 0; margin: 0 6px; border-top: 1.5px solid var(--ink); }
+  .k-arrow::after { content: ''; position: absolute; right: -2px; top: -6px; border-left: 9px solid var(--ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+  .k-arrow > span { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); font-family: var(--font-mono); font-size: 11px; white-space: nowrap; color: var(--muted); }
+  .k-arrow-dbl { border-top-width: 4px; border-top-style: double; }
+  .k-arrow-dbl::after { top: -6.5px; }
+  .k-arrow-dbl > span { color: var(--ink); font-weight: 600; }
+  .k-arrow-dbl .k-pulse { top: -5.5px; }
+  .k-fan { position: relative; align-self: stretch; }
+  .k-fan::before { content: ''; position: absolute; left: 0; top: 50%; width: 20px; border-top: 1.5px solid var(--ink); }
+  .k-fan::after { content: ''; position: absolute; left: 20px; right: 0; top: 26px; bottom: 26px; border: 1.5px solid var(--ink); border-right: 0; }
+  .k-wins { position: relative; display: grid; grid-template-columns: repeat(2, auto); gap: 7px 10px; }
+  .k-co { position: absolute; top: -13px; right: -13px; display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--acc); color: #FFFFFF; font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+  .k-co-w { top: -34px; left: 0; right: auto; }
+  .k-dim { display: flex; align-items: center; gap: 14px; margin: 0 40px 26px; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+  .k-dim::before,
+  .k-dim::after { content: ''; flex: 1; height: 8px; border-top: 1px solid var(--ink); }
+  .k-dim::before { border-left: 1px solid var(--ink); }
+  .k-dim::after { border-right: 1px solid var(--ink); }
+  .k-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1.5px solid var(--ink); }
+  .k-note { display: flex; align-items: center; gap: 12px; padding: 16px 22px; font-size: 14.5px; }
+  .k-note + .k-note { border-left: 1px solid var(--rule); }
+  .k-cs { display: flex; flex: none; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--acc); color: #FFFFFF; font-family: var(--font-mono); font-size: 11px; font-weight: 600; }
+
+  @media (max-width: 1080px) {
+    .k-top { grid-template-columns: 1fr; gap: 24px; }
+    .k-dia { grid-template-columns: 1fr; justify-items: center; gap: 0; padding: 48px 24px 28px; }
+    .k-arrow { width: 0; height: 44px; margin: 6px 0; border-top: 0; border-left: 1.5px solid var(--ink); }
+    .k-arrow::after { right: auto; left: -6px; top: auto; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 9px solid var(--ink); border-bottom: 0; }
+    .k-arrow > span { left: 14px; bottom: auto; top: 50%; transform: translateY(-50%); }
+    .k-arrow-dbl { border-left-width: 4px; border-left-style: double; }
+    .k-arrow-dbl .k-pulse { left: -5.5px; right: auto; top: 0; bottom: 0; width: 7px; height: auto; }
+    .k-fan { width: 0; height: 36px; border-left: 1.5px solid var(--ink); align-self: center; }
+    .k-fan::before,
+    .k-fan::after { display: none; }
+    .k-co-w { top: -14px; left: auto; right: -30px; }
+    .k-notes { grid-template-columns: 1fr; }
+    .k-note + .k-note { border-left: 0; border-top: 1px solid var(--rule); }
+  }
+
+  /* Mũi tên MCP dựng đứng thì chấm chạy dọc xuống */
+  @media (max-width: 1080px) and (prefers-reduced-motion: no-preference) {
+    :global(.js) .k-arrow-dbl .k-pulse { animation-name: k-run-y; }
+  }
+</style>

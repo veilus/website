@@ -16,35 +16,6 @@
         "menu": "Buka menu",
         "language": "Bahasa"
     },
-    "hero": {
-        "badge": "Browser anti-deteksi untuk kerja multi-akun",
-        "title": "Ratusan akun di satu komputer —",
-        "titleHighlight": "masing-masing dengan identitasnya sendiri.",
-        "subtitle": "Minta asisten AI Anda menulis dan menguji skrip lewat MCP — atau tulis sendiri — lalu jalankan di setiap profil. Tiap profil punya sidik jari dan proxy sendiri, jadi akun-akun Anda tidak saling terhubung.",
-        "cta": "Unduh & coba Pro gratis 7 hari",
-        "micro": "Setelah itu, tetap pakai 5 profil gratis — tanpa kartu.",
-        "platforms": "macOS · Windows"
-    },
-    "proof": {
-        "items": [
-            {
-                "value": "Diuji dengan creepjs & iphey",
-                "sub": "pengecekan sidik jari"
-            },
-            {
-                "value": "Mesin Chromium buatan sendiri",
-                "sub": "dibangun dan di-patch oleh Veilus"
-            },
-            {
-                "value": "Data tetap di komputer Anda",
-                "sub": "profil disimpan lokal"
-            },
-            {
-                "value": "macOS · Windows",
-                "sub": "aplikasi desktop"
-            }
-        ]
-    },
     "pain": {
         "badge": "Masalahnya",
         "title": "Mengurus banyak akun secara manual",
@@ -430,6 +401,36 @@
             "unavailable": "Metode pembayaran ini belum tersedia.",
             "generic": "Terjadi kesalahan. Silakan coba lagi.",
             "network": "Kesalahan jaringan. Periksa koneksi lalu coba lagi."
+        }
+    },
+    "home": {
+        "cta": "Unduh & coba Pro gratis 7 hari",
+        "fig1": {
+            "figNo": "Gambar 1",
+            "fig": "browser anti-detect yang dikendalikan AI",
+            "title": "Tulis satu kalimat. Dapatkan pipeline yang berjalan tiap pagi.",
+            "intro": "Setiap profil adalah browser dengan identitasnya sendiri. Asisten AI Anda mengendalikan semuanya lewat MCP.",
+            "micro": "5 profil gratis selamanya · macOS · Windows",
+            "you": {
+                "tag": "A · ORANG",
+                "name": "Anda",
+                "sub": "tulis satu kalimat"
+            },
+            "prompt": "prompt",
+            "agent": {
+                "tag": "B · AGENT",
+                "name": "Asisten AI"
+            },
+            "veilus": {
+                "tag": "C · DI KOMPUTER ANDA",
+                "sub": "profil · proxy · jadwal"
+            },
+            "dim": "10 browser · 10 sidik jari · 10 proxy · zona waktu sesuai dengan proxy",
+            "notes": [
+                "AI menulis skrip, mencobanya di 3 profil, memperbaiki errornya sendiri.",
+                "Anda menyetujuinya sekali di Veilus Flow.",
+                "Jadwal pukul 08:00 menjalankan ke-10 browser."
+            ]
         }
     }
 }

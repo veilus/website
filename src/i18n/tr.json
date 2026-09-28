@@ -16,35 +16,6 @@
         "menu": "Menüyü aç",
         "language": "Dil"
     },
-    "hero": {
-        "badge": "Çoklu hesap işleri için anti-tespit tarayıcı",
-        "title": "Tek bilgisayarda yüzlerce hesap —",
-        "titleHighlight": "her birinin kendi kimliği var.",
-        "subtitle": "Betikleri yapay zekâ asistanınıza MCP üzerinden yazdırıp test ettirin — ya da kendiniz yazın — sonra her profilde çalıştırın. Her profilin kendi parmak izi ve proxy'si olduğu için hesaplarınız birbirine bağlanmaz.",
-        "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
-        "micro": "Sonrasında 5 profili ücretsiz kullanmaya devam edin — kart gerekmez.",
-        "platforms": "macOS · Windows"
-    },
-    "proof": {
-        "items": [
-            {
-                "value": "creepjs ve iphey ile test edildi",
-                "sub": "parmak izi testleri"
-            },
-            {
-                "value": "Kendi Chromium motorumuz",
-                "sub": "Veilus tarafından derlenip yamalandı"
-            },
-            {
-                "value": "Veriler bilgisayarınızda kalır",
-                "sub": "profiller yerelde saklanır"
-            },
-            {
-                "value": "macOS · Windows",
-                "sub": "masaüstü uygulaması"
-            }
-        ]
-    },
     "pain": {
         "badge": "Sorun",
         "title": "Çok sayıda hesabı elle yönetmek",
@@ -430,6 +401,36 @@
             "unavailable": "Bu ödeme yöntemi henüz kullanılamıyor.",
             "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
             "network": "Ağ hatası. Bağlantınızı kontrol edip tekrar deneyin."
+        }
+    },
+    "home": {
+        "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
+        "fig1": {
+            "figNo": "Şekil 1",
+            "fig": "yapay zekâ ile yönetilen anti-detect tarayıcı",
+            "title": "Bir cümle yazın. Her sabah çalışan bir pipeline edinin.",
+            "intro": "Her profil kendi kimliğine sahip bir tarayıcıdır. Yapay zekâ asistanınız hepsini MCP üzerinden yönetir.",
+            "micro": "5 profil süresiz ücretsiz · macOS · Windows",
+            "you": {
+                "tag": "A · KİŞİ",
+                "name": "Siz",
+                "sub": "bir cümle yazın"
+            },
+            "prompt": "istem",
+            "agent": {
+                "tag": "B · AGENT",
+                "name": "Yapay zekâ asistanı"
+            },
+            "veilus": {
+                "tag": "C · BİLGİSAYARINIZDA",
+                "sub": "profiller · proxy'ler · zamanlamalar"
+            },
+            "dim": "10 tarayıcı · 10 parmak izi · 10 proxy · saat dilimi proxy ile eşleşir",
+            "notes": [
+                "Yapay zekâ betiği yazar, 3 profilde dener, kendi hatalarını düzeltir.",
+                "Veilus Flow'da bir kez onaylarsınız.",
+                "08:00 zamanlaması 10 tarayıcının tümünü çalıştırır."
+            ]
         }
     }
 }

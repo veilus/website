@@ -36,3 +36,55 @@ a.k-btn-o:hover { background: var(--paper); }
 @media (max-width: 640px) {
   .k-wrap { padding: 0 16px; }
 }
+
+/* ---------- Phần của trang chủ ---------- */
+.k-fig { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.k-fig b { color: var(--acc); font-weight: 600; }
+.k-sec { padding-top: 104px; }
+.k-h2 { font-weight: 600; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; letter-spacing: -0.018em; margin: 12px 0 34px; max-width: 20em; text-wrap: balance; }
+.k-sub { font-size: 16.5px; color: var(--muted); margin: -20px 0 30px; max-width: none; }
+.k-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+.k-micro { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+/* ---------- Cửa sổ trình duyệt thu nhỏ ---------- */
+.k-win { width: 104px; border: 1.5px solid var(--ink); background: var(--paper); }
+.k-wbar { height: 9px; border-bottom: 1.5px solid var(--ink); display: flex; gap: 3px; align-items: center; padding: 0 4px; }
+.k-wbar i { width: 3px; height: 3px; border-radius: 50%; background: var(--ink); display: block; }
+.k-wbd { display: flex; align-items: center; gap: 5px; padding: 4px 6px; font-family: var(--font-mono); font-size: 10.5px; }
+.k-wbd .ms { font-size: 15px; }
+.k-wbd b { font-weight: 600; }
+.k-wbd em { font-style: normal; color: var(--muted); margin-left: auto; }
+
+/* ---------- Chấm chạy dọc mũi tên ----------
+   Khung .k-pulse phủ cả chiều dài mũi tên; dời khung đúng 100% bề rộng của chính nó = chấm đi hết mũi tên.
+   Không JS hoặc giảm chuyển động: không có chấm (nó chỉ để trang trí). */
+.k-pulse { display: none; position: absolute; left: 0; right: 0; top: -4.25px; height: 7px; pointer-events: none; }
+.k-pulse::before { content: ''; position: absolute; left: 0; top: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--acc); }
+
+/* ---------- Hiệu ứng khi cuộn (spec §5) ----------
+   Trạng thái gốc là trạng thái cuối. Phần tử chỉ ẩn chờ khi cả hai điều sau đúng:
+   - <html> có lớp .js (script đầu trang gắn khi trình duyệt có IntersectionObserver);
+   - người dùng không xin giảm chuyển động.
+   Script cuối trang gắn .is-in cho [data-reveal] khi nó vào màn hình (một lần), và .is-live khi nó đang
+   trên màn hình. Chỉ dùng opacity, transform, clip-path. --d là độ trễ riêng của từng phần tử. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal]:not(.is-in) :is(.k-draw, .k-draw-l, .k-draw-down, .k-pop, .k-rise) { opacity: 0; }
+  .js [data-reveal].is-in .k-draw { animation: k-draw 0.9s ease both; }
+  .js [data-reveal].is-in .k-draw-l { animation: k-draw-l 0.7s ease both; }
+  .js [data-reveal].is-in .k-draw-down { animation: k-draw-down 0.6s ease both; }
+  .js [data-reveal].is-in .k-pop { animation: k-pop 0.45s cubic-bezier(0.3, 1.4, 0.5, 1) both; }
+  .js [data-reveal].is-in .k-rise { animation: k-rise 0.5s ease both; }
+  .js [data-reveal].is-in :is(.k-draw, .k-draw-l, .k-draw-down, .k-pop, .k-rise) { animation-delay: var(--d, 0s); }
+
+  /* Chuyển động lặp: chỉ chạy khi phần chứa nó đang trên màn hình */
+  .js .k-pulse { display: block; animation: k-run 2.4s linear infinite; animation-delay: var(--pd, 0s); animation-play-state: paused; }
+  .js [data-reveal].is-live .k-pulse { animation-play-state: running; }
+}
+
+@keyframes k-draw { from { opacity: 0; clip-path: inset(-200px 100% -200px -200px); } to { opacity: 1; clip-path: inset(-200px -200px -200px -200px); } }
+@keyframes k-draw-l { from { opacity: 0; clip-path: inset(-200px -200px -200px 100%); } to { opacity: 1; clip-path: inset(-200px -200px -200px -200px); } }
+@keyframes k-draw-down { from { opacity: 0; clip-path: inset(-200px -200px 100% -200px); } to { opacity: 1; clip-path: inset(-200px -200px -200px -200px); } }
+@keyframes k-pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: none; } }
+@keyframes k-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes k-run { 0% { transform: translateX(0); opacity: 0; } 12% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(100%); opacity: 0; } }
+@keyframes k-run-y { 0% { transform: translateY(0); opacity: 0; } 12% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(100%); opacity: 0; } }

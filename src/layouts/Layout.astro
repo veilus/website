@@ -115,6 +115,10 @@ const faqJsonLd = {
     <meta charset="UTF-8" />
     {noTracking && <meta name="referrer" content="no-referrer" />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      // Hiệu ứng khi cuộn chỉ bật khi có IntersectionObserver; không có thì trang đứng ở trạng thái cuối.
+      if ('IntersectionObserver' in window) document.documentElement.classList.add('js');
+    </script>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#F2EFE7" />
     <meta name="generator" content={Astro.generator} />
@@ -190,6 +194,39 @@ const faqJsonLd = {
   </head>
   <body>
     <slot />
+
+    <script is:inline>
+      // Gắn .is-in (một lần) và .is-live (khi đang trên màn hình) cho [data-reveal];
+      // đếm [data-count-to] từ 0 lên khi phần chứa nó hiện. Giảm chuyển động: không đếm, số đứng yên.
+      (() => {
+        if (!('IntersectionObserver' in window)) return;
+        const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const countUp = (el) => {
+          const to = Number(el.dataset.countTo);
+          if (still || !to) return;
+          const start = performance.now();
+          const frame = (now) => {
+            const p = Math.min(1, (now - start) / 1200);
+            el.textContent = String(Math.round(to * (1 - (1 - p) ** 3)));
+            if (p < 1) requestAnimationFrame(frame);
+          };
+          requestAnimationFrame(frame);
+        };
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              e.target.classList.toggle('is-live', e.isIntersecting);
+              if (e.isIntersecting && !e.target.classList.contains('is-in')) {
+                e.target.classList.add('is-in');
+                e.target.querySelectorAll('[data-count-to]').forEach(countUp);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -15% 0px' },
+        );
+        document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+      })();
+    </script>
 
     <!-- GA4 Custom Events -->
     {!noTracking && <script src="/analytics.js" defer />}

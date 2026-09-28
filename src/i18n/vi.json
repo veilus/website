@@ -16,35 +16,6 @@
         "menu": "Mở menu",
         "language": "Ngôn ngữ"
     },
-    "hero": {
-        "badge": "Trình duyệt anti-detect cho người chạy nhiều tài khoản",
-        "title": "Chạy hàng trăm tài khoản trên một máy —",
-        "titleHighlight": "mỗi tài khoản một danh tính riêng.",
-        "subtitle": "Nhờ trợ lý AI viết và chạy thử script qua MCP — hoặc tự viết — rồi chạy trên mọi profile. Mỗi profile có fingerprint và proxy riêng, nên các tài khoản không dính vào nhau.",
-        "cta": "Tải về & dùng thử Pro 7 ngày",
-        "micro": "Hết 7 ngày vẫn dùng tiếp 5 profile miễn phí — không cần thẻ.",
-        "platforms": "macOS · Windows"
-    },
-    "proof": {
-        "items": [
-            {
-                "value": "Đã kiểm với creepjs & iphey",
-                "sub": "kiểm tra fingerprint"
-            },
-            {
-                "value": "Engine Chromium tự build",
-                "sub": "Veilus tự build và vá"
-            },
-            {
-                "value": "Dữ liệu nằm trên máy bạn",
-                "sub": "profile lưu cục bộ"
-            },
-            {
-                "value": "macOS · Windows",
-                "sub": "ứng dụng desktop"
-            }
-        ]
-    },
     "pain": {
         "badge": "Vấn đề",
         "title": "Chạy nhiều tài khoản bằng tay",
@@ -430,6 +401,36 @@
             "unavailable": "Cách thanh toán này chưa mở.",
             "generic": "Có lỗi xảy ra, vui lòng thử lại.",
             "network": "Lỗi mạng. Kiểm tra kết nối rồi thử lại."
+        }
+    },
+    "home": {
+        "cta": "Tải về & dùng thử Pro 7 ngày",
+        "fig1": {
+            "figNo": "Hình 1",
+            "fig": "trình duyệt anti-detect, điều khiển bằng AI",
+            "title": "Viết một câu. Nhận cả một dây chuyền chạy mỗi sáng.",
+            "intro": "Mỗi hồ sơ là một trình duyệt với danh tính riêng. Trợ lý AI của bạn điều khiển tất cả qua MCP.",
+            "micro": "5 hồ sơ miễn phí mãi · macOS · Windows",
+            "you": {
+                "tag": "A · NGƯỜI",
+                "name": "Bạn",
+                "sub": "viết một câu"
+            },
+            "prompt": "câu lệnh",
+            "agent": {
+                "tag": "B · AGENT",
+                "name": "Trợ lý AI"
+            },
+            "veilus": {
+                "tag": "C · TRÊN MÁY BẠN",
+                "sub": "hồ sơ · proxy · lịch"
+            },
+            "dim": "10 trình duyệt · 10 fingerprint · 10 proxy · múi giờ khớp proxy",
+            "notes": [
+                "AI viết script, chạy thử 3 hồ sơ, tự sửa lỗi.",
+                "Bạn duyệt một lần trong Veilus Flow.",
+                "Lịch 08:00 chạy cả 10 trình duyệt."
+            ]
         }
     }
 }
