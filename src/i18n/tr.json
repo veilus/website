@@ -158,39 +158,65 @@
     },
     "comparison": {
         "badge": "Karşılaştır",
-        "title": "Seçmeden önce",
-        "titleHighlight": "nelere bakmalı",
-        "subtitle": "Anti-tespit tarayıcıların en çok ayrıştığı noktalar. Rakipler planlarını sık değiştirir; güncel fiyat sayfalarını bu tablonun yanında açın.",
+        "title": "Veilus",
+        "titleHighlight": "karşılaştırması",
+        "subtitle": "Ücretsiz plan, dahili otomasyon, ömür boyu satın alma ve başlangıç fiyatı; dört popüler anti-detect tarayıcıyla yan yana.",
         "headers": [
             "",
             "Veilus"
         ],
         "rows": [
             {
+                "id": "free",
                 "feature": "Ücretsiz plan",
                 "values": [
                     "5 profil, süresiz"
                 ]
             },
             {
+                "id": "automation",
                 "feature": "Dahili otomasyon",
                 "values": [
                     "Var — kaydet, tekrarla, zamanla"
                 ]
             },
             {
+                "id": "lifetime",
                 "feature": "Tek seferlik ömür boyu satın alma",
                 "values": [
                     "Var — {lifetime} başlayan fiyatlarla"
                 ]
             },
             {
-                "feature": "Fiyat",
+                "id": "price",
+                "feature": "Başlangıç ücretli fiyatı",
                 "values": [
                     "Cihaz başına {monthly}/ay · ömür boyu {lifetime}"
                 ]
+            },
+            {
+                "id": "api",
+                "feature": "API / MCP",
+                "values": [
+                    "Yerel API · MCP (Pro)"
+                ]
             }
-        ]
+        ],
+        "cells": {
+            "profilesForever": "{n} profil, süresiz",
+            "trialDays": "{n} günlük ücretsiz deneme",
+            "rpaSchedule": "RPA, zamanlama",
+            "noCodeBuilder": "Kodsuz sürükle-bırak düzenleyici",
+            "lifetimeFrom": "Var — {price} başlayan fiyatlarla",
+            "perMonthProfiles": "{price}/ay ({n} profil)",
+            "oneTimeDevice": "{price} tek seferlik ({n} cihaz)",
+            "apiPaid": "API (ücretli planlar)",
+            "apiPaidMcp": "API (ücretli planlar) · MCP",
+            "localApiPaidMcp": "Yerel API (ücretli planlar) · MCP",
+            "localApi": "Yerel API"
+        },
+        "caption": "Rakip verileri resmi fiyat sayfalarından alındı, {date} tarihinde kontrol edildi. Planlar değişebilir; sitelerine bakın.",
+        "unknown": "Doğrulanmadı"
     },
     "pricing": {
         "badge": "Fiyatlar",

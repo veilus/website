@@ -158,39 +158,65 @@
     },
     "comparison": {
         "badge": "Comparar",
-        "title": "Qué revisar",
-        "titleHighlight": "antes de elegir",
-        "subtitle": "Los puntos en los que más se diferencian los navegadores antidetección. La competencia cambia sus planes a menudo, así que abre sus páginas de precios actuales junto a esta tabla.",
+        "title": "Cómo se compara",
+        "titleHighlight": "Veilus",
+        "subtitle": "Plan gratuito, automatización integrada, pago único y precio de entrada, junto a cuatro navegadores antidetección populares.",
         "headers": [
             "",
             "Veilus"
         ],
         "rows": [
             {
+                "id": "free",
                 "feature": "Plan gratuito",
                 "values": [
                     "5 perfiles para siempre"
                 ]
             },
             {
+                "id": "automation",
                 "feature": "Automatización integrada",
                 "values": [
                     "Sí: grabar, repetir, programar"
                 ]
             },
             {
+                "id": "lifetime",
                 "feature": "Pago único de por vida",
                 "values": [
                     "Sí, desde {lifetime}"
                 ]
             },
             {
-                "feature": "Precio",
+                "id": "price",
+                "feature": "Precio de pago inicial",
                 "values": [
                     "{monthly}/mes por equipo · {lifetime} de por vida"
                 ]
+            },
+            {
+                "id": "api",
+                "feature": "API / MCP",
+                "values": [
+                    "API local · MCP (Pro)"
+                ]
             }
-        ]
+        ],
+        "cells": {
+            "profilesForever": "{n} perfiles, para siempre",
+            "trialDays": "Prueba gratis de {n} días",
+            "rpaSchedule": "RPA, programación",
+            "noCodeBuilder": "Editor de arrastrar y soltar sin código",
+            "lifetimeFrom": "Sí, desde {price}",
+            "perMonthProfiles": "{price}/mes ({n} perfiles)",
+            "oneTimeDevice": "{price} pago único ({n} equipo)",
+            "apiPaid": "API (planes de pago)",
+            "apiPaidMcp": "API (planes de pago) · MCP",
+            "localApiPaidMcp": "API local (planes de pago) · MCP",
+            "localApi": "API local"
+        },
+        "caption": "Datos de la competencia tomados de sus páginas oficiales de precios, revisados el {date}. Los planes cambian; consulta su sitio.",
+        "unknown": "Sin verificar"
     },
     "pricing": {
         "badge": "Precios",

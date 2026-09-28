@@ -158,39 +158,65 @@
     },
     "comparison": {
         "badge": "So sánh",
-        "title": "Nên xem gì",
-        "titleHighlight": "trước khi chọn",
-        "subtitle": "Những điểm khác nhau nhiều nhất giữa các trình duyệt anti-detect. Gói của đối thủ đổi thường xuyên, nên hãy mở trang giá hiện tại của họ cạnh bảng này.",
+        "title": "Veilus so với",
+        "titleHighlight": "các trình duyệt khác",
+        "subtitle": "Gói miễn phí, tự động hóa có sẵn, mua trọn đời và giá khởi điểm, đặt cạnh bốn trình duyệt anti-detect phổ biến.",
         "headers": [
             "",
             "Veilus"
         ],
         "rows": [
             {
+                "id": "free",
                 "feature": "Gói miễn phí",
                 "values": [
                     "5 profile, vĩnh viễn"
                 ]
             },
             {
+                "id": "automation",
                 "feature": "Tự động hóa có sẵn",
                 "values": [
                     "Có — ghi, chạy lại, đặt lịch"
                 ]
             },
             {
+                "id": "lifetime",
                 "feature": "Mua một lần, dùng trọn đời",
                 "values": [
                     "Có — từ {lifetime}"
                 ]
             },
             {
-                "feature": "Giá",
+                "id": "price",
+                "feature": "Giá trả phí khởi điểm",
                 "values": [
                     "{monthly}/tháng mỗi máy · {lifetime} trọn đời"
                 ]
+            },
+            {
+                "id": "api",
+                "feature": "API / MCP",
+                "values": [
+                    "API cục bộ · MCP (gói Pro)"
+                ]
             }
-        ]
+        ],
+        "cells": {
+            "profilesForever": "{n} profile, vĩnh viễn",
+            "trialDays": "Dùng thử miễn phí {n} ngày",
+            "rpaSchedule": "RPA, đặt lịch",
+            "noCodeBuilder": "Kéo thả không cần code",
+            "lifetimeFrom": "Có — từ {price}",
+            "perMonthProfiles": "{price}/tháng ({n} profile)",
+            "oneTimeDevice": "{price} một lần ({n} máy)",
+            "apiPaid": "API (gói trả phí)",
+            "apiPaidMcp": "API (gói trả phí) · MCP",
+            "localApiPaidMcp": "API cục bộ (gói trả phí) · MCP",
+            "localApi": "API cục bộ"
+        },
+        "caption": "Dữ liệu đối thủ lấy từ trang giá chính thức của họ, kiểm tra ngày {date}. Gói có thể thay đổi; hãy xem trang của họ.",
+        "unknown": "Chưa kiểm chứng"
     },
     "pricing": {
         "badge": "Bảng giá",

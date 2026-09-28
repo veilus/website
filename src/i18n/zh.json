@@ -158,39 +158,65 @@
     },
     "comparison": {
         "badge": "对比",
-        "title": "选择之前",
-        "titleHighlight": "先看这几点",
-        "subtitle": "这些是反检测浏览器之间差异最大的地方。竞品的套餐经常变化，建议把它们当前的价格页和这张表放在一起对照。",
+        "title": "Veilus",
+        "titleHighlight": "与同类对比",
+        "subtitle": "免费版、内置自动化、一次性买断和起步价，与四款常见反检测浏览器并列比较。",
         "headers": [
             "",
             "Veilus"
         ],
         "rows": [
             {
+                "id": "free",
                 "feature": "免费版",
                 "values": [
                     "5 个配置文件，永久免费"
                 ]
             },
             {
+                "id": "automation",
                 "feature": "内置自动化",
                 "values": [
                     "有——录制、重放、定时"
                 ]
             },
             {
+                "id": "lifetime",
                 "feature": "一次性买断",
                 "values": [
                     "有——{lifetime} 起"
                 ]
             },
             {
-                "feature": "价格",
+                "id": "price",
+                "feature": "付费起步价",
                 "values": [
                     "{monthly}/月/台设备 · 买断 {lifetime}"
                 ]
+            },
+            {
+                "id": "api",
+                "feature": "API / MCP",
+                "values": [
+                    "本地 API · MCP（Pro 版）"
+                ]
             }
-        ]
+        ],
+        "cells": {
+            "profilesForever": "{n} 个配置文件，永久",
+            "trialDays": "{n} 天免费试用",
+            "rpaSchedule": "RPA、定时任务",
+            "noCodeBuilder": "无代码拖拽构建器",
+            "lifetimeFrom": "有——{price} 起",
+            "perMonthProfiles": "{price}/月（{n} 个配置文件）",
+            "oneTimeDevice": "{price} 一次性（{n} 台设备）",
+            "apiPaid": "API（付费版）",
+            "apiPaidMcp": "API（付费版）· MCP",
+            "localApiPaidMcp": "本地 API（付费版）· MCP",
+            "localApi": "本地 API"
+        },
+        "caption": "竞品数据来自其官方价格页面，核对日期 {date}。方案可能变动，请以其官网为准。",
+        "unknown": "未核实"
     },
     "pricing": {
         "badge": "价格",

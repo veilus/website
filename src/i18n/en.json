@@ -158,39 +158,65 @@
     },
     "comparison": {
         "badge": "Compare",
-        "title": "What to check",
-        "titleHighlight": "before you choose",
-        "subtitle": "The points that differ most between anti-detect browsers. Competitors change their plans often, so put their current pricing pages next to this table.",
+        "title": "How Veilus",
+        "titleHighlight": "compares",
+        "subtitle": "Free plan, built-in automation, lifetime purchase and entry price, side by side with four popular anti-detect browsers.",
         "headers": [
             "",
             "Veilus"
         ],
         "rows": [
             {
+                "id": "free",
                 "feature": "Free tier",
                 "values": [
                     "5 profiles, forever"
                 ]
             },
             {
+                "id": "automation",
                 "feature": "Built-in automation",
                 "values": [
                     "Yes — record, replay, schedule"
                 ]
             },
             {
+                "id": "lifetime",
                 "feature": "One-time lifetime purchase",
                 "values": [
                     "Yes — from {lifetime}"
                 ]
             },
             {
-                "feature": "Price",
+                "id": "price",
+                "feature": "Starting paid price",
                 "values": [
                     "{monthly}/mo per device · {lifetime} lifetime"
                 ]
+            },
+            {
+                "id": "api",
+                "feature": "API / MCP",
+                "values": [
+                    "Local API · MCP (Pro)"
+                ]
             }
-        ]
+        ],
+        "cells": {
+            "profilesForever": "{n} profiles, forever",
+            "trialDays": "{n}-day free trial",
+            "rpaSchedule": "RPA, scheduling",
+            "noCodeBuilder": "No-code drag-and-drop builder",
+            "lifetimeFrom": "Yes — from {price}",
+            "perMonthProfiles": "{price}/mo ({n} profiles)",
+            "oneTimeDevice": "{price} one-time ({n} device)",
+            "apiPaid": "API (paid plans)",
+            "apiPaidMcp": "API (paid plans) · MCP",
+            "localApiPaidMcp": "Local API (paid plans) · MCP",
+            "localApi": "Local API"
+        },
+        "caption": "Competitor data from their official pricing pages, checked {date}. Plans change; check their site.",
+        "unknown": "Not verified"
     },
     "pricing": {
         "badge": "Pricing",

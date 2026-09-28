@@ -3,15 +3,21 @@ import type { Lang } from '../i18n/utils';
 import { t, defaultLang } from '../i18n/utils';
 import { SKUS } from '../data/skus.js';
 import { currencyForLang, formatPrice } from '../scripts/purchase-core.js';
+import competitors from '../data/competitors.json';
 interface Props { lang?: Lang; }
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
 // Giá trong bảng so sánh lấy từ SKUS để không lệch với trang giá.
 // Một loại tiền mỗi ngôn ngữ, như trang giá.
-// Chỉ còn cột Veilus: ô của đối thủ không kiểm chứng được từ trang giá công khai của họ (VEIL-955).
+// Cột đối thủ: MỘT nguồn là src/data/competitors.json (url + trích nguyên văn + ngày đọc cho từng ô,
+// chỉ trang chính thức của hãng). Ô null = chưa kiểm chứng → "—", không phải "không" (VEIL-955).
 const cur = currencyForLang(lang);
 const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
 const fillPrices = (v: string) => v.replace('{monthly}', price(SKUS.monthly)).replace('{lifetime}', price(SKUS.solo));
+type Cell = { key: keyof typeof i.comparison.cells; params: Record<string, string | number> } | null;
+const cellText = (c: Cell) =>
+  c && Object.entries(c.params).reduce((txt, [k, v]) => txt.replace(`{${k}}`, () => String(v)), i.comparison.cells[c.key]);
+const checked = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(competitors.checked));
 ---
 <section class="section comparison" id="comparison" data-animate>
   <div class="container">
@@ -22,34 +28,40 @@ const fillPrices = (v: string) => v.replace('{monthly}', price(SKUS.monthly)).re
     </div>
     <div class="table-wrap">
       <table class="comp-table">
-        <thead><tr>{i.comparison.headers.map((h, idx) => (<th class={idx === 1 ? 'highlight-col' : idx === 0 ? 'feature-col' : ''}>{h}</th>))}</tr></thead>
+        <thead><tr>
+          {i.comparison.headers.map((h, idx) => (<th class={idx === 1 ? 'highlight-col' : idx === 0 ? 'feature-col' : ''}>{h}</th>))}
+          {competitors.vendors.map((v) => (<th>{v.name}</th>))}
+        </tr></thead>
         <tbody>
           {i.comparison.rows.map((row) => (
             <tr>
               <td class="feature-col">{row.feature}</td>
-              {row.values.map((val, idx) => (
-                <td class={idx === 0 ? 'highlight-col' : ''}>
-                  <span class={idx === 0 ? 'cell-win' : 'cell-neutral'}>{fillPrices(val)}</span>
-                </td>
-              ))}
+              <td class="highlight-col"><span class="cell-win">{fillPrices(row.values[0])}</span></td>
+              {competitors.vendors.map((v) => {
+                const txt = cellText(v.cells[row.id as keyof typeof v.cells] as Cell);
+                return <td>{txt ? <span class="cell-neutral">{txt}</span> : <span class="cell-unknown" title={i.comparison.unknown} aria-label={i.comparison.unknown}>—</span>}</td>;
+              })}
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+    <p class="comp-caption">{i.comparison.caption.replace('{date}', checked)}</p>
   </div>
 </section>
 <style>
-  .table-wrap { max-width: 720px; margin: 0 auto; overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
-  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem;  }
+  .table-wrap { max-width: 1100px; margin: 0 auto; overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+  .comp-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 0.9375rem; }
   .comp-table th, .comp-table td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--color-border); }
   .comp-table thead th { background: var(--bg-elevated); font-weight: 600; color: var(--color-text-secondary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; }
   .comp-table tbody tr:last-child td { border-bottom: none; }
   .comp-table tbody tr:hover { background: rgba(0,212,255,0.03); }
-  .feature-col { font-weight: 600; color: var(--color-text); min-width: 130px; }
+  .feature-col { font-weight: 600; color: var(--color-text); min-width: 130px; position: sticky; left: 0; background: var(--bg-surface); }
   .highlight-col { background: rgba(0,212,255,0.05); border-left: 2px solid var(--color-cyan); }
   thead .highlight-col { color: var(--color-cyan) !important; font-size: 1rem !important; }
   .cell-win { color: var(--color-success); font-weight: 600; }
   .cell-neutral { color: var(--color-text-secondary); }
-  @media (max-width: 768px) { .comp-table { font-size: 0.8125rem; } .comp-table th, .comp-table td { padding: 10px 12px; } }
+  .cell-unknown { color: var(--color-text-muted); }
+  .comp-caption { max-width: 1100px; margin: 12px auto 0; font-size: 0.8125rem; color: var(--color-text-muted); text-align: center; }
+  @media (max-width: 768px) { .comp-table { font-size: 0.8125rem; min-width: 640px; } .feature-col { min-width: 110px; } .comp-table th, .comp-table td { padding: 10px 12px; } }
 </style>
