@@ -131,8 +131,8 @@
             },
             {
                 "title": "Lleva tu configuración contigo",
-                "desc": "Veilus Sync sincroniza los perfiles cifrados. Empieza scripts desde plantillas e importa o exporta perfiles al cambiar de equipo.",
-                "badge": "Sincronización cifrada · Pro"
+                "desc": "Veilus Sync sincroniza los perfiles con un repositorio Git o Google Drive que tú elijas. Empieza scripts desde plantillas e importa o exporta perfiles al cambiar de equipo.",
+                "badge": "Veilus Sync · Pro"
             }
         ]
     },
@@ -288,7 +288,7 @@
             },
             {
                 "q": "¿Dónde se guardan mis datos?",
-                "a": "En tu equipo. Los perfiles y sus datos se guardan en local. Si activas Veilus Sync, los datos sincronizados van cifrados."
+                "a": "Los datos de perfil se almacenan localmente en tu dispositivo. Si activas Veilus Sync, los perfiles se sincronizan con un repositorio Git o Google Drive que tú elijas — usa uno privado. Al exportar un perfil a un archivo .veiluspack, puedes establecer una contraseña para cifrar el archivo."
             },
             {
                 "q": "¿Puedo usar mis propios proxies?",

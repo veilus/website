@@ -131,8 +131,8 @@
             },
             {
                 "title": "Bawa pengaturan Anda ke mana saja",
-                "desc": "Veilus Sync menyinkronkan profil secara terenkripsi. Mulai skrip dari template, dan impor atau ekspor profil saat ganti komputer.",
-                "badge": "Sinkronisasi terenkripsi · Pro"
+                "desc": "Veilus Sync menyinkronkan profil ke repository Git atau Google Drive pilihan Anda. Mulai skrip dari template, dan impor atau ekspor profil saat ganti komputer.",
+                "badge": "Veilus Sync · Pro"
             }
         ]
     },
@@ -288,7 +288,7 @@
             },
             {
                 "q": "Di mana data saya disimpan?",
-                "a": "Di komputer Anda. Profil dan datanya disimpan secara lokal. Jika Anda mengaktifkan Veilus Sync, data yang disinkronkan dienkripsi."
+                "a": "Data profil disimpan secara lokal di perangkat Anda. Jika Anda mengaktifkan Veilus Sync, profil akan disinkronkan ke repository Git atau Google Drive pilihan Anda — gunakan yang privat. Saat mengekspor profil ke file .veiluspack, Anda bisa mengatur kata sandi untuk mengenkripsi file tersebut."
             },
             {
                 "q": "Bisakah saya memakai proxy sendiri?",

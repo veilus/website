@@ -131,8 +131,8 @@
             },
             {
                 "title": "Mang cả thiết lập theo",
-                "desc": "Veilus Sync đồng bộ profile có mã hóa. Bắt đầu script từ mẫu có sẵn, nhập hoặc xuất profile khi đổi máy.",
-                "badge": "Đồng bộ mã hóa · Pro"
+                "desc": "Veilus Sync đồng bộ profile qua Git repository hoặc Google Drive do bạn chọn. Bắt đầu script từ mẫu có sẵn, nhập hoặc xuất profile khi đổi máy.",
+                "badge": "Veilus Sync · Pro"
             }
         ]
     },
@@ -288,7 +288,7 @@
             },
             {
                 "q": "Dữ liệu của tôi lưu ở đâu?",
-                "a": "Trên máy của bạn. Profile và dữ liệu của chúng được lưu cục bộ. Nếu bật Veilus Sync, dữ liệu đồng bộ được mã hóa."
+                "a": "Dữ liệu profile được lưu cục bộ trên máy của bạn. Nếu bật Veilus Sync, profiles sẽ đồng bộ tới Git repository hoặc Google Drive do bạn chọn — nên dùng loại riêng tư. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu để mã hóa file."
             },
             {
                 "q": "Tôi dùng proxy riêng được không?",

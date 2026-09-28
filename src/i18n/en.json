@@ -131,8 +131,8 @@
             },
             {
                 "title": "Take your setup with you",
-                "desc": "Veilus Sync keeps profiles in sync, encrypted. Start scripts from templates, and import or export profiles when you change machines.",
-                "badge": "Encrypted sync · Pro"
+                "desc": "Veilus Sync keeps profiles in sync through a Git repository or Google Drive you choose. Start scripts from templates, and import or export profiles when you change machines.",
+                "badge": "Veilus Sync · Pro"
             }
         ]
     },
@@ -288,7 +288,7 @@
             },
             {
                 "q": "Where is my data stored?",
-                "a": "On your machine. Profiles and their data are stored locally. If you turn on Veilus Sync, the synced data is encrypted."
+                "a": "Profile data is stored locally on your machine. If you turn on Veilus Sync, profiles sync to a Git repository or Google Drive you choose — use a private one. When you export a profile to a .veiluspack file, you can set a password to encrypt the file."
             },
             {
                 "q": "Can I use my own proxies?",

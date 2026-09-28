@@ -8,7 +8,7 @@
 - Each profile has its own fingerprint and its own proxy (HTTP, HTTPS, SOCKS5)
 - Built-in automation (Veilus Flow): an AI assistant with MCP support (e.g. Claude Code, Cursor) writes Playwright scripts, runs them, reads per-profile errors and fixes them; you can also write scripts yourself and add them through the local REST API
 - Scripts added over MCP or REST run on at most 3 profiles per run until the user approves them in the app; batch runs and schedules need that approval
-- Profile data is stored locally on your machine; Veilus Sync is encrypted
+- Profile data is stored locally on your machine. Veilus Sync copies profiles to a Git repository or Google Drive folder you choose; Veilus does not encrypt the synced profile data, only the remote access token (locally, on your device)
 - Platforms: macOS and Windows (no Linux version)
 
 ## Main Pages
@@ -26,7 +26,7 @@
 - MCP tools: list and launch profiles, save and read scripts, run a script on profiles, read per-profile run results
 - Schedules and batch runs
 - Local REST API and MCP for AI tools and developer automation
-- Veilus Sync (encrypted), script templates, import/export
+- Veilus Sync (Git or Google Drive), script templates, import/export (optional password with AES-256-GCM for .veiluspack files)
 
 ## Pricing
 - Free: 5 profiles, 1 device, latest browser engine; no Veilus Flow, scheduling, batch runs or local API/MCP

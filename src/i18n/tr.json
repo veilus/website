@@ -131,8 +131,8 @@
             },
             {
                 "title": "Kurulumunuz sizinle gelsin",
-                "desc": "Veilus Sync profilleri şifreli olarak senkronize eder. Betiklere şablonlardan başlayın, bilgisayar değiştirirken profilleri içe veya dışa aktarın.",
-                "badge": "Şifreli senkronizasyon · Pro"
+                "desc": "Veilus Sync profilleri seçtiğiniz bir Git deposu veya Google Drive ile senkronize eder. Betiklere şablonlardan başlayın, bilgisayar değiştirirken profilleri içe veya dışa aktarın.",
+                "badge": "Veilus Sync · Pro"
             }
         ]
     },
@@ -288,7 +288,7 @@
             },
             {
                 "q": "Verilerim nerede saklanıyor?",
-                "a": "Bilgisayarınızda. Profiller ve verileri yerelde saklanır. Veilus Sync'i açarsanız senkronize edilen veriler şifrelenir."
+                "a": "Profil verileri cihazınızda yerel olarak saklanır. Veilus Sync'i açarsanız profiller seçtiğiniz bir Git deposuna veya Google Drive'a senkronize edilir — özel (private) bir tane kullanın. Bir profili .veiluspack dosyasına dışa aktardığınızda, dosyayı şifrelemek için bir parola belirleyebilirsiniz."
             },
             {
                 "q": "Kendi proxy'lerimi kullanabilir miyim?",

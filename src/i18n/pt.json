@@ -131,8 +131,8 @@
             },
             {
                 "title": "Leve sua configuração com você",
-                "desc": "O Veilus Sync sincroniza os perfis com criptografia. Comece scripts a partir de modelos e importe ou exporte perfis ao trocar de computador.",
-                "badge": "Sincronização criptografada · Pro"
+                "desc": "O Veilus Sync sincroniza os perfis com um repositório Git ou Google Drive escolhido por você. Comece scripts a partir de modelos e importe ou exporte perfis ao trocar de computador.",
+                "badge": "Veilus Sync · Pro"
             }
         ]
     },
@@ -288,7 +288,7 @@
             },
             {
                 "q": "Onde meus dados ficam guardados?",
-                "a": "No seu computador. Os perfis e os dados deles ficam salvos localmente. Se você ativar o Veilus Sync, os dados sincronizados são criptografados."
+                "a": "Os dados de perfil são armazenados localmente no seu dispositivo. Se você ativar o Veilus Sync, os perfis são sincronizados com um repositório Git ou Google Drive escolhido por você — use um privado. Ao exportar um perfil para um arquivo .veiluspack, você pode definir uma senha para criptografar o arquivo."
             },
             {
                 "q": "Posso usar meus próprios proxies?",
