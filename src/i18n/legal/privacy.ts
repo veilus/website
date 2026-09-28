@@ -50,7 +50,7 @@ export const privacyTranslations: Record<string, {
 <h2>4. Data Storage & Security</h2>
 <ul>
   <li><strong>Local storage:</strong> Profile data, scripts, and settings are stored on your local machine.</li>
-  <li><strong>Cloud infrastructure:</strong> Account data is stored on Supabase (PostgreSQL) with encryption at rest.</li>
+  <li><strong>Cloud infrastructure:</strong> Account data (email, license and order records) is stored in Cloudflare D1.</li>
   <li><strong>Sync:</strong> Veilus Sync stores profile data in a Git repository or Google Drive you choose; that data is not encrypted by Veilus. Only the remote access token is encrypted, locally on your device, and never transmitted to our servers. Exporting a profile to a .veiluspack file lets you set an optional password, which encrypts the file with AES-256-GCM.</li>
   <li><strong>Edge hosting:</strong> Our website and API run on Cloudflare Workers/Pages with global edge distribution.</li>
 </ul>
@@ -60,10 +60,9 @@ export const privacyTranslations: Record<string, {
 <table><thead><tr><th>Service</th><th>Purpose</th><th>Data Shared</th></tr></thead><tbody>
   <tr><td>LemonSqueezy</td><td>Card payment processing (merchant of record)</td><td>Name, email, and card details (handled by LemonSqueezy directly)</td></tr>
   <tr><td>Bank (VND transfers)</td><td>Bank transfer payment processing</td><td>The transfer details our bank sends us, including the sender's name and transfer content</td></tr>
-  <tr><td>Supabase</td><td>Authentication & database</td><td>Email, account metadata</td></tr>
   <tr><td>Resend</td><td>Transactional email</td><td>Email address</td></tr>
-  <tr><td>Plausible Analytics</td><td>Website analytics</td><td>Aggregated, cookieless page views (no PII)</td></tr>
-  <tr><td>Cloudflare</td><td>Hosting & CDN</td><td>Standard web request data</td></tr>
+  <tr><td>Google Analytics</td><td>Website analytics</td><td>Anonymized usage statistics</td></tr>
+  <tr><td>Cloudflare</td><td>Hosting, CDN & database (D1)</td><td>Standard web request data; email, license and order records</td></tr>
 </tbody></table>
 <p>We do not sell, rent, or share your personal data with third parties for advertising purposes.</p>
 
@@ -90,7 +89,7 @@ export const privacyTranslations: Record<string, {
 <p>The Veilus website uses <strong>minimal cookies</strong>:</p>
 <ul>
   <li><strong>Essential cookies:</strong> Session authentication only</li>
-  <li><strong>Analytics:</strong> We use Plausible Analytics, which is cookieless and GDPR-compliant by design</li>
+  <li><strong>Analytics:</strong> We use Google Analytics 4, configured with IP anonymization and GDPR-compliant settings</li>
 </ul>
 <p>We do not use advertising cookies or third-party tracking cookies.</p>
 
@@ -153,7 +152,7 @@ export const privacyTranslations: Record<string, {
 <h2>4. Lưu trữ & Bảo mật dữ liệu</h2>
 <ul>
   <li><strong>Lưu trữ cục bộ:</strong> Dữ liệu profile, script và cài đặt được lưu trên máy tính của bạn.</li>
-  <li><strong>Hạ tầng đám mây:</strong> Dữ liệu tài khoản được lưu trên Supabase (PostgreSQL) với mã hóa dữ liệu nghỉ.</li>
+  <li><strong>Hạ tầng đám mây:</strong> Dữ liệu tài khoản (email, license và đơn hàng) được lưu trong Cloudflare D1.</li>
   <li><strong>Đồng bộ:</strong> Veilus Sync lưu dữ liệu profile trong Git repository hoặc Google Drive do bạn chọn; dữ liệu đó không được Veilus mã hóa. Chỉ access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn, và không bao giờ truyền đến máy chủ. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu tùy chọn để mã hóa file bằng AES-256-GCM.</li>
   <li><strong>Hosting biên:</strong> Website và API chạy trên Cloudflare Workers/Pages với phân phối biên toàn cầu.</li>
 </ul>
@@ -163,10 +162,9 @@ export const privacyTranslations: Record<string, {
 <table><thead><tr><th>Dịch vụ</th><th>Mục đích</th><th>Dữ liệu chia sẻ</th></tr></thead><tbody>
   <tr><td>LemonSqueezy</td><td>Xử lý thanh toán thẻ (merchant of record)</td><td>Tên, email và chi tiết thẻ (do LemonSqueezy xử lý trực tiếp)</td></tr>
   <tr><td>Ngân hàng (chuyển khoản VNĐ)</td><td>Xử lý thanh toán chuyển khoản</td><td>Chi tiết giao dịch ngân hàng gửi cho chúng tôi, gồm tên người chuyển và nội dung chuyển khoản</td></tr>
-  <tr><td>Supabase</td><td>Xác thực & cơ sở dữ liệu</td><td>Email, metadata tài khoản</td></tr>
   <tr><td>Resend</td><td>Email giao dịch</td><td>Địa chỉ email</td></tr>
-  <tr><td>Plausible Analytics</td><td>Phân tích website</td><td>Lượt xem tổng hợp, không cookie (không PII)</td></tr>
-  <tr><td>Cloudflare</td><td>Hosting & CDN</td><td>Dữ liệu yêu cầu web tiêu chuẩn</td></tr>
+  <tr><td>Google Analytics</td><td>Phân tích website</td><td>Thống kê sử dụng ẩn danh</td></tr>
+  <tr><td>Cloudflare</td><td>Hosting, CDN & cơ sở dữ liệu (D1)</td><td>Dữ liệu yêu cầu web tiêu chuẩn; email, license và đơn hàng</td></tr>
 </tbody></table>
 <p>Chúng tôi không bán, cho thuê hoặc chia sẻ dữ liệu cá nhân với bên thứ ba cho mục đích quảng cáo.</p>
 
@@ -193,7 +191,7 @@ export const privacyTranslations: Record<string, {
 <p>Website Veilus sử dụng <strong>cookie tối thiểu</strong>:</p>
 <ul>
   <li><strong>Cookie thiết yếu:</strong> Chỉ xác thực phiên</li>
-  <li><strong>Phân tích:</strong> Chúng tôi sử dụng Plausible Analytics, không cookie và tuân thủ GDPR</li>
+  <li><strong>Phân tích:</strong> Chúng tôi sử dụng Google Analytics 4, cấu hình ẩn danh IP và tuân thủ GDPR</li>
 </ul>
 <p>Chúng tôi không sử dụng cookie quảng cáo hoặc cookie theo dõi bên thứ ba.</p>
 
@@ -233,10 +231,10 @@ export const privacyTranslations: Record<string, {
 <table><thead><tr><th>目的</th><th>法律依据</th></tr></thead><tbody><tr><td>提供和维护服务</td><td>合同履行</td></tr><tr><td>处理付款</td><td>合同履行</td></tr><tr><td>发送重要服务更新</td><td>合法利益</td></tr><tr><td>改进产品</td><td>同意</td></tr></tbody></table>
 
 <h2>4. 数据存储与安全</h2>
-<ul><li><strong>本地存储：</strong>配置文件数据存储在您的本地计算机上。</li><li><strong>云基础设施：</strong>账户数据存储在Supabase（PostgreSQL），具有静态加密。</li><li><strong>同步：</strong>Veilus Sync 将配置文件数据存储在您选择的 Git 仓库或 Google Drive 中；该数据不会被 Veilus 加密。只有远程访问令牌会被加密（仅在本地设备完成），且不会传输到我们的服务器。将配置文件导出为 .veiluspack 文件时，您可以设置可选密码，使用 AES-256-GCM 加密该文件。</li></ul>
+<ul><li><strong>本地存储：</strong>配置文件数据存储在您的本地计算机上。</li><li><strong>云基础设施：</strong>账户数据（邮箱、许可证和订单记录）存储在 Cloudflare D1 中。</li><li><strong>同步：</strong>Veilus Sync 将配置文件数据存储在您选择的 Git 仓库或 Google Drive 中；该数据不会被 Veilus 加密。只有远程访问令牌会被加密（仅在本地设备完成），且不会传输到我们的服务器。将配置文件导出为 .veiluspack 文件时，您可以设置可选密码，使用 AES-256-GCM 加密该文件。</li></ul>
 
 <h2>5. 第三方服务</h2>
-<p>我们使用LemonSqueezy（银行卡支付，记录商家）、银行（越南盾转账）、Supabase（认证）、Resend（邮件）、Plausible Analytics（分析）和Cloudflare（托管）。我们不出售或分享您的个人数据用于广告目的。</p>
+<p>我们使用LemonSqueezy（银行卡支付，记录商家）、银行（越南盾转账）、Resend（邮件）、Google Analytics（分析）和Cloudflare（托管、D1 数据库）。我们不出售或分享您的个人数据用于广告目的。</p>
 
 <h2>6. 您的权利（GDPR及全球）</h2>
 <p>您有权：访问、更正、删除、导出您的数据，撤回同意，以及反对处理。联系 <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>。</p>
@@ -245,7 +243,7 @@ export const privacyTranslations: Record<string, {
 <ul><li>活跃账户：在账户活跃期间保留。</li><li>已删除账户：30天内删除所有个人数据。</li></ul>
 
 <h2>8. Cookie</h2>
-<p>我们仅使用必要的会话Cookie。Plausible Analytics无Cookie且符合GDPR。</p>
+<p>我们使用必要的会话Cookie，以及启用IP匿名化的Google Analytics 4用于分析，符合GDPR。</p>
 
 <h2>9. 儿童隐私</h2>
 <p>Veilus不面向16岁以下用户。</p>
@@ -277,10 +275,10 @@ export const privacyTranslations: Record<string, {
 <table><thead><tr><th>Цель</th><th>Правовое основание</th></tr></thead><tbody><tr><td>Предоставление Сервиса</td><td>Исполнение договора</td></tr><tr><td>Обработка платежей</td><td>Исполнение договора</td></tr><tr><td>Обновления сервиса</td><td>Законный интерес</td></tr><tr><td>Улучшение продукта</td><td>Согласие</td></tr></tbody></table>
 
 <h2>4. Хранение и безопасность</h2>
-<ul><li>Локальное хранение данных профилей</li><li>Облако: Supabase с шифрованием</li><li>Синхронизация: данные в вашем Git-репозитории или Google Drive не шифруются Veilus; шифруется только токен удалённого доступа. При экспорте профиля в файл .veiluspack можно задать пароль, тогда файл шифруется AES-256-GCM</li></ul>
+<ul><li>Локальное хранение данных профилей</li><li>Облако: данные аккаунта (email, лицензия и заказы) хранятся в Cloudflare D1</li><li>Синхронизация: данные в вашем Git-репозитории или Google Drive не шифруются Veilus; шифруется только токен удалённого доступа. При экспорте профиля в файл .veiluspack можно задать пароль, тогда файл шифруется AES-256-GCM</li></ul>
 
 <h2>5. Сторонние сервисы</h2>
-<p>LemonSqueezy (оплата картой), банк (переводы VND), Supabase, Resend, Plausible Analytics, Cloudflare. Мы не продаём ваши данные.</p>
+<p>LemonSqueezy (оплата картой), банк (переводы VND), Resend, Google Analytics, Cloudflare (хостинг, база данных D1). Мы не продаём ваши данные.</p>
 
 <h2>6. Ваши права (GDPR)</h2>
 <p>Доступ, исправление, удаление, экспорт, отзыв согласия. Контакт: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -289,7 +287,7 @@ export const privacyTranslations: Record<string, {
 <p>Удалённые аккаунты: данные удаляются в течение 30 дней.</p>
 
 <h2>8. Файлы cookie</h2>
-<p>Только необходимые сессионные cookie. Plausible Analytics без cookie.</p>
+<p>Только необходимые сессионные cookie, а также Google Analytics 4 с анонимизацией IP для аналитики.</p>
 
 <h2>9. Конфиденциальность детей</h2>
 <p>Сервис не предназначен для лиц младше 16 лет.</p>
@@ -318,7 +316,7 @@ export const privacyTranslations: Record<string, {
 <p>Todos los datos se almacenan <strong>localmente en su dispositivo</strong>. Si usa Veilus Sync, los datos se sincronizan con un repositorio Git o Google Drive que usted elija; esos datos no están cifrados por Veilus, use uno privado. Solo el token de acceso remoto se cifra, localmente en su dispositivo. Al exportar un perfil a un archivo .veiluspack, puede establecer una contraseña opcional para cifrar el archivo (AES-256-GCM).</p>
 
 <h2>3-5. Uso de datos, Almacenamiento y Terceros</h2>
-<p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos LemonSqueezy (pagos con tarjeta), nuestro banco (transferencias en VND), Supabase, Resend, Plausible Analytics y Cloudflare. No vendemos sus datos.</p>
+<p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos LemonSqueezy (pagos con tarjeta), nuestro banco (transferencias en VND), Resend, Google Analytics y Cloudflare (hosting, base de datos D1). No vendemos sus datos.</p>
 
 <h2>6. Sus derechos (GDPR)</h2>
 <p>Acceso, corrección, eliminación, exportación, retiro de consentimiento. Contacto: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -344,7 +342,7 @@ export const privacyTranslations: Record<string, {
 <p><strong>Nunca coletamos:</strong> histórico de navegação, conteúdo de perfis, scripts, endereços IP.</p>
 
 <h2>3-5. Uso, Armazenamento e Terceiros</h2>
-<p>LemonSqueezy (pagamento com cartão), banco (transferências VND), Supabase, Resend, Plausible, Cloudflare. Não vendemos seus dados.</p>
+<p>LemonSqueezy (pagamento com cartão), banco (transferências VND), Resend, Google Analytics, Cloudflare (hospedagem, banco de dados D1). Não vendemos seus dados.</p>
 
 <h2>6. Seus direitos (GDPR)</h2>
 <p>Acesso, correção, exclusão, exportação. Contato: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -367,7 +365,7 @@ export const privacyTranslations: Record<string, {
 <p><strong>Tidak pernah mengumpulkan:</strong> riwayat browsing, konten profil, skrip, alamat IP.</p>
 
 <h2>3-5. Penggunaan, Penyimpanan, dan Pihak Ketiga</h2>
-<p>LemonSqueezy (pembayaran kartu), bank (transfer VND), Supabase, Resend, Plausible, Cloudflare. Kami tidak menjual data Anda.</p>
+<p>LemonSqueezy (pembayaran kartu), bank (transfer VND), Resend, Google Analytics, Cloudflare (hosting, database D1). Kami tidak menjual data Anda.</p>
 
 <h2>6. Hak Anda (GDPR)</h2>
 <p>Akses, koreksi, hapus, ekspor data. Hubungi: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -390,7 +388,7 @@ export const privacyTranslations: Record<string, {
 <p><strong>Asla toplamayız:</strong> tarama geçmişi, profil içeriği, otomasyon betikleri, IP adresleri.</p>
 
 <h2>3-5. Kullanım, Depolama ve Üçüncü Taraflar</h2>
-<p>LemonSqueezy (kart ödemesi), banka (VND havaleleri), Supabase, Resend, Plausible, Cloudflare. Verilerinizi satmıyoruz.</p>
+<p>LemonSqueezy (kart ödemesi), banka (VND havaleleri), Resend, Google Analytics, Cloudflare (barındırma, D1 veritabanı). Verilerinizi satmıyoruz.</p>
 
 <h2>6. Haklarınız (GDPR)</h2>
 <p>Erişim, düzeltme, silme, dışa aktarma. İletişim: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
