@@ -191,7 +191,7 @@
                 "id": "price",
                 "feature": "付费起步价",
                 "values": [
-                    "{monthly}/月/台设备 · 买断 {lifetime}"
+                    "每台设备 {monthly}/月，配置文件不限 · 终身版 {lifetime}"
                 ]
             },
             {
@@ -215,7 +215,7 @@
             "localApiPaidMcp": "本地 API（付费版）· MCP",
             "localApi": "本地 API"
         },
-        "caption": "竞品数据来自其官方价格页面，核对日期 {date}。方案可能变动，请以其官网为准。",
+        "caption": "竞品数据来自其官方网站（价格页、文档），核对于 {date}。套餐可能变动，请以其官网为准。",
         "unknown": "未核实"
     },
     "pricing": {

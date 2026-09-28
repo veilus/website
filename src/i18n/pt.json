@@ -191,7 +191,7 @@
                 "id": "price",
                 "feature": "Preço pago inicial",
                 "values": [
-                    "{monthly}/mês por dispositivo · {lifetime} vitalício"
+                    "{monthly}/mês por dispositivo, perfis ilimitados · {lifetime} vitalício"
                 ]
             },
             {
@@ -215,7 +215,7 @@
             "localApiPaidMcp": "API local (planos pagos) · MCP",
             "localApi": "API local"
         },
-        "caption": "Dados dos concorrentes tirados das páginas oficiais de preços, verificados em {date}. Os planos mudam; confira o site deles.",
+        "caption": "Dados dos concorrentes retirados dos sites oficiais (páginas de preços, documentação), verificados em {date}. Os planos mudam; confira o site deles.",
         "unknown": "Não verificado"
     },
     "pricing": {

@@ -191,7 +191,7 @@
                 "id": "price",
                 "feature": "Harga berbayar awal",
                 "values": [
-                    "{monthly}/bln per perangkat · {lifetime} seumur hidup"
+                    "{monthly}/bulan per perangkat, profil tanpa batas · {lifetime} seumur hidup"
                 ]
             },
             {
@@ -215,7 +215,7 @@
             "localApiPaidMcp": "API lokal (paket berbayar) · MCP",
             "localApi": "API lokal"
         },
-        "caption": "Data pesaing diambil dari halaman harga resmi mereka, dicek {date}. Paket bisa berubah; cek situs mereka.",
+        "caption": "Data pesaing diambil dari situs resmi mereka (halaman harga, dokumentasi), dicek {date}. Paket bisa berubah; cek situs mereka.",
         "unknown": "Belum diverifikasi"
     },
     "pricing": {

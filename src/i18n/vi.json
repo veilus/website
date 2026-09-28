@@ -191,7 +191,7 @@
                 "id": "price",
                 "feature": "Giá trả phí khởi điểm",
                 "values": [
-                    "{monthly}/tháng mỗi máy · {lifetime} trọn đời"
+                    "{monthly}/tháng mỗi máy, không giới hạn profile · {lifetime} trọn đời"
                 ]
             },
             {
@@ -215,7 +215,7 @@
             "localApiPaidMcp": "API cục bộ (gói trả phí) · MCP",
             "localApi": "API cục bộ"
         },
-        "caption": "Dữ liệu đối thủ lấy từ trang giá chính thức của họ, kiểm tra ngày {date}. Gói có thể thay đổi; hãy xem trang của họ.",
+        "caption": "Dữ liệu đối thủ lấy từ website chính thức của họ (trang giá, tài liệu), kiểm tra ngày {date}. Gói có thể thay đổi; hãy xem trang của họ.",
         "unknown": "Chưa kiểm chứng"
     },
     "pricing": {

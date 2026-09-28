@@ -191,7 +191,7 @@
                 "id": "price",
                 "feature": "Başlangıç ücretli fiyatı",
                 "values": [
-                    "Cihaz başına {monthly}/ay · ömür boyu {lifetime}"
+                    "Cihaz başına {monthly}/ay, sınırsız profil · {lifetime} ömür boyu"
                 ]
             },
             {
@@ -215,7 +215,7 @@
             "localApiPaidMcp": "Yerel API (ücretli planlar) · MCP",
             "localApi": "Yerel API"
         },
-        "caption": "Rakip verileri resmi fiyat sayfalarından alındı, {date} tarihinde kontrol edildi. Planlar değişebilir; sitelerine bakın.",
+        "caption": "Rakip verileri resmi sitelerinden (fiyat sayfaları, dokümanlar) alındı, {date} tarihinde kontrol edildi. Planlar değişebilir; sitelerine bakın.",
         "unknown": "Doğrulanmadı"
     },
     "pricing": {

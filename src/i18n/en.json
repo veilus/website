@@ -191,7 +191,7 @@
                 "id": "price",
                 "feature": "Starting paid price",
                 "values": [
-                    "{monthly}/mo per device · {lifetime} lifetime"
+                    "{monthly}/mo per device, unlimited profiles · {lifetime} lifetime"
                 ]
             },
             {
@@ -215,7 +215,7 @@
             "localApiPaidMcp": "Local API (paid plans) · MCP",
             "localApi": "Local API"
         },
-        "caption": "Competitor data from their official pricing pages, checked {date}. Plans change; check their site.",
+        "caption": "Competitor data from their official websites (pricing pages, docs), checked {date}. Plans change; check their site.",
         "unknown": "Not verified"
     },
     "pricing": {
