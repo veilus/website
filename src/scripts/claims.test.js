@@ -16,13 +16,15 @@ const list = (dir, ext) =>
     .filter((f) => f.endsWith(ext))
     .map((f) => `${dir}${f}`);
 
-// Chữ của trang: 8 file ngôn ngữ, 4 trang pháp lý, llms.txt, layout (JSON-LD), component, trang.
+// Chữ của trang: 8 file ngôn ngữ, 4 trang pháp lý, llms.txt, facts.js, layout (JSON-LD), component, trang.
+// facts.js giữ chuỗi mà trang tải về hiện nguyên văn (cỡ bộ cài, cỡ engine — VEIL-1000): bỏ nó thì chữ đó ra khỏi bài.
 // Không quét src/data/competitors.json: đó là trích nguyên văn trang đối thủ, còn cụm cấm nói về Veilus.
 // Không quét src/scripts/: đó là mã và fixture của bài; claims.fixture.json cố ý chứa một câu trúng sync-encrypted.
 const FILES = [
   ...list('src/i18n/', '.json'),
   ...list('src/i18n/legal/', '.ts'),
   'public/llms.txt',
+  'src/data/facts.js',
   ...list('src/layouts/', '.astro'),
   ...list('src/components/', '.astro'),
   ...list('src/pages/', '.astro'),
@@ -176,11 +178,12 @@ const NEAR_MISS = [
   'Our affiliate program pays 20% per sale',
 ];
 
-test('quét đủ mẫu số: 8 ngôn ngữ, 4 trang pháp lý, llms.txt, layout, component, trang', () => {
+test('quét đủ mẫu số: 8 ngôn ngữ, 4 trang pháp lý, llms.txt, facts.js, layout, component, trang', () => {
   const count = (prefix) => FILES.filter((f) => f.startsWith(prefix)).length;
   assert.equal(FILES.filter((f) => /^src\/i18n\/[a-z]{2}\.json$/.test(f)).length, 8);
   assert.equal(count('src/i18n/legal/'), 4);
   assert.ok(FILES.includes('public/llms.txt'));
+  assert.ok(FILES.includes('src/data/facts.js'));
   // Ngưỡng bằng đúng số file hiện có: xoá component hay trang thì hạ ngưỡng trong cùng commit.
   assert.ok(count('src/layouts/') >= 2, 'thiếu layout');
   assert.ok(count('src/components/') >= 14, 'thiếu component');

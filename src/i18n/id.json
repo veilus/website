@@ -194,11 +194,13 @@
     "download": {
         "title": "Unduh",
         "titleHighlight": "Veilus",
+        "soon": "Segera hadir",
+        "noCard": "Tanpa kartu kredit",
+        "freeProfiles": "5 profil gratis selamanya",
         "subtitle": "Gratis selamanya dengan 5 profil.",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Unduh",
-        "reqTitle": "Persyaratan Sistem"
+        "reqTitle": "Persyaratan Sistem",
+        "engine": "Mesin browser diunduh terpisah di aplikasi"
     },
     "waitlist": {
         "title": "Akses Awal",

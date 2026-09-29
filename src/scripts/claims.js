@@ -104,7 +104,7 @@ export const BANNED = [
  * Câu ĐÚNG mà một mẫu bắt nhầm, theo từng file. Dòng nào không còn nằm nguyên văn trong file của nó
  * thì claims.test.js đỏ — danh sách này không được mục. Chỉ khai ba loại: câu phủ định đúng ("không có
  * bản Linux", "Veilus không mã hoá dữ liệu đồng bộ"), câu miễn trừ trách nhiệm, và chuỗi kỹ thuật trông
- * giống khẳng định (cỡ file cài, dung lượng đĩa). Câu khẳng định sai thì sửa chữ, không khai ở đây.
+ * giống khẳng định (cỡ file cài, cỡ engine tải về). Câu khẳng định sai thì sửa chữ, không khai ở đây.
  */
 export const ALLOWED = [
   { file: 'src/i18n/en.json', text: 'macOS and Windows. There is no Linux version.', why: 'phủ định đúng: không có bản Linux' },
@@ -121,12 +121,11 @@ export const ALLOWED = [
     text: 'We do not guarantee that browser fingerprints will be undetectable by all detection systems.',
     why: 'miễn trừ trách nhiệm: nói rõ KHÔNG hứa',
   },
-  { file: 'src/pages/download.astro', text: '.exe · ~120MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
-  { file: 'src/pages/download.astro', text: '.dmg · ~150MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
-  { file: 'src/pages/download.astro', text: '500 MB disk space', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
-  { file: 'src/pages/[lang]/download.astro', text: '.exe · ~120MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
-  { file: 'src/pages/[lang]/download.astro', text: '.dmg · ~150MB', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
-  { file: 'src/pages/[lang]/download.astro', text: '500 MB disk space', why: 'cỡ file cài / dung lượng đĩa, không phải khẳng định RAM mỗi hồ sơ' },
+  // Trang tải về đọc bốn chuỗi này từ facts.js (VEIL-1000); đo lại cỡ thì sửa cả chuỗi ở đó lẫn dòng ở đây.
+  { file: 'src/data/facts.js', text: '.exe · ~7 MB', why: 'cỡ bộ cài Windows (release v0.2.1), không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/data/facts.js', text: '.dmg · ~10 MB', why: 'cỡ bộ cài macOS (release v0.2.1), không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/data/facts.js', text: '.zip · ~187 MB', why: 'cỡ ZIP engine win-x64 tải trong app, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/data/facts.js', text: '.zip · ~152 MB', why: 'cỡ ZIP engine mac-arm64 tải trong app, không phải khẳng định RAM mỗi hồ sơ' },
   { file: 'src/i18n/zh.json', text: '在你的电脑之间双向同步 · 仅访问令牌会被加密', why: 'phủ định đúng (0024): chỉ token truy cập được mã hoá' },
   {
     file: 'src/i18n/legal/privacy.ts',

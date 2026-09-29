@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { t, defaultLang } from "../i18n/utils";
+import { OS_SUPPORT, INSTALLER_SIZE, ENGINE_SIZE } from "../data/facts.js";
 
 const i = t(defaultLang);
 ---
@@ -24,6 +25,7 @@ const i = t(defaultLang);
           id="dl-waitlist"
           data-source="download"
           data-lang={defaultLang}
+          data-i18n={JSON.stringify(i.waitlist)}
         >
           <div class="waitlist-input-group">
             <input
@@ -43,7 +45,7 @@ const i = t(defaultLang);
 
         <p class="waitlist-counter" id="dl-counter"></p>
 
-        <!-- Platform Cards — Coming Soon -->
+        <!-- Platform Cards -->
         <div class="platform-cards">
           <div class="platform-card" data-os="windows">
             <div class="platform-icon">
@@ -54,9 +56,9 @@ const i = t(defaultLang);
               >
             </div>
             <h3>Windows</h3>
-            <p class="platform-version">{i.download.win64}</p>
-            <span class="coming-soon-badge">Coming Soon</span>
-            <span class="platform-size">.exe · ~120MB</span>
+            <p class="platform-version">{OS_SUPPORT.windows}</p>
+            <span class="coming-soon-badge">{i.download.soon}</span>
+            <span class="platform-size">{INSTALLER_SIZE.windows}</span>
           </div>
 
           <div class="platform-card" data-os="macos">
@@ -68,9 +70,9 @@ const i = t(defaultLang);
               >
             </div>
             <h3>macOS</h3>
-            <p class="platform-version">{i.download.macUniversal}</p>
-            <span class="coming-soon-badge">Coming Soon</span>
-            <span class="platform-size">.dmg · ~150MB</span>
+            <p class="platform-version">{OS_SUPPORT.macos}</p>
+            <span class="coming-soon-badge">{i.download.soon}</span>
+            <span class="platform-size">{INSTALLER_SIZE.macos}</span>
           </div>
         </div>
 
@@ -87,7 +89,7 @@ const i = t(defaultLang);
               ><rect x="1" y="4" width="22" height="16" rx="2" ry="2"
               ></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg
             >
-            <span>No credit card required</span>
+            <span>{i.download.noCard}</span>
           </div>
           <div class="trust-badge">
             <svg
@@ -100,7 +102,7 @@ const i = t(defaultLang);
               ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
               ></path><circle cx="12" cy="7" r="4"></circle></svg
             >
-            <span>5 free profiles forever</span>
+            <span>{i.download.freeProfiles}</span>
           </div>
         </div>
       </div>
@@ -113,17 +115,15 @@ const i = t(defaultLang);
           <div class="req-card">
             <h4>Windows</h4>
             <ul>
-              <li>Windows 10/11 (64-bit)</li>
-              <li>4 GB RAM minimum</li>
-              <li>500 MB disk space</li>
+              <li>{OS_SUPPORT.windows}</li>
+              <li>{i.download.engine} <span class="req-size">({ENGINE_SIZE.windows})</span></li>
             </ul>
           </div>
           <div class="req-card">
             <h4>macOS</h4>
             <ul>
-              <li>macOS 12+ (Monterey)</li>
-              <li>Apple Silicon & Intel</li>
-              <li>4 GB RAM minimum</li>
+              <li>{OS_SUPPORT.macos}</li>
+              <li>{i.download.engine} <span class="req-size">({ENGINE_SIZE.macos})</span></li>
             </ul>
           </div>
         </div>
@@ -135,6 +135,10 @@ const i = t(defaultLang);
 
 <script>
   const API_BASE = "https://api.veilus.io";
+  // Thông điệp theo ngôn ngữ của trang: khối waitlist.* trong src/i18n, gắn vào form lúc build.
+  const m = JSON.parse(
+    document.querySelector<HTMLElement>(".waitlist-form")?.dataset.i18n || "{}",
+  );
 
   document.querySelectorAll(".waitlist-form").forEach((form) => {
     form.addEventListener("submit", async (e) => {
@@ -163,19 +167,23 @@ const i = t(defaultLang);
         if (res.ok && data.success) {
           f.classList.add("success");
           msg.className = "waitlist-message show success";
-          msg.innerHTML = data.duplicate
-            ? "✅ You're already on the list!"
-            : "🎉 You're on the list!<br><small>We'll email you when Veilus is ready.</small>";
+          if (data.duplicate) msg.textContent = m.duplicate;
+          else {
+            const sub = document.createElement("small");
+            sub.textContent = m.successSub;
+            msg.replaceChildren(m.success, document.createElement("br"), sub);
+          }
           input.disabled = true;
           btn.style.display = "none";
           loadCount();
         } else {
           msg.className = "waitlist-message show error";
-          msg.textContent = data.error || "Something went wrong.";
+          // `error` của API là tiếng Anh: chọn chữ theo `code` — INVALID_EMAIL, còn lại là lỗi chung.
+          msg.textContent = data.code === "INVALID_EMAIL" ? m.invalid : m.error;
         }
       } catch {
         msg.className = "waitlist-message show error";
-        msg.textContent = "Something went wrong. Please try again.";
+        msg.textContent = m.error;
       } finally {
         btn.classList.remove("loading");
         btn.disabled = false;
@@ -189,7 +197,7 @@ const i = t(defaultLang);
       const data = await res.json();
       if (data.count > 0) {
         document.querySelectorAll(".waitlist-counter").forEach((el) => {
-          el.textContent = `${data.count}+ people are waiting`;
+          el.textContent = m.counter.replace("{count}", String(data.count));
           el.classList.add("show");
         });
       }
@@ -433,6 +441,9 @@ const i = t(defaultLang);
     font-size: 0.875rem;
     color: var(--color-text-secondary);
     padding: 4px 0;
+  }
+  .req-size {
+    white-space: nowrap;
   }
   .req-card li::before {
     content: "→ ";

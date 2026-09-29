@@ -194,11 +194,13 @@
     "download": {
         "title": "Tải",
         "titleHighlight": "Veilus",
+        "soon": "Sắp ra mắt",
+        "noCard": "Không cần thẻ tín dụng",
+        "freeProfiles": "5 hồ sơ miễn phí mãi mãi",
         "subtitle": "Miễn phí vĩnh viễn với 5 profiles. Chọn nền tảng của bạn.",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Tải xuống",
-        "reqTitle": "Yêu cầu hệ thống"
+        "reqTitle": "Yêu cầu hệ thống",
+        "engine": "Engine trình duyệt tải riêng trong app"
     },
     "waitlist": {
         "title": "Đăng Ký Sớm",

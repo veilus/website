@@ -194,11 +194,13 @@
     "download": {
         "title": "下载",
         "titleHighlight": "Veilus",
+        "soon": "即将推出",
+        "noCard": "无需信用卡",
+        "freeProfiles": "5 个配置文件永久免费",
         "subtitle": "5个配置文件永久免费。选择您的平台。",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "下载",
-        "reqTitle": "系统要求"
+        "reqTitle": "系统要求",
+        "engine": "浏览器引擎需在应用内单独下载"
     },
     "waitlist": {
         "title": "抢先体验",

@@ -194,11 +194,13 @@
     "download": {
         "title": "Download",
         "titleHighlight": "Veilus",
+        "soon": "Coming soon",
+        "noCard": "No credit card required",
+        "freeProfiles": "5 free profiles forever",
         "subtitle": "Free forever with 5 profiles. Choose your platform.",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Download",
-        "reqTitle": "System Requirements"
+        "reqTitle": "System Requirements",
+        "engine": "Browser engine, downloaded separately in the app"
     },
     "waitlist": {
         "title": "Get Early Access",

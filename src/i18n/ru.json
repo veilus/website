@@ -194,11 +194,13 @@
     "download": {
         "title": "Скачать",
         "titleHighlight": "Veilus",
+        "soon": "Скоро",
+        "noCard": "Кредитная карта не нужна",
+        "freeProfiles": "5 профилей бесплатно навсегда",
         "subtitle": "Бесплатно навсегда с 5 профилями.",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Скачать",
-        "reqTitle": "Системные требования"
+        "reqTitle": "Системные требования",
+        "engine": "Движок браузера скачивается отдельно в приложении"
     },
     "waitlist": {
         "title": "Ранний доступ",

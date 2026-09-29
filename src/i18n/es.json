@@ -194,11 +194,13 @@
     "download": {
         "title": "Descargar",
         "titleHighlight": "Veilus",
+        "soon": "Próximamente",
+        "noCard": "Sin tarjeta de crédito",
+        "freeProfiles": "5 perfiles gratis para siempre",
         "subtitle": "Gratis para siempre con 5 perfiles.",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Descargar",
-        "reqTitle": "Requisitos del sistema"
+        "reqTitle": "Requisitos del sistema",
+        "engine": "Motor de navegador, se descarga aparte en la app"
     },
     "waitlist": {
         "title": "Acceso Anticipado",

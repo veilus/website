@@ -194,11 +194,13 @@
     "download": {
         "title": "İndir",
         "titleHighlight": "Veilus",
+        "soon": "Yakında",
+        "noCard": "Kredi kartı gerekmez",
+        "freeProfiles": "5 profil süresiz ücretsiz",
         "subtitle": "5 profille sonsuza kadar ücretsiz.",
-        "win64": "Windows 10/11 64-bit",
-        "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "İndir",
-        "reqTitle": "Sistem Gereksinimleri"
+        "reqTitle": "Sistem Gereksinimleri",
+        "engine": "Tarayıcı motoru uygulama içinden ayrıca indirilir"
     },
     "waitlist": {
         "title": "Erken Erişim",
