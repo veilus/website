@@ -469,7 +469,7 @@
             "tz": "Saat dilimi proxy ile eşleşiyor",
             "tzProxy": "Tokyo proxy",
             "open": "açık",
-            "blocked": "engelli",
+            "blocked": "engellendi",
             "cookies": "Ayrı çerez ve oturumlar",
             "batch": "Toplu çalıştırma",
             "stagger": "profil başına gecikmeli",
