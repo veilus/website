@@ -18,6 +18,7 @@ const list = (dir, ext) =>
 
 // Chữ của trang: 8 file ngôn ngữ, 4 trang pháp lý, llms.txt, layout (JSON-LD), component, trang.
 // Không quét src/data/competitors.json: đó là trích nguyên văn trang đối thủ, còn cụm cấm nói về Veilus.
+// Không quét src/scripts/: đó là mã và fixture của bài; claims.fixture.json cố ý chứa một câu trúng sync-encrypted.
 const FILES = [
   ...list('src/i18n/', '.json'),
   ...list('src/i18n/legal/', '.ts'),
