@@ -318,7 +318,7 @@
             "fig": "anatomia de um perfil",
             "title": "Cada perfil é uma pessoa diferente — até os detalhes.",
             "fields": "campos de impressão digital",
-            "patched": "corrigido direto no código-fonte do Chromium",
+            "patched": "modificado direto no código-fonte do Chromium",
             "left": [
                 {
                     "t": "User-Agent · Client Hints",
