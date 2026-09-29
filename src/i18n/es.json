@@ -1,6 +1,6 @@
 {
     "meta": {
-        "title": "Veilus — Navegador antidetección con automatización integrada",
+        "title": "Veilus — Navegador antidetección con automatización nativa",
         "description": "Veilus es un navegador antidetección: muchas cuentas en un solo ordenador, cada perfil con su huella y proxy, scripts de tu IA por MCP. 5 perfiles gratis."
     },
     "nav": {
@@ -198,7 +198,7 @@
         "freeProfiles": "5 perfiles gratis para siempre",
         "reqTitle": "Requisitos del sistema",
         "engine": "Motor de navegador, se descarga aparte en la app",
-        "metaTitle": "Veilus para Windows y macOS — Acceso Anticipado",
+        "metaTitle": "Navegador antidetección Veilus, Win/macOS, Acceso Anticipado",
         "metaDescription": "Veilus llega pronto a Windows y macOS. Únete a la lista de espera y te avisaremos cuando esté listo para descargar. 5 perfiles gratis para siempre."
     },
     "waitlist": {
