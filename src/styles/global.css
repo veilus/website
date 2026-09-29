@@ -177,6 +177,7 @@ p {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto;
+    /* !important: html { scroll-behavior: smooth } ở trên cụ thể hơn * nên thắng khi không có nó. */
+    scroll-behavior: auto !important;
   }
 }
