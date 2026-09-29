@@ -321,6 +321,9 @@ const i = t(defaultLang);
     color: var(--color-text-muted);
     margin-inline: auto; /* p toàn cục có max-width 60ch: thiếu auto thì hộp dạt trái */
     margin-bottom: var(--space-xl);
+    /* Giữ chỗ đúng một dòng của chính nó trước khi api.veilus.io trả count (CLS ~0,024, VEIL-1031).
+       Rỗng vẫn chiếm chỗ này — hiện/ẩn chỉ đổi opacity, không đổi layout. */
+    min-height: 1.6em;
     opacity: 0;
     transition: opacity var(--transition-fast);
   }
