@@ -1,7 +1,9 @@
 ---
 import type { Lang } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
+import { FINGERPRINT_FIELDS } from "../data/facts.js";
 import { iconFontHref } from "../data/icons.js";
+import { currencyForLang } from "../scripts/purchase-core.js";
 import {
   t,
   languages,
@@ -40,10 +42,14 @@ const xDefault = hreflangs.find((h) => h.lang === defaultLang)!.href;
 // Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID
 const GA_ID = "G-CZ9G6B0L4M";
 
-// JSON-LD Structured Data
-const soldUsd = Object.values(SKUS)
+// Ảnh chia sẻ: tên file mang tháng làm ra nó. Thay ảnh thì đổi tên, mạng xã hội cache theo URL nên mới lấy ảnh mới.
+const ogImage = `${siteUrl}/og-image-2026-09.png`;
+
+// JSON-LD Structured Data. Giá theo loại tiền trang đang hiện: bảng giá (Pricing.astro) dùng cùng currencyForLang.
+const currency = currencyForLang(lang);
+const soldPrices = Object.values(SKUS)
   .filter((s) => s.kind !== "addon")
-  .map((s) => s.usd);
+  .map((s) => (currency === "VND" ? s.vnd : s.usd));
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -56,16 +62,15 @@ const jsonLd = {
   offers: {
     "@type": "AggregateOffer",
     lowPrice: "0",
-    highPrice: String(Math.max(...soldUsd)),
-    priceCurrency: "USD",
-    offerCount: String(soldUsd.length + 1),
+    highPrice: String(Math.max(...soldPrices)),
+    priceCurrency: currency,
+    offerCount: String(soldPrices.length + 1),
   },
+  // Chuỗi đã dịch mà trang chủ đang hiện: ô fingerprint và ô proxy của FeatureBento, tính năng gói trả phí của Pricing.
   featureList: [
-    "Separate fingerprint and proxy per profile",
-    "Script automation written by your AI assistant over MCP, or by you (Veilus Flow)",
-    "Schedules and batch runs",
-    "Local REST API and MCP",
-    "Profile sync via Git or Google Drive (Veilus Sync)",
+    i.home.bento.fields.replace("{n}", String(FINGERPRINT_FIELDS)),
+    i.home.bento.proxy,
+    ...i.pricing.paidFeatures.slice(1, 5),
   ],
 };
 
@@ -76,8 +81,8 @@ const orgJsonLd = {
   name: "Veilus",
   url: siteUrl,
   logo: `${siteUrl}/logo-512.png`,
-  description:
-    "Anti-detect browser with built-in automation. Each profile gets its own fingerprint and proxy on an in-house Chromium engine.",
+  // Câu giới thiệu ở chân trang, đã dịch 8 ngôn ngữ
+  description: i.footer.tagline,
   sameAs: [
     "https://t.me/veilusbrowser",
     "https://x.com/veilusbrowser",
@@ -98,20 +103,7 @@ const websiteJsonLd = {
   url: siteUrl,
   description: i.meta.description,
 };
-
-// FAQ JSON-LD (for rich snippets)
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: i.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+// JSON-LD FAQPage không ở đây mà ở FAQ.astro: chỉ trang có hiện FAQ mới được khai nó.
 ---
 
 <!DOCTYPE html>
@@ -155,18 +147,26 @@ const faqJsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     {!notFound && <meta property="og:url" content={canonicalUrl} />}
-    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Veilus — Anti-detect browser" />
+    {/* Ảnh là màn đầu trang chủ; dòng chữ nhỏ trên tiêu đề của nó là home.fig1.fig */}
+    <meta property="og:image:alt" content={`Veilus — ${i.home.fig1.fig}`} />
     <meta property="og:site_name" content="Veilus" />
-    <meta property="og:locale" content={lang === "en" ? "en_US" : lang} />
+    <meta property="og:locale" content={languages[lang].ogLocale} />
+    {
+      !notFound && supportedLangs.filter((l) => l !== lang).map((l) => (
+        <meta property="og:locale:alternate" content={languages[l].ogLocale} />
+      ))
+    }
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    {/* Tài khoản X chính thức: link Twitter/X ở Footer và sameAs của Organization */}
+    <meta name="twitter:site" content="@veilusbrowser" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Hreflang for SEO -->
     {
@@ -182,8 +182,6 @@ const faqJsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)}
     ></script>
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)}
-    ></script>
-    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}
     ></script>
 
     <!-- Fonts (preconnect for performance) -->

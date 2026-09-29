@@ -18,7 +18,7 @@
  *   FAQ, trang tải về): pageText() nối giá trị bằng "\n", mà NEAR và dấu cách viết cứng trong mẫu không vượt "\n" nên lọt;
  * - chữ trong span icon (class "ms", tên [a-z0-9_]+ hoặc biểu thức {…}): bỏ vì trang hiện hình. Tên không có trong
  *   font thì trang hiện nguyên chữ mà bài không thấy — icons.test.js chỉ canh tên viết chữ trong span và `icon: '…'`;
- * - chữ trong ảnh (public/og-image.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);
+ * - chữ trong ảnh (public/og-image-2026-09.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);
  * - lúc nào bài chạy: CI chỉ chạy bài này trước deploy khi push main; nhánh khác không bị chặn.
  * - mẫu `the-only` tiếng Thổ chỉ bắt "tek [anti-tespit] tarayıcı"; câu "duy nhất" diễn đạt khác, như "Piyasadaki tek yapay zekâ destekli tarayıcı", thì lọt. Mẫu cố ý hẹp vì tr.json dùng "tek" nghĩa là "một" chín lần.
  */

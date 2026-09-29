@@ -1,7 +1,8 @@
 ---
 /**
  * Câu hỏi thường gặp (spec trang chủ §4 dòng 9): 9 câu như website cũ, dạng <details>.
- * JSON-LD FAQPage ở Layout.astro đọc cùng faq.items.
+ * JSON-LD FAQPage nằm ở đây, đọc cùng faq.items với phần hiện ra: trang nào không hiện FAQ thì không khai
+ * FAQPage (VEIL-1031; trước đó Layout.astro khai nó trên mọi trang).
  */
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang } from '../i18n/utils';
@@ -12,6 +13,15 @@ interface Props {
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
 const q = i.faq;
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: q.items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 ---
 
 <section class="k-wrap k-sec" id="faq" data-reveal>
@@ -29,6 +39,7 @@ const q = i.faq;
     ))}
   </div>
 </section>
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}></script>
 
 <style>
   .k-faq { border-top: 1.5px solid var(--ink); }

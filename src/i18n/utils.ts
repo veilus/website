@@ -7,15 +7,16 @@ import es from './es.json';
 import tr from './tr.json';
 import id from './id.json';
 
+// ogLocale: dạng ngôn_VÙNG mà og:locale của Open Graph đòi; mã trần như 'vi' không đúng dạng.
 export const languages = {
-    en: { label: 'English', flag: '🇬🇧', dir: 'ltr' },
-    zh: { label: '中文', flag: '🇨🇳', dir: 'ltr' },
-    ru: { label: 'Русский', flag: '🇷🇺', dir: 'ltr' },
-    vi: { label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr' },
-    pt: { label: 'Português', flag: '🇧🇷', dir: 'ltr' },
-    es: { label: 'Español', flag: '🇪🇸', dir: 'ltr' },
-    tr: { label: 'Türkçe', flag: '🇹🇷', dir: 'ltr' },
-    id: { label: 'Indonesia', flag: '🇮🇩', dir: 'ltr' },
+    en: { label: 'English', flag: '🇬🇧', dir: 'ltr', ogLocale: 'en_US' },
+    zh: { label: '中文', flag: '🇨🇳', dir: 'ltr', ogLocale: 'zh_CN' },
+    ru: { label: 'Русский', flag: '🇷🇺', dir: 'ltr', ogLocale: 'ru_RU' },
+    vi: { label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr', ogLocale: 'vi_VN' },
+    pt: { label: 'Português', flag: '🇧🇷', dir: 'ltr', ogLocale: 'pt_BR' },
+    es: { label: 'Español', flag: '🇪🇸', dir: 'ltr', ogLocale: 'es_ES' },
+    tr: { label: 'Türkçe', flag: '🇹🇷', dir: 'ltr', ogLocale: 'tr_TR' },
+    id: { label: 'Indonesia', flag: '🇮🇩', dir: 'ltr', ogLocale: 'id_ID' },
 } as const;
 
 export type Lang = keyof typeof languages;
