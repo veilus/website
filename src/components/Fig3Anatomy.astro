@@ -30,9 +30,9 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
     </div>
     <div class="k-big k-rise" style={delay(0.1)}>
       <div class="k-big-bar"><i></i><i></i><i></i><span>{h.profileName} · JP · TOKYO</span></div>
-      <div class="k-big-url"><span class="ms" aria-hidden="true">lock</span>shop.example.jp</div>
+      <div class="k-big-url"><span class="ms" data-icon="lock" aria-hidden="true"></span>shop.example.jp</div>
       <div class="k-big-bd">
-        <span class="ms k-big-fp" aria-hidden="true">fingerprint</span>
+        <span class="ms k-big-fp" data-icon="fingerprint" aria-hidden="true"></span>
         <div class="k-stat k-pop" style={delay(0.35)}>
           <b data-count-to={FINGERPRINT_FIELDS}>{FINGERPRINT_FIELDS}</b>
           <span>{f.fields}<br />{f.patched}</span>

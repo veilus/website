@@ -23,43 +23,43 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   <h2 class="k-h2">{f.title}</h2>
   <div class="k-bento">
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">fingerprint</span><b>{f.fields.replace('{n}', String(FINGERPRINT_FIELDS))}</b></div>
+      <div class="k-th"><span class="ms" data-icon="fingerprint" aria-hidden="true"></span><b>{f.fields.replace('{n}', String(FINGERPRINT_FIELDS))}</b></div>
       <div class="k-vis">
         {f.fpChips.map((chip, n) => <span class="k-chip k-chip-s k-pop" style={delay(0.2 + n * 0.05)}>{chip}</span>)}
       </div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">vpn_lock</span><b>{f.proxy}</b></div>
+      <div class="k-th"><span class="ms" data-icon="vpn_lock" aria-hidden="true"></span><b>{f.proxy}</b></div>
       <div class="k-vis">
         <span class="k-chip k-chip-s">HTTP</span><span class="k-chip k-chip-s">HTTPS</span><span class="k-chip k-chip-s">SOCKS5</span>
         <div class="k-pair"><span>{f.profile}</span><i class="k-draw" style={delay(0.4)}></i><span>proxy</span></div>
       </div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">visibility_off</span><b>{f.webrtc}</b></div>
+      <div class="k-th"><span class="ms" data-icon="visibility_off" aria-hidden="true"></span><b>{f.webrtc}</b></div>
       <div class="k-vis">
         <span class="k-strike">{f.realIp}</span>
-        <span class="ms" aria-hidden="true">arrow_forward</span>
-        <span class="k-chip k-chip-s k-pop" style={delay(0.8)}><span class="ms" aria-hidden="true">vpn_lock</span>{f.proxyIp}</span>
+        <span class="ms" data-icon="arrow_forward" aria-hidden="true"></span>
+        <span class="k-chip k-chip-s k-pop" style={delay(0.8)}><span class="ms" data-icon="vpn_lock" aria-hidden="true"></span>{f.proxyIp}</span>
       </div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">schedule</span><b>{f.tz}</b></div>
+      <div class="k-th"><span class="ms" data-icon="schedule" aria-hidden="true"></span><b>{f.tz}</b></div>
       <div class="k-vis">
         <div class="k-geo"><span>{f.tzProxy}</span><i></i><span>Asia/Tokyo</span><em class="k-ok k-flip" style={delay(0.5)}>{f.open}</em></div>
         <div class="k-geo"><span>{f.tzProxy}</span><i></i><span>Ho_Chi_Minh</span><em class="k-no k-flip" style={delay(0.8)}>{f.blocked}</em></div>
       </div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">cookie</span><b>{f.cookies}</b></div>
+      <div class="k-th"><span class="ms" data-icon="cookie" aria-hidden="true"></span><b>{f.cookies}</b></div>
       <div class="k-vis">
         <div class="k-jars">
-          {['01', '02', '03'].map((n) => <div><span class="ms" aria-hidden="true">cookie</span>{n}</div>)}
+          {['01', '02', '03'].map((n) => <div><span class="ms" data-icon="cookie" aria-hidden="true"></span>{n}</div>)}
         </div>
       </div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">stacks</span><b>{f.batch}</b></div>
+      <div class="k-th"><span class="ms" data-icon="stacks" aria-hidden="true"></span><b>{f.batch}</b></div>
       <div class="k-vis">
         <div class="k-bars">
           {BARS.map(([left, width], n) => (
@@ -70,11 +70,11 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
       </div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">event_repeat</span><b>{f.schedule}</b></div>
+      <div class="k-th"><span class="ms" data-icon="event_repeat" aria-hidden="true"></span><b>{f.schedule}</b></div>
       <div class="k-vis k-clock"><b>08:00</b><div class="k-cap">{f.daily}</div></div>
     </div>
     <div class="k-tile">
-      <div class="k-th"><span class="ms" aria-hidden="true">api</span><b>{f.api}</b></div>
+      <div class="k-th"><span class="ms" data-icon="api" aria-hidden="true"></span><b>{f.api}</b></div>
       <div class="k-vis"><pre class="k-code k-code-s">{API}</pre></div>
     </div>
   </div>

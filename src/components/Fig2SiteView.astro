@@ -26,48 +26,48 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   <h2 class="k-h2">{f.title}</h2>
   <div class="k-vs">
     <div class="k-panel">
-      <div class="k-ptag"><span class="ms" aria-hidden="true">close</span>{f.plain}</div>
-      <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.machine}</small></div>
+      <div class="k-ptag"><span class="ms" data-icon="close" aria-hidden="true"></span>{f.plain}</div>
+      <div class="k-dev"><span class="ms" data-icon="laptop_mac" aria-hidden="true"></span><small>{f.machine}</small></div>
       <div class="k-drop"></div>
       <div class="k-accs">
         {OWN.map((_, n) => (
           <div class="k-acc k-rise" style={delay(0.2 + n * 0.1)}>
             <div class="k-wbar"><i></i><i></i><i></i></div>
-            <b><span class="ms" aria-hidden="true">account_circle</span>{account(n + 1)}</b>
+            <b><span class="ms" data-icon="account_circle" aria-hidden="true"></span>{account(n + 1)}</b>
           </div>
         ))}
       </div>
       <div class="k-join k-draw-down" style={delay(0.8)}></div>
-      <div class="k-chip k-chip-bad k-pop" style={delay(1.2)}><span class="ms" aria-hidden="true">fingerprint</span>{f.shared}</div>
+      <div class="k-chip k-chip-bad k-pop" style={delay(1.2)}><span class="ms" data-icon="fingerprint" aria-hidden="true"></span>{f.shared}</div>
       <div class="k-drop k-draw-down" style={delay(1.4)}></div>
-      <div class="k-site k-rise" style={delay(1.5)}><span class="ms" aria-hidden="true">storefront</span>{f.site}</div>
+      <div class="k-site k-rise" style={delay(1.5)}><span class="ms" data-icon="storefront" aria-hidden="true"></span>{f.site}</div>
       <div class="k-verdict k-v-bad k-rise" style={delay(1.75)}>
-        <span class="ms" aria-hidden="true">link</span>
+        <span class="ms" data-icon="link" aria-hidden="true"></span>
         <div><b>{f.badTitle}</b><small>{f.badSub}</small></div>
       </div>
     </div>
 
     <div class="k-panel">
-      <div class="k-ptag k-ptag-good"><span class="ms" aria-hidden="true">check</span>Veilus</div>
-      <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.machineVeilus}</small></div>
+      <div class="k-ptag k-ptag-good"><span class="ms" data-icon="check" aria-hidden="true"></span>Veilus</div>
+      <div class="k-dev"><span class="ms" data-icon="laptop_mac" aria-hidden="true"></span><small>{f.machineVeilus}</small></div>
       <div class="k-drop"></div>
       <div class="k-accs">
         {OWN.map((o, n) => (
           <div class="k-own">
             <div class="k-acc k-rise" style={delay(0.2 + n * 0.1)}>
               <div class="k-wbar"><i></i><i></i><i></i></div>
-              <b><span class="ms" aria-hidden="true">account_circle</span>{account(n + 1)}</b>
+              <b><span class="ms" data-icon="account_circle" aria-hidden="true"></span>{account(n + 1)}</b>
             </div>
             <div class="k-tick k-draw-down" style={delay(0.8 + n * 0.1)}></div>
-            <div class="k-chip k-pop" style={delay(1.0 + n * 0.1)}><span class="ms" aria-hidden="true">fingerprint</span>{o.fp}</div>
-            <div class="k-chip k-pop" style={delay(1.1 + n * 0.1)}><span class="ms" aria-hidden="true">vpn_lock</span>{o.cc}</div>
+            <div class="k-chip k-pop" style={delay(1.0 + n * 0.1)}><span class="ms" data-icon="fingerprint" aria-hidden="true"></span>{o.fp}</div>
+            <div class="k-chip k-pop" style={delay(1.1 + n * 0.1)}><span class="ms" data-icon="vpn_lock" aria-hidden="true"></span>{o.cc}</div>
           </div>
         ))}
       </div>
       <div class="k-drop k-draw-down" style={delay(1.5)}></div>
-      <div class="k-site k-rise" style={delay(1.6)}><span class="ms" aria-hidden="true">storefront</span>{f.site}</div>
+      <div class="k-site k-rise" style={delay(1.6)}><span class="ms" data-icon="storefront" aria-hidden="true"></span>{f.site}</div>
       <div class="k-verdict k-v-good k-rise" style={delay(1.85)}>
-        <span class="ms" aria-hidden="true">link_off</span>
+        <span class="ms" data-icon="link_off" aria-hidden="true"></span>
         <div><b>{f.goodTitle}</b><small>{f.goodSub}</small></div>
       </div>
     </div>

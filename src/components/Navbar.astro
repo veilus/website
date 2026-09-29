@@ -44,7 +44,7 @@ const LINKS = [
           aria-controls="k-lang-menu"
           aria-label={i.nav.language}
         >
-          <span class="ms" aria-hidden="true">language</span>{lang.toUpperCase()}<span class="ms" aria-hidden="true">expand_more</span>
+          <span class="ms" data-icon="language" aria-hidden="true"></span>{lang.toUpperCase()}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
         </button>
         <div class="k-lang-menu" id="k-lang-menu">
           {supportedLangs.map((l) => (
@@ -56,7 +56,7 @@ const LINKS = [
       </div>
       <a class="k-btn k-btn-sm" href={getLocalizedPath('/download', lang)} data-cta="navbar_download">{i.nav.download}</a>
       <button class="k-menu-btn" id="k-menu-btn" type="button" aria-controls="k-links" aria-expanded="false" aria-label={i.nav.menu}>
-        <span class="ms" aria-hidden="true">menu</span>
+        <span class="ms" data-icon="menu" aria-hidden="true"></span>
       </button>
     </div>
   </nav>

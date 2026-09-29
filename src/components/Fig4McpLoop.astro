@@ -23,46 +23,46 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
   <div class="k-mcp">
     <div class="k-loop">
       <div class="k-node k-n1 k-rise" style={node(0)}>
-        <div class="k-nh"><span class="ms" aria-hidden="true">chat</span><em>01</em></div>
+        <div class="k-nh"><span class="ms" data-icon="chat" aria-hidden="true"></span><em>01</em></div>
         <b>{f.steps[0].title}</b><span class="k-tool">{f.steps[0].tool}</span>
       </div>
       <div class="k-ar k-a1 k-draw" style={arrow(0)}></div>
       <div class="k-node k-n2 k-rise" style={node(1)}>
-        <div class="k-nh"><span class="ms" aria-hidden="true">smart_toy</span><em>02</em></div>
+        <div class="k-nh"><span class="ms" data-icon="smart_toy" aria-hidden="true"></span><em>02</em></div>
         <b>{f.steps[1].title}</b><span class="k-tool">{f.steps[1].tool}</span>
       </div>
       <div class="k-ar k-a2 k-draw" style={arrow(1)}></div>
       <div class="k-node k-n3 k-rise" style={node(2)}>
-        <div class="k-nh"><span class="ms" aria-hidden="true">play_circle</span><em>03</em></div>
+        <div class="k-nh"><span class="ms" data-icon="play_circle" aria-hidden="true"></span><em>03</em></div>
         <b>{f.steps[2].title}</b><span class="k-tool">{f.steps[2].tool}</span>
       </div>
       <div class="k-ard k-a3 k-draw-down" style={arrow(2)}>
-        <span><span class="ms" aria-hidden="true">autorenew</span>{f.repeat}</span>
+        <span><span class="ms" data-icon="autorenew" aria-hidden="true"></span>{f.repeat}</span>
       </div>
       <div class="k-node k-n4 k-rise" style={node(3)}>
-        <div class="k-nh"><span class="ms" aria-hidden="true">build</span><em>04</em></div>
+        <div class="k-nh"><span class="ms" data-icon="build" aria-hidden="true"></span><em>04</em></div>
         <b>{f.steps[3].title}</b><span class="k-tool">{f.steps[3].tool}</span>
       </div>
       <div class="k-ar k-ar-l k-a4 k-draw-l" style={arrow(3)}></div>
       <div class="k-node k-node-ink k-n5 k-rise" style={node(4)}>
-        <div class="k-nh"><span class="ms" aria-hidden="true">verified_user</span><em>05</em></div>
+        <div class="k-nh"><span class="ms" data-icon="verified_user" aria-hidden="true"></span><em>05</em></div>
         <b>{f.steps[4].title}</b><span class="k-tool">{f.steps[4].tool}</span>
       </div>
       <div class="k-ar k-ar-l k-a5 k-draw-l" style={arrow(4)}></div>
       <div class="k-node k-n6 k-rise" style={node(5)}>
-        <div class="k-nh"><span class="ms" aria-hidden="true">event_repeat</span><em>06</em></div>
+        <div class="k-nh"><span class="ms" data-icon="event_repeat" aria-hidden="true"></span><em>06</em></div>
         <b>{f.steps[5].title}</b><span class="k-tool k-tool-soon">{f.steps[5].tool} · {f.soon}</span>
       </div>
     </div>
 
     <div class="k-conn k-rise" style="--d:0.3s">
       <div class="k-fig">{f.connect}</div>
-      <div class="k-conn-big"><span class="ms" aria-hidden="true">cable</span>{f.connectTitle}</div>
+      <div class="k-conn-big"><span class="ms" data-icon="cable" aria-hidden="true"></span>{f.connectTitle}</div>
       <pre class="k-code">veilus mcp</pre>
       <div class="k-clients">
         <span class="k-chip">Claude Code</span><span class="k-chip">Cursor</span><span class="k-chip">{f.anyClient}</span>
       </div>
-      <div class="k-conn-foot"><span class="ms" aria-hidden="true">lock</span>{f.local}</div>
+      <div class="k-conn-foot"><span class="ms" data-icon="lock" aria-hidden="true"></span>{f.local}</div>
     </div>
   </div>
 </section>

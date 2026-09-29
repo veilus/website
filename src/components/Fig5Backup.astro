@@ -23,50 +23,50 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   <h2 class="k-h2">{f.title}</h2>
   <div class="k-bk">
     <div class="k-bkp">
-      <div class="k-bkh"><span class="ms" aria-hidden="true">history</span><b>{f.snapTitle}</b></div>
+      <div class="k-bkh"><span class="ms" data-icon="history" aria-hidden="true"></span><b>{f.snapTitle}</b></div>
       <div class="k-bkd">
         <div class="k-win k-win-lg">
           <div class="k-wbar"><i></i><i></i><i></i></div>
-          <div class="k-wbd"><span class="ms" aria-hidden="true">fingerprint</span><b>{h.profileName}</b></div>
+          <div class="k-wbd"><span class="ms" data-icon="fingerprint" aria-hidden="true"></span><b>{h.profileName}</b></div>
         </div>
         <div class="k-drop"></div>
         <div class="k-snaps">
-          <div class="k-snap k-rise" style={delay(0.6)}><span class="ms" aria-hidden="true">folder_zip</span>{f.snaps[0]}<em>{f.latest}</em></div>
-          <div class="k-snap k-snap-old k-rise" style={delay(0.45)}><span class="ms" aria-hidden="true">folder_zip</span>{f.snaps[1]}</div>
-          <div class="k-snap k-snap-older k-rise" style={delay(0.3)}><span class="ms" aria-hidden="true">folder_zip</span>{f.snaps[2]}</div>
+          <div class="k-snap k-rise" style={delay(0.6)}><span class="ms" data-icon="folder_zip" aria-hidden="true"></span>{f.snaps[0]}<em>{f.latest}</em></div>
+          <div class="k-snap k-snap-old k-rise" style={delay(0.45)}><span class="ms" data-icon="folder_zip" aria-hidden="true"></span>{f.snaps[1]}</div>
+          <div class="k-snap k-snap-older k-rise" style={delay(0.3)}><span class="ms" data-icon="folder_zip" aria-hidden="true"></span>{f.snaps[2]}</div>
         </div>
-        <div class="k-restore k-pop" style={delay(0.95)}><span class="ms" aria-hidden="true">settings_backup_restore</span>{f.restore}</div>
+        <div class="k-restore k-pop" style={delay(0.95)}><span class="ms" data-icon="settings_backup_restore" aria-hidden="true"></span>{f.restore}</div>
       </div>
       <div class="k-bkc">{f.snapNote}</div>
     </div>
 
     <div class="k-bkp">
-      <div class="k-bkh"><span class="ms" aria-hidden="true">inventory_2</span><b>{f.packTitle}</b></div>
+      <div class="k-bkh"><span class="ms" data-icon="inventory_2" aria-hidden="true"></span><b>{f.packTitle}</b></div>
       <div class="k-bkd">
         <div class="k-move">
-          <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.machineA}</small></div>
+          <div class="k-dev"><span class="ms" data-icon="laptop_mac" aria-hidden="true"></span><small>{f.machineA}</small></div>
           <div class="k-ar k-draw" style={delay(0.3)}><i class="k-pulse" aria-hidden="true"></i></div>
           <div class="k-file k-pop" style={delay(0.55)}>
-            <span class="ms" aria-hidden="true">lock</span><b>{f.packFile}</b><small>{f.packLock}</small>
+            <span class="ms" data-icon="lock" aria-hidden="true"></span><b>{f.packFile}</b><small>{f.packLock}</small>
           </div>
           <div class="k-ar k-draw" style={delay(0.8)}><i class="k-pulse" aria-hidden="true" style="--pd:1.2s"></i></div>
-          <div class="k-dev"><span class="ms" aria-hidden="true">desktop_windows</span><small>{f.machineB}</small></div>
+          <div class="k-dev"><span class="ms" data-icon="desktop_windows" aria-hidden="true"></span><small>{f.machineB}</small></div>
         </div>
       </div>
       <div class="k-bkc">{f.packNote}</div>
     </div>
 
     <div class="k-bkp">
-      <div class="k-bkh"><span class="ms" aria-hidden="true">cloud_sync</span><b>{f.syncTitle}</b></div>
+      <div class="k-bkh"><span class="ms" data-icon="cloud_sync" aria-hidden="true"></span><b>{f.syncTitle}</b></div>
       <div class="k-bkd">
         <div class="k-move">
-          <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.thisMachine}</small></div>
-          <span class="ms k-sw" aria-hidden="true">sync_alt</span>
+          <div class="k-dev"><span class="ms" data-icon="laptop_mac" aria-hidden="true"></span><small>{f.thisMachine}</small></div>
+          <span class="ms k-sw" data-icon="sync_alt" aria-hidden="true"></span>
           <div class="k-file k-pop" style={delay(0.5)}>
-            <span class="ms" aria-hidden="true">cloud</span><b>{f.repo}</b><small>Git · Google Drive</small>
+            <span class="ms" data-icon="cloud" aria-hidden="true"></span><b>{f.repo}</b><small>Git · Google Drive</small>
           </div>
-          <span class="ms k-sw k-sw-r" aria-hidden="true">sync_alt</span>
-          <div class="k-dev"><span class="ms" aria-hidden="true">laptop_mac</span><small>{f.otherMachine}</small></div>
+          <span class="ms k-sw k-sw-r" data-icon="sync_alt" aria-hidden="true"></span>
+          <div class="k-dev"><span class="ms" data-icon="laptop_mac" aria-hidden="true"></span><small>{f.otherMachine}</small></div>
         </div>
       </div>
       <div class="k-bkc">{f.syncNote}</div>

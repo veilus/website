@@ -32,7 +32,7 @@ const faqJsonLd = {
     {q.items.map((item, n) => (
       <details open={n < 2}>
         <summary class="faq-question">
-          <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" aria-hidden="true">add</span>
+          <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" data-icon="add" aria-hidden="true"></span>
         </summary>
         <p>{item.a}</p>
       </details>

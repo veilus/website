@@ -37,14 +37,14 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
     <div class="k-dia">
       <div class="k-box k-draw" style={delay(0.2)}>
         <small>{f.you.tag}</small>
-        <b><span class="ms" aria-hidden="true">person</span>{f.you.name}</b>
+        <b><span class="ms" data-icon="person" aria-hidden="true"></span>{f.you.name}</b>
         <small>{f.you.sub}</small>
       </div>
       <div class="k-arrow k-draw" style={delay(0.55)}><span>{f.prompt}</span></div>
       <div class="k-box k-draw" style={delay(0.8)}>
         <span class="k-co k-pop" style={delay(2.5)}>1</span>
         <small>{f.agent.tag}</small>
-        <b><span class="ms" aria-hidden="true">smart_toy</span>{f.agent.name}</b>
+        <b><span class="ms" data-icon="smart_toy" aria-hidden="true"></span>{f.agent.name}</b>
         <small>Claude · Cursor · …</small>
       </div>
       <div class="k-arrow k-arrow-dbl k-draw" style={delay(1.15)}>
@@ -54,7 +54,7 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
       <div class="k-box k-box-ink k-draw" style={delay(1.4)}>
         <span class="k-co k-pop" style={delay(2.75)}>2</span>
         <small>{f.veilus.tag}</small>
-        <b><span class="ms" aria-hidden="true">hub</span>Veilus</b>
+        <b><span class="ms" data-icon="hub" aria-hidden="true"></span>Veilus</b>
         <small>{f.veilus.sub}</small>
       </div>
       <div class="k-fan k-draw" style={delay(1.75)}></div>
@@ -63,7 +63,7 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
         {NODES.map(([cc, tz], n) => (
           <div class="k-win k-pop" style={delay(1.95 + n * 0.06)}>
             <div class="k-wbar"><i></i><i></i><i></i></div>
-            <div class="k-wbd"><span class="ms" aria-hidden="true">fingerprint</span><b>{cc}</b><em>UTC{tz}</em></div>
+            <div class="k-wbd"><span class="ms" data-icon="fingerprint" aria-hidden="true"></span><b>{cc}</b><em>UTC{tz}</em></div>
           </div>
         ))}
       </div>
