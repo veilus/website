@@ -28,6 +28,11 @@ test('mọi icon dùng tới đều có trong ICONS', () => {
   assert.deepEqual([...used].filter((name) => !ICONS.includes(name)), []);
 });
 
+// Cùng bài trên: tập icon dùng tới BẰNG tập ICONS. Tên thừa trong ICONS là byte phí trong font tải về.
+test('mọi tên trong ICONS đều được dùng', () => {
+  assert.deepEqual(ICONS.filter((name) => !used.has(name)), []);
+});
+
 test('ICONS xếp a→z, không trùng, và đi đúng vào URL font', () => {
   assert.deepEqual([...ICONS].sort(), ICONS);
   assert.equal(new Set(ICONS).size, ICONS.length);
