@@ -49,6 +49,10 @@ const ogImage = `${siteUrl}/og-image-2026-09.png`;
 
 // JSON-LD Structured Data. Giá theo loại tiền trang đang hiện: bảng giá (Pricing.astro) dùng cùng currencyForLang.
 const currency = currencyForLang(lang);
+// Mục featureList lấy từ pricing.paidFeatures theo chỉ số có tên, không theo một khoảng: mảng này Pricing.astro hiện
+// nguyên thứ tự, cùng thứ tự ở 8 file ngôn ngữ; thêm hay đổi thứ tự mảng thì sửa PAID theo. Không lấy "Veilus Sync"
+// (chỉ số 4): trùng ý với home.fig5.syncTitle, câu cụ thể hơn (Git · Google Drive), nên đồng bộ chỉ còn một mục.
+const PAID = { flow: 1, scheduling: 2, localApi: 3 };
 const soldPrices = Object.values(SKUS)
   .filter((s) => s.kind !== "addon")
   .map((s) => (currency === "VND" ? s.vnd : s.usd));
@@ -75,7 +79,9 @@ const jsonLd = {
   featureList: [
     i.home.bento.fields.replace("{n}", String(FINGERPRINT_FIELDS)),
     i.home.bento.proxy,
-    ...i.pricing.paidFeatures.slice(1, 5),
+    i.pricing.paidFeatures[PAID.flow],
+    i.pricing.paidFeatures[PAID.scheduling],
+    i.pricing.paidFeatures[PAID.localApi],
     i.home.fig5.syncTitle,
     i.jsonld.chromiumEngine,
   ],
