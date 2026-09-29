@@ -46,7 +46,8 @@ export const BANNED = [
   },
   {
     id: 'the-only',
-    re: /\bthe only\b|duy nhất|единственн|唯一|satu-satunya|únic[oa] navegador|\btek\b[^.\n]{0,60}tarayıcı/i,
+    // tr "tek" cũng nghĩa là "một" ("tek tıkla", "tek bir"): chỉ bắt "tek [anti-tespit] tarayıcı".
+    re: /\bthe only\b|duy nhất|единственн|唯一|satu-satunya|únic[oa] navegador|\btek\b\s+(?:anti[-\s]?(?:tespit|detect)\s+)?tarayıcı/i,
     why: 'khẳng định "duy nhất" không kiểm chứng được',
   },
   {

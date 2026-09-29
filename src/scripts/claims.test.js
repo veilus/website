@@ -155,6 +155,10 @@ const NEAR_MISS = [
   // tr "şifre" là MẬT KHẨU, không phải "mã hoá".
   'Senkronizasyon için bir erişim şifresi gerekmez',
   'Tek seferlik ödeme',
+  // tr "tek" nghĩa là "một" (tr.json dùng 9 lần): chỉ "tek [anti-tespit] tarayıcı" mới là "trình duyệt duy nhất".
+  'Tek tıkla tarayıcı açılır',
+  'tek bir tarayıcı penceresi',
+  'Tek bilgisayarda yüz tarayıcı',
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
   'Our affiliate program pays 20% per sale',
