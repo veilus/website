@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Browser anti-deteksi dengan otomasi bawaan",
-        "description": "Jalankan banyak akun di satu komputer, masing-masing dengan sidik jari dan proxy sendiri. Minta asisten AI Anda menulis skrip lewat MCP, atau tulis sendiri, lalu jalankan di semua profil. 5 profil gratis."
+        "description": "Veilus adalah browser anti-deteksi: banyak akun di satu komputer, sidik jari dan proxy sendiri per profil. Skrip ditulis AI lewat MCP. 5 profil gratis."
     },
     "nav": {
         "antiDetect": "Anti-detect",

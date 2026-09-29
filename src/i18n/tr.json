@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Otomasyonu dahili anti-tespit tarayıcı",
-        "description": "Tek bilgisayarda çok sayıda hesap yönetin; her hesabın kendi parmak izi ve proxy'si olsun. Betiği yapay zekâ asistanınıza MCP üzerinden yazdırın ya da kendiniz yazın, sonra tüm profillerde çalıştırın. 5 profil ücretsiz."
+        "description": "Anti-tespit tarayıcı Veilus: tek bilgisayarda çok hesap, her profile ayrı parmak izi ve proxy. Betikleri yapay zekâ MCP ile yazar. 5 profil ücretsiz."
     },
     "nav": {
         "antiDetect": "Anti-detect",

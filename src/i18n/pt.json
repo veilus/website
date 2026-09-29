@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Navegador antidetecção com automação integrada",
-        "description": "Rode várias contas em um só computador, cada uma com sua impressão digital e seu proxy. Peça ao seu assistente de IA para escrever o script via MCP, ou escreva você mesmo, e rode em todos os perfis. 5 perfis grátis."
+        "description": "Veilus é um navegador antidetecção para várias contas em um só PC: impressão digital e proxy por perfil, scripts pela sua IA via MCP. 5 perfis grátis."
     },
     "nav": {
         "antiDetect": "Anti-detect",

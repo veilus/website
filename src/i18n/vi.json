@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Trình duyệt anti-detect có sẵn tự động hóa",
-        "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Nhờ trợ lý AI viết script qua MCP — hoặc tự viết — rồi chạy trên mọi hồ sơ. Miễn phí 5 hồ sơ."
+        "description": "Veilus là trình duyệt anti-detect: chạy nhiều tài khoản trên một máy, mỗi hồ sơ một fingerprint và proxy riêng, AI viết script qua MCP. Miễn phí 5 hồ sơ."
     },
     "nav": {
         "antiDetect": "Anti-detect",

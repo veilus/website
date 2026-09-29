@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Anti-detect browser with built-in automation",
-        "description": "Run many accounts on one computer, each with its own fingerprint and proxy. Have your AI assistant write the script over MCP, or write it yourself, then run it on every profile. Free for 5 profiles."
+        "description": "Veilus is an anti-detect browser for many accounts on one computer: a fingerprint and proxy per profile, scripts by your AI over MCP. Free for 5 profiles."
     },
     "nav": {
         "antiDetect": "Anti-detect",
