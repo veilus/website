@@ -468,7 +468,7 @@
         "final": {
             "fig": "sonraki adım",
             "title": "Veilus'u indirin. Yapay zekâ asistanınızı bağlayın. Talimat verin.",
-            "micro": "Kart gerekmez · profiller bilgisayarınızda kalır"
+            "micro": "Kart gerekmez · profiller varsayılan olarak bilgisayarınızda kalır"
         }
     }
 }
