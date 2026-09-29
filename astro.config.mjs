@@ -37,6 +37,10 @@ export default defineConfig({
     vite: {
         build: {
             cssMinify: true,
+            // Font tự host (VEIL-1038) luôn là file riêng trong _assets/: file dưới 4 KB (Plex Mono vietnamese
+            // 400, 500) mà nhúng base64 thì nằm trong CSS chặn render của mọi trang, kể cả trang không có chữ
+            // Việt. undefined: mọi thứ khác, kể cả ngưỡng Astro nhúng CSS/script vào HTML, giữ mặc định 4 KB.
+            assetsInlineLimit: (file) => (file.endsWith('.woff2') ? false : undefined),
         },
     },
 });

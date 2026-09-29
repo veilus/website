@@ -1,6 +1,7 @@
 /**
  * Icon Material Symbols Rounded mà website dùng. Spec trang chủ §3: tải bằng icon_names=, không tải cả bộ.
- * Thêm icon mới vào component thì thêm tên vào đây — src/scripts/icons.test.js canh.
+ * Thêm icon mới vào component thì thêm tên vào đây rồi chạy `node scripts/fetch-fonts.mjs` để tải lại font tự host
+ * (VEIL-1038) — src/scripts/icons.test.js canh cả hai việc.
  * Google Fonts đòi icon_names xếp a→z.
  */
 export const ICONS = [
@@ -11,6 +12,7 @@ export const ICONS = [
   'sync_alt', 'verified_user', 'visibility_off', 'vpn_lock',
 ];
 
+// CSS Google Fonts mà scripts/fetch-fonts.mjs tải font icon theo; trang không gọi URL này.
 // wght 200..300: nét 300 mặc định, 200 cho icon vân tay lớn ở Hình 3. display=block: icon chưa tải thì
 // để trống, thay vì hiện chữ "fingerprint".
 export const iconFontHref = () =>

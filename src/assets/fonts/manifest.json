@@ -1,0 +1,94 @@
+{
+  "generatedBy": "scripts/fetch-fonts.mjs",
+  "css": [
+    "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap",
+    "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght@20..48,200..300&icon_names=account_circle,add,api,arrow_forward,autorenew,bolt,build,cable,chat,check,close,cloud,cloud_sync,cookie,desktop_windows,event_repeat,expand_more,fingerprint,folder_zip,history,hub,inventory_2,language,laptop_mac,link,link_off,lock,menu,person,play_circle,remove,schedule,settings_backup_restore,smart_toy,stacks,storefront,sync_alt,verified_user,visibility_off,vpn_lock&display=block"
+  ],
+  "icon_names": "account_circle,add,api,arrow_forward,autorenew,bolt,build,cable,chat,check,close,cloud,cloud_sync,cookie,desktop_windows,event_repeat,expand_more,fingerprint,folder_zip,history,hub,inventory_2,language,laptop_mac,link,link_off,lock,menu,person,play_circle,remove,schedule,settings_backup_restore,smart_toy,stacks,storefront,sync_alt,verified_user,visibility_off,vpn_lock",
+  "files": {
+    "ibm-plex-mono-400-cyrillic-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iIq131nj-otFQ.woff2",
+      "bytes": 4348
+    },
+    "ibm-plex-mono-400-cyrillic.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1isq131nj-otFQ.woff2",
+      "bytes": 5476
+    },
+    "ibm-plex-mono-400-vietnamese.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iAq131nj-otFQ.woff2",
+      "bytes": 4000
+    },
+    "ibm-plex-mono-400-latin-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iEq131nj-otFQ.woff2",
+      "bytes": 8860
+    },
+    "ibm-plex-mono-400-latin.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q131nj-o.woff2",
+      "bytes": 10052
+    },
+    "ibm-plex-mono-500-cyrillic-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl1FgsAXHNlYzg.woff2",
+      "bytes": 4336
+    },
+    "ibm-plex-mono-500-cyrillic.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgsAXHNlYzg.woff2",
+      "bytes": 5500
+    },
+    "ibm-plex-mono-500-vietnamese.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl9FgsAXHNlYzg.woff2",
+      "bytes": 4036
+    },
+    "ibm-plex-mono-500-latin-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl5FgsAXHNlYzg.woff2",
+      "bytes": 8848
+    },
+    "ibm-plex-mono-500-latin.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgsAXHNk.woff2",
+      "bytes": 10060
+    },
+    "ibm-plex-mono-600-cyrillic-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwl1FgsAXHNlYzg.woff2",
+      "bytes": 4320
+    },
+    "ibm-plex-mono-600-cyrillic.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlRFgsAXHNlYzg.woff2",
+      "bytes": 5548
+    },
+    "ibm-plex-mono-600-vietnamese.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwl9FgsAXHNlYzg.woff2",
+      "bytes": 4116
+    },
+    "ibm-plex-mono-600-latin-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwl5FgsAXHNlYzg.woff2",
+      "bytes": 8960
+    },
+    "ibm-plex-mono-600-latin.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgsAXHNk.woff2",
+      "bytes": 10120
+    },
+    "ibm-plex-sans-cyrillic-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbSB4ZhRNU.woff2",
+      "bytes": 19684
+    },
+    "ibm-plex-sans-cyrillic.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbSB4ZhRNU.woff2",
+      "bytes": 25408
+    },
+    "ibm-plex-sans-vietnamese.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbSB4ZhRNU.woff2",
+      "bytes": 9612
+    },
+    "ibm-plex-sans-latin-ext.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbSB4ZhRNU.woff2",
+      "bytes": 25868
+    },
+    "ibm-plex-sans-latin.woff2": {
+      "from": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYbSB4Zh.woff2",
+      "bytes": 40240
+    },
+    "material-symbols-rounded.woff2": {
+      "from": "https://fonts.gstatic.com/l/font?kit=sykO-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvDmUSVOK7BDB_Qb9vUSzq3wzLK-P0J-UXXkRzDgxFr3Wz9zxLLy4rYY_q7quPYwz-UDGbWWu8aYNRgsneiHqunUNA-nYDzgg_vbDcfvX49-juyww7-mGy9BE611UAzUNJEIaOkOV70xC2stHwa-kDOAGOw-OoV&skey=70ddea8fe54d532e&v=v375",
+      "bytes": 28324
+    }
+  }
+}

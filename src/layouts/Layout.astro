@@ -2,7 +2,9 @@
 import type { Lang } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
 import { FINGERPRINT_FIELDS } from "../data/facts.js";
-import { iconFontHref } from "../data/icons.js";
+// Font tự host (VEIL-1038): src/styles/fonts.css do scripts/fetch-fonts.mjs sinh. ?url cho tên file đã băm,
+// cùng file mà fonts.css trỏ tới — preload và @font-face dùng chung một lần tải.
+import plexSansLatin from "../assets/fonts/ibm-plex-sans-latin.woff2?url";
 import { currencyForLang } from "../scripts/purchase-core.js";
 import {
   t,
@@ -189,14 +191,9 @@ const websiteJsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)}
     ></script>
 
-    <!-- Fonts (preconnect for performance) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href={iconFontHref()} rel="stylesheet" />
+    {/* Chỉ preload chữ Latin của IBM Plex Sans: bốn weight 400–700 dùng chung file này (font biến thiên), mọi
+        ngôn ngữ đều có chữ Latin. Subset khác tải theo unicode-range; font icon không preload. */}
+    <link rel="preload" href={plexSansLatin} as="font" type="font/woff2" crossorigin />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -258,6 +255,7 @@ const websiteJsonLd = {
 </html>
 
 <style is:global>
+  @import "../styles/fonts.css";
   @import "../styles/global.css";
   @import "../styles/blueprint.css";
 </style>

@@ -9,6 +9,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { ICONS, iconFontHref } from '../data/icons.js';
 
 const SRC = new URL('../', import.meta.url);
+const manifest = JSON.parse(readFileSync(new URL('assets/fonts/manifest.json', SRC), 'utf8'));
 const sources = readdirSync(SRC, { recursive: true })
   .filter((f) => f.endsWith('.astro'))
   .map((f) => readFileSync(new URL(f, SRC), 'utf8'));
@@ -46,4 +47,11 @@ test('ICONS xếp a→z, không trùng, và đi đúng vào URL font', () => {
 test('span icon rỗng thân và mang tên ở data-icon', () => {
   assert.ok(spans.length >= 3, `chỉ thấy ${spans.length} span icon`);
   assert.deepEqual(spans.filter((s) => !/ data-icon="[a-z0-9_]+"[^>]*><\/span>$/.test(s)), []);
+});
+
+// VEIL-1038: trang tự host font icon; scripts/fetch-fonts.mjs ghi tên icon đã tải vào manifest.json. Thêm icon vào
+// ICONS mà quên chạy lại script thì font thiếu hình, trang hiện chữ.
+// KHÔNG ĐO: file woff2 có đúng là bản tải theo manifest không — cả hai do script ghi, sửa tay một bên thì bài không thấy.
+test('font icon tự host tải đúng tập ICONS', () => {
+  assert.equal(manifest.icon_names, ICONS.join(','));
 });

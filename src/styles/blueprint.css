@@ -2,9 +2,9 @@
    project-docs/plans/2026-09-29-trang-chu-ban-ve/PhuongAnC2.dc.html ở repo gốc (lớp .k-*).
    Phần chỉ một hình dùng nằm trong <style> của component hình đó. Token màu ở global.css. */
 
-/* Icon Material Symbols (font tải ở Layout.astro, danh sách ở data/icons.js).
-   Hộp rộng đúng 1em và cắt phần thừa: font icon không tải được (chặn Google Fonts) thì tên icon
-   ("expand_more") hiện thành chữ, và chữ đó không được đẩy trang tràn ngang.
+/* Icon Material Symbols (font tự host ở styles/fonts.css, danh sách ở data/icons.js).
+   Hộp rộng đúng 1em và cắt phần thừa: font icon không tải được thì tên icon ("expand_more") hiện thành
+   chữ, và chữ đó không được đẩy trang tràn ngang.
    flex-shrink: 0 — overflow: hidden cho phép flex item co dưới 1em, cắt mất mép icon (đo 2026-09-29:
    bolt, lock, vpn_lock, schedule… trong ô flex chữ dài). */
 .ms {
