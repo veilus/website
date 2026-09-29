@@ -36,17 +36,24 @@ export function getLangFromUrl(url: URL): Lang {
     return defaultLang;
 }
 
-export function getLocalizedPath(path: string, lang: Lang): string {
-    if (lang === defaultLang) return path;
-    return `/${lang}${path}`;
+/** Bỏ tiền tố ngôn ngữ, kể cả en: /vi/cookies/ → /cookies/, /vi → /. Ranh giới (?=\/|$) giữ /identity nguyên vẹn. */
+export function stripLang(path: string): string {
+    return path.replace(/^\/(en|zh|ru|vi|pt|es|tr|id)(?=\/|$)/, '') || '/';
 }
 
-/** Generate hreflang links for all supported languages */
+/**
+ * Đường dẫn của trang ở ngôn ngữ lang. Phần đường dẫn luôn có / cuối — một dạng URL cho link nội bộ, canonical,
+ * hreflang và sitemap; thiếu / thì mỗi lượt bấm đi qua một lần chuyển hướng 308. ?query và #hash giữ nguyên:
+ * ('/mua?sku=monthly', 'vi') → /vi/mua/?sku=monthly.
+ */
+export function getLocalizedPath(path: string, lang: Lang): string {
+    const [, pathname, rest] = path.match(/^([^?#]*)(.*)$/)!;
+    const slashed = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    return `${lang === defaultLang ? '' : `/${lang}`}${slashed}${rest}`;
+}
+
+/** hreflang của trang đang dựng cho mọi ngôn ngữ, cùng dạng URL với canonical: https://veilus.io/vi/download/ */
 export function getHreflangs(currentPath: string, siteUrl: string) {
-    // Strip any existing lang prefix
-    const cleanPath = currentPath.replace(/^\/(en|zh|ru|vi|pt|es|tr|id)/, '') || '/';
-    return supportedLangs.map((lang) => ({
-        lang,
-        href: `${siteUrl}${lang === defaultLang ? '' : `/${lang}`}${cleanPath === '/' ? '' : cleanPath}`,
-    }));
+    const cleanPath = stripLang(currentPath);
+    return supportedLangs.map((lang) => ({ lang, href: `${siteUrl}${getLocalizedPath(cleanPath, lang)}` }));
 }

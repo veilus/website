@@ -1,0 +1,27 @@
+---
+/**
+ * Trang 404 (VEIL-1029). Có dist/404.html thì Cloudflare Pages trả mã 404 kèm trang này cho URL không có file;
+ * không có nó, Pages coi site là SPA và trả trang chủ với mã 200 cho mọi URL lạ (soft 404).
+ * Một trang cho mọi ngôn ngữ: không biết người đọc tới từ ngôn ngữ nào, nên có link về trang chủ của cả 8.
+ */
+import Layout from '../layouts/Layout.astro';
+import { languages, supportedLangs, getLocalizedPath } from '../i18n/utils';
+---
+
+<Layout title="404 — Veilus" notFound>
+  <main class="k-wrap k-404">
+    <a class="k-mark" href="/">VEILUS</a>
+    <h1 class="k-h2">404 — This page does not exist.</h1>
+    <ul>
+      {supportedLangs.map((l) => (
+        <li><a href={getLocalizedPath('/', l)} lang={l} hreflang={l}>{languages[l].label}</a></li>
+      ))}
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .k-404 { padding-block: 40px 104px; }
+  .k-404 .k-h2 { margin-top: 64px; }
+  .k-404 ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+</style>

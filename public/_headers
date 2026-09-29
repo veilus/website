@@ -1,4 +1,16 @@
 /mua*
   Referrer-Policy: no-referrer
-/*/mua*
+/zh/mua*
+  Referrer-Policy: no-referrer
+/ru/mua*
+  Referrer-Policy: no-referrer
+/vi/mua*
+  Referrer-Policy: no-referrer
+/pt/mua*
+  Referrer-Policy: no-referrer
+/es/mua*
+  Referrer-Policy: no-referrer
+/tr/mua*
+  Referrer-Policy: no-referrer
+/id/mua*
   Referrer-Policy: no-referrer

@@ -4,7 +4,7 @@
  * các phần của trang chủ, chọn ngôn ngữ, nút tải về. Dưới 1180px liên kết gập vào nút menu.
  */
 import type { Lang } from '../i18n/utils';
-import { t, languages, supportedLangs, defaultLang, getLocalizedPath } from '../i18n/utils';
+import { t, languages, supportedLangs, defaultLang, getLocalizedPath, stripLang } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -13,19 +13,8 @@ const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
 const home = getLocalizedPath('/', lang);
 
-// Đường dẫn bỏ tiền tố ngôn ngữ (vd /vi/cookies → /cookies), để đổi ngôn ngữ mà vẫn ở trang đang xem
-const pathname = Astro.url.pathname;
-let basePath = pathname;
-for (const l of supportedLangs) {
-  if (l !== defaultLang && pathname.startsWith(`/${l}/`)) {
-    basePath = pathname.slice(l.length + 1);
-    break;
-  } else if (l !== defaultLang && pathname === `/${l}`) {
-    basePath = '/';
-    break;
-  }
-}
-if (basePath !== '/' && basePath.endsWith('/')) basePath = basePath.slice(0, -1);
+// Đường dẫn bỏ tiền tố ngôn ngữ (vd /vi/cookies/ → /cookies/), để đổi ngôn ngữ mà vẫn ở trang đang xem
+const basePath = stripLang(Astro.url.pathname);
 
 // Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này
 const LINKS = [

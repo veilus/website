@@ -15,8 +15,10 @@ interface Props {
   lang?: Lang;
   title?: string;
   description?: string;
-  /** Trang mang key license trên URL (/mua): không GA, không analytics.js, không Referer. */
+  /** Trang mang key license trên URL (/mua): không GA, không analytics.js, không Referer, không index. */
   noTracking?: boolean;
+  /** Trang 404: không có URL riêng nên không canonical, không og:url, không hreflang; không index. */
+  notFound?: boolean;
 }
 
 const lang = Astro.props.lang || defaultLang;
@@ -25,12 +27,15 @@ const {
   title = i.meta.title,
   description = i.meta.description,
   noTracking = false,
+  notFound = false,
 } = Astro.props;
 
 const siteUrl = "https://veilus.io";
 const hreflangs = getHreflangs(Astro.url.pathname, siteUrl);
-const canonicalUrl =
-  lang === defaultLang ? `${siteUrl}/` : `${siteUrl}/${lang}/`;
+// Canonical là chính trang. Lúc build (format 'directory') pathname luôn có / cuối, cùng dạng với sitemap.
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+// x-default là bản en của CHÍNH trang này, không phải trang chủ.
+const xDefault = hreflangs.find((h) => h.lang === defaultLang)!.href;
 
 // Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID
 const GA_ID = "G-CZ9G6B0L4M";
@@ -114,6 +119,8 @@ const faqJsonLd = {
   <head>
     <meta charset="UTF-8" />
     {noTracking && <meta name="referrer" content="no-referrer" />}
+    {/* noindex bằng meta, không bằng robots.txt: chặn crawl thì Google không đọc được noindex */}
+    {(noTracking || notFound) && <meta name="robots" content="noindex" />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script is:inline>
       // Hiệu ứng khi cuộn chỉ bật khi có IntersectionObserver; không có thì trang đứng ở trạng thái cuối.
@@ -141,13 +148,13 @@ const faqJsonLd = {
     }
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalUrl} />
+    {!notFound && <link rel="canonical" href={canonicalUrl} />}
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
+    {!notFound && <meta property="og:url" content={canonicalUrl} />}
     <meta property="og:image" content={`${siteUrl}/og-image.png`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -163,11 +170,11 @@ const faqJsonLd = {
 
     <!-- Hreflang for SEO -->
     {
-      hreflangs.map(({ lang: l, href }) => (
+      !notFound && hreflangs.map(({ lang: l, href }) => (
         <link rel="alternate" hreflang={l} href={href} />
       ))
     }
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+    {!notFound && <link rel="alternate" hreflang="x-default" href={xDefault} />}
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}

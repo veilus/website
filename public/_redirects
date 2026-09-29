@@ -1,0 +1,5 @@
+/blog      https://blog.veilus.io/blog/        301
+/blog/*    https://blog.veilus.io/blog/:splat  301
+/pricing   /#pricing                           301
+/en        /                                   301
+/en/*      /:splat                             301

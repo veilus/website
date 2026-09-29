@@ -82,7 +82,7 @@ export const termsTranslations: Record<string, {
   <li>You retain full ownership of your browser profile data, automation scripts, and workflows.</li>
   <li>Profile data is stored locally on your device. We do not have access to it.</li>
   <li>Veilus Sync syncs data to a Git repository or Google Drive you choose; that data is not encrypted by Veilus. Only the remote access token is encrypted, on your device.</li>
-  <li>See our <a href="/privacy">Privacy Policy</a> for details on data handling.</li>
+  <li>See our <a href="/privacy/">Privacy Policy</a> for details on data handling.</li>
 </ul>
 
 <h2>8. Disclaimers</h2>
@@ -196,7 +196,7 @@ export const termsTranslations: Record<string, {
   <li>Bạn giữ toàn quyền sở hữu dữ liệu profile, script và workflow.</li>
   <li>Dữ liệu profile lưu cục bộ. Chúng tôi không truy cập được.</li>
   <li>Veilus Sync đồng bộ dữ liệu tới Git repository hoặc Google Drive do bạn chọn; dữ liệu đó không được Veilus mã hóa. Chỉ access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn.</li>
-  <li>Xem <a href="/vi/privacy">Chính sách Bảo mật</a> để biết chi tiết.</li>
+  <li>Xem <a href="/vi/privacy/">Chính sách Bảo mật</a> để biết chi tiết.</li>
 </ul>
 
 <h2>8. Tuyên bố từ chối</h2>
