@@ -83,10 +83,11 @@ export const BANNED = [
   },
   {
     // Động từ phủ định phải đứng sát chữ "dữ liệu": câu đúng "We do not knowingly collect personal data
-    // from children", "We never collect: …" của chính sách quyền riêng tư không bị bắt. "no personal data" phải
-    // kèm "collected"; tr "toplamayı" (danh động từ "việc thu thập") không phải phủ định.
+    // from children", "We never collect: …" của chính sách quyền riêng tư không bị bắt. "no personal data" bị
+    // bắt ở mọi dạng: Veilus lưu dữ liệu tài khoản ở Cloudflare D1 (privacy), nên không câu nào dạng này đúng
+    // với Veilus; tr "toplamayı" (danh động từ "việc thu thập") không phải phủ định.
     id: 'no-personal-data',
-    re: /no personal data(?! (?:is|are) (?!collected))|(?:do(?:es)?(?: not|n['’]t)|never) collect (?:any )?(?:personal )?data|không thu thập (?:bất kỳ )?dữ liệu|不收集(?:任何)?(?:个人)?(?:数据|信息)|без сбора (?:\S+ )?данных|не собира\S* (?:\S+ )?данн|sem coleta de dados|não coleta\S* (?:\S+ )?dados|sin datos recopilados|no recopila\S* (?:\S+ )?datos|veri\S* topla(?:n?maz|mıyor|may(?:ız|acağ|an))|tidak mengumpulkan (?:\S+ )?data/i,
+    re: /no personal data|(?:do(?:es)?(?: not|n['’]t)|never) collect (?:any )?(?:personal )?data|không thu thập (?:bất kỳ )?dữ liệu|不收集(?:任何)?(?:个人)?(?:数据|信息)|без сбора (?:\S+ )?данных|не собира\S* (?:\S+ )?данн|sem coleta de dados|não coleta\S* (?:\S+ )?dados|sin datos recopilados|no recopila\S* (?:\S+ )?datos|veri\S* topla(?:n?maz|mıyor|may(?:ız|acağ|an))|tidak mengumpulkan (?:\S+ )?data/i,
     why: 'trang tải về thu email danh sách chờ; chính sách quyền riêng tư liệt kê email và dữ liệu phân tích (GA4)',
   },
 ];

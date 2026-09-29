@@ -138,6 +138,7 @@ const VARIANTS = [
   // Thể chủ động "toplamaz" (không thu thập); thể bị động "toplanmaz" đã lên trang, nằm ở HISTORIC.
   ['no-personal-data', 'Kişisel veri toplamaz'],
   ['no-personal-data', 'Veilus collects no personal data.'],
+  ['no-personal-data', 'No personal data is stored on our servers.'],
   ['no-personal-data', 'No personal data · No credit card required'],
   ['no-personal-data', 'No personal data. No credit card.'],
   ['no-personal-data', 'Kişisel veri toplamayan anti-tespit tarayıcı'],
@@ -165,9 +166,8 @@ const NEAR_MISS = [
   'Tek tıkla tarayıcı açılır',
   'tek bir tarayıcı penceresi',
   'Tek bilgisayarda yüz tarayıcı',
-  // "toplamayı" là danh động từ ("việc thu thập"), không phải phủ định; "no personal data" thiếu "collected".
+  // "toplamayı" là danh động từ ("việc thu thập"), không phải phủ định.
   'Çerezler, analiz için veri toplamayı sağlar',
-  'no personal data is stored on our servers',
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
   'Our affiliate program pays 20% per sale',
