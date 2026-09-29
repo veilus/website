@@ -137,6 +137,10 @@ const VARIANTS = [
   ['sync-encrypted', 'Profiller eşitlenir ve şifrelenir'],
   // Thể chủ động "toplamaz" (không thu thập); thể bị động "toplanmaz" đã lên trang, nằm ở HISTORIC.
   ['no-personal-data', 'Kişisel veri toplamaz'],
+  ['no-personal-data', 'Veilus collects no personal data.'],
+  ['no-personal-data', 'No personal data · No credit card required'],
+  ['no-personal-data', 'No personal data. No credit card.'],
+  ['no-personal-data', 'Kişisel veri toplamayan anti-tespit tarayıcı'],
 ];
 
 // Câu đúng, hoặc chuỗi kỹ thuật trông gần giống: không mẫu nào được bắt.

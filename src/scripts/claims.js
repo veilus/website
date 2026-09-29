@@ -12,6 +12,7 @@
  *   dấu "…" (U+2026) thì không cắt câu, vẫn bắt;
  * - chữ trong ảnh (public/og-image.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);
  * - lúc nào bài chạy: CI chỉ chạy bài này trước deploy khi push main; nhánh khác không bị chặn.
+ * - mẫu `the-only` tiếng Thổ chỉ bắt "tek [anti-tespit] tarayıcı"; câu "duy nhất" diễn đạt khác, như "Piyasadaki tek yapay zekâ destekli tarayıcı", thì lọt. Mẫu cố ý hẹp vì tr.json dùng "tek" nghĩa là "một" chín lần.
  */
 
 // Chữ "đồng bộ" và chữ "mã hoá" của 8 ngôn ngữ; sync-encrypted bắt hai nhóm đứng gần nhau.
@@ -85,7 +86,7 @@ export const BANNED = [
     // from children", "We never collect: …" của chính sách quyền riêng tư không bị bắt. "no personal data" phải
     // kèm "collected"; tr "toplamayı" (danh động từ "việc thu thập") không phải phủ định.
     id: 'no-personal-data',
-    re: /no personal data (?:is |are )?collected|(?:do(?:es)?(?: not|n['’]t)|never) collect (?:any )?(?:personal )?data|không thu thập (?:bất kỳ )?dữ liệu|不收集(?:任何)?(?:个人)?(?:数据|信息)|без сбора (?:\S+ )?данных|не собира\S* (?:\S+ )?данн|sem coleta de dados|não coleta\S* (?:\S+ )?dados|sin datos recopilados|no recopila\S* (?:\S+ )?datos|veri\S* topla(?:n?maz|mıyor|mayız|mayacağ)|tidak mengumpulkan (?:\S+ )?data/i,
+    re: /no personal data(?! (?:is|are) (?!collected))|(?:do(?:es)?(?: not|n['’]t)|never) collect (?:any )?(?:personal )?data|không thu thập (?:bất kỳ )?dữ liệu|不收集(?:任何)?(?:个人)?(?:数据|信息)|без сбора (?:\S+ )?данных|не собира\S* (?:\S+ )?данн|sem coleta de dados|não coleta\S* (?:\S+ )?dados|sin datos recopilados|no recopila\S* (?:\S+ )?datos|veri\S* topla(?:n?maz|mıyor|may(?:ız|acağ|an))|tidak mengumpulkan (?:\S+ )?data/i,
     why: 'trang tải về thu email danh sách chờ; chính sách quyền riêng tư liệt kê email và dữ liệu phân tích (GA4)',
   },
 ];
