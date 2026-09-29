@@ -12,13 +12,13 @@
 - Platforms: macOS and Windows (no Linux version)
 
 ## Main Pages
-- [Homepage](https://veilus.io): Product overview, features, pricing, FAQ
-- [Download](https://veilus.io/download): Download Veilus for macOS and Windows
+- [Homepage](https://veilus.io/): Product overview, features, pricing, FAQ
+- [Download](https://veilus.io/download/): Early access waitlist; the macOS and Windows downloads are marked "Coming soon"
 - [Documentation](https://docs.veilus.io): User guides, API reference
 - [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy
-- [Privacy Policy](https://veilus.io/privacy): Data collection and protection
-- [Terms of Service](https://veilus.io/terms): Usage terms
-- [Refund Policy](https://veilus.io/refund): Refund conditions
+- [Privacy Policy](https://veilus.io/privacy/): Data collection and protection
+- [Terms of Service](https://veilus.io/terms/): Usage terms
+- [Refund Policy](https://veilus.io/refund/): Refund conditions
 
 ## Core Features
 - Profiles: own fingerprint and own proxy per profile
@@ -36,10 +36,10 @@
 - Lifetime includes updates forever and 3 years of support (renewal: 40% of the plan price per 3 years)
 - More than 20 devices: contact us
 - Refunds: within 7 days (monthly) or 14 days (lifetime)
-- Buy: https://veilus.io/mua
+- Buy: https://veilus.io/mua/
 
 ## Contact
-- Website: https://veilus.io
+- Website: https://veilus.io/
 - Telegram: https://t.me/veilusbrowser
 - Twitter/X: https://x.com/veilusbrowser
 - GitHub: https://github.com/veilus

@@ -14,3 +14,6 @@
   Referrer-Policy: no-referrer
 /id/mua*
   Referrer-Policy: no-referrer
+# Tài sản Astro mang mã băm nội dung trong tên (build.assets = _assets): đổi nội dung là đổi tên, nên cache một năm.
+/_assets/*
+  Cache-Control: public, max-age=31536000, immutable
