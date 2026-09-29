@@ -192,13 +192,10 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
-        "title": "İndir",
         "titleHighlight": "Veilus",
         "soon": "Yakında",
         "noCard": "Kredi kartı gerekmez",
         "freeProfiles": "5 profil süresiz ücretsiz",
-        "subtitle": "5 profille sonsuza kadar ücretsiz.",
-        "downloadBtn": "İndir",
         "reqTitle": "Sistem Gereksinimleri",
         "engine": "Tarayıcı motoru uygulama içinden ayrıca indirilir"
     },

@@ -192,13 +192,10 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
-        "title": "Unduh",
         "titleHighlight": "Veilus",
         "soon": "Segera hadir",
         "noCard": "Tanpa kartu kredit",
         "freeProfiles": "5 profil gratis selamanya",
-        "subtitle": "Gratis selamanya dengan 5 profil.",
-        "downloadBtn": "Unduh",
         "reqTitle": "Persyaratan Sistem",
         "engine": "Mesin browser diunduh terpisah di aplikasi"
     },

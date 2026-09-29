@@ -192,13 +192,10 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
-        "title": "Download",
         "titleHighlight": "Veilus",
         "soon": "Coming soon",
         "noCard": "No credit card required",
         "freeProfiles": "5 free profiles forever",
-        "subtitle": "Free forever with 5 profiles. Choose your platform.",
-        "downloadBtn": "Download",
         "reqTitle": "System Requirements",
         "engine": "Browser engine, downloaded separately in the app"
     },

@@ -192,13 +192,10 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
-        "title": "Tải",
         "titleHighlight": "Veilus",
         "soon": "Sắp ra mắt",
         "noCard": "Không cần thẻ tín dụng",
         "freeProfiles": "5 hồ sơ miễn phí mãi mãi",
-        "subtitle": "Miễn phí vĩnh viễn với 5 profiles. Chọn nền tảng của bạn.",
-        "downloadBtn": "Tải xuống",
         "reqTitle": "Yêu cầu hệ thống",
         "engine": "Engine trình duyệt tải riêng trong app"
     },

@@ -192,13 +192,10 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
-        "title": "下载",
         "titleHighlight": "Veilus",
         "soon": "即将推出",
         "noCard": "无需信用卡",
         "freeProfiles": "5 个配置文件永久免费",
-        "subtitle": "5个配置文件永久免费。选择您的平台。",
-        "downloadBtn": "下载",
         "reqTitle": "系统要求",
         "engine": "浏览器引擎需在应用内单独下载"
     },
