@@ -135,6 +135,8 @@ const VARIANTS = [
   ['sync-encrypted', 'Profil tersinkron dan terenkripsi'],
   ['sync-encrypted', 'Menyinkronkan profil secara terenkripsi'],
   ['sync-encrypted', 'Profiller eşitlenir ve şifrelenir'],
+  // Thể chủ động "toplamaz" (không thu thập); thể bị động "toplanmaz" đã lên trang, nằm ở HISTORIC.
+  ['no-personal-data', 'Kişisel veri toplamaz'],
 ];
 
 // Câu đúng, hoặc chuỗi kỹ thuật trông gần giống: không mẫu nào được bắt.
@@ -159,6 +161,9 @@ const NEAR_MISS = [
   'Tek tıkla tarayıcı açılır',
   'tek bir tarayıcı penceresi',
   'Tek bilgisayarda yüz tarayıcı',
+  // "toplamayı" là danh động từ ("việc thu thập"), không phải phủ định; "no personal data" thiếu "collected".
+  'Çerezler, analiz için veri toplamayı sağlar',
+  'no personal data is stored on our servers',
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
   'Our affiliate program pays 20% per sale',
