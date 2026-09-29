@@ -15,67 +15,6 @@
         "menu": "Buka menu",
         "language": "Bahasa"
     },
-    "comparison": {
-        "title": "Veilus",
-        "titleHighlight": "dibandingkan",
-        "subtitle": "Paket gratis, otomasi bawaan, beli sekali seumur hidup, dan harga awal, berdampingan dengan empat browser anti-detect populer.",
-        "headers": [
-            "",
-            "Veilus"
-        ],
-        "rows": [
-            {
-                "id": "free",
-                "feature": "Paket gratis",
-                "values": [
-                    "5 profil, selamanya"
-                ]
-            },
-            {
-                "id": "automation",
-                "feature": "Otomasi bawaan",
-                "values": [
-                    "Ya — skrip dari AI lewat MCP atau buatan sendiri, jalankan massal, jadwalkan"
-                ]
-            },
-            {
-                "id": "lifetime",
-                "feature": "Beli sekali, pakai selamanya",
-                "values": [
-                    "Ya — mulai {lifetime}"
-                ]
-            },
-            {
-                "id": "price",
-                "feature": "Harga berbayar awal",
-                "values": [
-                    "{monthly}/bulan per perangkat, profil tanpa batas · {lifetime} seumur hidup"
-                ]
-            },
-            {
-                "id": "api",
-                "feature": "API / MCP",
-                "values": [
-                    "API lokal · MCP (Pro)"
-                ]
-            }
-        ],
-        "cells": {
-            "profilesForever": "{n} profil, selamanya",
-            "trialDays": "Uji coba gratis {n} hari",
-            "rpaSchedule": "RPA, penjadwalan",
-            "noCodeBuilder": "Builder seret-lepas tanpa kode",
-            "lifetimeFrom": "Ya — mulai {price}",
-            "perMonthProfiles": "{price}/bln ({n} profil)",
-            "oneTimeDevice": "{price} sekali bayar ({n} perangkat)",
-            "apiPaid": "API (paket berbayar)",
-            "apiPaidMcp": "API (paket berbayar) · MCP",
-            "localApiPaidMcp": "API lokal (paket berbayar) · MCP",
-            "localApi": "API lokal"
-        },
-        "caption": "Data pesaing diambil dari situs resmi mereka (halaman harga, dokumentasi), dicek {date}. Paket bisa berubah; cek situs mereka.",
-        "unknown": "Belum diverifikasi"
-    },
     "pricing": {
         "title": "Sederhana,",
         "titleHighlight": "transparan",
@@ -453,9 +392,6 @@
         "pricing": {
             "fig": "harga",
             "once": "Bayar sekali"
-        },
-        "compare": {
-            "fig": "dibandingkan browser lain"
         },
         "faq": {
             "fig": "pertanyaan yang sering diajukan"

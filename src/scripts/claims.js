@@ -14,8 +14,8 @@
  * - câu sai có thẻ chen ngay sau dấu chấm giữa token ("Veilus Sync v1.<b>2</b> is encrypted"): plain() coi "."
  *   sát trước thẻ là hết câu nên lọt;
  * - giá trị JSON không phải chuỗi (số, true/false): bài chỉ gom giá trị chuỗi; tên khoá không phải chữ trên trang;
- * - câu sai tách đúng qua hai khoá JSON mà trang đặt sát nhau (`{c.title} {c.titleHighlight}` ở Comparison, Pricing,
- *   FAQ, trang tải về): pageText() nối giá trị bằng "\n", mà NEAR và dấu cách viết cứng trong mẫu không vượt "\n" nên lọt;
+ * - câu sai tách đúng qua hai khoá JSON mà trang đặt sát nhau (`{c.title} {c.titleHighlight}` ở Pricing, FAQ,
+ *   trang tải về): pageText() nối giá trị bằng "\n", mà NEAR và dấu cách viết cứng trong mẫu không vượt "\n" nên lọt;
  * - chữ trong span icon (class "ms", tên [a-z0-9_]+ hoặc biểu thức {…}): bỏ vì trang hiện hình. Tên không có trong
  *   font thì trang hiện nguyên chữ mà bài không thấy — icons.test.js chỉ canh tên viết chữ trong data-icon và `icon: '…'`;
  * - chữ trong ảnh (public/og-image-2026-09.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);

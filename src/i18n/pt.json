@@ -15,67 +15,6 @@
         "menu": "Abrir menu",
         "language": "Idioma"
     },
-    "comparison": {
-        "title": "Como o Veilus",
-        "titleHighlight": "se compara",
-        "subtitle": "Plano grátis, automação integrada, compra vitalícia e preço inicial, lado a lado com quatro navegadores antidetect populares.",
-        "headers": [
-            "",
-            "Veilus"
-        ],
-        "rows": [
-            {
-                "id": "free",
-                "feature": "Plano grátis",
-                "values": [
-                    "5 perfis para sempre"
-                ]
-            },
-            {
-                "id": "automation",
-                "feature": "Automação integrada",
-                "values": [
-                    "Sim — scripts da sua IA via MCP ou seus, lote, agendamento"
-                ]
-            },
-            {
-                "id": "lifetime",
-                "feature": "Compra única vitalícia",
-                "values": [
-                    "Sim — a partir de {lifetime}"
-                ]
-            },
-            {
-                "id": "price",
-                "feature": "Preço pago inicial",
-                "values": [
-                    "{monthly}/mês por dispositivo, perfis ilimitados · {lifetime} vitalício"
-                ]
-            },
-            {
-                "id": "api",
-                "feature": "API / MCP",
-                "values": [
-                    "API local · MCP (Pro)"
-                ]
-            }
-        ],
-        "cells": {
-            "profilesForever": "{n} perfis, para sempre",
-            "trialDays": "Teste grátis de {n} dias",
-            "rpaSchedule": "RPA, agendamento",
-            "noCodeBuilder": "Editor arrastar e soltar sem código",
-            "lifetimeFrom": "Sim — a partir de {price}",
-            "perMonthProfiles": "{price}/mês ({n} perfis)",
-            "oneTimeDevice": "{price} pagamento único ({n} dispositivo)",
-            "apiPaid": "API (planos pagos)",
-            "apiPaidMcp": "API (planos pagos) · MCP",
-            "localApiPaidMcp": "API local (planos pagos) · MCP",
-            "localApi": "API local"
-        },
-        "caption": "Dados dos concorrentes retirados dos sites oficiais (páginas de preços, documentação), verificados em {date}. Os planos mudam; confira o site deles.",
-        "unknown": "Não verificado"
-    },
     "pricing": {
         "title": "Simples,",
         "titleHighlight": "transparente",
@@ -453,9 +392,6 @@
         "pricing": {
             "fig": "preços",
             "once": "Pague uma vez"
-        },
-        "compare": {
-            "fig": "comparado a outros navegadores"
         },
         "faq": {
             "fig": "perguntas frequentes"

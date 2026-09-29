@@ -15,67 +15,6 @@
         "menu": "打开菜单",
         "language": "语言"
     },
-    "comparison": {
-        "title": "Veilus",
-        "titleHighlight": "与同类对比",
-        "subtitle": "免费版、内置自动化、一次性买断和起步价，与四款常见反检测浏览器并列比较。",
-        "headers": [
-            "",
-            "Veilus"
-        ],
-        "rows": [
-            {
-                "id": "free",
-                "feature": "免费版",
-                "values": [
-                    "5 个配置文件，永久免费"
-                ]
-            },
-            {
-                "id": "automation",
-                "feature": "内置自动化",
-                "values": [
-                    "有——AI 通过 MCP 写脚本或自己写、批量运行、定时"
-                ]
-            },
-            {
-                "id": "lifetime",
-                "feature": "一次性买断",
-                "values": [
-                    "有——{lifetime} 起"
-                ]
-            },
-            {
-                "id": "price",
-                "feature": "付费起步价",
-                "values": [
-                    "每台设备 {monthly}/月，配置文件不限 · 终身版 {lifetime}"
-                ]
-            },
-            {
-                "id": "api",
-                "feature": "API / MCP",
-                "values": [
-                    "本地 API · MCP（Pro 版）"
-                ]
-            }
-        ],
-        "cells": {
-            "profilesForever": "{n} 个配置文件，永久",
-            "trialDays": "{n} 天免费试用",
-            "rpaSchedule": "RPA、定时任务",
-            "noCodeBuilder": "无代码拖拽构建器",
-            "lifetimeFrom": "有——{price} 起",
-            "perMonthProfiles": "{price}/月（{n} 个配置文件）",
-            "oneTimeDevice": "{price} 一次性（{n} 台设备）",
-            "apiPaid": "API（付费版）",
-            "apiPaidMcp": "API（付费版）· MCP",
-            "localApiPaidMcp": "本地 API（付费版）· MCP",
-            "localApi": "本地 API"
-        },
-        "caption": "竞品数据来自其官方网站（价格页、文档），核对于 {date}。套餐可能变动，请以其官网为准。",
-        "unknown": "未核实"
-    },
     "pricing": {
         "title": "简单，",
         "titleHighlight": "透明",
@@ -453,9 +392,6 @@
         "pricing": {
             "fig": "价格",
             "once": "一次付费"
-        },
-        "compare": {
-            "fig": "与其他浏览器对比"
         },
         "faq": {
             "fig": "常见问题"
