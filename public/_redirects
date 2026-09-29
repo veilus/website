@@ -1,5 +1,7 @@
 /blog      https://blog.veilus.io/blog/        301
 /blog/*    https://blog.veilus.io/blog/:splat  301
 /pricing   /#pricing                           301
+# Redirect ở Cloudflare Pages thắng file tĩnh cùng đường dẫn (đo bằng wrangler pages dev) —
+# không được có file thật nào dưới /en/, nó sẽ bị 301 âm thầm về trang không tiền tố.
 /en        /                                   301
 /en/*      /:splat                             301

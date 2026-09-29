@@ -1,11 +1,11 @@
-import en from './en.json';
-import zh from './zh.json';
-import ru from './ru.json';
-import vi from './vi.json';
-import pt from './pt.json';
-import es from './es.json';
-import tr from './tr.json';
-import id from './id.json';
+import en from './en.json' with { type: 'json' };
+import zh from './zh.json' with { type: 'json' };
+import ru from './ru.json' with { type: 'json' };
+import vi from './vi.json' with { type: 'json' };
+import pt from './pt.json' with { type: 'json' };
+import es from './es.json' with { type: 'json' };
+import tr from './tr.json' with { type: 'json' };
+import id from './id.json' with { type: 'json' };
 
 // ogLocale: dạng ngôn_VÙNG mà og:locale của Open Graph đòi; mã trần như 'vi' không đúng dạng.
 export const languages = {

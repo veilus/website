@@ -29,6 +29,10 @@ export default defineConfig({
     ],
     build: {
         assets: '_assets',
+        // Khai rõ giá trị mặc định của Astro: canonical, hreflang, sitemap và link nội bộ
+        // (src/i18n/utils.ts, Layout.astro:35) đều dựa vào việc Astro.url.pathname luôn có / cuối,
+        // tức mỗi trang ra .../index.html trong một thư mục riêng — không được đổi ngầm.
+        format: 'directory',
     },
     vite: {
         build: {
