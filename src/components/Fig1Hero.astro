@@ -12,6 +12,10 @@ interface Props {
 const lang = Astro.props.lang || defaultLang;
 const h = t(lang).home;
 const f = h.fig1;
+// Dấu ngăn ẩn giữa dòng chữ nhỏ và tiêu đề trong h1: tên đọc lên của h1 (và chữ Google trích) không liền
+// "…driven by AI Write one sentence…". Dòng chữ nhỏ tách khỏi tiêu đề chỉ bằng display: block, mà tên truy cập
+// không tính chỗ xuống dòng đó.
+const stop = lang === 'zh' ? '。' : '.';
 const NODES = [
   ['VN', '+7'], ['SG', '+8'], ['TH', '+7'], ['MY', '+8'], ['ID', '+7'],
   ['PH', '+8'], ['JP', '+9'], ['KR', '+9'], ['US', '−4'], ['DE', '+2'],
@@ -22,7 +26,7 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
 <section class="k-wrap" data-reveal>
   <div class="k-top">
     <div>
-      <h1 class="k-h1"><span class="k-fig">{f.fig}</span> {f.title}</h1>
+      <h1 class="k-h1"><span class="k-fig">{f.fig}</span><span class="sr-only">{stop}</span> {f.title}</h1>
     </div>
     <div>
       <p class="k-intro">{f.intro}</p>

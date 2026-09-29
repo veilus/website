@@ -15,6 +15,9 @@ const home = getLocalizedPath('/', lang);
 
 // Đường dẫn bỏ tiền tố ngôn ngữ (vd /vi/cookies/ → /cookies/), để đổi ngôn ngữ mà vẫn ở trang đang xem
 const basePath = stripLang(Astro.url.pathname);
+// Tên đọc lên của nút ngôn ngữ chứa chữ nhìn thấy trên nút, "EN — Language" (WCAG 2.5.3): người dùng điều khiển
+// bằng giọng nói gọi nút bằng đúng chữ họ thấy.
+const langLabel = `${lang.toUpperCase()} — ${i.nav.language}`;
 
 // Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này
 const LINKS = [
@@ -42,7 +45,7 @@ const LINKS = [
           type="button"
           aria-expanded="false"
           aria-controls="k-lang-menu"
-          aria-label={i.nav.language}
+          aria-label={langLabel}
         >
           <span class="ms" data-icon="language" aria-hidden="true"></span>{lang.toUpperCase()}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
         </button>
@@ -82,10 +85,16 @@ const LINKS = [
     setLang(!langMenu?.classList.contains('open'));
   });
   document.addEventListener('click', () => setLang(false));
+  // Escape đóng menu đang mở và trả focus về nút đã mở nó. Không menu nào mở thì không đụng tới focus.
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+    if (e.key !== 'Escape') return;
+    if (langMenu?.classList.contains('open')) {
       setLang(false);
+      langBtn?.focus();
+    }
+    if (links?.classList.contains('open')) {
       setMenu(false);
+      menuBtn?.focus();
     }
   });
   menuBtn?.addEventListener('click', () => setMenu(!links?.classList.contains('open')));
