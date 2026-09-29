@@ -274,7 +274,7 @@
     "home": {
         "cta": "下载并免费试用 Pro 7 天",
         "fig1": {
-            "fig": "anti-detect 浏览器，由 AI 驱动",
+            "fig": "反检测浏览器，由 AI 驱动",
             "title": "写一句话，得到一条每天早晨自动运行的流水线。",
             "intro": "每个配置文件都是一个拥有独立身份的浏览器。你的 AI 助手通过 MCP 统一控制它们。",
             "micro": "5 个配置文件永久免费 · macOS · Windows",
@@ -305,13 +305,13 @@
             "plain": "普通浏览器",
             "machine": "1 台设备",
             "machineVeilus": "1 台设备 · Veilus",
-            "account": "账户{n}",
+            "account": "账号{n}",
             "shared": "同一指纹 · 同一 IP",
             "site": "网站",
-            "badTitle": "4 个账户 = 1 个人",
+            "badTitle": "4 个账号 = 1 个人",
             "badSub": "封一个，四个全丢了",
-            "goodTitle": "4 个账户 = 4 个人",
-            "goodSub": "每个账户各自独立"
+            "goodTitle": "4 个账号 = 4 个人",
+            "goodSub": "每个账号各自独立"
         },
         "profileName": "配置文件 07",
         "fig3": {
@@ -426,7 +426,7 @@
         },
         "bento": {
             "fig": "功能",
-            "title": "一台电脑，足够跑多个账户。",
+            "title": "一台电脑，足够跑多个账号。",
             "fields": "{n} 个指纹字段",
             "fpChips": [
                 "User-Agent",
