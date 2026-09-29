@@ -33,7 +33,6 @@
 .k-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
 .k-mark { font-family: var(--font-mono); font-weight: 600; font-size: 14px; letter-spacing: 0.14em; color: var(--ink); white-space: nowrap; }
-.k-mark span { color: var(--muted); font-weight: 400; letter-spacing: 0.06em; }
 
 .k-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--ink); color: var(--paper); padding: 13px 20px; font-weight: 600; font-size: 14.5px; line-height: 1.3; text-align: center; border: 1.5px solid var(--ink); }
 a.k-btn, a.k-btn:hover { color: var(--paper); }
@@ -49,7 +48,6 @@ a.k-btn-o:hover { background: var(--paper); }
 
 /* ---------- Phần của trang chủ ---------- */
 .k-fig { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-.k-fig b { color: var(--acc); font-weight: 600; }
 .k-sec { padding-top: 104px; }
 .k-h2 { font-weight: 600; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; letter-spacing: -0.018em; margin: 12px 0 34px; max-width: 20em; text-wrap: balance; }
 .k-sub { font-size: 16.5px; color: var(--muted); margin: -20px 0 30px; max-width: none; }

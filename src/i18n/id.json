@@ -12,7 +12,6 @@
         "pricing": "Harga",
         "faq": "FAQ",
         "download": "Unduh gratis",
-        "sheet": "GAMBAR 02",
         "menu": "Buka menu",
         "language": "Bahasa"
     },
@@ -274,7 +273,6 @@
     "home": {
         "cta": "Unduh & coba Pro gratis 7 hari",
         "fig1": {
-            "figNo": "Gambar 1",
             "fig": "browser anti-detect yang dikendalikan AI",
             "title": "Tulis satu kalimat. Dapatkan pipeline yang berjalan tiap pagi.",
             "intro": "Setiap profil adalah browser dengan identitasnya sendiri. Asisten AI Anda mengendalikan semuanya lewat MCP.",
@@ -301,7 +299,6 @@
             ]
         },
         "fig2": {
-            "figNo": "Gambar 2",
             "fig": "yang dilihat situs web",
             "title": "Satu perangkat. Situs web melihat empat orang berbeda.",
             "plain": "Browser biasa",
@@ -317,7 +314,6 @@
         },
         "profileName": "PROFIL 07",
         "fig3": {
-            "figNo": "Gambar 3",
             "fig": "anatomi sebuah profil",
             "title": "Setiap profil adalah orang yang berbeda — sampai ke detailnya.",
             "fields": "bidang sidik jari",
@@ -368,7 +364,6 @@
             ]
         },
         "fig4": {
-            "figNo": "Gambar 4",
             "fig": "alur kerja dengan asisten AI Anda",
             "title": "Anda memberi perintah. AI menulis, menguji, memperbaiki. Anda menyetujui sekali.",
             "steps": [
@@ -405,7 +400,6 @@
             "local": "hanya di perangkat Anda · butuh token"
         },
         "fig5": {
-            "figNo": "Gambar 5",
             "fig": "cadangan profil",
             "title": "Profil yang sudah Anda rawat berbulan-bulan tidak hilang hanya karena satu komputer rusak.",
             "snapTitle": "Snapshot lokal",
@@ -430,7 +424,6 @@
             "syncNote": "Dua arah antar-komputer Anda · hanya token akses yang dienkripsi"
         },
         "bento": {
-            "figNo": "Tabel 1",
             "fig": "fitur",
             "title": "Cukup untuk menjalankan banyak akun di satu komputer.",
             "fields": "{n} bidang sidik jari",
@@ -463,20 +456,16 @@
             "api": "REST API · MCP"
         },
         "pricing": {
-            "figNo": "Tabel 2",
             "fig": "harga",
             "once": "Bayar sekali"
         },
         "compare": {
-            "figNo": "Tabel 3",
             "fig": "dibandingkan browser lain"
         },
         "faq": {
-            "figNo": "Catatan",
             "fig": "pertanyaan yang sering diajukan"
         },
         "final": {
-            "figNo": "Catatan",
             "fig": "langkah berikutnya",
             "title": "Unduh Veilus. Sambungkan asisten AI Anda. Beri perintah.",
             "micro": "Tanpa kartu · profil tetap di komputer Anda"

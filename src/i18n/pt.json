@@ -12,7 +12,6 @@
         "pricing": "Preços",
         "faq": "FAQ",
         "download": "Baixar grátis",
-        "sheet": "DESENHO 02",
         "menu": "Abrir menu",
         "language": "Idioma"
     },
@@ -274,7 +273,6 @@
     "home": {
         "cta": "Baixe e teste o Pro grátis por 7 dias",
         "fig1": {
-            "figNo": "Figura 1",
             "fig": "navegador anti-detect controlado por IA",
             "title": "Escreva uma frase. Ganhe um pipeline que roda toda manhã.",
             "intro": "Cada perfil é um navegador com sua própria identidade. Seu assistente de IA controla todos eles via MCP.",
@@ -301,7 +299,6 @@
             ]
         },
         "fig2": {
-            "figNo": "Figura 2",
             "fig": "o que um site vê",
             "title": "Um dispositivo. O site vê quatro pessoas diferentes.",
             "plain": "Navegador comum",
@@ -317,7 +314,6 @@
         },
         "profileName": "PERFIL 07",
         "fig3": {
-            "figNo": "Figura 3",
             "fig": "anatomia de um perfil",
             "title": "Cada perfil é uma pessoa diferente — até os detalhes.",
             "fields": "campos de impressão digital",
@@ -368,7 +364,6 @@
             ]
         },
         "fig4": {
-            "figNo": "Figura 4",
             "fig": "o ciclo com seu assistente de IA",
             "title": "Você dá a ordem. A IA escreve, testa, corrige. Você aprova uma vez.",
             "steps": [
@@ -405,7 +400,6 @@
             "local": "só na sua máquina · exige token"
         },
         "fig5": {
-            "figNo": "Figura 5",
             "fig": "backup de perfil",
             "title": "Perfis cultivados por meses não desaparecem por causa de um computador quebrado.",
             "snapTitle": "Snapshots locais",
@@ -430,7 +424,6 @@
             "syncNote": "Nos dois sentidos entre seus computadores · só os tokens de acesso são criptografados"
         },
         "bento": {
-            "figNo": "Tabela 1",
             "fig": "recursos",
             "title": "Suficiente para rodar muitas contas em um só computador.",
             "fields": "{n} campos de impressão digital",
@@ -463,20 +456,16 @@
             "api": "REST API · MCP"
         },
         "pricing": {
-            "figNo": "Tabela 2",
             "fig": "preços",
             "once": "Pague uma vez"
         },
         "compare": {
-            "figNo": "Tabela 3",
             "fig": "comparado a outros navegadores"
         },
         "faq": {
-            "figNo": "Nota",
             "fig": "perguntas frequentes"
         },
         "final": {
-            "figNo": "Nota",
             "fig": "próximo passo",
             "title": "Baixe o Veilus. Conecte seu assistente de IA. Dê a ordem.",
             "micro": "Sem cartão · seus perfis ficam no seu computador"

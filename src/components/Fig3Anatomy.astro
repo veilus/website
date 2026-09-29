@@ -17,7 +17,7 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
 ---
 
 <section class="k-wrap k-sec" id="profile" data-reveal>
-  <div class="k-fig"><b>{f.figNo}</b> — {f.fig}</div>
+  <div class="k-fig">{f.fig}</div>
   <h2 class="k-h2">{f.title}</h2>
   <div class="k-anat">
     <div class="k-side k-side-l">
@@ -74,12 +74,26 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   .k-stat b { font-size: 56px; font-weight: 700; line-height: 1; color: var(--acc); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
   .k-stat > span { font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted); }
 
+  /* Hẹp: 10 nhãn thành bảng 5 hàng × 2 cột gắn liền dưới cửa sổ (cột trái là nhãn bên trái, cột phải là nhãn
+     bên phải). Đường chỉ dẫn không còn chỗ để trỏ nên ẩn; chấm màu nhấn chuyển lên trước tên nhãn. */
   @media (max-width: 1080px) {
-    .k-anat { grid-template-columns: 1fr; gap: 28px; }
-    .k-big { order: -1; justify-self: center; width: 100%; max-width: 380px; }
+    .k-anat {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto repeat(5, auto);
+      grid-auto-flow: column;
+      align-items: stretch;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 10px 10px 0 var(--grid2);
+    }
+    .k-big { grid-column: 1 / -1; grid-row: 1; box-shadow: none; }
+    .k-side { display: contents; }
+    .k-lbl { display: block; padding: 12px; border: 1.5px solid var(--ink); border-top: 0; background: var(--paper); }
+    .k-side-r .k-lbl { border-left: 0; }
     .k-side-l .k-lt { text-align: left; }
-    .k-side-l .k-lbl { flex-direction: row-reverse; }
-    .k-side-l .k-ldr::after { right: auto; left: -4px; }
-    .k-ldr { flex: 0 0 28px; }
+    .k-ldr { display: none; }
+    .k-lt b { font-size: 13.5px; }
+    .k-lt b::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--acc); vertical-align: 2px; }
+    .k-lt code { font-size: 11.5px; }
   }
 </style>

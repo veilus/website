@@ -12,7 +12,6 @@
         "pricing": "Pricing",
         "faq": "FAQ",
         "download": "Download free",
-        "sheet": "DRAWING 02",
         "menu": "Open menu",
         "language": "Language"
     },
@@ -274,7 +273,6 @@
     "home": {
         "cta": "Download & try Pro free for 7 days",
         "fig1": {
-            "figNo": "Figure 1",
             "fig": "an anti-detect browser, driven by AI",
             "title": "Write one sentence. Get a pipeline that runs every morning.",
             "intro": "Each profile is a browser with its own identity. Your AI assistant drives them all over MCP.",
@@ -301,7 +299,6 @@
             ]
         },
         "fig2": {
-            "figNo": "Figure 2",
             "fig": "what a website sees",
             "title": "One machine. The website sees four different people.",
             "plain": "Regular browser",
@@ -317,7 +314,6 @@
         },
         "profileName": "PROFILE 07",
         "fig3": {
-            "figNo": "Figure 3",
             "fig": "anatomy of a profile",
             "title": "Every profile is a different person — down to the details.",
             "fields": "fingerprint fields",
@@ -368,7 +364,6 @@
             ]
         },
         "fig4": {
-            "figNo": "Figure 4",
             "fig": "the loop with your AI assistant",
             "title": "You give the order. The AI writes, tests, fixes. You approve once.",
             "steps": [
@@ -405,7 +400,6 @@
             "local": "your machine only · token required"
         },
         "fig5": {
-            "figNo": "Figure 5",
             "fig": "profile backup",
             "title": "Profiles you've warmed up for months don't die with one broken machine.",
             "snapTitle": "On-device snapshots",
@@ -430,7 +424,6 @@
             "syncNote": "Two-way between your machines · access tokens are encrypted"
         },
         "bento": {
-            "figNo": "Table 1",
             "fig": "features",
             "title": "Enough to run many accounts on one machine.",
             "fields": "{n} fingerprint fields",
@@ -463,20 +456,16 @@
             "api": "REST API · MCP"
         },
         "pricing": {
-            "figNo": "Table 2",
             "fig": "pricing",
             "once": "Pay once"
         },
         "compare": {
-            "figNo": "Table 3",
             "fig": "versus other browsers"
         },
         "faq": {
-            "figNo": "Note",
             "fig": "frequently asked questions"
         },
         "final": {
-            "figNo": "Note",
             "fig": "next step",
             "title": "Download Veilus. Connect your AI assistant. Give the order.",
             "micro": "No card needed · your profiles stay on your machine"

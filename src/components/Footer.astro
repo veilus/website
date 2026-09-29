@@ -69,7 +69,6 @@ const external = (href: string) =>
   </div>
   <div class="k-foot">
     <div class="k-legal">{LEGAL.map(([name, href]) => <a href={href}>{name}</a>)}</div>
-    <div>{i.nav.sheet}</div>
     <div>{f.copyright}</div>
   </div>
 </footer>
@@ -81,7 +80,7 @@ const external = (href: string) =>
   .k-fcol ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
   .k-fcol a { font-size: 14.5px; color: var(--ink); }
   .k-fcol a:hover { color: var(--acc); }
-  .k-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; margin-bottom: 40px; border: 1.5px solid var(--ink); background: var(--paper); font-family: var(--font-mono); font-size: 11.5px; }
+  .k-foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; margin-bottom: 40px; border: 1.5px solid var(--ink); background: var(--paper); font-family: var(--font-mono); font-size: 11.5px; }
   .k-foot > div { padding: 12px 16px; border-left: 1px solid var(--rule); }
   .k-foot > div:first-child { border-left: 0; }
   .k-legal { display: flex; flex-wrap: wrap; gap: 6px 16px; }

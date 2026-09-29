@@ -12,7 +12,6 @@
         "pricing": "Fiyatlar",
         "faq": "SSS",
         "download": "Ücretsiz indir",
-        "sheet": "ÇİZİM 02",
         "menu": "Menüyü aç",
         "language": "Dil"
     },
@@ -274,7 +273,6 @@
     "home": {
         "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
         "fig1": {
-            "figNo": "Şekil 1",
             "fig": "yapay zekâ ile yönetilen anti-detect tarayıcı",
             "title": "Bir cümle yazın. Her sabah çalışan bir pipeline edinin.",
             "intro": "Her profil kendi kimliğine sahip bir tarayıcıdır. Yapay zekâ asistanınız hepsini MCP üzerinden yönetir.",
@@ -301,7 +299,6 @@
             ]
         },
         "fig2": {
-            "figNo": "Şekil 2",
             "fig": "bir site ne görür",
             "title": "Bir cihaz. Web sitesi dört farklı kişi görüyor.",
             "plain": "Normal tarayıcı",
@@ -317,7 +314,6 @@
         },
         "profileName": "PROFİL 07",
         "fig3": {
-            "figNo": "Şekil 3",
             "fig": "bir profilin anatomisi",
             "title": "Her profil farklı bir kişi — en ince ayrıntısına kadar.",
             "fields": "parmak izi alanı",
@@ -368,7 +364,6 @@
             ]
         },
         "fig4": {
-            "figNo": "Şekil 4",
             "fig": "yapay zekâ asistanınızla döngü",
             "title": "Siz talimat verirsiniz. Yapay zekâ yazar, dener, düzeltir. Siz bir kez onaylarsınız.",
             "steps": [
@@ -405,7 +400,6 @@
             "local": "yalnızca cihazınızda · token gerekir"
         },
         "fig5": {
-            "figNo": "Şekil 5",
             "fig": "profil yedekleme",
             "title": "Aylarca emek verdiğiniz profiller, tek bir bozuk bilgisayar yüzünden kaybolmaz.",
             "snapTitle": "Yerel anlık görüntüler",
@@ -430,7 +424,6 @@
             "syncNote": "Bilgisayarlarınız arasında çift yönlü · yalnızca erişim token'ları şifrelenir"
         },
         "bento": {
-            "figNo": "Tablo 1",
             "fig": "özellikler",
             "title": "Tek bilgisayarda çok sayıda hesap yönetmeye yeter.",
             "fields": "{n} parmak izi alanı",
@@ -463,20 +456,16 @@
             "api": "REST API · MCP"
         },
         "pricing": {
-            "figNo": "Tablo 2",
             "fig": "fiyatlar",
             "once": "Bir kez ödeyin"
         },
         "compare": {
-            "figNo": "Tablo 3",
             "fig": "diğer tarayıcılara karşı"
         },
         "faq": {
-            "figNo": "Not",
             "fig": "sıkça sorulan sorular"
         },
         "final": {
-            "figNo": "Not",
             "fig": "sonraki adım",
             "title": "Veilus'u indirin. Yapay zekâ asistanınızı bağlayın. Talimat verin.",
             "micro": "Kart gerekmez · profiller bilgisayarınızda kalır"

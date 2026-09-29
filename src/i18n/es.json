@@ -12,7 +12,6 @@
         "pricing": "Precios",
         "faq": "FAQ",
         "download": "Descargar gratis",
-        "sheet": "PLANO 02",
         "menu": "Abrir menú",
         "language": "Idioma"
     },
@@ -274,7 +273,6 @@
     "home": {
         "cta": "Descarga y prueba Pro gratis 7 días",
         "fig1": {
-            "figNo": "Figura 1",
             "fig": "navegador anti-detect controlado por IA",
             "title": "Escribe una frase. Obtén un pipeline que se ejecuta cada mañana.",
             "intro": "Cada perfil es un navegador con su propia identidad. Tu asistente de IA los controla a todos por MCP.",
@@ -301,7 +299,6 @@
             ]
         },
         "fig2": {
-            "figNo": "Figura 2",
             "fig": "lo que ve un sitio web",
             "title": "Un dispositivo. El sitio ve a cuatro personas diferentes.",
             "plain": "Navegador normal",
@@ -317,7 +314,6 @@
         },
         "profileName": "PERFIL 07",
         "fig3": {
-            "figNo": "Figura 3",
             "fig": "anatomía de un perfil",
             "title": "Cada perfil es una persona diferente — hasta los detalles.",
             "fields": "campos de huella",
@@ -368,7 +364,6 @@
             ]
         },
         "fig4": {
-            "figNo": "Figura 4",
             "fig": "el ciclo con tu asistente de IA",
             "title": "Tú das la orden. La IA escribe, prueba, corrige. Tú apruebas una vez.",
             "steps": [
@@ -405,7 +400,6 @@
             "local": "solo en tu equipo · requiere token"
         },
         "fig5": {
-            "figNo": "Figura 5",
             "fig": "respaldo de perfil",
             "title": "Los perfiles que llevas meses cultivando no desaparecen por un solo equipo dañado.",
             "snapTitle": "Instantáneas locales",
@@ -430,7 +424,6 @@
             "syncNote": "En ambos sentidos entre tus equipos · solo se cifran los tokens de acceso"
         },
         "bento": {
-            "figNo": "Tabla 1",
             "fig": "funciones",
             "title": "Suficiente para manejar muchas cuentas en un solo equipo.",
             "fields": "{n} campos de huella",
@@ -463,20 +456,16 @@
             "api": "REST API · MCP"
         },
         "pricing": {
-            "figNo": "Tabla 2",
             "fig": "precios",
             "once": "Paga una vez"
         },
         "compare": {
-            "figNo": "Tabla 3",
             "fig": "comparado con otros navegadores"
         },
         "faq": {
-            "figNo": "Nota",
             "fig": "preguntas frecuentes"
         },
         "final": {
-            "figNo": "Nota",
             "fig": "siguiente paso",
             "title": "Descarga Veilus. Conecta tu asistente de IA. Da la orden.",
             "micro": "Sin tarjeta · tus perfiles, en tu equipo"

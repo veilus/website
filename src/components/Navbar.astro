@@ -41,7 +41,7 @@ const LINKS = [
 
 <header class="k-wrap">
   <nav class="k-nav" aria-label="Veilus">
-    <a class="k-mark" href={home}>VEILUS <span>/ {i.nav.sheet}</span></a>
+    <a class="k-mark" href={home}>VEILUS</a>
     <div class="k-links" id="k-links">
       {LINKS.map(([id, label]) => <a href={`${home}#${id}`}>{label}</a>)}
     </div>
@@ -130,7 +130,6 @@ const LINKS = [
 
   @media (max-width: 640px) {
     .k-nav { gap: 12px; }
-    .k-mark span { display: none; }
     .k-act { gap: 8px; }
   }
 </style>

@@ -12,7 +12,6 @@
         "pricing": "Giá",
         "faq": "FAQ",
         "download": "Tải miễn phí",
-        "sheet": "BẢN VẼ 02",
         "menu": "Mở menu",
         "language": "Ngôn ngữ"
     },
@@ -274,7 +273,6 @@
     "home": {
         "cta": "Tải về & dùng thử Pro 7 ngày",
         "fig1": {
-            "figNo": "Hình 1",
             "fig": "trình duyệt anti-detect, điều khiển bằng AI",
             "title": "Viết một câu. Nhận cả một dây chuyền chạy mỗi sáng.",
             "intro": "Mỗi hồ sơ là một trình duyệt với danh tính riêng. Trợ lý AI của bạn điều khiển tất cả qua MCP.",
@@ -301,7 +299,6 @@
             ]
         },
         "fig2": {
-            "figNo": "Hình 2",
             "fig": "trang web thấy gì",
             "title": "Cùng một máy. Trang web thấy bốn người khác nhau.",
             "plain": "Trình duyệt thường",
@@ -317,7 +314,6 @@
         },
         "profileName": "HỒ SƠ 07",
         "fig3": {
-            "figNo": "Hình 3",
             "fig": "giải phẫu một hồ sơ",
             "title": "Mỗi hồ sơ là một người khác — tới từng chi tiết.",
             "fields": "trường fingerprint",
@@ -368,7 +364,6 @@
             ]
         },
         "fig4": {
-            "figNo": "Hình 4",
             "fig": "vòng làm việc với trợ lý AI",
             "title": "Bạn ra lệnh. AI viết, thử, sửa. Bạn duyệt một lần.",
             "steps": [
@@ -405,7 +400,6 @@
             "local": "chỉ máy của bạn · có token"
         },
         "fig5": {
-            "figNo": "Hình 5",
             "fig": "sao lưu hồ sơ",
             "title": "Hồ sơ nuôi lâu, không mất vì một lần hỏng máy.",
             "snapTitle": "Bản chụp trên máy",
@@ -430,7 +424,6 @@
             "syncNote": "Hai chiều giữa các máy của bạn · token truy cập được mã hoá"
         },
         "bento": {
-            "figNo": "Bảng 1",
             "fig": "tính năng",
             "title": "Đủ để chạy nhiều tài khoản trên một máy.",
             "fields": "{n} trường fingerprint",
@@ -463,20 +456,16 @@
             "api": "REST API · MCP"
         },
         "pricing": {
-            "figNo": "Bảng 2",
             "fig": "giá",
             "once": "Trả một lần"
         },
         "compare": {
-            "figNo": "Bảng 3",
             "fig": "so với trình duyệt khác"
         },
         "faq": {
-            "figNo": "Ghi chú",
             "fig": "câu hỏi thường gặp"
         },
         "final": {
-            "figNo": "Ghi chú",
             "fig": "bước tiếp theo",
             "title": "Tải Veilus. Nối trợ lý AI. Ra lệnh.",
             "micro": "Không cần thẻ · hồ sơ nằm trên máy bạn"
