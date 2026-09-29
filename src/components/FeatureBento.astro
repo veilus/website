@@ -118,6 +118,12 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
     :global(.js) [data-reveal].is-in .k-strike::after { animation: k-grow 0.5s ease both; animation-delay: 0.5s; }
   }
 
+  /* In trang (như blueprint.css): nhãn mở/chặn và gạch ngang IP thật mang nghĩa của hình, in ở trạng thái cuối */
+  @media print {
+    .k-flip { opacity: 1 !important; animation: none !important; }
+    .k-strike::after { transform: none !important; animation: none !important; }
+  }
+
   @media (max-width: 1080px) {
     .k-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }

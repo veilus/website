@@ -106,6 +106,16 @@ a.k-btn-o:hover { background: var(--paper); }
   .js [data-reveal].is-live .k-pulse { animation-play-state: running; }
 }
 
+/* In trang: phần chưa cuộn tới vẫn đang ẩn chờ hiệu ứng — bản in phải là trạng thái cuối. */
+@media print {
+  .js [data-reveal] :is(.k-draw, .k-draw-l, .k-draw-down, .k-pop, .k-rise) {
+    opacity: 1 !important;
+    animation: none !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+}
+
 @keyframes k-draw { from { opacity: 0; clip-path: inset(-200px 100% -200px -200px); } to { opacity: 1; clip-path: inset(-200px -200px -200px -200px); } }
 @keyframes k-draw-l { from { opacity: 0; clip-path: inset(-200px -200px -200px 100%); } to { opacity: 1; clip-path: inset(-200px -200px -200px -200px); } }
 @keyframes k-draw-down { from { opacity: 0; clip-path: inset(-200px -200px 100% -200px); } to { opacity: 1; clip-path: inset(-200px -200px -200px -200px); } }
