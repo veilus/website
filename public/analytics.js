@@ -67,7 +67,9 @@
   // ── FAQ Expand ────────────────────────────────────────────────────
   document.querySelectorAll('.faq-question').forEach(function (q) {
     q.addEventListener('click', function () {
-      var questionText = this.textContent.trim().substring(0, 80);
+      // Chỉ lấy chữ câu hỏi: <summary> còn chứa số thứ tự (<em>) và icon ligature (.ms, chữ "add").
+      var questionEl = this.querySelector('span:not(.ms)') || this;
+      var questionText = questionEl.textContent.trim().substring(0, 80);
       gtag('event', 'faq_expand', {
         event_category: 'engagement',
         event_label: questionText,
