@@ -115,9 +115,7 @@ const { title, description, lastUpdated } = Astro.props;
   }
 
   .legal-content :global(table) {
-    display: block;
     width: 100%;
-    overflow-x: auto;
     border-collapse: collapse;
     margin: var(--space-lg) 0;
     font-size: 0.9375rem;
@@ -152,6 +150,24 @@ const { title, description, lastUpdated } = Astro.props;
   @media (max-width: 768px) {
     .legal-page {
       padding-top: calc(var(--nav-height) + var(--space-xl));
+    }
+  }
+
+  /* Một số bảng (vd "Dịch vụ bên thứ ba", bảng loại cookie 4 cột) rộng hơn
+     khung ở 390px: đo bằng Playwright cho thấy không phải padding sinh ra
+     — một token không tách được trong một ô (tên thương hiệu như
+     LemonSqueezy ~102px, hay nhãn ngắn như "Authentication,"/"Необходимые"
+     ~93–123px ở en/ru/pt/es) tự nó đã gần hoặc vượt bề rộng cột. Giảm đệm
+     ngang trước; overflow-wrap cho phép ô co xuống dưới bề rộng token đó
+     khi thật sự cần (không word-break:break-all, không table-layout:fixed
+     — cột nào không cần vẫn giữ bề rộng tự nhiên). Giữ display:table cho
+     vai trò bảng (screen reader). */
+  @media (max-width: 480px) {
+    .legal-content :global(th),
+    .legal-content :global(td) {
+      padding-left: var(--space-sm);
+      padding-right: var(--space-sm);
+      overflow-wrap: anywhere;
     }
   }
 </style>
