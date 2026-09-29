@@ -90,6 +90,8 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
   .k-tool-soon { border: 1.5px dashed var(--acc); color: var(--acc); }
   .k-node-ink { background: var(--ink); color: var(--paper); }
   .k-node-ink .k-tool { border-color: var(--paper); }
+  /* Số bước trên ô mực: --acc chỉ đạt 2,99:1 trên mực; cùng hue, sáng hơn thì 5,1:1 (WCAG AA ≥ 4,5 cho chữ 12px). */
+  .k-node-ink .k-nh em { color: oklch(0.68 0.18 33); }
   /* Lớp phủ sáng lên khi tới lượt bước này trong vòng lặp */
   .k-node::after { content: ''; position: absolute; inset: -1.5px; border: 2px solid var(--acc); background: var(--acc-soft); opacity: 0; pointer-events: none; }
   .k-ard { position: relative; justify-self: center; width: 0; height: 56px; border-left: 1.5px solid var(--ink); }
