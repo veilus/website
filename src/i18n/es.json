@@ -16,39 +16,6 @@
         "menu": "Abrir menú",
         "language": "Idioma"
     },
-    "features": {
-        "badge": "Funciones",
-        "title": "Todo lo que necesitas,",
-        "titleHighlight": "en una sola app",
-        "subtitle": "El navegador antidetección y la automatización, en el mismo sitio.",
-        "items": [
-            {
-                "title": "Cada perfil parece otra persona",
-                "desc": "Cada perfil tiene su propia huella y su propio proxy HTTP, HTTPS o SOCKS5. Los perfiles funcionan sobre un motor Chromium que Veilus compila y parchea por su cuenta.",
-                "badge": "Probado con creepjs e iphey"
-            },
-            {
-                "title": "Escríbelo una vez, ejecútalo en todas partes",
-                "desc": "Pide el script a tu asistente de IA: por MCP lo prueba, lee los errores de cada perfil y los corrige. O escríbelo tú. Después, Veilus Flow lo ejecuta en tantos perfiles como elijas.",
-                "badge": "Veilus Flow · Pro"
-            },
-            {
-                "title": "El trabajo sigue aunque no estés",
-                "desc": "Programa tus scripts o ejecútalos por lotes en muchos perfiles a la vez.",
-                "badge": "Programación · Lotes · Pro"
-            },
-            {
-                "title": "Conecta tus propias herramientas",
-                "desc": "Una API REST local y MCP permiten que tu código y tus herramientas de IA abran perfiles y ejecuten automatizaciones.",
-                "badge": "API REST · MCP · Pro"
-            },
-            {
-                "title": "Lleva tu configuración contigo",
-                "desc": "Veilus Sync sincroniza los perfiles con un repositorio Git o Google Drive que tú elijas. Empieza scripts desde plantillas e importa o exporta perfiles al cambiar de equipo.",
-                "badge": "Veilus Sync · Pro"
-            }
-        ]
-    },
     "comparison": {
         "badge": "Comparar",
         "title": "Cómo se compara",
@@ -476,6 +443,39 @@
             "otherMachine": "otro equipo",
             "repo": "tu repositorio",
             "syncNote": "En ambos sentidos entre tus equipos · solo se cifran los tokens de acceso"
+        },
+        "bento": {
+            "figNo": "Tabla 1",
+            "fig": "funciones",
+            "title": "Suficiente para manejar cien cuentas en un solo equipo.",
+            "fields": "{n} campos de huella",
+            "fpChips": [
+                "User-Agent",
+                "Client Hints",
+                "Canvas",
+                "WebGL",
+                "WebGPU",
+                "Audio",
+                "Fuentes",
+                "Pantalla",
+                "GPS",
+                "…"
+            ],
+            "proxy": "Un proxy para cada perfil",
+            "profile": "perfil",
+            "webrtc": "WebRTC no expone la IP real",
+            "realIp": "IP real",
+            "proxyIp": "IP del proxy",
+            "tz": "Zona horaria coincide con el proxy",
+            "tzProxy": "proxy de Tokio",
+            "open": "abierto",
+            "blocked": "bloqueado",
+            "cookies": "Cookies y sesiones separadas",
+            "batch": "Ejecución por lotes",
+            "stagger": "escalonado por perfil",
+            "schedule": "Programaciones",
+            "daily": "diariamente · 10 perfiles",
+            "api": "REST API · MCP"
         }
     }
 }

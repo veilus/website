@@ -16,39 +16,6 @@
         "menu": "Buka menu",
         "language": "Bahasa"
     },
-    "features": {
-        "badge": "Fitur",
-        "title": "Semua yang Anda butuhkan,",
-        "titleHighlight": "dalam satu aplikasi",
-        "subtitle": "Browser anti-deteksi dan otomasi ada di tempat yang sama.",
-        "items": [
-            {
-                "title": "Tiap profil terlihat seperti orang yang berbeda",
-                "desc": "Setiap profil punya sidik jari sendiri dan proxy HTTP, HTTPS, atau SOCKS5 sendiri. Profil berjalan di mesin Chromium yang dibangun dan di-patch sendiri oleh Veilus.",
-                "badge": "Diuji dengan creepjs & iphey"
-            },
-            {
-                "title": "Tulis sekali, jalankan di mana saja",
-                "desc": "Minta asisten AI Anda menulis skripnya: lewat MCP ia mencobanya, membaca error tiap profil, lalu memperbaikinya. Atau tulis sendiri. Setelah itu Veilus Flow menjalankannya di sebanyak mungkin profil yang Anda pilih.",
-                "badge": "Veilus Flow · Pro"
-            },
-            {
-                "title": "Pekerjaan jalan saat Anda pergi",
-                "desc": "Jadwalkan skrip, atau jalankan secara massal di banyak profil sekaligus.",
-                "badge": "Jadwal · Jalankan massal · Pro"
-            },
-            {
-                "title": "Hubungkan alat Anda sendiri",
-                "desc": "REST API lokal dan MCP memungkinkan kode dan alat AI Anda membuka profil dan menjalankan otomasi.",
-                "badge": "REST API · MCP · Pro"
-            },
-            {
-                "title": "Bawa pengaturan Anda ke mana saja",
-                "desc": "Veilus Sync menyinkronkan profil ke repository Git atau Google Drive pilihan Anda. Mulai skrip dari template, dan impor atau ekspor profil saat ganti komputer.",
-                "badge": "Veilus Sync · Pro"
-            }
-        ]
-    },
     "comparison": {
         "badge": "Bandingkan",
         "title": "Veilus",
@@ -476,6 +443,39 @@
             "otherMachine": "komputer lain",
             "repo": "repository Anda",
             "syncNote": "Dua arah antar-komputer Anda · hanya token akses yang dienkripsi"
+        },
+        "bento": {
+            "figNo": "Tabel 1",
+            "fig": "fitur",
+            "title": "Cukup untuk menjalankan seratus akun di satu komputer.",
+            "fields": "{n} bidang sidik jari",
+            "fpChips": [
+                "User-Agent",
+                "Client Hints",
+                "Canvas",
+                "WebGL",
+                "WebGPU",
+                "Audio",
+                "Font",
+                "Layar",
+                "GPS",
+                "…"
+            ],
+            "proxy": "Proxy untuk setiap profil",
+            "profile": "profil",
+            "webrtc": "WebRTC tidak membocorkan IP asli",
+            "realIp": "IP asli",
+            "proxyIp": "IP proxy",
+            "tz": "Zona waktu cocok dengan proxy",
+            "tzProxy": "proxy Tokyo",
+            "open": "terbuka",
+            "blocked": "diblokir",
+            "cookies": "Cookie & sesi terpisah",
+            "batch": "Jalankan massal",
+            "stagger": "bertahap per profil",
+            "schedule": "Jadwal",
+            "daily": "setiap hari · 10 profil",
+            "api": "REST API · MCP"
         }
     }
 }

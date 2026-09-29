@@ -16,39 +16,6 @@
         "menu": "Open menu",
         "language": "Language"
     },
-    "features": {
-        "badge": "Features",
-        "title": "Everything you need,",
-        "titleHighlight": "in one app",
-        "subtitle": "The anti-detect browser and the automation live in the same place.",
-        "items": [
-            {
-                "title": "Each profile looks like a different person",
-                "desc": "Every profile gets its own fingerprint and its own HTTP, HTTPS or SOCKS5 proxy. Profiles run on a Chromium engine that Veilus builds and patches in-house.",
-                "badge": "Tested with creepjs & iphey"
-            },
-            {
-                "title": "Write it once, run it everywhere",
-                "desc": "Ask your AI assistant to write the script — over MCP it tries the script on a few profiles, reads each profile's errors and fixes them. Or write it yourself. Veilus Flow then runs it on as many profiles as you choose.",
-                "badge": "Veilus Flow · Pro"
-            },
-            {
-                "title": "Work runs while you're away",
-                "desc": "Put scripts on a schedule, or run them as a batch over many profiles at once.",
-                "badge": "Schedules · Batch runs · Pro"
-            },
-            {
-                "title": "Connect your own tools",
-                "desc": "A local REST API and MCP let your own code and AI tools open profiles and run automation.",
-                "badge": "REST API · MCP · Pro"
-            },
-            {
-                "title": "Take your setup with you",
-                "desc": "Veilus Sync keeps profiles in sync through a Git repository or Google Drive you choose. Start scripts from templates, and import or export profiles when you change machines.",
-                "badge": "Veilus Sync · Pro"
-            }
-        ]
-    },
     "comparison": {
         "badge": "Compare",
         "title": "How Veilus",
@@ -476,6 +443,39 @@
             "otherMachine": "another machine",
             "repo": "your repository",
             "syncNote": "Two-way between your machines · access tokens are encrypted"
+        },
+        "bento": {
+            "figNo": "Table 1",
+            "fig": "features",
+            "title": "Enough to run a hundred accounts on one machine.",
+            "fields": "{n} fingerprint fields",
+            "fpChips": [
+                "User-Agent",
+                "Client Hints",
+                "Canvas",
+                "WebGL",
+                "WebGPU",
+                "Audio",
+                "Fonts",
+                "Screen",
+                "GPS",
+                "…"
+            ],
+            "proxy": "A proxy for every profile",
+            "profile": "profile",
+            "webrtc": "WebRTC doesn't leak your IP",
+            "realIp": "real IP",
+            "proxyIp": "proxy IP",
+            "tz": "Timezone matches the proxy",
+            "tzProxy": "Tokyo proxy",
+            "open": "open",
+            "blocked": "blocked",
+            "cookies": "Separate cookies & sessions",
+            "batch": "Batch runs",
+            "stagger": "staggered per profile",
+            "schedule": "Schedules",
+            "daily": "daily · 10 profiles",
+            "api": "REST API · MCP"
         }
     }
 }

@@ -1,0 +1,128 @@
+---
+/**
+ * Bảng 1 — tính năng (spec trang chủ §4 dòng 6): 8 ô, mỗi ô có icon, tên và một hình nhỏ; không có đoạn văn.
+ * Hiệu ứng: thanh chạy lô hiện lệch nhau, "IP thật" bị gạch, cổng múi giờ lật "mở" rồi "chặn".
+ */
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+import { FINGERPRINT_FIELDS } from '../data/facts.js';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const f = t(lang).home.bento;
+// Thanh chạy lô: [lề trái %, bề rộng %] — minh hoạ các hồ sơ bắt đầu lệch nhau
+const BARS = [[0, 62], [8, 54], [16, 60], [24, 48], [32, 58], [40, 50]];
+const API = ['GET  /v1/profiles', 'POST /v1/scripts/run', '$ veilus mcp'].join('\n');
+const delay = (s: number) => `--d:${s.toFixed(2)}s`;
+---
+
+<section class="k-wrap k-sec" id="features" data-reveal>
+  <div class="k-fig"><b>{f.figNo}</b> — {f.fig}</div>
+  <h2 class="k-h2">{f.title}</h2>
+  <div class="k-bento">
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">fingerprint</span><b>{f.fields.replace('{n}', String(FINGERPRINT_FIELDS))}</b></div>
+      <div class="k-vis">
+        {f.fpChips.map((chip, n) => <span class="k-chip k-chip-s k-pop" style={delay(0.2 + n * 0.05)}>{chip}</span>)}
+      </div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">vpn_lock</span><b>{f.proxy}</b></div>
+      <div class="k-vis">
+        <span class="k-chip k-chip-s">HTTP</span><span class="k-chip k-chip-s">HTTPS</span><span class="k-chip k-chip-s">SOCKS5</span>
+        <div class="k-pair"><span>{f.profile}</span><i class="k-draw" style={delay(0.4)}></i><span>proxy</span></div>
+      </div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">visibility_off</span><b>{f.webrtc}</b></div>
+      <div class="k-vis">
+        <span class="k-strike">{f.realIp}</span>
+        <span class="ms" aria-hidden="true">arrow_forward</span>
+        <span class="k-chip k-chip-s k-pop" style={delay(0.8)}><span class="ms" aria-hidden="true">vpn_lock</span>{f.proxyIp}</span>
+      </div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">schedule</span><b>{f.tz}</b></div>
+      <div class="k-vis">
+        <div class="k-geo"><span>{f.tzProxy}</span><i></i><span>Asia/Tokyo</span><em class="k-ok k-flip" style={delay(0.5)}>{f.open}</em></div>
+        <div class="k-geo"><span>{f.tzProxy}</span><i></i><span>Ho_Chi_Minh</span><em class="k-no k-flip" style={delay(0.8)}>{f.blocked}</em></div>
+      </div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">cookie</span><b>{f.cookies}</b></div>
+      <div class="k-vis">
+        <div class="k-jars">
+          {['01', '02', '03'].map((n) => <div><span class="ms" aria-hidden="true">cookie</span>{n}</div>)}
+        </div>
+      </div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">stacks</span><b>{f.batch}</b></div>
+      <div class="k-vis">
+        <div class="k-bars">
+          {BARS.map(([left, width], n) => (
+            <div class="k-bar k-draw" style={`margin-left:${left}%;width:${width}%;${delay(0.3 + n * 0.15)}`}></div>
+          ))}
+        </div>
+        <div class="k-cap">{f.stagger}</div>
+      </div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">event_repeat</span><b>{f.schedule}</b></div>
+      <div class="k-vis k-clock"><b>08:00</b><div class="k-cap">{f.daily}</div></div>
+    </div>
+    <div class="k-tile">
+      <div class="k-th"><span class="ms" aria-hidden="true">api</span><b>{f.api}</b></div>
+      <div class="k-vis"><pre class="k-code k-code-s">{API}</pre></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .k-bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1.5px solid var(--ink); border-left: 1.5px solid var(--ink); }
+  .k-tile { display: flex; flex-direction: column; gap: 18px; min-height: 210px; padding: 20px 20px 22px; border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); }
+  .k-th { display: flex; align-items: center; gap: 10px; }
+  .k-th .ms { font-size: 26px; }
+  .k-th b { font-size: 15.5px; font-weight: 600; }
+  .k-vis { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: auto; }
+  .k-chip-s { padding: 3px 6px; border-width: 1px; font-size: 10.5px; }
+  .k-pair { display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 6px; font-family: var(--font-mono); font-size: 11px; }
+  .k-pair i { position: relative; flex: 1; height: 0; border-top: 1.5px solid var(--ink); }
+  .k-pair i::before,
+  .k-pair i::after { content: ''; position: absolute; top: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
+  .k-pair i::before { left: -2px; }
+  .k-pair i::after { right: -2px; }
+  .k-strike { position: relative; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+  .k-strike::after { content: ''; position: absolute; left: -2px; right: -2px; top: 50%; border-top: 1.5px solid var(--muted); transform-origin: left; }
+  .k-geo { display: grid; grid-template-columns: auto minmax(12px, 1fr) auto auto; align-items: center; gap: 8px; width: 100%; font-family: var(--font-mono); font-size: 11px; }
+  .k-geo i { height: 0; border-top: 1px dashed var(--ink); }
+  .k-ok,
+  .k-no { padding: 2px 6px; border: 1.5px solid var(--ink); font-style: normal; font-weight: 600; }
+  .k-ok { background: var(--ink); color: var(--paper); }
+  .k-no { border-color: var(--acc); color: var(--acc); }
+  .k-jars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; border: 1.5px solid var(--ink); }
+  .k-jars div { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; background: var(--paper); font-family: var(--font-mono); font-size: 11px; }
+  .k-jars div + div { border-left: 3px double var(--ink); }
+  .k-bars { display: flex; flex-direction: column; gap: 5px; width: 100%; }
+  .k-bar { height: 8px; background: var(--ink); }
+  .k-cap { width: 100%; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .k-clock b { display: block; font-family: var(--font-mono); font-size: 40px; font-weight: 500; line-height: 1; letter-spacing: -0.02em; }
+  .k-code-s { width: 100%; padding: 8px 10px; border: 1px solid var(--rule); background: var(--paper); font-size: 11.5px; line-height: 1.8; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) [data-reveal]:not(.is-in) .k-flip { opacity: 0; }
+    :global(.js) [data-reveal].is-in .k-flip { animation: k-flip 0.5s ease both; animation-delay: var(--d, 0s); }
+    :global(.js) [data-reveal]:not(.is-in) .k-strike::after { transform: scaleX(0); }
+    :global(.js) [data-reveal].is-in .k-strike::after { animation: k-grow 0.5s ease both; animation-delay: 0.5s; }
+  }
+
+  @media (max-width: 1080px) {
+    .k-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 640px) {
+    .k-bento { grid-template-columns: 1fr; }
+  }
+</style>

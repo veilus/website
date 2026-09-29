@@ -16,39 +16,6 @@
         "menu": "打开菜单",
         "language": "语言"
     },
-    "features": {
-        "badge": "功能",
-        "title": "你需要的一切，",
-        "titleHighlight": "都在一个应用里",
-        "subtitle": "反检测浏览器和自动化，放在同一个地方。",
-        "items": [
-            {
-                "title": "每个配置文件都像另一个人",
-                "desc": "每个配置文件拥有独立的指纹，以及独立的 HTTP、HTTPS 或 SOCKS5 代理。配置文件运行在 Veilus 自行构建并打补丁的 Chromium 内核上。",
-                "badge": "经 creepjs 和 iphey 测试"
-            },
-            {
-                "title": "写一次，处处运行",
-                "desc": "让 AI 助手来写脚本：它通过 MCP 试运行、读取每个配置文件的报错并自行修复。你也可以自己写。之后 Veilus Flow 会在任意数量的配置文件上运行它。",
-                "badge": "Veilus Flow · Pro"
-            },
-            {
-                "title": "你不在时，工作照常进行",
-                "desc": "为脚本设置定时计划，或一次性对多个配置文件批量运行。",
-                "badge": "定时 · 批量运行 · Pro"
-            },
-            {
-                "title": "接入你自己的工具",
-                "desc": "本地 REST API 和 MCP 让你的代码和 AI 工具可以打开配置文件并运行自动化。",
-                "badge": "REST API · MCP · Pro"
-            },
-            {
-                "title": "配置随你迁移",
-                "desc": "Veilus Sync 把配置文件同步到你选择的 Git 仓库或 Google Drive。可以从模板开始编写脚本，换电脑时导入或导出配置文件。",
-                "badge": "Veilus Sync · Pro"
-            }
-        ]
-    },
     "comparison": {
         "badge": "对比",
         "title": "Veilus",
@@ -476,6 +443,39 @@
             "otherMachine": "另一台电脑",
             "repo": "你的仓库",
             "syncNote": "在你的电脑之间双向同步 · 仅访问令牌会被加密"
+        },
+        "bento": {
+            "figNo": "表 1",
+            "fig": "功能",
+            "title": "一台电脑，足够跑上百个账户。",
+            "fields": "{n} 个指纹字段",
+            "fpChips": [
+                "User-Agent",
+                "Client Hints",
+                "Canvas",
+                "WebGL",
+                "WebGPU",
+                "Audio",
+                "字体",
+                "屏幕",
+                "GPS",
+                "…"
+            ],
+            "proxy": "每个配置文件一个代理",
+            "profile": "配置文件",
+            "webrtc": "WebRTC 不暴露真实 IP",
+            "realIp": "真实 IP",
+            "proxyIp": "代理 IP",
+            "tz": "时区与代理一致",
+            "tzProxy": "东京代理",
+            "open": "允许",
+            "blocked": "拦截",
+            "cookies": "独立 Cookie 与会话",
+            "batch": "批量运行",
+            "stagger": "按配置文件错开",
+            "schedule": "定时任务",
+            "daily": "每天 · 10 个配置文件",
+            "api": "REST API · MCP"
         }
     }
 }

@@ -16,39 +16,6 @@
         "menu": "Menüyü aç",
         "language": "Dil"
     },
-    "features": {
-        "badge": "Özellikler",
-        "title": "İhtiyacınız olan her şey",
-        "titleHighlight": "tek uygulamada",
-        "subtitle": "Anti-tespit tarayıcı ve otomasyon aynı yerde.",
-        "items": [
-            {
-                "title": "Her profil başka bir kişi gibi görünür",
-                "desc": "Her profilin kendi parmak izi ve kendi HTTP, HTTPS veya SOCKS5 proxy'si vardır. Profiller, Veilus'un kendi derleyip yamaladığı bir Chromium motorunda çalışır.",
-                "badge": "creepjs ve iphey ile test edildi"
-            },
-            {
-                "title": "Bir kez yazın, her yerde çalıştırın",
-                "desc": "Betiği yapay zekâ asistanınıza yazdırın: MCP üzerinden betiği dener, her profilin hatalarını okur ve düzeltir. Ya da kendiniz yazın. Ardından Veilus Flow onu dilediğiniz kadar profilde çalıştırır.",
-                "badge": "Veilus Flow · Pro"
-            },
-            {
-                "title": "Siz yokken iş devam eder",
-                "desc": "Betikleri zamanlayın ya da birçok profilde aynı anda toplu çalıştırın.",
-                "badge": "Zamanlama · Toplu çalıştırma · Pro"
-            },
-            {
-                "title": "Kendi araçlarınızı bağlayın",
-                "desc": "Yerel REST API ve MCP, kendi kodunuzun ve yapay zekâ araçlarınızın profilleri açıp otomasyon çalıştırmasını sağlar.",
-                "badge": "REST API · MCP · Pro"
-            },
-            {
-                "title": "Kurulumunuz sizinle gelsin",
-                "desc": "Veilus Sync profilleri seçtiğiniz bir Git deposu veya Google Drive ile senkronize eder. Betiklere şablonlardan başlayın, bilgisayar değiştirirken profilleri içe veya dışa aktarın.",
-                "badge": "Veilus Sync · Pro"
-            }
-        ]
-    },
     "comparison": {
         "badge": "Karşılaştır",
         "title": "Veilus",
@@ -476,6 +443,39 @@
             "otherMachine": "başka bir bilgisayar",
             "repo": "deponuz",
             "syncNote": "Bilgisayarlarınız arasında çift yönlü · yalnızca erişim token'ları şifrelenir"
+        },
+        "bento": {
+            "figNo": "Tablo 1",
+            "fig": "özellikler",
+            "title": "Tek bilgisayarda yüz hesap yönetmeye yeter.",
+            "fields": "{n} parmak izi alanı",
+            "fpChips": [
+                "User-Agent",
+                "Client Hints",
+                "Canvas",
+                "WebGL",
+                "WebGPU",
+                "Audio",
+                "Yazı Tipleri",
+                "Ekran",
+                "GPS",
+                "…"
+            ],
+            "proxy": "Her profil için bir proxy",
+            "profile": "profil",
+            "webrtc": "WebRTC'de gerçek IP açığa çıkmaz",
+            "realIp": "gerçek IP",
+            "proxyIp": "proxy IP",
+            "tz": "Saat dilimi proxy ile eşleşiyor",
+            "tzProxy": "Tokyo proxy",
+            "open": "açık",
+            "blocked": "engelli",
+            "cookies": "Ayrı çerez ve oturumlar",
+            "batch": "Toplu çalıştırma",
+            "stagger": "profil başına gecikmeli",
+            "schedule": "Zamanlamalar",
+            "daily": "her gün · 10 profil",
+            "api": "REST API · MCP"
         }
     }
 }

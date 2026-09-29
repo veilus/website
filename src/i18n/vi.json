@@ -16,39 +16,6 @@
         "menu": "Mở menu",
         "language": "Ngôn ngữ"
     },
-    "features": {
-        "badge": "Tính năng",
-        "title": "Mọi thứ bạn cần,",
-        "titleHighlight": "trong một ứng dụng",
-        "subtitle": "Trình duyệt anti-detect và tự động hóa nằm chung một chỗ.",
-        "items": [
-            {
-                "title": "Mỗi profile là một người khác nhau",
-                "desc": "Mỗi profile có fingerprint riêng và proxy HTTP, HTTPS hoặc SOCKS5 riêng. Profile chạy trên engine Chromium do Veilus tự build và vá.",
-                "badge": "Đã kiểm với creepjs & iphey"
-            },
-            {
-                "title": "Làm một lần, lặp lại ở mọi nơi",
-                "desc": "Nhờ trợ lý AI viết script: qua MCP, nó chạy thử, đọc lỗi của từng profile rồi tự sửa. Hoặc bạn tự viết. Sau đó Veilus Flow chạy script trên bao nhiêu profile tùy bạn.",
-                "badge": "Veilus Flow · Pro"
-            },
-            {
-                "title": "Việc tự chạy khi bạn vắng mặt",
-                "desc": "Đặt lịch cho script, hoặc chạy hàng loạt trên nhiều profile cùng lúc.",
-                "badge": "Lịch · Chạy hàng loạt · Pro"
-            },
-            {
-                "title": "Nối với công cụ của bạn",
-                "desc": "REST API và MCP chạy cục bộ để code và công cụ AI của bạn mở profile và chạy tự động hóa.",
-                "badge": "REST API · MCP · Pro"
-            },
-            {
-                "title": "Mang cả thiết lập theo",
-                "desc": "Veilus Sync đồng bộ profile qua Git repository hoặc Google Drive do bạn chọn. Bắt đầu script từ mẫu có sẵn, nhập hoặc xuất profile khi đổi máy.",
-                "badge": "Veilus Sync · Pro"
-            }
-        ]
-    },
     "comparison": {
         "badge": "So sánh",
         "title": "Veilus so với",
@@ -476,6 +443,39 @@
             "otherMachine": "máy khác",
             "repo": "kho của bạn",
             "syncNote": "Hai chiều giữa các máy của bạn · token truy cập được mã hoá"
+        },
+        "bento": {
+            "figNo": "Bảng 1",
+            "fig": "tính năng",
+            "title": "Đủ để chạy trăm tài khoản trên một máy.",
+            "fields": "{n} trường fingerprint",
+            "fpChips": [
+                "User-Agent",
+                "Client Hints",
+                "Canvas",
+                "WebGL",
+                "WebGPU",
+                "Audio",
+                "Phông chữ",
+                "Màn hình",
+                "GPS",
+                "…"
+            ],
+            "proxy": "Proxy riêng từng hồ sơ",
+            "profile": "hồ sơ",
+            "webrtc": "WebRTC không lộ IP",
+            "realIp": "IP thật",
+            "proxyIp": "IP proxy",
+            "tz": "Múi giờ khớp proxy",
+            "tzProxy": "proxy Tokyo",
+            "open": "mở",
+            "blocked": "chặn",
+            "cookies": "Cookie & phiên riêng",
+            "batch": "Chạy hàng loạt",
+            "stagger": "giãn cách từng hồ sơ",
+            "schedule": "Lịch chạy",
+            "daily": "mỗi ngày · 10 hồ sơ",
+            "api": "REST API · MCP"
         }
     }
 }
