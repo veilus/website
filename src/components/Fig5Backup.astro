@@ -100,7 +100,7 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   .k-move .k-ar { flex: 1; min-width: 16px; }
   .k-file { display: flex; flex: none; flex-direction: column; align-items: center; gap: 3px; max-width: 150px; padding: 10px 10px 9px; border: 1.5px solid var(--ink); background: var(--paper); text-align: center; }
   .k-file .ms { font-size: 24px; }
-  .k-file b { font-family: var(--font-mono); font-size: 11px; font-weight: 600; word-break: break-all; }
+  .k-file b { font-family: var(--font-mono); font-size: 11px; font-weight: 600; overflow-wrap: anywhere; }
   .k-file small { font-family: var(--font-mono); font-size: 10px; color: var(--muted); }
   .k-sw { flex: none; margin: 0 6px; font-size: 22px; }
   .k-bkc { padding-top: 12px; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 11.5px; line-height: 1.55; color: var(--muted); }
