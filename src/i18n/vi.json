@@ -17,7 +17,6 @@
         "language": "Ngôn ngữ"
     },
     "comparison": {
-        "badge": "So sánh",
         "title": "Veilus so với",
         "titleHighlight": "các trình duyệt khác",
         "subtitle": "Gói miễn phí, tự động hóa có sẵn, mua trọn đời và giá khởi điểm, đặt cạnh bốn trình duyệt anti-detect phổ biến.",
@@ -480,6 +479,10 @@
             "figNo": "Bảng 2",
             "fig": "giá",
             "once": "Trả một lần"
+        },
+        "compare": {
+            "figNo": "Bảng 3",
+            "fig": "so với trình duyệt khác"
         }
     }
 }

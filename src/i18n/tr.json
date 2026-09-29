@@ -17,7 +17,6 @@
         "language": "Dil"
     },
     "comparison": {
-        "badge": "Karşılaştır",
         "title": "Veilus",
         "titleHighlight": "karşılaştırması",
         "subtitle": "Ücretsiz plan, dahili otomasyon, ömür boyu satın alma ve başlangıç fiyatı; dört popüler anti-detect tarayıcıyla yan yana.",
@@ -480,6 +479,10 @@
             "figNo": "Tablo 2",
             "fig": "fiyatlar",
             "once": "Bir kez ödeyin"
+        },
+        "compare": {
+            "figNo": "Tablo 3",
+            "fig": "diğer tarayıcılara karşı"
         }
     }
 }

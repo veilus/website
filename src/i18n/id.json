@@ -17,7 +17,6 @@
         "language": "Bahasa"
     },
     "comparison": {
-        "badge": "Bandingkan",
         "title": "Veilus",
         "titleHighlight": "dibandingkan",
         "subtitle": "Paket gratis, otomasi bawaan, beli sekali seumur hidup, dan harga awal, berdampingan dengan empat browser anti-detect populer.",
@@ -480,6 +479,10 @@
             "figNo": "Tabel 2",
             "fig": "harga",
             "once": "Bayar sekali"
+        },
+        "compare": {
+            "figNo": "Tabel 3",
+            "fig": "dibandingkan browser lain"
         }
     }
 }

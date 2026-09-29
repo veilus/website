@@ -17,7 +17,6 @@
         "language": "Language"
     },
     "comparison": {
-        "badge": "Compare",
         "title": "How Veilus",
         "titleHighlight": "compares",
         "subtitle": "Free plan, built-in automation, lifetime purchase and entry price, side by side with four popular anti-detect browsers.",
@@ -480,6 +479,10 @@
             "figNo": "Table 2",
             "fig": "pricing",
             "once": "Pay once"
+        },
+        "compare": {
+            "figNo": "Table 3",
+            "fig": "versus other browsers"
         }
     }
 }

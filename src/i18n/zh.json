@@ -17,7 +17,6 @@
         "language": "语言"
     },
     "comparison": {
-        "badge": "对比",
         "title": "Veilus",
         "titleHighlight": "与同类对比",
         "subtitle": "免费版、内置自动化、一次性买断和起步价，与四款常见反检测浏览器并列比较。",
@@ -480,6 +479,10 @@
             "figNo": "表 2",
             "fig": "价格",
             "once": "一次付费"
+        },
+        "compare": {
+            "figNo": "表 3",
+            "fig": "与其他浏览器对比"
         }
     }
 }

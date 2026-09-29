@@ -17,7 +17,6 @@
         "language": "Idioma"
     },
     "comparison": {
-        "badge": "Comparar",
         "title": "Como o Veilus",
         "titleHighlight": "se compara",
         "subtitle": "Plano grátis, automação integrada, compra vitalícia e preço inicial, lado a lado com quatro navegadores antidetect populares.",
@@ -480,6 +479,10 @@
             "figNo": "Tabela 2",
             "fig": "preços",
             "once": "Pague uma vez"
+        },
+        "compare": {
+            "figNo": "Tabela 3",
+            "fig": "comparado a outros navegadores"
         }
     }
 }

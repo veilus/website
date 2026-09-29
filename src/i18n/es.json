@@ -17,7 +17,6 @@
         "language": "Idioma"
     },
     "comparison": {
-        "badge": "Comparar",
         "title": "Cómo se compara",
         "titleHighlight": "Veilus",
         "subtitle": "Plan gratuito, automatización integrada, pago único y precio de entrada, junto a cuatro navegadores antidetección populares.",
@@ -480,6 +479,10 @@
             "figNo": "Tabla 2",
             "fig": "precios",
             "once": "Paga una vez"
+        },
+        "compare": {
+            "figNo": "Tabla 3",
+            "fig": "comparado con otros navegadores"
         }
     }
 }
