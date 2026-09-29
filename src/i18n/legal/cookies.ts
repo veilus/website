@@ -143,7 +143,7 @@ export const cookieTranslations: Record<string, {
 <p>Chúng tôi <strong>không</strong> sử dụng cookie quảng cáo, pixel theo dõi mạng xã hội, hoặc bất kỳ cookie nào bán dữ liệu của bạn cho bên thứ ba.</p>
 
 <h2>8. Ứng dụng Veilus Desktop</h2>
-<p>Chính sách Cookie này chỉ áp dụng cho <strong>website veilus.io</strong>. Ứng dụng Veilus không sử dụng cookie theo dõi. Các browser profiles trong Veilus có kho cookie riêng biệt hoàn toàn do bạn kiểm soát.</p>
+<p>Chính sách Cookie này chỉ áp dụng cho <strong>website veilus.io</strong>. Ứng dụng Veilus không sử dụng cookie theo dõi. Các hồ sơ trình duyệt trong Veilus có kho cookie riêng biệt hoàn toàn do bạn kiểm soát.</p>
 
 <h2>9. Quản lý Cookie</h2>
 <p>Bạn có thể kiểm soát cookie thông qua cài đặt trình duyệt hoặc cài tiện ích <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out</a>.</p>

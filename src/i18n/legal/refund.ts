@@ -60,7 +60,7 @@ export const refundTranslations: Record<string, {
 <p>Chúng tôi muốn bạn hài lòng với Veilus. Nếu không hài lòng, chúng tôi cung cấp hoàn tiền theo các điều kiện sau.</p>
 
 <h2>2. Gói miễn phí</h2>
-<p>Gói Free miễn phí mãi mãi (5 profiles, không giới hạn thời gian). Không cần thanh toán nên không áp dụng hoàn tiền.</p>
+<p>Gói Free miễn phí mãi mãi (5 hồ sơ, không giới hạn thời gian). Không cần thanh toán nên không áp dụng hoàn tiền.</p>
 
 <h2>3. Gói thuê tháng</h2>
 <table><thead><tr><th>Điều kiện</th><th>Hoàn tiền</th></tr></thead><tbody>
@@ -83,11 +83,11 @@ export const refundTranslations: Record<string, {
   <li>Key bị đình chỉ do vi phạm Điều khoản.</li>
   <li>Đã nhận hoàn tiền trước đó.</li>
   <li>Yêu cầu sau thời hạn hoàn tiền.</li>
-  <li>Sử dụng nhiều trong thời gian hoàn tiền (ví dụ: tạo 50+ profiles).</li>
+  <li>Sử dụng nhiều trong thời gian hoàn tiền (ví dụ: tạo 50+ hồ sơ).</li>
 </ul>
 
 <h2>7. Để key tháng hết hạn thay vì hoàn tiền</h2>
-<p>Nếu bạn không gia hạn key thuê tháng, ứng dụng rơi về gói Free khi hết kỳ đã trả. Profiles của bạn được giữ nguyên và bạn có thể gia hạn lại bất kỳ lúc nào.</p>
+<p>Nếu bạn không gia hạn key thuê tháng, ứng dụng rơi về gói Free khi hết kỳ đã trả. Hồ sơ của bạn được giữ nguyên và bạn có thể gia hạn lại bất kỳ lúc nào.</p>
 
 <h2>8. Liên hệ</h2>
 <ul>

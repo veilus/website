@@ -135,9 +135,9 @@ export const termsTranslations: Record<string, {
 <p>Veilus là ứng dụng trình duyệt chống phát hiện với khả năng automation tích hợp, bao gồm:</p>
 <ul>
   <li>Ứng dụng desktop (macOS và Windows)</li>
-  <li>Quản lý browser profile với tùy chỉnh fingerprint</li>
+  <li>Quản lý hồ sơ trình duyệt với tùy chỉnh fingerprint</li>
   <li>Công cụ automation (Veilus Flow, Visual Canvas)</li>
-  <li>Đồng bộ profile (Veilus Sync)</li>
+  <li>Đồng bộ hồ sơ (Veilus Sync)</li>
   <li>Lập lịch script và thực thi hàng loạt</li>
   <li>Cloud API cho quản lý tài khoản và license</li>
 </ul>
@@ -154,7 +154,7 @@ export const termsTranslations: Record<string, {
 <h2>4. Gói & Thanh toán</h2>
 <h3>4.1 Các gói</h3>
 <ul>
-  <li><strong>Free:</strong> miễn phí mãi mãi; 5 profiles trên 1 máy.</li>
+  <li><strong>Free:</strong> miễn phí mãi mãi; 5 hồ sơ trên 1 máy.</li>
   <li><strong>Thuê tháng:</strong> tính theo mỗi máy mỗi tháng. Đơn VNĐ gia hạn tay bằng chuyển khoản; mỗi lần thanh toán cộng thêm 30 ngày. Đơn USD tự động gia hạn qua LemonSqueezy; bạn có thể huỷ bất kỳ lúc nào và vẫn dùng được đến hết kỳ đã trả.</li>
   <li><strong>Trọn đời:</strong> trả một lần, cập nhật vĩnh viễn và hỗ trợ 3 năm. Hỗ trợ có thể gia hạn với giá bằng 40% giá hiện tại của gói cho mỗi 3 năm tiếp theo.</li>
   <li><strong>Thêm máy</strong> chỉ áp dụng cho key trọn đời.</li>
@@ -169,7 +169,7 @@ export const termsTranslations: Record<string, {
   <li>Giá có thể thay đổi với thông báo trước 30 ngày.</li>
 </ul>
 <h3>4.3 Hết hạn</h3>
-<p>Nếu key thuê tháng không được gia hạn, ứng dụng rơi về gói Free khi hết kỳ đã trả. Profiles đã tạo được giữ nguyên (không bị xoá).</p>
+<p>Nếu key thuê tháng không được gia hạn, ứng dụng rơi về gói Free khi hết kỳ đã trả. Hồ sơ đã tạo được giữ nguyên (không bị xoá).</p>
 
 <h2>5. Sử dụng được chấp nhận</h2>
 <p>Bạn đồng ý <strong>không</strong> sử dụng Dịch vụ để:</p>
@@ -193,8 +193,8 @@ export const termsTranslations: Record<string, {
 
 <h2>7. Quyền sở hữu dữ liệu & Bảo mật</h2>
 <ul>
-  <li>Bạn giữ toàn quyền sở hữu dữ liệu profile, script và workflow.</li>
-  <li>Dữ liệu profile lưu cục bộ. Chúng tôi không truy cập được.</li>
+  <li>Bạn giữ toàn quyền sở hữu dữ liệu hồ sơ, script và workflow.</li>
+  <li>Dữ liệu hồ sơ lưu cục bộ. Chúng tôi không truy cập được.</li>
   <li>Veilus Sync đồng bộ dữ liệu tới Git repository hoặc Google Drive do bạn chọn; dữ liệu đó không được Veilus mã hóa. Chỉ access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn.</li>
   <li>Xem <a href="/vi/privacy/">Chính sách Bảo mật</a> để biết chi tiết.</li>
 </ul>

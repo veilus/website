@@ -132,13 +132,13 @@ export const privacyTranslations: Record<string, {
 <p><strong>Chúng tôi không bao giờ thu thập:</strong></p>
 <ul>
   <li>Lịch sử duyệt web hoặc URL đã truy cập</li>
-  <li>Nội dung profile hoặc cấu hình fingerprint</li>
+  <li>Nội dung hồ sơ hoặc cấu hình fingerprint</li>
   <li>Script automation hoặc dữ liệu workflow</li>
   <li>Địa chỉ IP cho mục đích theo dõi</li>
   <li>Bất kỳ thông tin nhận dạng cá nhân (PII) nào qua telemetry</li>
 </ul>
-<h3>2.3 Dữ liệu Browser Profile</h3>
-<p>Tất cả dữ liệu browser profile (fingerprint, cookie, session, script automation) được lưu <strong>cục bộ trên thiết bị của bạn</strong>. Nếu bạn sử dụng Veilus Sync, dữ liệu profile được đồng bộ tới Git repository hoặc Google Drive do bạn chọn — <strong>dữ liệu đó không được Veilus mã hóa, nên hãy dùng repository hoặc drive ở chế độ riêng tư</strong>. Chỉ riêng access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn.</p>
+<h3>2.3 Dữ liệu hồ sơ trình duyệt</h3>
+<p>Tất cả dữ liệu hồ sơ trình duyệt (fingerprint, cookie, session, script automation) được lưu <strong>cục bộ trên thiết bị của bạn</strong>. Nếu bạn sử dụng Veilus Sync, dữ liệu hồ sơ được đồng bộ tới Git repository hoặc Google Drive do bạn chọn — <strong>dữ liệu đó không được Veilus mã hóa, nên hãy dùng repository hoặc drive ở chế độ riêng tư</strong>. Chỉ riêng access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn.</p>
 
 <h2>3. Cách chúng tôi sử dụng dữ liệu</h2>
 <table><thead><tr><th>Mục đích</th><th>Cơ sở pháp lý</th></tr></thead><tbody>
@@ -151,9 +151,9 @@ export const privacyTranslations: Record<string, {
 
 <h2>4. Lưu trữ & Bảo mật dữ liệu</h2>
 <ul>
-  <li><strong>Lưu trữ cục bộ:</strong> Dữ liệu profile, script và cài đặt được lưu trên máy tính của bạn.</li>
+  <li><strong>Lưu trữ cục bộ:</strong> Dữ liệu hồ sơ, script và cài đặt được lưu trên máy tính của bạn.</li>
   <li><strong>Hạ tầng đám mây:</strong> Dữ liệu tài khoản (email, license và đơn hàng) được lưu trong Cloudflare D1.</li>
-  <li><strong>Đồng bộ:</strong> Veilus Sync lưu dữ liệu profile trong Git repository hoặc Google Drive do bạn chọn; dữ liệu đó không được Veilus mã hóa. Chỉ access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn, và không bao giờ truyền đến máy chủ. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu tùy chọn để mã hóa file bằng AES-256-GCM.</li>
+  <li><strong>Đồng bộ:</strong> Veilus Sync lưu dữ liệu hồ sơ trong Git repository hoặc Google Drive do bạn chọn; dữ liệu đó không được Veilus mã hóa. Chỉ access token dùng để truy cập từ xa được mã hóa, ngay trên thiết bị của bạn, và không bao giờ truyền đến máy chủ. Khi export hồ sơ ra file .veiluspack, bạn có thể đặt mật khẩu tùy chọn để mã hóa file bằng AES-256-GCM.</li>
   <li><strong>Hosting biên:</strong> Website và API chạy trên Cloudflare Workers/Pages với phân phối biên toàn cầu.</li>
 </ul>
 
