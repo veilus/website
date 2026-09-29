@@ -38,11 +38,40 @@ const HISTORIC = [
   ['sync-encrypted', 'Encrypted sync (Veilus Sync)'],
   ['sync-encrypted', 'Profile data is stored locally on your machine; Veilus Sync is encrypted'],
   ['sync-encrypted', 'Veilus Sync (encrypted), script templates, import/export'],
+  // Gỡ ở de04958: features.desc, features.badge, câu FAQ dữ liệu — 8 ngôn ngữ; rồi câu cấm của spec §6.
+  ['sync-encrypted', 'Veilus Sync keeps profiles in sync, encrypted. Start scripts from templates, and import or export profiles when you change machines.'],
+  ['sync-encrypted', 'Encrypted sync · Pro'],
+  ['sync-encrypted', 'On your machine. Profiles and their data are stored locally. If you turn on Veilus Sync, the synced data is encrypted.'],
+  ['sync-encrypted', 'Veilus Sync sincroniza los perfiles cifrados. Empieza scripts desde plantillas e importa o exporta perfiles al cambiar de equipo.'],
+  ['sync-encrypted', 'Sincronización cifrada · Pro'],
+  ['sync-encrypted', 'En tu equipo. Los perfiles y sus datos se guardan en local. Si activas Veilus Sync, los datos sincronizados van cifrados.'],
+  ['sync-encrypted', 'Veilus Sync menyinkronkan profil secara terenkripsi. Mulai skrip dari template, dan impor atau ekspor profil saat ganti komputer.'],
+  ['sync-encrypted', 'Sinkronisasi terenkripsi · Pro'],
+  ['sync-encrypted', 'Di komputer Anda. Profil dan datanya disimpan secara lokal. Jika Anda mengaktifkan Veilus Sync, data yang disinkronkan dienkripsi.'],
+  ['sync-encrypted', 'O Veilus Sync sincroniza os perfis com criptografia. Comece scripts a partir de modelos e importe ou exporte perfis ao trocar de computador.'],
+  ['sync-encrypted', 'Sincronização criptografada · Pro'],
+  ['sync-encrypted', 'No seu computador. Os perfis e os dados deles ficam salvos localmente. Se você ativar o Veilus Sync, os dados sincronizados são criptografados.'],
+  ['sync-encrypted', 'Veilus Sync синхронизирует профили в зашифрованном виде. Начинайте скрипты с шаблонов, импортируйте и экспортируйте профили при смене компьютера.'],
+  ['sync-encrypted', 'Шифрованная синхронизация · Pro'],
+  ['sync-encrypted', 'На вашем компьютере. Профили и их данные хранятся локально. Если включить Veilus Sync, синхронизируемые данные шифруются.'],
+  ['sync-encrypted', 'Veilus Sync profilleri şifreli olarak senkronize eder. Betiklere şablonlardan başlayın, bilgisayar değiştirirken profilleri içe veya dışa aktarın.'],
+  ['sync-encrypted', 'Şifreli senkronizasyon · Pro'],
+  ['sync-encrypted', 'Bilgisayarınızda. Profiller ve verileri yerelde saklanır. Veilus Sync\'i açarsanız senkronize edilen veriler şifrelenir.'],
+  ['sync-encrypted', 'Veilus Sync đồng bộ profile có mã hóa. Bắt đầu script từ mẫu có sẵn, nhập hoặc xuất profile khi đổi máy.'],
+  ['sync-encrypted', 'Đồng bộ mã hóa · Pro'],
+  ['sync-encrypted', 'Trên máy của bạn. Profile và dữ liệu của chúng được lưu cục bộ. Nếu bật Veilus Sync, dữ liệu đồng bộ được mã hóa.'],
+  ['sync-encrypted', 'Veilus Sync 加密同步配置文件。可以从模板开始编写脚本，换电脑时导入或导出配置文件。'],
+  ['sync-encrypted', '加密同步 · Pro'],
+  ['sync-encrypted', '存在你的电脑上。配置文件及其数据都保存在本地。如果开启 Veilus Sync，同步的数据会被加密。'],
+  ['sync-encrypted', 'Veilus Sync được mã hoá'],
   ['recorder', 'Plus, Veilus includes a built-in automation platform (action recorder, visual canvas)'],
   ['recorder', 'Tích hợp sẵn automation (ghi thao tác, visual canvas)'],
   ['recorder', 'Плюс встроенная автоматизация (запись действий, визуальный редактор)'],
   ['recorder', '此外，Veilus 内置完整自动化平台（操作录制、可视化画布）'],
   ['recorder', 'Além disso, automação integrada (gravação, canvas visual)'],
+  ['recorder', 'Graba acciones → genera scripts automáticamente en 1 clic'],
+  ['recorder', 'Eylemleri kaydet → 1 tıkla otomatik script oluştur'],
+  ['recorder', 'Rekam aksi → buat script otomatis dalam 1 klik'],
   ['undetectable', 'Is Veilus really undetectable?'],
   ['undetectable', 'Veilus có thực sự undetectable không?'],
   ['undetectable', 'Veilus действительно необнаружим?'],
@@ -58,6 +87,7 @@ const HISTORIC = [
   ['the-only', 'O <strong>único</strong> navegador antidetecção com plataforma de automação totalmente integrada.'],
   ['the-only', 'El <strong>único</strong> navegador antidetección con plataforma de automatización completamente integrada.'],
   ['the-only', 'Browser anti-deteksi <strong>satu-satunya</strong> dengan platform otomasi terintegrasi penuh.'],
+  ['the-only', 'Tamamen entegre otomasyon platformuna sahip <strong>tek</strong> anti-tespit tarayıcısı. Yerel motor — 3 kat hızlı, %80 daha az RAM.'],
   ['speed', 'Native engine — 3x faster, 80% less RAM.'],
   ['speed', 'Engine gốc — nhanh hơn 3x, ít RAM hơn 80%.'],
   ['speed', 'Нативный движок — в 3 раза быстрее, на 80% меньше RAM.'],
@@ -83,6 +113,15 @@ const HISTORIC = [
   ['linux', 'operatingSystem: "Windows, macOS, Linux",'],
   ['linux', 'Currently available on macOS; Windows and Linux expected Q2 2026'],
   ['rating', 'ratingValue: "4.9",'],
+  // Badge trang tải về và khoá download.note (8 ngôn ngữ), gỡ ở VEIL-994.
+  ['no-personal-data', 'No personal data collected. No credit card required.'],
+  ['no-personal-data', '不收集个人数据 · 无需信用卡'],
+  ['no-personal-data', 'Без сбора данных · Без кредитной карты'],
+  ['no-personal-data', 'Không thu thập dữ liệu cá nhân · Không cần thẻ tín dụng'],
+  ['no-personal-data', 'Sem coleta de dados.'],
+  ['no-personal-data', 'Sin datos recopilados.'],
+  ['no-personal-data', 'Kişisel veri toplanmaz · Kredi kartı gerekmez'],
+  ['no-personal-data', 'Tidak mengumpulkan data.'],
 ];
 
 // Câu đúng, hoặc chuỗi kỹ thuật trông gần giống: không mẫu nào được bắt.
@@ -97,7 +136,9 @@ const NEAR_MISS = [
   'Không đảm bảo fingerprint không bị phát hiện bởi mọi hệ thống.',
   'mật khẩu tuỳ chọn · AES-256',
   'Hai chiều giữa các máy của bạn · token truy cập được mã hoá',
-  'Veilus does not encrypt the synced profile data, only the remote access token',
+  // "sync" và "encrypt" ở hai câu khác nhau (câu trả lời FAQ dữ liệu, en): sync-encrypted không vượt dấu chấm.
+  'If you turn on Veilus Sync, profiles sync to a Git repository or Google Drive you choose — use a private one. When you export a profile to a .veiluspack file, you can set a password to encrypt the file.',
+  'Tek seferlik ödeme',
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
   'Our affiliate program pays 20% per sale',
@@ -108,9 +149,10 @@ test('quét đủ mẫu số: 8 ngôn ngữ, 4 trang pháp lý, llms.txt, layout
   assert.equal(FILES.filter((f) => /^src\/i18n\/[a-z]{2}\.json$/.test(f)).length, 8);
   assert.equal(count('src/i18n/legal/'), 4);
   assert.ok(FILES.includes('public/llms.txt'));
+  // Ngưỡng bằng đúng số file hiện có: xoá component hay trang thì hạ ngưỡng trong cùng commit.
   assert.ok(count('src/layouts/') >= 2, 'thiếu layout');
-  assert.ok(count('src/components/') >= 5, 'thiếu component');
-  assert.ok(count('src/pages/') >= 10, 'thiếu trang');
+  assert.ok(count('src/components/') >= 14, 'thiếu component');
+  assert.ok(count('src/pages/') >= 14, 'thiếu trang');
 });
 
 test('mỗi mẫu cấm bắt được câu sai từng lên trang', () => {
