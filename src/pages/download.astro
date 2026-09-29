@@ -297,6 +297,7 @@ const i = t(defaultLang);
   .waitlist-message {
     font-size: 0.8125rem;
     margin-top: var(--space-sm);
+    margin-inline: auto; /* p toàn cục có max-width 60ch: thiếu auto thì hộp dạt trái */
     min-height: 1.5em;
     opacity: 0;
     transition: opacity var(--transition-fast);
@@ -313,6 +314,7 @@ const i = t(defaultLang);
   .waitlist-counter {
     font-size: 0.875rem;
     color: var(--color-text-muted);
+    margin-inline: auto; /* p toàn cục có max-width 60ch: thiếu auto thì hộp dạt trái */
     margin-bottom: var(--space-xl);
     opacity: 0;
     transition: opacity var(--transition-fast);
