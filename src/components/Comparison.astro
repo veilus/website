@@ -25,9 +25,9 @@ const checked = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UT
 ---
 <section class="k-wrap k-sec" id="comparison" data-reveal>
   <div class="k-fig"><b>{i.home.compare.figNo}</b> — {i.home.compare.fig}</div>
-  <h2 class="k-h2">{c.title} {c.titleHighlight}</h2>
+  <h2 class="k-h2" id="comparison-title">{c.title} {c.titleHighlight}</h2>
   <p class="k-sub">{c.subtitle}</p>
-  <div class="k-tablewrap k-rise" style="--d:0.1s" tabindex="0">
+  <div class="k-tablewrap k-rise" style="--d:0.1s" tabindex="0" role="region" aria-labelledby="comparison-title">
     <table class="k-table">
       <thead>
         <tr>
