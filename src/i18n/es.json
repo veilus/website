@@ -197,7 +197,9 @@
         "noCard": "Sin tarjeta de crédito",
         "freeProfiles": "5 perfiles gratis para siempre",
         "reqTitle": "Requisitos del sistema",
-        "engine": "Motor de navegador, se descarga aparte en la app"
+        "engine": "Motor de navegador, se descarga aparte en la app",
+        "metaTitle": "Veilus para Windows y macOS — Acceso Anticipado",
+        "metaDescription": "Veilus llega pronto a Windows y macOS. Únete a la lista de espera y te avisaremos cuando esté listo para descargar. 5 perfiles gratis para siempre."
     },
     "waitlist": {
         "title": "Acceso Anticipado",

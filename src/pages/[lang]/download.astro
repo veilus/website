@@ -14,7 +14,7 @@ const lang = Astro.params.lang as Lang;
 const i = t(lang);
 ---
 
-<Layout lang={lang}>
+<Layout lang={lang} title={i.download.metaTitle} description={i.download.metaDescription}>
   <Navbar lang={lang} />
   <main class="download-page">
     <section class="download-hero">
@@ -61,7 +61,7 @@ const i = t(lang);
                 ></path></svg
               >
             </div>
-            <h3>Windows</h3>
+            <h2 class="platform-name">Windows</h2>
             <p class="platform-version">{OS_SUPPORT.windows}</p>
             <span class="coming-soon-badge">{i.download.soon}</span>
             <span class="platform-size">{INSTALLER_SIZE.windows}</span>
@@ -75,7 +75,7 @@ const i = t(lang);
                 ></path></svg
               >
             </div>
-            <h3>macOS</h3>
+            <h2 class="platform-name">macOS</h2>
             <p class="platform-version">{OS_SUPPORT.macos}</p>
             <span class="coming-soon-badge">{i.download.soon}</span>
             <span class="platform-size">{INSTALLER_SIZE.macos}</span>
@@ -119,14 +119,14 @@ const i = t(lang);
         <h2>{i.download.reqTitle}</h2>
         <div class="req-grid">
           <div class="req-card">
-            <h4>Windows</h4>
+            <h3 class="req-name">Windows</h3>
             <ul>
               <li>{OS_SUPPORT.windows}</li>
               <li>{i.download.engine} <span class="req-size">({ENGINE_SIZE.windows})</span></li>
             </ul>
           </div>
           <div class="req-card">
-            <h4>macOS</h4>
+            <h3 class="req-name">macOS</h3>
             <ul>
               <li>{OS_SUPPORT.macos}</li>
               <li>{i.download.engine} <span class="req-size">({ENGINE_SIZE.macos})</span></li>
@@ -230,6 +230,11 @@ const i = t(lang);
   .download-hero h1 {
     font-size: clamp(2.25rem, 5vw, 3.5rem);
     margin-bottom: var(--space-md);
+  }
+  /* "Veilus" luôn một dòng riêng. Để nó tự xuống dòng thì trên di động nó rớt xuống dòng mới khi IBM Plex
+     tải xong và đẩy cả form lẫn thẻ nền tảng xuống: CLS 0,12–0,15 (VEIL-1031). */
+  .download-hero h1 .text-gradient {
+    display: block;
   }
   .download-subtitle {
     font-size: 1.125rem;
@@ -364,7 +369,7 @@ const i = t(lang);
     width: 100%;
     height: 100%;
   }
-  .platform-card h3 {
+  .platform-name {
     font-size: 1.25rem;
     margin: 0;
   }
@@ -436,7 +441,7 @@ const i = t(lang);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
   }
-  .req-card h4 {
+  .req-name {
     margin: 0 0 var(--space-sm);
     font-size: 1rem;
   }

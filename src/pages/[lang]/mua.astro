@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import Purchase from "../../components/Purchase.astro";
 import { t, supportedLangs, defaultLang, type Lang } from "../../i18n/utils";
+import { currencyForLang } from "../../scripts/purchase-core.js";
 
 export function getStaticPaths() {
   // Ngôn ngữ mặc định (en) do /mua.astro dựng; /en/* chuyển hướng 301 về gốc (public/_redirects)
@@ -12,9 +13,11 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Lang;
 const i = t(lang);
+// Mô tả riêng thay cho mô tả trang chủ: câu phụ đề trang đang hiện, chọn theo loại tiền như Purchase.astro.
+const description = currencyForLang(lang) === "VND" ? i.buy.subtitleVnd : i.buy.subtitleUsd;
 ---
 
-<Layout lang={lang} title={`${i.buy.title} — Veilus`} noTracking>
+<Layout lang={lang} title={`${i.buy.title} — Veilus`} description={description} noTracking>
   <Navbar lang={lang} />
   <main>
     <Purchase lang={lang} />

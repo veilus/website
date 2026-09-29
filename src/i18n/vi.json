@@ -197,7 +197,9 @@
         "noCard": "Không cần thẻ tín dụng",
         "freeProfiles": "5 hồ sơ miễn phí mãi mãi",
         "reqTitle": "Yêu cầu hệ thống",
-        "engine": "Engine trình duyệt tải riêng trong app"
+        "engine": "Engine trình duyệt tải riêng trong app",
+        "metaTitle": "Veilus cho Windows và macOS — Đăng ký sớm",
+        "metaDescription": "Veilus sắp có cho Windows và macOS. Đăng ký danh sách chờ để được báo ngay khi Veilus sẵn sàng tải về. 5 hồ sơ miễn phí mãi mãi, không cần thẻ tín dụng."
     },
     "waitlist": {
         "title": "Đăng Ký Sớm",

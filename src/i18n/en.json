@@ -197,7 +197,9 @@
         "noCard": "No credit card required",
         "freeProfiles": "5 free profiles forever",
         "reqTitle": "System Requirements",
-        "engine": "Browser engine, downloaded separately in the app"
+        "engine": "Browser engine, downloaded separately in the app",
+        "metaTitle": "Veilus for Windows and macOS — Get Early Access",
+        "metaDescription": "Veilus is coming to Windows and macOS. Join the waitlist and be the first to know when it is ready to download. 5 free profiles forever, no credit card."
     },
     "waitlist": {
         "title": "Get Early Access",
