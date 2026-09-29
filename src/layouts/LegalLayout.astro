@@ -117,8 +117,18 @@ const { title, description, lastUpdated } = Astro.props;
   .legal-content :global(table) {
     width: 100%;
     border-collapse: collapse;
-    margin: var(--space-lg) 0;
     font-size: 0.9375rem;
+  }
+
+  /* wrapTables() (src/scripts/legal-html.js) bọc mỗi <table> trong div này qua
+     set:html — bảng giữ nguyên display: table (vai trò bảng cho trình đọc màn
+     hình), khung ngoài mới cuộn ngang khi bảng rộng hơn cột nội dung. Margin dọc
+     nằm ở khung này, không ở table, để không bị BFC của overflow-x:auto chặn
+     margin-collapse với đoạn văn/tiêu đề trước-sau (đo lại: chiều cao 1440px
+     bằng before). */
+  .legal-content :global(.legal-table) {
+    margin: var(--space-lg) 0;
+    overflow-x: auto;
   }
 
   .legal-content :global(th),
@@ -153,21 +163,16 @@ const { title, description, lastUpdated } = Astro.props;
     }
   }
 
-  /* Một số bảng (vd "Dịch vụ bên thứ ba", bảng loại cookie 4 cột) rộng hơn
-     khung ở 390px: đo bằng Playwright cho thấy không phải padding sinh ra
-     — một token không tách được trong một ô (tên thương hiệu như
-     LemonSqueezy ~102px, hay nhãn ngắn như "Authentication,"/"Необходимые"
-     ~93–123px ở en/ru/pt/es) tự nó đã gần hoặc vượt bề rộng cột. Giảm đệm
-     ngang trước; overflow-wrap cho phép ô co xuống dưới bề rộng token đó
-     khi thật sự cần (không word-break:break-all, không table-layout:fixed
-     — cột nào không cần vẫn giữ bề rộng tự nhiên). Giữ display:table cho
-     vai trò bảng (screen reader). */
+  /* Đệm ngang nhỏ hơn ở màn hẹp: đo bằng Playwright cho thấy nhiều bảng (vd
+     "Dịch vụ bên thứ ba") vừa lọt khung nội dung chỉ nhờ giảm đệm — khung
+     .legal-table ở trên là lưới an toàn cho phần còn lại (bảng loại cookie
+     4 cột ở en/ru/pt/es vẫn rộng hơn khung dù đệm bằng 0, vì nhãn cột tự nó
+     đã hơn 100px — cuộn thay vì chẻ chữ). */
   @media (max-width: 480px) {
     .legal-content :global(th),
     .legal-content :global(td) {
       padding-left: var(--space-sm);
       padding-right: var(--space-sm);
-      overflow-wrap: anywhere;
     }
   }
 </style>

@@ -1,9 +1,10 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
 import { privacyTranslations } from '../i18n/legal/privacy';
+import { wrapTables } from '../scripts/legal-html.js';
 const t = privacyTranslations.en;
 ---
 
 <LegalLayout lang="en" title={t.title} description={t.description} lastUpdated={t.lastUpdated}>
-  <Fragment set:html={t.content} />
+  <Fragment set:html={wrapTables(t.content)} />
 </LegalLayout>

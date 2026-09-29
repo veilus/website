@@ -1,10 +1,11 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
 import { cookieTranslations } from '../i18n/legal/cookies';
+import { wrapTables } from '../scripts/legal-html.js';
 const lang = 'en';
 const t = cookieTranslations[lang];
 ---
 
 <LegalLayout lang={lang} title={t.title} description={t.description} lastUpdated={t.lastUpdated}>
-  <Fragment set:html={t.content} />
+  <Fragment set:html={wrapTables(t.content)} />
 </LegalLayout>

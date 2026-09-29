@@ -3,6 +3,7 @@ import LegalLayout from '../../layouts/LegalLayout.astro';
 import { supportedLangs, defaultLang } from '../../i18n/utils';
 import type { Lang } from '../../i18n/utils';
 import { refundTranslations } from '../../i18n/legal/refund';
+import { wrapTables } from '../../scripts/legal-html.js';
 
 export function getStaticPaths() {
   return supportedLangs
@@ -15,5 +16,5 @@ const t = refundTranslations[lang] || refundTranslations['en'];
 ---
 
 <LegalLayout lang={lang} title={t.title} description={t.description} lastUpdated={t.lastUpdated}>
-  <Fragment set:html={t.content} />
+  <Fragment set:html={wrapTables(t.content)} />
 </LegalLayout>
