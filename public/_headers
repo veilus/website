@@ -17,3 +17,7 @@
 # Tài sản Astro mang mã băm nội dung trong tên (build.assets = _assets): đổi nội dung là đổi tên, nên cache một năm.
 /_assets/*
   Cache-Control: public, max-age=31536000, immutable
+# HSTS (VEIL-1039): trình duyệt nhớ chỉ vào veilus.io bằng HTTPS trong 30 ngày. Chưa includeSubDomains
+# (docs, blog là GitHub Pages) và chưa preload; tăng max-age khi đã chạy ổn.
+/*
+  Strict-Transport-Security: max-age=2592000
