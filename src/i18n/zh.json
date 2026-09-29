@@ -174,15 +174,9 @@
         "resources": "资源",
         "resourceLinks": [
             "文档",
-            "博客",
-            "API文档"
+            "博客"
         ],
         "community": "社区",
-        "communityLinks": [
-            "Telegram",
-            "Twitter/X",
-            "GitHub"
-        ],
         "legal": [
             "条款",
             "隐私",

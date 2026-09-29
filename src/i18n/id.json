@@ -174,15 +174,9 @@
         "resources": "Sumber Daya",
         "resourceLinks": [
             "Dokumentasi",
-            "Blog",
-            "API Docs"
+            "Blog"
         ],
         "community": "Komunitas",
-        "communityLinks": [
-            "Telegram",
-            "Twitter/X",
-            "GitHub"
-        ],
         "legal": [
             "Ketentuan",
             "Privasi",

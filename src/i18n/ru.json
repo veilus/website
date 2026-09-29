@@ -174,15 +174,9 @@
         "resources": "Ресурсы",
         "resourceLinks": [
             "Документация",
-            "Блог",
-            "API Docs"
+            "Блог"
         ],
         "community": "Сообщество",
-        "communityLinks": [
-            "Telegram",
-            "Twitter/X",
-            "GitHub"
-        ],
         "legal": [
             "Условия",
             "Конфиденциальность",

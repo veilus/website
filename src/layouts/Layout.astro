@@ -41,7 +41,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 // x-default là bản en của CHÍNH trang này, không phải trang chủ.
 const xDefault = hreflangs.find((h) => h.lang === defaultLang)!.href;
 
-// Google Analytics 4 — Replace G-XXXXXXXXXX with your Measurement ID
+// Google Analytics 4
 const GA_ID = "G-CZ9G6B0L4M";
 
 // Ảnh chia sẻ: tên file mang tháng làm ra nó. Thay ảnh thì đổi tên, mạng xã hội cache theo URL nên mới lấy ảnh mới.

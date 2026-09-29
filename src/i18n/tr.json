@@ -174,15 +174,9 @@
         "resources": "Kaynaklar",
         "resourceLinks": [
             "Dokümantasyon",
-            "Blog",
-            "API Docs"
+            "Blog"
         ],
         "community": "Topluluk",
-        "communityLinks": [
-            "Telegram",
-            "Twitter/X",
-            "GitHub"
-        ],
         "legal": [
             "Şartlar",
             "Gizlilik",

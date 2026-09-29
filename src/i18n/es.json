@@ -174,15 +174,9 @@
         "resources": "Recursos",
         "resourceLinks": [
             "Documentación",
-            "Blog",
-            "API Docs"
+            "Blog"
         ],
         "community": "Comunidad",
-        "communityLinks": [
-            "Telegram",
-            "Twitter/X",
-            "GitHub"
-        ],
         "legal": [
             "Términos",
             "Privacidad",

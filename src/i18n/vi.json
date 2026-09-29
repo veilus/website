@@ -174,15 +174,9 @@
         "resources": "Tài nguyên",
         "resourceLinks": [
             "Tài liệu",
-            "Blog",
-            "API Docs"
+            "Blog"
         ],
         "community": "Cộng đồng",
-        "communityLinks": [
-            "Telegram",
-            "Twitter/X",
-            "GitHub"
-        ],
         "legal": [
             "Điều khoản",
             "Quyền riêng tư",
