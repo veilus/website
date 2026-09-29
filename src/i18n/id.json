@@ -123,7 +123,6 @@
         "refund": "Refund dalam 7 hari (bulanan) atau 14 hari (seumur hidup)."
     },
     "faq": {
-        "badge": "FAQ",
         "title": "Pertanyaan yang",
         "titleHighlight": "sering diajukan",
         "subtitle": "Yang paling sering ditanyakan sebelum mengunduh.",
@@ -164,17 +163,6 @@
                 "q": "Bisa refund?",
                 "a": "Bisa. Pembayaran bulanan bisa di-refund dalam 7 hari, lisensi seumur hidup dalam 14 hari."
             }
-        ]
-    },
-    "finalCta": {
-        "title": "Coba semua fitur Pro",
-        "titleHighlight": "gratis 7 hari",
-        "desc": "Unduh Veilus, minta uji coba di aplikasi, lalu biarkan asisten AI Anda menulis skrip pertama Anda.\nKalau tidak cocok, 5 profil tetap gratis.",
-        "cta": "Unduh & coba Pro gratis 7 hari",
-        "badges": [
-            "Tanpa kartu",
-            "Data tetap di komputer Anda",
-            "5 profil gratis selamanya"
         ]
     },
     "footer": {
@@ -483,6 +471,16 @@
         "compare": {
             "figNo": "Tabel 3",
             "fig": "dibandingkan browser lain"
+        },
+        "faq": {
+            "figNo": "Catatan",
+            "fig": "pertanyaan yang sering diajukan"
+        },
+        "final": {
+            "figNo": "Catatan",
+            "fig": "langkah berikutnya",
+            "title": "Unduh Veilus. Sambungkan asisten AI Anda. Beri perintah.",
+            "micro": "Tanpa kartu · data tetap di komputer Anda"
         }
     }
 }

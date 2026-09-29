@@ -123,7 +123,6 @@
         "refund": "7 gün içinde (aylık) veya 14 gün içinde (ömür boyu) iade."
     },
     "faq": {
-        "badge": "SSS",
         "title": "Sıkça sorulan",
         "titleHighlight": "sorular",
         "subtitle": "İndirmeden önce en çok sorulanlar.",
@@ -164,17 +163,6 @@
                 "q": "İade alabilir miyim?",
                 "a": "Evet. Aylık ödemeler 7 gün, ömür boyu lisanslar 14 gün içinde iade edilebilir."
             }
-        ]
-    },
-    "finalCta": {
-        "title": "Tüm Pro özelliklerini",
-        "titleHighlight": "7 gün ücretsiz deneyin",
-        "desc": "Veilus'u indirin, denemeyi uygulamadan talep edin ve ilk betiğinizi yapay zekâ asistanınıza yazdırın.\nSize göre değilse 5 profil ücretsiz kalır.",
-        "cta": "İndirin ve Pro'yu 7 gün ücretsiz deneyin",
-        "badges": [
-            "Kart gerekmez",
-            "Veriler bilgisayarınızda kalır",
-            "5 profil süresiz ücretsiz"
         ]
     },
     "footer": {
@@ -483,6 +471,16 @@
         "compare": {
             "figNo": "Tablo 3",
             "fig": "diğer tarayıcılara karşı"
+        },
+        "faq": {
+            "figNo": "Not",
+            "fig": "sıkça sorulan sorular"
+        },
+        "final": {
+            "figNo": "Not",
+            "fig": "sonraki adım",
+            "title": "Veilus'u indirin. Yapay zekâ asistanınızı bağlayın. Talimat verin.",
+            "micro": "Kart gerekmez · veriler bilgisayarınızda kalır"
         }
     }
 }

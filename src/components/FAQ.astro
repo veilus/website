@@ -1,40 +1,49 @@
 ---
+/**
+ * Câu hỏi thường gặp (spec trang chủ §4 dòng 9): 9 câu như website cũ, dạng <details>.
+ * JSON-LD FAQPage ở Layout.astro đọc cùng faq.items.
+ */
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang } from '../i18n/utils';
-interface Props { lang?: Lang; }
+
+interface Props {
+  lang?: Lang;
+}
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
+const q = i.faq;
 ---
-<section class="section faq" id="faq" data-animate>
-  <div class="container">
-    <div class="section-header">
-      <span class="badge">{i.faq.badge}</span>
-      <h2 class="mt-md">{i.faq.title} <span class="text-gradient">{i.faq.titleHighlight}</span></h2>
-      <p>{i.faq.subtitle}</p>
-    </div>
-    <div class="faq-list">
-      {i.faq.items.map((faq) => (
-        <details class="faq-item">
-          <summary class="faq-question">
-            <span>{faq.q}</span>
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </summary>
-          <div class="faq-answer"><p>{faq.a}</p></div>
-        </details>
-      ))}
-    </div>
+
+<section class="k-wrap k-sec" id="faq" data-reveal>
+  <div class="k-fig"><b>{i.home.faq.figNo}</b> — {i.home.faq.fig}</div>
+  <h2 class="k-h2">{q.title} {q.titleHighlight}</h2>
+  <p class="k-sub">{q.subtitle}</p>
+  <div class="k-faq k-rise" style="--d:0.1s">
+    {q.items.map((item, n) => (
+      <details open={n < 2}>
+        <summary class="faq-question">
+          <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" aria-hidden="true">add</span>
+        </summary>
+        <p>{item.a}</p>
+      </details>
+    ))}
   </div>
 </section>
+
 <style>
-  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
-  .faq-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; transition: border-color var(--transition-fast); }
-  .faq-item[open] { border-color: var(--color-border-light); }
-  .faq-question { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-lg) var(--space-xl); cursor: pointer; font-weight: 600; font-size: 1rem; color: var(--color-text); list-style: none; transition: color var(--transition-fast); background: var(--bg-surface); }
-  .faq-question::-webkit-details-marker { display: none; }
-  .faq-question::marker { display: none; content: ''; }
-  .faq-question:hover { color: var(--color-cyan); }
-  .faq-chevron { width: 20px; height: 20px; flex-shrink: 0; color: var(--color-text-muted); transition: transform var(--transition-normal); }
-  .faq-item[open] .faq-chevron { transform: rotate(180deg); }
-  .faq-answer { padding: 0 var(--space-xl) var(--space-lg); background: var(--bg-surface); }
-  .faq-answer p { font-size: 0.9375rem; line-height: 1.7; max-width: none; }
+  .k-faq { border-top: 1.5px solid var(--ink); }
+  .k-faq details { border-bottom: 1px solid var(--rule); background: rgba(242, 239, 231, 0.92); }
+  .k-faq summary { display: grid; grid-template-columns: 52px minmax(0, 1fr) 28px; align-items: center; gap: 8px; padding: 18px 12px; list-style: none; cursor: pointer; font-size: 16.5px; font-weight: 600; }
+  .k-faq summary::-webkit-details-marker { display: none; }
+  .k-faq summary em { font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--acc); }
+  /* Hộp vuông 1em trước khi xoay: glyph "add" rộng hơn line-height (28px so với 22px), xoay 45°
+     trên hộp không vuông đẩy bounding box qua ngưỡng brokenIcons của shot-home.cjs (đo 2026-09-29). */
+  .k-faq summary .ms { display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; transition: transform 0.2s ease; }
+  .k-faq details[open] summary .ms { transform: rotate(45deg); }
+  .k-faq p { max-width: 54em; margin: 0; padding: 0 48px 20px 72px; font-size: 15px; line-height: 1.65; color: var(--muted); }
+
+  @media (max-width: 720px) {
+    .k-faq summary { grid-template-columns: 36px minmax(0, 1fr) 24px; padding: 16px 8px; font-size: 15.5px; }
+    .k-faq p { padding: 0 16px 18px 52px; }
+  }
 </style>

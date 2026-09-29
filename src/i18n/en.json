@@ -123,7 +123,6 @@
         "refund": "Refund within 7 days (monthly) or 14 days (lifetime)."
     },
     "faq": {
-        "badge": "FAQ",
         "title": "Frequently",
         "titleHighlight": "asked questions",
         "subtitle": "What people ask before they download.",
@@ -164,17 +163,6 @@
                 "q": "Can I get a refund?",
                 "a": "Yes. Monthly payments can be refunded within 7 days, lifetime licenses within 14 days."
             }
-        ]
-    },
-    "finalCta": {
-        "title": "Try every Pro feature",
-        "titleHighlight": "free for 7 days",
-        "desc": "Download Veilus, request the trial in the app, and let your AI assistant write your first script.\nIf it's not for you, keep 5 profiles free.",
-        "cta": "Download & try Pro free for 7 days",
-        "badges": [
-            "No card needed",
-            "Data stays on your machine",
-            "5 profiles free, forever"
         ]
     },
     "footer": {
@@ -483,6 +471,16 @@
         "compare": {
             "figNo": "Table 3",
             "fig": "versus other browsers"
+        },
+        "faq": {
+            "figNo": "Note",
+            "fig": "frequently asked questions"
+        },
+        "final": {
+            "figNo": "Note",
+            "fig": "next step",
+            "title": "Download Veilus. Connect your AI assistant. Give the order.",
+            "micro": "No card needed · your data stays on your machine"
         }
     }
 }

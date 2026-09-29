@@ -123,7 +123,6 @@
         "refund": "Hoàn tiền trong 7 ngày (gói tháng) hoặc 14 ngày (gói trọn đời)."
     },
     "faq": {
-        "badge": "FAQ",
         "title": "Câu hỏi",
         "titleHighlight": "thường gặp",
         "subtitle": "Những gì mọi người hỏi trước khi tải về.",
@@ -164,17 +163,6 @@
                 "q": "Có được hoàn tiền không?",
                 "a": "Có. Gói tháng được hoàn tiền trong 7 ngày, gói trọn đời trong 14 ngày."
             }
-        ]
-    },
-    "finalCta": {
-        "title": "Dùng thử mọi tính năng Pro",
-        "titleHighlight": "miễn phí 7 ngày",
-        "desc": "Tải Veilus, yêu cầu dùng thử trong app, rồi nhờ trợ lý AI viết script đầu tiên của bạn.\nKhông hợp thì vẫn giữ 5 profile miễn phí.",
-        "cta": "Tải về & dùng thử Pro 7 ngày",
-        "badges": [
-            "Không cần thẻ",
-            "Dữ liệu nằm trên máy bạn",
-            "5 profile miễn phí, vĩnh viễn"
         ]
     },
     "footer": {
@@ -483,6 +471,16 @@
         "compare": {
             "figNo": "Bảng 3",
             "fig": "so với trình duyệt khác"
+        },
+        "faq": {
+            "figNo": "Ghi chú",
+            "fig": "câu hỏi thường gặp"
+        },
+        "final": {
+            "figNo": "Ghi chú",
+            "fig": "bước tiếp theo",
+            "title": "Tải Veilus. Nối trợ lý AI. Ra lệnh.",
+            "micro": "Không cần thẻ · dữ liệu nằm trên máy bạn"
         }
     }
 }

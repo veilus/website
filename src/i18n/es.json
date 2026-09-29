@@ -123,7 +123,6 @@
         "refund": "Reembolso en 7 días (mensual) o 14 días (de por vida)."
     },
     "faq": {
-        "badge": "FAQ",
         "title": "Preguntas",
         "titleHighlight": "frecuentes",
         "subtitle": "Lo que la gente pregunta antes de descargar.",
@@ -164,17 +163,6 @@
                 "q": "¿Puedo pedir un reembolso?",
                 "a": "Sí. Los pagos mensuales se reembolsan dentro de 7 días y las licencias de por vida dentro de 14 días."
             }
-        ]
-    },
-    "finalCta": {
-        "title": "Prueba todas las funciones Pro",
-        "titleHighlight": "gratis durante 7 días",
-        "desc": "Descarga Veilus, solicita la prueba en la app y deja que tu asistente de IA escriba tu primer script.\nSi no te convence, te quedas con 5 perfiles gratis.",
-        "cta": "Descarga y prueba Pro gratis 7 días",
-        "badges": [
-            "Sin tarjeta",
-            "Tus datos, en tu equipo",
-            "5 perfiles gratis para siempre"
         ]
     },
     "footer": {
@@ -483,6 +471,16 @@
         "compare": {
             "figNo": "Tabla 3",
             "fig": "comparado con otros navegadores"
+        },
+        "faq": {
+            "figNo": "Nota",
+            "fig": "preguntas frecuentes"
+        },
+        "final": {
+            "figNo": "Nota",
+            "fig": "siguiente paso",
+            "title": "Descarga Veilus. Conecta tu asistente de IA. Da la orden.",
+            "micro": "Sin tarjeta · tus datos, en tu equipo"
         }
     }
 }
