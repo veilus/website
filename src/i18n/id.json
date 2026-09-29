@@ -79,7 +79,6 @@
         "unknown": "Belum diverifikasi"
     },
     "pricing": {
-        "badge": "Harga",
         "title": "Sederhana,",
         "titleHighlight": "transparan",
         "subtitle": "Mulai gratis. Bayar bulanan, atau bayar sekali dan pakai selamanya.",
@@ -476,6 +475,11 @@
             "schedule": "Jadwal",
             "daily": "setiap hari · 10 profil",
             "api": "REST API · MCP"
+        },
+        "pricing": {
+            "figNo": "Tabel 2",
+            "fig": "harga",
+            "once": "Bayar sekali"
         }
     }
 }

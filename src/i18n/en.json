@@ -79,7 +79,6 @@
         "unknown": "Not verified"
     },
     "pricing": {
-        "badge": "Pricing",
         "title": "Simple,",
         "titleHighlight": "transparent",
         "subtitle": "Start free. Pay monthly, or pay once and keep it forever.",
@@ -476,6 +475,11 @@
             "schedule": "Schedules",
             "daily": "daily · 10 profiles",
             "api": "REST API · MCP"
+        },
+        "pricing": {
+            "figNo": "Table 2",
+            "fig": "pricing",
+            "once": "Pay once"
         }
     }
 }

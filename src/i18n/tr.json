@@ -79,7 +79,6 @@
         "unknown": "Doğrulanmadı"
     },
     "pricing": {
-        "badge": "Fiyatlar",
         "title": "Basit,",
         "titleHighlight": "şeffaf",
         "subtitle": "Ücretsiz başlayın. Aylık ödeyin ya da bir kez ödeyip sonsuza kadar kullanın.",
@@ -476,6 +475,11 @@
             "schedule": "Zamanlamalar",
             "daily": "her gün · 10 profil",
             "api": "REST API · MCP"
+        },
+        "pricing": {
+            "figNo": "Tablo 2",
+            "fig": "fiyatlar",
+            "once": "Bir kez ödeyin"
         }
     }
 }

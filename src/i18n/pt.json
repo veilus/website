@@ -79,7 +79,6 @@
         "unknown": "Não verificado"
     },
     "pricing": {
-        "badge": "Preços",
         "title": "Simples,",
         "titleHighlight": "transparente",
         "subtitle": "Comece grátis. Pague por mês ou pague uma vez e use para sempre.",
@@ -476,6 +475,11 @@
             "schedule": "Agendamentos",
             "daily": "diariamente · 10 perfis",
             "api": "REST API · MCP"
+        },
+        "pricing": {
+            "figNo": "Tabela 2",
+            "fig": "preços",
+            "once": "Pague uma vez"
         }
     }
 }

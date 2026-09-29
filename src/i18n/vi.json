@@ -79,7 +79,6 @@
         "unknown": "Chưa kiểm chứng"
     },
     "pricing": {
-        "badge": "Bảng giá",
         "title": "Đơn giản,",
         "titleHighlight": "minh bạch",
         "subtitle": "Bắt đầu miễn phí. Trả theo tháng, hoặc trả một lần dùng mãi.",
@@ -476,6 +475,11 @@
             "schedule": "Lịch chạy",
             "daily": "mỗi ngày · 10 hồ sơ",
             "api": "REST API · MCP"
+        },
+        "pricing": {
+            "figNo": "Bảng 2",
+            "fig": "giá",
+            "once": "Trả một lần"
         }
     }
 }

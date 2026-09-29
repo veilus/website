@@ -79,7 +79,6 @@
         "unknown": "未核实"
     },
     "pricing": {
-        "badge": "价格",
         "title": "简单，",
         "titleHighlight": "透明",
         "subtitle": "免费开始。按月付费，或一次买断永久使用。",
@@ -476,6 +475,11 @@
             "schedule": "定时任务",
             "daily": "每天 · 10 个配置文件",
             "api": "REST API · MCP"
+        },
+        "pricing": {
+            "figNo": "表 2",
+            "fig": "价格",
+            "once": "一次付费"
         }
     }
 }
