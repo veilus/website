@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — 内置自动化的反检测浏览器",
-        "description": "Veilus 是一款反检测浏览器：在一台电脑上运行多个账号，每个账号都有独立的指纹和代理。让 AI 助手通过 MCP 编写脚本，然后在所有配置文件上运行。5 个配置文件永久免费。"
+        "description": "Veilus 是一款反检测浏览器：在一台电脑上运行多个账号，每个配置文件都有独立的指纹和代理，脚本由你的 AI 助手通过 MCP 编写。5 个配置文件永久免费。"
     },
     "nav": {
         "antiDetect": "Anti-detect",
@@ -198,8 +198,8 @@
         "freeProfiles": "5 个配置文件永久免费",
         "reqTitle": "系统要求",
         "engine": "浏览器引擎需在应用内单独下载",
-        "metaTitle": "Veilus 反检测浏览器 — Windows 和 macOS 版，抢先体验",
-        "metaDescription": "Veilus 即将推出 Windows 和 macOS 版。加入等候名单，第一时间获知 Veilus 何时可以下载。5 个配置文件永久免费，无需信用卡。"
+        "metaTitle": "Veilus 反检测浏览器：Windows 和 macOS 版抢先体验",
+        "metaDescription": "Veilus 反检测浏览器即将推出 Windows 和 macOS 版。加入等待名单，第一时间获知 Veilus 何时可以下载。5 个配置文件永久免费，无需信用卡。"
     },
     "waitlist": {
         "title": "抢先体验",

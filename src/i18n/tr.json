@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Otomasyonu dahili anti-tespit tarayıcı",
-        "description": "Anti-tespit tarayıcı Veilus: tek bilgisayarda çok hesap, her profile ayrı parmak izi ve proxy. Betikleri yapay zekâ MCP ile yazar. 5 profil ücretsiz."
+        "description": "Anti-tespit tarayıcı Veilus: tek bilgisayarda çok hesap, her profile ayrı parmak izi ve proxy. Betikleri yapay zekânız MCP ile yazar. 5 profil ücretsiz."
     },
     "nav": {
         "antiDetect": "Anti-detect",
@@ -198,8 +198,8 @@
         "freeProfiles": "5 profil süresiz ücretsiz",
         "reqTitle": "Sistem Gereksinimleri",
         "engine": "Tarayıcı motoru uygulama içinden ayrıca indirilir",
-        "metaTitle": "Veilus, anti-tespit tarayıcı, Windows/macOS, erken erişim",
-        "metaDescription": "Veilus yakında Windows ve macOS'ta. Bekleme listesine katılın, indirmeye hazır olduğunda ilk siz öğrenin. 5 profil süresiz ücretsiz, kredi kartı gerekmez."
+        "metaTitle": "Anti-tespit tarayıcı Veilus: Windows ve macOS erken erişimi",
+        "metaDescription": "Anti-tespit tarayıcı Veilus yakında Windows ve macOS'ta. Bekleme listesine katılın, hazır olunca ilk siz öğrenin. 5 profil süresiz ücretsiz, kart gerekmez."
     },
     "waitlist": {
         "title": "Erken Erişim",
