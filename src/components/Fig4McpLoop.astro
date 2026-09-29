@@ -125,4 +125,11 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
     .k-ard { height: 40px; }
     .k-ard > span { right: auto; left: 14px; }
   }
+
+  /* Dưới 360px nhãn lặp không còn đủ chỗ trên một dòng (en, es, pt, tr, id đẩy trang tràn ngang): xuống dòng, bề
+     rộng tối đa tính tới cách viền .k-loop 5px — lề .k-wrap 16px, viền 1,5px và padding 18px của .k-loop ở ≤ 640px,
+     nhãn bắt đầu 14px sau mũi tên giữa khung. */
+  @media (max-width: 359px) {
+    .k-ard > span { width: max-content; max-width: calc(50vw - 37px); white-space: normal; }
+  }
 </style>

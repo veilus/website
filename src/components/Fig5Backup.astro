@@ -120,4 +120,18 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   @media (max-width: 640px) {
     .k-file { max-width: 120px; }
   }
+
+  /* Dưới 360px hàng máy → tệp → máy không vừa bề ngang: nhãn máy ("outro computador", "başka bir bilgisayar")
+     không ngắt giữa từ, hàng đẩy trang tràn ngang. Xếp dọc, mũi tên chỉ xuống như Hình 4 ở màn hẹp; icon đồng bộ
+     xoay bằng rotate (không bằng transform) để hiệu ứng k-nudge vẫn chạy. */
+  @media (max-width: 359px) {
+    .k-move { flex-direction: column; }
+    .k-move .k-ar { flex: none; width: 0; min-width: 0; height: 28px; margin: 2px 0; border-top: 0; border-left: 1.5px solid var(--ink); }
+    .k-move .k-ar::after { right: auto; left: -5.5px; top: auto; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); border-bottom: 0; }
+    .k-move .k-pulse { left: -4.25px; right: auto; top: 0; bottom: 0; width: 7px; height: auto; }
+    .k-sw { margin: 4px 0; rotate: 90deg; }
+  }
+  @media (max-width: 359px) and (prefers-reduced-motion: no-preference) {
+    :global(.js) .k-move .k-pulse { animation-name: k-run-y; }
+  }
 </style>

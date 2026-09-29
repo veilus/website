@@ -121,4 +121,11 @@ const LINKS = [
     .k-nav { gap: 12px; }
     .k-act { gap: 8px; }
   }
+
+  /* Dưới 360px nút ngôn ngữ, nút tải về và nút menu vượt lề phải tới 7px (ru "Скачать бесплатно"): khít lại. */
+  @media (max-width: 359px) {
+    .k-nav { gap: 8px; }
+    .k-act { gap: 6px; }
+    .k-lang-btn { padding: 7px 6px; }
+  }
 </style>
