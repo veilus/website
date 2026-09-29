@@ -5,6 +5,8 @@
  * Nguồn: CSS của Google Fonts — PLEX_CSS dưới đây và iconFontHref() trong src/data/icons.js — tải từ
  * https://fonts.googleapis.com/css2, rồi từng file woff2 mà CSS đó trỏ tới trên https://fonts.gstatic.com.
  * Giấy phép cho tự host: IBM Plex — SIL Open Font License 1.1; Material Symbols — Apache License 2.0.
+ * Toàn văn hai giấy phép nằm ở src/assets/font-licenses/ — NGOÀI src/assets/fonts/ vì script này xoá sạch thư mục đó
+ * mỗi lần chạy. Nguồn: github.com/IBM/plex LICENSE.txt và github.com/google/material-design-icons LICENSE.
  *
  * Chạy lại khi đổi weight Plex hoặc thêm/bớt icon trong src/data/icons.js, rồi commit kết quả:
  *   node scripts/fetch-fonts.mjs
