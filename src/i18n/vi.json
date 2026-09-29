@@ -199,7 +199,6 @@
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Tải xuống",
-        "note": "Không thu thập dữ liệu cá nhân · Không cần thẻ tín dụng",
         "reqTitle": "Yêu cầu hệ thống"
     },
     "waitlist": {

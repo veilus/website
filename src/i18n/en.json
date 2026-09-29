@@ -199,7 +199,6 @@
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Download",
-        "note": "No personal data collected. No credit card required.",
         "reqTitle": "System Requirements"
     },
     "waitlist": {

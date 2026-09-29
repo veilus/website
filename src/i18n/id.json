@@ -199,7 +199,6 @@
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "Unduh",
-        "note": "Tidak mengumpulkan data.",
         "reqTitle": "Persyaratan Sistem"
     },
     "waitlist": {

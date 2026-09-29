@@ -199,7 +199,6 @@
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "下载",
-        "note": "不收集个人数据 · 无需信用卡",
         "reqTitle": "系统要求"
     },
     "waitlist": {

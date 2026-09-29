@@ -199,7 +199,6 @@
         "win64": "Windows 10/11 64-bit",
         "macUniversal": "macOS 12+ Universal",
         "downloadBtn": "İndir",
-        "note": "Kişisel veri toplanmaz · Kredi kartı gerekmez",
         "reqTitle": "Sistem Gereksinimleri"
     },
     "waitlist": {
