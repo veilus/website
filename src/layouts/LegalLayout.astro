@@ -23,13 +23,13 @@ const { title, description, lastUpdated } = Astro.props;
     <div class="container">
       <div class="legal-header">
         <h1>{title}</h1>
-        {lastUpdated && <p class="legal-date">Last updated: {lastUpdated}</p>}
+        {lastUpdated && <p class="legal-date">{i.legal.lastUpdated.replace('{date}', lastUpdated)}</p>}
       </div>
       <div class="legal-content">
         <slot />
       </div>
       <div class="legal-back">
-        <a href={getLocalizedPath('/', lang)} class="btn btn-secondary">← {i.nav.features ? 'Back to home' : 'Back'}</a>
+        <a href={getLocalizedPath('/', lang)} class="btn btn-secondary">← {i.legal.backHome}</a>
       </div>
     </div>
   </main>

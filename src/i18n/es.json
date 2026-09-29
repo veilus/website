@@ -471,5 +471,9 @@
             "title": "Descarga Veilus. Conecta tu asistente de IA. Da la orden.",
             "micro": "Sin tarjeta · por defecto, tus perfiles se quedan en tu equipo"
         }
+    },
+    "legal": {
+        "lastUpdated": "Última actualización: {date}",
+        "backHome": "Volver al inicio"
     }
 }

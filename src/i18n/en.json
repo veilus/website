@@ -471,5 +471,9 @@
             "title": "Download Veilus. Connect your AI assistant. Give the order.",
             "micro": "No card needed · profiles stay on your machine by default"
         }
+    },
+    "legal": {
+        "lastUpdated": "Last updated: {date}",
+        "backHome": "Back to home"
     }
 }

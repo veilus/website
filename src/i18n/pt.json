@@ -471,5 +471,9 @@
             "title": "Baixe o Veilus. Conecte seu assistente de IA. Dê a ordem.",
             "micro": "Sem cartão · por padrão, seus perfis ficam no seu computador"
         }
+    },
+    "legal": {
+        "lastUpdated": "Última atualização: {date}",
+        "backHome": "Voltar ao início"
     }
 }

@@ -471,5 +471,9 @@
             "title": "Tải Veilus. Nối trợ lý AI. Ra lệnh.",
             "micro": "Không cần thẻ · hồ sơ mặc định nằm trên máy bạn"
         }
+    },
+    "legal": {
+        "lastUpdated": "Cập nhật lần cuối: {date}",
+        "backHome": "Về trang chủ"
     }
 }
