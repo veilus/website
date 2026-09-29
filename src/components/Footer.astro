@@ -20,7 +20,7 @@ const COLUMNS = [
     links: [
       [f.productLinks[0], `${home}#features`],
       [f.productLinks[1], `${home}#pricing`],
-      [i.nav.download, getLocalizedPath('/download', lang)],
+      [i.nav.download, getLocalizedPath('/download', lang), 'footer_download'],
     ],
   },
   {
@@ -60,8 +60,8 @@ const external = (href: string) =>
       <div class="k-fcol">
         <p class="k-ftitle">{col.title}</p>
         <ul>
-          {col.links.map(([name, href]) => (
-            <li><a href={href} {...external(href)}>{name}</a></li>
+          {col.links.map(([name, href, cta]) => (
+            <li><a href={href} data-cta={cta} {...external(href)}>{name}</a></li>
           ))}
         </ul>
       </div>

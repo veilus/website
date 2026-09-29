@@ -30,8 +30,9 @@
   });
 
   // ── CTA Button Clicks ────────────────────────────────────────────
-  // Mỗi nút cần đếm gắn data-cta="<nhãn>" (hero_cta, navbar_download, final_cta, pricing_cta);
-  // nút trong bảng giá gắn thêm data-plan="<tên gói>". Không dựa vào tên lớp CSS.
+  // Mỗi nút cần đếm gắn data-cta="<nhãn>" (hero_cta, navbar_download, final_cta, pricing_cta,
+  // footer_download); nút trong bảng giá gắn thêm data-plan="<mã gói>" — mã không dịch (free, monthly,
+  // solo, team5…), để plan_name không tách thành 8 giá trị theo ngôn ngữ. Không dựa vào tên lớp CSS.
   document.querySelectorAll('[data-cta]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var label = this.getAttribute('data-cta');
@@ -67,6 +68,8 @@
   // ── FAQ Expand ────────────────────────────────────────────────────
   document.querySelectorAll('.faq-question').forEach(function (q) {
     q.addEventListener('click', function () {
+      // Lúc click, <details> chưa đổi trạng thái: đang mở nghĩa là cú bấm này ĐÓNG câu hỏi — không đếm.
+      if (this.parentElement.open) return;
       // Chỉ lấy chữ câu hỏi: <summary> còn chứa số thứ tự (<em>) và icon ligature (.ms, chữ "add").
       var questionEl = this.querySelector('span:not(.ms)') || this;
       var questionText = questionEl.textContent.trim().substring(0, 80);

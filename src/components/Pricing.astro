@@ -37,7 +37,7 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
         <li class="k-px"><span class="ms" aria-hidden="true">remove</span><span>{p.free.excluded}</span></li>
       </ul>
       <div class="k-trial"><span class="ms" aria-hidden="true">bolt</span>{p.free.trial}</div>
-      <a class="k-btn k-btn-o" href={getLocalizedPath('/download', lang)} data-cta="pricing_cta" data-plan={p.free.name}>{p.free.cta}</a>
+      <a class="k-btn k-btn-o" href={getLocalizedPath('/download', lang)} data-cta="pricing_cta" data-plan="free">{p.free.cta}</a>
     </div>
 
     <div class="k-pc k-rise" style="--d:0.2s">
@@ -46,7 +46,7 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
       <ul class="k-pf">
         {p.paidFeatures.map((x) => <li><span class="ms" aria-hidden="true">check</span><span>{x}</span></li>)}
       </ul>
-      <a class="k-btn k-btn-o" href={buyHref('monthly')} data-cta="pricing_cta" data-plan={p.monthly.name}>{p.monthly.cta}</a>
+      <a class="k-btn k-btn-o" href={buyHref('monthly')} data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta}</a>
     </div>
 
     <div class="k-pc k-pc-pop k-rise" style="--d:0.3s">
@@ -56,7 +56,7 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
         {lifetime.map(([id, s]) => {
           const name = i.buy.sku[id as keyof typeof i.buy.sku];
           return (
-            <a class="k-tier" href={buyHref(id)} data-cta="pricing_cta" data-plan={name}>
+            <a class="k-tier" href={buyHref(id)} data-cta="pricing_cta" data-plan={id}>
               <b>{name}<small>{devices(s.devices)}</small></b>
               <em>{price(s)}</em>
               <span class="ms" aria-hidden="true">arrow_forward</span>
