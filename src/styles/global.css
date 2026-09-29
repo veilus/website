@@ -12,8 +12,8 @@
   --rule: rgba(27, 34, 48, 0.2);
   --grid: rgba(27, 34, 48, 0.055);
   --grid2: rgba(27, 34, 48, 0.1);
-  --acc: oklch(0.6 0.18 33);
-  --acc-soft: oklch(0.6 0.18 33 / 0.12);
+  --acc: oklch(0.55 0.18 33);
+  --acc-soft: oklch(0.55 0.18 33 / 0.12);
   --panel: rgba(242, 239, 231, 0.92);
 
   /* Tên cũ → token mới */
