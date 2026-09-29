@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Veilus — Trình duyệt anti-detect có sẵn tự động hóa",
-        "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Nhờ trợ lý AI viết script qua MCP — hoặc tự viết — rồi chạy trên mọi profile. Miễn phí 5 profile."
+        "description": "Chạy nhiều tài khoản trên một máy, mỗi tài khoản một fingerprint và proxy riêng. Nhờ trợ lý AI viết script qua MCP — hoặc tự viết — rồi chạy trên mọi hồ sơ. Miễn phí 5 hồ sơ."
     },
     "nav": {
         "antiDetect": "Anti-detect",
@@ -28,7 +28,7 @@
                 "id": "free",
                 "feature": "Gói miễn phí",
                 "values": [
-                    "5 profile, vĩnh viễn"
+                    "5 hồ sơ, vĩnh viễn"
                 ]
             },
             {
@@ -49,7 +49,7 @@
                 "id": "price",
                 "feature": "Giá trả phí khởi điểm",
                 "values": [
-                    "{monthly}/tháng mỗi máy, không giới hạn profile · {lifetime} trọn đời"
+                    "{monthly}/tháng mỗi máy, không giới hạn hồ sơ · {lifetime} trọn đời"
                 ]
             },
             {
@@ -61,12 +61,12 @@
             }
         ],
         "cells": {
-            "profilesForever": "{n} profile, vĩnh viễn",
+            "profilesForever": "{n} hồ sơ, vĩnh viễn",
             "trialDays": "Dùng thử miễn phí {n} ngày",
             "rpaSchedule": "RPA, đặt lịch",
             "noCodeBuilder": "Kéo thả không cần code",
             "lifetimeFrom": "Có — từ {price}",
-            "perMonthProfiles": "{price}/tháng ({n} profile)",
+            "perMonthProfiles": "{price}/tháng ({n} hồ sơ)",
             "oneTimeDevice": "{price} một lần ({n} máy)",
             "apiPaid": "API (gói trả phí)",
             "apiPaidMcp": "API (gói trả phí) · MCP",
@@ -127,16 +127,16 @@
         "subtitle": "Những gì mọi người hỏi trước khi tải về.",
         "items": [
             {
-                "q": "Nền tảng có phát hiện được profile của tôi không?",
-                "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi profile chạy trên bản Chromium do Veilus tự vá, có fingerprint và proxy riêng, và chúng tôi kiểm profile bằng creepjs và iphey. Tài khoản bị đối xử thế nào còn tùy vào cách bạn dùng."
+                "q": "Nền tảng có phát hiện được hồ sơ của tôi không?",
+                "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi hồ sơ chạy trên bản Chromium do Veilus tự vá, có fingerprint và proxy riêng, và chúng tôi kiểm tra hồ sơ bằng creepjs và iphey. Tài khoản bị đối xử thế nào còn tùy vào cách bạn dùng."
             },
             {
                 "q": "Có thật sự miễn phí? Có cần thẻ không?",
-                "a": "Có. Gói Free cho 5 profile trên 1 máy, không giới hạn thời gian, không cần thẻ. Veilus Flow, lịch chạy, chạy hàng loạt và API/MCP cục bộ cần gói Pro."
+                "a": "Có. Gói Free cho 5 hồ sơ trên 1 máy, không giới hạn thời gian, không cần thẻ. Veilus Flow, lịch chạy, chạy hàng loạt và API/MCP cục bộ cần gói Pro."
             },
             {
                 "q": "Dùng thử Pro 7 ngày hoạt động thế nào?",
-                "a": "Yêu cầu dùng thử ngay trong app bằng email của bạn. Chúng tôi gửi key qua email; dán key vào app là mở khóa Pro. Sau 7 ngày, bạn về lại gói Free và giữ nguyên các profile."
+                "a": "Yêu cầu dùng thử ngay trong app bằng email của bạn. Chúng tôi gửi key qua email; dán key vào app là mở khóa Pro. Sau 7 ngày, bạn về lại gói Free và giữ nguyên các hồ sơ."
             },
             {
                 "q": "Veilus chạy trên hệ điều hành nào?",
@@ -144,19 +144,19 @@
             },
             {
                 "q": "Dữ liệu của tôi lưu ở đâu?",
-                "a": "Dữ liệu profile được lưu cục bộ trên máy của bạn. Nếu bật Veilus Sync, profiles sẽ đồng bộ tới Git repository hoặc Google Drive do bạn chọn — nên dùng loại riêng tư. Khi export profile ra file .veiluspack, bạn có thể đặt mật khẩu để mã hóa file."
+                "a": "Dữ liệu hồ sơ được lưu cục bộ trên máy của bạn. Nếu bật Veilus Sync, các hồ sơ sẽ được đồng bộ tới Git repository hoặc Google Drive do bạn chọn — nên dùng loại riêng tư. Khi export hồ sơ ra file .veiluspack, bạn có thể đặt mật khẩu để mã hóa file."
             },
             {
                 "q": "Tôi dùng proxy riêng được không?",
-                "a": "Được. Veilus hỗ trợ HTTP, HTTPS và SOCKS5, mỗi profile có thể gắn proxy riêng."
+                "a": "Được. Veilus hỗ trợ HTTP, HTTPS và SOCKS5, mỗi hồ sơ có thể gắn proxy riêng."
             },
             {
                 "q": "Veilus Flow hoạt động thế nào?",
-                "a": "Kết nối một trợ lý AI có hỗ trợ MCP, như Claude Code hay Cursor, rồi giao việc. Nó viết script Playwright, chạy thử trên vài profile, đọc lỗi của từng profile rồi tự sửa. Bạn cũng có thể tự viết script rồi đưa vào qua REST API cục bộ. Script đưa vào qua MCP hay REST chỉ chạy trên tối đa 3 profile mỗi lượt cho tới khi bạn duyệt trong Veilus Flow; duyệt xong thì chạy hàng loạt hoặc đặt lịch. Veilus Flow có trong gói Pro."
+                "a": "Kết nối một trợ lý AI có hỗ trợ MCP, như Claude Code hay Cursor, rồi giao việc. Nó viết script Playwright, chạy thử trên vài hồ sơ, đọc lỗi của từng hồ sơ rồi tự sửa. Bạn cũng có thể tự viết script rồi đưa vào qua REST API cục bộ. Script đưa vào qua MCP hay REST chỉ chạy trên tối đa 3 hồ sơ mỗi lượt cho tới khi bạn duyệt trong Veilus Flow; duyệt xong thì chạy hàng loạt hoặc đặt lịch. Veilus Flow có trong gói Pro."
             },
             {
                 "q": "Veilus khác các trình duyệt anti-detect khác ở đâu?",
-                "a": "Tự động hóa có sẵn: trợ lý AI viết và sửa script qua MCP, hoặc bạn tự viết, rồi Veilus chạy trên nhiều profile, cùng lịch chạy, chạy hàng loạt và REST API cục bộ trong một ứng dụng. Bạn cũng có thể trả một lần để dùng trọn đời thay vì thuê bao."
+                "a": "Tự động hóa có sẵn: trợ lý AI viết và sửa script qua MCP, hoặc bạn tự viết, rồi Veilus chạy trên nhiều hồ sơ, cùng lịch chạy, chạy hàng loạt và REST API cục bộ trong một ứng dụng. Bạn cũng có thể trả một lần để dùng trọn đời thay vì thuê bao."
             },
             {
                 "q": "Có được hoàn tiền không?",
