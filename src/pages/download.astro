@@ -8,7 +8,7 @@ const i = t(defaultLang);
 ---
 
 <Layout lang={defaultLang}>
-  <Navbar />
+  <Navbar lang={defaultLang} />
   <main class="download-page">
     <section class="download-hero">
       <div class="container">
@@ -143,7 +143,7 @@ const i = t(defaultLang);
       </div>
     </section>
   </main>
-  <Footer />
+  <Footer lang={defaultLang} />
 </Layout>
 
 <script>
@@ -222,7 +222,7 @@ const i = t(defaultLang);
     text-align: center;
     background: radial-gradient(
       ellipse 80% 50% at 50% -20%,
-      rgba(0, 212, 255, 0.08),
+      rgba(27, 34, 48, 0.04),
       transparent
     );
   }
@@ -246,16 +246,16 @@ const i = t(defaultLang);
     gap: 0;
     border-radius: var(--radius-md);
     overflow: hidden;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--rule);
+    background: var(--panel);
     backdrop-filter: blur(8px);
     transition:
       border-color var(--transition-fast),
       box-shadow var(--transition-fast);
   }
   .waitlist-input-group:focus-within {
-    border-color: rgba(0, 212, 255, 0.5);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+    border-color: var(--ink);
+    box-shadow: none;
   }
   .waitlist-input-group input {
     flex: 1;
@@ -351,7 +351,7 @@ const i = t(defaultLang);
     opacity: 0.7;
   }
   .platform-card:hover {
-    border-color: rgba(0, 212, 255, 0.3);
+    border-color: var(--color-border-light);
     opacity: 1;
   }
   .platform-icon {
@@ -381,9 +381,9 @@ const i = t(defaultLang);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    background: rgba(0, 212, 255, 0.1);
+    background: var(--acc-soft);
     color: var(--color-accent);
-    border: 1px solid rgba(0, 212, 255, 0.2);
+    border: 1px solid var(--rule);
   }
   .platform-size {
     font-size: 0.75rem;
@@ -403,7 +403,7 @@ const i = t(defaultLang);
     padding: 8px 16px;
     border-radius: 99px;
     border: 1px solid var(--color-border);
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--panel);
     font-size: 0.8125rem;
     color: var(--color-text-secondary);
   }
