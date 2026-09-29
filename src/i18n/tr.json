@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "Son güncelleme: {date}",
         "backHome": "Ana sayfaya dön"
+    },
+    "jsonld": {
+        "chromiumEngine": "Veilus'un yamaladığı Chromium motoru"
     }
 }

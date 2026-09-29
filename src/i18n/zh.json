@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "最后更新：{date}",
         "backHome": "返回首页"
+    },
+    "jsonld": {
+        "chromiumEngine": "Veilus 自行打补丁的 Chromium 引擎"
     }
 }

@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "Последнее обновление: {date}",
         "backHome": "На главную"
+    },
+    "jsonld": {
+        "chromiumEngine": "Собственный пропатченный движок Chromium от Veilus"
     }
 }

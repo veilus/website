@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "Última atualização: {date}",
         "backHome": "Voltar ao início"
+    },
+    "jsonld": {
+        "chromiumEngine": "Motor Chromium corrigido pela própria Veilus"
     }
 }

@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "Terakhir diperbarui: {date}",
         "backHome": "Kembali ke beranda"
+    },
+    "jsonld": {
+        "chromiumEngine": "Mesin Chromium yang di-patch sendiri oleh Veilus"
     }
 }

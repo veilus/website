@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "Cập nhật lần cuối: {date}",
         "backHome": "Về trang chủ"
+    },
+    "jsonld": {
+        "chromiumEngine": "Chromium engine do Veilus tự vá"
     }
 }

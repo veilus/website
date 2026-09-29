@@ -475,5 +475,8 @@
     "legal": {
         "lastUpdated": "Last updated: {date}",
         "backHome": "Back to home"
+    },
+    "jsonld": {
+        "chromiumEngine": "Veilus's own patched Chromium engine"
     }
 }

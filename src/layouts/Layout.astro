@@ -66,11 +66,16 @@ const jsonLd = {
     priceCurrency: currency,
     offerCount: String(soldPrices.length + 1),
   },
-  // Chuỗi đã dịch mà trang chủ đang hiện: ô fingerprint và ô proxy của FeatureBento, tính năng gói trả phí của Pricing.
+  // Chuỗi đã dịch mà trang chủ đang hiện: ô fingerprint và ô proxy của FeatureBento, tính năng gói trả phí của
+  // Pricing, tiêu đề đồng bộ của Fig5Backup. jsonld.chromiumEngine không hiện ở đâu khác trên trang — không có
+  // chuỗi hiện sẵn nào đứng một mình được như một mục tính năng, nên thêm khoá riêng, bám nghĩa faq.items[0].a
+  // ("Veilus's own patched Chromium build"), không viết "in-house" hay khẳng định gì mới.
   featureList: [
     i.home.bento.fields.replace("{n}", String(FINGERPRINT_FIELDS)),
     i.home.bento.proxy,
     ...i.pricing.paidFeatures.slice(1, 5),
+    i.home.fig5.syncTitle,
+    i.jsonld.chromiumEngine,
   ],
 };
 
