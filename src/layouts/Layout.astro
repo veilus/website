@@ -217,19 +217,33 @@ const websiteJsonLd = {
           };
           requestAnimationFrame(frame);
         };
+        const reveal = (el) => {
+          if (el.classList.contains('is-in')) return;
+          el.classList.add('is-in');
+          el.querySelectorAll('[data-count-to]').forEach(countUp);
+        };
         const io = new IntersectionObserver(
           (entries) => {
             for (const e of entries) {
               e.target.classList.toggle('is-live', e.isIntersecting);
-              if (e.isIntersecting && !e.target.classList.contains('is-in')) {
-                e.target.classList.add('is-in');
-                e.target.querySelectorAll('[data-count-to]').forEach(countUp);
-              }
+              if (e.isIntersecting) reveal(e.target);
             }
           },
           { rootMargin: '0px 0px -15% 0px' },
         );
-        document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+        // io chỉ báo khi phần tử lên khỏi dải 15% đáy màn hình. Phần tử đã trong màn hình lúc tải trang, hoặc nằm
+        // trong dải đó khi trang hết chỗ cuộn (viewport cao bằng cả trang như lượt render của Google, hay cuối
+        // trang), không bao giờ lên khỏi dải: edge nhìn cả màn hình và hiện chúng ngay (VEIL-1031).
+        let atLoad = true;
+        const edge = new IntersectionObserver((entries) => {
+          const atEnd = scrollY + innerHeight >= document.documentElement.scrollHeight - 1;
+          for (const e of entries) if (e.isIntersecting && (atLoad || atEnd)) reveal(e.target);
+          atLoad = false;
+        });
+        document.querySelectorAll('[data-reveal]').forEach((el) => {
+          io.observe(el);
+          edge.observe(el);
+        });
       })();
     </script>
 

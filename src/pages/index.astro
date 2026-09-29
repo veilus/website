@@ -18,6 +18,13 @@ const lang = 'en';
     // Skip if already detected or user manually navigated here
     if (localStorage.getItem(STORAGE_KEY)) return;
 
+    // Tới / từ một trang của chính site (bấm English ở bộ chọn ngôn ngữ, bấm logo): người đọc đã tự chọn.
+    // Không chuyển, và ghi 'manual' để lần sau cũng không chuyển (VEIL-1031: trước đó bấm English bị đẩy về /vi/).
+    if (document.referrer && new URL(document.referrer).origin === location.origin) {
+      localStorage.setItem(STORAGE_KEY, 'manual');
+      return;
+    }
+
     // Get browser language (e.g., 'vi', 'zh-CN', 'pt-BR')
     const browserLang = navigator.language || (navigator as any).userLanguage || '';
     const primary = browserLang.split('-')[0].toLowerCase();
