@@ -20,7 +20,8 @@ type Params = Record<string, string | number>;
 type Cell = { key: keyof typeof i.comparison.cells; params: Params; paramsByLang?: Record<string, { params: Params }> } | null;
 const cellText = (c: Cell) =>
   c && Object.entries({ ...c.params, ...c.paramsByLang?.[lang]?.params }).reduce((txt, [k, v]) => txt.replace(`{${k}}`, () => String(v)), i.comparison.cells[c.key]);
-const checked = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(competitors.checked));
+// ru ra "29 сентября 2026 г." mà mẫu câu đã có "." ngay sau {date}: bỏ dấu chấm cuối để không in "г..".
+const checked = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(competitors.checked)).replace(/\.$/, '');
 ---
 <section class="k-wrap k-sec" id="comparison" data-reveal>
   <div class="k-fig"><b>{i.home.compare.figNo}</b> — {i.home.compare.fig}</div>
