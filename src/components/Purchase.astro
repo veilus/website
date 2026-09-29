@@ -242,7 +242,7 @@ const skusOf = (kind: string) =>
     const sku = selectedSku();
     const key = keyRow.hidden ? "" : keyEl.value.trim();
     if (formRequiresKey(sku, q) && !key) return null;
-    return { sku, email: emailEl.value.trim(), licenseKey: key || null };
+    return { sku, email: emailEl.value.trim(), licenseKey: key || null, lang };
   }
 
   async function withBusy(fn: () => Promise<void>) {

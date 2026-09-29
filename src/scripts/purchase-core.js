@@ -41,11 +41,15 @@ export function hasValidAmount(amount) {
   return typeof amount === "number" && Number.isFinite(amount) && amount > 0;
 }
 
-/** API trả 400 nếu gói trọn đời mang license_key — nên bỏ hẳn ở đây. */
-export function buildOrderBody({ sku, email, licenseKey }) {
+/**
+ * API trả 400 nếu gói trọn đời mang license_key — nên bỏ hẳn ở đây.
+ * `lang` là mã ngôn ngữ trang (`vi`, `en`, …), gửi nguyên văn — API tự chuẩn hoá.
+ */
+export function buildOrderBody({ sku, email, licenseKey, lang }) {
   const body = { sku, email: (email ?? "").trim() };
   const key = (licenseKey ?? "").trim();
   if (key && SKUS[sku]?.kind !== "lifetime") body.license_key = key;
+  if (lang) body.lang = lang;
   return body;
 }
 

@@ -97,6 +97,22 @@ test("buildOrderBody: bỏ license_key khi null hoặc gói trọn đời", () =
   );
 });
 
+test("buildOrderBody: kèm lang nguyên văn khi có, bỏ qua khi không", () => {
+  assert.deepEqual(
+    buildOrderBody({ sku: "monthly", email: "a@b.co", licenseKey: null, lang: "vi" }),
+    { sku: "monthly", email: "a@b.co", lang: "vi" },
+  );
+  assert.deepEqual(
+    buildOrderBody({ sku: "monthly", email: "a@b.co", licenseKey: null, lang: "zh-CN" }),
+    { sku: "monthly", email: "a@b.co", lang: "zh-CN" },
+  );
+  // Hàng đối chứng: không có lang thì không thêm khoá — thân đơn như cũ.
+  assert.deepEqual(
+    buildOrderBody({ sku: "monthly", email: "a@b.co", licenseKey: null }),
+    { sku: "monthly", email: "a@b.co" },
+  );
+});
+
 test("errorKey: đủ bảng ánh xạ", () => {
   assert.equal(errorKey(400, "BAD_REQUEST"), "buy.err.input");
   assert.equal(errorKey(400, "WRONG_SKU"), "buy.err.wrongSku");
