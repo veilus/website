@@ -124,6 +124,19 @@ const HISTORIC = [
   ['no-personal-data', 'Tidak mengumpulkan data.'],
 ];
 
+// Câu sai CHƯA từng lên trang, cùng ý với HISTORIC nhưng viết kiểu khác (VEIL-994): dấu chấm nằm giữa
+// token (".veiluspack", "v1.2", "veilus.io"), từ đồng nghĩa của từng ngôn ngữ. Mỗi hàng canh một nhánh của mẫu.
+const VARIANTS = [
+  ['sync-encrypted', 'Đồng bộ file .veiluspack được mã hoá'],
+  ['sync-encrypted', 'Veilus Sync v1.2 is encrypted'],
+  ['sync-encrypted', 'Sync to veilus.io is encrypted'],
+  ['sync-encrypted', 'Sincronización encriptada'],
+  ['sync-encrypted', 'Sincronização encriptada'],
+  ['sync-encrypted', 'Profil tersinkron dan terenkripsi'],
+  ['sync-encrypted', 'Menyinkronkan profil secara terenkripsi'],
+  ['sync-encrypted', 'Profiller eşitlenir ve şifrelenir'],
+];
+
 // Câu đúng, hoặc chuỗi kỹ thuật trông gần giống: không mẫu nào được bắt.
 const NEAR_MISS = [
   'padding: calc(var(--nav-height) + var(--space-3xl)) 0 var(--space-4xl);',
@@ -136,8 +149,11 @@ const NEAR_MISS = [
   'Không đảm bảo fingerprint không bị phát hiện bởi mọi hệ thống.',
   'mật khẩu tuỳ chọn · AES-256',
   'Hai chiều giữa các máy của bạn · token truy cập được mã hoá',
-  // "sync" và "encrypt" ở hai câu khác nhau (câu trả lời FAQ dữ liệu, en): sync-encrypted không vượt dấu chấm.
+  // Câu trả lời FAQ dữ liệu (en): "sync" cuối cách "encrypt" 144 ký tự, quá cửa sổ 40 nên không bị bắt.
+  // Hàng này canh cửa sổ 40 ký tự, KHÔNG canh ranh giới câu — dấu chấm do bài "câu sai viết kiểu khác" canh.
   'If you turn on Veilus Sync, profiles sync to a Git repository or Google Drive you choose — use a private one. When you export a profile to a .veiluspack file, you can set a password to encrypt the file.',
+  // tr "şifre" là MẬT KHẨU, không phải "mã hoá".
+  'Senkronizasyon için bir erişim şifresi gerekmez',
   'Tek seferlik ödeme',
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
@@ -162,6 +178,13 @@ test('mỗi mẫu cấm bắt được câu sai từng lên trang', () => {
   for (const b of BANNED) {
     assert.ok(HISTORIC.some(([id]) => id === b.id), `mẫu ${b.id} thiếu hàng đối chứng`);
   }
+});
+
+test('câu sai viết kiểu khác vẫn bị bắt; dấu chấm chỉ cắt câu khi theo sau là khoảng trắng', () => {
+  const missed = VARIANTS.filter(([id, text]) => !hits(text).some((h) => h.id === id));
+  assert.deepEqual(missed, []);
+  // "Sync" ở câu trước, "encrypted" ở câu sau: câu đúng, không được bắt.
+  assert.deepEqual(hits('Veilus Sync is optional. Exported files can be encrypted.'), []);
 });
 
 test('câu gần giống mà đúng thì không bị bắt', () => {

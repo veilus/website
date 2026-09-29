@@ -8,15 +8,20 @@
  * KHÔNG ĐO:
  * - nghĩa của câu — chỉ khớp cụm từ. Câu đúng mà trúng mẫu phải khai trong ALLOWED kèm lý do;
  * - câu sai diễn đạt kiểu mới, không trúng mẫu nào ("Untraceable", "undetected", "gấp 3 lần") — lọt;
+ * - "Veilus Sync... encrypted" (ba dấu chấm ASCII rồi khoảng trắng): sync-encrypted coi đó là hết câu nên lọt;
+ *   dấu "…" (U+2026) thì không cắt câu, vẫn bắt;
  * - chữ trong ảnh (public/og-image.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);
  * - lúc nào bài chạy: CI chỉ chạy bài này trước deploy khi push main; nhánh khác không bị chặn.
  */
 
 // Chữ "đồng bộ" và chữ "mã hoá" của 8 ngôn ngữ; sync-encrypted bắt hai nhóm đứng gần nhau.
-const SYNC = 'sync|đồng bộ|同步|синхрониз|sincroniz|senkroniz|sinkronisasi|disinkronkan|menyinkronkan';
-const ENC = 'encrypt|mã hoá|mã hóa|加密|шифр|cifr|criptograf|şifre|enkrip|terenkripsi';
-// Cách nhau tối đa 40 ký tự trong cùng một câu: không vượt qua ".", "。", xuống dòng.
-const NEAR = '[^.。\\n]{0,40}';
+// id: "sinkron" phủ sinkronisasi, disinkronkan, tersinkron nhưng không phủ "menyinkronkan" (s → ny) — nhánh riêng.
+// tr: "şifrel" (şifreli, şifrelenir = được mã hoá), không phải "şifre" (= mật khẩu).
+const SYNC = 'sync|đồng bộ|同步|синхрониз|sincroniz|senkroniz|eşitle|sinkron|menyinkron';
+const ENC = 'encrypt|encript|mã hoá|mã hóa|加密|шифр|cifr|criptograf|şifrel|enkrip';
+// Cách nhau tối đa 40 ký tự trong cùng một câu. Hết câu là "。", xuống dòng, hoặc "." đứng trước khoảng
+// trắng hay cuối chuỗi; "." nằm giữa token (".veiluspack", "v1.2", "veilus.io") không cắt câu.
+const NEAR = '(?:[^.。\\n]|\\.(?=\\S)){0,40}';
 
 export const BANNED = [
   {
