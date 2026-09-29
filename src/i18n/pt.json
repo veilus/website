@@ -432,7 +432,7 @@
         "bento": {
             "figNo": "Tabela 1",
             "fig": "recursos",
-            "title": "Suficiente para rodar uma centena de contas em um só computador.",
+            "title": "Suficiente para rodar muitas contas em um só computador.",
             "fields": "{n} campos de impressão digital",
             "fpChips": [
                 "User-Agent",
@@ -479,7 +479,7 @@
             "figNo": "Nota",
             "fig": "próximo passo",
             "title": "Baixe o Veilus. Conecte seu assistente de IA. Dê a ordem.",
-            "micro": "Sem cartão · seus dados ficam no seu computador"
+            "micro": "Sem cartão · seus perfis ficam no seu computador"
         }
     }
 }

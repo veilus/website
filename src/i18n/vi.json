@@ -432,7 +432,7 @@
         "bento": {
             "figNo": "Bảng 1",
             "fig": "tính năng",
-            "title": "Đủ để chạy trăm tài khoản trên một máy.",
+            "title": "Đủ để chạy nhiều tài khoản trên một máy.",
             "fields": "{n} trường fingerprint",
             "fpChips": [
                 "User-Agent",
@@ -479,7 +479,7 @@
             "figNo": "Ghi chú",
             "fig": "bước tiếp theo",
             "title": "Tải Veilus. Nối trợ lý AI. Ra lệnh.",
-            "micro": "Không cần thẻ · dữ liệu nằm trên máy bạn"
+            "micro": "Không cần thẻ · hồ sơ nằm trên máy bạn"
         }
     }
 }

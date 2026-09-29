@@ -432,7 +432,7 @@
         "bento": {
             "figNo": "Table 1",
             "fig": "features",
-            "title": "Enough to run a hundred accounts on one machine.",
+            "title": "Enough to run many accounts on one machine.",
             "fields": "{n} fingerprint fields",
             "fpChips": [
                 "User-Agent",
@@ -479,7 +479,7 @@
             "figNo": "Note",
             "fig": "next step",
             "title": "Download Veilus. Connect your AI assistant. Give the order.",
-            "micro": "No card needed · your data stays on your machine"
+            "micro": "No card needed · your profiles stay on your machine"
         }
     }
 }

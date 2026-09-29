@@ -432,7 +432,7 @@
         "bento": {
             "figNo": "Tabla 1",
             "fig": "funciones",
-            "title": "Suficiente para manejar cien cuentas en un solo equipo.",
+            "title": "Suficiente para manejar muchas cuentas en un solo equipo.",
             "fields": "{n} campos de huella",
             "fpChips": [
                 "User-Agent",
@@ -479,7 +479,7 @@
             "figNo": "Nota",
             "fig": "siguiente paso",
             "title": "Descarga Veilus. Conecta tu asistente de IA. Da la orden.",
-            "micro": "Sin tarjeta · tus datos, en tu equipo"
+            "micro": "Sin tarjeta · tus perfiles, en tu equipo"
         }
     }
 }

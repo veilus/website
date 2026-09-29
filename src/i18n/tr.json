@@ -432,7 +432,7 @@
         "bento": {
             "figNo": "Tablo 1",
             "fig": "özellikler",
-            "title": "Tek bilgisayarda yüz hesap yönetmeye yeter.",
+            "title": "Tek bilgisayarda çok sayıda hesap yönetmeye yeter.",
             "fields": "{n} parmak izi alanı",
             "fpChips": [
                 "User-Agent",
@@ -479,7 +479,7 @@
             "figNo": "Not",
             "fig": "sonraki adım",
             "title": "Veilus'u indirin. Yapay zekâ asistanınızı bağlayın. Talimat verin.",
-            "micro": "Kart gerekmez · veriler bilgisayarınızda kalır"
+            "micro": "Kart gerekmez · profiller bilgisayarınızda kalır"
         }
     }
 }
