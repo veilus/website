@@ -129,13 +129,17 @@ const websiteJsonLd = {
     <meta name="theme-color" content="#F2EFE7" />
     <meta name="generator" content={Astro.generator} />
 
+    {/* Script trang cần chạy trước GA: trang chủ en đặt script tự chuyển ngôn ngữ vào đây (src/pages/index.astro). */}
+    <slot name="head" />
+
     {/* Google Analytics chỉ đo production (veilus.io): bản preview trên pages.dev, localhost và wrangler không gửi
         page_view. Tắt hẳn trên trang noTracking: page_view gửi cả URL, kể cả ?renew=<key>. gtag.js nạp bằng script
-        vì thẻ <script src> tĩnh không có điều kiện; public/analytics.js không làm gì khi không có window.gtag. */}
+        vì thẻ <script src> tĩnh không có điều kiện; public/analytics.js không làm gì khi không có window.gtag.
+        window.veilusLangTo: trang đang tự chuyển ngôn ngữ — page_view để trang đích gửi. */}
     {
       !noTracking && (
         <script
-          set:html={`if(location.hostname==='veilus.io'){window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}');const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.append(s)}`}
+          set:html={`if(location.hostname==='veilus.io'&&!window.veilusLangTo){window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}');const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.append(s)}`}
         />
       )
     }

@@ -1,40 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomePage from '../components/HomePage.astro';
+import { langRedirectTarget, runLangRedirect } from '../scripts/lang-redirect.js';
 
 const lang = 'en';
+// Tự chuyển ngôn ngữ ở lần vào đầu (src/scripts/lang-redirect.js), nhúng nguyên hai hàm vào <head> trước GA.
+// window.veilusLangTo khác null nghĩa là trang đang chuyển đi: Layout không nạp GA, page_view chỉ bắn ở trang đích.
+const langRedirect = `window.veilusLangTo=(${runLangRedirect})(window,${langRedirectTarget});`;
 ---
 
 <Layout lang={lang}>
+  <script is:inline slot="head" set:html={langRedirect} />
   <HomePage lang={lang} />
 </Layout>
-
-<script>
-  // Auto-detect browser language and redirect on first visit
-  (function() {
-    const STORAGE_KEY = 'veilus_lang_detected';
-    const SUPPORTED = ['vi', 'zh', 'ru', 'es', 'pt', 'tr', 'id'];
-
-    // Skip if already detected or user manually navigated here
-    if (localStorage.getItem(STORAGE_KEY)) return;
-
-    // Tới / từ một trang của chính site (bấm English ở bộ chọn ngôn ngữ, bấm logo): người đọc đã tự chọn.
-    // Không chuyển, và ghi 'manual' để lần sau cũng không chuyển (VEIL-1031: trước đó bấm English bị đẩy về /vi/).
-    if (document.referrer && new URL(document.referrer).origin === location.origin) {
-      localStorage.setItem(STORAGE_KEY, 'manual');
-      return;
-    }
-
-    // Get browser language (e.g., 'vi', 'zh-CN', 'pt-BR')
-    const browserLang = navigator.language || (navigator as any).userLanguage || '';
-    const primary = browserLang.split('-')[0].toLowerCase();
-
-    // Mark as detected so we don't redirect again
-    localStorage.setItem(STORAGE_KEY, primary);
-
-    // Redirect if matches a supported non-English language
-    if (SUPPORTED.includes(primary)) {
-      window.location.replace('/' + primary + '/');
-    }
-  })();
-</script>
