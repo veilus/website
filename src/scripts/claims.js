@@ -3,13 +3,19 @@
  *
  * Mỗi mẫu là một câu sai sự thật TỪNG lên trang, hoặc một khẳng định chưa đo được. Mẫu dựng từ nguyên
  * văn 8 ngôn ngữ đo ở website fa160df (trước các bản sửa VEIL-961/977/978) và ở nhánh nháp VEIL-955.
- * claims.test.js quét chữ nguồn của trang; lượt kiểm toàn trang quét cả dist/ bằng cùng hàm hits().
+ * claims.test.js quét chữ nguồn của trang qua pageText(): file JSON chỉ lấy giá trị chuỗi, mọi file qua plain()
+ * (bỏ icon, dấu chấm sát thẻ là hết câu, bỏ thẻ); lượt kiểm toàn trang quét cả dist/ bằng cùng plain() và hits().
  *
  * KHÔNG ĐO:
  * - nghĩa của câu — chỉ khớp cụm từ. Câu đúng mà trúng mẫu phải khai trong ALLOWED kèm lý do;
  * - câu sai diễn đạt kiểu mới, không trúng mẫu nào ("Untraceable", "undetected", "gấp 3 lần") — lọt;
  * - "Veilus Sync... encrypted" (ba dấu chấm ASCII rồi khoảng trắng): sync-encrypted coi đó là hết câu nên lọt;
  *   dấu "…" (U+2026) thì không cắt câu, vẫn bắt;
+ * - câu sai có thẻ chen ngay sau dấu chấm giữa token ("Veilus Sync v1.<b>2</b> is encrypted"): plain() coi "."
+ *   sát trước thẻ là hết câu nên lọt;
+ * - giá trị JSON không phải chuỗi (số, true/false): bài chỉ gom giá trị chuỗi; tên khoá không phải chữ trên trang;
+ * - chữ trong span icon (class "ms", tên [a-z0-9_]+ hoặc biểu thức {…}): bỏ vì trang hiện hình. Tên không có trong
+ *   font thì trang hiện nguyên chữ mà bài không thấy — icons.test.js chỉ canh tên viết chữ trong span và `icon: '…'`;
  * - chữ trong ảnh (public/og-image.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);
  * - lúc nào bài chạy: CI chỉ chạy bài này trước deploy khi push main; nhánh khác không bị chặn.
  * - mẫu `the-only` tiếng Thổ chỉ bắt "tek [anti-tespit] tarayıcı"; câu "duy nhất" diễn đạt khác, như "Piyasadaki tek yapay zekâ destekli tarayıcı", thì lọt. Mẫu cố ý hẹp vì tr.json dùng "tek" nghĩa là "một" chín lần.
@@ -142,8 +148,25 @@ export const ALLOWED = [
   },
 ];
 
-/** Bỏ thẻ HTML để câu "The <strong>only</strong> …" khớp đúng như chữ người đọc thấy. */
-export const plain = (s) => s.replace(/<\/?[a-zA-Z][^>]*>/g, '');
+/** Bỏ icon và thẻ HTML để câu "The <strong>only</strong> …" khớp đúng như chữ người đọc thấy. */
+export const plain = (s) =>
+  s
+    // Icon ligature hiện thành hình, không thành chữ; trong nguồn .astro tên icon có thể là biểu thức {…}.
+    // Bỏ icon TRƯỚC: bước dấu chấm chạy trước thì nuốt thẻ mở của icon đứng sau dấu chấm, tên icon lọt ra thành chữ.
+    .replace(/<span class="ms(?:\s[^"]*)?"[^>]*>(?:[a-z0-9_]+|\{[^}]*\})<\/span>/g, '')
+    // Thẻ đứng ngay sau dấu chấm: câu kết thúc ở đó, ".</p><p>" không dính hai câu thành "optional.Exported".
+    .replace(/\.(?:<\/?[a-zA-Z][^>]*>)+/g, '. ')
+    .replace(/<\/?[a-zA-Z][^>]*>/g, '');
+
+// Mọi giá trị chuỗi theo thứ tự trong tài liệu; Object.values đi được cả object lẫn mảng.
+// ponytail: Object.values đưa khoá dạng số ("0", "12") lên trước khoá chữ; i18n không có khoá số — có thì phải tự đọc token.
+const strings = (v) => (typeof v === 'string' ? [v] : v && typeof v === 'object' ? Object.values(v).flatMap(strings) : []);
+
+/**
+ * Chữ của một file nguồn mà bài quét và bài miễn trừ cùng dùng. File JSON chỉ lấy giá trị chuỗi, mỗi giá trị
+ * một dòng: tên khoá ("syncNote") không bao giờ lọt vào, và câu có dấu " (trong file thô là \") vẫn khớp nguyên văn.
+ */
+export const pageText = (file, raw) => (file.endsWith('.json') ? strings(JSON.parse(raw)).map(plain).join('\n') : plain(raw));
 
 /** Mọi chỗ trong text trúng một mẫu cấm. */
 export function hits(text) {

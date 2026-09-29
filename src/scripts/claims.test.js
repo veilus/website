@@ -5,10 +5,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
-import { BANNED, ALLOWED, hits, plain, stripAllowed } from './claims.js';
+import { BANNED, ALLOWED, hits, pageText, plain, stripAllowed } from './claims.js';
 
 const ROOT = new URL('../../', import.meta.url);
 const read = (p) => readFileSync(new URL(p, ROOT), 'utf8');
+// Chữ mà cả bài quét lẫn bài miễn trừ nhìn: một đường trích duy nhất.
+const seen = (f) => pageText(f, read(f));
 const list = (dir, ext) =>
   readdirSync(new URL(dir, ROOT), { recursive: true })
     .filter((f) => f.endsWith(ext))
@@ -204,15 +206,45 @@ test('câu gần giống mà đúng thì không bị bắt', () => {
   for (const text of NEAR_MISS) assert.deepEqual(hits(plain(text)), [], text);
 });
 
+test('file JSON: chỉ quét giá trị chuỗi, tên khoá không phải chữ trên trang', () => {
+  assert.deepEqual(hits(pageText('x.json', '{"syncNote": "Access tokens are encrypted"}')), []);
+  // Hàng đối chứng: câu sai nằm trong giá trị thì vẫn bị bắt.
+  assert.deepEqual(hits(pageText('x.json', '{"a": "Sync is encrypted"}')).map((h) => h.id), ['sync-encrypted']);
+});
+
+test('thẻ đứng ngay sau dấu chấm thì câu kết thúc ở đó', () => {
+  assert.deepEqual(hits(plain('Veilus Sync is optional.</p><p>Exported files can be encrypted.')), []);
+  assert.deepEqual(hits(plain('Veilus Sync is optional.<br>Exported files can be encrypted.')), []);
+  // Hàng đối chứng: thẻ không đứng sau dấu chấm thì vẫn chỉ bị bỏ.
+  assert.deepEqual(hits(plain('The <strong>only</strong> anti-detect browser')).map((h) => h.id), ['the-only']);
+});
+
+test('tên icon ligature hiện thành hình, không phải chữ trên trang', () => {
+  assert.deepEqual(hits(plain('<span class="ms" aria-hidden="true">cloud_sync</span> Profiles are encrypted')), []);
+  assert.deepEqual(hits(plain('<span class="ms k-sw" aria-hidden="true">{f.syncIcon}</span> Profiles are encrypted')), []);
+  // Icon đứng ngay sau dấu chấm: bỏ icon phải chạy trước bước dấu chấm.
+  assert.deepEqual(hits(plain('Backups are optional.<span class="ms" aria-hidden="true">cloud_sync</span> Profiles are encrypted')), []);
+  // Hàng đối chứng: chữ đứng sau icon vẫn là chữ.
+  assert.deepEqual(hits(plain('<span class="ms" aria-hidden="true">lock</span> Sync is encrypted')).map((h) => h.id), ['sync-encrypted']);
+});
+
+// Dòng miễn trừ không còn nằm nguyên văn trong chữ mà bài quét thấy của file nó.
+const stale = (allowed) => allowed.filter((a) => !seen(a.file).includes(a.text));
+
 test('mỗi dòng miễn trừ còn nằm nguyên văn trong file của nó', () => {
-  for (const a of ALLOWED) {
-    assert.ok(plain(read(a.file)).includes(a.text), `${a.file} không còn câu: ${a.text} — gỡ dòng miễn trừ`);
-  }
+  assert.deepEqual(stale(ALLOWED), [], 'câu không còn trong file — gỡ dòng miễn trừ');
+});
+
+test('câu miễn trừ có dấu " trong file JSON vẫn khớp nguyên văn', () => {
+  const quoted = { file: 'src/scripts/claims.fixture.json', text: 'Veilus does not encrypt "synced" profile data' };
+  // Hàng đối chứng: file thô chứa \" nên so trên file thô thì không thấy câu.
+  assert.ok(!read(quoted.file).includes(quoted.text));
+  assert.deepEqual(stale([quoted]), []);
 });
 
 test('không trang nào chứa cụm từ cấm', () => {
   const found = FILES.flatMap((f) =>
-    hits(stripAllowed(plain(read(f)), f)).map((h) => `${f}: [${h.id}] "${h.match}" — ${h.why}`),
+    hits(stripAllowed(seen(f), f)).map((h) => `${f}: [${h.id}] "${h.match}" — ${h.why}`),
   );
   assert.deepEqual(found, []);
 });
