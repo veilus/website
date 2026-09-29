@@ -27,6 +27,9 @@
   user-select: none;
 }
 
+/* Chữ chỉ cho trình đọc màn hình. Hộp cha cần position: relative khi nằm trong khung cuộn ngang. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
 .k-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
 .k-mark { font-family: var(--font-mono); font-weight: 600; font-size: 14px; letter-spacing: 0.14em; color: var(--ink); white-space: nowrap; }

@@ -305,7 +305,7 @@ const i = t(lang);
     color: var(--color-success, #22c55e);
   }
   .waitlist-message.error {
-    color: #ef4444;
+    color: #B42318; /* 5.7:1 trên giấy #F2EFE7 (WCAG AA ≥ 4.5) */
   }
   .waitlist-counter {
     font-size: 0.875rem;
@@ -340,11 +340,9 @@ const i = t(lang);
     align-items: center;
     gap: var(--space-sm);
     transition: border-color var(--transition-fast);
-    opacity: 0.7;
   }
   .platform-card:hover {
     border-color: var(--color-border-light);
-    opacity: 1;
   }
   .platform-icon {
     width: 48px;
