@@ -13,7 +13,7 @@
 
 ## Main Pages
 - [Homepage](https://veilus.io/): Product overview, features, pricing, FAQ
-- [Download](https://veilus.io/download/): Early access waitlist; the macOS and Windows downloads are marked "Coming soon"
+- [Download](https://veilus.io/download/): Installers for Windows 10/11 (x64, .exe) and macOS 13+ (Apple Silicon, .dmg); the browser engine is downloaded separately inside the app
 - [Documentation](https://docs.veilus.io): User guides, API reference
 - [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy
 - [Privacy Policy](https://veilus.io/privacy/): Data collection and protection

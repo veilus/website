@@ -125,26 +125,18 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
+        "title": "Baixar",
         "titleHighlight": "Veilus",
-        "soon": "Em breve",
+        "subtitle": "Escolha sua plataforma. O motor de navegador é baixado à parte, no app, após a instalação.",
+        "cta": "Baixar para {os}",
+        "version": "Versão {version}",
+        "allVersions": "Todas as versões",
         "noCard": "Sem cartão de crédito",
         "freeProfiles": "5 perfis grátis para sempre",
         "reqTitle": "Requisitos do sistema",
         "engine": "Motor de navegador baixado à parte, no app",
-        "metaTitle": "Navegador antidetecção Veilus: em breve no Windows e macOS",
-        "metaDescription": "O navegador antidetecção Veilus chega em breve ao Windows e macOS. Entre na lista de espera e saiba primeiro. 5 perfis grátis para sempre, sem cartão."
-    },
-    "waitlist": {
-        "title": "Acesso Antecipado",
-        "subtitle": "Seja o primeiro a saber quando o Veilus estiver pronto para download.",
-        "placeholder": "Digite seu email",
-        "cta": "Entrar na lista",
-        "success": "Você está na lista! 🎉",
-        "successSub": "Enviaremos um email quando o Veilus estiver pronto.",
-        "error": "Algo deu errado. Tente novamente.",
-        "duplicate": "Você já está na lista!",
-        "counter": "{count}+ pessoas esperando",
-        "invalid": "Digite um email válido"
+        "metaTitle": "Baixe o navegador antidetecção Veilus para Windows e macOS",
+        "metaDescription": "Baixe o navegador antidetecção Veilus para Windows e macOS. 5 perfis grátis para sempre, sem cartão."
     },
     "buy": {
         "title": "Comprar Veilus",

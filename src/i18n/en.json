@@ -125,26 +125,18 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
+        "title": "Download",
         "titleHighlight": "Veilus",
-        "soon": "Coming soon",
+        "subtitle": "Choose your platform. The browser engine is downloaded separately inside the app.",
+        "cta": "Download for {os}",
+        "version": "Version {version}",
+        "allVersions": "All versions",
         "noCard": "No credit card required",
         "freeProfiles": "5 free profiles forever",
         "reqTitle": "System Requirements",
         "engine": "Browser engine, downloaded separately in the app",
-        "metaTitle": "Veilus anti-detect browser: Windows & macOS early access",
-        "metaDescription": "The Veilus anti-detect browser is coming to Windows and macOS. Join the waitlist to be the first to know. 5 free profiles forever, no credit card."
-    },
-    "waitlist": {
-        "title": "Get Early Access",
-        "subtitle": "Be the first to know when Veilus is ready to download.",
-        "placeholder": "Enter your email",
-        "cta": "Join Waitlist",
-        "success": "You're on the list! 🎉",
-        "successSub": "We'll email you when Veilus is ready to download.",
-        "error": "Something went wrong. Please try again.",
-        "duplicate": "You're already on the list!",
-        "counter": "{count}+ people are waiting",
-        "invalid": "Please enter a valid email"
+        "metaTitle": "Download Veilus anti-detect browser for Windows & macOS",
+        "metaDescription": "Download the Veilus anti-detect browser for Windows and macOS. 5 free profiles forever, no credit card."
     },
     "buy": {
         "title": "Buy Veilus",

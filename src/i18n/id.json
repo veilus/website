@@ -125,26 +125,18 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
+        "title": "Unduh",
         "titleHighlight": "Veilus",
-        "soon": "Segera hadir",
+        "subtitle": "Pilih platform Anda. Mesin browser diunduh terpisah di aplikasi setelah instalasi.",
+        "cta": "Unduh untuk {os}",
+        "version": "Versi {version}",
+        "allVersions": "Semua versi",
         "noCard": "Tanpa kartu kredit",
         "freeProfiles": "5 profil gratis selamanya",
         "reqTitle": "Persyaratan Sistem",
         "engine": "Mesin browser diunduh terpisah di aplikasi",
-        "metaTitle": "Browser anti-deteksi Veilus: akses awal Windows dan macOS",
-        "metaDescription": "Browser anti-deteksi Veilus segera hadir di Windows dan macOS. Gabung daftar tunggu agar tahu lebih dulu. 5 profil gratis selamanya, tanpa kartu kredit."
-    },
-    "waitlist": {
-        "title": "Akses Awal",
-        "subtitle": "Jadi yang pertama tahu saat Veilus siap diunduh.",
-        "placeholder": "Masukkan email Anda",
-        "cta": "Gabung Daftar Tunggu",
-        "success": "Anda sudah terdaftar! 🎉",
-        "successSub": "Kami akan mengirim email saat Veilus siap.",
-        "error": "Terjadi kesalahan. Silakan coba lagi.",
-        "duplicate": "Anda sudah terdaftar!",
-        "counter": "{count}+ orang sedang menunggu",
-        "invalid": "Masukkan email yang valid"
+        "metaTitle": "Unduh browser anti-deteksi Veilus untuk Windows dan macOS",
+        "metaDescription": "Unduh browser anti-deteksi Veilus untuk Windows dan macOS. 5 profil gratis selamanya, tanpa kartu kredit."
     },
     "buy": {
         "title": "Beli Veilus",

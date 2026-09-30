@@ -6,7 +6,7 @@ import type { Lang } from '../i18n/utils';
 import { t } from '../i18n/utils';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
-import { OS_SUPPORT, INSTALLER_SIZE, ENGINE_SIZE } from '../data/facts.js';
+import { OS_SUPPORT, INSTALLER_SIZE, ENGINE_SIZE, APP_VERSION, DOWNLOAD_URL, RELEASES_URL } from '../data/facts.js';
 
 interface Props {
   lang: Lang;
@@ -20,36 +20,10 @@ const i = t(lang);
   <section class="download-hero">
     <div class="container">
       <h1>
-        {i.waitlist.title}
+        {i.download.title}
         <span class="text-gradient">{i.download.titleHighlight}</span>
       </h1>
-      <p class="download-subtitle">{i.waitlist.subtitle}</p>
-
-      <!-- Waitlist Form -->
-      <form
-        class="waitlist-form"
-        id="dl-waitlist"
-        data-source="download"
-        data-lang={lang}
-        data-i18n={JSON.stringify(i.waitlist)}
-      >
-        <div class="waitlist-input-group">
-          <input
-            type="email"
-            id="dl-email"
-            placeholder={i.waitlist.placeholder}
-            required
-            autocomplete="email"
-          />
-          <button type="submit" class="btn btn-primary waitlist-btn">
-            <span class="btn-text">{i.waitlist.cta}</span>
-            <span class="btn-loader" aria-hidden="true"></span>
-          </button>
-        </div>
-        <p class="waitlist-message" id="dl-message" aria-live="polite"></p>
-      </form>
-
-      <p class="waitlist-counter" id="dl-counter"></p>
+      <p class="download-subtitle">{i.download.subtitle}</p>
 
       <!-- Platform Cards -->
       <div class="platform-cards">
@@ -63,7 +37,7 @@ const i = t(lang);
           </div>
           <h2 class="platform-name">Windows</h2>
           <p class="platform-version">{OS_SUPPORT.windows}</p>
-          <span class="coming-soon-badge">{i.download.soon}</span>
+          <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
           <span class="platform-size">{INSTALLER_SIZE.windows}</span>
         </div>
 
@@ -77,10 +51,12 @@ const i = t(lang);
           </div>
           <h2 class="platform-name">macOS</h2>
           <p class="platform-version">{OS_SUPPORT.macos}</p>
-          <span class="coming-soon-badge">{i.download.soon}</span>
+          <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
           <span class="platform-size">{INSTALLER_SIZE.macos}</span>
         </div>
       </div>
+
+      <p class="release-links">{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
 
       <!-- Trust Badges -->
       <div class="trust-badges">
@@ -138,81 +114,6 @@ const i = t(lang);
 </main>
 <Footer lang={lang} />
 
-<script>
-  const API_BASE = "https://api.veilus.io";
-  // Thông điệp theo ngôn ngữ của trang: khối waitlist.* trong src/i18n, gắn vào form lúc build.
-  const m = JSON.parse(
-    document.querySelector<HTMLElement>(".waitlist-form")?.dataset.i18n || "{}",
-  );
-
-  document.querySelectorAll(".waitlist-form").forEach((form) => {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const f = e.target as HTMLFormElement;
-      const input = f.querySelector('input[type="email"]') as HTMLInputElement;
-      const btn = f.querySelector(".waitlist-btn") as HTMLButtonElement;
-      const msg = f.parentElement?.querySelector(
-        ".waitlist-message",
-      ) as HTMLElement;
-      const email = input.value.trim();
-      const source = f.dataset.source || "download";
-      const lang = f.dataset.lang || "en";
-      if (!email) return;
-      btn.classList.add("loading");
-      btn.disabled = true;
-      msg.textContent = "";
-      msg.className = "waitlist-message";
-      try {
-        const res = await fetch(`${API_BASE}/api/v1/waitlist`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, source, lang }),
-        });
-        const data = await res.json();
-        if (res.ok && data.success) {
-          f.classList.add("success");
-          msg.className = "waitlist-message show success";
-          if (data.duplicate) msg.textContent = m.duplicate;
-          else {
-            const sub = document.createElement("small");
-            sub.textContent = m.successSub;
-            msg.replaceChildren(m.success, document.createElement("br"), sub);
-          }
-          input.disabled = true;
-          btn.style.display = "none";
-          loadCount();
-        } else {
-          msg.className = "waitlist-message show error";
-          // `error` của API là tiếng Anh: chọn chữ theo `code` — INVALID_EMAIL, còn lại là lỗi chung.
-          msg.textContent = data.code === "INVALID_EMAIL" ? m.invalid : m.error;
-        }
-      } catch {
-        msg.className = "waitlist-message show error";
-        msg.textContent = m.error;
-      } finally {
-        btn.classList.remove("loading");
-        btn.disabled = false;
-      }
-    });
-  });
-
-  async function loadCount() {
-    try {
-      const res = await fetch(`${API_BASE}/api/v1/waitlist/count`);
-      const data = await res.json();
-      if (data.count > 0) {
-        document.querySelectorAll(".waitlist-counter").forEach((el) => {
-          el.textContent = m.counter.replace("{count}", String(data.count));
-          el.classList.add("show");
-        });
-      }
-    } catch {
-      /* silent */
-    }
-  }
-  loadCount();
-</script>
-
 <style>
   .download-page {
     padding-top: var(--nav-height);
@@ -240,105 +141,6 @@ const i = t(lang);
     color: var(--color-text-secondary);
     max-width: 50ch;
     margin: 0 auto var(--space-xl);
-  }
-
-  .waitlist-form {
-    max-width: 480px;
-    margin: 0 auto var(--space-xl);
-  }
-  .waitlist-input-group {
-    display: flex;
-    gap: 0;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    border: 1px solid var(--rule);
-    background: var(--panel);
-    backdrop-filter: blur(8px);
-    transition:
-      border-color var(--transition-fast),
-      box-shadow var(--transition-fast);
-  }
-  .waitlist-input-group:focus-within {
-    border-color: var(--ink);
-    box-shadow: none;
-  }
-  .waitlist-input-group input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    padding: 14px 16px;
-    font-size: 0.9375rem;
-    color: var(--color-text);
-    outline: none;
-    min-width: 0;
-  }
-  .waitlist-input-group input::placeholder {
-    color: var(--color-text-muted);
-  }
-  .waitlist-btn {
-    border: none;
-    padding: 14px 24px;
-    font-weight: 700;
-    font-size: 0.875rem;
-    cursor: pointer;
-    white-space: nowrap;
-    border-radius: 0;
-  }
-  .waitlist-btn .btn-loader {
-    display: none;
-    width: 16px;
-    height: 16px;
-    /* Nút nền mực: vòng quay màu giấy, không màu đen */
-    border: 2px solid rgba(242, 239, 231, 0.3);
-    border-top-color: var(--paper);
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-  }
-  .waitlist-btn.loading .btn-text {
-    display: none;
-  }
-  .waitlist-btn.loading .btn-loader {
-    display: inline-block;
-  }
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .waitlist-message {
-    font-size: 0.8125rem;
-    margin-top: var(--space-sm);
-    margin-inline: auto; /* p toàn cục có max-width 60ch: thiếu auto thì hộp dạt trái */
-    min-height: 1.5em;
-    opacity: 0;
-    transition: opacity var(--transition-fast);
-  }
-  .waitlist-message.show {
-    opacity: 1;
-  }
-  .waitlist-message.success {
-    color: var(--color-success, #22c55e);
-  }
-  .waitlist-message.error {
-    color: #B42318; /* 5.7:1 trên giấy #F2EFE7 (WCAG AA ≥ 4.5) */
-  }
-  .waitlist-counter {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    margin-inline: auto; /* p toàn cục có max-width 60ch: thiếu auto thì hộp dạt trái */
-    margin-bottom: var(--space-xl);
-    /* Giữ chỗ đúng một dòng của chính nó trước khi api.veilus.io trả count (CLS ~0,024, VEIL-1031).
-       Rỗng vẫn chiếm chỗ này — hiện/ẩn chỉ đổi opacity, không đổi layout. */
-    min-height: 1.6em;
-    opacity: 0;
-    transition: opacity var(--transition-fast);
-  }
-  .waitlist-counter.show {
-    opacity: 1;
-  }
-  .waitlist-form.success .waitlist-input-group {
-    border-color: var(--ink);
-    background: var(--bg-surface);
   }
 
   .platform-cards {
@@ -381,22 +183,22 @@ const i = t(lang);
     color: var(--color-text-muted);
     margin: 0;
   }
-  .coming-soon-badge {
-    display: inline-block;
+  .platform-download {
     margin-top: var(--space-xs);
-    padding: 6px 16px;
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    background: var(--acc-soft);
-    color: var(--ink);
-    border: 1px solid var(--rule);
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
   }
   .platform-size {
     font-size: 0.75rem;
     color: var(--color-text-muted);
+  }
+  .release-links {
+    margin-top: var(--space-lg);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    text-align: center;
   }
   .trust-badges {
     display: flex;
@@ -471,12 +273,6 @@ const i = t(lang);
     .req-grid {
       grid-template-columns: 1fr;
       max-width: 400px;
-    }
-    .waitlist-input-group {
-      flex-direction: column;
-    }
-    .waitlist-btn {
-      border-radius: 0 0 var(--radius-md) var(--radius-md);
     }
   }
 </style>

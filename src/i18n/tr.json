@@ -125,26 +125,18 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
+        "title": "İndir",
         "titleHighlight": "Veilus",
-        "soon": "Yakında",
+        "subtitle": "Platformunuzu seçin. Tarayıcı motoru kurulumdan sonra uygulama içinden ayrıca indirilir.",
+        "cta": "{os} için indir",
+        "version": "Sürüm {version}",
+        "allVersions": "Tüm sürümler",
         "noCard": "Kredi kartı gerekmez",
         "freeProfiles": "5 profil süresiz ücretsiz",
         "reqTitle": "Sistem Gereksinimleri",
         "engine": "Tarayıcı motoru uygulama içinden ayrıca indirilir",
-        "metaTitle": "Anti-tespit tarayıcı Veilus: Windows ve macOS erken erişimi",
-        "metaDescription": "Anti-tespit tarayıcı Veilus yakında Windows ve macOS'ta. Bekleme listesine katılın, hazır olunca ilk siz öğrenin. 5 profil süresiz ücretsiz, kart gerekmez."
-    },
-    "waitlist": {
-        "title": "Erken Erişim",
-        "subtitle": "Veilus indirmeye hazır olduğunda ilk siz öğrenin.",
-        "placeholder": "E-postanızı girin",
-        "cta": "Listeye Katıl",
-        "success": "Listedesiniz! 🎉",
-        "successSub": "Veilus hazır olduğunda size e-posta göndereceğiz.",
-        "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
-        "duplicate": "Zaten listedesiniz!",
-        "counter": "{count}+ kişi bekliyor",
-        "invalid": "Geçerli bir e-posta girin"
+        "metaTitle": "Anti-tespit tarayıcı Veilus'u indirin: Windows ve macOS",
+        "metaDescription": "Anti-tespit tarayıcı Veilus'u Windows ve macOS için indirin. 5 profil süresiz ücretsiz, kart gerekmez."
     },
     "buy": {
         "title": "Veilus satın al",

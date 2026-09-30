@@ -125,26 +125,18 @@
         "copyright": "© 2026 Veilus."
     },
     "download": {
+        "title": "Tải về",
         "titleHighlight": "Veilus",
-        "soon": "Sắp ra mắt",
+        "subtitle": "Chọn hệ điều hành của bạn. Engine trình duyệt tải riêng trong app sau khi cài.",
+        "cta": "Tải cho {os}",
+        "version": "Phiên bản {version}",
+        "allVersions": "Tất cả phiên bản",
         "noCard": "Không cần thẻ tín dụng",
         "freeProfiles": "5 hồ sơ miễn phí mãi mãi",
         "reqTitle": "Yêu cầu hệ thống",
         "engine": "Engine trình duyệt tải riêng trong app",
-        "metaTitle": "Trình duyệt anti-detect Veilus: đăng ký sớm Windows & macOS",
-        "metaDescription": "Trình duyệt anti-detect Veilus sắp có cho Windows và macOS. Đăng ký chờ để được báo ngay khi sẵn sàng tải về. 5 hồ sơ miễn phí mãi mãi, không cần thẻ."
-    },
-    "waitlist": {
-        "title": "Đăng Ký Sớm",
-        "subtitle": "Hãy là người đầu tiên biết khi Veilus sẵn sàng tải về.",
-        "placeholder": "Nhập email của bạn",
-        "cta": "Đăng ký chờ",
-        "success": "Đăng ký thành công! 🎉",
-        "successSub": "Chúng tôi sẽ gửi email khi Veilus sẵn sàng.",
-        "error": "Có lỗi xảy ra. Vui lòng thử lại.",
-        "duplicate": "Bạn đã đăng ký rồi!",
-        "counter": "{count}+ người đang chờ",
-        "invalid": "Vui lòng nhập email hợp lệ"
+        "metaTitle": "Tải trình duyệt anti-detect Veilus cho Windows & macOS",
+        "metaDescription": "Tải trình duyệt anti-detect Veilus cho Windows và macOS. 5 hồ sơ miễn phí mãi mãi, không cần thẻ."
     },
     "buy": {
         "title": "Mua Veilus",

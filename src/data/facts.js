@@ -28,6 +28,21 @@ export const OS_SUPPORT = { windows: 'Windows 10/11 · x64', macos: 'macOS 13+ �
 export const INSTALLER_SIZE = { windows: '.exe · ~7 MB', macos: '.dmg · ~10 MB' };
 
 /**
+ * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-09-30: v0.2.1.
+ * Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE (đo lại bằng `gh release view v<bản> -R veilus/releases
+ * --json assets`); app chưa có updater nên trang giữ bản cũ tới khi hằng này đổi.
+ */
+export const APP_VERSION = '0.2.1';
+
+/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-09-30: cả hai URL trả 200 sau chuyển hướng. */
+const RELEASE_BASE = `https://github.com/veilus/releases/releases/download/v${APP_VERSION}`;
+export const DOWNLOAD_URL = {
+  windows: `${RELEASE_BASE}/Veilus_${APP_VERSION}_x64-setup.exe`,
+  macos: `${RELEASE_BASE}/Veilus_${APP_VERSION}_aarch64.dmg`,
+};
+export const RELEASES_URL = 'https://github.com/veilus/releases/releases';
+
+/**
  * Cỡ ZIP engine, MB thập phân làm tròn. Bộ cài không kèm engine: người dùng tải nó trong app (Settings > Chromium).
  * Nguồn: danh sách engine công khai mà app đọc từ api.veilus.io, bản mới nhất của từng nền tảng; HEAD lấy
  * content-length, khớp cỡ khai trong index engine đã ký. Đo 2026-09-29: win-x64 187294648 byte, mac-arm64 152088012 byte.

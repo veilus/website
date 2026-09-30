@@ -34,3 +34,41 @@ test('8 ngôn ngữ có cùng khoá và cùng độ dài mảng với en', () =>
     assert.deepEqual({ missing, extra }, { missing: [], extra: [] }, `${lang}.json lệch en.json`);
   }
 });
+
+// Mọi đường tới khoá LÁ KIỂU CHUỖI: {a:{b:"x",c:[1,2]}} → [['a.b', 'x']] (bỏ qua lá không phải chuỗi/mảng số).
+const leafStrings = (value, path = '') => {
+  if (Array.isArray(value)) return value.flatMap((v, i) => leafStrings(v, `${path}[${i}]`));
+  if (value && typeof value === 'object') return Object.entries(value).flatMap(([k, v]) => leafStrings(v, path ? `${path}.${k}` : k));
+  return typeof value === 'string' ? [[path, value]] : [];
+};
+
+const PLACEHOLDER_RE = /\{[a-zA-Z]+\}/g;
+const placeholders = (str) => new Set(str.match(PLACEHOLDER_RE) || []);
+const sortedPlaceholders = (str) => [...placeholders(str)].sort();
+
+// `cta` bị .replace("{os}", ...) và `version` bị .replace("{version}", ...) trong DownloadPage.astro: bản dịch
+// làm rơi chỗ giữ vẫn là chuỗi hợp lệ, template không vỡ — nút chỉ mất tên hệ điều hành, không bài nào đỏ.
+// KHÔNG ĐO: nghĩa bản dịch đúng hay sai, thứ tự chỗ giữ trong câu (chỉ đo ĐÚNG TẬP tên chỗ giữ).
+test('khoá có {tên} trong en giữ đúng tập chỗ giữ ở 7 ngôn ngữ còn lại', () => {
+  // Hàng đối chứng: "x {os}" và "x {o}" khác nhau đúng một ký tự trong tên chỗ giữ — hàm so sánh phải báo lệch,
+  // không được coi là giống nhau.
+  assert.notDeepEqual(
+    leafStrings({ a: 'x {o}' }).map(([k, v]) => [k, sortedPlaceholders(v)]),
+    leafStrings({ a: 'x {os}' }).map(([k, v]) => [k, sortedPlaceholders(v)]),
+  );
+
+  const enMap = new Map(leafStrings(load('en')));
+  const keysWithPlaceholder = [...enMap.keys()].filter((k) => placeholders(enMap.get(k)).size > 0);
+  assert.ok(keysWithPlaceholder.length > 0, 'en.json không còn khoá nào có {tên} — bài hết ý nghĩa?');
+
+  for (const lang of LANGS.slice(1)) {
+    const gotMap = new Map(leafStrings(load(lang)));
+    for (const key of keysWithPlaceholder) {
+      assert.deepEqual(
+        sortedPlaceholders(gotMap.get(key) ?? ''),
+        sortedPlaceholders(enMap.get(key)),
+        `${lang}.json khoá "${key}" lệch tập chỗ giữ so với en`,
+      );
+    }
+  }
+});
