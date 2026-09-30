@@ -132,7 +132,7 @@ const i = t(lang);
     margin-bottom: var(--space-md);
   }
   /* "Veilus" luôn một dòng riêng. Để nó tự xuống dòng thì trên di động nó rớt xuống dòng mới khi IBM Plex
-     tải xong và đẩy cả form lẫn thẻ nền tảng xuống: CLS 0,12–0,15 (VEIL-1031). */
+     tải xong và đẩy mọi thứ bên dưới xuống (VEIL-1031 đo ra CLS 0,12–0,15, lúc trang còn form danh sách chờ). */
   .download-hero h1 .text-gradient {
     display: block;
   }
@@ -194,8 +194,9 @@ const i = t(lang);
     font-size: 0.75rem;
     color: var(--color-text-muted);
   }
+  /* p toàn cục có max-width 60ch: thiếu auto thì hộp dạt trái ở màn rộng. */
   .release-links {
-    margin-top: var(--space-lg);
+    margin: var(--space-lg) auto 0;
     font-size: 0.8125rem;
     color: var(--color-text-muted);
     text-align: center;
