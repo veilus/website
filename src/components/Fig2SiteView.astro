@@ -88,7 +88,10 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   .k-own .k-chip { margin-bottom: 4px; padding: 3px 6px; font-size: 10.5px; }
   .k-join { position: relative; width: 76%; height: 22px; margin-bottom: 14px; border: 1.5px solid var(--ink); border-top: 0; }
   .k-join::after { content: ''; position: absolute; left: 50%; bottom: -15px; height: 14px; border-left: 1.5px solid var(--ink); }
-  .k-chip-bad { background: repeating-linear-gradient(45deg, rgba(27, 34, 48, 0.14) 0 1px, transparent 1px 6px), var(--paper); }
+  /* .k-chip gốc (blueprint.css) đặt white-space: nowrap cho nhãn ngắn; chip này mang cả câu (bản pt dài nhất,
+     "mesma impressão digital · mesmo IP") nên ở khung hẹp phải cho xuống dòng — .k-panel align-items: center nên
+     chip tự co theo bề rộng còn lại, không cần max-width riêng; bản ngắn vẫn nằm một dòng như cũ. */
+  .k-chip-bad { background: repeating-linear-gradient(45deg, rgba(27, 34, 48, 0.14) 0 1px, transparent 1px 6px), var(--paper); white-space: normal; }
   .k-site { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1.5px solid var(--ink); background: var(--paper); font-size: 14px; font-weight: 600; }
   .k-verdict { display: flex; align-items: center; gap: 14px; width: 100%; margin-top: 16px; padding: 14px 16px; border: 1.5px solid var(--ink); }
   .k-verdict .ms { font-size: 30px; }

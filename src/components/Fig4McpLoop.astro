@@ -125,13 +125,14 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
     .k-loop .k-ar { justify-self: center; width: 0; height: 28px; margin: 2px 0; border-top: 0; border-left: 1.5px solid var(--ink); }
     .k-loop .k-ar::after { right: auto; left: -5.5px; top: auto; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); }
     .k-ard { height: 40px; }
-    .k-ard > span { right: auto; left: 14px; }
-  }
-
-  /* Dưới 360px nhãn lặp không còn đủ chỗ trên một dòng (en, es, pt, tr, id đẩy trang tràn ngang): xuống dòng, bề
-     rộng tối đa tính tới cách viền .k-loop 5px — lề .k-wrap 16px, viền 1,5px và padding 18px của .k-loop ở ≤ 640px,
-     nhãn bắt đầu 14px sau mũi tên giữa khung. */
-  @media (max-width: 359px) {
-    .k-ard > span { width: max-content; max-width: calc(50vw - 37px); white-space: normal; }
+    /* Nhãn lặp không luôn đủ chỗ trên một dòng trong cả khoảng ≤720px này (es, id đè viền tới gần 400px; en, pt,
+       tr, es, id đè ở 360-370px) — cho xuống dòng và giới hạn theo nửa khung thay vì chỉ bật dưới một mốc hẹp, để
+       còn đúng ở mọi bề rộng trong dải mà .k-ard nằm giữa cột dọc này. Hệ số 33 (đo .k-ard/.k-loop thực tế ở
+       ≤640px, lề .k-wrap 16px, cho khoảng trống 162px tại 390px): giữa 159,61px (nhãn en/tr, dài nhất trong nhóm
+       không cần xuống dòng) và 166,20px (es/id, ngắn nhất trong nhóm cần xuống dòng) — chừa dư cho lệch dưới 1px
+       giữa các trang ngôn ngữ (đo được khi dùng đúng hệ số lý thuyết 30,5 — es/id vẫn đè viền 1px vì centerX đo
+       trên trang en lệch ~1px so với es). Ở 641-720px (lề 32px) hệ số đúng là 46,5 nhưng khung đã dư trên 250px so
+       với nhãn dài nhất nên không cần tách công thức. */
+    .k-ard > span { right: auto; left: 14px; width: max-content; max-width: calc(50vw - 33px); white-space: normal; }
   }
 </style>

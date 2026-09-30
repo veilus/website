@@ -131,4 +131,13 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
   @media (max-width: 640px) {
     .k-bento { grid-template-columns: 1fr; }
   }
+
+  /* Cột "auto" cuối của .k-geo không tự co: nhãn chặn bản ru ("заблокировано", từ dài nhất trong 8 ngôn ngữ) giữ
+     cột ở đúng bề rộng chữ và đẩy .k-tile tràn ngang dưới 320px (VEIL-1069). overflow-wrap cho ngắt khi hết chỗ,
+     cột co theo. Cùng cơ chế này cũng chiếm chỗ ở các bề rộng rộng hơn (kể cả 4 cột ở ≥1081px) nhưng chưa từng đẩy
+     trang tràn ngang ở đó — chỉ bật trong khoảng đã xác nhận tràn, để không đổi cách ngắt dòng nhãn ở nơi khác. */
+  @media (max-width: 320px) {
+    .k-ok,
+    .k-no { overflow-wrap: anywhere; }
+  }
 </style>
