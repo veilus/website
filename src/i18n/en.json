@@ -131,6 +131,7 @@
         "cta": "Download for {os}",
         "version": "Version {version}",
         "allVersions": "All versions",
+        "availableOn": "Available {date}",
         "noCard": "No credit card required",
         "freeProfiles": "5 free profiles forever",
         "reqTitle": "System Requirements",
@@ -318,7 +319,6 @@
                     "tool": "create_schedule"
                 }
             ],
-            "soon": "coming soon",
             "repeat": "repeat until it works",
             "connect": "Connect",
             "connectTitle": "One MCP command",

@@ -131,6 +131,7 @@
         "cta": "Unduh untuk {os}",
         "version": "Versi {version}",
         "allVersions": "Semua versi",
+        "availableOn": "Tersedia {date}",
         "noCard": "Tanpa kartu kredit",
         "freeProfiles": "5 profil gratis selamanya",
         "reqTitle": "Persyaratan Sistem",
@@ -318,7 +319,6 @@
                     "tool": "create_schedule"
                 }
             ],
-            "soon": "segera hadir",
             "repeat": "ulangi sampai berhasil",
             "connect": "Sambungkan",
             "connectTitle": "Satu perintah MCP",

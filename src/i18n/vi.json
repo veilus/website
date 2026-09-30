@@ -131,6 +131,7 @@
         "cta": "Tải cho {os}",
         "version": "Phiên bản {version}",
         "allVersions": "Tất cả phiên bản",
+        "availableOn": "Ra mắt {date}",
         "noCard": "Không cần thẻ tín dụng",
         "freeProfiles": "5 hồ sơ miễn phí mãi mãi",
         "reqTitle": "Yêu cầu hệ thống",
@@ -318,7 +319,6 @@
                     "tool": "create_schedule"
                 }
             ],
-            "soon": "sắp có",
             "repeat": "lặp đến khi ổn",
             "connect": "Kết nối",
             "connectTitle": "Một lệnh MCP",

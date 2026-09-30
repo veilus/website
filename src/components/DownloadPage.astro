@@ -6,13 +6,29 @@ import type { Lang } from '../i18n/utils';
 import { t } from '../i18n/utils';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
-import { OS_SUPPORT, INSTALLER_SIZE, ENGINE_SIZE, APP_VERSION, DOWNLOAD_URL, RELEASES_URL } from '../data/facts.js';
+import {
+  OS_SUPPORT,
+  INSTALLER_SIZE,
+  ENGINE_SIZE,
+  APP_VERSION,
+  DOWNLOAD_URL,
+  RELEASES_URL,
+  RELEASE_AT,
+  DOWNLOADS_OPEN,
+} from '../data/facts.js';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const i = t(lang);
+// Trước ngày phát hành: không có link tải nào trong HTML, mỗi thẻ hiện ngày ra mắt (facts.js, DOWNLOADS_OPEN).
+const availableOn = i.download.availableOn.replace(
+  "{date}",
+  new Intl.DateTimeFormat(lang, { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Ho_Chi_Minh" }).format(
+    new Date(RELEASE_AT),
+  ),
+);
 ---
 
 <Navbar lang={lang} />
@@ -37,7 +53,11 @@ const i = t(lang);
           </div>
           <h2 class="platform-name">Windows</h2>
           <p class="platform-version">{OS_SUPPORT.windows}</p>
-          <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
+          {DOWNLOADS_OPEN ? (
+            <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
+          ) : (
+            <span class="release-badge">{availableOn}</span>
+          )}
           <span class="platform-size">{INSTALLER_SIZE.windows}</span>
         </div>
 
@@ -51,12 +71,18 @@ const i = t(lang);
           </div>
           <h2 class="platform-name">macOS</h2>
           <p class="platform-version">{OS_SUPPORT.macos}</p>
-          <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
+          {DOWNLOADS_OPEN ? (
+            <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
+          ) : (
+            <span class="release-badge">{availableOn}</span>
+          )}
           <span class="platform-size">{INSTALLER_SIZE.macos}</span>
         </div>
       </div>
 
-      <p class="release-links">{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
+      {DOWNLOADS_OPEN && (
+        <p class="release-links">{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
+      )}
 
       <!-- Trust Badges -->
       <div class="trust-badges">
@@ -189,6 +215,19 @@ const i = t(lang);
     justify-content: center;
     text-align: center;
     white-space: normal;
+  }
+  .release-badge {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--acc-soft);
+    color: var(--ink);
+    border: 1px solid var(--rule);
   }
   .platform-size {
     font-size: 0.75rem;

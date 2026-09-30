@@ -5,9 +5,9 @@
 
 /**
  * Số trường cấu hình fingerprint mà engine Chromium của Veilus nhận; mỗi trường có mã tiêu thụ trong engine.
- * Nguồn: bảng trường engine (field-matrix) ở repo gốc. Đếm 2026-09-29: 53.
+ * Nguồn: bảng trường engine (field-matrix) ở repo gốc. Đếm 2026-09-30: 56.
  */
-export const FINGERPRINT_FIELDS = 53;
+export const FINGERPRINT_FIELDS = 56;
 
 // Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.1 (repo công khai veilus/releases, đăng 2026-09-26)
 // và engine mới nhất 153.0.8010.37. Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
@@ -41,6 +41,13 @@ export const DOWNLOAD_URL = {
   macos: `${RELEASE_BASE}/Veilus_${APP_VERSION}_aarch64.dmg`,
 };
 export const RELEASES_URL = 'https://github.com/veilus/releases/releases';
+
+/**
+ * Ngày phát hành app, giờ Việt Nam (người dùng chốt 2026-09-30). Chỉ bản build từ lúc này trở đi mới hiện link tải;
+ * bản build trước đó hiện ngày ra mắt thay cho nút. Trang tĩnh nên tới ngày phải deploy lại một lần.
+ */
+export const RELEASE_AT = '2026-10-09T00:00:00+07:00';
+export const DOWNLOADS_OPEN = Date.now() >= Date.parse(RELEASE_AT);
 
 /**
  * Cỡ ZIP engine, MB thập phân làm tròn. Bộ cài không kèm engine: người dùng tải nó trong app (Settings > Chromium).

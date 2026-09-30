@@ -131,6 +131,7 @@
         "cta": "Скачать для {os}",
         "version": "Версия {version}",
         "allVersions": "Все версии",
+        "availableOn": "Выйдет {date}",
         "noCard": "Кредитная карта не нужна",
         "freeProfiles": "5 профилей бесплатно навсегда",
         "reqTitle": "Системные требования",
@@ -318,7 +319,6 @@
                     "tool": "create_schedule"
                 }
             ],
-            "soon": "скоро",
             "repeat": "повтор до успеха",
             "connect": "Подключение",
             "connectTitle": "Одна команда MCP",

@@ -131,6 +131,7 @@
         "cta": "{os} için indir",
         "version": "Sürüm {version}",
         "allVersions": "Tüm sürümler",
+        "availableOn": "{date} tarihinde çıkıyor",
         "noCard": "Kredi kartı gerekmez",
         "freeProfiles": "5 profil süresiz ücretsiz",
         "reqTitle": "Sistem Gereksinimleri",
@@ -318,7 +319,6 @@
                     "tool": "create_schedule"
                 }
             ],
-            "soon": "yakında",
             "repeat": "çalışana kadar tekrar",
             "connect": "Bağlan",
             "connectTitle": "Tek bir MCP komutu",

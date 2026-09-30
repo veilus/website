@@ -131,6 +131,7 @@
         "cta": "下载 {os} 版",
         "version": "版本 {version}",
         "allVersions": "所有版本",
+        "availableOn": "{date} 上线",
         "noCard": "无需信用卡",
         "freeProfiles": "5 个配置文件永久免费",
         "reqTitle": "系统要求",
@@ -318,7 +319,6 @@
                     "tool": "create_schedule"
                 }
             ],
-            "soon": "即将推出",
             "repeat": "循环直到通过",
             "connect": "连接",
             "connectTitle": "一条 MCP 命令",

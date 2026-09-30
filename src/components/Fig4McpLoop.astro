@@ -51,7 +51,7 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
       <div class="k-ar k-ar-l k-a5 k-draw-l" style={arrow(4)}></div>
       <div class="k-node k-n6 k-rise" style={node(5)}>
         <div class="k-nh"><span class="ms" data-icon="event_repeat" aria-hidden="true"></span><em>06</em></div>
-        <b>{f.steps[5].title}</b><span class="k-tool k-tool-soon">{f.steps[5].tool} · {f.soon}</span>
+        <b>{f.steps[5].title}</b><span class="k-tool">{f.steps[5].tool}</span>
       </div>
     </div>
 
@@ -87,7 +87,6 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
   .k-nh em { font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--acc); }
   .k-node b { font-size: 15.5px; font-weight: 600; }
   .k-tool { align-self: flex-start; padding: 3px 7px; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: 11.5px; }
-  .k-tool-soon { border: 1.5px dashed var(--acc); color: var(--acc); }
   .k-node-ink { background: var(--ink); color: var(--paper); }
   .k-node-ink .k-tool { border-color: var(--paper); }
   /* Số bước trên ô mực: --acc chỉ đạt 2,99:1 trên mực; cùng hue, sáng hơn thì 5,1:1 (WCAG AA ≥ 4,5 cho chữ 12px). */
