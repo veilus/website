@@ -227,17 +227,17 @@
         },
         "fig2": {
             "fig": "bir site ne görür",
-            "title": "Bir cihaz. Web sitesi dört farklı kişi görüyor.",
+            "title": "Bir cihaz. Tamamen ayrı dört tarayıcı.",
             "plain": "Normal tarayıcı",
             "machine": "1 cihaz",
             "machineVeilus": "1 cihaz · Veilus",
             "account": "Hesap {n}",
             "shared": "aynı parmak izi · aynı IP",
             "site": "Web sitesi",
-            "badTitle": "4 hesap = 1 kişi",
-            "badSub": "birini yasakla, dördünü kaybet",
-            "goodTitle": "4 hesap = 4 kişi",
-            "goodSub": "her hesap kendi başına"
+            "badTitle": "4 hesap, 1 ortak kimlik",
+            "badSub": "tek parmak izi hepsini birbirine bağlar",
+            "goodTitle": "4 hesap, 4 ayrı profil",
+            "goodSub": "her profil tamamen yalıtılmış"
         },
         "profileName": "PROFİL 07",
         "fig3": {

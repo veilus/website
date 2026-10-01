@@ -227,17 +227,17 @@
         },
         "fig2": {
             "fig": "网站看到了什么",
-            "title": "同一台设备，网站却看到四个不同的人。",
+            "title": "同一台设备，四个完全独立的浏览器。",
             "plain": "普通浏览器",
             "machine": "1 台设备",
             "machineVeilus": "1 台设备 · Veilus",
             "account": "账号{n}",
             "shared": "同一指纹 · 同一 IP",
             "site": "网站",
-            "badTitle": "4 个账号 = 1 个人",
-            "badSub": "封一个，四个全丢了",
-            "goodTitle": "4 个账号 = 4 个人",
-            "goodSub": "每个账号各自独立"
+            "badTitle": "4 个账号，1 个共用身份",
+            "badSub": "同一指纹把它们全部关联",
+            "goodTitle": "4 个账号，4 个独立配置文件",
+            "goodSub": "每个配置文件完全隔离"
         },
         "profileName": "配置文件 07",
         "fig3": {

@@ -227,17 +227,17 @@
         },
         "fig2": {
             "fig": "yang dilihat situs web",
-            "title": "Satu perangkat. Situs web melihat empat orang berbeda.",
+            "title": "Satu perangkat. Empat browser yang benar-benar terpisah.",
             "plain": "Browser biasa",
             "machine": "1 perangkat",
             "machineVeilus": "1 perangkat · Veilus",
             "account": "Akun {n}",
             "shared": "sidik jari sama · IP sama",
             "site": "Situs web",
-            "badTitle": "4 akun = 1 orang",
-            "badSub": "blokir satu, hilang keempatnya",
-            "goodTitle": "4 akun = 4 orang",
-            "goodSub": "tiap akun berdiri sendiri"
+            "badTitle": "4 akun, 1 identitas bersama",
+            "badSub": "satu sidik jari menghubungkan semuanya",
+            "goodTitle": "4 akun, 4 profil terpisah",
+            "goodSub": "setiap profil terisolasi sepenuhnya"
         },
         "profileName": "PROFIL 07",
         "fig3": {

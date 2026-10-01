@@ -227,17 +227,17 @@
         },
         "fig2": {
             "fig": "trang web thấy gì",
-            "title": "Cùng một máy. Trang web thấy bốn người khác nhau.",
+            "title": "Cùng một máy. Bốn trình duyệt tách biệt hoàn toàn.",
             "plain": "Trình duyệt thường",
             "machine": "1 máy",
             "machineVeilus": "1 máy · Veilus",
             "account": "TK {n}",
             "shared": "cùng fingerprint · cùng IP",
             "site": "Trang web",
-            "badTitle": "4 tài khoản = 1 người",
-            "badSub": "khoá một, mất cả bốn",
-            "goodTitle": "4 tài khoản = 4 người",
-            "goodSub": "mỗi tài khoản đứng riêng"
+            "badTitle": "4 tài khoản, 1 danh tính chung",
+            "badSub": "một fingerprint nối tất cả lại",
+            "goodTitle": "4 tài khoản, 4 hồ sơ riêng",
+            "goodSub": "mỗi hồ sơ tách biệt hoàn toàn"
         },
         "profileName": "HỒ SƠ 07",
         "fig3": {

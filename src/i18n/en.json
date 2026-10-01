@@ -227,17 +227,17 @@
         },
         "fig2": {
             "fig": "what a website sees",
-            "title": "One machine. The website sees four different people.",
+            "title": "One machine. Four fully separate browsers.",
             "plain": "Regular browser",
             "machine": "1 machine",
             "machineVeilus": "1 machine · Veilus",
             "account": "Acct {n}",
             "shared": "same fingerprint · same IP",
             "site": "Website",
-            "badTitle": "4 accounts = 1 person",
-            "badSub": "ban one, lose all four",
-            "goodTitle": "4 accounts = 4 people",
-            "goodSub": "each account stands alone"
+            "badTitle": "4 accounts, 1 shared identity",
+            "badSub": "one fingerprint links them all",
+            "goodTitle": "4 accounts, 4 separate profiles",
+            "goodSub": "each profile is fully isolated"
         },
         "profileName": "PROFILE 07",
         "fig3": {

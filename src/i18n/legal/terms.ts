@@ -12,16 +12,17 @@ export const termsTranslations: Record<string, {
         content: `
 <h2>1. Agreement to Terms</h2>
 <p>By downloading, installing, or using Veilus ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the Service.</p>
-<p>Veilus is operated by Veilus ("we", "our", "us"). These Terms constitute a legally binding agreement between you and Veilus.</p>
+<p>Veilus is operated by an individual business based in Vietnam ("we", "our", "us"). These Terms constitute a legally binding agreement between you and us.</p>
 
 <h2>2. Description of Service</h2>
 <p>Veilus is an anti-detect browser application with integrated automation capabilities. The Service includes:</p>
 <ul>
   <li>Desktop application (macOS and Windows)</li>
   <li>Browser profile management with fingerprint customization</li>
-  <li>Automation tools (Veilus Flow, Visual Canvas)</li>
+  <li>Automation tools (Veilus Flow scripts)</li>
   <li>Profile synchronization (Veilus Sync)</li>
   <li>Script scheduling and batch execution</li>
+  <li>A local REST API and MCP server for controlling your own profiles from scripts and AI agents on your computer</li>
   <li>Cloud API for account and license management</li>
 </ul>
 
@@ -62,11 +63,14 @@ export const termsTranslations: Record<string, {
   <li>Access or scrape systems without authorization</li>
   <li>Distribute malware, viruses, or harmful code</li>
   <li>Harass, abuse, or threaten other individuals</li>
-  <li>Violate the terms of service of third-party platforms in a way that is illegal</li>
+  <li>Post fake reviews, fake engagement, or spam</li>
+  <li>Access or take over accounts that do not belong to you</li>
+  <li>Evade a suspension or ban that a platform imposed on you for fraud or abuse</li>
   <li>Circumvent technological protection measures for illegal purposes</li>
   <li>Generate, distribute, or facilitate child sexual abuse material (CSAM)</li>
   <li>Facilitate terrorism, human trafficking, or other serious crimes</li>
 </ul>
+<p>You are solely responsible for complying with the terms of service of every website and platform you access through the Service.</p>
 <p>We reserve the right to suspend or terminate accounts that violate this policy without prior notice.</p>
 
 <h2>6. Intellectual Property</h2>
@@ -114,7 +118,7 @@ export const termsTranslations: Record<string, {
 <p>Material changes will be notified via email at least 30 days before taking effect.</p>
 
 <h2>13. Governing Law</h2>
-<p>These Terms are governed by the laws of the jurisdiction in which Veilus is incorporated.</p>
+<p>These Terms are governed by the laws of Vietnam.</p>
 
 <h2>14. Contact</h2>
 <ul>
@@ -136,9 +140,10 @@ export const termsTranslations: Record<string, {
 <ul>
   <li>Ứng dụng desktop (macOS và Windows)</li>
   <li>Quản lý hồ sơ trình duyệt với tùy chỉnh fingerprint</li>
-  <li>Công cụ automation (Veilus Flow, Visual Canvas)</li>
+  <li>Công cụ automation (script Veilus Flow)</li>
   <li>Đồng bộ hồ sơ (Veilus Sync)</li>
   <li>Lập lịch script và thực thi hàng loạt</li>
+  <li>REST API và máy chủ MCP chạy trên máy bạn, để điều khiển hồ sơ của chính bạn từ script và AI agent</li>
   <li>Cloud API cho quản lý tài khoản và license</li>
 </ul>
 
@@ -179,10 +184,13 @@ export const termsTranslations: Record<string, {
   <li>Truy cập hoặc thu thập dữ liệu hệ thống trái phép</li>
   <li>Phát tán mã độc</li>
   <li>Quấy rối, đe dọa người khác</li>
-  <li>Vi phạm điều khoản nền tảng thứ ba một cách bất hợp pháp</li>
+  <li>Đăng đánh giá giả, tương tác giả hoặc spam</li>
+  <li>Truy cập hoặc chiếm đoạt tài khoản không thuộc về bạn</li>
+  <li>Lách lệnh đình chỉ hoặc khoá mà một nền tảng đã áp cho bạn vì gian lận hoặc lạm dụng</li>
   <li>Tạo hoặc phát tán nội dung CSAM</li>
   <li>Hỗ trợ khủng bố, buôn người hoặc tội phạm nghiêm trọng</li>
 </ul>
+<p>Bạn tự chịu toàn bộ trách nhiệm tuân thủ điều khoản dịch vụ của mọi trang web và nền tảng bạn truy cập qua Dịch vụ.</p>
 
 <h2>6. Sở hữu trí tuệ</h2>
 <ul>
@@ -222,7 +230,7 @@ export const termsTranslations: Record<string, {
 <p>Thay đổi quan trọng sẽ thông báo qua email trước 30 ngày.</p>
 
 <h2>13. Luật áp dụng</h2>
-<p>Các Điều khoản này tuân theo luật pháp nơi Veilus đăng ký hoạt động.</p>
+<p>Các Điều khoản này tuân theo pháp luật Việt Nam.</p>
 
 <h2>14. Liên hệ</h2>
 <ul>
@@ -253,7 +261,8 @@ export const termsTranslations: Record<string, {
   <li>月付密钥未续费时，应用在已付费周期结束后恢复为Free计划，已创建的配置文件会保留。</li>
 </ul>
 <h2>5. 可接受使用</h2>
-<p>禁止：违法、欺诈、未授权访问、恶意软件、骚扰、CSAM、恐怖主义等。</p>
+<p>禁止：违法、欺诈、未授权访问、恶意软件、骚扰、虚假评论/虚假互动/垃圾信息、访问或盗用不属于您的账号、规避平台因欺诈或滥用对您施加的封禁、CSAM、恐怖主义等。</p>
+<p>您须自行负责遵守通过本服务访问的每个网站和平台的服务条款。本条款受越南法律管辖。</p>
 <h2>6-7. 知识产权和数据所有权</h2>
 <p>您的脚本和工作流归您所有。配置文件数据存储在本地。</p>
 <h2>8-9. 免责声明和责任限制</h2>
@@ -284,7 +293,8 @@ export const termsTranslations: Record<string, {
   <li>Если помесячный ключ не продлён, по окончании оплаченного периода приложение возвращается к плану Free; созданные профили сохраняются.</li>
 </ul>
 <h2>5. Допустимое использование</h2>
-<p>Запрещено: нарушение законов, мошенничество, вредоносное ПО, CSAM, терроризм.</p>
+<p>Запрещено: нарушение законов, мошенничество, вредоносное ПО, фальшивые отзывы и накрутка, спам, доступ к чужим аккаунтам или их захват, обход блокировки, наложенной платформой за мошенничество или злоупотребления, CSAM, терроризм.</p>
+<p>Вы несёте полную ответственность за соблюдение условий использования каждого сайта и платформы, к которым обращаетесь через Сервис. Условия регулируются законодательством Вьетнама.</p>
 <h2>6-14. Прочее</h2>
 <p>Ваши скрипты — ваша собственность. Данные хранятся локально. Ответственность ограничена суммой оплаты за 12 месяцев. Изменения — уведомление за 30 дней. Контакт: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -311,7 +321,8 @@ export const termsTranslations: Record<string, {
   <li>Si una clave mensual no se renueva, la aplicación vuelve al plan Free al final del periodo pagado; los perfiles creados se conservan.</li>
 </ul>
 <h2>5. Uso aceptable</h2>
-<p>Prohibido: fraude, malware, acoso, CSAM, terrorismo.</p>
+<p>Prohibido: fraude, malware, acoso, reseñas o interacciones falsas, spam, acceder a cuentas ajenas o apropiarse de ellas, eludir una suspensión que una plataforma te impuso por fraude o abuso, CSAM, terrorismo.</p>
+<p>Eres el único responsable de cumplir los términos de servicio de cada sitio web y plataforma a la que accedes mediante el Servicio. Estos Términos se rigen por las leyes de Vietnam.</p>
 <h2>6-14. Otros</h2>
 <p>Sus scripts son su propiedad. Datos locales. Responsabilidad limitada a pagos de 12 meses. Cambios con 30 días de aviso. Contacto: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -336,7 +347,8 @@ export const termsTranslations: Record<string, {
   <li>Se uma chave mensal não for renovada, o aplicativo volta ao plano Free ao fim do período pago; os perfis criados são mantidos.</li>
 </ul>
 <h2>5. Uso aceitável</h2>
-<p>Proibido: fraude, malware, assédio, CSAM, terrorismo.</p>
+<p>Proibido: fraude, malware, assédio, avaliações ou engajamento falsos, spam, acessar ou tomar contas que não são suas, contornar uma suspensão que uma plataforma lhe aplicou por fraude ou abuso, CSAM, terrorismo.</p>
+<p>Você é o único responsável por cumprir os termos de serviço de cada site e plataforma que acessa pelo Serviço. Estes Termos são regidos pelas leis do Vietnã.</p>
 <h2>6-14. Outros</h2>
 <p>Seus scripts são sua propriedade. Dados locais. Alterações com 30 dias de aviso. Contato: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -361,7 +373,8 @@ export const termsTranslations: Record<string, {
   <li>Jika kunci bulanan tidak diperpanjang, aplikasi kembali ke paket Free di akhir periode yang dibayar; profil yang telah dibuat tetap tersimpan.</li>
 </ul>
 <h2>5. Penggunaan</h2>
-<p>Dilarang: penipuan, malware, pelecehan, CSAM, terorisme.</p>
+<p>Dilarang: penipuan, malware, pelecehan, ulasan atau interaksi palsu, spam, mengakses atau mengambil alih akun yang bukan milik Anda, menghindari penangguhan yang dijatuhkan platform kepada Anda karena penipuan atau penyalahgunaan, CSAM, terorisme.</p>
+<p>Anda sepenuhnya bertanggung jawab mematuhi ketentuan layanan setiap situs web dan platform yang Anda akses melalui Layanan. Ketentuan ini diatur oleh hukum Vietnam.</p>
 <h2>6-14. Lainnya</h2>
 <p>Skrip Anda milik Anda. Data lokal. Perubahan dengan pemberitahuan 30 hari. Kontak: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -386,7 +399,8 @@ export const termsTranslations: Record<string, {
   <li>Aylık anahtar yenilenmezse uygulama ödenen dönemin sonunda Free plana döner; oluşturduğunuz profiller korunur.</li>
 </ul>
 <h2>5. Kabul Edilebilir Kullanım</h2>
-<p>Yasak: dolandırıcılık, kötü amaçlı yazılım, taciz, CSAM, terörizm.</p>
+<p>Yasak: dolandırıcılık, kötü amaçlı yazılım, taciz, sahte yorum veya etkileşim, spam, size ait olmayan hesaplara erişmek veya bunları ele geçirmek, bir platformun dolandırıcılık ya da kötüye kullanım nedeniyle size uyguladığı askıya almayı atlatmak, CSAM, terörizm.</p>
+<p>Hizmet üzerinden eriştiğiniz her web sitesi ve platformun hizmet şartlarına uymaktan yalnızca siz sorumlusunuz. Bu Şartlar Vietnam yasalarına tabidir.</p>
 <h2>6-14. Diğer</h2>
 <p>Betikleriniz size aittir. Veriler yerel olarak saklanır. 30 gün önceden bildirimle değişiklik. İletişim: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     }

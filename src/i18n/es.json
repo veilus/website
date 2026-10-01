@@ -227,17 +227,17 @@
         },
         "fig2": {
             "fig": "lo que ve un sitio web",
-            "title": "Un dispositivo. El sitio ve a cuatro personas diferentes.",
+            "title": "Un dispositivo. Cuatro navegadores totalmente separados.",
             "plain": "Navegador normal",
             "machine": "1 dispositivo",
             "machineVeilus": "1 dispositivo · Veilus",
             "account": "Cta {n}",
             "shared": "misma huella · misma IP",
             "site": "Sitio web",
-            "badTitle": "4 cuentas = 1 persona",
-            "badSub": "una baneada, las cuatro perdidas",
-            "goodTitle": "4 cuentas = 4 personas",
-            "goodSub": "cada cuenta por su cuenta"
+            "badTitle": "4 cuentas, 1 identidad compartida",
+            "badSub": "una huella las vincula a todas",
+            "goodTitle": "4 cuentas, 4 perfiles separados",
+            "goodSub": "cada perfil está totalmente aislado"
         },
         "profileName": "PERFIL 07",
         "fig3": {
