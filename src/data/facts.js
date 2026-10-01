@@ -5,9 +5,9 @@
 
 /**
  * Số trường cấu hình fingerprint mà engine Chromium của Veilus nhận; mỗi trường có mã tiêu thụ trong engine.
- * Nguồn: bảng trường engine (field-matrix) ở repo gốc. Đếm 2026-10-01: 57.
+ * Nguồn: bảng trường engine (field-matrix) ở repo gốc. Đếm 2026-10-01: 58.
  */
-export const FINGERPRINT_FIELDS = 57;
+export const FINGERPRINT_FIELDS = 58;
 
 // Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.1 (repo công khai veilus/releases, đăng 2026-09-26)
 // và engine mới nhất 153.0.8010.37. Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
