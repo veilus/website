@@ -9,6 +9,21 @@
  */
 export const FINGERPRINT_FIELDS = 58;
 
+/**
+ * Số trình duyệt app mở cùng lúc, mọi đường mở (tay, lịch, API, trợ lý AI) dùng chung một giới hạn — VEIL-1128.
+ * Nguồn: app/src-tauri/src/state.rs MAX_CONCURRENT_BROWSERS, quyết định 0004. Đọc 2026-10-01 tại app 62bfb3e6.
+ * KHÔNG cổng nào canh số này: đổi hằng trong app thì sửa ở đây cùng lượt.
+ */
+export const MAX_BROWSERS = 16;
+
+/**
+ * Ngưỡng tải máy mà lượt chạy (lô, lịch, API) xét trước mỗi lần mở trình duyệt — VEIL-1128. Mở tay không xét.
+ * Nguồn: app/crates/veilus-core/src/system/resources.rs (mức High: cpu > 75 hoặc ram > 80; Critical: > 90) và
+ * executor/concurrent.rs (High: chờ 5 giây giữa hai lần mở; Critical: kiểm lại mỗi 3 giây, quá 60 giây thì mở tiếp).
+ * Đọc 2026-10-01 tại app 62bfb3e6. KHÔNG cổng nào canh các số này.
+ */
+export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheckS: 3, holdMaxS: 60 };
+
 // Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.1 (repo công khai veilus/releases, đăng 2026-09-26)
 // và engine mới nhất 153.0.8010.37. Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
 // src/scripts/claims.js — claims.test.js đỏ khi dòng đó không còn nằm nguyên văn trong file này.

@@ -290,6 +290,46 @@
                 }
             ]
         },
+        "engine": {
+            "fig": "engine · mặt cắt",
+            "title": "Fingerprint được đặt ngay trong mã C++ của Chromium, không tiêm vào trang.",
+            "sub": "Trang web kiểm fingerprint bằng cách hỏi trình duyệt. Với Veilus, câu trả lời đến từ chính mã C++ của Chromium — không có lớp script nào chen giữa để trang tìm ra.",
+            "page": "trang web",
+            "js": {
+                "title": "Tiêm script",
+                "note": "một lớp script chồng lên trang",
+                "layer": "script tiêm vào",
+                "tellsTitle": "chỗ trang có thể soi",
+                "tells": [
+                    {
+                        "k": "fn.toString()",
+                        "v": "không còn là [native code]"
+                    },
+                    {
+                        "k": "getOwnPropertyDescriptor()",
+                        "v": "getter không phải của Chrome"
+                    },
+                    {
+                        "k": "new Error().stack",
+                        "v": "thừa một khung của script"
+                    },
+                    {
+                        "k": "performance.now()",
+                        "v": "mỗi lần gọi mất bao lâu"
+                    }
+                ],
+                "real": "giá trị thật",
+                "result": "Trang đọc được 12 — qua một lớp mà nó soi được."
+            },
+            "v": {
+                "note": "giá trị sửa trong mã nguồn C++ của Chromium",
+                "none": "không có lớp script nào ở giữa",
+                "set": "đặt ở đây",
+                "result": "Trang đọc được 12 — thẳng từ Chromium."
+            },
+            "fields": "trường fingerprint, trường nào cũng do mã C++ trong engine đọc:",
+            "surfaces": "Canvas · WebGL · WebGPU · Âm thanh · Font · Màn hình · Client Hints · Múi giờ · WebRTC · Thiết bị media · Giọng đọc · Vị trí · Pin · Dấu hiệu tự động hoá"
+        },
         "fig4": {
             "fig": "vòng làm việc với trợ lý AI",
             "title": "Bạn ra lệnh. AI viết, thử, sửa. Bạn duyệt một lần.",
@@ -348,6 +388,31 @@
             "otherMachine": "máy khác",
             "repo": "kho của bạn",
             "syncNote": "Hai chiều giữa các máy của bạn · token truy cập được mã hoá"
+        },
+        "res": {
+            "fig": "tài nguyên · nhiều hồ sơ, một máy",
+            "title": "Xếp cả lô vào hàng đợi. Veilus mở hồ sơ theo nhịp máy chịu được.",
+            "sub": "Một giới hạn chung cho mọi trình duyệt app mở — mở tay, theo lịch, qua API hay trợ lý AI: tối đa {n} cái cùng lúc. Lượt chạy chờ slot trống thay vì báo lỗi, và xem sức máy trước mỗi lần mở.",
+            "queue": "hàng đợi",
+            "waiting": "đang chờ",
+            "slots": "mở cùng lúc",
+            "cellsLabel": "{n} trình duyệt đang mở — không còn slot trống",
+            "ways": [
+                "mở tay",
+                "theo lịch",
+                "API",
+                "trợ lý AI"
+            ],
+            "machine": "máy này",
+            "cpu": "CPU",
+            "ram": "RAM",
+            "slow": "Trên {cpu}% CPU hoặc {ram}% RAM: giãn {gap} giây giữa hai lần mở.",
+            "hold": "Trên {hold}% CPU hoặc RAM: lần mở mới phải chờ, kiểm lại mỗi {recheck} giây, tối đa {max} giây.",
+            "notes": [
+                "Đủ {n} cái mà mở tay thêm? Veilus báo cho bạn thay vì mở thêm.",
+                "Mỗi lượt chạy tự đặt số trình duyệt song song, dưới cùng giới hạn đó.",
+                "Trợ lý AI hỏi được còn bao nhiêu slot trống trước khi bắt đầu chạy."
+            ]
         },
         "bento": {
             "fig": "tính năng",

@@ -1,0 +1,125 @@
+---
+/**
+ * Hình engine — mặt cắt: giá trị fingerprint nằm ở tầng nào (VEIL-1128, spec trang chủ §4). Đặt sau Hình 3.
+ * Trái: cách tiêm script vào trang. Không nêu tên sản phẩm nào — phần so sánh với sản phẩm khác đã gỡ (VEIL-1051).
+ * Phải: Veilus đặt giá trị ngay trong mã C++ của Chromium.
+ * Nguồn: patch ở chromium/patches chỉ chạm file .cc .h .mm .idl .gn, không file .js nào (đếm 2026-10-01 tại chromium
+ * 086604d); app không tiêm script đổi fingerprint vào trang (quyết định 0005). Số trường đọc từ data/facts.js.
+ * Không đưa chi tiết patch lên đây: repo này công khai (CLAUDE.md của website).
+ */
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+import { FINGERPRINT_FIELDS } from '../data/facts.js';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const f = t(lang).home.engine;
+const delay = (s: number) => `--d:${s.toFixed(2)}s`;
+const ASK = 'navigator.hardwareConcurrency';
+---
+
+<section class="k-wrap k-sec" id="engine" data-reveal>
+  <div class="k-fig">{f.fig}</div>
+  <h2 class="k-h2">{f.title}</h2>
+  <p class="k-sub">{f.sub}</p>
+  <div class="k-eng">
+    <figure class="k-cut">
+      <figcaption class="k-cut-h"><b>{f.js.title}</b><span>{f.js.note}</span></figcaption>
+      <div class="k-lyr"><span class="k-ln">{f.page}</span><code>{ASK}</code></div>
+      <div class="k-wire k-draw-down" style={delay(0.25)}><i class="k-pulse" aria-hidden="true"></i></div>
+      <div class="k-lyr k-lyr-inj k-rise" style={delay(0.45)}>
+        <span class="k-ln">{f.js.layer}</span><code>get() → 12</code>
+        <div class="k-tells">
+          <span class="k-tells-h">{f.js.tellsTitle}</span>
+          <ol>
+            {f.js.tells.map((x, n) => (
+              <li class="k-pop" style={delay(0.8 + n * 0.12)}><code>{x.k}</code><span>{x.v}</span></li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      <div class="k-wire k-wire-dim"></div>
+      <div class="k-lyr k-lyr-cpp k-lyr-dim"><span class="k-ln">Chromium · C++</span><code>{f.js.real}</code></div>
+      <p class="k-out">{f.js.result}</p>
+    </figure>
+
+    <figure class="k-cut k-cut-v">
+      <figcaption class="k-cut-h"><b>Veilus</b><span>{f.v.note}</span></figcaption>
+      <div class="k-lyr"><span class="k-ln">{f.page}</span><code>{ASK}</code></div>
+      <div class="k-wire k-wire-long k-draw-down" style={delay(0.25)}>
+        <i class="k-pulse" aria-hidden="true" style="--pd:0.4s"></i>
+        <span class="k-gap">{f.v.none}</span>
+      </div>
+      <div class="k-lyr k-lyr-cpp k-lyr-on k-pop" style={delay(0.75)}>
+        <span class="k-ln">Chromium · C++</span><code>12</code><em>{f.v.set}</em>
+      </div>
+      <p class="k-out">{f.v.result}</p>
+    </figure>
+  </div>
+  <p class="k-eng-foot"><b>{FINGERPRINT_FIELDS}</b> {f.fields} <span>{f.surfaces}</span></p>
+</section>
+
+<style>
+  /* .k-sub chung bỏ giới hạn ngang; đoạn ở đây dài hai dòng nên giữ số đo đọc được. */
+  .k-sub { max-width: 64ch; }
+  .k-eng { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  /* Hai mặt cắt cùng chiều cao (grid kéo giãn): khoảng giữa co giãn để tầng C++ của hai bên nằm cùng một hàng. */
+  .k-cut { display: flex; flex-direction: column; margin: 0; padding: 20px 22px 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); }
+  .k-cut-v { box-shadow: 10px 10px 0 var(--grid2); }
+  .k-cut-h { display: flex; flex-direction: column; gap: 2px; margin-bottom: 18px; }
+  .k-cut-h b { font-size: 16px; font-weight: 600; }
+  .k-cut-h span { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+
+  .k-lyr { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; padding: 10px 12px; border: 1.5px solid var(--ink); background: var(--paper); }
+  .k-ln { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .k-lyr code { font-family: var(--font-mono); font-size: 13px; overflow-wrap: anywhere; }
+  /* Lớp script tiêm vào: viền đứt, sọc chéo nhạt — thứ trang soi được. */
+  .k-lyr-inj { flex-direction: column; align-items: stretch; border-style: dashed; border-color: var(--acc); background: repeating-linear-gradient(135deg, var(--acc-soft) 0 1px, transparent 1px 9px), var(--paper); }
+  .k-lyr-inj > code { color: var(--acc); font-weight: 600; }
+  .k-tells { margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--rule); }
+  .k-tells-h { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+  .k-tells ol { display: grid; gap: 5px; margin: 6px 0 0; padding: 0; list-style: none; counter-reset: tell; }
+  .k-tells li { display: grid; grid-template-columns: 18px max-content minmax(0, 1fr); align-items: baseline; gap: 8px 12px; counter-increment: tell; font-size: 12.5px; }
+  .k-tells li::before { content: counter(tell); display: grid; place-items: center; width: 17px; height: 17px; border-radius: 50%; background: var(--acc); color: var(--paper); font-family: var(--font-mono); font-size: 10px; font-weight: 600; }
+  .k-tells li code { font-size: 11.5px; color: var(--ink); }
+  .k-tells li span { color: var(--muted); }
+  .k-lyr-cpp { border-width: 1.5px; }
+  /* Tầng C++ bên tiêm script: giá trị thật bị lớp trên che — chữ nhạt nhưng vẫn ≥ 4,5:1 trên giấy. */
+  .k-lyr-dim { border-color: rgba(27, 34, 48, 0.5); color: rgba(27, 34, 48, 0.72); }
+  .k-lyr-on { border-color: var(--ink); outline: 1.5px solid var(--acc); outline-offset: 3px; }
+  .k-lyr-on code { font-size: 15px; font-weight: 600; color: var(--acc); }
+  .k-lyr-on em { margin-left: auto; font-style: normal; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--acc); }
+
+  /* Dây nối giữa các tầng: đường dọc có mũi tên, chấm chạy xuống khi hình trên màn hình. */
+  .k-wire { position: relative; align-self: center; width: 0; height: 30px; margin: 2px 0; border-left: 1.5px solid var(--ink); }
+  .k-wire::after { content: ''; position: absolute; left: -5.5px; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); }
+  .k-wire-dim { border-left-style: dashed; border-left-color: rgba(27, 34, 48, 0.5); }
+  .k-wire-dim::after { border-top-color: rgba(27, 34, 48, 0.5); }
+  .k-wire-long { flex: 1; min-height: 120px; }
+  .k-wire .k-pulse { left: -4.25px; right: auto; top: 0; bottom: 0; width: 7px; height: auto; }
+  /* Nhãn cắt ngang dây như nhãn kích thước trên bản vẽ: canh giữa đường, nền giấy che đường phía sau. */
+  .k-gap { position: absolute; top: 50%; left: 0; z-index: 1; transform: translate(-50%, -50%); width: max-content; max-width: 14em; padding: 4px 8px; border: 1px dashed var(--rule); background: var(--paper); font-family: var(--font-mono); font-size: 11.5px; line-height: 1.4; text-align: center; color: var(--muted); }
+
+  .k-out { margin: 14px 0 0; font-size: 14.5px; font-weight: 600; }
+  .k-cut-v .k-out { color: var(--ink); }
+  .k-eng-foot { max-width: none; margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 12px; line-height: 1.7; color: var(--muted); }
+  .k-eng-foot b { font-family: var(--font-sans); font-size: 20px; font-weight: 700; color: var(--acc); }
+  .k-eng-foot span { display: block; color: var(--ink); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .k-wire .k-pulse { animation-name: k-run-y; }
+  }
+
+  @media (max-width: 1080px) {
+    .k-eng { grid-template-columns: 1fr; }
+    .k-wire-long { min-height: 84px; }
+  }
+
+  @media (max-width: 640px) {
+    .k-cut { padding: 16px 14px 14px; }
+    .k-tells li { grid-template-columns: 18px minmax(0, 1fr); }
+    .k-tells li span { grid-column: 2; }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+/**
+ * Hình tài nguyên — nhiều hồ sơ, một máy (VEIL-1128, spec trang chủ §4). Đặt trước Bảng 1.
+ * Hàng đợi → một giới hạn chung cho mọi đường mở → máy, kèm hai ngưỡng tải. Mọi con số đọc từ data/facts.js
+ * (nguồn và ngày ghi ở đó), chữ dùng chỗ giữ {…} chứ không viết số.
+ * Không nói: pool tái dùng, làm nóng hay tự đóng trình duyệt rảnh; giới hạn theo RAM hay theo gói; "máy không bao giờ
+ * quá tải" — mở tay không xét tải, và lượt chạy giữ tối đa 60 giây rồi mở tiếp (đọc mã 2026-10-01).
+ */
+import type { Lang } from '../i18n/utils';
+import { t, defaultLang } from '../i18n/utils';
+import { MAX_BROWSERS, LOAD_RULES } from '../data/facts.js';
+
+interface Props {
+  lang?: Lang;
+}
+const lang = Astro.props.lang || defaultLang;
+const f = t(lang).home.res;
+const delay = (s: number) => `--d:${s.toFixed(2)}s`;
+const fill = (s: string) =>
+  s
+    .replace('{n}', String(MAX_BROWSERS))
+    .replace('{cpu}', String(LOAD_RULES.cpuSlow))
+    .replace('{ram}', String(LOAD_RULES.ramSlow))
+    .replace('{hold}', String(LOAD_RULES.hold))
+    .replace('{gap}', String(LOAD_RULES.gapS))
+    .replace('{recheck}', String(LOAD_RULES.recheckS))
+    .replace('{max}', String(LOAD_RULES.holdMaxS));
+const QUEUED = [MAX_BROWSERS + 1, MAX_BROWSERS + 2, MAX_BROWSERS + 3];
+// Mức tải minh hoạ (không phải số đo): CPU vừa qua ngưỡng giãn nhịp, RAM dưới ngưỡng.
+const GAUGES = [
+  { label: f.cpu, level: 78, slow: LOAD_RULES.cpuSlow },
+  { label: f.ram, level: 64, slow: LOAD_RULES.ramSlow },
+];
+---
+
+<section class="k-wrap k-sec" id="resources" data-reveal>
+  <div class="k-fig">{f.fig}</div>
+  <h2 class="k-h2">{f.title}</h2>
+  <p class="k-sub">{fill(f.sub)}</p>
+  <div class="k-rs">
+    <div class="k-rcol k-rq">
+      <div class="k-rh">{f.queue}</div>
+      <div class="k-qs">
+        {QUEUED.map((n, i) => (
+          <div class="k-win k-rise" style={delay(0.15 + i * 0.1)}>
+            <div class="k-wbar"><i></i><i></i><i></i></div>
+            <div class="k-wbd"><b>P{n}</b><em>{f.waiting}</em></div>
+          </div>
+        ))}
+        <span class="k-qmore" aria-hidden="true">…</span>
+      </div>
+    </div>
+
+    <div class="k-ar k-rar k-draw" style={delay(0.45)}><i class="k-pulse" aria-hidden="true"></i></div>
+
+    <div class="k-rcol k-rslots">
+      <div class="k-rh"><b>{MAX_BROWSERS}</b>{f.slots}</div>
+      <div class="k-cells" role="img" aria-label={fill(f.cellsLabel)}>
+        {Array.from({ length: MAX_BROWSERS }, (_, i) => (
+          <span class="k-cell k-pop" style={delay(0.55 + i * 0.035)}></span>
+        ))}
+      </div>
+      <div class="k-ways">
+        <span class="k-chip"><span class="ms" data-icon="person" aria-hidden="true"></span>{f.ways[0]}</span>
+        <span class="k-chip"><span class="ms" data-icon="schedule" aria-hidden="true"></span>{f.ways[1]}</span>
+        <span class="k-chip"><span class="ms" data-icon="api" aria-hidden="true"></span>{f.ways[2]}</span>
+        <span class="k-chip"><span class="ms" data-icon="smart_toy" aria-hidden="true"></span>{f.ways[3]}</span>
+      </div>
+    </div>
+
+    <div class="k-ar k-rar k-draw" style={delay(0.95)}></div>
+
+    <div class="k-rcol k-rm">
+      <div class="k-rh">{f.machine}</div>
+      {GAUGES.map((g) => (
+        <div class="k-gauge">
+          <span class="k-gl">{g.label}</span>
+          <div class="k-gbar">
+            <i class="k-gfill k-draw" style={`width:${g.level}%;${delay(1.1)}`}></i>
+            <i class="k-tick" style={`left:${g.slow}%`}><span>{g.slow}%</span></i>
+            <i class="k-tick k-tick-hold" style={`left:${LOAD_RULES.hold}%`}><span>{LOAD_RULES.hold}%</span></i>
+          </div>
+        </div>
+      ))}
+      <ol class="k-rules">
+        <li><b>1</b>{fill(f.slow)}</li>
+        <li><b>2</b>{fill(f.hold)}</li>
+      </ol>
+    </div>
+  </div>
+  <ul class="k-rnotes">
+    {f.notes.map((n) => <li>{fill(n)}</li>)}
+  </ul>
+</section>
+
+<style>
+  .k-sub { max-width: 64ch; }
+  .k-rs { display: grid; grid-template-columns: minmax(0, 0.8fr) 56px minmax(0, 1.25fr) 56px minmax(0, 1.2fr); align-items: center; }
+  .k-rcol { display: flex; flex-direction: column; gap: 14px; }
+  .k-rh { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .k-rh b { font-family: var(--font-sans); font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: var(--acc); font-variant-numeric: tabular-nums; }
+
+  .k-qs { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .k-qs .k-win { width: 132px; }
+  .k-qmore { padding-left: 58px; font-size: 18px; line-height: 1; color: var(--muted); }
+  .k-rar { margin: 0 8px; }
+
+  .k-cells { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; max-width: 360px; }
+  .k-cell { aspect-ratio: 4 / 3; border: 1.5px solid var(--ink); background: var(--paper); box-shadow: inset 0 3px 0 var(--ink); }
+  .k-ways { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .k-rm { padding: 16px 16px 14px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); box-shadow: 10px 10px 0 var(--grid2); }
+  .k-gauge { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); align-items: center; gap: 10px; }
+  .k-gl { font-family: var(--font-mono); font-size: 12px; font-weight: 600; }
+  .k-gbar { position: relative; height: 12px; margin-bottom: 16px; border: 1.5px solid var(--ink); background: repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), var(--rule) calc(10% - 1px) 10%); }
+  .k-gfill { position: absolute; left: 0; top: 0; bottom: 0; display: block; background: var(--ink); }
+  .k-tick { position: absolute; top: -5px; bottom: -5px; display: block; width: 1.5px; margin-left: -0.75px; background: var(--acc); }
+  .k-tick span { position: absolute; top: calc(100% + 1px); left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: 10.5px; font-style: normal; color: var(--acc); white-space: nowrap; }
+  .k-tick-hold { width: 3px; margin-left: -1.5px; }
+  .k-rules { display: grid; gap: 8px; margin: 2px 0 0; padding: 12px 0 0; border-top: 1px solid var(--rule); list-style: none; }
+  .k-rules li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; font-size: 13px; line-height: 1.45; }
+  .k-rules b { display: grid; place-items: center; width: 17px; height: 17px; margin-top: 1px; border-radius: 50%; background: var(--acc); color: var(--paper); font-family: var(--font-mono); font-size: 10px; font-weight: 600; }
+
+  .k-rnotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 30px 0 0; padding: 14px 0 0; border-top: 1px solid var(--rule); list-style: none; font-family: var(--font-mono); font-size: 11.5px; line-height: 1.55; color: var(--muted); }
+
+  @media (max-width: 1080px) {
+    .k-rs { grid-template-columns: 1fr; justify-items: start; gap: 10px; }
+    .k-rar { width: 0; height: 28px; margin: 0 0 0 40px; border-top: 0; border-left: 1.5px solid var(--ink); }
+    .k-rar::after { right: auto; left: -5.5px; top: auto; bottom: -2px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 8px solid var(--ink); border-bottom: 0; }
+    .k-rar .k-pulse { left: -4.25px; right: auto; top: 0; bottom: 0; width: 7px; height: auto; }
+    .k-qs { flex-direction: row; flex-wrap: wrap; align-items: center; }
+    .k-qmore { padding-left: 0; }
+    .k-rm { width: 100%; max-width: 460px; }
+    .k-rnotes { grid-template-columns: 1fr; gap: 10px; }
+  }
+
+  @media (max-width: 1080px) and (prefers-reduced-motion: no-preference) {
+    :global(.js) .k-rar .k-pulse { animation-name: k-run-y; }
+  }
+</style>

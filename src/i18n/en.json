@@ -290,6 +290,46 @@
                 }
             ]
         },
+        "engine": {
+            "fig": "engine · cross-section",
+            "title": "Fingerprints are set inside Chromium's C++ code, not injected into the page.",
+            "sub": "A site checks a fingerprint by asking the browser. With Veilus, the answer comes from Chromium's own C++ code — there is no script in between for the site to find.",
+            "page": "website",
+            "js": {
+                "title": "Script injection",
+                "note": "a script layered over the page",
+                "layer": "injected script",
+                "tellsTitle": "where a site can look",
+                "tells": [
+                    {
+                        "k": "fn.toString()",
+                        "v": "no longer reads [native code]"
+                    },
+                    {
+                        "k": "getOwnPropertyDescriptor()",
+                        "v": "the getter is not Chrome's"
+                    },
+                    {
+                        "k": "new Error().stack",
+                        "v": "an extra frame from the script"
+                    },
+                    {
+                        "k": "performance.now()",
+                        "v": "how long each call takes"
+                    }
+                ],
+                "real": "real value",
+                "result": "The site reads 12 — through a layer it can inspect."
+            },
+            "v": {
+                "note": "value changed in Chromium's C++ source",
+                "none": "no script layer in between",
+                "set": "set here",
+                "result": "The site reads 12 — straight from Chromium."
+            },
+            "fields": "fingerprint fields, every one read by C++ code inside the engine:",
+            "surfaces": "Canvas · WebGL · WebGPU · Audio · Fonts · Screen · Client Hints · Timezone · WebRTC · Media devices · Speech voices · Geolocation · Battery · Automation signals"
+        },
         "fig4": {
             "fig": "the loop with your AI assistant",
             "title": "You give the order. The AI writes, tests, fixes. You approve once.",
@@ -348,6 +388,31 @@
             "otherMachine": "another machine",
             "repo": "your repository",
             "syncNote": "Two-way between your machines · access tokens are encrypted"
+        },
+        "res": {
+            "fig": "resources · many profiles, one machine",
+            "title": "Queue the whole batch. Veilus opens profiles at the pace your machine can take.",
+            "sub": "One limit covers every browser the app opens — by hand, on a schedule, from the API or an AI agent: at most {n} at once. Runs wait for a free slot instead of failing, and check the machine before every launch.",
+            "queue": "queue",
+            "waiting": "waiting",
+            "slots": "open at once",
+            "cellsLabel": "{n} browsers open — every slot busy",
+            "ways": [
+                "by hand",
+                "schedule",
+                "API",
+                "AI agent"
+            ],
+            "machine": "this machine",
+            "cpu": "CPU",
+            "ram": "RAM",
+            "slow": "Above {cpu}% CPU or {ram}% RAM: {gap} s between launches.",
+            "hold": "Above {hold}% CPU or RAM: new launches wait, checked again every {recheck} s, for up to {max} s.",
+            "notes": [
+                "All {n} busy and you open one more by hand? Veilus tells you instead of starting it.",
+                "Each run sets its own concurrency, under the same limit.",
+                "An AI agent can ask how many slots are free before it starts a run."
+            ]
         },
         "bento": {
             "fig": "features",

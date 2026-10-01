@@ -290,6 +290,46 @@
                 }
             ]
         },
+        "engine": {
+            "fig": "motor · corte",
+            "title": "La huella se define dentro del código C++ de Chromium, no se inyecta en la página.",
+            "sub": "Un sitio comprueba la huella haciéndole preguntas al navegador. En Veilus, la respuesta sale del propio código C++ de Chromium — no hay ningún script en medio que el sitio pueda encontrar.",
+            "page": "sitio web",
+            "js": {
+                "title": "Inyección de scripts",
+                "note": "una capa de script sobre la página",
+                "layer": "script inyectado",
+                "tellsTitle": "dónde puede mirar un sitio",
+                "tells": [
+                    {
+                        "k": "fn.toString()",
+                        "v": "ya no dice [native code]"
+                    },
+                    {
+                        "k": "getOwnPropertyDescriptor()",
+                        "v": "el getter no es el de Chrome"
+                    },
+                    {
+                        "k": "new Error().stack",
+                        "v": "un frame de más del script"
+                    },
+                    {
+                        "k": "performance.now()",
+                        "v": "cuánto tarda cada llamada"
+                    }
+                ],
+                "real": "valor real",
+                "result": "El sitio lee 12 — a través de una capa que puede inspeccionar."
+            },
+            "v": {
+                "note": "valor cambiado en el código fuente C++ de Chromium",
+                "none": "ninguna capa de script en medio",
+                "set": "definido aquí",
+                "result": "El sitio lee 12 — directamente de Chromium."
+            },
+            "fields": "campos de huella, cada uno leído por código C++ dentro del motor:",
+            "surfaces": "Canvas · WebGL · WebGPU · Audio · Fuentes · Pantalla · Client Hints · Zona horaria · WebRTC · Dispositivos multimedia · Voces de síntesis · Geolocalización · Batería · Señales de automatización"
+        },
         "fig4": {
             "fig": "el ciclo con tu asistente de IA",
             "title": "Tú das la orden. La IA escribe, prueba, corrige. Tú apruebas una vez.",
@@ -348,6 +388,31 @@
             "otherMachine": "otro equipo",
             "repo": "tu repositorio",
             "syncNote": "En ambos sentidos entre tus equipos · solo se cifran los tokens de acceso"
+        },
+        "res": {
+            "fig": "recursos · muchos perfiles, un equipo",
+            "title": "Pon todo el lote en cola. Veilus abre los perfiles al ritmo que aguanta tu equipo.",
+            "sub": "Un solo límite cubre todos los navegadores que abre la app — a mano, por programación, desde la API o un asistente de IA: como mucho {n} a la vez. Las ejecuciones esperan un hueco libre en lugar de fallar, y revisan la carga del equipo antes de cada apertura.",
+            "queue": "cola",
+            "waiting": "esperando",
+            "slots": "abiertos a la vez",
+            "cellsLabel": "{n} navegadores abiertos — ningún hueco libre",
+            "ways": [
+                "a mano",
+                "programación",
+                "API",
+                "asistente de IA"
+            ],
+            "machine": "este equipo",
+            "cpu": "CPU",
+            "ram": "RAM",
+            "slow": "Por encima del {cpu}% de CPU o del {ram}% de RAM: {gap} s entre aperturas.",
+            "hold": "Por encima del {hold}% de CPU o RAM: las nuevas aperturas esperan, se revisa cada {recheck} s, hasta {max} s.",
+            "notes": [
+                "¿Los {n} ocupados y abres otro a mano? Veilus te avisa en lugar de abrirlo.",
+                "Cada ejecución fija su propia concurrencia, dentro del mismo límite.",
+                "Un asistente de IA puede preguntar cuántos huecos quedan libres antes de empezar una ejecución."
+            ]
         },
         "bento": {
             "fig": "funciones",

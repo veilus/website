@@ -290,6 +290,46 @@
                 }
             ]
         },
+        "engine": {
+            "fig": "motor · kesit",
+            "title": "Parmak izi sayfaya enjekte edilmez; Chromium'un C++ kodunun içinde ayarlanır.",
+            "sub": "Bir site parmak izini tarayıcıya sorular sorarak kontrol eder. Veilus'ta cevap doğrudan Chromium'un kendi C++ kodundan gelir — arada sitenin bulabileceği bir betik yoktur.",
+            "page": "web sitesi",
+            "js": {
+                "title": "Betik enjeksiyonu",
+                "note": "sayfanın üstüne eklenen bir betik katmanı",
+                "layer": "enjekte edilen betik",
+                "tellsTitle": "bir sitenin bakabileceği yerler",
+                "tells": [
+                    {
+                        "k": "fn.toString()",
+                        "v": "artık [native code] göstermez"
+                    },
+                    {
+                        "k": "getOwnPropertyDescriptor()",
+                        "v": "getter Chrome'unki değil"
+                    },
+                    {
+                        "k": "new Error().stack",
+                        "v": "betikten gelen fazladan bir çerçeve"
+                    },
+                    {
+                        "k": "performance.now()",
+                        "v": "her çağrının ne kadar sürdüğü"
+                    }
+                ],
+                "real": "gerçek değer",
+                "result": "Site 12 okur — inceleyebileceği bir katmanın içinden."
+            },
+            "v": {
+                "note": "değer Chromium'un C++ kaynak kodunda değiştirilir",
+                "none": "arada betik katmanı yok",
+                "set": "burada ayarlanır",
+                "result": "Site 12 okur — doğrudan Chromium'dan."
+            },
+            "fields": "parmak izi alanı; her birini motorun içindeki C++ kodu okur:",
+            "surfaces": "Canvas · WebGL · WebGPU · Ses · Yazı tipleri · Ekran · Client Hints · Saat dilimi · WebRTC · Medya cihazları · Konuşma sesleri · Konum · Pil · Otomasyon izleri"
+        },
         "fig4": {
             "fig": "yapay zekâ asistanınızla döngü",
             "title": "Siz talimat verirsiniz. Yapay zekâ yazar, dener, düzeltir. Siz bir kez onaylarsınız.",
@@ -348,6 +388,31 @@
             "otherMachine": "başka bir bilgisayar",
             "repo": "deponuz",
             "syncNote": "Bilgisayarlarınız arasında çift yönlü · yalnızca erişim token'ları şifrelenir"
+        },
+        "res": {
+            "fig": "kaynaklar · çok profil, bir bilgisayar",
+            "title": "Tüm partiyi kuyruğa alın. Veilus profilleri bilgisayarın kaldırabileceği hızda açar.",
+            "sub": "Uygulamanın açtığı her tarayıcı aynı sınıra tabidir — elle, zamanlamayla, API'den ya da bir yapay zekâ asistanıyla: aynı anda en fazla {n}. Çalıştırmalar hata vermek yerine boş bir yer bekler ve her açılıştan önce makinenin yüküne bakar.",
+            "queue": "kuyruk",
+            "waiting": "bekliyor",
+            "slots": "aynı anda açık",
+            "cellsLabel": "{n} tarayıcı açık — boş yer yok",
+            "ways": [
+                "elle",
+                "zamanlama",
+                "API",
+                "yapay zekâ asistanı"
+            ],
+            "machine": "bu bilgisayar",
+            "cpu": "CPU",
+            "ram": "RAM",
+            "slow": "CPU %{cpu} veya RAM %{ram} üstünde: açılışlar arasında {gap} sn.",
+            "hold": "CPU veya RAM %{hold} üstünde: yeni açılışlar bekler, her {recheck} sn'de yeniden bakılır, en fazla {max} sn.",
+            "notes": [
+                "{n} tarayıcının hepsi meşgulken elle bir tane daha mı açıyorsunuz? Veilus açmak yerine size söyler.",
+                "Her çalıştırma kendi eşzamanlılığını belirler, aynı sınırın altında.",
+                "Bir yapay zekâ asistanı, çalıştırmaya başlamadan önce kaç boş yer kaldığını sorabilir."
+            ]
         },
         "bento": {
             "fig": "özellikler",

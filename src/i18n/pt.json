@@ -290,6 +290,46 @@
                 }
             ]
         },
+        "engine": {
+            "fig": "motor · corte",
+            "title": "A impressão digital é definida dentro do código C++ do Chromium, não injetada na página.",
+            "sub": "Um site verifica a impressão digital fazendo perguntas ao navegador. No Veilus, a resposta vem do próprio código C++ do Chromium — não há nenhum script no meio para o site encontrar.",
+            "page": "site",
+            "js": {
+                "title": "Injeção de script",
+                "note": "uma camada de script sobre a página",
+                "layer": "script injetado",
+                "tellsTitle": "onde um site pode procurar",
+                "tells": [
+                    {
+                        "k": "fn.toString()",
+                        "v": "deixa de mostrar [native code]"
+                    },
+                    {
+                        "k": "getOwnPropertyDescriptor()",
+                        "v": "o getter não é o do Chrome"
+                    },
+                    {
+                        "k": "new Error().stack",
+                        "v": "um frame a mais vindo do script"
+                    },
+                    {
+                        "k": "performance.now()",
+                        "v": "quanto tempo cada chamada leva"
+                    }
+                ],
+                "real": "valor real",
+                "result": "O site lê 12 — por meio de uma camada que ele consegue inspecionar."
+            },
+            "v": {
+                "note": "valor alterado no código-fonte C++ do Chromium",
+                "none": "nenhuma camada de script no meio",
+                "set": "definido aqui",
+                "result": "O site lê 12 — direto do Chromium."
+            },
+            "fields": "campos de impressão digital, todos lidos por código C++ dentro do motor:",
+            "surfaces": "Canvas · WebGL · WebGPU · Áudio · Fontes · Tela · Client Hints · Fuso horário · WebRTC · Dispositivos de mídia · Vozes de fala · Geolocalização · Bateria · Sinais de automação"
+        },
         "fig4": {
             "fig": "o ciclo com seu assistente de IA",
             "title": "Você dá a ordem. A IA escreve, testa, corrige. Você aprova uma vez.",
@@ -348,6 +388,31 @@
             "otherMachine": "outro computador",
             "repo": "seu repositório",
             "syncNote": "Nos dois sentidos entre seus computadores · só os tokens de acesso são criptografados"
+        },
+        "res": {
+            "fig": "recursos · muitos perfis, um computador",
+            "title": "Coloque o lote inteiro na fila. O Veilus abre os perfis no ritmo que o computador aguenta.",
+            "sub": "Um limite vale para todo navegador que o app abre — à mão, por agendamento, pela API ou por um assistente de IA: no máximo {n} ao mesmo tempo. As execuções esperam uma vaga livre em vez de falhar, e checam a máquina antes de cada abertura.",
+            "queue": "fila",
+            "waiting": "esperando",
+            "slots": "abertos ao mesmo tempo",
+            "cellsLabel": "{n} navegadores abertos — nenhuma vaga livre",
+            "ways": [
+                "à mão",
+                "agendamento",
+                "API",
+                "assistente de IA"
+            ],
+            "machine": "este computador",
+            "cpu": "CPU",
+            "ram": "RAM",
+            "slow": "Acima de {cpu}% de CPU ou {ram}% de RAM: {gap} s entre aberturas.",
+            "hold": "Acima de {hold}% de CPU ou RAM: novas aberturas esperam, com nova checagem a cada {recheck} s, por até {max} s.",
+            "notes": [
+                "Os {n} estão ocupados e você abre mais um à mão? O Veilus avisa em vez de abri-lo.",
+                "Cada execução define a própria concorrência, dentro do mesmo limite.",
+                "Um assistente de IA pode perguntar quantas vagas estão livres antes de iniciar uma execução."
+            ]
         },
         "bento": {
             "fig": "recursos",

@@ -290,6 +290,46 @@
                 }
             ]
         },
+        "engine": {
+            "fig": "mesin · penampang",
+            "title": "Sidik jari diatur di dalam kode C++ Chromium, bukan disuntikkan ke halaman.",
+            "sub": "Situs memeriksa sidik jari dengan bertanya ke browser. Di Veilus, jawabannya datang dari kode C++ milik Chromium sendiri — tidak ada skrip di tengah yang bisa ditemukan situs.",
+            "page": "situs web",
+            "js": {
+                "title": "Injeksi skrip",
+                "note": "lapisan skrip di atas halaman",
+                "layer": "skrip yang disuntikkan",
+                "tellsTitle": "tempat situs bisa memeriksa",
+                "tells": [
+                    {
+                        "k": "fn.toString()",
+                        "v": "tidak lagi [native code]"
+                    },
+                    {
+                        "k": "getOwnPropertyDescriptor()",
+                        "v": "getter-nya bukan milik Chrome"
+                    },
+                    {
+                        "k": "new Error().stack",
+                        "v": "ada frame tambahan dari skrip"
+                    },
+                    {
+                        "k": "performance.now()",
+                        "v": "berapa lama tiap panggilan"
+                    }
+                ],
+                "real": "nilai asli",
+                "result": "Situs membaca 12 — melalui lapisan yang bisa ia periksa."
+            },
+            "v": {
+                "note": "nilai diubah di source code C++ Chromium",
+                "none": "tidak ada lapisan skrip di tengah",
+                "set": "diatur di sini",
+                "result": "Situs membaca 12 — langsung dari Chromium."
+            },
+            "fields": "bidang sidik jari, semuanya dibaca oleh kode C++ di dalam mesin:",
+            "surfaces": "Canvas · WebGL · WebGPU · Audio · Font · Layar · Client Hints · Zona waktu · WebRTC · Perangkat media · Suara ucapan · Geolokasi · Baterai · Jejak otomasi"
+        },
         "fig4": {
             "fig": "alur kerja dengan asisten AI Anda",
             "title": "Anda memberi perintah. AI menulis, menguji, memperbaiki. Anda menyetujui sekali.",
@@ -348,6 +388,31 @@
             "otherMachine": "komputer lain",
             "repo": "repository Anda",
             "syncNote": "Dua arah antar-komputer Anda · hanya token akses yang dienkripsi"
+        },
+        "res": {
+            "fig": "sumber daya · banyak profil, satu komputer",
+            "title": "Masukkan seluruh batch ke antrean. Veilus membuka profil sesuai kemampuan komputer Anda.",
+            "sub": "Satu batas berlaku untuk setiap browser yang dibuka aplikasi — manual, terjadwal, lewat API, atau oleh asisten AI: paling banyak {n} sekaligus. Eksekusi menunggu slot kosong alih-alih gagal, dan memeriksa beban komputer sebelum setiap pembukaan.",
+            "queue": "antrean",
+            "waiting": "menunggu",
+            "slots": "terbuka sekaligus",
+            "cellsLabel": "{n} browser terbuka — tidak ada slot kosong",
+            "ways": [
+                "manual",
+                "terjadwal",
+                "API",
+                "asisten AI"
+            ],
+            "machine": "komputer ini",
+            "cpu": "CPU",
+            "ram": "RAM",
+            "slow": "Di atas {cpu}% CPU atau {ram}% RAM: jeda {gap} dtk antar pembukaan.",
+            "hold": "Di atas {hold}% CPU atau RAM: pembukaan baru menunggu, dicek ulang tiap {recheck} dtk, paling lama {max} dtk.",
+            "notes": [
+                "Semua {n} slot terpakai dan Anda membuka satu lagi secara manual? Veilus memberi tahu Anda alih-alih membukanya.",
+                "Setiap eksekusi mengatur konkurensinya sendiri, di bawah batas yang sama.",
+                "Asisten AI bisa menanyakan berapa slot yang kosong sebelum memulai eksekusi."
+            ]
         },
         "bento": {
             "fig": "fitur",
