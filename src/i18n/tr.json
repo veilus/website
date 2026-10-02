@@ -87,7 +87,7 @@
             },
             {
                 "q": "Kendi proxy'lerimi kullanabilir miyim?",
-                "a": "Evet. HTTP, HTTPS ve SOCKS5 desteklenir ve her profilin kendi proxy'si olabilir."
+                "a": "Evet. HTTP ve SOCKS5 desteklenir ve her profilin kendi proxy'si olabilir."
             },
             {
                 "q": "Veilus Flow nasıl çalışır?",

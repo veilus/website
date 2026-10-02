@@ -87,7 +87,7 @@
             },
             {
                 "q": "Tôi dùng proxy riêng được không?",
-                "a": "Được. Veilus hỗ trợ HTTP, HTTPS và SOCKS5, mỗi hồ sơ có thể gắn proxy riêng."
+                "a": "Được. Veilus hỗ trợ HTTP và SOCKS5, mỗi hồ sơ có thể gắn proxy riêng."
             },
             {
                 "q": "Veilus Flow hoạt động thế nào?",

@@ -20,6 +20,7 @@
  *   font thì trang hiện nguyên chữ mà bài không thấy — icons.test.js chỉ canh tên viết chữ trong data-icon và `icon: '…'`;
  * - chữ trong ảnh (public/og-image-2026-09.png) và chữ sinh lúc chạy (script gắn vào trang, số đếm lấy từ API);
  * - lúc nào bài chạy: CI chỉ chạy bài này trước deploy khi push main; nhánh khác không bị chặn.
+ * - mẫu `https-proxy` chỉ bắt "HTTPS" chữ hoa đứng cùng câu với "SOCKS" (cách tối đa 30 ký tự); câu "hỗ trợ proxy HTTPS" không nhắc SOCKS thì lọt.
  * - mẫu `the-only` tiếng Thổ chỉ bắt "tek [anti-tespit] tarayıcı"; câu "duy nhất" diễn đạt khác, như "Piyasadaki tek yapay zekâ destekli tarayıcı", thì lọt. Mẫu cố ý hẹp vì tr.json dùng "tek" nghĩa là "một" chín lần.
  */
 
@@ -97,6 +98,12 @@ export const BANNED = [
     id: 'no-personal-data',
     re: /no personal data|(?:do(?:es)?(?: not|n['’]t)|never) collect (?:any )?(?:personal )?data|không thu thập (?:bất kỳ )?dữ liệu|不收集(?:任何)?(?:个人)?(?:数据|信息)|без сбора (?:\S+ )?данных|не собира\S* (?:\S+ )?данн|sem coleta de dados|não coleta\S* (?:\S+ )?dados|sin datos recopilados|no recopila\S* (?:\S+ )?datos|veri\S* topla(?:n?maz|mıyor|may(?:ız|acağ|an))|tidak mengumpulkan (?:\S+ )?data/i,
     why: 'trang tải về thu email danh sách chờ; chính sách quyền riêng tư liệt kê email và dữ liệu phân tích (GA4)',
+  },
+  {
+    // Chữ hoa, không \b: chip "HTTP" "HTTPS" "SOCKS5" sau plain() dính thành "HTTPHTTPSSOCKS5"; URL "https://" chữ thường không bị bắt.
+    id: 'https-proxy',
+    re: /HTTPS[^.。\n]{0,30}SOCKS|SOCKS[^.。\n]{0,30}HTTPS/,
+    why: 'app không có proxy HTTPS (TLS tới proxy): ProxyType chỉ Http/Socks5/Residential, cầu nối nói CONNECT trên TCP trần, endpoint https:// bị đọc thành http:// (VEIL-1182)',
   },
 ];
 

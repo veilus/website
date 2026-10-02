@@ -87,7 +87,7 @@
             },
             {
                 "q": "Bisakah saya memakai proxy sendiri?",
-                "a": "Bisa. HTTP, HTTPS, dan SOCKS5 didukung, dan tiap profil bisa punya proxy sendiri."
+                "a": "Bisa. HTTP dan SOCKS5 didukung, dan tiap profil bisa punya proxy sendiri."
             },
             {
                 "q": "Bagaimana Veilus Flow bekerja?",

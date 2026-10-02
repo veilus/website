@@ -126,6 +126,17 @@ const HISTORIC = [
   ['no-personal-data', 'Sin datos recopilados.'],
   ['no-personal-data', 'Kişisel veri toplanmaz · Kredi kartı gerekmez'],
   ['no-personal-data', 'Tidak mengumpulkan data.'],
+  // FAQ proxy (8 ngôn ngữ), llms.txt và chip ở FeatureBento, gỡ ở VEIL-1182.
+  ['https-proxy', 'Yes. HTTP, HTTPS and SOCKS5 are supported, and each profile can have its own proxy.'],
+  ['https-proxy', 'Được. Veilus hỗ trợ HTTP, HTTPS và SOCKS5, mỗi hồ sơ có thể gắn proxy riêng.'],
+  ['https-proxy', '可以。支持 HTTP、HTTPS 和 SOCKS5，每个配置文件都可以设置自己的代理。'],
+  ['https-proxy', 'Да. Поддерживаются HTTP, HTTPS и SOCKS5, и у каждого профиля может быть свой прокси.'],
+  ['https-proxy', 'Sim. HTTP, HTTPS e SOCKS5 são suportados, e cada perfil pode ter seu próprio proxy.'],
+  ['https-proxy', 'Sí. Admite HTTP, HTTPS y SOCKS5, y cada perfil puede tener su propio proxy.'],
+  ['https-proxy', 'Evet. HTTP, HTTPS ve SOCKS5 desteklenir ve her profilin kendi proxy\'si olabilir.'],
+  ['https-proxy', 'Bisa. HTTP, HTTPS, dan SOCKS5 didukung, dan tiap profil bisa punya proxy sendiri.'],
+  ['https-proxy', '- Each profile has its own fingerprint and its own proxy (HTTP, HTTPS, SOCKS5)'],
+  ['https-proxy', '<span class="k-chip k-chip-s">HTTP</span><span class="k-chip k-chip-s">HTTPS</span><span class="k-chip k-chip-s">SOCKS5</span>'],
 ];
 
 // Câu sai CHƯA từng lên trang, cùng ý với HISTORIC nhưng viết kiểu khác (VEIL-994): dấu chấm nằm giữa
@@ -175,6 +186,10 @@ const NEAR_MISS = [
   'UTC+7 · UTC+9 · UTC−4',
   'Trên 20 máy? Liên hệ',
   'Our affiliate program pays 20% per sale',
+  // Câu đúng sau VEIL-1182; URL https:// chữ thường cạnh SOCKS5 cũng không phải khẳng định proxy HTTPS.
+  'Yes. HTTP and SOCKS5 are supported, and each profile can have its own proxy.',
+  '<span class="k-chip k-chip-s">HTTP</span><span class="k-chip k-chip-s">SOCKS5</span>',
+  'Endpoint https://gate.example.com hoặc socks5://host:1080',
 ];
 
 test('quét đủ mẫu số: 8 ngôn ngữ, 4 trang pháp lý, llms.txt, facts.js, layout, component, trang', () => {

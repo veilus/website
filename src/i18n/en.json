@@ -87,7 +87,7 @@
             },
             {
                 "q": "Can I use my own proxies?",
-                "a": "Yes. HTTP, HTTPS and SOCKS5 are supported, and each profile can have its own proxy."
+                "a": "Yes. HTTP and SOCKS5 are supported, and each profile can have its own proxy."
             },
             {
                 "q": "How does Veilus Flow work?",
