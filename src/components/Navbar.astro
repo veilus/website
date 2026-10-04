@@ -33,7 +33,10 @@ const LINKS = [
 
 <header class="k-wrap">
   <nav class="k-nav" aria-label="Veilus">
-    <a class="k-mark" href={home}>VEILUS</a>
+    <a class="k-mark" href={home} aria-label="Veilus">
+      <svg class="k-logo" viewBox="44 22 168 208" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M49.15,38.8Q128,16.8 206.85,38.8L206.85,100.4C206.85,157.6 172.35,197.2 128,223.6C83.65,197.2 49.15,157.6 49.15,100.4ZM61.95,55.6Q128,37.6 194.05,55.6L194.05,106C194.05,152.8 165.15,185.2 128,206.8C90.85,185.2 61.95,152.8 61.95,106Z"/><path d="M77.95,76.6Q128,63.6 178.05,76.6L178.05,113C178.05,146.8 156.15,170.2 128,185.8C99.85,170.2 77.95,146.8 77.95,113Z"/></svg>
+      <span class="k-mark-text">VEILUS</span>
+    </a>
     <div class="k-links" id="k-links">
       {LINKS.map(([id, label]) => <a href={`${home}#${id}`}>{label}</a>)}
     </div>
@@ -103,6 +106,10 @@ const LINKS = [
 
 <style>
   .k-nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1.5px solid var(--ink); }
+  .k-mark { display: inline-flex; align-items: center; gap: 10px; }
+  /* Khiên lồng chép đường vẽ từ public/favicon.svg (VEIL-1212), tô bằng màu chữ. Không dùng <img> trỏ favicon.svg:
+     file đó tự đổi sang màu sáng khi máy để chế độ tối, còn site chỉ có nền sáng. */
+  .k-logo { height: 22px; width: auto; flex-shrink: 0; }
   .k-links { display: flex; gap: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
   .k-links a { color: var(--ink); white-space: nowrap; }
   .k-links a:hover { color: var(--acc); }
@@ -129,6 +136,9 @@ const LINKS = [
   @media (max-width: 640px) {
     .k-nav { gap: 12px; }
     .k-act { gap: 8px; }
+    /* Ở 320–375px thanh đã hết chỗ (đo 2026-10-04: khe giữa mark và nhóm nút đúng bằng gap), thêm khiên cạnh chữ
+       là bóp nút tải về: chỉ giữ khiên, tên đọc lên vẫn là aria-label của liên kết. */
+    .k-mark-text { display: none; }
   }
 
   /* Dưới 360px nút ngôn ngữ, nút tải về và nút menu vượt lề phải tới 7px (ru "Скачать бесплатно"): khít lại. */
