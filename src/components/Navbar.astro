@@ -34,7 +34,7 @@ const LINKS = [
 
 <header class="k-wrap">
   <nav class="k-nav" aria-label="Veilus">
-    <a class="k-mark" href={home}><LogoMark />VEILUS</a>
+    <a class="k-mark" href={home} aria-label="Veilus"><LogoMark /><span class="k-mark-text">VEILUS</span></a>
     <div class="k-links" id="k-links">
       {LINKS.map(([id, label]) => <a href={`${home}#${id}`}>{label}</a>)}
     </div>
@@ -130,6 +130,10 @@ const LINKS = [
   @media (max-width: 640px) {
     .k-nav { gap: 12px; }
     .k-act { gap: 8px; }
+    /* Ở 320–375px thanh đã hết chỗ từ trước khi có khiên (đo 2026-10-04: khe giữa mark và nhóm nút đúng bằng gap).
+       Khiên cạnh chữ làm nút tải về xuống thêm dòng và đẩy nút menu ra ngoài mép ở 320px: chỉ giữ khiên, tên đọc
+       lên vẫn là aria-label của liên kết. */
+    .k-mark-text { display: none; }
   }
 
   /* Dưới 360px nút ngôn ngữ, nút tải về và nút menu vượt lề phải tới 7px (ru "Скачать бесплатно"): khít lại. */
