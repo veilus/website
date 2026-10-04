@@ -4,6 +4,7 @@
  * các phần của trang chủ, chọn ngôn ngữ, nút tải về. Dưới 1180px liên kết gập vào nút menu.
  */
 import type { Lang } from '../i18n/utils';
+import LogoMark from './LogoMark.astro';
 import { t, languages, supportedLangs, defaultLang, getLocalizedPath, stripLang } from '../i18n/utils';
 
 interface Props {
@@ -33,7 +34,7 @@ const LINKS = [
 
 <header class="k-wrap">
   <nav class="k-nav" aria-label="Veilus">
-    <a class="k-mark" href={home}>VEILUS</a>
+    <a class="k-mark" href={home}><LogoMark />VEILUS</a>
     <div class="k-links" id="k-links">
       {LINKS.map(([id, label]) => <a href={`${home}#${id}`}>{label}</a>)}
     </div>

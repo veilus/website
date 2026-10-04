@@ -5,12 +5,13 @@
  * Một trang cho mọi ngôn ngữ: không biết người đọc tới từ ngôn ngữ nào, nên có link về trang chủ của cả 8.
  */
 import Layout from '../layouts/Layout.astro';
+import LogoMark from '../components/LogoMark.astro';
 import { languages, supportedLangs, getLocalizedPath } from '../i18n/utils';
 ---
 
 <Layout title="404 — Veilus" notFound>
   <main class="k-wrap k-404">
-    <a class="k-mark" href="/">VEILUS</a>
+    <a class="k-mark" href="/"><LogoMark />VEILUS</a>
     <h1 class="k-h2">404 — This page does not exist.</h1>
     <ul>
       {supportedLangs.map((l) => (
