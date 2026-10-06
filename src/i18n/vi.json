@@ -58,6 +58,7 @@
         "devices": "{n} máy",
         "contact": "Trên 20 máy?",
         "contactCta": "Liên hệ",
+        "viaTelegram": "qua Telegram",
         "refund": "Hoàn tiền trong 7 ngày (gói tháng) hoặc 14 ngày (gói trọn đời)."
     },
     "faq": {
@@ -173,6 +174,8 @@
         "hide": "Ẩn",
         "payVnd": "Chuyển khoản VNĐ",
         "payUsd": "Thẻ quốc tế (USD)",
+        "telegramOnly": "Gói này không bán qua thẻ. Nhắn cho chúng tôi qua Telegram để mua:",
+        "telegramCta": "Mở Telegram",
         "qrTitle": "Quét mã để thanh toán",
         "amount": "Số tiền",
         "code": "Nội dung chuyển khoản",

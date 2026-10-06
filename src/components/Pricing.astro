@@ -7,7 +7,7 @@
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
 import { SKUS } from '../data/skus.js';
-import { currencyForLang, formatPrice } from '../scripts/purchase-core.js';
+import { currencyForLang, formatPrice, cardAllowed, TELEGRAM_URL } from '../scripts/purchase-core.js';
 
 interface Props {
   lang?: Lang;
@@ -21,7 +21,6 @@ const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s
 const devices = (n: number) => (n === 1 ? p.device : p.devices.replace('{n}', String(n)));
 const buyHref = (sku: string) => getLocalizedPath(`/mua?sku=${sku}`, lang);
 const lifetime = Object.entries(SKUS).filter(([, s]) => s.kind === 'lifetime');
-const CONTACT_URL = 'https://t.me/veilusbrowser';
 ---
 
 <section class="k-wrap k-sec" id="pricing" data-reveal>
@@ -55,9 +54,18 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
       <div class="k-tiers">
         {lifetime.map(([id, s]) => {
           const name = i.buy.sku[id as keyof typeof i.buy.sku];
+          // Gói vượt trần thẻ (team10/team20) ở trang USD: chưa có USDT thì mua qua Telegram.
+          const viaTelegram = cur === 'USD' && !cardAllowed(id);
           return (
-            <a class="k-tier" href={buyHref(id)} data-cta="pricing_cta" data-plan={id}>
-              <b>{name}<small>{devices(s.devices)}</small></b>
+            <a
+              class="k-tier"
+              href={viaTelegram ? TELEGRAM_URL : buyHref(id)}
+              target={viaTelegram ? '_blank' : undefined}
+              rel={viaTelegram ? 'noopener noreferrer' : undefined}
+              data-cta="pricing_cta"
+              data-plan={id}
+            >
+              <b>{name}<small>{devices(s.devices)}{viaTelegram ? ` · ${p.viaTelegram}` : ''}</small></b>
               <em>{price(s)}</em>
               <span class="ms" data-icon="arrow_forward" aria-hidden="true"></span>
             </a>
@@ -68,7 +76,7 @@ const CONTACT_URL = 'https://t.me/veilusbrowser';
         <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{p.lifetime.everything}</span></li>
         <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{p.lifetime.terms}</span></li>
       </ul>
-      <div class="k-contact">{p.contact} <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer">{p.contactCta}</a></div>
+      <div class="k-contact">{p.contact} <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">{p.contactCta}</a></div>
     </div>
   </div>
   <p class="k-refund"><a href={getLocalizedPath('/refund', lang)}>{p.refund}</a></p>

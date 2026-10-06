@@ -7,7 +7,7 @@
 import type { Lang } from "../i18n/utils";
 import { t } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
-import { currencyForLang, formatPrice } from "../scripts/purchase-core.js";
+import { currencyForLang, formatPrice, TELEGRAM_URL } from "../scripts/purchase-core.js";
 
 interface Props {
   lang: Lang;
@@ -89,6 +89,10 @@ const skusOf = (kind: string) =>
           data-currency={cur}>{vnd ? b.payVnd : b.payUsd}</button
         >
       </div>
+      <p class="buy-telegram" id="buy-telegram" hidden>
+        {b.telegramOnly}
+        <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">{b.telegramCta}</a>
+      </p>
       <p class="buy-msg" id="buy-msg" role="alert" aria-live="polite"></p>
     </form>
 
@@ -145,6 +149,7 @@ const skusOf = (kind: string) =>
     hasValidAmount,
     payCurrency,
     formatPrice,
+    cardAllowed,
   } from "../scripts/purchase-core.js";
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
@@ -197,13 +202,25 @@ const skusOf = (kind: string) =>
     keyEl.required = formRequiresKey(sku, q);
   }
 
+  const telegramRow = $("buy-telegram");
+  /** Gói vượt trần thẻ ở luồng USD: ẩn nút trả thẻ, hiện đường Telegram (spec USDT §12 bước 2). */
+  function syncPayRow() {
+    const viaTelegram = currency === "USD" && !cardAllowed(selectedSku());
+    payBtn.hidden = viaTelegram;
+    telegramRow.hidden = !viaTelegram;
+  }
+
   const initial = q.sku ?? (q.askKey ? "monthly" : "solo");
+  const onSkuChange = () => {
+    syncKeyRow();
+    syncPayRow();
+  };
   radios.forEach((r) => {
     r.checked = r.value === initial;
-    r.addEventListener("change", syncKeyRow);
+    r.addEventListener("change", onSkuChange);
   });
   if (q.licenseKey) keyEl.value = q.licenseKey;
-  syncKeyRow();
+  onSkuChange();
 
   $("buy-key-toggle").addEventListener("click", (e) => {
     const show = keyEl.type === "password";
@@ -553,5 +570,9 @@ const skusOf = (kind: string) =>
   }
   .buy-status {
     color: var(--color-cyan);
+  }
+  .buy-telegram a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 </style>

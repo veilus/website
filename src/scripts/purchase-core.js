@@ -91,3 +91,14 @@ export function payCurrency(lang, query) {
 export function formatPrice(amount, currency, lang) {
   return currency === "VND" ? `${new Intl.NumberFormat(lang).format(amount)} đ` : `$${amount}`;
 }
+
+/** Trần mỗi giao dịch thẻ của LemonSqueezy (thư duyệt store ngày 2026-10-07). */
+export const CARD_MAX_USD = 199;
+
+/** Kênh mua các gói không bán qua thẻ, trong lúc chưa có USDT (spec USDT §12 bước 2). */
+export const TELEGRAM_URL = "https://t.me/veilusbrowser";
+
+/** Gói này trả thẻ (USD) được không: giá USD không vượt trần của LemonSqueezy. SKU lạ thì không. */
+export function cardAllowed(sku) {
+  return (SKUS[sku]?.usd ?? Infinity) <= CARD_MAX_USD;
+}

@@ -58,6 +58,7 @@
         "devices": "{n} cihaz",
         "contact": "20'den fazla cihaz mı?",
         "contactCta": "Bize ulaşın",
+        "viaTelegram": "Telegram üzerinden",
         "refund": "7 gün içinde (aylık) veya 14 gün içinde (ömür boyu) iade."
     },
     "faq": {
@@ -173,6 +174,8 @@
         "hide": "Gizle",
         "payVnd": "Banka havalesi (VND)",
         "payUsd": "Uluslararası kart (USD)",
+        "telegramOnly": "Bu paket kartla satılmıyor. Satın almak için bize Telegram'dan yazın:",
+        "telegramCta": "Telegram'ı aç",
         "qrTitle": "Ödemek için tarayın",
         "amount": "Tutar",
         "code": "Havale açıklaması",

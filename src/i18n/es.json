@@ -58,6 +58,7 @@
         "devices": "{n} dispositivos",
         "contact": "¿Más de 20 dispositivos?",
         "contactCta": "Contáctanos",
+        "viaTelegram": "por Telegram",
         "refund": "Reembolso en 7 días (mensual) o 14 días (de por vida)."
     },
     "faq": {
@@ -173,6 +174,8 @@
         "hide": "Ocultar",
         "payVnd": "Transferencia bancaria (VND)",
         "payUsd": "Tarjeta internacional (USD)",
+        "telegramOnly": "Este plan no se vende con tarjeta. Escríbenos por Telegram para comprarlo:",
+        "telegramCta": "Abrir Telegram",
         "qrTitle": "Escanea para pagar",
         "amount": "Importe",
         "code": "Concepto de la transferencia",

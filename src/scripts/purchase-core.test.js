@@ -13,6 +13,9 @@ import {
   currencyForLang,
   payCurrency,
   formatPrice,
+  CARD_MAX_USD,
+  cardAllowed,
+  TELEGRAM_URL,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -161,4 +164,18 @@ test("formatPrice: VND có dấu nhóm và đ, USD có $", () => {
   assert.equal(formatPrice(200_000, "VND", "vi"), "200.000 đ");
   assert.equal(formatPrice(9, "USD", "en"), "$9");
   assert.equal(formatPrice(0, "USD", "zh"), "$0");
+});
+
+test("cardAllowed: gói ≤ $199 trả thẻ được; team10/team20 vượt trần LemonSqueezy; SKU lạ thì không", () => {
+  assert.equal(CARD_MAX_USD, 199);
+  for (const sku of ["monthly", "solo", "team5", "device_solo", "device_team5", "device_team10"]) {
+    assert.equal(cardAllowed(sku), true, sku);
+  }
+  assert.equal(cardAllowed("team10"), false);
+  assert.equal(cardAllowed("team20"), false);
+  assert.equal(cardAllowed("khong-co"), false);
+});
+
+test("TELEGRAM_URL là kênh Telegram của Veilus", () => {
+  assert.equal(TELEGRAM_URL, "https://t.me/veilusbrowser");
 });

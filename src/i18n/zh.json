@@ -58,6 +58,7 @@
         "devices": "{n} 台设备",
         "contact": "超过 20 台设备？",
         "contactCta": "联系我们",
+        "viaTelegram": "通过 Telegram",
         "refund": "月付 7 天内、买断 14 天内可申请退款。"
     },
     "faq": {
@@ -173,6 +174,8 @@
         "hide": "隐藏",
         "payVnd": "银行转账（越南盾）",
         "payUsd": "国际信用卡（美元）",
+        "telegramOnly": "此套餐不支持银行卡购买。请通过 Telegram 联系我们购买：",
+        "telegramCta": "打开 Telegram",
         "qrTitle": "扫码付款",
         "amount": "金额",
         "code": "转账备注",

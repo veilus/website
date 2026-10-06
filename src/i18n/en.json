@@ -58,6 +58,7 @@
         "devices": "{n} devices",
         "contact": "More than 20 devices?",
         "contactCta": "Contact us",
+        "viaTelegram": "via Telegram",
         "refund": "Refund within 7 days (monthly) or 14 days (lifetime)."
     },
     "faq": {
@@ -173,6 +174,8 @@
         "hide": "Hide",
         "payVnd": "Bank transfer (VND)",
         "payUsd": "International card (USD)",
+        "telegramOnly": "This plan isn't sold by card. Message us on Telegram to buy it:",
+        "telegramCta": "Open Telegram",
         "qrTitle": "Scan to pay",
         "amount": "Amount",
         "code": "Transfer note",

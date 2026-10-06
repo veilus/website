@@ -58,6 +58,7 @@
         "devices": "{n} perangkat",
         "contact": "Lebih dari 20 perangkat?",
         "contactCta": "Hubungi kami",
+        "viaTelegram": "lewat Telegram",
         "refund": "Refund dalam 7 hari (bulanan) atau 14 hari (seumur hidup)."
     },
     "faq": {
@@ -173,6 +174,8 @@
         "hide": "Sembunyikan",
         "payVnd": "Transfer bank (VND)",
         "payUsd": "Kartu internasional (USD)",
+        "telegramOnly": "Paket ini tidak dijual lewat kartu. Hubungi kami di Telegram untuk membelinya:",
+        "telegramCta": "Buka Telegram",
         "qrTitle": "Pindai untuk membayar",
         "amount": "Jumlah",
         "code": "Berita transfer",
