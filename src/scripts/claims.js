@@ -131,7 +131,7 @@ export const ALLOWED = [
   // Trang tải về đọc bốn chuỗi này từ facts.js (VEIL-1000); đo lại cỡ thì sửa cả chuỗi ở đó lẫn dòng ở đây.
   { file: 'src/data/facts.js', text: '.exe · ~39 MB', why: 'cỡ bộ cài Windows (release v0.2.2), không phải khẳng định RAM mỗi hồ sơ' },
   { file: 'src/data/facts.js', text: '.dmg · ~61 MB', why: 'cỡ bộ cài macOS (release v0.2.2), không phải khẳng định RAM mỗi hồ sơ' },
-  { file: 'src/data/facts.js', text: '.zip · ~187 MB', why: 'cỡ ZIP engine win-x64 tải trong app, không phải khẳng định RAM mỗi hồ sơ' },
+  { file: 'src/data/facts.js', text: '.zip · ~188 MB', why: 'cỡ ZIP engine win-x64 tải trong app, không phải khẳng định RAM mỗi hồ sơ' },
   { file: 'src/data/facts.js', text: '.zip · ~157 MB', why: 'cỡ ZIP engine mac-arm64 tải trong app, không phải khẳng định RAM mỗi hồ sơ' },
   { file: 'src/i18n/zh.json', text: '在你的电脑之间双向同步 · 仅访问令牌会被加密', why: 'phủ định đúng (0024): chỉ token truy cập được mã hoá' },
   {

@@ -25,7 +25,7 @@ export const MAX_BROWSERS = 16;
 export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheckS: 3, holdMaxS: 60 };
 
 // Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.2 (repo công khai veilus/releases, đăng 2026-10-05, VEIL-1251)
-// và engine mới nhất 154.0.8037.58 (mac-arm64; win-x64 còn 153.0.8010.37). Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
+// và engine mới nhất 154.0.8037.58 (cả hai nền tảng). Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
 // src/scripts/claims.js — claims.test.js đỏ khi dòng đó không còn nằm nguyên văn trong file này.
 
 /**
@@ -71,7 +71,7 @@ export const DOWNLOADS_OPEN = Date.now() >= Date.parse(RELEASE_AT);
  * Cỡ ZIP engine, MB thập phân làm tròn. Bộ cài không kèm engine: người dùng tải nó trong app (Settings > Chromium).
  * Nguồn: danh sách engine công khai mà app đọc từ api.veilus.io, bản mới nhất của từng nền tảng; HEAD lấy
  * content-length, khớp cỡ khai trong index engine đã ký. Đo 2026-10-05 từ GET /api/v1/chromium/index (VEIL-1251):
- * mac-arm64 154.0.8037.58 là 156925983 byte; win-x64 mới nhất trên index vẫn là 153.0.8010.37, 187294648 byte
- * (gói 154 win-x64 chưa lên index lúc đo).
+ * mac-arm64 154.0.8037.58 là 156925983 byte. win-x64 154.0.8037.58 đo 2026-10-06 (VEIL-1268), index serial 6,
+ * gói dựng lại sau VEIL-1207: 187849395 byte.
  */
-export const ENGINE_SIZE = { windows: '.zip · ~187 MB', macos: '.zip · ~157 MB' };
+export const ENGINE_SIZE = { windows: '.zip · ~188 MB', macos: '.zip · ~157 MB' };
