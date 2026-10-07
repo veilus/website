@@ -485,5 +485,25 @@
     },
     "jsonld": {
         "chromiumEngine": "Veilus'un yamaladığı Chromium motoru"
+    },
+    "mcpPage": {
+        "metaTitle": "Veilus MCP — yapay zekâ asistanınızın yönettiği anti-tespit tarayıcı",
+        "metaDescription": "Claude Code, Cursor veya herhangi bir MCP istemcisini Veilus Browser'a bağlayın. Yapay zekânız profil oluşturur, proxy içe aktarır, profiller üzerinde Playwright betikleri yazıp çalıştırır ve zamanlar. Yalnızca yerel, token gerekir.",
+        "pageTitle": "Yapay zekâ asistanınızın MCP üzerinden yönettiği anti-tespit tarayıcı",
+        "pageLead": "Tek bir MCP komutu Claude Code, Cursor veya herhangi bir MCP istemcisini Veilus'a bağlar. Asistan işi profillerinizde yapar; siz bir kez onaylarsınız.",
+        "connectTitle": "Tek komutla bağlanın",
+        "connectLead": "Uygulamada yerel API'yi açın, API & MCP sayfasında bir token oluşturun, sonra Veilus'u istemcinize kaydedin. Uygulama gerçek yolu ve token'ı sizin için doldurur.",
+        "otherClients": "Cursor / Claude Desktop",
+        "docsCta": "Belgelerde tam MCP başvurusu",
+        "capTitle": "Asistan neler yapabilir",
+        "caps": [
+            "Profiller: her biri kendi parmak iziyle profilleri listeleme, oluşturma ve açma",
+            "Proxy: proxy listelerini içe aktarma, test etme, havuzları profillere atama",
+            "Sayfa kontrolü: çalışan bir profilin sayfasında gezinme, tıklama, yazma ve okuma",
+            "Betikler: Playwright betiklerini kaydetme, derleme ve çalıştırma, profil başına sonuçları okuma",
+            "Toplu ve zamanlanmış: betiği onayladıktan sonra birçok profilde aynı anda ya da her gün belirli saatte çalıştırma",
+            "Veri kümeleri: her profile kendi hesap, gönderi veya anahtar kelime satırlarını verme"
+        ],
+        "safety": "MCP üzerinden eklenen betikler, siz uygulamada onaylayana kadar en fazla 3 profilde çalışır. API yalnızca kendi makinenizde dinler."
     }
 }

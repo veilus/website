@@ -1,0 +1,83 @@
+---
+/**
+ * Trang /features/mcp/, dùng chung cho en và /[lang]/ (VEIL-1314): trang đích cho truy vấn về MCP, thứ trước đây
+ * chỉ là một mục trên trang chủ. Hình vòng lặp là Fig4McpLoop ở chế độ page (H1); phần kết nối chép lệnh từ
+ * docs reference/mcp — docs là nguồn, đổi lệnh ở đó thì sửa đây.
+ */
+import type { Lang } from '../i18n/utils';
+import { t } from '../i18n/utils';
+import Navbar from './Navbar.astro';
+import Fig4McpLoop from './Fig4McpLoop.astro';
+import FinalCTA from './FinalCTA.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const m = t(lang).mcpPage;
+const DOCS_MCP = 'https://docs.veilus.io/reference/mcp/';
+const CLAUDE_CODE = 'claude mcp add --scope user veilus -e VEILUS_API_TOKEN=<token> -- "<path to Veilus>" mcp';
+const CLIENT_JSON = `{
+  "mcpServers": {
+    "veilus": {
+      "command": "<path to Veilus>",
+      "args": ["mcp"],
+      "env": { "VEILUS_API_TOKEN": "<token>" }
+    }
+  }
+}`;
+---
+
+<Navbar lang={lang} />
+<main>
+  <Fig4McpLoop lang={lang} page />
+
+  <section class="k-wrap k-sec" id="connect" data-reveal>
+    <h2 class="k-h2">{m.connectTitle}</h2>
+    <p class="k-sub">{m.connectLead}</p>
+    <div class="k-snips">
+      <div class="k-snip k-rise" style="--d:0.1s">
+        <div class="k-fig">Claude Code</div>
+        <pre class="k-code">{CLAUDE_CODE}</pre>
+      </div>
+      <div class="k-snip k-rise" style="--d:0.2s">
+        <div class="k-fig">{m.otherClients}</div>
+        <pre class="k-code">{CLIENT_JSON}</pre>
+      </div>
+    </div>
+    <p class="k-docs"><a href={DOCS_MCP}>{m.docsCta}</a></p>
+  </section>
+
+  <section class="k-wrap k-sec" id="capabilities" data-reveal>
+    <h2 class="k-h2">{m.capTitle}</h2>
+    <ul class="k-caps">
+      {m.caps.map((c, n) => (
+        <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+          <em>{String(n + 1).padStart(2, '0')}</em><span>{c}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="k-safety"><span class="ms" data-icon="lock" aria-hidden="true"></span>{m.safety}</p>
+  </section>
+
+  <FinalCTA lang={lang} />
+</main>
+<Footer lang={lang} />
+
+<style>
+  .k-snips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .k-snip { display: flex; flex-direction: column; gap: 10px; padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
+  .k-snip .k-code { white-space: pre-wrap; word-break: break-word; font-size: 12.5px; line-height: 1.5; }
+  .k-docs { margin-top: 20px; font-family: var(--font-mono); font-size: 12.5px; }
+  .k-docs a { text-decoration: underline; text-underline-offset: 3px; }
+  .k-caps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--ink); }
+  .k-caps li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 8px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.5; }
+  .k-caps em { font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--acc); padding-top: 3px; }
+  .k-safety { display: flex; align-items: flex-start; gap: 8px; margin-top: 22px; max-width: 64ch; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.55; color: var(--muted); }
+  .k-safety .ms { font-size: 18px; flex: none; }
+
+  @media (max-width: 860px) {
+    .k-snips, .k-caps { grid-template-columns: 1fr; }
+  }
+</style>

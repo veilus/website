@@ -485,5 +485,25 @@
     },
     "jsonld": {
         "chromiumEngine": "Chromium engine do Veilus tự vá"
+    },
+    "mcpPage": {
+        "metaTitle": "Veilus MCP — trình duyệt antidetect do trợ lý AI của bạn điều khiển",
+        "metaDescription": "Kết nối Claude Code, Cursor hay bất kỳ MCP client nào với Veilus Browser. AI tạo profile, nhập proxy, viết và chạy script Playwright trên nhiều profile, rồi đặt lịch. Chỉ trên máy bạn, cần token.",
+        "pageTitle": "Trình duyệt antidetect do trợ lý AI của bạn điều khiển qua MCP",
+        "pageLead": "Một lệnh MCP nối Claude Code, Cursor hay bất kỳ MCP client nào với Veilus. Trợ lý làm việc trên các profile của bạn; bạn duyệt một lần.",
+        "connectTitle": "Kết nối bằng một lệnh",
+        "connectLead": "Bật API cục bộ trong app, tạo token ở trang API & MCP, rồi đăng ký Veilus với client của bạn. App điền sẵn đường dẫn thật và token cho bạn.",
+        "otherClients": "Cursor / Claude Desktop",
+        "docsCta": "Tài liệu MCP đầy đủ",
+        "capTitle": "Trợ lý làm được gì",
+        "caps": [
+            "Profile: liệt kê, tạo và mở profile, mỗi profile một fingerprint riêng",
+            "Proxy: nhập danh sách proxy, kiểm tra, gán pool cho profile",
+            "Điều khiển trang: mở, bấm, gõ và đọc trang của profile đang chạy",
+            "Script: lưu, biên dịch và chạy script Playwright, đọc kết quả từng profile",
+            "Chạy hàng loạt và lịch: chạy trên nhiều profile cùng lúc hoặc mỗi ngày vào giờ định sẵn, sau khi bạn duyệt script",
+            "Bộ dữ liệu: cho mỗi profile phần tài khoản, bài đăng hay từ khoá của riêng nó"
+        ],
+        "safety": "Script thêm qua MCP chỉ chạy tối đa 3 profile cho tới khi bạn duyệt trong app. API chỉ lắng nghe trên máy bạn."
     }
 }

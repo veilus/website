@@ -485,5 +485,25 @@
     },
     "jsonld": {
         "chromiumEngine": "Veilus's own patched Chromium engine"
+    },
+    "mcpPage": {
+        "metaTitle": "Veilus MCP — the anti-detect browser your AI assistant drives",
+        "metaDescription": "Connect Claude Code, Cursor or any MCP client to Veilus Browser. Your AI creates profiles, imports proxies, writes and runs Playwright scripts across profiles, and schedules them. Local only, token required.",
+        "pageTitle": "The anti-detect browser your AI assistant drives over MCP",
+        "pageLead": "One MCP command connects Claude Code, Cursor or any MCP client to Veilus. The assistant does the work across your profiles; you approve once.",
+        "connectTitle": "Connect in one command",
+        "connectLead": "Turn on the local API in the app, create a token on the API & MCP page, then register Veilus with your client. The app fills in the real path and token for you.",
+        "otherClients": "Cursor / Claude Desktop",
+        "docsCta": "Full MCP reference in the docs",
+        "capTitle": "What the assistant can do",
+        "caps": [
+            "Profiles: list, create and launch profiles, each with its own fingerprint",
+            "Proxy: import proxy lists, test them, assign pools to profiles",
+            "Page driving: navigate, click, type and read a running profile's page",
+            "Scripts: save, compile and run Playwright scripts, read per-profile results",
+            "Batch and schedules: run on many profiles at once or every day at a set time, after you approve the script",
+            "Datasets: give each profile its own rows of accounts, posts or keywords"
+        ],
+        "safety": "Scripts added over MCP run on at most 3 profiles until you approve them in the app. The API listens on your machine only."
     }
 }

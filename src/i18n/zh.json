@@ -485,5 +485,25 @@
     },
     "jsonld": {
         "chromiumEngine": "Veilus 自行打补丁的 Chromium 引擎"
+    },
+    "mcpPage": {
+        "metaTitle": "Veilus MCP — 由你的 AI 助手驱动的指纹浏览器",
+        "metaDescription": "把 Claude Code、Cursor 或任意 MCP 客户端连接到 Veilus 指纹浏览器。AI 创建配置文件、导入代理、编写并在多个配置文件上运行 Playwright 脚本，并安排定时运行。仅限本机，需要令牌。",
+        "pageTitle": "由你的 AI 助手通过 MCP 驱动的指纹浏览器",
+        "pageLead": "一条 MCP 命令即可把 Claude Code、Cursor 或任意 MCP 客户端连到 Veilus。助手在你的配置文件上完成工作，你只需审批一次。",
+        "connectTitle": "一条命令完成连接",
+        "connectLead": "在应用里打开本地 API，在 API & MCP 页面创建令牌，然后把 Veilus 注册到你的客户端。应用会替你填好真实路径和令牌。",
+        "otherClients": "Cursor / Claude Desktop",
+        "docsCta": "文档中的完整 MCP 参考",
+        "capTitle": "助手能做什么",
+        "caps": [
+            "配置文件：列出、创建并启动配置文件，每个都有独立指纹",
+            "代理：导入代理列表、测试、把代理池分配给配置文件",
+            "页面操作：在运行中的配置文件页面上导航、点击、输入和读取",
+            "脚本：保存、编译并运行 Playwright 脚本，读取每个配置文件的结果",
+            "批量与定时：在你审批脚本后，同时在多个配置文件上运行，或每天定时运行",
+            "数据集：给每个配置文件分配自己的账号、帖子或关键词行"
+        ],
+        "safety": "通过 MCP 添加的脚本在你于应用中审批之前最多只在 3 个配置文件上运行。API 只监听你的本机。"
     }
 }

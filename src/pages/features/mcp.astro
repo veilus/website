@@ -1,0 +1,11 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import McpPage from "../../components/McpPage.astro";
+import { t, defaultLang } from "../../i18n/utils";
+
+const i = t(defaultLang);
+---
+
+<Layout lang={defaultLang} title={i.mcpPage.metaTitle} description={i.mcpPage.metaDescription}>
+  <McpPage lang={defaultLang} />
+</Layout>

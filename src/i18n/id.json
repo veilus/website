@@ -485,5 +485,25 @@
     },
     "jsonld": {
         "chromiumEngine": "Mesin Chromium yang di-patch sendiri oleh Veilus"
+    },
+    "mcpPage": {
+        "metaTitle": "Veilus MCP — peramban anti-deteksi yang dikendalikan asisten AI Anda",
+        "metaDescription": "Hubungkan Claude Code, Cursor, atau klien MCP apa pun ke Veilus Browser. AI Anda membuat profil, mengimpor proxy, menulis dan menjalankan skrip Playwright di banyak profil, lalu menjadwalkannya. Hanya lokal, perlu token.",
+        "pageTitle": "Peramban anti-deteksi yang asisten AI Anda kendalikan lewat MCP",
+        "pageLead": "Satu perintah MCP menghubungkan Claude Code, Cursor, atau klien MCP apa pun ke Veilus. Asisten mengerjakan tugas di profil Anda; Anda menyetujui sekali.",
+        "connectTitle": "Hubungkan dengan satu perintah",
+        "connectLead": "Nyalakan API lokal di aplikasi, buat token di halaman API & MCP, lalu daftarkan Veilus ke klien Anda. Aplikasi mengisi jalur asli dan token untuk Anda.",
+        "otherClients": "Cursor / Claude Desktop",
+        "docsCta": "Referensi MCP lengkap di dokumentasi",
+        "capTitle": "Apa yang bisa dilakukan asisten",
+        "caps": [
+            "Profil: melihat, membuat, dan membuka profil, masing-masing dengan sidik jari sendiri",
+            "Proxy: mengimpor daftar proxy, mengujinya, menetapkan pool ke profil",
+            "Kendali halaman: navigasi, klik, mengetik, dan membaca halaman profil yang berjalan",
+            "Skrip: menyimpan, mengompilasi, dan menjalankan skrip Playwright, membaca hasil per profil",
+            "Batch dan jadwal: menjalankan di banyak profil sekaligus atau setiap hari pada jam tertentu, setelah Anda menyetujui skrip",
+            "Dataset: memberi setiap profil baris akun, postingan, atau kata kunci miliknya sendiri"
+        ],
+        "safety": "Skrip yang ditambahkan lewat MCP berjalan paling banyak di 3 profil sampai Anda menyetujuinya di aplikasi. API hanya mendengarkan di komputer Anda."
     }
 }
