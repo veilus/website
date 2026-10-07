@@ -9,7 +9,7 @@
 import type { Lang } from "../i18n/utils";
 import { t } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
-import { currencyForLang, formatPrice, TELEGRAM_URL, listed } from "../scripts/purchase-core.js";
+import { currencyForLang, emailHintKey, formatPrice, TELEGRAM_URL, listed } from "../scripts/purchase-core.js";
 
 interface Props {
   lang: Lang;
@@ -63,7 +63,7 @@ const skusOf = (kind: string) =>
       <div class="buy-field" id="buy-email-row">
         <label for="buy-email">{b.email}</label>
         <input type="email" id="buy-email" autocomplete="email" required />
-        <small>{b.emailHint}</small>
+        <small id="buy-email-hint">{b[emailHintKey(cur)]}</small>
       </div>
 
       <div class="buy-field" id="buy-key-row" hidden>
@@ -184,6 +184,7 @@ const skusOf = (kind: string) =>
     pollDelay,
     hasValidAmount,
     payCurrency,
+    emailHintKey,
     formatPrice,
     payRoute,
     listed,
@@ -226,6 +227,7 @@ const skusOf = (kind: string) =>
     payBtn.dataset.currency = currency;
     payBtn.textContent = dict.payVnd;
     $("buy-sub").textContent = dict.subtitleVnd;
+    $("buy-email-hint").textContent = dict[emailHintKey(currency)];
     form.querySelectorAll<HTMLElement>(".buy-sku-price").forEach((el) => {
       el.textContent = formatPrice(Number(el.dataset.vnd), "VND", lang);
     });

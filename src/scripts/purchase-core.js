@@ -138,6 +138,11 @@ export function payCurrency(lang, query) {
   return query?.askKey || query?.licenseKey ? "VND" : currencyForLang(lang);
 }
 
+/** Khoá chú thích dưới ô email: chuyển khoản VNĐ bắt buộc có email; thẻ và USDT dùng câu về biên nhận/key. */
+export function emailHintKey(currency) {
+  return currency === "VND" ? "emailHint" : "emailHintUsd";
+}
+
 export function formatPrice(amount, currency, lang) {
   return currency === "VND" ? `${new Intl.NumberFormat(lang).format(amount)} đ` : `$${amount}`;
 }

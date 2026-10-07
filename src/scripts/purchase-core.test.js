@@ -25,6 +25,7 @@ import {
   usdtAllowed,
   usdtShown,
   countdownText,
+  emailHintKey,
 } from "./purchase-core.js";
 import { SKUS } from "../data/skus.js";
 
@@ -431,5 +432,26 @@ test("countdownText: HH:MM:SS còn lại tới expires_at, làm tròn lên giây
   // Chỉ chuỗi ngày đọc được mới có đồng hồ: số, rỗng, thiếu, rác đều null (trang ẩn dòng đồng hồ).
   for (const bad of [undefined, null, 1791374400000, "", "khong-phai-ngay"]) {
     assert.equal(countdownText(bad, 0), null, String(bad));
+  }
+});
+
+test("emailHintKey: chỉ luồng VNĐ dùng câu 'bắt buộc khi chuyển khoản'; thẻ và USDT dùng câu biên nhận/key", () => {
+  assert.equal(emailHintKey("VND"), "emailHint");
+  assert.equal(emailHintKey("USD"), "emailHintUsd");
+  assert.equal(emailHintKey("USDT"), "emailHintUsd");
+  // Trang `en` (USD) không được hiện câu chuyển khoản; trang `vi` (VNĐ) thì giữ.
+  for (const lang of ["en", "vi", "zh", "ru", "es", "pt", "id", "tr"]) {
+    const dict = JSON.parse(readFileSync(new URL(`../i18n/${lang}.json`, import.meta.url), "utf8")).buy;
+    assert.ok(dict.emailHint && dict.emailHintUsd, lang);
+    assert.notEqual(dict.emailHint, dict.emailHintUsd, lang);
+  }
+});
+
+test("buy.telegramOnly và usdtExpired: không hứa thời hạn, telegramOnly không nói 'gửi key' (đơn gia hạn/thêm máy đã có key)", () => {
+  for (const lang of ["en", "vi", "zh", "ru", "es", "pt", "id", "tr"]) {
+    const dict = JSON.parse(readFileSync(new URL(`../i18n/${lang}.json`, import.meta.url), "utf8")).buy;
+    assert.doesNotMatch(dict.telegramOnly, /ngay khi|即|once payment|key|ключ|clave|chave|kunci|anahtar/i, lang);
+    assert.match(dict.usdtExpired, /billing@veilus\.io/, lang);
+    assert.match(dict.usdtExpired, new RegExp(TELEGRAM_URL.split("/").pop()), lang);
   }
 });
