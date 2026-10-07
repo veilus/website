@@ -20,6 +20,7 @@ import {
   payRoute,
   HIDDEN_SKUS,
   listed,
+  liveFrom,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -220,7 +221,15 @@ test("payRoute: kênh đã bật thì VNĐ chuyển khoản, thẻ cho gói ≤ 
   assert.equal(payRoute("USD", "monthly", on), "card");
   assert.equal(payRoute("USD", "team10", on), "telegram");
   assert.equal(payRoute("USD", "team20", on), "telegram");
-  // Mỗi kênh một công tắc: bật VNĐ không bật thẻ.
+  // Mỗi kênh một công tắc, hai chiều: bật VNĐ không bật thẻ, bật thẻ không bật VNĐ.
+  assert.equal(payRoute("VND", "solo", { card: true, vnd: false }), "telegram");
   assert.equal(payRoute("USD", "solo", { card: false, vnd: true }), "telegram");
   assert.equal(payRoute("VND", "solo", { card: false, vnd: true }), "vnd");
+});
+
+test("liveFrom: chỉ \"0\" và \"false\" tắt một kênh; thiếu biến hay rỗng là bật", () => {
+  assert.deepEqual(liveFrom({}), { card: true, vnd: true });
+  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "", PUBLIC_VND_LIVE: "" }), { card: true, vnd: true });
+  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "0", PUBLIC_VND_LIVE: "false" }), { card: false, vnd: false });
+  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "1", PUBLIC_VND_LIVE: "0" }), { card: true, vnd: false });
 });

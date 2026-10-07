@@ -2,7 +2,7 @@
 /**
  * Bảng 2 — giá (spec trang chủ §4 dòng 7): nội dung giữ như website cũ, chỉ đổi giao diện theo bản vẽ.
  * Giá đọc từ data/skus.js (bản sao bảng SKU của API); một loại tiền mỗi ngôn ngữ (vi → VNĐ, còn lại USD).
- * Nút mua dẫn tới /mua?sku=.
+ * Nút mua đi theo payRoute: /mua?sku= khi kênh trả của trang đang bật, Telegram khi kênh tắt hoặc gói vượt trần thẻ.
  */
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';

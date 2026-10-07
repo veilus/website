@@ -18,7 +18,10 @@ export const API_BASE = env.PUBLIC_API_BASE || "https://api.veilus.io";
  * mua của kênh đó mở Telegram. Trước khi LemonSqueezy duyệt (quyết định 0115),
  * production không tắt kênh nào: thẻ qua LemonSqueezy, VNĐ chuyển khoản.
  */
-export const LIVE = Object.freeze({ card: !off(env.PUBLIC_CARD_LIVE), vnd: !off(env.PUBLIC_VND_LIVE) });
+export function liveFrom(e) {
+  return Object.freeze({ card: !off(e.PUBLIC_CARD_LIVE), vnd: !off(e.PUBLIC_VND_LIVE) });
+}
+export const LIVE = liveFrom(env);
 
 /**
  * Gói không hiện trên bảng giá và /mua. Mặc định ẩn team10/team20: LemonSqueezy
@@ -121,7 +124,7 @@ export function formatPrice(amount, currency, lang) {
 /** Trần mỗi giao dịch thẻ của LemonSqueezy (thư duyệt store ngày 2026-10-07). */
 export const CARD_MAX_USD = 199;
 
-/** Kênh mua các gói không bán qua thẻ, trong lúc chưa có USDT (spec USDT §12 bước 2). */
+/** Kênh Telegram của Veilus: đường mua khi một kênh thanh toán đang tắt hoặc gói vượt trần thẻ (payRoute). */
 export const TELEGRAM_URL = "https://t.me/veilusbrowser";
 
 /** Gói này trả thẻ (USD) được không: giá USD không vượt trần của LemonSqueezy. SKU lạ thì không. */

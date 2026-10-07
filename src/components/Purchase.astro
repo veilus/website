@@ -209,6 +209,8 @@ const skusOf = (kind: string) =>
     const viaTelegram = payRoute(currency, selectedSku()) === "telegram";
     payBtn.hidden = viaTelegram;
     telegramRow.hidden = !viaTelegram;
+    // Phụ đề nói "trả bằng thẻ / chuyển khoản": không đúng khi chỉ còn đường Telegram.
+    $("buy-sub").hidden = viaTelegram;
   }
 
   // Gói đang ẩn (vd ?sku=team10 từ link cũ) không có ô chọn: về mặc định thay vì để trống.
