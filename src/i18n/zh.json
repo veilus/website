@@ -59,6 +59,7 @@
         "contact": "超过 20 台设备？",
         "contactCta": "联系我们",
         "viaTelegram": "通过 Telegram",
+        "viaUsdt": "USDT",
         "refund": "月付 7 天内、买断 14 天内可申请退款。"
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "国际信用卡（美元）",
         "telegramOnly": "该套餐目前通过 Telegram 销售。给我们发消息，收到付款后即发送密钥：",
         "telegramCta": "打开 Telegram",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "通过 TRC20 网络发送 USDT",
+        "usdtAddress": "钱包地址",
+        "usdtAmount": "准确金额",
+        "usdtNetworkWarn": "只能通过 TRC20 (Tron) 网络发送 USDT。通过其他网络或以其他代币发送的款项无法找回。",
+        "usdtExactWarn": "请发送与此完全一致的金额。如从交易所提币，请确保到账金额与此一致：交易所通常会扣除手续费。金额不一致时不会自动匹配。",
+        "usdtWaiting": "正在等待转账。转账确认后一两分钟内本页会自动更新。",
+        "usdtTimeLeft": "剩余付款时间：",
         "qrTitle": "扫码付款",
         "amount": "金额",
         "code": "转账备注",
@@ -197,6 +206,8 @@
             "keyNotFound": "未找到许可证密钥。",
             "rateLimited": "请求过多，请稍后再试。",
             "unavailable": "此付款方式暂未开放。",
+            "busy": "目前订单较多，请几分钟后再试。",
+            "methodNotSupported": "此套餐无法使用 USDT 支付。USDT 适用于永久套餐和增加设备。",
             "generic": "出现错误，请重试。",
             "network": "网络错误，请检查连接后重试。"
         }

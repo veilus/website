@@ -59,6 +59,7 @@
         "contact": "Trên 20 máy?",
         "contactCta": "Liên hệ",
         "viaTelegram": "qua Telegram",
+        "viaUsdt": "USDT",
         "refund": "Hoàn tiền trong 7 ngày (gói tháng) hoặc 14 ngày (gói trọn đời)."
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "Thẻ quốc tế (USD)",
         "telegramOnly": "Hiện gói này bán qua Telegram. Nhắn cho chúng tôi, key được gửi ngay khi nhận được tiền:",
         "telegramCta": "Mở Telegram",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "Chuyển USDT trên mạng TRC20",
+        "usdtAddress": "Địa chỉ ví",
+        "usdtAmount": "Số tiền chính xác",
+        "usdtNetworkWarn": "Chỉ chuyển USDT trên mạng TRC20 (Tron). Chuyển nhầm mạng hay nhầm token thì không lấy lại được.",
+        "usdtExactWarn": "Chuyển đúng số tiền này. Nếu rút từ sàn, hãy để số tiền nhận bằng đúng số này — sàn thường trừ phí. Số tiền khác sẽ không được tự động ghép với đơn.",
+        "usdtWaiting": "Đang chờ tiền về. Trang tự cập nhật một hai phút sau khi giao dịch được xác nhận.",
+        "usdtTimeLeft": "Thời gian còn lại để thanh toán:",
         "qrTitle": "Quét mã để thanh toán",
         "amount": "Số tiền",
         "code": "Nội dung chuyển khoản",
@@ -197,6 +206,8 @@
             "keyNotFound": "Không tìm thấy key license.",
             "rateLimited": "Quá nhiều yêu cầu, vui lòng thử lại sau.",
             "unavailable": "Cách thanh toán này chưa mở.",
+            "busy": "Hiện đang có nhiều đơn cùng lúc. Vui lòng thử lại sau vài phút.",
+            "methodNotSupported": "Gói này không trả được bằng USDT. USDT dùng cho gói trọn đời và gói thêm máy.",
             "generic": "Có lỗi xảy ra, vui lòng thử lại.",
             "network": "Lỗi mạng. Kiểm tra kết nối rồi thử lại."
         }

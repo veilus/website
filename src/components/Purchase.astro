@@ -2,6 +2,8 @@
 /**
  * Trang mua dùng chung cho /mua và /[lang]/mua. Logic thuần ở
  * `scripts/purchase-core.js`; ở đây chỉ gắn vào DOM và poll trạng thái đơn.
+ * Ba đường trả: chuyển khoản VNĐ (QR do SePay vẽ), thẻ (sang trang thanh toán) và
+ * USDT TRC20 (địa chỉ ví và số tiền lẻ riêng của đơn, QR vẽ ngay trên trình duyệt).
  * Key license chỉ sống trong biến bộ nhớ và ô nhập — không ghi vào storage/URL.
  */
 import type { Lang } from "../i18n/utils";
@@ -58,7 +60,7 @@ const skusOf = (kind: string) =>
         }
       </fieldset>
 
-      <div class="buy-field">
+      <div class="buy-field" id="buy-email-row">
         <label for="buy-email">{b.email}</label>
         <input type="email" id="buy-email" autocomplete="email" required />
         <small>{b.emailHint}</small>
@@ -88,6 +90,13 @@ const skusOf = (kind: string) =>
           id={vnd ? "buy-vnd" : "buy-usd"}
           data-currency={cur}>{vnd ? b.payVnd : b.payUsd}</button
         >
+        {
+          !vnd && (
+            <button type="button" class="btn btn-secondary" id="buy-usdt" hidden>
+              {b.payUsdt}
+            </button>
+          )
+        }
       </div>
       <p class="buy-telegram" id="buy-telegram" hidden>
         {b.telegramOnly}
@@ -115,6 +124,33 @@ const skusOf = (kind: string) =>
         <p>{b.qrHint}</p>
         <p class="buy-status">{b.waiting}</p>
       </div>
+      <div id="buy-usdt-pending" hidden>
+        <h2>{b.usdtTitle}</h2>
+        <div id="buy-usdt-qr" class="buy-usdt-qr" role="img" aria-label={b.usdtAddress}></div>
+        <dl>
+          <dt>{b.usdtAddress}</dt>
+          <dd>
+            <code id="buy-usdt-address"></code>
+            <button type="button" class="btn btn-secondary buy-copy" data-copy="buy-usdt-address"
+              >{b.copy}</button
+            >
+          </dd>
+          <dt>{b.usdtAmount}</dt>
+          <dd>
+            <code id="buy-usdt-amount"></code> USDT
+            <button type="button" class="btn btn-secondary buy-copy" data-copy="buy-usdt-amount"
+              >{b.copy}</button
+            >
+          </dd>
+        </dl>
+        <p><strong>{b.usdtNetworkWarn}</strong></p>
+        <p>{b.usdtExactWarn}</p>
+        <p>{b.expires}</p>
+        <p id="buy-usdt-countdown-row" hidden>
+          {b.usdtTimeLeft} <code id="buy-usdt-countdown" role="timer"></code>
+        </p>
+        <p class="buy-status">{b.usdtWaiting}</p>
+      </div>
       <div id="buy-paid-key" hidden>
         <p>{b.paidKey}</p>
         <p>
@@ -137,6 +173,7 @@ const skusOf = (kind: string) =>
 </section>
 
 <script>
+  import qrcode from "qrcode-generator";
   import {
     API_BASE,
     parseQuery,
@@ -151,6 +188,8 @@ const skusOf = (kind: string) =>
     formatPrice,
     payRoute,
     listed,
+    usdtShown,
+    countdownText,
   } from "../scripts/purchase-core.js";
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
@@ -172,14 +211,18 @@ const skusOf = (kind: string) =>
     const params = new URLSearchParams();
     if (q.sku) params.set("sku", q.sku);
     params.set("renew", "1");
+    // Thiếu dòng này thì tải lại trang mất `method=usdt` và mua thêm máy bằng USDT rơi về luồng VNĐ.
+    if (q.method) params.set("method", q.method);
     history.replaceState(null, "", location.pathname + "?" + params.toString());
   }
 
   const form = $("buy-form") as HTMLFormElement;
   const payBtn = form.querySelector(".buy-actions button") as HTMLButtonElement;
+  const usdtBtn = document.getElementById("buy-usdt") as HTMLButtonElement | null;
   const currency = payCurrency(lang, q);
   // Trang tiếng khác mở bằng ?renew= (key thuê tháng VNĐ từ app): chuyển trang sang luồng VNĐ.
-  if (currency !== payBtn.dataset.currency) {
+  // Chỉ khi ra VNĐ: loại tiền USDT (`method=usdt`) vẫn là trang USD, nút trả thẻ giữ nguyên.
+  if (currency === "VND" && payBtn.dataset.currency !== "VND") {
     payBtn.id = "buy-vnd";
     payBtn.dataset.currency = currency;
     payBtn.textContent = dict.payVnd;
@@ -189,6 +232,7 @@ const skusOf = (kind: string) =>
     });
   }
   const emailEl = $("buy-email") as HTMLInputElement;
+  const emailRow = $("buy-email-row");
   const keyRow = $("buy-key-row");
   const keyEl = $("buy-key") as HTMLInputElement;
   const msg = $("buy-msg");
@@ -204,13 +248,30 @@ const skusOf = (kind: string) =>
   }
 
   const telegramRow = $("buy-telegram");
-  /** Kênh trả chưa bật hoặc gói vượt trần thẻ: ẩn nút trả, hiện đường Telegram (payRoute). */
+  /**
+   * Nút trả theo gói và loại tiền (payRoute, usdtShown): nút thẻ/VNĐ hiện khi đường trả là thẻ hoặc VNĐ,
+   * nút USDT hiện khi gói bán qua USDT — trang USD có thể hiện cả hai; `method=usdt` chỉ còn nút USDT.
+   * Không nút nào thì chỉ còn đường Telegram: ẩn luôn ô email và ô key vì không có gì để gửi.
+   */
   function syncPayRow() {
-    const viaTelegram = payRoute(currency, selectedSku()) === "telegram";
-    payBtn.hidden = viaTelegram;
-    telegramRow.hidden = !viaTelegram;
-    // Phụ đề nói "trả bằng thẻ / chuyển khoản": không đúng khi chỉ còn đường Telegram.
-    $("buy-sub").hidden = viaTelegram;
+    const sku = selectedSku();
+    const route = payRoute(currency, sku);
+    const card = route === "card" || route === "vnd";
+    const usdt = usdtShown(currency, sku);
+    const telegramOnly = !card && !usdt;
+    payBtn.hidden = !card;
+    if (usdtBtn) {
+      usdtBtn.hidden = !usdt;
+      // Không còn nút thẻ thì nút USDT là nút chính của form.
+      usdtBtn.classList.toggle("btn-primary", !card);
+      usdtBtn.classList.toggle("btn-secondary", card);
+    }
+    telegramRow.hidden = !telegramOnly;
+    emailRow.hidden = telegramOnly;
+    // onSkuChange chạy syncKeyRow trước nên dòng này thắng; đổi sang gói có nút trả thì syncKeyRow trả ô key lại.
+    if (telegramOnly) keyRow.hidden = true;
+    // Phụ đề nói "trả bằng thẻ / chuyển khoản": không đúng khi chỉ còn đường Telegram hay chỉ còn nút USDT.
+    $("buy-sub").hidden = !card;
   }
 
   // Gói đang ẩn (vd ?sku=team10 từ link cũ) không có ô chọn: về mặc định thay vì để trống.
@@ -316,6 +377,50 @@ const skusOf = (kind: string) =>
 
   payBtn.addEventListener("click", () => withBusy(currency === "VND" ? payVnd : payUsd));
 
+  type UsdtOrder = {
+    id: string;
+    method: "usdt";
+    amount: number; // phần triệu USDT, như trong D1
+    amount_usdt: string; // chuỗi để hiện, ví dụ "99.0173"
+    address: string;
+    expires_at: string | null; // ISO; GET /orders/:id không trả lại, nên giữ ở đây cho đồng hồ sau khi tải lại trang
+  };
+
+  async function payUsdt() {
+    const f = readForm();
+    if (!f || !f.email || !emailEl.checkValidity()) return void showErr("buy.err.input");
+    const r = await post("/api/v1/orders", buildOrderBody({ ...f, method: "usdt" }));
+    if (!r) return;
+    const d = r.data;
+    if (
+      r.res.status !== 201 ||
+      typeof d.id !== "string" ||
+      !hasValidAmount(d.amount) ||
+      typeof d.amount_usdt !== "string" ||
+      !d.amount_usdt ||
+      typeof d.address !== "string" ||
+      !d.address
+    ) {
+      return void showErr(errorKey(r.res.status, d.code));
+    }
+    const order: UsdtOrder = {
+      id: d.id,
+      method: "usdt",
+      amount: d.amount,
+      amount_usdt: d.amount_usdt,
+      address: d.address,
+      expires_at: typeof d.expires_at === "string" ? d.expires_at : null,
+    };
+    try {
+      sessionStorage.setItem(STORE, JSON.stringify(order));
+    } catch {
+      /* storage bị chặn: tải lại trang thì mất theo dõi, đơn vẫn còn */
+    }
+    showUsdtOrder(order);
+  }
+
+  usdtBtn?.addEventListener("click", () => withBusy(payUsdt));
+
   type Order = { id: string; code: string; amount: number; qr_url: string };
 
   function show(id: string, on: boolean) {
@@ -326,11 +431,56 @@ const skusOf = (kind: string) =>
     form.hidden = true;
     show("buy-order", true);
     show("buy-pending", true);
+    show("buy-usdt-pending", false);
     ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
     const qr = safeCheckoutUrl(o.qr_url);
     if (qr) ($("buy-qr") as HTMLImageElement).src = qr;
     $("buy-amount").textContent = formatPrice(o.amount, "VND", lang);
     $("buy-code").textContent = o.code;
+    poll(o.id);
+  }
+
+  /** QR chỉ chứa địa chỉ ví; số tiền khách chép (mỗi ví đọc số tiền trong QR một kiểu). */
+  function renderQr(el: HTMLElement, text: string) {
+    try {
+      const qr = qrcode(0, "M");
+      qr.addData(text);
+      qr.make();
+      el.innerHTML = qr.createSvgTag({ cellSize: 5, margin: 2, scalable: true });
+    } catch (e) {
+      // Không vẽ được thì bỏ khung QR; địa chỉ vẫn hiện bằng chữ để chép.
+      el.replaceChildren();
+      console.error("buy: không vẽ được QR", e);
+    }
+  }
+
+  // Đồng hồ của màn USDT tính lại từ `expires_at` mỗi giây, không cộng dồn — tab ngủ xong vẫn đúng.
+  // Hạn thật do máy chủ giữ: hết giờ thì poll thấy `expired` và đổi màn; ở đây chỉ hiện thời gian còn lại.
+  let clock: ReturnType<typeof setInterval> | undefined;
+
+  function startCountdown(expiresAt: string | null | undefined) {
+    clearInterval(clock);
+    const row = $("buy-usdt-countdown-row");
+    const out = $("buy-usdt-countdown");
+    const paint = () => {
+      const text = countdownText(expiresAt);
+      row.hidden = text === null; // không đọc được hạn thì ẩn dòng đồng hồ, không hiện giờ sai
+      if (text !== null) out.textContent = text;
+    };
+    paint();
+    clock = setInterval(paint, 1000);
+  }
+
+  function showUsdtOrder(o: UsdtOrder) {
+    form.hidden = true;
+    show("buy-order", true);
+    show("buy-pending", false);
+    show("buy-usdt-pending", true);
+    ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
+    $("buy-usdt-address").textContent = o.address;
+    $("buy-usdt-amount").textContent = o.amount_usdt;
+    renderQr($("buy-usdt-qr"), o.address);
+    startCountdown(o.expires_at);
     poll(o.id);
   }
 
@@ -347,6 +497,8 @@ const skusOf = (kind: string) =>
   function finish(clear: boolean) {
     if (clear) clearStore();
     show("buy-pending", false);
+    show("buy-usdt-pending", false);
+    clearInterval(clock);
   }
 
   let timer: ReturnType<typeof setTimeout> | undefined;
@@ -393,6 +545,7 @@ const skusOf = (kind: string) =>
 
   $("buy-new-order").addEventListener("click", () => {
     clearStore();
+    clearInterval(clock);
     show("buy-order", false);
     form.hidden = false;
   });
@@ -401,7 +554,9 @@ const skusOf = (kind: string) =>
   try {
     const saved = JSON.parse(sessionStorage.getItem(STORE) || "null");
     if (saved && typeof saved.id === "string" && hasValidAmount(saved.amount)) {
-      showOrder(saved);
+      if (saved.method !== "usdt") showOrder(saved);
+      else if (typeof saved.address === "string" && typeof saved.amount_usdt === "string") showUsdtOrder(saved);
+      else clearStore(); // bản ghi USDT hỏng (thiếu địa chỉ hoặc số tiền) — bỏ, quay lại form
     } else if (saved) {
       clearStore(); // bản ghi hỏng (amount thiếu/NaN) — bỏ, quay lại form
     }
@@ -578,5 +733,16 @@ const skusOf = (kind: string) =>
   .buy-telegram a {
     text-decoration: underline;
     text-underline-offset: 3px;
+  }
+  /* QR của địa chỉ ví (qrcode-generator, scalable: SVG không có width/height riêng).
+     SVG do script chèn vào nên không mang thuộc tính phạm vi của Astro: cần :global. */
+  .buy-usdt-qr {
+    width: 220px;
+    max-width: 100%;
+    margin: var(--space-md) 0;
+  }
+  .buy-usdt-qr :global(svg) {
+    width: 100%;
+    height: auto;
   }
 </style>

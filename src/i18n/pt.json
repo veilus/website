@@ -59,6 +59,7 @@
         "contact": "Mais de 20 dispositivos?",
         "contactCta": "Fale conosco",
         "viaTelegram": "pelo Telegram",
+        "viaUsdt": "USDT",
         "refund": "Reembolso em até 7 dias (mensal) ou 14 dias (vitalício)."
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "Cartão internacional (USD)",
         "telegramOnly": "No momento este plano é vendido pelo Telegram. Fale conosco e enviaremos sua chave assim que o pagamento chegar:",
         "telegramCta": "Abrir o Telegram",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "Envie USDT pela rede TRC20",
+        "usdtAddress": "Endereço da carteira",
+        "usdtAmount": "Valor exato",
+        "usdtNetworkWarn": "Envie USDT somente pela TRC20 (Tron). O que for enviado por outra rede ou como outro token não pode ser recuperado.",
+        "usdtExactWarn": "Envie exatamente este valor. Se sacar de uma corretora, garanta que o valor recebido seja este: as corretoras costumam descontar uma taxa. Um valor diferente não é associado automaticamente.",
+        "usdtWaiting": "Aguardando a transferência. Esta página é atualizada um ou dois minutos após a confirmação.",
+        "usdtTimeLeft": "Tempo restante para pagar:",
         "qrTitle": "Escaneie para pagar",
         "amount": "Valor",
         "code": "Descrição da transferência",
@@ -197,6 +206,8 @@
             "keyNotFound": "Chave de licença não encontrada.",
             "rateLimited": "Muitas solicitações. Tente novamente mais tarde.",
             "unavailable": "Este método de pagamento ainda não está disponível.",
+            "busy": "Estamos com muitos pedidos no momento. Tente novamente em alguns minutos.",
+            "methodNotSupported": "Este plano não pode ser pago com USDT. O USDT vale para planos vitalícios e dispositivos extra.",
             "generic": "Algo deu errado. Tente novamente.",
             "network": "Erro de rede. Verifique sua conexão e tente novamente."
         }

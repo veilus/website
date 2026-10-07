@@ -59,6 +59,7 @@
         "contact": "¿Más de 20 dispositivos?",
         "contactCta": "Contáctanos",
         "viaTelegram": "por Telegram",
+        "viaUsdt": "USDT",
         "refund": "Reembolso en 7 días (mensual) o 14 días (de por vida)."
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "Tarjeta internacional (USD)",
         "telegramOnly": "Por ahora este plan se vende por Telegram. Escríbenos y te enviaremos la clave en cuanto llegue el pago:",
         "telegramCta": "Abrir Telegram",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "Envía USDT por la red TRC20",
+        "usdtAddress": "Dirección de la billetera",
+        "usdtAmount": "Importe exacto",
+        "usdtNetworkWarn": "Envía USDT solo por TRC20 (Tron). Lo enviado por otra red o como otro token no se puede recuperar.",
+        "usdtExactWarn": "Envía exactamente este importe. Si retiras desde un exchange, asegúrate de que el importe recibido sea este: los exchanges suelen descontar una comisión. Un importe distinto no se asocia automáticamente.",
+        "usdtWaiting": "Esperando la transferencia. Esta página se actualiza uno o dos minutos después de que se confirme.",
+        "usdtTimeLeft": "Tiempo restante para pagar:",
         "qrTitle": "Escanea para pagar",
         "amount": "Importe",
         "code": "Concepto de la transferencia",
@@ -197,6 +206,8 @@
             "keyNotFound": "Clave de licencia no encontrada.",
             "rateLimited": "Demasiadas solicitudes. Inténtalo más tarde.",
             "unavailable": "Este método de pago aún no está disponible.",
+            "busy": "Estamos gestionando muchos pedidos ahora mismo. Inténtalo de nuevo en unos minutos.",
+            "methodNotSupported": "Este plan no se puede pagar con USDT. USDT sirve para los planes de por vida y los dispositivos extra.",
             "generic": "Algo salió mal. Inténtalo de nuevo.",
             "network": "Error de red. Revisa tu conexión e inténtalo de nuevo."
         }

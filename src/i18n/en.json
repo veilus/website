@@ -59,6 +59,7 @@
         "contact": "More than 20 devices?",
         "contactCta": "Contact us",
         "viaTelegram": "via Telegram",
+        "viaUsdt": "USDT",
         "refund": "Refund within 7 days (monthly) or 14 days (lifetime)."
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "International card (USD)",
         "telegramOnly": "Right now this plan is sold on Telegram. Message us and we'll send your key once payment arrives:",
         "telegramCta": "Open Telegram",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "Send USDT on the TRC20 network",
+        "usdtAddress": "Wallet address",
+        "usdtAmount": "Exact amount",
+        "usdtNetworkWarn": "Send USDT on TRC20 (Tron) only. Funds sent on another network or as another token cannot be recovered.",
+        "usdtExactWarn": "Send exactly this amount. Withdrawing from an exchange? Make sure the amount received equals it — exchanges often deduct a fee. A different amount is not matched automatically.",
+        "usdtWaiting": "Waiting for the transfer. This page updates a minute or two after it is confirmed.",
+        "usdtTimeLeft": "Time left to pay:",
         "qrTitle": "Scan to pay",
         "amount": "Amount",
         "code": "Transfer note",
@@ -197,6 +206,8 @@
             "keyNotFound": "License key not found.",
             "rateLimited": "Too many requests. Please try again later.",
             "unavailable": "This payment method is not available yet.",
+            "busy": "We're handling a lot of orders right now. Please try again in a few minutes.",
+            "methodNotSupported": "This plan can't be paid with USDT. USDT works for lifetime plans and extra devices.",
             "generic": "Something went wrong. Please try again.",
             "network": "Network error. Check your connection and try again."
         }

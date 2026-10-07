@@ -1,5 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   API_BASE,
   parseQuery,
@@ -21,6 +22,9 @@ import {
   HIDDEN_SKUS,
   listed,
   liveFrom,
+  usdtAllowed,
+  usdtShown,
+  countdownText,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -28,7 +32,7 @@ test("API_BASE trùng hằng các trang hiện có", () => {
 });
 
 test("parseQuery: renew=1 hỏi key, không mang key", () => {
-  assert.deepEqual(parseQuery("?renew=1"), { sku: null, licenseKey: null, askKey: true });
+  assert.deepEqual(parseQuery("?renew=1"), { sku: null, licenseKey: null, askKey: true, method: null });
 });
 
 test("parseQuery: renew=vl_pro_abc giữ key trong bộ nhớ", () => {
@@ -36,12 +40,13 @@ test("parseQuery: renew=vl_pro_abc giữ key trong bộ nhớ", () => {
     sku: "device_solo",
     licenseKey: "vl_pro_abc",
     askKey: true,
+    method: null,
   });
 });
 
 test("parseQuery: renew rỗng hoặc rác thì chỉ hỏi key", () => {
-  assert.deepEqual(parseQuery("?renew=%20"), { sku: null, licenseKey: null, askKey: true });
-  assert.deepEqual(parseQuery("?renew=<script>"), { sku: null, licenseKey: null, askKey: true });
+  assert.deepEqual(parseQuery("?renew=%20"), { sku: null, licenseKey: null, askKey: true, method: null });
+  assert.deepEqual(parseQuery("?renew=<script>"), { sku: null, licenseKey: null, askKey: true, method: null });
 });
 
 test("parseQuery: renew=1&sku=monthly sống sót qua reload (URL đã gỡ key)", () => {
@@ -49,6 +54,7 @@ test("parseQuery: renew=1&sku=monthly sống sót qua reload (URL đã gỡ key)
     sku: "monthly",
     licenseKey: null,
     askKey: true,
+    method: null,
   });
 });
 
@@ -59,9 +65,19 @@ test("formRequiresKey: renew=1 (không key, sau reload) vẫn buộc nhập key 
 });
 
 test("parseQuery: không có renew thì không hỏi key; sku lạ bị bỏ", () => {
-  assert.deepEqual(parseQuery("?sku=solo"), { sku: "solo", licenseKey: null, askKey: false });
-  assert.deepEqual(parseQuery("?sku=../x"), { sku: null, licenseKey: null, askKey: false });
-  assert.deepEqual(parseQuery(""), { sku: null, licenseKey: null, askKey: false });
+  assert.deepEqual(parseQuery("?sku=solo"), { sku: "solo", licenseKey: null, askKey: false, method: null });
+  assert.deepEqual(parseQuery("?sku=../x"), { sku: null, licenseKey: null, askKey: false, method: null });
+  assert.deepEqual(parseQuery(""), { sku: null, licenseKey: null, askKey: false, method: null });
+});
+
+test("method=usdt: parseQuery giữ lại, payCurrency ra USDT kể cả khi có renew (mua thêm máy từ app)", () => {
+  const q = parseQuery("?sku=device_team5&renew=vl_pro_abc&method=usdt");
+  assert.equal(q.method, "usdt");
+  assert.equal(q.licenseKey, "vl_pro_abc");
+  assert.equal(payCurrency("en", q), "USDT");
+  // Hàng đối chứng: renew không kèm method vẫn là luồng VNĐ như trước.
+  assert.equal(payCurrency("en", parseQuery("?renew=1")), "VND");
+  assert.equal(parseQuery("?sku=solo&method=paypal").method, null);
 });
 
 test("needsKey: thêm máy luôn cần key, thuê tháng cần khi gia hạn, trọn đời không", () => {
@@ -121,6 +137,14 @@ test("buildOrderBody: kèm lang nguyên văn khi có, bỏ qua khi không", () =
   );
 });
 
+test("buildOrderBody: method usdt đi vào body; không có thì giữ nguyên", () => {
+  assert.equal(buildOrderBody({ sku: "solo", email: "a@b.io", method: "usdt" }).method, "usdt");
+  assert.equal("method" in buildOrderBody({ sku: "solo", email: "a@b.io" }), false);
+  // Chỉ "usdt" đi vào body: giá trị khác là rác, API mặc định về SePay.
+  assert.equal("method" in buildOrderBody({ sku: "solo", email: "a@b.io", method: "paypal" }), false);
+  assert.equal("method" in buildOrderBody({ sku: "solo", email: "a@b.io", method: null }), false);
+});
+
 test("errorKey: đủ bảng ánh xạ", () => {
   assert.equal(errorKey(400, "BAD_REQUEST"), "buy.err.input");
   assert.equal(errorKey(400, "WRONG_SKU"), "buy.err.wrongSku");
@@ -132,6 +156,38 @@ test("errorKey: đủ bảng ánh xạ", () => {
   assert.equal(errorKey(500, "INTERNAL_ERROR"), "buy.err.generic");
   assert.equal(errorKey(502, undefined), "buy.err.generic");
   assert.equal(errorKey(400, undefined), "buy.err.generic");
+});
+
+test("errorKey: 503 BUSY và 400 METHOD_NOT_SUPPORTED có thông báo riêng; 503 khác vẫn là unavailable", () => {
+  assert.equal(errorKey(503, "BUSY"), "buy.err.busy");
+  assert.equal(errorKey(400, "METHOD_NOT_SUPPORTED"), "buy.err.methodNotSupported");
+  // Hàng đối chứng: mã cũ không đổi.
+  assert.equal(errorKey(503, "NOT_CONFIGURED"), "buy.err.unavailable");
+  assert.equal(errorKey(503, undefined), "buy.err.unavailable");
+  assert.equal(errorKey(400, "BAD_REQUEST"), "buy.err.input");
+});
+
+// Trang tra chữ bằng `tr(key)` và rơi về `err.generic` khi thiếu khoá — im lặng. Bài này giữ cho mọi khoá
+// errorKey trả về đều có chữ thật trong en.json (bài i18n-parity lo 7 ngôn ngữ còn lại có cùng khoá).
+test("errorKey: mọi khoá trả về đều có chữ trong en.json", () => {
+  const en = JSON.parse(readFileSync(new URL("../i18n/en.json", import.meta.url), "utf8"));
+  const cases = [
+    [400, "BAD_REQUEST"],
+    [400, "WRONG_SKU"],
+    [400, "ADDON_NOT_ALLOWED"],
+    [400, "METHOD_NOT_SUPPORTED"],
+    [400, undefined],
+    [404, undefined],
+    [429, undefined],
+    [503, "NOT_CONFIGURED"],
+    [503, "BUSY"],
+    [500, undefined],
+  ];
+  for (const [status, code] of cases) {
+    const key = errorKey(status, code);
+    const text = en.buy.err[key.replace(/^buy\.err\./, "")];
+    assert.ok(typeof text === "string" && text.length > 0, `${status} ${code} → ${key} thiếu trong en.json`);
+  }
 });
 
 test("safeCheckoutUrl: chỉ nhận chuỗi https://", () => {
@@ -165,6 +221,18 @@ test("payCurrency: có renew thì luôn VND bất kể ngôn ngữ trang", () =>
   assert.equal(payCurrency("vi", parseQuery("?sku=monthly")), "VND");
 });
 
+test("payCurrency: trang vi bỏ qua method=usdt (VNĐ không có USDT); bảy ngôn ngữ trả USD nhận method=usdt", () => {
+  assert.equal(payCurrency("vi", { method: "usdt" }), "VND");
+  assert.equal(payCurrency("vi", parseQuery("?sku=solo&method=usdt")), "VND");
+  assert.equal(payCurrency("vi", parseQuery("?sku=device_solo&renew=vl_pro_abc&method=usdt")), "VND");
+  for (const lang of OTHER_LANGS) {
+    assert.equal(payCurrency(lang, parseQuery("?sku=solo&method=usdt")), "USDT", lang);
+    assert.equal(payCurrency(lang, parseQuery("?sku=device_solo&renew=vl_pro_abc&method=usdt")), "USDT", lang);
+    // Hàng đối chứng: thiếu method thì vẫn USD.
+    assert.equal(payCurrency(lang, parseQuery("?sku=solo")), "USD", lang);
+  }
+});
+
 test("formatPrice: VND có dấu nhóm và đ, USD có $", () => {
   assert.equal(formatPrice(200_000, "VND", "vi"), "200.000 đ");
   assert.equal(formatPrice(9, "USD", "en"), "$9");
@@ -181,13 +249,21 @@ test("cardAllowed: gói ≤ $199 trả thẻ được; team10/team20 vượt tr�
   assert.equal(cardAllowed("khong-co"), false);
 });
 
+test("usdtAllowed: v1 bán gói trọn đời và thêm máy qua USDT, không bán gói tháng", () => {
+  for (const sku of ["solo", "team3", "team5", "team10", "team20", "device_solo", "device_team5", "device_team10"]) {
+    assert.equal(usdtAllowed(sku), true, sku);
+  }
+  assert.equal(usdtAllowed("monthly"), false);
+  assert.equal(usdtAllowed("khong-co"), false);
+});
+
 test("TELEGRAM_URL là kênh Telegram của Veilus", () => {
   assert.equal(TELEGRAM_URL, "https://t.me/veilusbrowser");
 });
 
-test("công tắc kênh: build không đặt biến thì thẻ và VNĐ bật, API mặc định là production", () => {
+test("công tắc kênh: build không đặt biến thì thẻ và VNĐ bật, USDT tắt, API mặc định là production", () => {
   // Nộp LemonSqueezy duyệt (quyết định 0115): production trả thẻ qua LemonSqueezy, VNĐ chuyển khoản; Telegram/USDT sau khi duyệt.
-  assert.deepEqual(LIVE, { card: true, vnd: true });
+  assert.deepEqual(LIVE, { card: true, vnd: true, usdt: false });
   assert.equal(API_BASE, "https://api.veilus.io");
 });
 
@@ -227,11 +303,20 @@ test("payRoute: kênh đã bật thì VNĐ chuyển khoản, thẻ cho gói ≤ 
   assert.equal(payRoute("VND", "solo", { card: false, vnd: true }), "vnd");
 });
 
-test("liveFrom: chỉ \"0\" và \"false\" tắt một kênh; thiếu biến hay rỗng là bật", () => {
-  assert.deepEqual(liveFrom({}), { card: true, vnd: true });
-  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "", PUBLIC_VND_LIVE: "" }), { card: true, vnd: true });
-  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "0", PUBLIC_VND_LIVE: "false" }), { card: false, vnd: false });
-  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "1", PUBLIC_VND_LIVE: "0" }), { card: true, vnd: false });
+test("liveFrom: thẻ và VNĐ chỉ \"0\" hoặc \"false\" mới tắt (thiếu biến hay rỗng là bật); USDT ngược lại, chỉ \"1\" hoặc \"true\" mới bật", () => {
+  assert.deepEqual(liveFrom({}), { card: true, vnd: true, usdt: false });
+  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "", PUBLIC_VND_LIVE: "" }), { card: true, vnd: true, usdt: false });
+  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "0", PUBLIC_VND_LIVE: "false" }), { card: false, vnd: false, usdt: false });
+  assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "1", PUBLIC_VND_LIVE: "0" }), { card: true, vnd: false, usdt: false });
+  // USDT mặc định tắt (opt-in): chỉ "1" và "true" bật; rỗng, "0", "false" và giá trị lạ đều tắt.
+  assert.equal(liveFrom({ PUBLIC_USDT_LIVE: "1" }).usdt, true);
+  assert.equal(liveFrom({ PUBLIC_USDT_LIVE: "true" }).usdt, true);
+  for (const v of ["", "0", "false", "yes", "on", "TRUE", " 1"]) {
+    assert.equal(liveFrom({ PUBLIC_USDT_LIVE: v }).usdt, false, JSON.stringify(v));
+  }
+  // Mỗi kênh một công tắc: bật USDT không đụng tới thẻ và VNĐ, và ngược lại.
+  assert.deepEqual(liveFrom({ PUBLIC_USDT_LIVE: "1" }), { card: true, vnd: true, usdt: true });
+  assert.deepEqual(liveFrom({ PUBLIC_USDT_LIVE: "1", PUBLIC_CARD_LIVE: "0" }), { card: false, vnd: true, usdt: true });
 });
 
 // Quan hệ, không phải danh sách: SKU nào còn hiện mà giá vượt trần thẻ thì CI đỏ — kể cả SKU thêm sau này.
@@ -244,3 +329,104 @@ test("mọi gói đang hiện đều trả thẻ được, và bản build mặc
   }
 });
 
+// Gói ẩn thắng mọi kênh, kể cả USDT: bật cả ba kênh mà gói đang hiện vẫn đi thẻ (USD) hoặc chuyển khoản (VNĐ), nên
+// link `method=usdt` trên trang giá và nút USDT trên /mua chỉ có thể thuộc gói vượt trần thẻ — tức gói đang ẩn.
+test("bật cả ba kênh: gói nào đi USDT thì đang ẩn; gói đang hiện giữ thẻ (USD) và chuyển khoản (VNĐ)", async () => {
+  const { SKUS } = await import("../data/skus.js");
+  const all = { card: true, vnd: true, usdt: true };
+  for (const sku of Object.keys(SKUS)) {
+    if (listed(sku)) {
+      assert.equal(payRoute("USD", sku, all), "card", `USD ${sku}`);
+      assert.equal(payRoute("VND", sku, all), "vnd", `VND ${sku}`);
+    }
+    if (payRoute("USD", sku, all) === "usdt") assert.equal(listed(sku), false, `${sku} đi USDT mà đang hiện`);
+  }
+  // Hàng đối chứng: team10/team20 là gói đi USDT thật, và ở bản build mặc định chúng đang ẩn.
+  assert.equal(payRoute("USD", "team10", all), "usdt");
+  assert.equal(payRoute("USD", "team20", all), "usdt");
+  assert.equal(listed("team10"), false);
+  assert.equal(listed("team20"), false);
+});
+
+// USDT TRC20 (VEIL-1283) là kênh thứ ba, chỉ cho gói trọn đời và gói thêm máy; thẻ còn thì thẻ đứng trước ở trang USD.
+test("payRoute: trang USD, thẻ tắt USDT bật — gói trọn đời và thêm máy đi USDT, gói tháng đi Telegram", () => {
+  const live = { card: false, vnd: false, usdt: true };
+  for (const sku of ["solo", "team3", "team5", "team10", "team20", "device_solo", "device_team5", "device_team10"]) {
+    assert.equal(payRoute("USD", sku, live), "usdt", sku);
+  }
+  assert.equal(payRoute("USD", "monthly", live), "telegram");
+  assert.equal(payRoute("USD", "khong-co", live), "telegram");
+});
+
+test("payRoute: trang USD, thẻ và USDT cùng bật — gói ≤ $199 giữ thẻ, gói vượt trần đi USDT, gói tháng đi thẻ", () => {
+  const live = { card: true, vnd: false, usdt: true };
+  for (const sku of ["solo", "team3", "team5", "device_team10", "monthly"]) {
+    assert.equal(payRoute("USD", sku, live), "card", sku);
+  }
+  assert.equal(payRoute("USD", "team10", live), "usdt");
+  assert.equal(payRoute("USD", "team20", live), "usdt");
+});
+
+test("payRoute: USDT tắt thì không gói nào đi USDT — gói vượt trần về Telegram như trước", () => {
+  const live = { card: true, vnd: true, usdt: false };
+  assert.equal(payRoute("USD", "team10", live), "telegram");
+  assert.equal(payRoute("USDT", "team10", live), "telegram");
+  assert.equal(payRoute("USD", "solo", live), "card");
+  // Mặc định đọc công tắc của bản build — test không đặt biến nên thẻ bật, USDT tắt: gói vượt trần về Telegram;
+  // loại tiền USDT (?method=usdt) không có USDT để đi nên rơi về đường của USD (gói rẻ → thẻ, gói vượt trần → Telegram).
+  assert.equal(payRoute("USD", "team10"), "telegram");
+  assert.equal(payRoute("USDT", "team10"), "telegram");
+  assert.equal(payRoute("USDT", "solo"), "card");
+});
+
+test("payRoute: VNĐ không phụ thuộc công tắc USDT", () => {
+  assert.equal(payRoute("VND", "solo", { card: false, vnd: true, usdt: true }), "vnd");
+  assert.equal(payRoute("VND", "solo", { card: true, vnd: false, usdt: true }), "telegram");
+});
+
+test("payRoute: loại tiền USDT (method=usdt) chọn USDT dù thẻ cũng được; gói tháng rơi về kết quả của USD", () => {
+  const both = { card: true, vnd: true, usdt: true };
+  for (const sku of ["solo", "team10", "device_team5"]) {
+    assert.equal(payRoute("USDT", sku, both), "usdt", sku);
+  }
+  // Gói tháng không bán qua USDT: thẻ còn bật thì giữ nút thẻ, thẻ tắt thì Telegram.
+  assert.equal(payRoute("USDT", "monthly", both), "card");
+  assert.equal(payRoute("USDT", "monthly", { card: false, vnd: true, usdt: true }), "telegram");
+  // Hàng đối chứng: không có method=usdt thì cùng bộ công tắc cho gói rẻ vẫn là thẻ.
+  assert.equal(payRoute("USD", "solo", both), "card");
+});
+
+test("usdtShown: nút USDT hiện ở luồng USD và luồng method=usdt khi USDT bật, cho gói trọn đời và thêm máy; VNĐ không bao giờ", () => {
+  const on = { card: false, vnd: true, usdt: true };
+  const off = { card: true, vnd: true, usdt: false };
+  for (const sku of ["solo", "team3", "team10", "device_team5"]) {
+    assert.equal(usdtShown("USD", sku, on), true, `USD ${sku}`);
+    assert.equal(usdtShown("USDT", sku, on), true, `USDT ${sku}`);
+    assert.equal(usdtShown("VND", sku, on), false, `VND ${sku}`);
+    assert.equal(usdtShown("USD", sku, off), false, `USD, USDT tắt ${sku}`);
+    assert.equal(usdtShown("USDT", sku, off), false, `USDT, USDT tắt ${sku}`);
+  }
+  // Gói tháng không bán qua USDT, kể cả khi bật.
+  assert.equal(usdtShown("USD", "monthly", on), false);
+  assert.equal(usdtShown("USDT", "monthly", on), false);
+  // Mặc định đọc công tắc của bản build — test không đặt biến nên USDT tắt.
+  assert.equal(usdtShown("USD", "solo"), false);
+  // Bộ công tắc thiếu khoá usdt vẫn ra đúng `false`, không phải `undefined`.
+  assert.equal(usdtShown("USD", "solo", { card: true, vnd: true }), false);
+});
+
+test("countdownText: HH:MM:SS còn lại tới expires_at, làm tròn lên giây; quá hạn thì 00:00:00; giá trị hỏng thì null", () => {
+  const exp = "2026-10-08T12:00:00.000Z";
+  const at = (iso) => Date.parse(iso);
+  assert.equal(countdownText(exp, at("2026-10-07T12:00:00.000Z")), "24:00:00");
+  assert.equal(countdownText(exp, at("2026-10-07T12:00:01.000Z")), "23:59:59");
+  assert.equal(countdownText(exp, at("2026-10-08T11:58:59.000Z")), "00:01:01");
+  assert.equal(countdownText(exp, at("2026-10-08T11:59:59.500Z")), "00:00:01");
+  assert.equal(countdownText(exp, at("2026-10-08T12:00:00.000Z")), "00:00:00");
+  // Quá hạn thì dừng ở 0, không âm.
+  assert.equal(countdownText(exp, at("2026-10-09T00:00:00.000Z")), "00:00:00");
+  // Chỉ chuỗi ngày đọc được mới có đồng hồ: số, rỗng, thiếu, rác đều null (trang ẩn dòng đồng hồ).
+  for (const bad of [undefined, null, 1791374400000, "", "khong-phai-ngay"]) {
+    assert.equal(countdownText(bad, 0), null, String(bad));
+  }
+});

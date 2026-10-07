@@ -59,6 +59,7 @@
         "contact": "Lebih dari 20 perangkat?",
         "contactCta": "Hubungi kami",
         "viaTelegram": "lewat Telegram",
+        "viaUsdt": "USDT",
         "refund": "Refund dalam 7 hari (bulanan) atau 14 hari (seumur hidup)."
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "Kartu internasional (USD)",
         "telegramOnly": "Saat ini paket ini dijual lewat Telegram. Hubungi kami, key dikirim setelah pembayaran diterima:",
         "telegramCta": "Buka Telegram",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "Kirim USDT di jaringan TRC20",
+        "usdtAddress": "Alamat dompet",
+        "usdtAmount": "Jumlah tepat",
+        "usdtNetworkWarn": "Kirim USDT hanya di TRC20 (Tron). Kiriman lewat jaringan lain atau sebagai token lain tidak bisa dikembalikan.",
+        "usdtExactWarn": "Kirim tepat sejumlah ini. Jika menarik dari exchange, pastikan jumlah yang diterima sama persis: exchange biasanya memotong biaya. Jumlah yang berbeda tidak dicocokkan otomatis.",
+        "usdtWaiting": "Menunggu transfer. Halaman ini diperbarui satu atau dua menit setelah transfer dikonfirmasi.",
+        "usdtTimeLeft": "Sisa waktu untuk membayar:",
         "qrTitle": "Pindai untuk membayar",
         "amount": "Jumlah",
         "code": "Berita transfer",
@@ -197,6 +206,8 @@
             "keyNotFound": "Kunci lisensi tidak ditemukan.",
             "rateLimited": "Terlalu banyak permintaan. Coba lagi nanti.",
             "unavailable": "Metode pembayaran ini belum tersedia.",
+            "busy": "Saat ini kami sedang menangani banyak pesanan. Coba lagi dalam beberapa menit.",
+            "methodNotSupported": "Paket ini tidak bisa dibayar dengan USDT. USDT berlaku untuk paket seumur hidup dan perangkat tambahan.",
             "generic": "Terjadi kesalahan. Silakan coba lagi.",
             "network": "Kesalahan jaringan. Periksa koneksi lalu coba lagi."
         }

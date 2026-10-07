@@ -2,7 +2,9 @@
 /**
  * Bảng 2 — giá (spec trang chủ §4 dòng 7): nội dung giữ như website cũ, chỉ đổi giao diện theo bản vẽ.
  * Giá đọc từ data/skus.js (bản sao bảng SKU của API); một loại tiền mỗi ngôn ngữ (vi → VNĐ, còn lại USD).
- * Nút mua đi theo payRoute: /mua?sku= khi kênh trả của trang đang bật, Telegram khi kênh tắt hoặc gói vượt trần thẻ.
+ * Nút mua đi đường nào do payRoute (scripts/purchase-core.js) quyết: thẻ và VNĐ → /mua?sku=, USDT →
+ * /mua?sku=&method=usdt, kênh tắt hoặc gói không có đường nào → Telegram. Trang /mua dùng cùng hàm này.
+ * Gói ẩn (listed) không có dòng nào, nên cũng không có link USDT cho chúng.
  */
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
@@ -20,6 +22,15 @@ const cur = currencyForLang(lang);
 const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
 const devices = (n: number) => (n === 1 ? p.device : p.devices.replace('{n}', String(n)));
 const buyHref = (sku: string) => getLocalizedPath(`/mua?sku=${sku}`, lang);
+// Đích của nút mua một gói theo payRoute; `via` là nhãn nhỏ cạnh số máy khi gói không mua bằng thẻ/VNĐ.
+type Buy = { href: string; target?: string; rel?: string; via?: string };
+const buy = (sku: string): Buy => {
+  const route = payRoute(cur, sku);
+  if (route === 'telegram') return { href: TELEGRAM_URL, target: '_blank', rel: 'noopener noreferrer', via: p.viaTelegram };
+  if (route === 'usdt') return { href: getLocalizedPath(`/mua?sku=${sku}&method=usdt`, lang), via: p.viaUsdt };
+  return { href: buyHref(sku) };
+};
+const monthlyBuy = buy('monthly');
 const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' && listed(id));
 ---
 
@@ -45,9 +56,7 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
       <ul class="k-pf">
         {p.paidFeatures.map((x) => <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{x}</span></li>)}
       </ul>
-      {payRoute(cur, 'monthly') === 'telegram'
-        ? <a class="k-btn k-btn-o" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta} · {p.viaTelegram}</a>
-        : <a class="k-btn k-btn-o" href={buyHref('monthly')} data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta}</a>}
+      <a class="k-btn k-btn-o" href={monthlyBuy.href} target={monthlyBuy.target} rel={monthlyBuy.rel} data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta}{monthlyBuy.via ? ` · ${monthlyBuy.via}` : ''}</a>
     </div>
 
     <div class="k-pc k-pc-pop k-rise" style="--d:0.3s">
@@ -56,18 +65,17 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
       <div class="k-tiers">
         {lifetime.map(([id, s]) => {
           const name = i.buy.sku[id as keyof typeof i.buy.sku];
-          // Kênh trả của trang chưa bật, hoặc gói vượt trần thẻ: mua qua Telegram (payRoute).
-          const viaTelegram = payRoute(cur, id) === 'telegram';
+          const b = buy(id);
           return (
             <a
               class="k-tier"
-              href={viaTelegram ? TELEGRAM_URL : buyHref(id)}
-              target={viaTelegram ? '_blank' : undefined}
-              rel={viaTelegram ? 'noopener noreferrer' : undefined}
+              href={b.href}
+              target={b.target}
+              rel={b.rel}
               data-cta="pricing_cta"
               data-plan={id}
             >
-              <b>{name}<small>{devices(s.devices)}{viaTelegram ? ` · ${p.viaTelegram}` : ''}</small></b>
+              <b>{name}<small>{devices(s.devices)}{b.via ? ` · ${b.via}` : ''}</small></b>
               <em>{price(s)}</em>
               <span class="ms" data-icon="arrow_forward" aria-hidden="true"></span>
             </a>

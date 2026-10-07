@@ -59,6 +59,7 @@
         "contact": "20'den fazla cihaz mı?",
         "contactCta": "Bize ulaşın",
         "viaTelegram": "Telegram üzerinden",
+        "viaUsdt": "USDT",
         "refund": "7 gün içinde (aylık) veya 14 gün içinde (ömür boyu) iade."
     },
     "faq": {
@@ -177,6 +178,14 @@
         "payUsd": "Uluslararası kart (USD)",
         "telegramOnly": "Bu paket şu anda Telegram üzerinden satılıyor. Bize yazın, ödeme ulaşınca anahtarınızı gönderelim:",
         "telegramCta": "Telegram'ı aç",
+        "payUsdt": "USDT (TRC20)",
+        "usdtTitle": "TRC20 ağında USDT gönderin",
+        "usdtAddress": "Cüzdan adresi",
+        "usdtAmount": "Tam tutar",
+        "usdtNetworkWarn": "USDT'yi yalnızca TRC20 (Tron) ağında gönderin. Başka ağdan veya başka token olarak gönderilen tutar geri alınamaz.",
+        "usdtExactWarn": "Tam olarak bu tutarı gönderin. Bir borsadan çekiyorsanız alınan tutarın tam bu olduğundan emin olun: borsalar genellikle ücret keser. Farklı bir tutar otomatik eşleştirilmez.",
+        "usdtWaiting": "Transfer bekleniyor. Bu sayfa transfer onaylandıktan bir iki dakika sonra güncellenir.",
+        "usdtTimeLeft": "Ödeme için kalan süre:",
         "qrTitle": "Ödemek için tarayın",
         "amount": "Tutar",
         "code": "Havale açıklaması",
@@ -197,6 +206,8 @@
             "keyNotFound": "Lisans anahtarı bulunamadı.",
             "rateLimited": "Çok fazla istek. Lütfen daha sonra tekrar deneyin.",
             "unavailable": "Bu ödeme yöntemi henüz kullanılamıyor.",
+            "busy": "Şu anda çok fazla sipariş işliyoruz. Lütfen birkaç dakika sonra tekrar deneyin.",
+            "methodNotSupported": "Bu paket USDT ile ödenemez. USDT, ömür boyu paketler ve ek cihazlar için geçerlidir.",
             "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
             "network": "Ağ hatası. Bağlantınızı kontrol edip tekrar deneyin."
         }
