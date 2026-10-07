@@ -1,6 +1,7 @@
 ---
 import type { Lang } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
+import { listed } from "../scripts/purchase-core.js";
 import { FINGERPRINT_FIELDS } from "../data/facts.js";
 // Font tự host (VEIL-1038): src/styles/fonts.css do scripts/fetch-fonts.mjs sinh. ?url cho tên file đã băm,
 // cùng file mà fonts.css trỏ tới — preload và @font-face dùng chung một lần tải.
@@ -53,9 +54,10 @@ const currency = currencyForLang(lang);
 // nguyên thứ tự, cùng thứ tự ở 8 file ngôn ngữ; thêm hay đổi thứ tự mảng thì sửa PAID theo. Không lấy "Veilus Sync"
 // (chỉ số 4): trùng ý với home.fig5.syncTitle, câu cụ thể hơn (Git · Google Drive), nên đồng bộ chỉ còn một mục.
 const PAID = { flow: 1, scheduling: 2, localApi: 3 };
-const soldPrices = Object.values(SKUS)
-  .filter((s) => s.kind !== "addon")
-  .map((s) => (currency === "VND" ? s.vnd : s.usd));
+// Gói đang ẩn (listed) không rao trong JSON-LD — cùng tập gói với bảng giá.
+const soldPrices = Object.entries(SKUS)
+  .filter(([id, s]) => s.kind !== "addon" && listed(id))
+  .map(([, s]) => (currency === "VND" ? s.vnd : s.usd));
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",

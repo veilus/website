@@ -7,7 +7,7 @@
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
 import { SKUS } from '../data/skus.js';
-import { currencyForLang, formatPrice, payRoute, TELEGRAM_URL } from '../scripts/purchase-core.js';
+import { currencyForLang, formatPrice, payRoute, TELEGRAM_URL, listed } from '../scripts/purchase-core.js';
 
 interface Props {
   lang?: Lang;
@@ -20,7 +20,7 @@ const cur = currencyForLang(lang);
 const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
 const devices = (n: number) => (n === 1 ? p.device : p.devices.replace('{n}', String(n)));
 const buyHref = (sku: string) => getLocalizedPath(`/mua?sku=${sku}`, lang);
-const lifetime = Object.entries(SKUS).filter(([, s]) => s.kind === 'lifetime');
+const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' && listed(id));
 ---
 
 <section class="k-wrap k-sec" id="pricing" data-reveal>

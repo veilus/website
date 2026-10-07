@@ -18,6 +18,8 @@ import {
   TELEGRAM_URL,
   LIVE,
   payRoute,
+  HIDDEN_SKUS,
+  listed,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -182,9 +184,21 @@ test("TELEGRAM_URL là kênh Telegram của Veilus", () => {
   assert.equal(TELEGRAM_URL, "https://t.me/veilusbrowser");
 });
 
-test("công tắc kênh: build không đặt biến thì chưa bật kênh nào, API mặc định là production", () => {
-  assert.deepEqual(LIVE, { card: false, vnd: false });
+test("công tắc kênh: build không đặt biến thì thẻ và VNĐ bật, API mặc định là production", () => {
+  // Nộp LemonSqueezy duyệt (quyết định 0115): production trả thẻ qua LemonSqueezy, VNĐ chuyển khoản; Telegram/USDT sau khi duyệt.
+  assert.deepEqual(LIVE, { card: true, vnd: true });
   assert.equal(API_BASE, "https://api.veilus.io");
+});
+
+test("gói ẩn: build không đặt biến thì ẩn team10/team20 (vượt trần thẻ), mọi gói khác vẫn hiện", () => {
+  assert.deepEqual([...HIDDEN_SKUS], ["team10", "team20"]);
+  assert.equal(listed("team10"), false);
+  assert.equal(listed("team20"), false);
+  for (const sku of ["monthly", "solo", "team3", "team5", "device_solo", "device_team5", "device_team10"]) {
+    assert.equal(listed(sku), true, sku);
+  }
+  // Staging đặt PUBLIC_HIDE_SKUS rỗng thì hiện đủ.
+  assert.equal(listed("team10", []), true);
 });
 
 test("payRoute: kênh chưa bật thì mọi gói đi Telegram, cả VNĐ lẫn USD", () => {
@@ -193,8 +207,9 @@ test("payRoute: kênh chưa bật thì mọi gói đi Telegram, cả VNĐ lẫn 
     assert.equal(payRoute("USD", sku, off), "telegram", `USD ${sku}`);
     assert.equal(payRoute("VND", sku, off), "telegram", `VND ${sku}`);
   }
-  // Mặc định đọc công tắc của bản build — test không đặt biến nên là tắt hết.
-  assert.equal(payRoute("VND", "solo"), "telegram");
+  // Mặc định đọc công tắc của bản build — test không đặt biến nên thẻ và VNĐ đều bật.
+  assert.equal(payRoute("VND", "solo"), "vnd");
+  assert.equal(payRoute("USD", "team3"), "card");
 });
 
 // Hàng đối chứng: kênh bật thì về lại đường cũ — VNĐ chuyển khoản, thẻ cho gói ≤ $199, Telegram cho gói vượt trần.

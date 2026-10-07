@@ -6,17 +6,31 @@ import { SKUS } from "../data/skus.js";
 
 // Biến PUBLIC_* đặt lúc build (Vite thay vào bundle). Chạy bằng `node --test` thì không có, nên mọi thứ về mặc định production.
 const env = import.meta.env ?? {};
-const flag = (v) => v === "1" || v === "true";
+const off = (v) => v === "0" || v === "false";
+const list = (v) => v.split(",").map((x) => x.trim()).filter(Boolean);
 
 /** API thanh toán. Bản staging build với `PUBLIC_API_BASE` trỏ Worker staging. */
 export const API_BASE = env.PUBLIC_API_BASE || "https://api.veilus.io";
 
 /**
- * Cổng thanh toán tự động đã bật chưa — mỗi kênh một công tắc, đặt lúc build
- * (`PUBLIC_CARD_LIVE`, `PUBLIC_VND_LIVE` = `1`). Kênh chưa bật thì mọi nút mua
- * của kênh đó mở Telegram. Bật cổng nào thì đặt biến của cổng đó rồi deploy lại.
+ * Kênh thanh toán nào đang bán — mỗi kênh một công tắc, mặc định BẬT, đặt `0`
+ * lúc build để tắt (`PUBLIC_CARD_LIVE`, `PUBLIC_VND_LIVE`). Kênh tắt thì mọi nút
+ * mua của kênh đó mở Telegram. Trước khi LemonSqueezy duyệt (quyết định 0115),
+ * production không tắt kênh nào: thẻ qua LemonSqueezy, VNĐ chuyển khoản.
  */
-export const LIVE = Object.freeze({ card: flag(env.PUBLIC_CARD_LIVE), vnd: flag(env.PUBLIC_VND_LIVE) });
+export const LIVE = Object.freeze({ card: !off(env.PUBLIC_CARD_LIVE), vnd: !off(env.PUBLIC_VND_LIVE) });
+
+/**
+ * Gói không hiện trên bảng giá và /mua. Mặc định ẩn team10/team20: LemonSqueezy
+ * chỉ duyệt store khi mọi giá ≤ $199 (quyết định 0115). Bảng SKU vẫn giữ hai gói
+ * này (cổng sku-price-parity, bán VNĐ/USDT sau). Staging đặt `PUBLIC_HIDE_SKUS=`
+ * (rỗng) để hiện đủ.
+ */
+export const HIDDEN_SKUS = Object.freeze(list(env.PUBLIC_HIDE_SKUS ?? "team10,team20"));
+
+export function listed(sku, hidden = HIDDEN_SKUS) {
+  return !hidden.includes(sku);
+}
 
 const isSku = (x) => typeof x === "string" && Object.hasOwn(SKUS, x);
 
