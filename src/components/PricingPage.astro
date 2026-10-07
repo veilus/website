@@ -1,0 +1,24 @@
+---
+/**
+ * Trang giá, dùng chung cho /pricing (en) và /[lang]/pricing. Trước đây /pricing chỉ 301 về /#pricing — một mỏ
+ * neo không có URL, title hay mô tả riêng để xếp hạng (VEIL-1304). Bảng giá là Pricing.astro của trang chủ ở
+ * chế độ page (H1, câu dẫn riêng); giá đọc từ data/skus.js, không có bảng thứ hai.
+ */
+import type { Lang } from '../i18n/utils';
+import Navbar from './Navbar.astro';
+import Pricing from './Pricing.astro';
+import FinalCTA from './FinalCTA.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<Navbar lang={lang} />
+<main>
+  <Pricing lang={lang} page />
+  <FinalCTA lang={lang} />
+</main>
+<Footer lang={lang} />

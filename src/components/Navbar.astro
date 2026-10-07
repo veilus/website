@@ -20,15 +20,16 @@ const basePath = stripLang(Astro.url.pathname);
 // bằng giọng nói gọi nút bằng đúng chữ họ thấy.
 const langLabel = `${lang.toUpperCase()} — ${i.nav.language}`;
 
-// Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này
+// Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này; Giá là trang riêng /pricing/ (VEIL-1304)
+const anchor = (id: string) => `${home}#${id}`;
 const LINKS = [
-  ['anti-detect', i.nav.antiDetect],
-  ['profile', i.nav.profile],
-  ['mcp', i.nav.mcp],
-  ['backup', i.nav.backup],
-  ['features', i.nav.features],
-  ['pricing', i.nav.pricing],
-  ['faq', i.nav.faq],
+  [anchor('anti-detect'), i.nav.antiDetect],
+  [anchor('profile'), i.nav.profile],
+  [anchor('mcp'), i.nav.mcp],
+  [anchor('backup'), i.nav.backup],
+  [anchor('features'), i.nav.features],
+  [getLocalizedPath('/pricing', lang), i.nav.pricing],
+  [anchor('faq'), i.nav.faq],
 ];
 ---
 
@@ -36,7 +37,7 @@ const LINKS = [
   <nav class="k-nav" aria-label="Veilus">
     <a class="k-mark" href={home} aria-label="Veilus"><LogoMark /><span class="k-mark-text">VEILUS</span></a>
     <div class="k-links" id="k-links">
-      {LINKS.map(([id, label]) => <a href={`${home}#${id}`}>{label}</a>)}
+      {LINKS.map(([href, label]) => <a href={href}>{label}</a>)}
     </div>
     <div class="k-act">
       <div class="k-lang">

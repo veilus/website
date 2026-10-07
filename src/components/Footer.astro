@@ -20,7 +20,7 @@ const COLUMNS = [
     title: f.product,
     links: [
       [f.productLinks[0], `${home}#features`],
-      [f.productLinks[1], `${home}#pricing`],
+      [f.productLinks[1], getLocalizedPath('/pricing', lang)],
       [i.nav.download, getLocalizedPath('/download', lang), 'footer_download'],
     ],
   },

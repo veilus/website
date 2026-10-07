@@ -13,11 +13,15 @@ import { currencyForLang, formatPrice, payRoute, TELEGRAM_URL, listed } from '..
 
 interface Props {
   lang?: Lang;
+  /** Trang /pricing/ (VEIL-1304): bảng này là nội dung chính — tiêu đề là H1 với câu riêng của trang, không có nhãn hình. */
+  page?: boolean;
 }
 const lang = Astro.props.lang || defaultLang;
+const page = Astro.props.page ?? false;
 const i = t(lang);
 const p = i.pricing;
 const hp = i.home.pricing;
+const Heading = page ? 'h1' : 'h2';
 const cur = currencyForLang(lang);
 const price = (s: { vnd: number; usd: number }) => formatPrice(cur === 'VND' ? s.vnd : s.usd, cur, lang);
 const devices = (n: number) => (n === 1 ? p.device : p.devices.replace('{n}', String(n)));
@@ -34,10 +38,10 @@ const monthlyBuy = buy('monthly');
 const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' && listed(id));
 ---
 
-<section class="k-wrap k-sec" id="pricing" data-reveal>
-  <div class="k-fig">{hp.fig}</div>
-  <h2 class="k-h2">{p.title} {p.titleHighlight}</h2>
-  <p class="k-sub">{p.subtitle}</p>
+<section class:list={["k-wrap", page ? "k-page" : "k-sec"]} id="pricing" data-reveal>
+  {!page && <div class="k-fig">{hp.fig}</div>}
+  <Heading class="k-h2">{page ? p.pageTitle : `${p.title} ${p.titleHighlight}`}</Heading>
+  <p class="k-sub">{page ? p.pageLead : p.subtitle}</p>
   <div class="k-price">
     <div class="k-pc k-rise" style="--d:0.1s">
       <div><div class="k-pn">{p.free.name}</div><div class="k-pd">{p.free.desc}</div></div>
@@ -93,6 +97,7 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
 </section>
 
 <style>
+  .k-page { padding-top: 56px; }
   .k-price { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
   .k-pc { position: relative; display: flex; flex-direction: column; gap: 16px; padding: 22px 22px 20px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
   .k-pc-pop { border-width: 2.5px; box-shadow: 10px 10px 0 var(--grid2); }

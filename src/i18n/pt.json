@@ -60,7 +60,11 @@
         "contactCta": "Fale conosco",
         "viaTelegram": "pelo Telegram",
         "viaUsdt": "USDT",
-        "refund": "Reembolso em até 7 dias (mensal) ou 14 dias (vitalício)."
+        "refund": "Reembolso em até 7 dias (mensal) ou 14 dias (vitalício).",
+        "metaTitle": "Preços do Veilus Browser — grátis para 5 perfis, mensal ou vitalício",
+        "metaDescription": "Preços do navegador antidetecção Veilus: plano Grátis com 5 perfis, Mensal por dispositivo ou licença Vitalícia paga uma vez. Reembolso em até 7 dias (mensal) ou 14 dias (vitalício).",
+        "pageTitle": "Preços do Veilus Browser",
+        "pageLead": "Comece grátis com 5 perfis. Pague por mês por dispositivo ou pague uma vez por uma licença vitalícia."
     },
     "faq": {
         "title": "Perguntas",

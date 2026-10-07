@@ -60,7 +60,11 @@
         "contactCta": "Contact us",
         "viaTelegram": "via Telegram",
         "viaUsdt": "USDT",
-        "refund": "Refund within 7 days (monthly) or 14 days (lifetime)."
+        "refund": "Refund within 7 days (monthly) or 14 days (lifetime).",
+        "metaTitle": "Veilus Browser pricing — free for 5 profiles, monthly or lifetime",
+        "metaDescription": "Veilus anti-detect browser pricing: Free with 5 profiles, Monthly per device, or a Lifetime license paid once. Refund within 7 days (monthly) or 14 days (lifetime).",
+        "pageTitle": "Veilus Browser pricing",
+        "pageLead": "Start free with 5 profiles. Pay monthly per device, or pay once for a lifetime license."
     },
     "faq": {
         "title": "Frequently",

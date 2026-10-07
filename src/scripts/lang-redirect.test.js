@@ -76,7 +76,7 @@ test('H. de-DE (không có bản dịch): ở lại, ghi de', () => {
   assert.deepEqual(decide('de-DE'), { save: 'de', to: null });
 });
 
-test('giữ ?query và #hash: UTM của chiến dịch và #pricing từ /pricing (301 về /#pricing)', () => {
+test('giữ ?query và #hash: UTM của chiến dịch và #pricing của link cũ /#pricing', () => {
   const search = '?utm_source=newsletter&utm_campaign=launch';
   assert.equal(decide('vi-VN', { search, hash: '#pricing' }).to, `/vi/${search}#pricing`);
   assert.equal(decide('vi-VN', { hash: '#pricing' }).to, '/vi/#pricing');

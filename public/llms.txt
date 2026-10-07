@@ -13,6 +13,7 @@
 
 ## Main Pages
 - [Homepage](https://veilus.io/): Product overview, features, pricing, FAQ
+- [Pricing](https://veilus.io/pricing/): Free, Monthly and Lifetime plans, prices in USD and VND
 - [Download](https://veilus.io/download/): Installers for Windows 10/11 (x64, .exe) and macOS 13.5+ (Apple Silicon, .dmg), available from October 9, 2026; the browser engine is downloaded separately inside the app
 - [Documentation](https://docs.veilus.io): User guides, API reference
 - [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy

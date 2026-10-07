@@ -1,6 +1,6 @@
 /**
  * Tự chuyển ngôn ngữ ở trang chủ en (src/pages/index.astro), lần đầu vào: trình duyệt nói một ngôn ngữ có bản
- * dịch thì sang /<ngôn ngữ>/, giữ nguyên ?query (utm_…) và #hash — /pricing 301 về /#pricing phải tới bảng giá.
+ * dịch thì sang /<ngôn ngữ>/, giữ nguyên ?query (utm_…) và #hash — link cũ /#pricing phải tới bảng giá.
  *
  * index.astro nhúng hai hàm này vào <head> bằng Function.prototype.toString, trước GA. Vì vậy mỗi hàm tự đủ:
  * không đọc tên nào ngoài tham số của chính nó. Một tên lấy từ phạm vi module là ReferenceError trên trang thật
