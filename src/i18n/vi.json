@@ -175,7 +175,7 @@
         "hide": "Ẩn",
         "payVnd": "Chuyển khoản VNĐ",
         "payUsd": "Thẻ quốc tế (USD)",
-        "telegramOnly": "Gói này không bán qua thẻ. Nhắn cho chúng tôi qua Telegram để mua:",
+        "telegramOnly": "Hiện gói này bán qua Telegram. Nhắn cho chúng tôi, key được gửi ngay khi nhận được tiền:",
         "telegramCta": "Mở Telegram",
         "qrTitle": "Quét mã để thanh toán",
         "amount": "Số tiền",

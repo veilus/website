@@ -16,6 +16,8 @@ import {
   CARD_MAX_USD,
   cardAllowed,
   TELEGRAM_URL,
+  LIVE,
+  payRoute,
 } from "./purchase-core.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
@@ -178,4 +180,32 @@ test("cardAllowed: gói ≤ $199 trả thẻ được; team10/team20 vượt tr�
 
 test("TELEGRAM_URL là kênh Telegram của Veilus", () => {
   assert.equal(TELEGRAM_URL, "https://t.me/veilusbrowser");
+});
+
+test("công tắc kênh: build không đặt biến thì chưa bật kênh nào, API mặc định là production", () => {
+  assert.deepEqual(LIVE, { card: false, vnd: false });
+  assert.equal(API_BASE, "https://api.veilus.io");
+});
+
+test("payRoute: kênh chưa bật thì mọi gói đi Telegram, cả VNĐ lẫn USD", () => {
+  const off = { card: false, vnd: false };
+  for (const sku of ["monthly", "solo", "team3", "team5", "team10", "device_team5"]) {
+    assert.equal(payRoute("USD", sku, off), "telegram", `USD ${sku}`);
+    assert.equal(payRoute("VND", sku, off), "telegram", `VND ${sku}`);
+  }
+  // Mặc định đọc công tắc của bản build — test không đặt biến nên là tắt hết.
+  assert.equal(payRoute("VND", "solo"), "telegram");
+});
+
+// Hàng đối chứng: kênh bật thì về lại đường cũ — VNĐ chuyển khoản, thẻ cho gói ≤ $199, Telegram cho gói vượt trần.
+test("payRoute: kênh đã bật thì VNĐ chuyển khoản, thẻ cho gói ≤ $199, vượt trần đi Telegram", () => {
+  const on = { card: true, vnd: true };
+  assert.equal(payRoute("VND", "team10", on), "vnd");
+  assert.equal(payRoute("USD", "team3", on), "card");
+  assert.equal(payRoute("USD", "monthly", on), "card");
+  assert.equal(payRoute("USD", "team10", on), "telegram");
+  assert.equal(payRoute("USD", "team20", on), "telegram");
+  // Mỗi kênh một công tắc: bật VNĐ không bật thẻ.
+  assert.equal(payRoute("USD", "solo", { card: false, vnd: true }), "telegram");
+  assert.equal(payRoute("VND", "solo", { card: false, vnd: true }), "vnd");
 });

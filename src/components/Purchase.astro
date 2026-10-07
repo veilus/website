@@ -149,7 +149,7 @@ const skusOf = (kind: string) =>
     hasValidAmount,
     payCurrency,
     formatPrice,
-    cardAllowed,
+    payRoute,
   } from "../scripts/purchase-core.js";
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
@@ -203,9 +203,9 @@ const skusOf = (kind: string) =>
   }
 
   const telegramRow = $("buy-telegram");
-  /** Gói vượt trần thẻ ở luồng USD: ẩn nút trả thẻ, hiện đường Telegram (spec USDT §12 bước 2). */
+  /** Kênh trả chưa bật hoặc gói vượt trần thẻ: ẩn nút trả, hiện đường Telegram (payRoute). */
   function syncPayRow() {
-    const viaTelegram = currency === "USD" && !cardAllowed(selectedSku());
+    const viaTelegram = payRoute(currency, selectedSku()) === "telegram";
     payBtn.hidden = viaTelegram;
     telegramRow.hidden = !viaTelegram;
   }

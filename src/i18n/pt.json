@@ -175,7 +175,7 @@
         "hide": "Ocultar",
         "payVnd": "Transferência bancária (VND)",
         "payUsd": "Cartão internacional (USD)",
-        "telegramOnly": "Este plano não é vendido no cartão. Fale conosco no Telegram para comprá-lo:",
+        "telegramOnly": "No momento este plano é vendido pelo Telegram. Fale conosco e enviaremos sua chave assim que o pagamento chegar:",
         "telegramCta": "Abrir o Telegram",
         "qrTitle": "Escaneie para pagar",
         "amount": "Valor",

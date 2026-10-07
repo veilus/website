@@ -175,7 +175,7 @@
         "hide": "Gizle",
         "payVnd": "Banka havalesi (VND)",
         "payUsd": "Uluslararası kart (USD)",
-        "telegramOnly": "Bu paket kartla satılmıyor. Satın almak için bize Telegram'dan yazın:",
+        "telegramOnly": "Bu paket şu anda Telegram üzerinden satılıyor. Bize yazın, ödeme ulaşınca anahtarınızı gönderelim:",
         "telegramCta": "Telegram'ı aç",
         "qrTitle": "Ödemek için tarayın",
         "amount": "Tutar",

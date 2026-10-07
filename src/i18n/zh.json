@@ -175,7 +175,7 @@
         "hide": "隐藏",
         "payVnd": "银行转账（越南盾）",
         "payUsd": "国际信用卡（美元）",
-        "telegramOnly": "此套餐不支持银行卡购买。请通过 Telegram 联系我们购买：",
+        "telegramOnly": "该套餐目前通过 Telegram 销售。给我们发消息，收到付款后即发送密钥：",
         "telegramCta": "打开 Telegram",
         "qrTitle": "扫码付款",
         "amount": "金额",

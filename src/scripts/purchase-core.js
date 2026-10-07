@@ -4,7 +4,19 @@
  */
 import { SKUS } from "../data/skus.js";
 
-export const API_BASE = "https://api.veilus.io";
+// Biến PUBLIC_* đặt lúc build (Vite thay vào bundle). Chạy bằng `node --test` thì không có, nên mọi thứ về mặc định production.
+const env = import.meta.env ?? {};
+const flag = (v) => v === "1" || v === "true";
+
+/** API thanh toán. Bản staging build với `PUBLIC_API_BASE` trỏ Worker staging. */
+export const API_BASE = env.PUBLIC_API_BASE || "https://api.veilus.io";
+
+/**
+ * Cổng thanh toán tự động đã bật chưa — mỗi kênh một công tắc, đặt lúc build
+ * (`PUBLIC_CARD_LIVE`, `PUBLIC_VND_LIVE` = `1`). Kênh chưa bật thì mọi nút mua
+ * của kênh đó mở Telegram. Bật cổng nào thì đặt biến của cổng đó rồi deploy lại.
+ */
+export const LIVE = Object.freeze({ card: flag(env.PUBLIC_CARD_LIVE), vnd: flag(env.PUBLIC_VND_LIVE) });
 
 const isSku = (x) => typeof x === "string" && Object.hasOwn(SKUS, x);
 
@@ -101,4 +113,14 @@ export const TELEGRAM_URL = "https://t.me/veilusbrowser";
 /** Gói này trả thẻ (USD) được không: giá USD không vượt trần của LemonSqueezy. SKU lạ thì không. */
 export function cardAllowed(sku) {
   return (SKUS[sku]?.usd ?? Infinity) <= CARD_MAX_USD;
+}
+
+/**
+ * Mua gói `sku` bằng `currency` thì đi đường nào: `"vnd"` (chuyển khoản), `"card"`
+ * (thẻ), hoặc `"telegram"` khi kênh chưa bật hay gói vượt trần thẻ. Bảng giá và
+ * trang /mua cùng dùng hàm này để hai nơi không lệch nhau.
+ */
+export function payRoute(currency, sku, live = LIVE) {
+  if (currency === "VND") return live.vnd ? "vnd" : "telegram";
+  return live.card && cardAllowed(sku) ? "card" : "telegram";
 }

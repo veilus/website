@@ -7,7 +7,7 @@
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
 import { SKUS } from '../data/skus.js';
-import { currencyForLang, formatPrice, cardAllowed, TELEGRAM_URL } from '../scripts/purchase-core.js';
+import { currencyForLang, formatPrice, payRoute, TELEGRAM_URL } from '../scripts/purchase-core.js';
 
 interface Props {
   lang?: Lang;
@@ -45,7 +45,9 @@ const lifetime = Object.entries(SKUS).filter(([, s]) => s.kind === 'lifetime');
       <ul class="k-pf">
         {p.paidFeatures.map((x) => <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{x}</span></li>)}
       </ul>
-      <a class="k-btn k-btn-o" href={buyHref('monthly')} data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta}</a>
+      {payRoute(cur, 'monthly') === 'telegram'
+        ? <a class="k-btn k-btn-o" href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta} · {p.viaTelegram}</a>
+        : <a class="k-btn k-btn-o" href={buyHref('monthly')} data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta}</a>}
     </div>
 
     <div class="k-pc k-pc-pop k-rise" style="--d:0.3s">
@@ -54,8 +56,8 @@ const lifetime = Object.entries(SKUS).filter(([, s]) => s.kind === 'lifetime');
       <div class="k-tiers">
         {lifetime.map(([id, s]) => {
           const name = i.buy.sku[id as keyof typeof i.buy.sku];
-          // Gói vượt trần thẻ (team10/team20) ở trang USD: chưa có USDT thì mua qua Telegram.
-          const viaTelegram = cur === 'USD' && !cardAllowed(id);
+          // Kênh trả của trang chưa bật, hoặc gói vượt trần thẻ: mua qua Telegram (payRoute).
+          const viaTelegram = payRoute(cur, id) === 'telegram';
           return (
             <a
               class="k-tier"
