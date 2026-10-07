@@ -3,7 +3,7 @@
  * Trang mua dùng chung cho /mua và /[lang]/mua. Logic thuần ở
  * `scripts/purchase-core.js`; ở đây chỉ gắn vào DOM và poll trạng thái đơn.
  * Ba đường trả: chuyển khoản VNĐ (QR do SePay vẽ), thẻ (sang trang thanh toán) và
- * USDT TRC20 (địa chỉ ví và số tiền lẻ riêng của đơn, QR vẽ ngay trên trình duyệt).
+ * USDT TRC20 (địa chỉ ví và số tiền lẻ riêng của đơn; QR vẽ ngay trên trình duyệt, thư viện QR chỉ tải khi có đơn USDT).
  * Key license chỉ sống trong biến bộ nhớ và ô nhập — không ghi vào storage/URL.
  */
 import type { Lang } from "../i18n/utils";
@@ -145,7 +145,7 @@ const skusOf = (kind: string) =>
         </dl>
         <p><strong>{b.usdtNetworkWarn}</strong></p>
         <p>{b.usdtExactWarn}</p>
-        <p>{b.expires}</p>
+        {/* Không có dòng "hết hạn sau 24 giờ" như màn VNĐ: đồng hồ dưới đây đã cho thấy thời gian còn lại thật. */}
         <p id="buy-usdt-countdown-row" hidden>
           {b.usdtTimeLeft} <code id="buy-usdt-countdown" role="timer"></code>
         </p>
@@ -163,7 +163,7 @@ const skusOf = (kind: string) =>
       </div>
       <p id="buy-paid-added" hidden>{b.paidAdded}</p>
       <div id="buy-expired" hidden>
-        <p>{b.expired}</p>
+        <p id="buy-expired-msg">{b.expired}</p>
         <button type="button" class="btn btn-primary" id="buy-new-order"
           >{b.newOrder}</button
         >
@@ -173,7 +173,6 @@ const skusOf = (kind: string) =>
 </section>
 
 <script>
-  import qrcode from "qrcode-generator";
   import {
     API_BASE,
     parseQuery,
@@ -392,6 +391,7 @@ const skusOf = (kind: string) =>
     const r = await post("/api/v1/orders", buildOrderBody({ ...f, method: "usdt" }));
     if (!r) return;
     const d = r.data;
+    // Màn này dặn khách chuyển USDT TRC20: phản hồi mạng khác (hay thiếu mạng) coi như hỏng, không đưa địa chỉ ra.
     if (
       r.res.status !== 201 ||
       typeof d.id !== "string" ||
@@ -399,7 +399,8 @@ const skusOf = (kind: string) =>
       typeof d.amount_usdt !== "string" ||
       !d.amount_usdt ||
       typeof d.address !== "string" ||
-      !d.address
+      !d.address ||
+      d.network !== "TRC20"
     ) {
       return void showErr(errorKey(r.res.status, d.code));
     }
@@ -440,9 +441,15 @@ const skusOf = (kind: string) =>
     poll(o.id);
   }
 
-  /** QR chỉ chứa địa chỉ ví; số tiền khách chép (mỗi ví đọc số tiền trong QR một kiểu). */
-  function renderQr(el: HTMLElement, text: string) {
+  /**
+   * QR chỉ chứa địa chỉ ví; số tiền khách chép (mỗi ví đọc số tiền trong QR một kiểu).
+   * Thư viện QR nạp lúc có đơn USDT (import động): khách thẻ và VNĐ không tải nó. Tải hỏng thì vào nhánh catch.
+   */
+  async function renderQr(el: HTMLElement, text: string) {
     try {
+      // Dòng /*! sống sót qua bước nén của Vite: giữ lời ghi công MIT đi kèm thư viện trong bản build.
+      /*! qrcode-generator 2.0.4 | (c) 2009 Kazuhiko Arase | MIT License | https://github.com/kazuhikoarase/qrcode-generator */
+      const { default: qrcode } = await import("qrcode-generator");
       const qr = qrcode(0, "M");
       qr.addData(text);
       qr.make();
@@ -476,12 +483,13 @@ const skusOf = (kind: string) =>
     show("buy-order", true);
     show("buy-pending", false);
     show("buy-usdt-pending", true);
+    show("buy-sub", false); // phụ đề "trả bằng thẻ quốc tế" không còn đúng trên màn chuyển USDT
     ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
     $("buy-usdt-address").textContent = o.address;
     $("buy-usdt-amount").textContent = o.amount_usdt;
-    renderQr($("buy-usdt-qr"), o.address);
+    void renderQr($("buy-usdt-qr"), o.address); // tự bắt lỗi bên trong; không chờ để địa chỉ và đồng hồ hiện ngay
     startCountdown(o.expires_at);
-    poll(o.id);
+    poll(o.id, true);
   }
 
   function clearStore() {
@@ -504,7 +512,7 @@ const skusOf = (kind: string) =>
   let timer: ReturnType<typeof setTimeout> | undefined;
   let pollGen = 0; // huỷ hiệu lực response của vòng poll cũ khi vòng mới đã bắt đầu
 
-  function poll(id: string) {
+  function poll(id: string, usdt = false) {
     const gen = ++pollGen;
     let last: string | null = null;
     let changedAt = Date.now();
@@ -533,6 +541,10 @@ const skusOf = (kind: string) =>
         }
         if (d.status === "expired") {
           finish(true);
+          // Đơn USDT chuyển `expired` nhưng máy chủ còn khớp giao dịch của nó thêm một thời gian và gửi key qua email
+          // (spec USDT §6, §8): khách đã chuyển mà chỉ được bảo "tạo đơn mới" sẽ trả hai lần.
+          // Đơn VNĐ giữ câu hết hạn như cũ. Loại đơn lấy từ tham số, không đoán từ màn nào đang hiện: finish() đã ẩn cả hai.
+          $("buy-expired-msg").textContent = usdt ? dict.usdtExpired : dict.expired;
           show("buy-expired", true);
           return;
         }
@@ -548,6 +560,7 @@ const skusOf = (kind: string) =>
     clearInterval(clock);
     show("buy-order", false);
     form.hidden = false;
+    syncPayRow(); // #buy-sub nằm ngoài form và màn USDT đã ẩn nó: tính lại theo gói đang chọn
   });
 
   // 6. Tải lại trang vẫn theo dõi đơn đang chờ.

@@ -198,6 +198,7 @@
         "paidKeyHint": "Paste it into the Veilus app to activate.",
         "paidAdded": "Added to your key. Reopen the app to update.",
         "expired": "This order has expired.",
+        "usdtExpired": "This order has expired. Already sent the exact amount? Don't send it again — we'll match it and email your key. Otherwise, create a new order.",
         "newOrder": "Create a new order",
         "err": {
             "input": "Please check your email and license key.",

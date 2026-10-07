@@ -198,6 +198,7 @@
         "paidKeyHint": "Etkinleştirmek için Veilus uygulamasına yapıştırın.",
         "paidAdded": "Anahtarınıza eklendi. Güncellemek için uygulamayı yeniden açın.",
         "expired": "Bu siparişin süresi doldu.",
+        "usdtExpired": "Bu siparişin süresi doldu. Tam tutarı zaten gönderdiniz mi? Tekrar göndermeyin — işlemi eşleştirip anahtarınızı e-postayla göndereceğiz. Göndermediyseniz yeni bir sipariş oluşturun.",
         "newOrder": "Yeni sipariş oluştur",
         "err": {
             "input": "E-postanızı ve lisans anahtarınızı kontrol edin.",

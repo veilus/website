@@ -198,6 +198,7 @@
         "paidKeyHint": "Cole-a no app Veilus para ativar.",
         "paidAdded": "Adicionado à sua chave. Reabra o app para atualizar.",
         "expired": "Este pedido expirou.",
+        "usdtExpired": "Este pedido expirou. Já enviou o valor exato? Não envie de novo — vamos associá-lo e enviar sua chave por e-mail. Caso contrário, crie um novo pedido.",
         "newOrder": "Criar novo pedido",
         "err": {
             "input": "Verifique seu e-mail e a chave de licença.",

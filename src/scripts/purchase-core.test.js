@@ -26,6 +26,7 @@ import {
   usdtShown,
   countdownText,
 } from "./purchase-core.js";
+import { SKUS } from "../data/skus.js";
 
 test("API_BASE trùng hằng các trang hiện có", () => {
   assert.equal(API_BASE, "https://api.veilus.io");
@@ -320,8 +321,7 @@ test("liveFrom: thẻ và VNĐ chỉ \"0\" hoặc \"false\" mới tắt (thiếu
 });
 
 // Quan hệ, không phải danh sách: SKU nào còn hiện mà giá vượt trần thẻ thì CI đỏ — kể cả SKU thêm sau này.
-test("mọi gói đang hiện đều trả thẻ được, và bản build mặc định đưa chúng tới thẻ (USD) hoặc chuyển khoản (VNĐ)", async () => {
-  const { SKUS } = await import("../data/skus.js");
+test("mọi gói đang hiện đều trả thẻ được, và bản build mặc định đưa chúng tới thẻ (USD) hoặc chuyển khoản (VNĐ)", () => {
   for (const sku of Object.keys(SKUS).filter((x) => listed(x))) {
     assert.ok(SKUS[sku].usd <= CARD_MAX_USD, `${sku} $${SKUS[sku].usd}`);
     assert.equal(payRoute("USD", sku), "card", `USD ${sku}`);
@@ -329,19 +329,16 @@ test("mọi gói đang hiện đều trả thẻ được, và bản build mặc
   }
 });
 
-// Gói ẩn thắng mọi kênh, kể cả USDT: bật cả ba kênh mà gói đang hiện vẫn đi thẻ (USD) hoặc chuyển khoản (VNĐ), nên
-// link `method=usdt` trên trang giá và nút USDT trên /mua chỉ có thể thuộc gói vượt trần thẻ — tức gói đang ẩn.
-test("bật cả ba kênh: gói nào đi USDT thì đang ẩn; gói đang hiện giữ thẻ (USD) và chuyển khoản (VNĐ)", async () => {
-  const { SKUS } = await import("../data/skus.js");
+// Thẻ đứng trước USDT: bật cả ba kênh mà gói đang hiện (theo danh sách ẩn mặc định) vẫn đi thẻ ở trang USD và chuyển
+// khoản ở trang VNĐ. Bài này đo `payRoute` ghép với `listed`; việc ẩn gói khỏi bảng giá, ô chọn /mua và JSON-LD do các
+// bộ lọc `listed()` trong .astro làm, bài này KHÔNG chạm tới chúng.
+test("bật cả ba kênh: thẻ vẫn đứng trước USDT — mọi gói đang hiện (theo danh sách ẩn mặc định) giữ thẻ (USD) và chuyển khoản (VNĐ)", () => {
   const all = { card: true, vnd: true, usdt: true };
-  for (const sku of Object.keys(SKUS)) {
-    if (listed(sku)) {
-      assert.equal(payRoute("USD", sku, all), "card", `USD ${sku}`);
-      assert.equal(payRoute("VND", sku, all), "vnd", `VND ${sku}`);
-    }
-    if (payRoute("USD", sku, all) === "usdt") assert.equal(listed(sku), false, `${sku} đi USDT mà đang hiện`);
+  for (const sku of Object.keys(SKUS).filter((x) => listed(x))) {
+    assert.equal(payRoute("USD", sku, all), "card", `USD ${sku}`);
+    assert.equal(payRoute("VND", sku, all), "vnd", `VND ${sku}`);
   }
-  // Hàng đối chứng: team10/team20 là gói đi USDT thật, và ở bản build mặc định chúng đang ẩn.
+  // Hàng đối chứng: bộ công tắc này có đường USDT thật (team10/team20 đi USDT), hai gói đó nằm ngoài vòng lặp vì đang ẩn.
   assert.equal(payRoute("USD", "team10", all), "usdt");
   assert.equal(payRoute("USD", "team20", all), "usdt");
   assert.equal(listed("team10"), false);
@@ -369,6 +366,12 @@ test("payRoute: trang USD, thẻ và USDT cùng bật — gói ≤ $199 giữ th
 
 test("payRoute: USDT tắt thì không gói nào đi USDT — gói vượt trần về Telegram như trước", () => {
   const live = { card: true, vnd: true, usdt: false };
+  // Mọi gói trong bảng SKU (kể cả gói thêm sau này) × mọi loại tiền: USDT tắt thì không đường nào ra "usdt".
+  for (const sku of Object.keys(SKUS)) {
+    for (const currency of ["USD", "USDT", "VND"]) {
+      assert.notEqual(payRoute(currency, sku, live), "usdt", `${currency} ${sku}`);
+    }
+  }
   assert.equal(payRoute("USD", "team10", live), "telegram");
   assert.equal(payRoute("USDT", "team10", live), "telegram");
   assert.equal(payRoute("USD", "solo", live), "card");
