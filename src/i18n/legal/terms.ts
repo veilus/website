@@ -48,7 +48,7 @@ export const termsTranslations: Record<string, {
 <ul>
   <li>International card payments are processed by LemonSqueezy, which acts as the merchant of record for those payments.</li>
 <li>USDT payments on the TRC20 network go directly to a Veilus wallet. An order is matched by its exact amount; a transfer with a different amount, on another network, or of another token is not matched automatically and may not be recoverable.</li>
-<li>When the purchase page shows a Telegram contact instead of a payment button, the order is handled manually through <a href="https://t.me/veilusbrowser">Telegram</a>, and the license key is sent after we confirm the payment.</li>
+<li>When the purchase page shows a Telegram contact instead of a payment button, the order is handled manually through <a href="https://t.me/veilusbrowser">Telegram</a>, and the order is fulfilled after we confirm the payment.</li>
   <li>Orders in Vietnamese dong (VND) are paid by bank transfer (VietQR).</li>
   <li>Veilus does not store your payment card details.</li>
   <li>After payment, your license key is shown on the purchase page and sent to your email.</li>
@@ -171,7 +171,7 @@ export const termsTranslations: Record<string, {
 <ul>
   <li>Thanh toán bằng thẻ quốc tế do LemonSqueezy xử lý; LemonSqueezy là bên bán chính thức (merchant of record) cho các khoản thanh toán này.</li>
 <li>Thanh toán USDT trên mạng TRC20 đi thẳng vào ví của Veilus. Đơn được ghép theo đúng số tiền; giao dịch khác số tiền, khác mạng hay khác token sẽ không được ghép tự động và có thể không lấy lại được.</li>
-<li>Khi trang mua hiển thị liên hệ Telegram thay cho nút thanh toán, đơn được xử lý thủ công qua <a href="https://t.me/veilusbrowser">Telegram</a> và license key được gửi sau khi chúng tôi xác nhận thanh toán.</li>
+<li>Khi trang mua hiển thị liên hệ Telegram thay cho nút thanh toán, đơn được xử lý thủ công qua <a href="https://t.me/veilusbrowser">Telegram</a> và đơn được thực hiện sau khi chúng tôi xác nhận thanh toán.</li>
   <li>Đơn bằng VNĐ thanh toán qua chuyển khoản ngân hàng (VietQR).</li>
   <li>Veilus không lưu thông tin thẻ của bạn.</li>
   <li>Sau khi thanh toán, key license hiện ngay trên trang mua và được gửi tới email của bạn.</li>
@@ -262,7 +262,7 @@ export const termsTranslations: Record<string, {
   <li>额外设备仅适用于终身密钥。</li>
   <li>国际银行卡付款由LemonSqueezy处理，LemonSqueezy是此类付款的记录商家（merchant of record）。越南盾订单通过银行转账（VietQR）支付。Veilus不存储您的银行卡信息。</li>
 <li>TRC20 网络上的 USDT 付款直接进入 Veilus 的钱包。订单按准确金额匹配；金额不同、网络不同或代币不同的转账不会自动匹配，且可能无法找回。</li>
-<li>当购买页面显示 Telegram 联系方式而非付款按钮时，订单通过 <a href="https://t.me/veilusbrowser">Telegram</a> 人工处理，我们在确认付款后发送许可证密钥。</li>
+<li>当购买页面显示 Telegram 联系方式而非付款按钮时，订单通过 <a href="https://t.me/veilusbrowser">Telegram</a> 人工处理，我们在确认付款后履行订单。</li>
   <li>付款后，许可证密钥会显示在购买页面上并发送到您的邮箱。</li>
   <li>月付密钥未续费时，应用在已付费周期结束后恢复为Free计划，已创建的配置文件会保留。</li>
 </ul>
@@ -296,7 +296,7 @@ export const termsTranslations: Record<string, {
   <li>Дополнительные устройства доступны только для бессрочных ключей.</li>
   <li>Оплата международными картами обрабатывается LemonSqueezy, который выступает продавцом (merchant of record) по этим платежам. Заказы в VND оплачиваются банковским переводом (VietQR). Veilus не хранит данные ваших карт.</li>
 <li>Платежи в USDT в сети TRC20 поступают напрямую на кошелёк Veilus. Заказ сопоставляется по точной сумме; перевод с другой суммой, в другой сети или другим токеном не сопоставляется автоматически и может быть невозвратным.</li>
-<li>Если на странице покупки вместо кнопки оплаты указан контакт в Telegram, заказ обрабатывается вручную через <a href="https://t.me/veilusbrowser">Telegram</a>, а лицензионный ключ отправляется после того, как мы подтвердим оплату.</li>
+<li>Если на странице покупки вместо кнопки оплаты указан контакт в Telegram, заказ обрабатывается вручную через <a href="https://t.me/veilusbrowser">Telegram</a>, а заказ выполняется после того, как мы подтвердим оплату.</li>
   <li>После оплаты лицензионный ключ показывается на странице покупки и отправляется на вашу почту.</li>
   <li>Если помесячный ключ не продлён, по окончании оплаченного периода приложение возвращается к плану Free; созданные профили сохраняются.</li>
 </ul>
@@ -326,7 +326,7 @@ export const termsTranslations: Record<string, {
   <li>Los dispositivos adicionales solo están disponibles para claves de por vida.</li>
   <li>Los pagos con tarjeta internacional los procesa LemonSqueezy, que actúa como comerciante registrado (merchant of record) de esos pagos. Los pedidos en VND se pagan por transferencia bancaria (VietQR). Veilus no almacena los datos de su tarjeta.</li>
 <li>Los pagos en USDT por la red TRC20 llegan directamente a una billetera de Veilus. Cada pedido se asocia por su importe exacto; una transferencia con otro importe, por otra red o de otro token no se asocia automáticamente y puede no ser recuperable.</li>
-<li>Cuando la página de compra muestra un contacto de Telegram en lugar de un botón de pago, el pedido se gestiona manualmente por <a href="https://t.me/veilusbrowser">Telegram</a> y la clave de licencia se envía una vez que confirmamos el pago.</li>
+<li>Cuando la página de compra muestra un contacto de Telegram en lugar de un botón de pago, el pedido se gestiona manualmente por <a href="https://t.me/veilusbrowser">Telegram</a> y el pedido se tramita una vez que confirmamos el pago.</li>
   <li>Tras el pago, la clave de licencia se muestra en la página de compra y se envía a su correo electrónico.</li>
   <li>Si una clave mensual no se renueva, la aplicación vuelve al plan Free al final del periodo pagado; los perfiles creados se conservan.</li>
 </ul>
@@ -354,7 +354,7 @@ export const termsTranslations: Record<string, {
   <li>Dispositivos adicionais estão disponíveis apenas para chaves vitalícias.</li>
   <li>Pagamentos com cartão internacional são processados pelo LemonSqueezy, que atua como comerciante registrado (merchant of record) desses pagamentos. Pedidos em VND são pagos por transferência bancária (VietQR). A Veilus não armazena os dados do seu cartão.</li>
 <li>Pagamentos em USDT pela rede TRC20 vão direto para uma carteira da Veilus. Cada pedido é associado pelo valor exato; uma transferência com outro valor, por outra rede ou de outro token não é associada automaticamente e pode não ser recuperável.</li>
-<li>Quando a página de compra mostra um contato no Telegram em vez de um botão de pagamento, o pedido é tratado manualmente pelo <a href="https://t.me/veilusbrowser">Telegram</a> e a chave de licença é enviada depois que confirmarmos o pagamento.</li>
+<li>Quando a página de compra mostra um contato no Telegram em vez de um botão de pagamento, o pedido é tratado manualmente pelo <a href="https://t.me/veilusbrowser">Telegram</a> e o pedido é atendido depois que confirmarmos o pagamento.</li>
   <li>Após o pagamento, a chave de licença é exibida na página de compra e enviada para o seu e-mail.</li>
   <li>Se uma chave mensal não for renovada, o aplicativo volta ao plano Free ao fim do período pago; os perfis criados são mantidos.</li>
 </ul>
@@ -382,7 +382,7 @@ export const termsTranslations: Record<string, {
   <li>Perangkat tambahan hanya tersedia untuk kunci seumur hidup.</li>
   <li>Pembayaran kartu internasional diproses oleh LemonSqueezy, yang bertindak sebagai merchant of record untuk pembayaran tersebut. Pesanan VND dibayar melalui transfer bank (VietQR). Veilus tidak menyimpan data kartu Anda.</li>
 <li>Pembayaran USDT di jaringan TRC20 masuk langsung ke dompet Veilus. Pesanan dicocokkan berdasarkan jumlah yang tepat; transfer dengan jumlah lain, di jaringan lain, atau berupa token lain tidak dicocokkan otomatis dan mungkin tidak dapat dikembalikan.</li>
-<li>Jika halaman pembelian menampilkan kontak Telegram sebagai ganti tombol pembayaran, pesanan ditangani secara manual lewat <a href="https://t.me/veilusbrowser">Telegram</a> dan kunci lisensi dikirim setelah kami mengonfirmasi pembayaran.</li>
+<li>Jika halaman pembelian menampilkan kontak Telegram sebagai ganti tombol pembayaran, pesanan ditangani secara manual lewat <a href="https://t.me/veilusbrowser">Telegram</a> dan pesanan dipenuhi setelah kami mengonfirmasi pembayaran.</li>
   <li>Setelah pembayaran, kunci lisensi ditampilkan di halaman pembelian dan dikirim ke email Anda.</li>
   <li>Jika kunci bulanan tidak diperpanjang, aplikasi kembali ke paket Free di akhir periode yang dibayar; profil yang telah dibuat tetap tersimpan.</li>
 </ul>
@@ -410,7 +410,7 @@ export const termsTranslations: Record<string, {
   <li>Ek cihazlar yalnızca ömür boyu anahtarlar için satın alınabilir.</li>
   <li>Uluslararası kart ödemeleri, bu ödemelerde satıcı (merchant of record) olarak hareket eden LemonSqueezy tarafından işlenir. VND siparişleri banka havalesiyle (VietQR) ödenir. Veilus kart bilgilerinizi saklamaz.</li>
 <li>TRC20 ağındaki USDT ödemeleri doğrudan bir Veilus cüzdanına gider. Sipariş tam tutarıyla eşleştirilir; farklı tutarda, başka ağda veya başka token ile yapılan transfer otomatik eşleştirilmez ve geri alınamayabilir.</li>
-<li>Satın alma sayfası ödeme düğmesi yerine bir Telegram iletişimi gösteriyorsa, sipariş <a href="https://t.me/veilusbrowser">Telegram</a> üzerinden elle işlenir ve lisans anahtarı ödemeyi doğruladıktan sonra gönderilir.</li>
+<li>Satın alma sayfası ödeme düğmesi yerine bir Telegram iletişimi gösteriyorsa, sipariş <a href="https://t.me/veilusbrowser">Telegram</a> üzerinden elle işlenir ve sipariş ödemeyi doğruladıktan sonra yerine getirilir.</li>
   <li>Ödemeden sonra lisans anahtarı satın alma sayfasında gösterilir ve e-postanıza gönderilir.</li>
   <li>Aylık anahtar yenilenmezse uygulama ödenen dönemin sonunda Free plana döner; oluşturduğunuz profiller korunur.</li>
 </ul>

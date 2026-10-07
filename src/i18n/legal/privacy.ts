@@ -220,7 +220,7 @@ export const privacyTranslations: Record<string, {
 <h2>2. 我们收集的数据</h2>
 <h3>2.1 账户数据</h3>
 <p>创建账户时，我们收集：</p>
-<ul><li><strong>电子邮件地址</strong> — 用于身份验证和通信</li><li><strong>付款信息</strong> — 银行卡付款由LemonSqueezy（记录商家，merchant of record）直接处理您的姓名、邮箱和卡信息；我们不存储卡号。越南盾银行转账由我们的银行提供收到的转账信息，包括汇款人姓名和转账备注。 对于 USDT 付款，我们会记录付款钱包地址和交易 ID，这些信息在 TRON 区块链上是公开的。如果您通过 Telegram 购买，我们也会收到您在那里发送的消息，包括您的 Telegram 用户名。</li></ul>
+<ul><li><strong>电子邮件地址</strong> — 用于身份验证和通信</li><li><strong>付款信息</strong> — 银行卡付款由LemonSqueezy（记录商家，merchant of record）直接处理您的姓名、邮箱和卡信息；我们不存储卡号。越南盾银行转账由我们的银行提供收到的转账信息，包括汇款人姓名和转账备注。对于 USDT 付款，我们会记录付款钱包地址和交易 ID，这些信息在 TRON 区块链上是公开的。如果您通过 Telegram 购买，我们也会收到您在那里发送的消息，包括您的 Telegram 用户名。</li></ul>
 <h3>2.2 使用数据（仅限选择加入）</h3>
 <p>如果您选择加入遥测，我们收集<strong>汇总的匿名</strong>使用统计数据。</p>
 <p><strong>我们从不收集：</strong>浏览历史、配置文件内容、自动化脚本、IP地址或任何个人身份信息。</p>
