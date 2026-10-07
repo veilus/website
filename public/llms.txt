@@ -34,6 +34,7 @@
 - Lifetime (one-time): Solo 1 device 2,500,000 VND / $99; Team 3 3 devices 3,750,000 VND / $149; Team 5 5,000,000 VND / $199
 - Paid plans: unlimited profiles, Veilus Flow, scheduling, batch runs, local REST API and MCP, Veilus Sync, script templates
 - Lifetime includes updates forever and 3 years of support (renewal: 40% of the plan price per 3 years)
+- Payment: VND by bank transfer (Vietnam); USD by card for Monthly, Solo, Team 5 and extra devices; USDT on TRC20 for lifetime plans and extra devices. Team 10 and Team 20 are sold in USDT only.
 - More than 20 devices: contact us
 - Refunds: within 7 days (monthly) or 14 days (lifetime)
 - Buy: https://veilus.io/mua/

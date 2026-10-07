@@ -8,7 +8,7 @@ export const refundTranslations: Record<string, {
     en: {
         title: "Refund Policy",
         description: "Veilus refund policy for monthly and lifetime plans.",
-        lastUpdated: "September 28, 2026",
+        lastUpdated: "October 7, 2026",
         content: `
 <h2>1. Overview</h2>
 <p>We want you to be satisfied with Veilus. If you're not happy with your purchase, we offer refunds under the following conditions.</p>
@@ -29,6 +29,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>Orders paid in VND (bank transfer):</strong> refunded manually. Email <a href="mailto:billing@veilus.io">billing@veilus.io</a> with the email used for the order and your order code or license key. When the refund is issued, the license key is disabled.</li>
   <li><strong>Orders paid in USD (card):</strong> LemonSqueezy is the merchant of record for card payments, so refunds are issued through LemonSqueezy according to its refund process, to the original payment method. You can start the request by emailing <a href="mailto:billing@veilus.io">billing@veilus.io</a>.</li>
+<li><strong>Orders paid in USDT (TRC20):</strong> refunded manually in USDT on the TRC20 network, to a TRC20 address you give us. Email <a href="mailto:billing@veilus.io">billing@veilus.io</a> with the email used for the order and the transaction ID (TxID).</li>
+<li><strong>Orders bought through Telegram:</strong> refunded manually. Message us on <a href="https://t.me/veilusbrowser">Telegram</a> or email <a href="mailto:billing@veilus.io">billing@veilus.io</a> with the email used and the order details. If you paid in USDT, the refund is made in USDT to a TRC20 address you give us, as described above; the refund windows described above still apply.</li>
 </ul>
 <p>We review refund requests within <strong>2 business days</strong>.</p>
 
@@ -54,7 +56,7 @@ export const refundTranslations: Record<string, {
     vi: {
         title: "Chính sách Hoàn tiền",
         description: "Chính sách hoàn tiền cho gói thuê tháng và gói trọn đời của Veilus.",
-        lastUpdated: "28 tháng 9, 2026",
+        lastUpdated: "7 tháng 10, 2026",
         content: `
 <h2>1. Tổng quan</h2>
 <p>Chúng tôi muốn bạn hài lòng với Veilus. Nếu không hài lòng, chúng tôi cung cấp hoàn tiền theo các điều kiện sau.</p>
@@ -75,6 +77,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>Đơn trả bằng VNĐ (chuyển khoản):</strong> hoàn tay. Gửi email tới <a href="mailto:billing@veilus.io">billing@veilus.io</a> kèm email đã dùng khi đặt đơn và mã đơn hoặc key license. Khi đã hoàn tiền, key license bị vô hiệu.</li>
   <li><strong>Đơn trả bằng USD (thẻ):</strong> LemonSqueezy là bên bán chính thức (merchant of record) cho thanh toán thẻ, nên tiền được hoàn qua LemonSqueezy theo quy trình hoàn tiền của họ, về phương thức thanh toán ban đầu. Bạn có thể bắt đầu yêu cầu bằng email tới <a href="mailto:billing@veilus.io">billing@veilus.io</a>.</li>
+<li><strong>Đơn trả bằng USDT (TRC20):</strong> hoàn tay bằng USDT trên mạng TRC20, về địa chỉ TRC20 bạn cung cấp. Gửi thư tới <a href="mailto:billing@veilus.io">billing@veilus.io</a> kèm email đã dùng khi mua và mã giao dịch (TxID).</li>
+<li><strong>Đơn mua qua Telegram:</strong> hoàn tay. Nhắn cho chúng tôi trên <a href="https://t.me/veilusbrowser">Telegram</a> hoặc gửi thư tới <a href="mailto:billing@veilus.io">billing@veilus.io</a> kèm email đã dùng khi mua và thông tin đơn. Nếu bạn đã trả bằng USDT thì hoàn bằng USDT về địa chỉ TRC20 bạn cung cấp, như mô tả ở trên; thời hạn hoàn tiền nêu ở trên vẫn áp dụng.</li>
 </ul>
 <p>Chúng tôi xem xét yêu cầu hoàn tiền trong <strong>2 ngày làm việc</strong>.</p>
 
@@ -99,7 +103,7 @@ export const refundTranslations: Record<string, {
     zh: {
         title: "退款政策",
         description: "Veilus月付计划和终身计划的退款政策。",
-        lastUpdated: "2026年9月28日",
+        lastUpdated: "2026年10月7日",
         content: `
 <h2>1. 概述</h2>
 <p>我们希望您对Veilus满意。如不满意，可按以下条件申请退款。</p>
@@ -112,6 +116,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>越南盾（VND）银行转账订单：</strong>人工退款。请发送邮件至 <a href="mailto:billing@veilus.io">billing@veilus.io</a>，注明下单邮箱及订单号或许可证密钥。退款后，该许可证密钥将被停用。</li>
   <li><strong>美元（USD）银行卡订单：</strong>LemonSqueezy是银行卡付款的记录商家（merchant of record），退款通过LemonSqueezy按其退款流程退回原支付方式。</li>
+<li><strong>以 USDT (TRC20) 支付的订单：</strong>通过 TRC20 网络以 USDT 人工退款至您提供的 TRC20 地址。请发送邮件至 <a href="mailto:billing@veilus.io">billing@veilus.io</a>，注明下单邮箱和交易 ID (TxID)。</li>
+<li><strong>通过 Telegram 购买的订单：</strong>人工退款。请在 <a href="https://t.me/veilusbrowser">Telegram</a> 联系我们，或发送邮件至 <a href="mailto:billing@veilus.io">billing@veilus.io</a>，注明下单邮箱和订单信息。如果您以 USDT 支付，则按上述方式以 USDT 退款至您提供的 TRC20 地址；上文所述的退款期限同样适用。</li>
 </ul>
 <h2>6. 联系方式</h2>
 <p><a href="mailto:billing@veilus.io">billing@veilus.io</a>（2个工作日内回复）。</p>`
@@ -120,7 +126,7 @@ export const refundTranslations: Record<string, {
     ru: {
         title: "Политика возврата",
         description: "Политика возврата средств для помесячного и бессрочного планов Veilus.",
-        lastUpdated: "28 сентября 2026",
+        lastUpdated: "7 октября 2026",
         content: `
 <h2>1. Обзор</h2><p>Мы предлагаем возврат средств при следующих условиях.</p>
 <h2>2-3. Помесячный план</h2>
@@ -131,6 +137,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>Заказы в VND (банковский перевод):</strong> возврат выполняется вручную. Напишите на <a href="mailto:billing@veilus.io">billing@veilus.io</a>, указав email заказа и номер заказа или лицензионный ключ. После возврата лицензионный ключ отключается.</li>
   <li><strong>Заказы в USD (карта):</strong> LemonSqueezy выступает продавцом (merchant of record) по платежам картой, поэтому возврат выполняется через LemonSqueezy по его процедуре возврата на исходный способ оплаты.</li>
+<li><strong>Заказы, оплаченные в USDT (TRC20):</strong> возврат вручную в USDT в сети TRC20 на указанный вами адрес TRC20. Напишите на <a href="mailto:billing@veilus.io">billing@veilus.io</a>, указав email заказа и ID транзакции (TxID).</li>
+<li><strong>Заказы, купленные через Telegram:</strong> возврат вручную. Напишите нам в <a href="https://t.me/veilusbrowser">Telegram</a> или на <a href="mailto:billing@veilus.io">billing@veilus.io</a>, указав email и данные заказа. Если вы платили в USDT, возврат делается в USDT на указанный вами адрес TRC20, как описано выше; описанные выше сроки возврата остаются в силе.</li>
 </ul>
 <h2>6. Контакт</h2>
 <p><a href="mailto:billing@veilus.io">billing@veilus.io</a></p>`
@@ -139,7 +147,7 @@ export const refundTranslations: Record<string, {
     es: {
         title: "Política de Reembolso",
         description: "Política de reembolso para los planes mensual y de por vida de Veilus.",
-        lastUpdated: "28 de septiembre de 2026",
+        lastUpdated: "7 de octubre de 2026",
         content: `
 <h2>1. Resumen</h2><p>Ofrecemos reembolsos bajo las siguientes condiciones.</p>
 <h2>2-3. Plan mensual</h2>
@@ -150,6 +158,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>Pedidos en VND (transferencia bancaria):</strong> se reembolsan manualmente. Escriba a <a href="mailto:billing@veilus.io">billing@veilus.io</a> con el correo del pedido y su código de pedido o clave de licencia. Una vez emitido el reembolso, la clave de licencia se desactiva.</li>
   <li><strong>Pedidos en USD (tarjeta):</strong> LemonSqueezy actúa como comerciante registrado (merchant of record) de los pagos con tarjeta, por lo que los reembolsos se emiten a través de LemonSqueezy según su proceso de reembolso, al método de pago original.</li>
+<li><strong>Pedidos pagados en USDT (TRC20):</strong> se reembolsan manualmente en USDT por la red TRC20, a una dirección TRC20 que nos indiques. Escribe a <a href="mailto:billing@veilus.io">billing@veilus.io</a> con el correo usado en el pedido y el ID de la transacción (TxID).</li>
+<li><strong>Pedidos comprados por Telegram:</strong> reembolsados manualmente. Escríbenos por <a href="https://t.me/veilusbrowser">Telegram</a> o a <a href="mailto:billing@veilus.io">billing@veilus.io</a> con el correo usado y los datos del pedido. Si pagaste en USDT, el reembolso se hace en USDT a una dirección TRC20 que nos indiques, como se describe arriba; los plazos de reembolso descritos arriba siguen aplicándose.</li>
 </ul>
 <h2>6. Contacto</h2>
 <p><a href="mailto:billing@veilus.io">billing@veilus.io</a></p>`
@@ -158,7 +168,7 @@ export const refundTranslations: Record<string, {
     pt: {
         title: "Política de Reembolso",
         description: "Política de reembolso para os planos mensal e vitalício Veilus.",
-        lastUpdated: "28 de setembro de 2026",
+        lastUpdated: "7 de outubro de 2026",
         content: `
 <h2>1. Resumo</h2><p>Oferecemos reembolso nas seguintes condições.</p>
 <h2>2-3. Plano mensal</h2>
@@ -169,6 +179,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>Pedidos em VND (transferência bancária):</strong> reembolsados manualmente. Envie um e-mail para <a href="mailto:billing@veilus.io">billing@veilus.io</a> com o e-mail do pedido e o código do pedido ou a chave de licença. Após o reembolso, a chave de licença é desativada.</li>
   <li><strong>Pedidos em USD (cartão):</strong> o LemonSqueezy atua como comerciante registrado (merchant of record) dos pagamentos com cartão, então os reembolsos são feitos pelo LemonSqueezy conforme o processo de reembolso dele, para o método de pagamento original.</li>
+<li><strong>Pedidos pagos em USDT (TRC20):</strong> reembolsados manualmente em USDT pela rede TRC20, para um endereço TRC20 que você nos informar. Envie um e-mail para <a href="mailto:billing@veilus.io">billing@veilus.io</a> com o e-mail usado no pedido e o ID da transação (TxID).</li>
+<li><strong>Pedidos comprados pelo Telegram:</strong> reembolsados manualmente. Fale conosco pelo <a href="https://t.me/veilusbrowser">Telegram</a> ou envie e-mail para <a href="mailto:billing@veilus.io">billing@veilus.io</a> com o e-mail usado e os dados do pedido. Se você pagou em USDT, o reembolso é feito em USDT para um endereço TRC20 que você nos informar, como descrito acima; os prazos de reembolso descritos acima continuam valendo.</li>
 </ul>
 <h2>6. Contato</h2>
 <p><a href="mailto:billing@veilus.io">billing@veilus.io</a></p>`
@@ -177,7 +189,7 @@ export const refundTranslations: Record<string, {
     id: {
         title: "Kebijakan Pengembalian Dana",
         description: "Kebijakan pengembalian dana untuk paket bulanan dan seumur hidup Veilus.",
-        lastUpdated: "28 September 2026",
+        lastUpdated: "7 Oktober 2026",
         content: `
 <h2>1. Ringkasan</h2><p>Kami menawarkan pengembalian dana dengan ketentuan berikut.</p>
 <h2>2-3. Paket bulanan</h2>
@@ -188,6 +200,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>Pesanan VND (transfer bank):</strong> dikembalikan secara manual. Kirim email ke <a href="mailto:billing@veilus.io">billing@veilus.io</a> dengan email pesanan dan kode pesanan atau kunci lisensi Anda. Setelah dana dikembalikan, kunci lisensi dinonaktifkan.</li>
   <li><strong>Pesanan USD (kartu):</strong> LemonSqueezy adalah merchant of record untuk pembayaran kartu, sehingga pengembalian dana dilakukan melalui LemonSqueezy sesuai proses pengembalian dananya, ke metode pembayaran asli.</li>
+<li><strong>Pesanan yang dibayar dengan USDT (TRC20):</strong> dikembalikan secara manual dalam USDT di jaringan TRC20, ke alamat TRC20 yang Anda berikan. Kirim email ke <a href="mailto:billing@veilus.io">billing@veilus.io</a> dengan email yang dipakai saat memesan dan ID transaksi (TxID).</li>
+<li><strong>Pesanan yang dibeli lewat Telegram:</strong> dikembalikan secara manual. Hubungi kami di <a href="https://t.me/veilusbrowser">Telegram</a> atau kirim email ke <a href="mailto:billing@veilus.io">billing@veilus.io</a> dengan email yang dipakai dan data pesanan. Jika Anda membayar dengan USDT, pengembalian dilakukan dalam USDT ke alamat TRC20 yang Anda berikan, seperti dijelaskan di atas; batas waktu pengembalian dana di atas tetap berlaku.</li>
 </ul>
 <h2>6. Kontak</h2>
 <p><a href="mailto:billing@veilus.io">billing@veilus.io</a></p>`
@@ -196,7 +210,7 @@ export const refundTranslations: Record<string, {
     tr: {
         title: "İade Politikası",
         description: "Veilus aylık ve ömür boyu planları için iade politikası.",
-        lastUpdated: "28 Eylül 2026",
+        lastUpdated: "7 Ekim 2026",
         content: `
 <h2>1. Özet</h2><p>Aşağıdaki koşullarda iade sunuyoruz.</p>
 <h2>2-3. Aylık plan</h2>
@@ -207,6 +221,8 @@ export const refundTranslations: Record<string, {
 <ul>
   <li><strong>VND siparişleri (banka havalesi):</strong> elle iade edilir. Sipariş e-postanız ve sipariş kodunuz ya da lisans anahtarınızla <a href="mailto:billing@veilus.io">billing@veilus.io</a> adresine yazın. İade yapıldığında lisans anahtarı devre dışı bırakılır.</li>
   <li><strong>USD siparişleri (kart):</strong> kart ödemelerinde satıcı (merchant of record) LemonSqueezy'dir; bu nedenle iadeler LemonSqueezy üzerinden, onun iade sürecine göre, orijinal ödeme yöntemine yapılır.</li>
+<li><strong>USDT (TRC20) ile ödenen siparişler:</strong> iade, TRC20 ağında USDT olarak, bize verdiğiniz bir TRC20 adresine elle yapılır. Sipariş e-postanız ve işlem kimliğiyle (TxID) <a href="mailto:billing@veilus.io">billing@veilus.io</a> adresine yazın.</li>
+<li><strong>Telegram üzerinden satın alınan siparişler:</strong> iade elle yapılır. Bize <a href="https://t.me/veilusbrowser">Telegram</a> üzerinden yazın veya sipariş e-postanız ve sipariş bilgileriyle <a href="mailto:billing@veilus.io">billing@veilus.io</a> adresine e-posta gönderin. USDT ile ödediyseniz iade, yukarıda açıklandığı gibi USDT olarak verdiğiniz TRC20 adresine yapılır; yukarıda belirtilen iade süreleri geçerlidir.</li>
 </ul>
 <h2>6. İletişim</h2>
 <p><a href="mailto:billing@veilus.io">billing@veilus.io</a></p>`

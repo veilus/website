@@ -8,7 +8,7 @@ export const privacyTranslations: Record<string, {
     en: {
         title: "Privacy Policy",
         description: "How Veilus collects, uses, and protects your data.",
-        lastUpdated: "March 6, 2026",
+        lastUpdated: "October 7, 2026",
         content: `
 <h2>1. Introduction</h2>
 <p>Veilus ("we", "our", "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use the Veilus application and website (collectively, the "Service").</p>
@@ -18,7 +18,7 @@ export const privacyTranslations: Record<string, {
 <p>When you create an account, we collect:</p>
 <ul>
   <li><strong>Email address</strong> — for authentication and communication</li>
-  <li><strong>Payment information</strong> — for card payments, LemonSqueezy (our merchant of record) processes your name, email, and card details directly; we do not store card numbers. For VND bank transfers, our bank sends us the transfer details it receives, including the sender's name and the transfer content.</li>
+  <li><strong>Payment information</strong> — for card payments, LemonSqueezy (our merchant of record) processes your name, email, and card details directly; we do not store card numbers. For VND bank transfers, our bank sends us the transfer details it receives, including the sender's name and the transfer content. For USDT payments, we record the sending wallet address and the transaction ID, which are public on the TRON blockchain. If you buy through Telegram, we also receive the messages you send us there, including your Telegram username.</li>
 </ul>
 <h3>2.2 Usage Data (Opt-in Only)</h3>
 <p>If you opt in to telemetry, we collect <strong>aggregate, anonymized</strong> usage statistics:</p>
@@ -110,7 +110,7 @@ export const privacyTranslations: Record<string, {
     vi: {
         title: "Chính sách Bảo mật",
         description: "Cách Veilus thu thập, sử dụng và bảo vệ dữ liệu của bạn.",
-        lastUpdated: "6 tháng 3, 2026",
+        lastUpdated: "7 tháng 10, 2026",
         content: `
 <h2>1. Giới thiệu</h2>
 <p>Veilus ("chúng tôi") tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân. Chính sách Bảo mật này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin khi bạn sử dụng ứng dụng và website Veilus (gọi chung là "Dịch vụ").</p>
@@ -120,7 +120,7 @@ export const privacyTranslations: Record<string, {
 <p>Khi bạn tạo tài khoản, chúng tôi thu thập:</p>
 <ul>
   <li><strong>Địa chỉ email</strong> — để xác thực và liên lạc</li>
-  <li><strong>Thông tin thanh toán</strong> — với thanh toán thẻ, LemonSqueezy (bên bán chính thức - merchant of record) xử lý trực tiếp tên, email và chi tiết thẻ của bạn; chúng tôi không lưu số thẻ. Với chuyển khoản VNĐ, ngân hàng của chúng tôi gửi cho chúng tôi chi tiết giao dịch nhận được, gồm tên người chuyển và nội dung chuyển khoản.</li>
+  <li><strong>Thông tin thanh toán</strong> — với thanh toán thẻ, LemonSqueezy (bên bán chính thức - merchant of record) xử lý trực tiếp tên, email và chi tiết thẻ của bạn; chúng tôi không lưu số thẻ. Với chuyển khoản VNĐ, ngân hàng của chúng tôi gửi cho chúng tôi chi tiết giao dịch nhận được, gồm tên người chuyển và nội dung chuyển khoản. Với thanh toán USDT, chúng tôi lưu địa chỉ ví gửi và mã giao dịch, vốn công khai trên blockchain TRON. Nếu bạn mua qua Telegram, chúng tôi cũng nhận các tin nhắn bạn gửi ở đó, gồm cả tên người dùng Telegram.</li>
 </ul>
 <h3>2.2 Dữ liệu sử dụng (Chỉ khi bạn đồng ý)</h3>
 <p>Nếu bạn bật telemetry, chúng tôi thu thập thống kê sử dụng <strong>tổng hợp, ẩn danh</strong>:</p>
@@ -212,7 +212,7 @@ export const privacyTranslations: Record<string, {
     zh: {
         title: "隐私政策",
         description: "Veilus如何收集、使用和保护您的数据。",
-        lastUpdated: "2026年3月6日",
+        lastUpdated: "2026年10月7日",
         content: `
 <h2>1. 简介</h2>
 <p>Veilus（"我们"）尊重您的隐私，并致力于保护您的个人数据。本隐私政策说明了当您使用Veilus应用程序和网站（统称"服务"）时，我们如何收集、使用和保护您的信息。</p>
@@ -220,7 +220,7 @@ export const privacyTranslations: Record<string, {
 <h2>2. 我们收集的数据</h2>
 <h3>2.1 账户数据</h3>
 <p>创建账户时，我们收集：</p>
-<ul><li><strong>电子邮件地址</strong> — 用于身份验证和通信</li><li><strong>付款信息</strong> — 银行卡付款由LemonSqueezy（记录商家，merchant of record）直接处理您的姓名、邮箱和卡信息；我们不存储卡号。越南盾银行转账由我们的银行提供收到的转账信息，包括汇款人姓名和转账备注。</li></ul>
+<ul><li><strong>电子邮件地址</strong> — 用于身份验证和通信</li><li><strong>付款信息</strong> — 银行卡付款由LemonSqueezy（记录商家，merchant of record）直接处理您的姓名、邮箱和卡信息；我们不存储卡号。越南盾银行转账由我们的银行提供收到的转账信息，包括汇款人姓名和转账备注。 对于 USDT 付款，我们会记录付款钱包地址和交易 ID，这些信息在 TRON 区块链上是公开的。如果您通过 Telegram 购买，我们也会收到您在那里发送的消息，包括您的 Telegram 用户名。</li></ul>
 <h3>2.2 使用数据（仅限选择加入）</h3>
 <p>如果您选择加入遥测，我们收集<strong>汇总的匿名</strong>使用统计数据。</p>
 <p><strong>我们从不收集：</strong>浏览历史、配置文件内容、自动化脚本、IP地址或任何个人身份信息。</p>
@@ -258,14 +258,14 @@ export const privacyTranslations: Record<string, {
     ru: {
         title: "Политика конфиденциальности",
         description: "Как Veilus собирает, использует и защищает ваши данные.",
-        lastUpdated: "6 марта 2026",
+        lastUpdated: "7 октября 2026",
         content: `
 <h2>1. Введение</h2>
 <p>Veilus ("мы") уважает вашу конфиденциальность и стремится защитить ваши персональные данные. Эта Политика конфиденциальности описывает, как мы собираем, используем и защищаем вашу информацию при использовании приложения и веб-сайта Veilus (далее "Сервис").</p>
 
 <h2>2. Данные, которые мы собираем</h2>
 <h3>2.1 Данные аккаунта</h3>
-<ul><li><strong>Адрес электронной почты</strong> — для аутентификации и связи</li><li><strong>Платёжная информация</strong> — платежи картой обрабатывает напрямую LemonSqueezy (продавец по договору, merchant of record): имя, email и данные карты; мы не храним номера карт. При переводах в VND наш банк передаёт нам полученные данные перевода, включая имя отправителя и назначение платежа.</li></ul>
+<ul><li><strong>Адрес электронной почты</strong> — для аутентификации и связи</li><li><strong>Платёжная информация</strong> — платежи картой обрабатывает напрямую LemonSqueezy (продавец по договору, merchant of record): имя, email и данные карты; мы не храним номера карт. При переводах в VND наш банк передаёт нам полученные данные перевода, включая имя отправителя и назначение платежа. При оплате в USDT мы сохраняем адрес кошелька отправителя и ID транзакции, которые публично видны в блокчейне TRON. Если вы покупаете через Telegram, мы также получаем ваши сообщения там, включая имя пользователя Telegram.</li></ul>
 <h3>2.2 Данные использования (только по согласию)</h3>
 <p>Анонимная агрегированная статистика. <strong>Мы никогда не собираем:</strong> историю посещений, содержимое профилей, скрипты автоматизации, IP-адреса.</p>
 <h3>2.3 Данные профилей браузера</h3>
@@ -302,14 +302,14 @@ export const privacyTranslations: Record<string, {
     es: {
         title: "Política de Privacidad",
         description: "Cómo Veilus recopila, utiliza y protege sus datos.",
-        lastUpdated: "6 de marzo de 2026",
+        lastUpdated: "7 de octubre de 2026",
         content: `
 <h2>1. Introducción</h2>
 <p>Veilus ("nosotros") respeta su privacidad y se compromete a proteger sus datos personales. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos su información al usar la aplicación y el sitio web de Veilus (el "Servicio").</p>
 
 <h2>2. Datos que recopilamos</h2>
 <h3>2.1 Datos de cuenta</h3>
-<ul><li><strong>Correo electrónico</strong> — para autenticación y comunicación</li><li><strong>Información de pago</strong> — los pagos con tarjeta son procesados directamente por LemonSqueezy (comerciante registrado, merchant of record): nombre, correo y datos de la tarjeta; no almacenamos números de tarjeta. Para transferencias en VND, nuestro banco nos envía los datos de la transferencia recibida, incluyendo el nombre del remitente y el concepto.</li></ul>
+<ul><li><strong>Correo electrónico</strong> — para autenticación y comunicación</li><li><strong>Información de pago</strong> — los pagos con tarjeta son procesados directamente por LemonSqueezy (comerciante registrado, merchant of record): nombre, correo y datos de la tarjeta; no almacenamos números de tarjeta. Para transferencias en VND, nuestro banco nos envía los datos de la transferencia recibida, incluyendo el nombre del remitente y el concepto. En los pagos con USDT registramos la dirección de la billetera de origen y el ID de la transacción, que son públicos en la blockchain de TRON. Si compra por Telegram, también recibimos los mensajes que nos envía allí, incluido su nombre de usuario de Telegram.</li></ul>
 <h3>2.2 Datos de uso (solo con consentimiento)</h3>
 <p>Estadísticas anónimas agregadas. <strong>Nunca recopilamos:</strong> historial de navegación, contenido de perfiles, scripts de automatización, direcciones IP.</p>
 <h3>2.3 Datos de perfiles del navegador</h3>
@@ -331,13 +331,13 @@ export const privacyTranslations: Record<string, {
     pt: {
         title: "Política de Privacidade",
         description: "Como a Veilus coleta, usa e protege seus dados.",
-        lastUpdated: "6 de março de 2026",
+        lastUpdated: "7 de outubro de 2026",
         content: `
 <h2>1. Introdução</h2>
 <p>Veilus ("nós") respeita sua privacidade e compromete-se a proteger seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações ao usar o aplicativo e website Veilus (o "Serviço").</p>
 
 <h2>2. Dados que coletamos</h2>
-<ul><li><strong>Email</strong> — autenticação e comunicação</li><li><strong>Pagamento</strong> — pagamentos com cartão são processados diretamente pela LemonSqueezy (comerciante registrado, merchant of record): nome, email e dados do cartão; não armazenamos números de cartão. Para transferências em VND, nosso banco nos envia os dados da transferência recebida, incluindo o nome do remetente e o descritivo.</li></ul>
+<ul><li><strong>Email</strong> — autenticação e comunicação</li><li><strong>Pagamento</strong> — pagamentos com cartão são processados diretamente pela LemonSqueezy (comerciante registrado, merchant of record): nome, email e dados do cartão; não armazenamos números de cartão. Para transferências em VND, nosso banco nos envia os dados da transferência recebida, incluindo o nome do remetente e o descritivo. Nos pagamentos em USDT, registramos o endereço da carteira de origem e o ID da transação, que são públicos na blockchain TRON. Se você comprar pelo Telegram, também recebemos as mensagens que você nos envia lá, incluindo seu nome de usuário do Telegram.</li></ul>
 <p>Dados de perfil armazenados <strong>localmente</strong>. Se você usar o Veilus Sync, os dados são sincronizados com um repositório Git ou Google Drive escolhido por você; esses dados não são criptografados pela Veilus, use um repositório privado. Apenas o token de acesso remoto é criptografado, localmente no seu dispositivo. Ao exportar um perfil para um arquivo .veiluspack, você pode definir uma senha opcional para criptografar o arquivo (AES-256-GCM).</p>
 <p><strong>Nunca coletamos:</strong> histórico de navegação, conteúdo de perfis, scripts, endereços IP.</p>
 
@@ -354,13 +354,13 @@ export const privacyTranslations: Record<string, {
     id: {
         title: "Kebijakan Privasi",
         description: "Bagaimana Veilus mengumpulkan, menggunakan, dan melindungi data Anda.",
-        lastUpdated: "6 Maret 2026",
+        lastUpdated: "7 Oktober 2026",
         content: `
 <h2>1. Pendahuluan</h2>
 <p>Veilus ("kami") menghormati privasi Anda dan berkomitmen melindungi data pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan aplikasi dan situs web Veilus ("Layanan").</p>
 
 <h2>2. Data yang Kami Kumpulkan</h2>
-<ul><li><strong>Alamat email</strong> — untuk autentikasi dan komunikasi</li><li><strong>Informasi pembayaran</strong> — pembayaran kartu diproses langsung oleh LemonSqueezy (merchant of record): nama, email, dan detail kartu; kami tidak menyimpan nomor kartu. Untuk transfer VND, bank kami mengirimkan detail transfer yang diterima, termasuk nama pengirim dan berita transfer.</li></ul>
+<ul><li><strong>Alamat email</strong> — untuk autentikasi dan komunikasi</li><li><strong>Informasi pembayaran</strong> — pembayaran kartu diproses langsung oleh LemonSqueezy (merchant of record): nama, email, dan detail kartu; kami tidak menyimpan nomor kartu. Untuk transfer VND, bank kami mengirimkan detail transfer yang diterima, termasuk nama pengirim dan berita transfer. Untuk pembayaran USDT, kami mencatat alamat dompet pengirim dan ID transaksi, yang bersifat publik di blockchain TRON. Jika Anda membeli lewat Telegram, kami juga menerima pesan yang Anda kirim di sana, termasuk nama pengguna Telegram Anda.</li></ul>
 <p>Data profil browser disimpan <strong>secara lokal</strong>. Jika Anda menggunakan Veilus Sync, data disinkronkan ke repository Git atau Google Drive pilihan Anda; data tersebut tidak dienkripsi oleh Veilus, gunakan yang privat. Hanya token akses jarak jauh yang dienkripsi, secara lokal di perangkat Anda. Saat mengekspor profil ke file .veiluspack, Anda bisa mengatur kata sandi opsional untuk mengenkripsi file (AES-256-GCM).</p>
 <p><strong>Tidak pernah mengumpulkan:</strong> riwayat browsing, konten profil, skrip, alamat IP.</p>
 
@@ -377,13 +377,13 @@ export const privacyTranslations: Record<string, {
     tr: {
         title: "Gizlilik Politikası",
         description: "Veilus verilerinizi nasıl toplar, kullanır ve korur.",
-        lastUpdated: "6 Mart 2026",
+        lastUpdated: "7 Ekim 2026",
         content: `
 <h2>1. Giriş</h2>
 <p>Veilus ("biz") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu Gizlilik Politikası, Veilus uygulamasını ve web sitesini ("Hizmet") kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>
 
 <h2>2. Topladığımız Veriler</h2>
-<ul><li><strong>E-posta adresi</strong> — kimlik doğrulama ve iletişim</li><li><strong>Ödeme bilgileri</strong> — kart ödemeleri doğrudan LemonSqueezy (merchant of record) tarafından işlenir: ad, e-posta ve kart bilgileri; kart numaralarını saklamayız. VND havaleleri için bankamız, gönderenin adı ve havale açıklaması dahil aldığı havale bilgilerini bize iletir.</li></ul>
+<ul><li><strong>E-posta adresi</strong> — kimlik doğrulama ve iletişim</li><li><strong>Ödeme bilgileri</strong> — kart ödemeleri doğrudan LemonSqueezy (merchant of record) tarafından işlenir: ad, e-posta ve kart bilgileri; kart numaralarını saklamayız. VND havaleleri için bankamız, gönderenin adı ve havale açıklaması dahil aldığı havale bilgilerini bize iletir. USDT ödemelerinde gönderen cüzdan adresini ve TRON blokzincirinde herkese açık olan işlem kimliğini kaydederiz. Telegram üzerinden satın alırsanız, orada bize gönderdiğiniz mesajları, Telegram kullanıcı adınız dahil, ayrıca alırız.</li></ul>
 <p>Profil verileri <strong>yerel olarak</strong> saklanır. Veilus Sync'i kullanırsanız veriler, seçtiğiniz bir Git deposuna veya Google Drive'a senkronize edilir; bu veriler Veilus tarafından şifrelenmez, özel (private) bir tane kullanın. Yalnızca uzaktan erişim token'ı, cihazınızda yerel olarak şifrelenir. Bir profili .veiluspack dosyasına dışa aktarırken dosyayı şifrelemek için isteğe bağlı bir parola belirleyebilirsiniz (AES-256-GCM).</p>
 <p><strong>Asla toplamayız:</strong> tarama geçmişi, profil içeriği, otomasyon betikleri, IP adresleri.</p>
 
