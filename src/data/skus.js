@@ -5,6 +5,7 @@
  */
 export const SKUS = {
   solo: { kind: "lifetime", devices: 1, vnd: 2_500_000, usd: 99 },
+  team3: { kind: "lifetime", devices: 3, vnd: 3_750_000, usd: 149 },
   team5: { kind: "lifetime", devices: 5, vnd: 5_000_000, usd: 199 },
   team10: { kind: "lifetime", devices: 10, vnd: 8_500_000, usd: 345 },
   team20: { kind: "lifetime", devices: 20, vnd: 16_000_000, usd: 650 },

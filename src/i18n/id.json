@@ -152,6 +152,7 @@
         },
         "sku": {
             "solo": "Solo",
+            "team3": "Team 3",
             "team5": "Team 5",
             "team10": "Team 10",
             "team20": "Team 20",

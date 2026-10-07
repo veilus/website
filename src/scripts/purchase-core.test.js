@@ -168,7 +168,7 @@ test("formatPrice: VND có dấu nhóm và đ, USD có $", () => {
 
 test("cardAllowed: gói ≤ $199 trả thẻ được; team10/team20 vượt trần LemonSqueezy; SKU lạ thì không", () => {
   assert.equal(CARD_MAX_USD, 199);
-  for (const sku of ["monthly", "solo", "team5", "device_solo", "device_team5", "device_team10"]) {
+  for (const sku of ["monthly", "solo", "team3", "team5", "device_solo", "device_team5", "device_team10"]) {
     assert.equal(cardAllowed(sku), true, sku);
   }
   assert.equal(cardAllowed("team10"), false);
