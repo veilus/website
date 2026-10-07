@@ -125,7 +125,7 @@ const websiteJsonLd = {
 ---
 
 <!DOCTYPE html>
-<html lang={lang} dir={languages[lang].dir}>
+<html lang={languages[lang].hreflang} dir={languages[lang].dir}>
   <head>
     <meta charset="UTF-8" />
     {noTracking && <meta name="referrer" content="no-referrer" />}
@@ -186,8 +186,8 @@ const websiteJsonLd = {
 
     <!-- Hreflang for SEO -->
     {
-      !notFound && hreflangs.map(({ lang: l, href }) => (
-        <link rel="alternate" hreflang={l} href={href} />
+      !notFound && hreflangs.map(({ code, href }) => (
+        <link rel="alternate" hreflang={code} href={href} />
       ))
     }
     {!notFound && <link rel="alternate" hreflang="x-default" href={xDefault} />}

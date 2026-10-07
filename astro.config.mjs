@@ -13,13 +13,13 @@ export default defineConfig({
                 !page.includes('/mua'),
             i18n: {
                 defaultLocale: 'en',
-                // Mã hreflang phải khớp <link rel="alternate" hreflang> trong HTML (Layout.astro)
+                // Mã hreflang phải khớp <link rel="alternate" hreflang> trong HTML (Layout.astro) — cùng bảng languages của src/i18n/utils.ts
                 locales: {
                     en: 'en',
-                    zh: 'zh',
+                    zh: 'zh-Hans',
                     ru: 'ru',
                     vi: 'vi',
-                    pt: 'pt',
+                    pt: 'pt-BR',
                     es: 'es',
                     tr: 'tr',
                     id: 'id',

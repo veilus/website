@@ -8,15 +8,17 @@ import tr from './tr.json' with { type: 'json' };
 import id from './id.json' with { type: 'json' };
 
 // ogLocale: dạng ngôn_VÙNG mà og:locale của Open Graph đòi; mã trần như 'vi' không đúng dạng.
+// hreflang: mã khai cho Google (link alternate, menu ngôn ngữ, sitemap) — zh là giản thể, pt là Bồ Brazil (VEIL-1306);
+// khoá (mã URL /zh/, /pt/) và tên file i18n giữ nguyên.
 export const languages = {
-    en: { label: 'English', flag: '🇬🇧', dir: 'ltr', ogLocale: 'en_US' },
-    zh: { label: '中文', flag: '🇨🇳', dir: 'ltr', ogLocale: 'zh_CN' },
-    ru: { label: 'Русский', flag: '🇷🇺', dir: 'ltr', ogLocale: 'ru_RU' },
-    vi: { label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr', ogLocale: 'vi_VN' },
-    pt: { label: 'Português', flag: '🇧🇷', dir: 'ltr', ogLocale: 'pt_BR' },
-    es: { label: 'Español', flag: '🇪🇸', dir: 'ltr', ogLocale: 'es_ES' },
-    tr: { label: 'Türkçe', flag: '🇹🇷', dir: 'ltr', ogLocale: 'tr_TR' },
-    id: { label: 'Indonesia', flag: '🇮🇩', dir: 'ltr', ogLocale: 'id_ID' },
+    en: { label: 'English', flag: '🇬🇧', dir: 'ltr', ogLocale: 'en_US', hreflang: 'en' },
+    zh: { label: '中文', flag: '🇨🇳', dir: 'ltr', ogLocale: 'zh_CN', hreflang: 'zh-Hans' },
+    ru: { label: 'Русский', flag: '🇷🇺', dir: 'ltr', ogLocale: 'ru_RU', hreflang: 'ru' },
+    vi: { label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr', ogLocale: 'vi_VN', hreflang: 'vi' },
+    pt: { label: 'Português', flag: '🇧🇷', dir: 'ltr', ogLocale: 'pt_BR', hreflang: 'pt-BR' },
+    es: { label: 'Español', flag: '🇪🇸', dir: 'ltr', ogLocale: 'es_ES', hreflang: 'es' },
+    tr: { label: 'Türkçe', flag: '🇹🇷', dir: 'ltr', ogLocale: 'tr_TR', hreflang: 'tr' },
+    id: { label: 'Indonesia', flag: '🇮🇩', dir: 'ltr', ogLocale: 'id_ID', hreflang: 'id' },
 } as const;
 
 export type Lang = keyof typeof languages;
@@ -53,8 +55,8 @@ export function getLocalizedPath(path: string, lang: Lang): string {
     return `${lang === defaultLang ? '' : `/${lang}`}${slashed}${rest}`;
 }
 
-/** hreflang của trang đang dựng cho mọi ngôn ngữ, cùng dạng URL với canonical: https://veilus.io/vi/download/ */
+/** hreflang của trang đang dựng cho mọi ngôn ngữ, cùng dạng URL với canonical: https://veilus.io/vi/download/; code là mã khai (zh-Hans, pt-BR). */
 export function getHreflangs(currentPath: string, siteUrl: string) {
     const cleanPath = stripLang(currentPath);
-    return supportedLangs.map((lang) => ({ lang, href: `${siteUrl}${getLocalizedPath(cleanPath, lang)}` }));
+    return supportedLangs.map((lang) => ({ lang, code: languages[lang].hreflang, href: `${siteUrl}${getLocalizedPath(cleanPath, lang)}` }));
 }

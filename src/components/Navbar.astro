@@ -53,7 +53,7 @@ const LINKS = [
         </button>
         <div class="k-lang-menu" id="k-lang-menu">
           {supportedLangs.map((l) => (
-            <a href={getLocalizedPath(basePath, l)} lang={l} hreflang={l} aria-current={l === lang ? 'true' : undefined}>
+            <a href={getLocalizedPath(basePath, l)} lang={languages[l].hreflang} hreflang={languages[l].hreflang} aria-current={l === lang ? 'true' : undefined}>
               {languages[l].label}
             </a>
           ))}
