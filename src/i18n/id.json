@@ -198,7 +198,7 @@
         "paidKeyHint": "Tempelkan ke aplikasi Veilus untuk mengaktifkan.",
         "paidAdded": "Ditambahkan ke kunci Anda. Buka ulang aplikasi untuk memperbarui.",
         "expired": "Pesanan ini sudah kedaluwarsa.",
-        "usdtExpired": "Pesanan ini sudah kedaluwarsa. Sudah mengirim jumlah yang tepat? Jangan kirim lagi — kami akan mencocokkannya dan mengirim kunci Anda lewat email. Jika belum, buat pesanan baru.",
+        "usdtExpired": "Pesanan ini sudah kedaluwarsa. Sudah mengirim jumlah yang tepat? Jangan kirim lagi — kami tetap akan mencocokkan transfer Anda dengan pesanan ini. Jika belum, buat pesanan baru.",
         "newOrder": "Buat pesanan baru",
         "err": {
             "input": "Periksa email dan kunci lisensi Anda.",

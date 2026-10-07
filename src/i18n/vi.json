@@ -198,7 +198,7 @@
         "paidKeyHint": "Dán key vào app Veilus để kích hoạt.",
         "paidAdded": "Đã cộng vào key của bạn, mở lại app để cập nhật.",
         "expired": "Đơn đã hết hạn.",
-        "usdtExpired": "Đơn đã hết hạn. Bạn đã chuyển đúng số tiền rồi? Đừng chuyển lại — chúng tôi sẽ ghép giao dịch với đơn và gửi key qua email cho bạn. Nếu chưa, hãy tạo đơn mới.",
+        "usdtExpired": "Đơn đã hết hạn. Bạn đã chuyển đúng số tiền rồi? Đừng chuyển lại — chúng tôi vẫn ghép giao dịch của bạn với đơn này. Nếu chưa, hãy tạo đơn mới.",
         "newOrder": "Tạo đơn mới",
         "err": {
             "input": "Kiểm tra lại email và key license.",
