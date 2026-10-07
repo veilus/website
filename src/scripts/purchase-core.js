@@ -15,8 +15,8 @@ export const API_BASE = env.PUBLIC_API_BASE || "https://api.veilus.io";
 /**
  * Kênh thanh toán nào đang bán — mỗi kênh một công tắc, mặc định BẬT, đặt `0`
  * lúc build để tắt (`PUBLIC_CARD_LIVE`, `PUBLIC_VND_LIVE`). Kênh tắt thì mọi nút
- * mua của kênh đó mở Telegram. Trước khi LemonSqueezy duyệt (quyết định 0115),
- * production không tắt kênh nào: thẻ qua LemonSqueezy, VNĐ chuyển khoản.
+ * mua của kênh đó mở Telegram. Production không tắt kênh nào: thẻ (USD) và
+ * chuyển khoản (VNĐ).
  */
 export function liveFrom(e) {
   return Object.freeze({ card: !off(e.PUBLIC_CARD_LIVE), vnd: !off(e.PUBLIC_VND_LIVE) });
@@ -24,10 +24,10 @@ export function liveFrom(e) {
 export const LIVE = liveFrom(env);
 
 /**
- * Gói không hiện trên bảng giá và /mua. Mặc định ẩn team10/team20: LemonSqueezy
- * chỉ duyệt store khi mọi giá ≤ $199 (quyết định 0115). Bảng SKU vẫn giữ hai gói
+ * Gói không hiện trên bảng giá và /mua. Mặc định ẩn team10/team20: giá vượt trần
+ * thẻ $199 (quyết định 0115). Bảng SKU vẫn giữ hai gói
  * này (cổng sku-price-parity, bán VNĐ/USDT sau). Staging đặt `PUBLIC_HIDE_SKUS=`
- * (rỗng) để hiện đủ.
+ * (rỗng) hoặc `PUBLIC_HIDE_SKUS=none` (shell không đặt được biến rỗng) để hiện đủ.
  */
 export const HIDDEN_SKUS = Object.freeze(list(env.PUBLIC_HIDE_SKUS ?? "team10,team20"));
 

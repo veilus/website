@@ -233,3 +233,14 @@ test("liveFrom: chỉ \"0\" và \"false\" tắt một kênh; thiếu biến hay 
   assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "0", PUBLIC_VND_LIVE: "false" }), { card: false, vnd: false });
   assert.deepEqual(liveFrom({ PUBLIC_CARD_LIVE: "1", PUBLIC_VND_LIVE: "0" }), { card: true, vnd: false });
 });
+
+// Quan hệ, không phải danh sách: SKU nào còn hiện mà giá vượt trần thẻ thì CI đỏ — kể cả SKU thêm sau này.
+test("mọi gói đang hiện đều trả thẻ được, và bản build mặc định đưa chúng tới thẻ (USD) hoặc chuyển khoản (VNĐ)", async () => {
+  const { SKUS } = await import("../data/skus.js");
+  for (const sku of Object.keys(SKUS).filter((x) => listed(x))) {
+    assert.ok(SKUS[sku].usd <= CARD_MAX_USD, `${sku} $${SKUS[sku].usd}`);
+    assert.equal(payRoute("USD", sku), "card", `USD ${sku}`);
+    assert.equal(payRoute("VND", sku), "vnd", `VND ${sku}`);
+  }
+});
+

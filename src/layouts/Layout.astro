@@ -1,12 +1,11 @@
 ---
 import type { Lang } from "../i18n/utils";
 import { SKUS } from "../data/skus.js";
-import { listed } from "../scripts/purchase-core.js";
 import { FINGERPRINT_FIELDS } from "../data/facts.js";
 // Font tự host (VEIL-1038): src/styles/fonts.css do scripts/fetch-fonts.mjs sinh. ?url cho tên file đã băm,
 // cùng file mà fonts.css trỏ tới — preload và @font-face dùng chung một lần tải.
 import plexSansLatin from "../assets/fonts/ibm-plex-sans-latin.woff2?url";
-import { currencyForLang } from "../scripts/purchase-core.js";
+import { currencyForLang, listed } from "../scripts/purchase-core.js";
 import {
   t,
   languages,
