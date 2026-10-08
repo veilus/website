@@ -114,7 +114,8 @@
         "product": "产品",
         "productLinks": [
             "功能",
-            "价格"
+            "价格",
+            "更新日志"
         ],
         "resources": "资源",
         "resourceLinks": [
@@ -540,5 +541,15 @@
         "communityTitle": "社区",
         "communityBody": "Telegram 是提出简短问题和获取发布消息最快的地方。欢迎在 GitHub 提交错误报告和功能建议。",
         "responseNote": "我们会在几个工作日内回复。邮件回复来自此处列出的相同地址。"
+    },
+    "changelog": {
+        "metaTitle": "Veilus 更新日志 — 每个版本的变化",
+        "metaDescription": "Veilus 指纹浏览器的发布说明：每个版本的新功能、修复和引擎变化，附日期和下载链接。",
+        "title": "更新日志",
+        "lead": "每个 Veilus 版本改了什么。所有版本的安装包都在 GitHub 上；浏览器引擎在应用内单独更新。",
+        "releasedOn": "发布于 {date}",
+        "allReleases": "GitHub 上的全部版本",
+        "download": "下载最新版本",
+        "englishNote": "发布说明以英文撰写。"
     }
 }

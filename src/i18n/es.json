@@ -114,7 +114,8 @@
         "product": "Producto",
         "productLinks": [
             "Funciones",
-            "Precios"
+            "Precios",
+            "Registro de cambios"
         ],
         "resources": "Recursos",
         "resourceLinks": [
@@ -540,5 +541,15 @@
         "communityTitle": "Comunidad",
         "communityBody": "Telegram es el lugar más rápido para preguntas breves y noticias de versiones. Los informes de errores y las peticiones de funciones son bienvenidos en GitHub.",
         "responseNote": "Respondemos en unos pocos días laborables. Las respuestas por correo llegan desde las mismas direcciones indicadas aquí."
+    },
+    "changelog": {
+        "metaTitle": "Registro de cambios de Veilus — qué cambió en cada versión",
+        "metaDescription": "Notas de la versión del navegador antidetección Veilus: novedades, correcciones y cambios del motor en cada versión, con fechas y enlaces de descarga.",
+        "title": "Registro de cambios",
+        "lead": "Qué cambió en cada versión de Veilus. Los instaladores de todas las versiones están en GitHub; el motor del navegador se actualiza por separado dentro de la aplicación.",
+        "releasedOn": "Publicado el {date}",
+        "allReleases": "Todas las versiones en GitHub",
+        "download": "Descargar la última versión",
+        "englishNote": "Las notas de la versión están escritas en inglés."
     }
 }

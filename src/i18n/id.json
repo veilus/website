@@ -114,7 +114,8 @@
         "product": "Produk",
         "productLinks": [
             "Fitur",
-            "Harga"
+            "Harga",
+            "Catatan perubahan"
         ],
         "resources": "Sumber Daya",
         "resourceLinks": [
@@ -540,5 +541,15 @@
         "communityTitle": "Komunitas",
         "communityBody": "Telegram adalah tempat tercepat untuk pertanyaan singkat dan kabar rilis. Laporan bug dan permintaan fitur dipersilakan di GitHub.",
         "responseNote": "Kami membalas dalam beberapa hari kerja. Balasan email datang dari alamat yang sama seperti yang tercantum di sini."
+    },
+    "changelog": {
+        "metaTitle": "Catatan perubahan Veilus — apa yang berubah di setiap rilis",
+        "metaDescription": "Catatan rilis peramban anti-deteksi Veilus: fitur baru, perbaikan, dan perubahan mesin di setiap versi, dengan tanggal dan tautan unduhan.",
+        "title": "Catatan perubahan",
+        "lead": "Apa yang berubah di setiap rilis Veilus. Pemasang untuk semua versi ada di GitHub; mesin browser diperbarui terpisah di dalam aplikasi.",
+        "releasedOn": "Dirilis {date}",
+        "allReleases": "Semua rilis di GitHub",
+        "download": "Unduh versi terbaru",
+        "englishNote": "Catatan rilis ditulis dalam bahasa Inggris."
     }
 }

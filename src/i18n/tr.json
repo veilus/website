@@ -114,7 +114,8 @@
         "product": "Ürün",
         "productLinks": [
             "Özellikler",
-            "Fiyatlar"
+            "Fiyatlar",
+            "Değişiklik günlüğü"
         ],
         "resources": "Kaynaklar",
         "resourceLinks": [
@@ -540,5 +541,15 @@
         "communityTitle": "Topluluk",
         "communityBody": "Kısa sorular ve sürüm haberleri için en hızlı yer Telegram. Hata bildirimleri ve özellik istekleri GitHub'da memnuniyetle karşılanır.",
         "responseNote": "Birkaç iş günü içinde yanıt veriyoruz. E-posta yanıtları burada listelenen adreslerden gelir."
+    },
+    "changelog": {
+        "metaTitle": "Veilus değişiklik günlüğü — her sürümde ne değişti",
+        "metaDescription": "Veilus anti-tespit tarayıcının sürüm notları: her sürümdeki yeni özellikler, düzeltmeler ve motor değişiklikleri, tarihler ve indirme bağlantılarıyla.",
+        "title": "Değişiklik günlüğü",
+        "lead": "Her Veilus sürümünde ne değişti. Tüm sürümlerin yükleyicileri GitHub'da; tarayıcı motoru uygulama içinde ayrıca güncellenir.",
+        "releasedOn": "{date} tarihinde yayımlandı",
+        "allReleases": "GitHub'daki tüm sürümler",
+        "download": "En son sürümü indir",
+        "englishNote": "Sürüm notları İngilizce yazılmıştır."
     }
 }

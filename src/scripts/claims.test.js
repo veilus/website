@@ -24,6 +24,7 @@ const FILES = [
   ...list('src/i18n/legal/', '.ts'),
   'public/llms.txt',
   'src/data/facts.js',
+  'src/data/changelog.json',
   ...list('src/layouts/', '.astro'),
   ...list('src/components/', '.astro'),
   ...list('src/pages/', '.astro'),
@@ -198,6 +199,7 @@ test('quét đủ mẫu số: 8 ngôn ngữ, 5 trang pháp lý, llms.txt, facts.
   assert.equal(count('src/i18n/legal/'), 5);
   assert.ok(FILES.includes('public/llms.txt'));
   assert.ok(FILES.includes('src/data/facts.js'));
+  assert.ok(FILES.includes('src/data/changelog.json'));
   // Ngưỡng bằng đúng số file hiện có: xoá component hay trang thì hạ ngưỡng trong cùng commit.
   assert.ok(count('src/layouts/') >= 2, 'thiếu layout');
   assert.ok(count('src/components/') >= 13, 'thiếu component');

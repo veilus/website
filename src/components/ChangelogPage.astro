@@ -1,0 +1,64 @@
+---
+/**
+ * Trang /changelog/, dùng chung cho en và /[lang]/ (VEIL-1308). Dữ liệu là src/data/changelog.json soạn tay mỗi lần
+ * phát hành (quyết định của chủ dự án 2026-10-08: releases của veilus/veilus private, body release công khai chỉ là
+ * mẫu tải về). Ghi chú giữ tiếng Anh; tiêu đề, dẫn nhập và nhãn theo ngôn ngữ. changelog.test.js canh: phiên bản
+ * đầu == APP_VERSION của facts.js, thứ tự giảm dần, ngày ISO.
+ */
+import type { Lang } from '../i18n/utils';
+import { t, getLocalizedPath, languages } from '../i18n/utils';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+import changelog from '../data/changelog.json';
+import { RELEASES_URL } from '../data/facts.js';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = t(lang).changelog;
+const fmt = new Intl.DateTimeFormat(languages[lang].hreflang, { year: 'numeric', month: 'long', day: 'numeric' });
+const releaseUrl = (version: string) => `https://github.com/veilus/releases/releases/tag/v${version}`;
+---
+
+<Navbar lang={lang} />
+<main>
+  <section class="k-wrap k-page" id="changelog" data-reveal>
+    <h1 class="k-h2">{c.title}</h1>
+    <p class="k-sub">{c.lead}</p>
+    <p class="k-links">
+      <a class="k-btn k-btn-sm" href={getLocalizedPath('/download', lang)}>{c.download}</a>
+      <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer">{c.allReleases}</a>
+    </p>
+    {lang !== 'en' && <p class="k-note">{c.englishNote}</p>}
+    <ol class="k-releases">
+      {changelog.map((r, n) => (
+        <li class="k-release k-rise" style={`--d:${(0.1 + Math.min(n, 6) * 0.06).toFixed(2)}s`} id={`v${r.version}`}>
+          <header>
+            <h2><a href={releaseUrl(r.version)} target="_blank" rel="noopener noreferrer">v{r.version}</a></h2>
+            <time datetime={r.date}>{c.releasedOn.replace('{date}', fmt.format(new Date(`${r.date}T00:00:00Z`)))}</time>
+          </header>
+          <ul>
+            {r.changes.map((line) => <li>{line}</li>)}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+</main>
+<Footer lang={lang} />
+
+<style>
+  .k-page { padding-top: 56px; padding-bottom: 96px; }
+  .k-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: -8px 0 8px; }
+  .k-links a:not(.k-btn) { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .k-note { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  .k-releases { list-style: none; margin: 32px 0 0; padding: 0; max-width: 820px; border-top: 1.5px solid var(--ink); }
+  .k-release { padding: 24px 0; border-bottom: 1px solid var(--rule); }
+  .k-release header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 10px; }
+  .k-release h2 { margin: 0; font-size: 1.3rem; font-family: var(--font-mono); letter-spacing: -0.01em; }
+  .k-release h2 a { color: var(--ink); text-decoration: none; }
+  .k-release h2 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .k-release time { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .k-release ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; line-height: 1.55; }
+</style>
