@@ -517,7 +517,7 @@
         "whatTitle": "Qué es Veilus",
         "whatBody": "Una aplicación de escritorio para Windows y macOS que gestiona perfiles de navegador y ejecuta cada uno en la compilación propia de Chromium de Veilus. La huella digital se aplica dentro del motor, no se inyecta en las páginas. La automatización viene integrada: los scripts que escribe usted o un asistente de IA se ejecutan en varios perfiles, programados o por lotes, a través de una API REST local y un servidor MCP.",
         "whoTitle": "Quién lo hace",
-        "whoBody": "Veilus lo crea y mantiene un desarrollador independiente radicado en Vietnam. No hay inversores ni equipo de ventas; el producto lo pagan quienes lo usan. Las preguntas y los informes de errores llegan directamente a la persona que escribe el código.",
+        "whoBody": "Veilus lo crea y mantiene un desarrollador independiente radicado en Vietnam. No hay capital de riesgo ni equipo de ventas; el producto lo pagan quienes lo usan. Las preguntas y los informes de errores llegan directamente a la persona que escribe el código.",
         "principlesTitle": "Cómo trabajamos",
         "principles": [
             "Sus perfiles se quedan en su equipo. Veilus no los copia a ningún sitio salvo que active Veilus Sync hacia un repositorio o unidad que usted elija.",

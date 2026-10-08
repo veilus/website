@@ -517,7 +517,7 @@
         "whatTitle": "O que é o Veilus",
         "whatBody": "Um aplicativo desktop para Windows e macOS que gerencia perfis de navegador e executa cada um na build própria do Chromium do Veilus. A impressão digital é aplicada dentro do motor, não injetada nas páginas. A automação vem integrada: scripts escritos por você ou por um assistente de IA rodam em vários perfis, agendados ou em lote, por meio de uma API REST local e de um servidor MCP.",
         "whoTitle": "Quem faz",
-        "whoBody": "O Veilus é criado e mantido por um desenvolvedor independente no Vietnã. Não há investidores nem equipe de vendas; o produto é pago por quem o usa. Dúvidas e relatos de bugs vão direto para quem escreve o código.",
+        "whoBody": "O Veilus é criado e mantido por um desenvolvedor independente no Vietnã. Não há capital de risco nem equipe de vendas; o produto é pago por quem o usa. Dúvidas e relatos de bugs vão direto para quem escreve o código.",
         "principlesTitle": "Como trabalhamos",
         "principles": [
             "Seus perfis ficam no seu computador. O Veilus não os copia para lugar nenhum, a menos que você ative o Veilus Sync para um repositório ou drive que você escolher.",
@@ -534,7 +534,7 @@
         "supportTitle": "Suporte",
         "supportBody": "Dúvidas sobre instalação, perfis, proxies, automação ou chave de licença. Inclua a versão do aplicativo e o sistema operacional.",
         "billingTitle": "Cobrança e licenças",
-        "billingBody": "Pagamentos, notas, reembolsos, adição de dispositivos ou transferência de uma licença para outro computador.",
+        "billingBody": "Pagamentos, notas fiscais, reembolsos, adição de dispositivos ou transferência de uma licença para outro computador.",
         "privacyTitle": "Privacidade e jurídico",
         "privacyBody": "Solicitações de dados, notificações legais e denúncias de abuso.",
         "communityTitle": "Comunidade",
