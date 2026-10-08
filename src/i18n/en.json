@@ -166,8 +166,8 @@
             "team20": "Team 20",
             "monthly": "Monthly",
             "device_solo": "+1 device (key with 1 device)",
-            "device_team5": "+1 device (key with 2–5 devices)",
-            "device_team10": "+1 device (key with 6+ devices)"
+            "device_team5": "+1 device (key with 2–4 devices)",
+            "device_team10": "+1 device (key with 5+ devices)"
         },
         "devices": "Devices: {n}",
         "note": {

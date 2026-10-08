@@ -166,8 +166,8 @@
             "team20": "Team 20",
             "monthly": "Thuê tháng",
             "device_solo": "+1 máy (key 1 máy)",
-            "device_team5": "+1 máy (key 2–5 máy)",
-            "device_team10": "+1 máy (key từ 6 máy)"
+            "device_team5": "+1 máy (key 2–4 máy)",
+            "device_team10": "+1 máy (key từ 5 máy)"
         },
         "devices": "Số máy: {n}",
         "note": {

@@ -166,8 +166,8 @@
             "team20": "Team 20",
             "monthly": "Bulanan",
             "device_solo": "+1 perangkat (kunci 1 perangkat)",
-            "device_team5": "+1 perangkat (kunci 2–5 perangkat)",
-            "device_team10": "+1 perangkat (kunci 6+ perangkat)"
+            "device_team5": "+1 perangkat (kunci 2–4 perangkat)",
+            "device_team10": "+1 perangkat (kunci 5+ perangkat)"
         },
         "devices": "Perangkat: {n}",
         "note": {

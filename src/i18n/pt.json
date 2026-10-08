@@ -166,8 +166,8 @@
             "team20": "Team 20",
             "monthly": "Mensal",
             "device_solo": "+1 dispositivo (chave de 1 dispositivo)",
-            "device_team5": "+1 dispositivo (chave de 2–5 dispositivos)",
-            "device_team10": "+1 dispositivo (chave de 6+ dispositivos)"
+            "device_team5": "+1 dispositivo (chave de 2–4 dispositivos)",
+            "device_team10": "+1 dispositivo (chave de 5+ dispositivos)"
         },
         "devices": "Dispositivos: {n}",
         "note": {

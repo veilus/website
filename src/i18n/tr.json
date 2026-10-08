@@ -166,8 +166,8 @@
             "team20": "Team 20",
             "monthly": "Aylık",
             "device_solo": "+1 cihaz (1 cihazlık anahtar)",
-            "device_team5": "+1 cihaz (2–5 cihazlık anahtar)",
-            "device_team10": "+1 cihaz (6+ cihazlık anahtar)"
+            "device_team5": "+1 cihaz (2–4 cihazlık anahtar)",
+            "device_team10": "+1 cihaz (5+ cihazlık anahtar)"
         },
         "devices": "Cihaz: {n}",
         "note": {

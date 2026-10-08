@@ -166,8 +166,8 @@
             "team20": "Team 20",
             "monthly": "按月",
             "device_solo": "+1 台设备（1 台设备的密钥）",
-            "device_team5": "+1 台设备（2–5 台设备的密钥）",
-            "device_team10": "+1 台设备（6 台以上设备的密钥）"
+            "device_team5": "+1 台设备（2–4 台设备的密钥）",
+            "device_team10": "+1 台设备（5 台及以上设备的密钥）"
         },
         "devices": "设备数：{n}",
         "note": {

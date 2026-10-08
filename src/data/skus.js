@@ -12,5 +12,5 @@ export const SKUS = {
   monthly: { kind: "monthly", devices: 1, vnd: 200_000, usd: 9 },
   device_solo: { kind: "addon", devices: 1, vnd: 1_400_000, usd: 55 },
   device_team5: { kind: "addon", devices: 1, vnd: 1_200_000, usd: 48 },
-  device_team10: { kind: "addon", devices: 1, vnd: 1_000_000, usd: 40 },
+  device_team10: { kind: "addon", devices: 1, vnd: 950_000, usd: 38 },
 };
