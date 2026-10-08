@@ -5,6 +5,8 @@
  * Nút mua đi đường nào do payRoute (scripts/purchase-core.js) quyết: thẻ và VNĐ → /mua?sku=, USDT →
  * /mua?sku=&method=usdt, kênh tắt hoặc gói không có đường nào → Telegram. Trang /mua dùng cùng hàm này.
  * Gói ẩn (listed) không có dòng nào, nên cũng không có link USDT cho chúng.
+ * Trang tĩnh: dựng bằng công tắc của bản build, rồi script cuối file hỏi API (fetchLive) và sửa lại từng nút;
+ * gói ra `hidden` (không còn đường trả nào) thì ẩn. API lỗi hay chậm thì giữ nguyên bản build.
  */
 import type { Lang } from '../i18n/utils';
 import { t, defaultLang, getLocalizedPath } from '../i18n/utils';
@@ -34,7 +36,7 @@ const monthlyBuy = buy('monthly');
 const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' && listed(id));
 ---
 
-<section class="k-wrap k-sec" id="pricing" data-reveal>
+<section class="k-wrap k-sec" id="pricing" data-reveal data-cur={cur} data-via-telegram={p.viaTelegram} data-via-usdt={p.viaUsdt}>
   <div class="k-fig">{hp.fig}</div>
   <h2 class="k-h2">{p.title} {p.titleHighlight}</h2>
   <p class="k-sub">{p.subtitle}</p>
@@ -56,7 +58,7 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
       <ul class="k-pf">
         {p.paidFeatures.map((x) => <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{x}</span></li>)}
       </ul>
-      <a class="k-btn k-btn-o" href={monthlyBuy.href} target={monthlyBuy.target} rel={monthlyBuy.rel} data-cta="pricing_cta" data-plan="monthly">{p.monthly.cta}{monthlyBuy.via ? ` · ${monthlyBuy.via}` : ''}</a>
+      <a class="k-btn k-btn-o" href={monthlyBuy.href} target={monthlyBuy.target} rel={monthlyBuy.rel} data-cta="pricing_cta" data-plan="monthly" data-sku="monthly" data-buy={buyHref('monthly')}>{p.monthly.cta}<span data-via>{monthlyBuy.via ? ` · ${monthlyBuy.via}` : ''}</span></a>
     </div>
 
     <div class="k-pc k-pc-pop k-rise" style="--d:0.3s">
@@ -74,8 +76,10 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
               rel={b.rel}
               data-cta="pricing_cta"
               data-plan={id}
+              data-sku={id}
+              data-buy={buyHref(id)}
             >
-              <b>{name}<small>{devices(s.devices)}{b.via ? ` · ${b.via}` : ''}</small></b>
+              <b>{name}<small>{devices(s.devices)}<span data-via>{b.via ? ` · ${b.via}` : ''}</span></small></b>
               <em>{price(s)}</em>
               <span class="ms" data-icon="arrow_forward" aria-hidden="true"></span>
             </a>
@@ -92,7 +96,42 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
   <p class="k-refund"><a href={getLocalizedPath('/refund', lang)}>{p.refund}</a></p>
 </section>
 
+<script>
+  import { fetchLive, payRoute, TELEGRAM_URL } from '../scripts/purchase-core.js';
+
+  // Công tắc thanh toán lúc chạy (VEIL-1321): sửa đích từng nút theo payRoute; null = giữ bản build.
+  // Link `method=usdt` chỉ dựng ở đây khi API bật USDT — HTML của bản build không mang link USDT nào.
+  const sec = document.getElementById('pricing');
+  if (sec) {
+    fetchLive().then((live) => {
+      if (!live) return;
+      const { cur = 'USD', viaTelegram = '', viaUsdt = '' } = sec.dataset;
+      sec.querySelectorAll<HTMLAnchorElement>('a[data-sku]').forEach((a) => {
+        const route = payRoute(cur, a.dataset.sku!, live);
+        // Gói tháng chiếm cả một thẻ; gói trọn đời là một dòng trong thẻ.
+        (a.classList.contains('k-tier') ? a : (a.closest('.k-pc') as HTMLElement)).hidden = route === 'hidden';
+        const tg = route === 'telegram';
+        a.href = tg ? TELEGRAM_URL : route === 'usdt' ? `${a.dataset.buy}&method=usdt` : a.dataset.buy!;
+        if (tg) {
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+        } else {
+          a.removeAttribute('target');
+          a.removeAttribute('rel');
+        }
+        const via = tg ? viaTelegram : route === 'usdt' ? viaUsdt : '';
+        a.querySelector('[data-via]')!.textContent = via ? ` · ${via}` : '';
+      });
+      sec.querySelectorAll<HTMLElement>('.k-tiers').forEach((t) => {
+        if (!t.querySelector('.k-tier:not([hidden])')) (t.closest('.k-pc') as HTMLElement).hidden = true;
+      });
+    });
+  }
+</script>
+
 <style>
+  /* `display` của thẻ và dòng gói đè thuộc tính `hidden` nếu không có dòng này */
+  .k-price [hidden] { display: none !important; }
   .k-price { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
   .k-pc { position: relative; display: flex; flex-direction: column; gap: 16px; padding: 22px 22px 20px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
   .k-pc-pop { border-width: 2.5px; box-shadow: 10px 10px 0 var(--grid2); }

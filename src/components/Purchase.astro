@@ -190,6 +190,8 @@ const skusOf = (kind: string) =>
     listed,
     usdtShown,
     countdownText,
+    fetchLive,
+    LIVE,
   } from "../scripts/purchase-core.js";
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
@@ -249,17 +251,21 @@ const skusOf = (kind: string) =>
   }
 
   const telegramRow = $("buy-telegram");
+  // Công tắc thanh toán: bản build trước, rồi bản của API khi fetchLive trả về (cuối script).
+  let live: typeof LIVE | NonNullable<Awaited<ReturnType<typeof fetchLive>>> = LIVE;
   /**
    * Nút trả theo gói và loại tiền (payRoute, usdtShown): nút thẻ/VNĐ hiện khi đường trả là thẻ hoặc VNĐ,
    * nút USDT hiện khi gói bán qua USDT — trang USD có thể hiện cả hai; `method=usdt` chỉ còn nút USDT.
    * Không nút nào thì chỉ còn đường Telegram: ẩn luôn ô email và ô key vì không có gì để gửi.
+   * Gói `hidden` (không còn đường nào, kể cả Telegram) thì không hiện gì — syncSkus đã bỏ ô chọn của nó.
    */
   function syncPayRow() {
     const sku = selectedSku();
-    const route = payRoute(currency, sku);
+    const route = payRoute(currency, sku, live);
     const card = route === "card" || route === "vnd";
-    const usdt = usdtShown(currency, sku);
-    const telegramOnly = !card && !usdt;
+    const usdt = usdtShown(currency, sku, live);
+    const nothing = !card && !usdt;
+    const telegramOnly = nothing && route === "telegram";
     payBtn.hidden = !card;
     if (usdtBtn) {
       usdtBtn.hidden = !usdt;
@@ -268,9 +274,9 @@ const skusOf = (kind: string) =>
       usdtBtn.classList.toggle("btn-secondary", card);
     }
     telegramRow.hidden = !telegramOnly;
-    emailRow.hidden = telegramOnly;
+    emailRow.hidden = nothing;
     // onSkuChange chạy syncKeyRow trước nên dòng này thắng; đổi sang gói có nút trả thì syncKeyRow trả ô key lại.
-    if (telegramOnly) keyRow.hidden = true;
+    if (nothing) keyRow.hidden = true;
     // Phụ đề nói "trả bằng thẻ / chuyển khoản": không đúng khi chỉ còn đường Telegram hay chỉ còn nút USDT.
     $("buy-sub").hidden = !card;
   }
@@ -563,6 +569,26 @@ const skusOf = (kind: string) =>
     show("buy-order", false);
     form.hidden = false;
     syncPayRow(); // #buy-sub nằm ngoài form và màn USDT đã ẩn nó: tính lại theo gói đang chọn
+  });
+
+  /** Ẩn ô chọn của gói `hidden` (và nhóm không còn gói nào); gói đang chọn bị ẩn thì chọn gói đầu còn hiện. */
+  function syncSkus() {
+    radios.forEach((r) => ((r.closest(".buy-sku") as HTMLElement).hidden = payRoute(currency, r.value, live) === "hidden"));
+    form.querySelectorAll<HTMLElement>(".buy-group").forEach((g) => {
+      g.hidden = !g.querySelector(".buy-sku:not([hidden])");
+    });
+    const visible = radios.filter((r) => !(r.closest(".buy-sku") as HTMLElement).hidden);
+    if (!visible.some((r) => r.checked) && visible[0]) visible[0].checked = true;
+  }
+
+  // Công tắc lúc chạy (VEIL-1321): API trả lời thì tính lại ô chọn và nút; lỗi hay quá 4 giây thì giữ bản build.
+  void fetchLive().then((l) => {
+    if (!l) return;
+    live = l;
+    syncSkus();
+    syncKeyRow();
+    // Màn đơn đang mở (form ẩn) tự lo phụ đề; tính lại khi quay về form ("đơn mới").
+    if (!form.hidden) syncPayRow();
   });
 
   // 6. Tải lại trang vẫn theo dõi đơn đang chờ.

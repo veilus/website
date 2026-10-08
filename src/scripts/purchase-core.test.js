@@ -26,6 +26,8 @@ import {
   usdtShown,
   countdownText,
   emailHintKey,
+  liveFromApi,
+  fetchLive,
 } from "./purchase-core.js";
 import { SKUS } from "../data/skus.js";
 
@@ -454,4 +456,64 @@ test("buy.telegramOnly và usdtExpired: không hứa thời hạn, telegramOnly 
     assert.match(dict.usdtExpired, /billing@veilus\.io/, lang);
     assert.match(dict.usdtExpired, new RegExp(TELEGRAM_URL.split("/").pop()), lang);
   }
+});
+
+// Công tắc từ API (GET /api/v1/payment-methods, VEIL-1321): thẻ theo từng gói, Telegram có thể tắt, gói không đường nào thì ẩn.
+const apiBody = (o = {}) => ({
+  telegram: { enabled: true, url: "https://t.me/veilusbrowser" },
+  usdt: false,
+  vnd: true,
+  card: Object.fromEntries(Object.keys(SKUS).map((k) => [k, SKUS[k].usd <= 199])),
+  ...o,
+});
+
+test("liveFromApi: ánh xạ phản hồi API sang công tắc; phản hồi hỏng trả null", () => {
+  const live = liveFromApi(apiBody({ usdt: true, telegram: { enabled: false, url: "x" } }));
+  assert.deepEqual(live, { card: apiBody().card, vnd: true, usdt: true, telegram: false });
+  for (const bad of [null, "x", {}, { vnd: true, usdt: false, telegram: { enabled: true } }, apiBody({ vnd: "1" }), apiBody({ card: null })]) {
+    assert.equal(liveFromApi(bad), null, JSON.stringify(bad));
+  }
+});
+
+test("payRoute: thẻ theo từng gói khi API trả bảng card", () => {
+  const live = { card: { solo: false, team3: true }, vnd: true, usdt: false, telegram: true };
+  assert.equal(payRoute("USD", "team3", live), "card");
+  assert.equal(payRoute("USD", "solo", live), "telegram");
+  // Gói vắng trong bảng card coi như không trả thẻ được — kể cả khi giá ≤ $199.
+  assert.equal(payRoute("USD", "monthly", live), "telegram");
+  // Bảng card thay trần $199 phía website: API nói được là được.
+  assert.equal(payRoute("USD", "team10", { ...live, card: { team10: true } }), "card");
+});
+
+test("payRoute: không còn đường nào (Telegram tắt) thì ra hidden", () => {
+  const none = { card: {}, vnd: false, usdt: false, telegram: false };
+  for (const sku of ["monthly", "solo", "team10", "device_team5"]) {
+    assert.equal(payRoute("USD", sku, none), "hidden", `USD ${sku}`);
+    assert.equal(payRoute("USDT", sku, none), "hidden", `USDT ${sku}`);
+    assert.equal(payRoute("VND", sku, none), "hidden", `VND ${sku}`);
+  }
+  // Hàng đối chứng: cùng công tắc nhưng Telegram bật thì về Telegram, không phải hidden.
+  assert.equal(payRoute("VND", "solo", { ...none, telegram: true }), "telegram");
+  assert.equal(payRoute("USD", "solo", { ...none, telegram: true }), "telegram");
+  // Còn một đường thật thì không ẩn dù Telegram tắt.
+  assert.equal(payRoute("VND", "solo", { ...none, vnd: true }), "vnd");
+  assert.equal(payRoute("USD", "solo", { ...none, card: { solo: true } }), "card");
+  assert.equal(payRoute("USD", "solo", { ...none, usdt: true }), "usdt");
+  assert.equal(payRoute("USDT", "solo", { ...none, usdt: true, card: { solo: true } }), "usdt");
+  // Gói tháng không bán qua USDT: thẻ tắt + Telegram tắt thì ẩn dù USDT bật.
+  assert.equal(payRoute("USD", "monthly", { ...none, usdt: true }), "hidden");
+});
+
+test("fetchLive: đọc API; lỗi mạng, mã khác 200, JSON hỏng hay quá giờ thì null (giữ bản build)", async () => {
+  const ok = async (url) => {
+    assert.equal(url, `${API_BASE}/api/v1/payment-methods`);
+    return new Response(JSON.stringify(apiBody()), { status: 200 });
+  };
+  assert.deepEqual(await fetchLive(ok), liveFromApi(apiBody()));
+  assert.equal(await fetchLive(async () => { throw new TypeError("mạng"); }), null);
+  assert.equal(await fetchLive(async () => new Response("{}", { status: 500 })), null);
+  assert.equal(await fetchLive(async () => new Response("không phải json", { status: 200 })), null);
+  // Treo quá hạn: fetch nhận signal và bị huỷ.
+  const hang = (_u, { signal }) => new Promise((_, rej) => signal.addEventListener("abort", () => rej(signal.reason)));
+  assert.equal(await fetchLive(hang, 20), null);
 });

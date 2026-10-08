@@ -173,17 +173,56 @@ export function usdtShown(currency, sku, live = LIVE) {
 }
 
 /**
+ * Thẻ trả được gói này không. `live.card` là bảng theo gói (từ API — API đã áp trần $199 của LemonSqueezy)
+ * hoặc một công tắc chung (bản build) — khi đó website tự áp trần qua `cardAllowed`.
+ */
+export function cardOn(sku, live = LIVE) {
+  return typeof live.card === "object" && live.card !== null ? live.card[sku] === true : Boolean(live.card) && cardAllowed(sku);
+}
+
+/**
  * Mua gói `sku` bằng `currency` thì đi đường nào: `"vnd"` (chuyển khoản), `"card"` (thẻ), `"usdt"` (USDT TRC20),
- * hoặc `"telegram"` khi kênh chưa bật hay gói không có đường nào. Trang USD: thẻ đứng trước (gói ≤ $199), không
- * được thì USDT (gói trọn đời, thêm máy). Loại tiền `"USDT"` (`?method=usdt`) chọn USDT trước; gói tháng không
- * bán qua USDT nên rơi về kết quả của USD. Bảng giá và trang /mua cùng dùng hàm này để hai nơi không lệch nhau.
+ * `"telegram"` khi kênh chưa bật hay gói không có đường nào, hoặc `"hidden"` khi cả Telegram cũng tắt
+ * (`live.telegram === false`; bản build không có trường này nên Telegram luôn bật) — gói đó không hiện ở đâu.
+ * Trang USD: thẻ đứng trước, không được thì USDT (gói trọn đời, thêm máy). Loại tiền `"USDT"` (`?method=usdt`)
+ * chọn USDT trước; gói tháng không bán qua USDT nên rơi về kết quả của USD. Bảng giá và trang /mua cùng dùng
+ * hàm này để hai nơi không lệch nhau.
  */
 export function payRoute(currency, sku, live = LIVE) {
-  if (currency === "VND") return live.vnd ? "vnd" : "telegram";
+  const fallback = live.telegram === false ? "hidden" : "telegram";
+  if (currency === "VND") return live.vnd ? "vnd" : fallback;
   const usdt = usdtShown(currency, sku, live);
   if (currency === "USDT" && usdt) return "usdt";
-  if (live.card && cardAllowed(sku)) return "card";
-  return usdt ? "usdt" : "telegram";
+  if (cardOn(sku, live)) return "card";
+  return usdt ? "usdt" : fallback;
+}
+
+/**
+ * Phản hồi `GET /api/v1/payment-methods` → công tắc dạng `payRoute` nhận. Thiếu trường hay sai kiểu thì null:
+ * trang giữ công tắc của bản build thay vì đoán.
+ */
+export function liveFromApi(d) {
+  const ok =
+    d && typeof d === "object" &&
+    typeof d.vnd === "boolean" && typeof d.usdt === "boolean" &&
+    typeof d.telegram?.enabled === "boolean" &&
+    d.card && typeof d.card === "object" && !Array.isArray(d.card);
+  if (!ok) return null;
+  return Object.freeze({ card: d.card, vnd: d.vnd, usdt: d.usdt, telegram: d.telegram.enabled });
+}
+
+/** Hỏi API công tắc thanh toán lúc chạy; lỗi mạng, mã khác 2xx, JSON hỏng hoặc quá `ms` thì null. */
+export async function fetchLive(f = fetch, ms = 4000) {
+  const c = new AbortController();
+  const timer = setTimeout(() => c.abort(), ms);
+  try {
+    const res = await f(`${API_BASE}/api/v1/payment-methods`, { signal: c.signal });
+    return res.ok ? liveFromApi(await res.json()) : null;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 /**
