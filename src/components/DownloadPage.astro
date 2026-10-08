@@ -22,7 +22,8 @@ interface Props {
 }
 const { lang } = Astro.props;
 const i = t(lang);
-// Trước ngày phát hành: không có link tải nào trong HTML, mỗi thẻ hiện ngày ra mắt (facts.js, DOWNLOADS_OPEN).
+// Link tải luôn có trong HTML; trước RELEASE_AT nó ẩn và thẻ hiện ngày ra mắt. DOWNLOADS_OPEN (lúc build) chỉ là
+// trạng thái ban đầu — script cuối trang so giờ của người xem với RELEASE_AT, nên tới giờ là hiện, không cần build lại.
 const availableOn = i.download.availableOn.replace(
   "{date}",
   new Intl.DateTimeFormat(lang, { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Ho_Chi_Minh" }).format(
@@ -32,7 +33,7 @@ const availableOn = i.download.availableOn.replace(
 ---
 
 <Navbar lang={lang} />
-<main class="download-page">
+<main class="download-page" data-release-at={RELEASE_AT}>
   <section class="download-hero">
     <div class="container">
       <h1>
@@ -53,11 +54,8 @@ const availableOn = i.download.availableOn.replace(
           </div>
           <h2 class="platform-name">Windows</h2>
           <p class="platform-version">{OS_SUPPORT.windows}</p>
-          {DOWNLOADS_OPEN ? (
-            <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
-          ) : (
-            <span class="release-badge">{availableOn}</span>
-          )}
+          <a class="btn btn-primary platform-download" data-release="open" hidden={!DOWNLOADS_OPEN} href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
+          <span class="release-badge" data-release="soon" hidden={DOWNLOADS_OPEN}>{availableOn}</span>
           <span class="platform-size">{INSTALLER_SIZE.windows}</span>
         </div>
 
@@ -71,18 +69,13 @@ const availableOn = i.download.availableOn.replace(
           </div>
           <h2 class="platform-name">macOS</h2>
           <p class="platform-version">{OS_SUPPORT.macos}</p>
-          {DOWNLOADS_OPEN ? (
-            <a class="btn btn-primary platform-download" href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
-          ) : (
-            <span class="release-badge">{availableOn}</span>
-          )}
+          <a class="btn btn-primary platform-download" data-release="open" hidden={!DOWNLOADS_OPEN} href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
+          <span class="release-badge" data-release="soon" hidden={DOWNLOADS_OPEN}>{availableOn}</span>
           <span class="platform-size">{INSTALLER_SIZE.macos}</span>
         </div>
       </div>
 
-      {DOWNLOADS_OPEN && (
-        <p class="release-links">{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
-      )}
+      <p class="release-links" data-release="open" hidden={!DOWNLOADS_OPEN}>{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
 
       <!-- Trust Badges -->
       <div class="trust-badges">
@@ -138,6 +131,19 @@ const availableOn = i.download.availableOn.replace(
     </div>
   </section>
 </main>
+<script is:inline>
+  (() => {
+    const main = document.querySelector("main[data-release-at]");
+    const at = Date.parse(main?.dataset.releaseAt ?? "");
+    if (!Number.isFinite(at)) return;
+    const apply = () => {
+      const open = Date.now() >= at;
+      for (const el of document.querySelectorAll("[data-release]")) el.hidden = (el.dataset.release === "open") !== open;
+      return open;
+    };
+    if (!apply()) setTimeout(apply, Math.min(at - Date.now() + 1000, 2 ** 31 - 1));
+  })();
+</script>
 <Footer lang={lang} />
 
 <style>
@@ -216,6 +222,11 @@ const availableOn = i.download.availableOn.replace(
     text-align: center;
     white-space: normal;
   }
+  /* `hidden` của nút tải/ngày ra mắt phải thắng display của .btn và .release-badge. */
+  .download-page [hidden] {
+    display: none !important;
+  }
+
   .release-badge {
     display: inline-block;
     margin-top: var(--space-xs);
