@@ -14,15 +14,15 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# Block AI training crawlers (protect content from training use)
+# AI crawlers of OpenAI, Anthropic and Google are allowed (decided 2026-10-08) so answers from their models can cite Veilus
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 User-agent: CCBot
 Disallow: /
