@@ -24,7 +24,7 @@ export const MAX_BROWSERS = 16;
  */
 export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheckS: 3, holdMaxS: 60 };
 
-// Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.4 (repo công khai veilus/releases, đăng 2026-10-06, VEIL-1272)
+// Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.5 (repo công khai veilus/releases, đăng 2026-10-08, VEIL-1325)
 // và engine mới nhất 154.0.8037.58 (cả hai nền tảng). Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
 // src/scripts/claims.js — claims.test.js đỏ khi dòng đó không còn nằm nguyên văn trong file này.
 
@@ -33,27 +33,27 @@ export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheck
  * Bản tối thiểu do engine đặt, không do app. Đo 2026-09-29 trên engine 153.0.8010.37: chrome.exe và veilus.exe
  * bản win-x64 khai SubsystemVersion 10.0; Veilus.app bản mac-arm64 khai LSMinimumSystemVersion 13.0 (minos 13.0).
  * App v0.2.1 một mình chỉ đòi macOS 11.0; từ v0.2.2 app đòi macOS 13.5 — đo 2026-10-05 trên Veilus_0.2.2_aarch64.dmg và
- * đo lại 2026-10-07 trên Veilus_0.2.4_aarch64.dmg: Info.plist LSMinimumSystemVersion 13.5, `vtool -show-build
- * Contents/MacOS/veilus` minos 13.5 (VEIL-1251, VEIL-1272). Vậy mức tối thiểu nay do app đặt, cao hơn engine 13.0.
+ * đo lại 2026-10-08 trên Veilus_0.2.5_aarch64.dmg: Info.plist LSMinimumSystemVersion 13.5, `vtool -show-build
+ * Contents/MacOS/veilus` minos 13.5 (VEIL-1251, VEIL-1325). Vậy mức tối thiểu nay do app đặt, cao hơn engine 13.0.
  */
 export const OS_SUPPORT = { windows: 'Windows 10/11 · x64', macos: 'macOS 13.5+ · Apple Silicon' };
 
 /**
- * Cỡ bộ cài, MB thập phân (10^6) làm tròn. Nguồn: `gh release view v0.2.4 -R veilus/releases --json assets`.
- * Đo 2026-10-07: Veilus_0.2.4_x64-setup.exe 38934040 byte, Veilus_0.2.4_aarch64.dmg 61545704 byte. Lớn hơn v0.2.1
+ * Cỡ bộ cài, MB thập phân (10^6) làm tròn. Nguồn: `gh release view v0.2.5 -R veilus/releases --json assets`.
+ * Đo 2026-10-08: Veilus_0.2.5_x64-setup.exe 38934871 byte, Veilus_0.2.5_aarch64.dmg 61547087 byte. Lớn hơn v0.2.1
  * (6552683 và 9630666 byte) vì từ 0.2.2 bộ cài kèm runtime Node và Playwright (quyết định 0108).
  */
 export const INSTALLER_SIZE = { windows: '.exe · ~39 MB', macos: '.dmg · ~62 MB' };
 
 /**
- * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-10-07: v0.2.4
- * (bản vá kích hoạt license trên Windows, VEIL-1267). Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE
+ * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-10-08: v0.2.5
+ * (Team 3, giá thêm máy mới, VEIL-1325). Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE
  * (đo lại bằng `gh release view v<bản> -R veilus/releases --json assets`); app chưa có updater nên trang giữ bản cũ tới
  * khi hằng này đổi.
  */
-export const APP_VERSION = '0.2.4';
+export const APP_VERSION = '0.2.5';
 
-/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-10-07: cả hai URL trả 200 sau chuyển hướng. */
+/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-10-08 (v0.2.5): cả hai URL trả 200 sau chuyển hướng. */
 const RELEASE_BASE = `https://github.com/veilus/releases/releases/download/v${APP_VERSION}`;
 export const DOWNLOAD_URL = {
   windows: `${RELEASE_BASE}/Veilus_${APP_VERSION}_x64-setup.exe`,
