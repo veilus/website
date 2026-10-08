@@ -114,7 +114,8 @@
         "product": "Sản phẩm",
         "productLinks": [
             "Tính năng",
-            "Bảng giá"
+            "Bảng giá",
+            "Nhật ký thay đổi"
         ],
         "resources": "Tài nguyên",
         "resourceLinks": [
@@ -506,5 +507,15 @@
             "Bộ dữ liệu: cho mỗi profile phần tài khoản, bài đăng hay từ khoá của riêng nó"
         ],
         "safety": "Script thêm qua MCP chỉ chạy tối đa 3 profile cho tới khi bạn duyệt trong app. API chỉ lắng nghe trên máy bạn."
+    },
+    "changelog": {
+        "metaTitle": "Nhật ký thay đổi Veilus — mỗi bản phát hành đổi gì",
+        "metaDescription": "Ghi chú phát hành của trình duyệt antidetect Veilus: tính năng mới, sửa lỗi và thay đổi engine ở từng phiên bản, kèm ngày và link tải.",
+        "title": "Nhật ký thay đổi",
+        "lead": "Mỗi bản phát hành Veilus đổi những gì. Bộ cài của mọi phiên bản nằm trên GitHub; engine trình duyệt cập nhật riêng trong app.",
+        "releasedOn": "Phát hành {date}",
+        "allReleases": "Mọi bản phát hành trên GitHub",
+        "download": "Tải phiên bản mới nhất",
+        "englishNote": "Ghi chú phát hành viết bằng tiếng Anh."
     }
 }

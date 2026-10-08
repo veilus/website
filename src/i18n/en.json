@@ -114,7 +114,8 @@
         "product": "Product",
         "productLinks": [
             "Features",
-            "Pricing"
+            "Pricing",
+            "Changelog"
         ],
         "resources": "Resources",
         "resourceLinks": [
@@ -506,5 +507,15 @@
             "Datasets: give each profile its own rows of accounts, posts or keywords"
         ],
         "safety": "Scripts added over MCP run on at most 3 profiles until you approve them in the app. The API listens on your machine only."
+    },
+    "changelog": {
+        "metaTitle": "Veilus changelog — what changed in each release",
+        "metaDescription": "Release notes for the Veilus anti-detect browser: new features, fixes and engine changes in every version, with dates and download links.",
+        "title": "Changelog",
+        "lead": "What changed in each Veilus release. Installers for every version are on GitHub; the browser engine updates separately inside the app.",
+        "releasedOn": "Released {date}",
+        "allReleases": "All releases on GitHub",
+        "download": "Download the latest version",
+        "englishNote": "Release notes are written in English."
     }
 }

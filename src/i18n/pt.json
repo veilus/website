@@ -114,7 +114,8 @@
         "product": "Produto",
         "productLinks": [
             "Recursos",
-            "Preços"
+            "Preços",
+            "Changelog"
         ],
         "resources": "Recursos",
         "resourceLinks": [
@@ -506,5 +507,15 @@
             "Conjuntos de dados: dar a cada perfil suas próprias linhas de contas, posts ou palavras-chave"
         ],
         "safety": "Scripts adicionados via MCP rodam em no máximo 3 perfis até você aprová-los no app. A API escuta apenas na sua máquina."
+    },
+    "changelog": {
+        "metaTitle": "Changelog do Veilus — o que mudou em cada versão",
+        "metaDescription": "Notas de versão do navegador antidetecção Veilus: novidades, correções e mudanças no motor em cada versão, com datas e links de download.",
+        "title": "Changelog",
+        "lead": "O que mudou em cada versão do Veilus. Os instaladores de todas as versões estão no GitHub; o motor do navegador é atualizado separadamente dentro do aplicativo.",
+        "releasedOn": "Lançado em {date}",
+        "allReleases": "Todas as versões no GitHub",
+        "download": "Baixar a versão mais recente",
+        "englishNote": "As notas de versão são escritas em inglês."
     }
 }

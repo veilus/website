@@ -1,0 +1,66 @@
+[
+  {
+    "version": "0.2.4",
+    "date": "2026-10-06",
+    "changes": [
+      "License: a token that is missing a claim now falls back to the plan's defaults; license cache lasts 48 hours",
+      "If the network is down when the app starts, the interface keeps your plan until the license token expires instead of dropping to Free",
+      "Windows: the app reads the registry through the system API instead of launching a helper process",
+      "Veilus Flow: DSL scripts are validated when saved, not only when run",
+      "Fingerprint: device pixel ratio values are rounded to four decimals; integrated GPUs are no longer paired with large external displays"
+    ]
+  },
+  {
+    "version": "0.2.3",
+    "date": "2026-10-05",
+    "changes": [
+      "Veilus Flow canvas: every node in the palette now runs; 11 new nodes; real branches and loops; ForEach iterates over dataset rows; variables declared as {{name}} are picked up automatically",
+      "Script list: tag suggestions and filtering by tag; trash for canvas nodes; Delete key on the canvas",
+      "Local API turns on automatically when the app starts; the API & MCP page was redesigned",
+      "Profiles: macOS profiles on non-Mac machines no longer reveal the host; same-OS profiles report the machine's real GPU; MacBook Air 15 screen added",
+      "An unsigned license is treated as Free; only one app process runs at a time"
+    ]
+  },
+  {
+    "version": "0.2.2",
+    "date": "2026-10-04",
+    "changes": [
+      "Veilus runtime now bundles Node, Playwright and puppeteer-core, so scripts run without a separate install; macOS 13.5 or later",
+      "MCP server grows to 30 tools: page driving (navigate, snapshot, type, set_file…), proxy and profile creation tools, schedules, batch runs and run monitoring; a Claude Code plugin",
+      "Datasets: import TXT/CSV, assign rows to profiles, use them as variables in scripts and batch runs",
+      "Proxy pools: import and export TXT/CSV, socks5:// per line, location warnings, timezone suggested from the proxy's real exit IP",
+      "Profiles: side panel with five tabs, Notes, profile duplication, cookie copy/paste, trash for profiles and scripts, Locale and Timezone columns",
+      "Script pages: edit raw scripts in place, version history with diff and rollback, run history",
+      "Scheduling: cron with 5 fields, run once at a given time, Run Now",
+      "Fingerprint: Windows profiles work on non-Windows machines; screens, GPUs, fonts, voices and languages match real Chrome more closely; canvas and audio noise is off by default",
+      "Plans and payment inside the app: 7-day Pro trial, VND and USD checkout, renewal reminders, device limit messages",
+      "Interface: eight languages, black-and-white theme, system theme by default, new shield logo",
+      "Settings reorganised into six sections; the app can stay in the tray when the window is closed"
+    ]
+  },
+  {
+    "version": "0.2.1",
+    "date": "2026-09-26",
+    "changes": [
+      "Engine download falls back to the public URL when the signed download link cannot be issued"
+    ]
+  },
+  {
+    "version": "0.2.0",
+    "date": "2026-09-26",
+    "changes": [
+      "Engine downloads use signed links and a signed version index",
+      "Profiles: copy and paste cookies, duplicate a profile, trash",
+      "Fingerprint: WebGL renderer for macOS profiles reported the way real Chrome does; 12 new Windows GPUs; WebGPU adapter info matches the engine",
+      "WebRTC Fake IP answers only well-known public STUN servers; DNS lookups for STUN go through the proxy",
+      "macOS: cookies are protected with a dedicated entry in Keychain"
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-09-25",
+    "changes": [
+      "First public release: profiles with their own fingerprint, storage and proxy; Veilus Flow automation; local REST API and MCP server; Veilus Sync; Windows and macOS installers"
+    ]
+  }
+]

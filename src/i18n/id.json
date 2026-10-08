@@ -114,7 +114,8 @@
         "product": "Produk",
         "productLinks": [
             "Fitur",
-            "Harga"
+            "Harga",
+            "Catatan perubahan"
         ],
         "resources": "Sumber Daya",
         "resourceLinks": [
@@ -506,5 +507,15 @@
             "Dataset: memberi setiap profil baris akun, postingan, atau kata kunci miliknya sendiri"
         ],
         "safety": "Skrip yang ditambahkan lewat MCP berjalan paling banyak di 3 profil sampai Anda menyetujuinya di aplikasi. API hanya mendengarkan di komputer Anda."
+    },
+    "changelog": {
+        "metaTitle": "Catatan perubahan Veilus — apa yang berubah di setiap rilis",
+        "metaDescription": "Catatan rilis peramban anti-deteksi Veilus: fitur baru, perbaikan, dan perubahan mesin di setiap versi, dengan tanggal dan tautan unduhan.",
+        "title": "Catatan perubahan",
+        "lead": "Apa yang berubah di setiap rilis Veilus. Pemasang untuk semua versi ada di GitHub; mesin browser diperbarui terpisah di dalam aplikasi.",
+        "releasedOn": "Dirilis {date}",
+        "allReleases": "Semua rilis di GitHub",
+        "download": "Unduh versi terbaru",
+        "englishNote": "Catatan rilis ditulis dalam bahasa Inggris."
     }
 }
