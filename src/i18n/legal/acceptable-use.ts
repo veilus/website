@@ -155,7 +155,7 @@ export const acceptableUseTranslations: Record<string, {
   <li>违反适用于你的任何法律或法规</li>
   <li>实施欺诈、身份盗用或钓鱼，或为获利欺骗他人</li>
   <li>访问、接管或买卖不属于你的账号</li>
-  <li>规避平台因欺诈或滥用而对你施加的封禁或限制，或注册替代账号绕过该处罚</li>
+  <li>规避平台因欺诈或滥用而对你施加的停权或封禁，或注册替代账号绕过该处罚</li>
   <li>制造虚假互动：刷评论、刷票、刷粉丝、批量虚假注册或垃圾信息</li>
   <li>通过冒充多个不同的人来滥用促销、推荐计划、空投、赠品或免费试用（即所谓的女巫攻击）</li>
   <li>未经授权抓取或访问系统，或出于非法目的绕过网站的技术限制</li>
@@ -217,7 +217,7 @@ export const acceptableUseTranslations: Record<string, {
   <li>Нарушать применимые к вам законы и нормативные акты</li>
   <li>Совершать мошенничество, кражу личности или фишинг, обманывать людей ради денег</li>
   <li>Получать доступ к чужим аккаунтам, захватывать их или торговать ими</li>
-  <li>Обходить блокировку или ограничение, наложенные платформой за мошенничество или злоупотребления, или создавать для этого новые аккаунты</li>
+  <li>Обходить приостановку или блокировку, наложенные платформой за мошенничество или злоупотребления, или создавать для этого новые аккаунты</li>
   <li>Создавать фальшивую активность: поддельные отзывы, голоса, подписчиков, массовые фиктивные регистрации или спам</li>
   <li>Злоупотреблять акциями, реферальными программами, аирдропами, розыгрышами или пробными периодами, выдавая себя за множество разных людей (так называемые атаки Сивиллы)</li>
   <li>Собирать данные или получать доступ к системам без разрешения либо в обход технических ограничений сайта в незаконных целях</li>
@@ -284,7 +284,7 @@ export const acceptableUseTranslations: Record<string, {
   <li>Abusar de promociones, programas de referidos, airdrops, sorteos o pruebas gratuitas haciéndose pasar por muchas personas distintas (los llamados ataques Sybil)</li>
   <li>Extraer datos o acceder a sistemas sin autorización, o saltarse las restricciones técnicas de un sitio con fines ilegales</li>
   <li>Distribuir malware o código dañino, o atacar otros sistemas</li>
-  <li>Acosar, amenazar o vigilar a otras personas</li>
+  <li>Acosar, amenazar o acechar a otras personas</li>
   <li>Producir o distribuir material de abuso sexual infantil, o facilitar el terrorismo, la trata de personas u otros delitos graves</li>
   <li>Revender, compartir o publicar claves de licencia, o interferir en las comprobaciones de licencia y dispositivo del Servicio</li>
 </ul>
@@ -409,7 +409,7 @@ export const acceptableUseTranslations: Record<string, {
   <li>Mengambil data atau mengakses sistem tanpa izin, atau menerobos pembatasan teknis sebuah situs untuk tujuan ilegal</li>
   <li>Menyebarkan malware atau kode berbahaya, atau menyerang sistem lain</li>
   <li>Melecehkan, mengancam, atau menguntit orang lain</li>
-  <li>Membuat atau menyebarkan materi pelecehan seksual anak, atau memfasilitasi terorisme, perdagangan manusia, atau kejahatan berat lainnya</li>
+  <li>Membuat atau menyebarkan materi kekerasan seksual anak, atau memfasilitasi terorisme, perdagangan manusia, atau kejahatan berat lainnya</li>
   <li>Menjual kembali, membagikan, atau mempublikasikan kunci lisensi, atau mengganggu pemeriksaan lisensi dan perangkat pada Layanan</li>
 </ul>
 
