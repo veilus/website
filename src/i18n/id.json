@@ -146,6 +146,9 @@
         "freeProfiles": "5 profil gratis selamanya",
         "reqTitle": "Persyaratan Sistem",
         "engine": "Mesin browser diunduh terpisah di aplikasi",
+        "macTitle": "Memasang di macOS",
+        "macStep": "Seret Veilus ke Applications. Jika macOS menyatakan Veilus rusak atau tidak dapat dibuka, buka Terminal dan jalankan:",
+        "macOnce": "Cukup dilakukan sekali. Mulai versi 0.2.6, pembaruan terpasang otomatis di dalam aplikasi.",
         "metaTitle": "Unduh browser anti-deteksi Veilus untuk Windows dan macOS",
         "metaDescription": "Unduh browser anti-deteksi Veilus untuk Windows dan macOS. 5 profil gratis selamanya, tanpa kartu kredit."
     },

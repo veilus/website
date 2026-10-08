@@ -146,6 +146,9 @@
         "freeProfiles": "5 perfiles gratis para siempre",
         "reqTitle": "Requisitos del sistema",
         "engine": "Motor de navegador, se descarga aparte en la app",
+        "macTitle": "Instalación en macOS",
+        "macStep": "Arrastra Veilus a Aplicaciones. Si macOS indica que Veilus está dañado o no se puede abrir, abre Terminal y ejecuta:",
+        "macOnce": "Solo hace falta una vez. Desde la versión 0.2.6, las actualizaciones se instalan automáticamente en la app.",
         "metaTitle": "Descarga el navegador antidetección Veilus: Windows y macOS",
         "metaDescription": "Descarga el navegador antidetección Veilus para Windows y macOS. 5 perfiles gratis para siempre, sin tarjeta."
     },

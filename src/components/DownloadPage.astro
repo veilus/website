@@ -17,6 +17,8 @@ import {
   DOWNLOADS_OPEN,
 } from '../data/facts.js';
 
+const MAC_QUARANTINE_CMD = "xattr -dr com.apple.quarantine /Applications/Veilus.app";
+
 interface Props {
   lang: Lang;
 }
@@ -76,6 +78,17 @@ const availableOn = i.download.availableOn.replace(
       </div>
 
       <p class="release-links" data-release="open" hidden={!DOWNLOADS_OPEN}>{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
+
+      <!-- Cài lần đầu trên macOS: bản ký ad-hoc, không công chứng (VEIL-558 đã huỷ) nên dmg tải bằng trình duyệt bị gắn quarantine. -->
+      <div class="mac-note">
+        <h2>{i.download.macTitle}</h2>
+        <p>{i.download.macStep}</p>
+        <div class="mac-cmd">
+          <pre><code id="mac-cmd">{MAC_QUARANTINE_CMD}</code></pre>
+          <button type="button" class="btn btn-secondary" id="mac-cmd-copy" data-copy={i.buy.copy} data-copied={i.buy.copied}>{i.buy.copy}</button>
+        </div>
+        <p>{i.download.macOnce}</p>
+      </div>
 
       <!-- Trust Badges -->
       <div class="trust-badges">
@@ -143,6 +156,17 @@ const availableOn = i.download.availableOn.replace(
     };
     if (!apply()) setTimeout(apply, Math.min(at - Date.now() + 1000, 2 ** 31 - 1));
   })();
+</script>
+<script is:inline>
+  document.getElementById("mac-cmd-copy")?.addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    try {
+      await navigator.clipboard.writeText(document.getElementById("mac-cmd").textContent);
+      btn.textContent = btn.dataset.copied;
+    } catch {
+      /* trình duyệt chặn clipboard: người dùng vẫn chép tay được */
+    }
+  });
 </script>
 <Footer lang={lang} />
 
@@ -250,6 +274,44 @@ const availableOn = i.download.availableOn.replace(
     font-size: 0.8125rem;
     color: var(--color-text-muted);
     text-align: center;
+  }
+  .mac-note {
+    max-width: 640px;
+    margin: var(--space-xl) auto 0;
+    padding: var(--space-lg);
+    background: var(--bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: left;
+  }
+  .mac-note h2 {
+    font-size: 1rem;
+    margin: 0 0 var(--space-sm);
+  }
+  .mac-note p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-sm);
+    max-width: none;
+  }
+  .mac-cmd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    align-items: flex-start;
+    margin-bottom: var(--space-sm);
+  }
+  .mac-cmd pre {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
   }
   .trust-badges {
     display: flex;
