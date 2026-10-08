@@ -119,7 +119,9 @@
         "resources": "Sumber Daya",
         "resourceLinks": [
             "Dokumentasi",
-            "Blog"
+            "Blog",
+            "Tentang",
+            "Kontak"
         ],
         "community": "Komunitas",
         "legal": [
@@ -506,5 +508,37 @@
             "Dataset: memberi setiap profil baris akun, postingan, atau kata kunci miliknya sendiri"
         ],
         "safety": "Skrip yang ditambahkan lewat MCP berjalan paling banyak di 3 profil sampai Anda menyetujuinya di aplikasi. API hanya mendengarkan di komputer Anda."
+    },
+    "about": {
+        "metaTitle": "Tentang Veilus — peramban anti-deteksi buatan pengembang independen",
+        "metaDescription": "Veilus adalah peramban anti-deteksi dengan build Chromium sendiri, dibuat dan dirawat oleh seorang pengembang independen di Vietnam. Apa itu Veilus, siapa pembuatnya, dan cara kami bekerja.",
+        "title": "Tentang Veilus",
+        "lead": "Veilus menjaga akun-akun tetap terpisah: setiap profil browser memiliki sidik jari, penyimpanan, dan proxy sendiri, dan asisten AI dapat mengendalikan profil-profil itu lewat MCP.",
+        "whatTitle": "Apa itu Veilus",
+        "whatBody": "Aplikasi desktop untuk Windows dan macOS yang mengelola profil browser dan menjalankan setiap profil di build Chromium milik Veilus sendiri. Sidik jari diterapkan di dalam mesin browser, bukan disuntikkan ke halaman. Otomasi sudah bawaan: skrip yang Anda atau asisten AI tulis berjalan di banyak profil, terjadwal atau massal, melalui REST API lokal dan server MCP.",
+        "whoTitle": "Siapa pembuatnya",
+        "whoBody": "Veilus dibuat dan dirawat oleh seorang pengembang independen yang berbasis di Vietnam. Tidak ada pendanaan ventura dan tidak ada tim penjualan; produk ini dibiayai oleh orang-orang yang memakainya. Pertanyaan dan laporan bug langsung sampai ke orang yang menulis kodenya.",
+        "principlesTitle": "Cara kami bekerja",
+        "principles": [
+            "Profil Anda tetap di komputer Anda. Veilus tidak menyalinnya ke mana pun kecuali Anda mengaktifkan Veilus Sync ke repositori atau drive pilihan Anda.",
+            "Paket Free itu sungguhan: 5 profil, tanpa batas waktu, tanpa kartu. Paket berbayar menambah otomasi, sinkronisasi, dan API lokal.",
+            "Kami tidak menjual cara mengakali pemblokiran platform. Kebijakan Penggunaan yang Dapat Diterima menjelaskan untuk apa Veilus boleh dan tidak boleh dipakai."
+        ],
+        "linksTitle": "Tempat menemukan kami"
+    },
+    "contact": {
+        "metaTitle": "Hubungi Veilus — dukungan, penagihan, dan privasi",
+        "metaDescription": "Cara menghubungi Veilus: email dukungan, pertanyaan penagihan, permintaan privasi, komunitas Telegram, dan GitHub.",
+        "title": "Kontak",
+        "lead": "Setiap pesan dibaca langsung oleh pengembangnya. Pilih saluran yang sesuai dengan pertanyaan Anda.",
+        "supportTitle": "Dukungan",
+        "supportBody": "Pertanyaan tentang instalasi, profil, proxy, otomasi, atau kunci lisensi. Sertakan versi aplikasi dan sistem operasi Anda.",
+        "billingTitle": "Penagihan dan lisensi",
+        "billingBody": "Pembayaran, faktur, pengembalian dana, penambahan perangkat, atau pemindahan lisensi ke komputer baru.",
+        "privacyTitle": "Privasi dan hukum",
+        "privacyBody": "Permintaan data, pemberitahuan hukum, dan laporan penyalahgunaan.",
+        "communityTitle": "Komunitas",
+        "communityBody": "Telegram adalah tempat tercepat untuk pertanyaan singkat dan kabar rilis. Laporan bug dan permintaan fitur dipersilakan di GitHub.",
+        "responseNote": "Kami membalas dalam beberapa hari kerja. Balasan email datang dari alamat yang sama seperti yang tercantum di sini."
     }
 }

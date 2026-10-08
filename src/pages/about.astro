@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutPage from "../components/AboutPage.astro";
+import { t, defaultLang } from "../i18n/utils";
+
+const i = t(defaultLang);
+---
+
+<Layout lang={defaultLang} title={i.about.metaTitle} description={i.about.metaDescription}>
+  <AboutPage lang={defaultLang} />
+</Layout>

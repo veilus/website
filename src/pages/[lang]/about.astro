@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import AboutPage from "../../components/AboutPage.astro";
+import { t, supportedLangs, defaultLang, type Lang } from "../../i18n/utils";
+
+export function getStaticPaths() {
+  // Ngôn ngữ mặc định (en) do /about.astro dựng; /en/* chuyển hướng 301 về gốc (public/_redirects)
+  return supportedLangs.filter((l) => l !== defaultLang).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const i = t(lang);
+---
+
+<Layout lang={lang} title={i.about.metaTitle} description={i.about.metaDescription}>
+  <AboutPage lang={lang} />
+</Layout>

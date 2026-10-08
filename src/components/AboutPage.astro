@@ -1,0 +1,81 @@
+---
+/**
+ * Trang /about/, dùng chung cho en và /[lang]/ (VEIL-1310): ai đứng sau Veilus. Chủ dự án quyết ẩn danh —
+ * "nhà phát triển độc lập tại Việt Nam", không tên người, không pháp nhân (khớp Terms). Chữ ở i18n `about`.
+ */
+import type { Lang } from '../i18n/utils';
+import { t, getLocalizedPath } from '../i18n/utils';
+import Navbar from './Navbar.astro';
+import FinalCTA from './FinalCTA.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const i = t(lang);
+const a = i.about;
+const LINKS: [string, string][] = [
+  [i.footer.resourceLinks[0], 'https://docs.veilus.io'],
+  [i.footer.resourceLinks[1], 'https://blog.veilus.io'],
+  ['GitHub', 'https://github.com/veilus'],
+  ['Telegram', 'https://t.me/veilusbrowser'],
+  ['X', 'https://x.com/veilusbrowser'],
+  [i.footer.legal[4], getLocalizedPath('/acceptable-use', lang)],
+];
+---
+
+<Navbar lang={lang} />
+<main>
+  <section class="k-wrap k-page" id="about" data-reveal>
+    <h1 class="k-h2">{a.title}</h1>
+    <p class="k-sub">{a.lead}</p>
+    <div class="k-cols">
+      <article class="k-col k-rise" style="--d:0.1s">
+        <h2>{a.whatTitle}</h2>
+        <p>{a.whatBody}</p>
+      </article>
+      <article class="k-col k-rise" style="--d:0.2s">
+        <h2>{a.whoTitle}</h2>
+        <p>{a.whoBody}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="k-wrap k-sec" id="principles" data-reveal>
+    <h2 class="k-h2">{a.principlesTitle}</h2>
+    <ol class="k-rules">
+      {a.principles.map((p, n) => (
+        <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+          <em>{String(n + 1).padStart(2, '0')}</em><span>{p}</span>
+        </li>
+      ))}
+    </ol>
+    <h2 class="k-h2 k-links-h">{a.linksTitle}</h2>
+    <p class="k-linkrow">
+      {LINKS.map(([name, href]) => (
+        <a href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{name}</a>
+      ))}
+    </p>
+  </section>
+
+  <FinalCTA lang={lang} />
+</main>
+<Footer lang={lang} />
+
+<style>
+  .k-page { padding-top: 56px; }
+  .k-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+  .k-col { padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
+  .k-col h2 { margin: 0 0 10px; font-size: 1.15rem; }
+  .k-col p { margin: 0; line-height: 1.6; }
+  .k-rules { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; max-width: 760px; }
+  .k-rules li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 12px; align-items: baseline; line-height: 1.6; }
+  .k-rules em { font-style: normal; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .k-links-h { margin-top: 48px; }
+  .k-linkrow { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 16px; }
+  .k-linkrow a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 720px) {
+    .k-cols { grid-template-columns: 1fr; }
+  }
+</style>

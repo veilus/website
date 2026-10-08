@@ -119,7 +119,9 @@
         "resources": "Recursos",
         "resourceLinks": [
             "Documentación",
-            "Blog"
+            "Blog",
+            "Acerca de",
+            "Contacto"
         ],
         "community": "Comunidad",
         "legal": [
@@ -506,5 +508,37 @@
             "Conjuntos de datos: dar a cada perfil sus propias filas de cuentas, publicaciones o palabras clave"
         ],
         "safety": "Los scripts añadidos por MCP se ejecutan en 3 perfiles como máximo hasta que los apruebes en la app. La API solo escucha en tu equipo."
+    },
+    "about": {
+        "metaTitle": "Acerca de Veilus — un navegador antidetección creado por un desarrollador independiente",
+        "metaDescription": "Veilus es un navegador antidetección con su propia compilación de Chromium, creado y mantenido por un desarrollador independiente en Vietnam. Qué es, quién lo hace y cómo trabajamos.",
+        "title": "Acerca de Veilus",
+        "lead": "Veilus mantiene separadas las cuentas: cada perfil de navegador tiene su propia huella digital, almacenamiento y proxy, y un asistente de IA puede manejar esos perfiles mediante MCP.",
+        "whatTitle": "Qué es Veilus",
+        "whatBody": "Una aplicación de escritorio para Windows y macOS que gestiona perfiles de navegador y ejecuta cada uno en la compilación propia de Chromium de Veilus. La huella digital se aplica dentro del motor, no se inyecta en las páginas. La automatización viene integrada: los scripts que escribe usted o un asistente de IA se ejecutan en varios perfiles, programados o por lotes, a través de una API REST local y un servidor MCP.",
+        "whoTitle": "Quién lo hace",
+        "whoBody": "Veilus lo crea y mantiene un desarrollador independiente radicado en Vietnam. No hay inversores ni equipo de ventas; el producto lo pagan quienes lo usan. Las preguntas y los informes de errores llegan directamente a la persona que escribe el código.",
+        "principlesTitle": "Cómo trabajamos",
+        "principles": [
+            "Sus perfiles se quedan en su equipo. Veilus no los copia a ningún sitio salvo que active Veilus Sync hacia un repositorio o unidad que usted elija.",
+            "El plan Free es real: 5 perfiles, sin límite de tiempo, sin tarjeta. Los planes de pago añaden automatización, sincronización y la API local.",
+            "No vendemos formas de eludir bloqueos de plataformas. La Política de uso aceptable indica para qué puede y no puede usarse Veilus."
+        ],
+        "linksTitle": "Dónde encontrarnos"
+    },
+    "contact": {
+        "metaTitle": "Contacto de Veilus — soporte, facturación y privacidad",
+        "metaDescription": "Cómo contactar con Veilus: correo de soporte, preguntas de facturación, solicitudes de privacidad, comunidad de Telegram y GitHub.",
+        "title": "Contacto",
+        "lead": "Un desarrollador lee cada mensaje. Elija el canal que mejor encaje con su pregunta.",
+        "supportTitle": "Soporte",
+        "supportBody": "Preguntas sobre instalación, perfiles, proxies, automatización o una clave de licencia. Incluya la versión de la aplicación y su sistema operativo.",
+        "billingTitle": "Facturación y licencias",
+        "billingBody": "Pagos, facturas, reembolsos, añadir dispositivos o trasladar una licencia a un equipo nuevo.",
+        "privacyTitle": "Privacidad y asuntos legales",
+        "privacyBody": "Solicitudes de datos, avisos legales y denuncias de abuso.",
+        "communityTitle": "Comunidad",
+        "communityBody": "Telegram es el lugar más rápido para preguntas breves y noticias de versiones. Los informes de errores y las peticiones de funciones son bienvenidos en GitHub.",
+        "responseNote": "Respondemos en unos pocos días laborables. Las respuestas por correo llegan desde las mismas direcciones indicadas aquí."
     }
 }
