@@ -73,6 +73,7 @@ export const termsTranslations: Record<string, {
 <p>You are solely responsible for complying with the terms of service of every website and platform you access through the Service.</p>
 <p>We reserve the right to suspend or terminate accounts that violate this policy without prior notice.</p>
 
+<p>The <a href="/acceptable-use/">Acceptable Use Policy</a> gives examples of permitted use, explains how to report abuse and how violations are handled.</p>
 <h2>6. Intellectual Property</h2>
 <ul>
   <li>The Veilus application, brand, and documentation are protected by copyright and intellectual property laws.</li>
@@ -192,6 +193,7 @@ export const termsTranslations: Record<string, {
 </ul>
 <p>Bạn tự chịu toàn bộ trách nhiệm tuân thủ điều khoản dịch vụ của mọi trang web và nền tảng bạn truy cập qua Dịch vụ.</p>
 
+<p><a href="/vi/acceptable-use/">Chính sách Sử dụng Chấp nhận được</a> nêu ví dụ việc được phép, cách báo cáo lạm dụng và cách xử lý vi phạm.</p>
 <h2>6. Sở hữu trí tuệ</h2>
 <ul>
   <li>Ứng dụng, thương hiệu và tài liệu Veilus được bảo vệ bởi luật bản quyền.</li>
@@ -263,6 +265,7 @@ export const termsTranslations: Record<string, {
 <h2>5. 可接受使用</h2>
 <p>禁止：违法、欺诈、未授权访问、恶意软件、骚扰、虚假评论/虚假互动/垃圾信息、访问或盗用不属于您的账号、规避平台因欺诈或滥用对您施加的封禁、CSAM、恐怖主义等。</p>
 <p>您须自行负责遵守通过本服务访问的每个网站和平台的服务条款。本条款受越南法律管辖。</p>
+<p><a href="/zh/acceptable-use/">可接受使用政策</a>列出了允许的用途示例，并说明如何举报滥用以及如何处理违规。</p>
 <h2>6-7. 知识产权和数据所有权</h2>
 <p>您的脚本和工作流归您所有。配置文件数据存储在本地。</p>
 <h2>8-9. 免责声明和责任限制</h2>
@@ -295,6 +298,7 @@ export const termsTranslations: Record<string, {
 <h2>5. Допустимое использование</h2>
 <p>Запрещено: нарушение законов, мошенничество, вредоносное ПО, фальшивые отзывы и накрутка, спам, доступ к чужим аккаунтам или их захват, обход блокировки, наложенной платформой за мошенничество или злоупотребления, CSAM, терроризм.</p>
 <p>Вы несёте полную ответственность за соблюдение условий использования каждого сайта и платформы, к которым обращаетесь через Сервис. Условия регулируются законодательством Вьетнама.</p>
+<p><a href="/ru/acceptable-use/">Политика допустимого использования</a> приводит примеры разрешённого использования, объясняет, как сообщить о злоупотреблении и как рассматриваются нарушения.</p>
 <h2>6-14. Прочее</h2>
 <p>Ваши скрипты — ваша собственность. Данные хранятся локально. Ответственность ограничена суммой оплаты за 12 месяцев. Изменения — уведомление за 30 дней. Контакт: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -323,6 +327,7 @@ export const termsTranslations: Record<string, {
 <h2>5. Uso aceptable</h2>
 <p>Prohibido: fraude, malware, acoso, reseñas o interacciones falsas, spam, acceder a cuentas ajenas o apropiarse de ellas, eludir una suspensión que una plataforma te impuso por fraude o abuso, CSAM, terrorismo.</p>
 <p>Eres el único responsable de cumplir los términos de servicio de cada sitio web y plataforma a la que accedes mediante el Servicio. Estos Términos se rigen por las leyes de Vietnam.</p>
+<p>La <a href="/es/acceptable-use/">Política de uso aceptable</a> ofrece ejemplos de uso permitido y explica cómo denunciar abusos y cómo se tratan las infracciones.</p>
 <h2>6-14. Otros</h2>
 <p>Sus scripts son su propiedad. Datos locales. Responsabilidad limitada a pagos de 12 meses. Cambios con 30 días de aviso. Contacto: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -349,6 +354,7 @@ export const termsTranslations: Record<string, {
 <h2>5. Uso aceitável</h2>
 <p>Proibido: fraude, malware, assédio, avaliações ou engajamento falsos, spam, acessar ou tomar contas que não são suas, contornar uma suspensão que uma plataforma lhe aplicou por fraude ou abuso, CSAM, terrorismo.</p>
 <p>Você é o único responsável por cumprir os termos de serviço de cada site e plataforma que acessa pelo Serviço. Estes Termos são regidos pelas leis do Vietnã.</p>
+<p>A <a href="/pt/acceptable-use/">Política de uso aceitável</a> traz exemplos de uso permitido e explica como denunciar abusos e como as violações são tratadas.</p>
 <h2>6-14. Outros</h2>
 <p>Seus scripts são sua propriedade. Dados locais. Alterações com 30 dias de aviso. Contato: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -375,6 +381,7 @@ export const termsTranslations: Record<string, {
 <h2>5. Penggunaan</h2>
 <p>Dilarang: penipuan, malware, pelecehan, ulasan atau interaksi palsu, spam, mengakses atau mengambil alih akun yang bukan milik Anda, menghindari penangguhan yang dijatuhkan platform kepada Anda karena penipuan atau penyalahgunaan, CSAM, terorisme.</p>
 <p>Anda sepenuhnya bertanggung jawab mematuhi ketentuan layanan setiap situs web dan platform yang Anda akses melalui Layanan. Ketentuan ini diatur oleh hukum Vietnam.</p>
+<p><a href="/id/acceptable-use/">Kebijakan Penggunaan yang Dapat Diterima</a> memberi contoh penggunaan yang diizinkan serta menjelaskan cara melaporkan penyalahgunaan dan cara pelanggaran ditangani.</p>
 <h2>6-14. Lainnya</h2>
 <p>Skrip Anda milik Anda. Data lokal. Perubahan dengan pemberitahuan 30 hari. Kontak: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     },
@@ -401,6 +408,7 @@ export const termsTranslations: Record<string, {
 <h2>5. Kabul Edilebilir Kullanım</h2>
 <p>Yasak: dolandırıcılık, kötü amaçlı yazılım, taciz, sahte yorum veya etkileşim, spam, size ait olmayan hesaplara erişmek veya bunları ele geçirmek, bir platformun dolandırıcılık ya da kötüye kullanım nedeniyle size uyguladığı askıya almayı atlatmak, CSAM, terörizm.</p>
 <p>Hizmet üzerinden eriştiğiniz her web sitesi ve platformun hizmet şartlarına uymaktan yalnızca siz sorumlusunuz. Bu Şartlar Vietnam yasalarına tabidir.</p>
+<p><a href="/tr/acceptable-use/">Kabul Edilebilir Kullanım Politikası</a>, izin verilen kullanım örnekleri verir; kötüye kullanımın nasıl bildirileceğini ve ihlallerin nasıl ele alındığını açıklar.</p>
 <h2>6-14. Diğer</h2>
 <p>Betikleriniz size aittir. Veriler yerel olarak saklanır. 30 gün önceden bildirimle değişiklik. İletişim: <a href="mailto:legal@veilus.io">legal@veilus.io</a></p>`
     }

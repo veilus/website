@@ -20,6 +20,7 @@
 - [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy
 - [Privacy Policy](https://veilus.io/privacy/): Data collection and protection
 - [Terms of Service](https://veilus.io/terms/): Usage terms
+- [Acceptable Use Policy](https://veilus.io/acceptable-use/): What Veilus may and may not be used for, how to report abuse
 - [Refund Policy](https://veilus.io/refund/): Refund conditions
 
 ## Core Features

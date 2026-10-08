@@ -192,10 +192,10 @@ const NEAR_MISS = [
   'Endpoint https://gate.example.com hoặc socks5://host:1080',
 ];
 
-test('quét đủ mẫu số: 8 ngôn ngữ, 4 trang pháp lý, llms.txt, facts.js, layout, component, trang', () => {
+test('quét đủ mẫu số: 8 ngôn ngữ, 5 trang pháp lý, llms.txt, facts.js, layout, component, trang', () => {
   const count = (prefix) => FILES.filter((f) => f.startsWith(prefix)).length;
   assert.equal(FILES.filter((f) => /^src\/i18n\/[a-z]{2}\.json$/.test(f)).length, 8);
-  assert.equal(count('src/i18n/legal/'), 4);
+  assert.equal(count('src/i18n/legal/'), 5);
   assert.ok(FILES.includes('public/llms.txt'));
   assert.ok(FILES.includes('src/data/facts.js'));
   // Ngưỡng bằng đúng số file hiện có: xoá component hay trang thì hạ ngưỡng trong cùng commit.

@@ -1,0 +1,9 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { acceptableUseTranslations } from '../i18n/legal/acceptable-use';
+const t = acceptableUseTranslations.en;
+---
+
+<LegalLayout lang="en" title={t.title} description={t.description} lastUpdated={t.lastUpdated}>
+  <Fragment set:html={t.content} />
+</LegalLayout>
