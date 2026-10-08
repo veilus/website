@@ -1,5 +1,13 @@
 [
   {
+    "version": "0.2.6",
+    "date": "2026-10-09",
+    "changes": [
+      "Automatic updates: the app checks for a new version when it starts and from Settings, asks before installing, then restarts",
+      "Clearer messages when an update check or install fails"
+    ]
+  },
+  {
     "version": "0.2.5",
     "date": "2026-10-08",
     "changes": [
