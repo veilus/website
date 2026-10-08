@@ -263,7 +263,7 @@ test("TELEGRAM_URL là kênh Telegram của Veilus", () => {
 });
 
 test("công tắc kênh: build không đặt biến thì thẻ và VNĐ bật, USDT tắt, API mặc định là production", () => {
-  // Nộp LemonSqueezy duyệt (quyết định 0115): production trả thẻ qua LemonSqueezy, VNĐ chuyển khoản; Telegram/USDT sau khi duyệt.
+  // Nộp LemonSqueezy duyệt (quyết định usd-lemonsqueezy-tran-199-va-usdt-trc20): production trả thẻ qua LemonSqueezy, VNĐ chuyển khoản; Telegram/USDT sau khi duyệt.
   assert.deepEqual(LIVE, { card: true, vnd: true, usdt: false });
   assert.equal(API_BASE, "https://api.veilus.io");
 });

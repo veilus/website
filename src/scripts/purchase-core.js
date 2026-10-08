@@ -32,7 +32,7 @@ export const LIVE = liveFrom(env);
 
 /**
  * Gói không hiện trên bảng giá và /mua. Mặc định ẩn team10/team20: giá vượt trần
- * thẻ $199 (quyết định 0115). Bảng SKU vẫn giữ hai gói
+ * thẻ $199 (quyết định usd-lemonsqueezy-tran-199-va-usdt-trc20). Bảng SKU vẫn giữ hai gói
  * này (cổng sku-price-parity, bán VNĐ/USDT sau). Staging đặt `PUBLIC_HIDE_SKUS=`
  * (rỗng) hoặc `PUBLIC_HIDE_SKUS=none` (shell không đặt được biến rỗng) để hiện đủ.
  * Gói ẩn thắng mọi kênh, kể cả USDT: không có dòng giá, ô chọn hay link `method=usdt` cho chúng.
