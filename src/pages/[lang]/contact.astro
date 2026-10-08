@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactPage from "../../components/ContactPage.astro";
+import { t, supportedLangs, defaultLang, type Lang } from "../../i18n/utils";
+
+export function getStaticPaths() {
+  // Ngôn ngữ mặc định (en) do /contact.astro dựng; /en/* chuyển hướng 301 về gốc (public/_redirects)
+  return supportedLangs.filter((l) => l !== defaultLang).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const i = t(lang);
+---
+
+<Layout lang={lang} title={i.contact.metaTitle} description={i.contact.metaDescription}>
+  <ContactPage lang={lang} />
+</Layout>

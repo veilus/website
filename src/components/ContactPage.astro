@@ -1,0 +1,70 @@
+---
+/**
+ * Trang /contact/, dùng chung cho en và /[lang]/ (VEIL-1310). Ba hộp thư theo việc: support@ (hỗ trợ chung,
+ * hộp thư do chủ dự án tạo 2026-10-08), billing@ (Refund Policy đã dùng), privacy@ (Privacy/Cookies đã dùng) —
+ * legal@ cho báo cáo lạm dụng nằm trong AUP. Chữ ở i18n `contact`.
+ */
+import type { Lang } from '../i18n/utils';
+import { t } from '../i18n/utils';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = t(lang).contact;
+const SUPPORT = 'support@veilus.io';
+const BILLING = 'billing@veilus.io';
+const PRIVACY = 'privacy@veilus.io';
+const CARDS = [
+  { title: c.supportTitle, body: c.supportBody, links: [[SUPPORT, `mailto:${SUPPORT}`]] },
+  { title: c.billingTitle, body: c.billingBody, links: [[BILLING, `mailto:${BILLING}`]] },
+  { title: c.privacyTitle, body: c.privacyBody, links: [[PRIVACY, `mailto:${PRIVACY}`]] },
+  {
+    title: c.communityTitle,
+    body: c.communityBody,
+    links: [
+      ['t.me/veilusbrowser', 'https://t.me/veilusbrowser'],
+      ['github.com/veilus', 'https://github.com/veilus'],
+    ],
+  },
+];
+---
+
+<Navbar lang={lang} />
+<main>
+  <section class="k-wrap k-page" id="contact" data-reveal>
+    <h1 class="k-h2">{c.title}</h1>
+    <p class="k-sub">{c.lead}</p>
+    <div class="k-cards">
+      {CARDS.map((card, n) => (
+        <article class="k-card k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+          <h2>{card.title}</h2>
+          <p>{card.body}</p>
+          <p class="k-card-links">
+            {card.links.map(([name, href]) => (
+              <a href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{name}</a>
+            ))}
+          </p>
+        </article>
+      ))}
+    </div>
+    <p class="k-note">{c.responseNote}</p>
+  </section>
+</main>
+<Footer lang={lang} />
+
+<style>
+  .k-page { padding-top: 56px; padding-bottom: 96px; }
+  .k-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+  .k-card { display: flex; flex-direction: column; gap: 10px; padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
+  .k-card h2 { margin: 0; font-size: 1.15rem; }
+  .k-card p { margin: 0; line-height: 1.6; }
+  .k-card-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: auto; }
+  .k-card-links a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .k-note { margin-top: 28px; max-width: 760px; line-height: 1.6; opacity: 0.8; }
+  @media (max-width: 720px) {
+    .k-cards { grid-template-columns: 1fr; }
+  }
+</style>

@@ -119,7 +119,9 @@
         "resources": "Kaynaklar",
         "resourceLinks": [
             "Dokümantasyon",
-            "Blog"
+            "Blog",
+            "Hakkında",
+            "İletişim"
         ],
         "community": "Topluluk",
         "legal": [
@@ -506,5 +508,37 @@
             "Veri kümeleri: her profile kendi hesap, gönderi veya anahtar kelime satırlarını verme"
         ],
         "safety": "MCP üzerinden eklenen betikler, siz uygulamada onaylayana kadar en fazla 3 profilde çalışır. API yalnızca kendi makinenizde dinler."
+    },
+    "about": {
+        "metaTitle": "Veilus Hakkında — bağımsız bir geliştiricinin yaptığı anti-tespit tarayıcı",
+        "metaDescription": "Veilus, kendi Chromium derlemesine sahip, Vietnam'daki bağımsız bir geliştirici tarafından yapılan ve sürdürülen bir anti-tespit tarayıcıdır. Ne olduğu, kimin yaptığı ve nasıl çalıştığımız.",
+        "title": "Veilus Hakkında",
+        "lead": "Veilus ayrı hesapları ayrı tutar: her tarayıcı profilinin kendi parmak izi, depolaması ve proxy'si vardır; bir yapay zekâ asistanı bu profilleri MCP üzerinden yönetebilir.",
+        "whatTitle": "Veilus nedir",
+        "whatBody": "Tarayıcı profillerini yöneten ve her birini Veilus'un kendi Chromium derlemesinde çalıştıran, Windows ve macOS için bir masaüstü uygulaması. Parmak izi sayfalara enjekte edilmez, tarayıcı motorunun içinde uygulanır. Otomasyon yerleşiktir: sizin veya bir yapay zekâ asistanının yazdığı betikler, yerel bir REST API ve MCP sunucusu üzerinden profillerde zamanlanmış ya da toplu olarak çalışır.",
+        "whoTitle": "Kim yapıyor",
+        "whoBody": "Veilus, Vietnam'da yaşayan bağımsız bir geliştirici tarafından yapılır ve sürdürülür. Risk sermayesi ve satış ekibi yoktur; ürünün maliyetini kullananlar karşılar. Sorular ve hata bildirimleri doğrudan kodu yazan kişiye ulaşır.",
+        "principlesTitle": "Nasıl çalışıyoruz",
+        "principles": [
+            "Profilleriniz kendi bilgisayarınızda kalır. Seçtiğiniz bir depoya veya sürücüye Veilus Sync'i siz açmadıkça Veilus onları hiçbir yere kopyalamaz.",
+            "Free planı gerçektir: 5 profil, süre sınırı yok, kart yok. Ücretli planlar otomasyon, eşitleme ve yerel API ekler.",
+            "Platform yasaklarını aşmanın yollarını satmıyoruz. Kabul Edilebilir Kullanım Politikası, Veilus'un ne için kullanılıp kullanılamayacağını belirtir."
+        ],
+        "linksTitle": "Bizi nerede bulursunuz"
+    },
+    "contact": {
+        "metaTitle": "Veilus İletişim — destek, faturalama ve gizlilik",
+        "metaDescription": "Veilus'a nasıl ulaşılır: destek e-postası, faturalama soruları, gizlilik talepleri, Telegram topluluğu ve GitHub.",
+        "title": "İletişim",
+        "lead": "Her mesajı geliştiricinin kendisi okur. Sorunuza uyan kanalı seçin.",
+        "supportTitle": "Destek",
+        "supportBody": "Kurulum, profiller, proxy'ler, otomasyon veya lisans anahtarıyla ilgili sorular. Uygulama sürümünüzü ve işletim sisteminizi ekleyin.",
+        "billingTitle": "Faturalama ve lisanslar",
+        "billingBody": "Ödemeler, faturalar, iadeler, cihaz ekleme veya bir lisansı yeni bir bilgisayara taşıma.",
+        "privacyTitle": "Gizlilik ve hukuk",
+        "privacyBody": "Veri talepleri, hukuki bildirimler ve kötüye kullanım bildirimleri.",
+        "communityTitle": "Topluluk",
+        "communityBody": "Kısa sorular ve sürüm haberleri için en hızlı yer Telegram. Hata bildirimleri ve özellik istekleri GitHub'da memnuniyetle karşılanır.",
+        "responseNote": "Birkaç iş günü içinde yanıt veriyoruz. E-posta yanıtları burada listelenen adreslerden gelir."
     }
 }

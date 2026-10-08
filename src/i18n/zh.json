@@ -119,7 +119,9 @@
         "resources": "资源",
         "resourceLinks": [
             "文档",
-            "博客"
+            "博客",
+            "关于",
+            "联系"
         ],
         "community": "社区",
         "legal": [
@@ -506,5 +508,37 @@
             "数据集：给每个配置文件分配自己的账号、帖子或关键词行"
         ],
         "safety": "通过 MCP 添加的脚本在你于应用中审批之前最多只在 3 个配置文件上运行。API 只监听你的本机。"
+    },
+    "about": {
+        "metaTitle": "关于 Veilus — 由独立开发者打造的指纹浏览器",
+        "metaDescription": "Veilus 是一款自带 Chromium 构建的指纹浏览器，由越南的一名独立开发者开发和维护。它是什么、谁在做、我们如何工作。",
+        "title": "关于 Veilus",
+        "lead": "Veilus 让不同的账号彼此隔离：每个浏览器配置文件都有自己的指纹、存储和代理，AI 助手还可以通过 MCP 操控这些配置文件。",
+        "whatTitle": "Veilus 是什么",
+        "whatBody": "一款面向 Windows 和 macOS 的桌面应用，用于管理浏览器配置文件，并让每个配置文件运行在 Veilus 自己构建的 Chromium 中。指纹在浏览器引擎内部生效，而不是注入到页面里。自动化是内置的：由你或 AI 助手编写的脚本可以通过本地 REST API 和 MCP 服务器在多个配置文件上按计划或批量运行。",
+        "whoTitle": "谁在做",
+        "whoBody": "Veilus 由一名居住在越南的独立开发者开发和维护。没有风险投资，也没有销售团队；产品由使用者付费支撑。问题和错误报告会直接送到写代码的人手里。",
+        "principlesTitle": "我们的做法",
+        "principles": [
+            "你的配置文件保存在你自己的电脑上。除非你开启 Veilus Sync 同步到你选择的仓库或网盘，否则 Veilus 不会把它们复制到任何地方。",
+            "Free 套餐是真实可用的：5 个配置文件，没有时间限制，无需信用卡。付费套餐增加自动化、同步和本地 API。",
+            "我们不出售规避平台封禁的手段。可接受使用政策说明了 Veilus 可以和不可以用于什么。"
+        ],
+        "linksTitle": "在哪里找到我们"
+    },
+    "contact": {
+        "metaTitle": "联系 Veilus — 支持、账单与隐私",
+        "metaDescription": "如何联系 Veilus：支持邮箱、账单问题、隐私请求、Telegram 社区和 GitHub。",
+        "title": "联系我们",
+        "lead": "每一封邮件都由开发者本人阅读。请选择与你的问题相符的渠道。",
+        "supportTitle": "支持",
+        "supportBody": "关于安装、配置文件、代理、自动化或许可证密钥的问题。请附上应用版本和操作系统。",
+        "billingTitle": "账单与许可证",
+        "billingBody": "付款、发票、退款、添加设备或将许可证迁移到新电脑。",
+        "privacyTitle": "隐私与法律",
+        "privacyBody": "数据请求、法律通知以及滥用举报。",
+        "communityTitle": "社区",
+        "communityBody": "Telegram 是提出简短问题和获取发布消息最快的地方。欢迎在 GitHub 提交错误报告和功能建议。",
+        "responseNote": "我们会在几个工作日内回复。邮件回复来自此处列出的相同地址。"
     }
 }

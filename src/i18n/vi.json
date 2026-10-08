@@ -119,7 +119,9 @@
         "resources": "Tài nguyên",
         "resourceLinks": [
             "Tài liệu",
-            "Blog"
+            "Blog",
+            "Giới thiệu",
+            "Liên hệ"
         ],
         "community": "Cộng đồng",
         "legal": [
@@ -506,5 +508,37 @@
             "Bộ dữ liệu: cho mỗi profile phần tài khoản, bài đăng hay từ khoá của riêng nó"
         ],
         "safety": "Script thêm qua MCP chỉ chạy tối đa 3 profile cho tới khi bạn duyệt trong app. API chỉ lắng nghe trên máy bạn."
+    },
+    "about": {
+        "metaTitle": "Giới thiệu Veilus — trình duyệt antidetect do một nhà phát triển độc lập xây dựng",
+        "metaDescription": "Veilus là trình duyệt antidetect với bản Chromium tự dựng, do một nhà phát triển độc lập tại Việt Nam xây dựng và bảo trì. Veilus là gì, ai làm và cách chúng tôi làm việc.",
+        "title": "Giới thiệu Veilus",
+        "lead": "Veilus giữ các tài khoản tách biệt nhau: mỗi profile trình duyệt có fingerprint, bộ nhớ và proxy riêng, và trợ lý AI điều khiển được các profile đó qua MCP.",
+        "whatTitle": "Veilus là gì",
+        "whatBody": "Một app desktop cho Windows và macOS, quản lý profile trình duyệt và chạy mỗi profile trên bản Chromium do Veilus tự dựng. Fingerprint được áp ngay trong engine, không chèn vào trang. Tự động hoá có sẵn: script do bạn hoặc trợ lý AI viết chạy trên nhiều profile, theo lịch hoặc hàng loạt, qua REST API cục bộ và MCP server.",
+        "whoTitle": "Ai làm ra Veilus",
+        "whoBody": "Veilus do một nhà phát triển độc lập tại Việt Nam xây dựng và bảo trì. Không có vốn đầu tư, không có đội bán hàng; sản phẩm sống bằng tiền của người dùng. Câu hỏi và báo lỗi đến thẳng người viết code.",
+        "principlesTitle": "Cách chúng tôi làm việc",
+        "principles": [
+            "Profile của bạn nằm trên máy bạn. Veilus không chép chúng đi đâu trừ khi bạn bật Veilus Sync tới kho hoặc ổ đĩa do bạn chọn.",
+            "Gói Free là thật: 5 profile, không giới hạn thời gian, không cần thẻ. Gói trả phí thêm tự động hoá, đồng bộ và API cục bộ.",
+            "Chúng tôi không bán cách lách lệnh khoá của nền tảng. Chính sách Sử dụng Chấp nhận được nói rõ Veilus được và không được dùng vào việc gì."
+        ],
+        "linksTitle": "Tìm chúng tôi ở đâu"
+    },
+    "contact": {
+        "metaTitle": "Liên hệ Veilus — hỗ trợ, thanh toán và quyền riêng tư",
+        "metaDescription": "Cách liên hệ Veilus: email hỗ trợ, câu hỏi thanh toán, yêu cầu về quyền riêng tư, cộng đồng Telegram và GitHub.",
+        "title": "Liên hệ",
+        "lead": "Một nhà phát triển đọc mọi tin nhắn. Chọn kênh hợp với câu hỏi của bạn.",
+        "supportTitle": "Hỗ trợ",
+        "supportBody": "Câu hỏi về cài đặt, profile, proxy, tự động hoá hoặc license key. Hãy kèm phiên bản app và hệ điều hành.",
+        "billingTitle": "Thanh toán và license",
+        "billingBody": "Thanh toán, hoá đơn, hoàn tiền, thêm máy hoặc chuyển license sang máy mới.",
+        "privacyTitle": "Quyền riêng tư và pháp lý",
+        "privacyBody": "Yêu cầu về dữ liệu, thông báo pháp lý và báo cáo lạm dụng.",
+        "communityTitle": "Cộng đồng",
+        "communityBody": "Telegram là nơi nhanh nhất cho câu hỏi ngắn và tin phát hành. Báo lỗi và đề xuất tính năng gửi trên GitHub.",
+        "responseNote": "Chúng tôi trả lời trong vài ngày làm việc. Email phản hồi gửi từ đúng các địa chỉ ghi ở đây."
     }
 }

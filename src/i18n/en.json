@@ -119,7 +119,9 @@
         "resources": "Resources",
         "resourceLinks": [
             "Documentation",
-            "Blog"
+            "Blog",
+            "About",
+            "Contact"
         ],
         "community": "Community",
         "legal": [
@@ -506,5 +508,37 @@
             "Datasets: give each profile its own rows of accounts, posts or keywords"
         ],
         "safety": "Scripts added over MCP run on at most 3 profiles until you approve them in the app. The API listens on your machine only."
+    },
+    "about": {
+        "metaTitle": "About Veilus — an anti-detect browser built by an independent developer",
+        "metaDescription": "Veilus is an anti-detect browser with its own Chromium build, built and maintained by an independent developer in Vietnam. What it is, who makes it and what we believe.",
+        "title": "About Veilus",
+        "lead": "Veilus keeps separate accounts separate: each browser profile gets its own fingerprint, storage and proxy, and an AI assistant can drive those profiles over MCP.",
+        "whatTitle": "What Veilus is",
+        "whatBody": "A desktop app for Windows and macOS that manages browser profiles and runs each one in Veilus's own build of Chromium. The fingerprint is applied inside the browser engine, not injected into pages. Automation is built in: scripts written by you or by an AI assistant run across profiles, on a schedule or in batches, through a local REST API and an MCP server.",
+        "whoTitle": "Who makes it",
+        "whoBody": "Veilus is built and maintained by an independent developer based in Vietnam. There is no venture funding and no sales team; the product is paid for by the people who use it. Questions and bug reports go straight to the person who writes the code.",
+        "principlesTitle": "How we work",
+        "principles": [
+            "Your profiles stay on your machine. Veilus does not copy them anywhere unless you turn on Veilus Sync to a repository or drive you choose.",
+            "The Free plan is real: 5 profiles, no time limit, no card. Paid plans add automation, sync and the local API.",
+            "We do not sell workarounds for platform bans. The Acceptable Use Policy says what Veilus may and may not be used for."
+        ],
+        "linksTitle": "Where to find us"
+    },
+    "contact": {
+        "metaTitle": "Contact Veilus — support, billing and privacy",
+        "metaDescription": "How to reach Veilus: support email, billing questions, privacy requests, Telegram community and GitHub.",
+        "title": "Contact",
+        "lead": "One developer reads every message. Pick the channel that fits your question.",
+        "supportTitle": "Support",
+        "supportBody": "Questions about installing, profiles, proxies, automation or a license key. Include your app version and operating system.",
+        "billingTitle": "Billing and licenses",
+        "billingBody": "Payments, invoices, refunds, adding devices or moving a license to a new machine.",
+        "privacyTitle": "Privacy and legal",
+        "privacyBody": "Data requests, legal notices and reports of abuse.",
+        "communityTitle": "Community",
+        "communityBody": "Telegram is the fastest place for quick questions and release news. Bug reports and feature requests are welcome on GitHub.",
+        "responseNote": "We answer within a few business days. Email replies come from the same addresses listed here."
     }
 }
