@@ -4,11 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Link tải chỉ có trong bản build từ 2026-10-09 00:00 giờ VN (RELEASE_AT trong src/data/facts.js), mà trang
-  # là trang tĩnh: build lại lúc 00:05 ngày đó (17:05 UTC ngày 8/10) để link tự hiện. Qua ngày đó thì xoá lịch
-  # này; để quên thì mỗi năm nó chỉ deploy lại main một lần.
-  schedule:
-    - cron: "5 17 8 10 *"
 
 jobs:
   deploy:
