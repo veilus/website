@@ -511,7 +511,7 @@
     },
     "about": {
         "metaTitle": "About Veilus — an anti-detect browser built by an independent developer",
-        "metaDescription": "Veilus is an anti-detect browser with its own Chromium build, built and maintained by an independent developer in Vietnam. What it is, who makes it and what we believe.",
+        "metaDescription": "Veilus is an anti-detect browser with its own Chromium build, built and maintained by an independent developer in Vietnam. What it is, who makes it and how we work.",
         "title": "About Veilus",
         "lead": "Veilus keeps separate accounts separate: each browser profile gets its own fingerprint, storage and proxy, and an AI assistant can drive those profiles over MCP.",
         "whatTitle": "What Veilus is",
