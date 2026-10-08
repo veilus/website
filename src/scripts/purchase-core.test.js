@@ -469,7 +469,7 @@ const apiBody = (o = {}) => ({
 
 test("liveFromApi: ánh xạ phản hồi API sang công tắc; phản hồi hỏng trả null", () => {
   const live = liveFromApi(apiBody({ usdt: true, telegram: { enabled: false, url: "x" } }));
-  assert.deepEqual(live, { card: apiBody().card, vnd: true, usdt: true, telegram: false });
+  assert.deepEqual(live, { card: apiBody().card, vnd: true, usdt: true, telegram: false, telegramUrl: TELEGRAM_URL });
   for (const bad of [null, "x", {}, { vnd: true, usdt: false, telegram: { enabled: true } }, apiBody({ vnd: "1" }), apiBody({ card: null })]) {
     assert.equal(liveFromApi(bad), null, JSON.stringify(bad));
   }
@@ -516,4 +516,12 @@ test("fetchLive: đọc API; lỗi mạng, mã khác 200, JSON hỏng hay quá g
   // Treo quá hạn: fetch nhận signal và bị huỷ.
   const hang = (_u, { signal }) => new Promise((_, rej) => signal.addEventListener("abort", () => rej(signal.reason)));
   assert.equal(await fetchLive(hang, 20), null);
+});
+
+test("liveFromApi: telegramUrl lấy từ API khi là https://t.me/…, còn lại về TELEGRAM_URL", () => {
+  const url = (u) => liveFromApi(apiBody({ telegram: { enabled: true, url: u } })).telegramUrl;
+  assert.equal(url("https://t.me/veilus_sales"), "https://t.me/veilus_sales");
+  for (const bad of [undefined, "", "http://t.me/x", "https://t.me.evil.com/x", "https://evil.com/?https://t.me/", "javascript:alert(1)", 42]) {
+    assert.equal(url(bad), TELEGRAM_URL, JSON.stringify(bad));
+  }
 });

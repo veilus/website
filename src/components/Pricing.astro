@@ -97,7 +97,7 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
 </section>
 
 <script>
-  import { fetchLive, payRoute, TELEGRAM_URL } from '../scripts/purchase-core.js';
+  import { fetchLive, payRoute } from '../scripts/purchase-core.js';
 
   // Công tắc thanh toán lúc chạy (VEIL-1321): sửa đích từng nút theo payRoute; null = giữ bản build.
   // Link `method=usdt` chỉ dựng ở đây khi API bật USDT — HTML của bản build không mang link USDT nào.
@@ -111,7 +111,7 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
         // Gói tháng chiếm cả một thẻ; gói trọn đời là một dòng trong thẻ.
         (a.classList.contains('k-tier') ? a : (a.closest('.k-pc') as HTMLElement)).hidden = route === 'hidden';
         const tg = route === 'telegram';
-        a.href = tg ? TELEGRAM_URL : route === 'usdt' ? `${a.dataset.buy}&method=usdt` : a.dataset.buy!;
+        a.href = tg ? live.telegramUrl : route === 'usdt' ? `${a.dataset.buy}&method=usdt` : a.dataset.buy!;
         if (tg) {
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
@@ -122,6 +122,12 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
         const via = tg ? viaTelegram : route === 'usdt' ? viaUsdt : '';
         a.querySelector('[data-via]')!.textContent = via ? ` · ${via}` : '';
       });
+      // Telegram tắt là tắt hẳn: bỏ cả dòng "liên hệ qua Telegram"; bật thì trỏ link của API.
+      const contact = sec.querySelector<HTMLElement>('.k-contact');
+      if (contact) {
+        contact.hidden = !live.telegram;
+        contact.querySelector('a')!.href = live.telegramUrl;
+      }
       sec.querySelectorAll<HTMLElement>('.k-tiers').forEach((t) => {
         if (!t.querySelector('.k-tier:not([hidden])')) (t.closest('.k-pc') as HTMLElement).hidden = true;
       });

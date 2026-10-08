@@ -585,6 +585,8 @@ const skusOf = (kind: string) =>
   void fetchLive().then((l) => {
     if (!l) return;
     live = l;
+    // Dòng Telegram chỉ hiện khi route là "telegram" (syncPayRow) — Telegram tắt thì không gói nào ra route đó.
+    telegramRow.querySelector("a")!.href = l.telegramUrl;
     syncSkus();
     syncKeyRow();
     // Màn đơn đang mở (form ẩn) tự lo phụ đề; tính lại khi quay về form ("đơn mới").

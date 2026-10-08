@@ -198,7 +198,7 @@ export function payRoute(currency, sku, live = LIVE) {
 }
 
 /**
- * Phản hồi `GET /api/v1/payment-methods` → công tắc dạng `payRoute` nhận. Thiếu trường hay sai kiểu thì null:
+ * Phản hồi `GET /api/v1/payment-methods` → công tắc dạng `payRoute` nhận, kèm `telegramUrl`. Thiếu trường hay sai kiểu thì null:
  * trang giữ công tắc của bản build thay vì đoán.
  */
 export function liveFromApi(d) {
@@ -208,7 +208,10 @@ export function liveFromApi(d) {
     typeof d.telegram?.enabled === "boolean" &&
     d.card && typeof d.card === "object" && !Array.isArray(d.card);
   if (!ok) return null;
-  return Object.freeze({ card: d.card, vnd: d.vnd, usdt: d.usdt, telegram: d.telegram.enabled });
+  // Link Telegram của API chỉ nhận khi là https://t.me/… — khác thì dùng link cố định, không đưa khách tới chỗ lạ.
+  const url = d.telegram.url;
+  const telegramUrl = typeof url === "string" && url.startsWith("https://t.me/") ? url : TELEGRAM_URL;
+  return Object.freeze({ card: d.card, vnd: d.vnd, usdt: d.usdt, telegram: d.telegram.enabled, telegramUrl });
 }
 
 /** Hỏi API công tắc thanh toán lúc chạy; lỗi mạng, mã khác 2xx, JSON hỏng hoặc quá `ms` thì null. */
