@@ -150,7 +150,7 @@
         "engine": "浏览器引擎需在应用内单独下载",
         "macTitle": "在 macOS 上安装",
         "macStep": "将 Veilus 拖入“应用程序”。如果 macOS 提示 Veilus 已损坏或无法打开,请打开“终端”并运行:",
-        "macOnce": "只需执行一次。从 0.2.6 版起,更新会在应用内自动安装。",
+        "macOnce": "只需执行一次。从 0.2.6 版起,有新版本时应用会提示你,点击“更新并重启”即可安装。",
         "metaTitle": "下载 Veilus 反检测浏览器：Windows 和 macOS 版",
         "metaDescription": "下载 Veilus 反检测浏览器 Windows 和 macOS 版。5 个配置文件永久免费，无需信用卡。"
     },

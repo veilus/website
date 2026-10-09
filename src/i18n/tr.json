@@ -150,7 +150,7 @@
         "engine": "Tarayıcı motoru uygulama içinden ayrıca indirilir",
         "macTitle": "macOS'ta kurulum",
         "macStep": "Veilus'u Uygulamalar'a sürükleyin. macOS Veilus'un hasarlı olduğunu veya açılamadığını söylerse Terminal'i açıp şunu çalıştırın:",
-        "macOnce": "Bunu yalnızca bir kez yapmanız yeterlidir. 0.2.6 sürümünden itibaren güncellemeler uygulama içinde otomatik kurulur.",
+        "macOnce": "Bunu yalnızca bir kez yapmanız yeterlidir. 0.2.6 sürümünden itibaren uygulama yeni sürüm çıktığında haber verir ve Update and restart düğmesine bastığınızda kurar.",
         "metaTitle": "Anti-tespit tarayıcı Veilus'u indirin: Windows ve macOS",
         "metaDescription": "Anti-tespit tarayıcı Veilus'u Windows ve macOS için indirin. 5 profil süresiz ücretsiz, kart gerekmez."
     },

@@ -150,7 +150,7 @@
         "engine": "Motor de navegador baixado à parte, no app",
         "macTitle": "Instalação no macOS",
         "macStep": "Arraste o Veilus para Aplicativos. Se o macOS disser que o Veilus está danificado ou não pode ser aberto, abra o Terminal e execute:",
-        "macOnce": "Só é preciso fazer isso uma vez. A partir da versão 0.2.6, as atualizações são instaladas automaticamente no app.",
+        "macOnce": "Só é preciso fazer isso uma vez. A partir da versão 0.2.6, o app avisa quando há uma versão nova e a instala quando você clica em Update and restart.",
         "metaTitle": "Baixe o navegador antidetecção Veilus para Windows e macOS",
         "metaDescription": "Baixe o navegador antidetecção Veilus para Windows e macOS. 5 perfis grátis para sempre, sem cartão."
     },

@@ -150,7 +150,7 @@
         "engine": "Browser engine, downloaded separately in the app",
         "macTitle": "Installing on macOS",
         "macStep": "Drag Veilus into Applications. If macOS says Veilus is damaged or can't be opened, open Terminal and run:",
-        "macOnce": "You only need to do this once. From 0.2.6 on, updates install automatically in the app.",
+        "macOnce": "You only need to do this once. From 0.2.6 on, the app tells you when a new version is out and installs it when you click Update and restart.",
         "metaTitle": "Download Veilus anti-detect browser for Windows & macOS",
         "metaDescription": "Download the Veilus anti-detect browser for Windows and macOS. 5 free profiles forever, no credit card."
     },

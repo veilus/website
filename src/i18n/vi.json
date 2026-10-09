@@ -150,7 +150,7 @@
         "engine": "Engine trình duyệt tải riêng trong app",
         "macTitle": "Cài đặt trên macOS",
         "macStep": "Kéo Veilus vào thư mục Applications. Nếu macOS báo Veilus bị hỏng hoặc không thể mở, hãy mở Terminal và chạy:",
-        "macOnce": "Chỉ cần làm một lần. Từ phiên bản 0.2.6, các bản cập nhật được cài tự động trong ứng dụng.",
+        "macOnce": "Chỉ cần làm một lần. Từ phiên bản 0.2.6, ứng dụng báo khi có bản mới và cài khi bạn bấm Cập nhật và khởi động lại.",
         "metaTitle": "Tải trình duyệt anti-detect Veilus cho Windows & macOS",
         "metaDescription": "Tải trình duyệt anti-detect Veilus cho Windows và macOS. 5 hồ sơ miễn phí mãi mãi, không cần thẻ."
     },
