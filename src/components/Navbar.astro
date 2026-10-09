@@ -1,7 +1,7 @@
 ---
 /**
  * Thanh điều hướng dùng chung mọi trang (spec trang chủ §2): mark "VEILUS / BẢN VẼ 02", liên kết tới
- * các phần của trang chủ, chọn ngôn ngữ, nút tải về. Dưới 1180px liên kết gập vào nút menu.
+ * các phần của trang chủ, docs và blog, chọn ngôn ngữ, nút tải về. Dưới 1180px liên kết gập vào nút menu.
  */
 import type { Lang } from '../i18n/utils';
 import LogoMark from './LogoMark.astro';
@@ -30,6 +30,9 @@ const LINKS = [
   [anchor('features'), i.nav.features],
   [getLocalizedPath('/pricing', lang), i.nav.pricing],
   [anchor('faq'), i.nav.faq],
+  // Docs và blog là site riêng (VEIL-1335): mọi ngôn ngữ trỏ gốc site — docs /vi/ gốc là trang dự phòng noindex
+  ['https://docs.veilus.io/', i.nav.docs],
+  ['https://blog.veilus.io/', i.nav.blog],
 ];
 ---
 
