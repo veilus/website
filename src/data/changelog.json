@@ -1,5 +1,12 @@
 [
   {
+    "version": "0.2.8",
+    "date": "2026-10-10",
+    "changes": [
+      "Apple GPU profiles keep separate WebGL 1 and WebGL 2 extension lists, re-measured on Chrome 154"
+    ]
+  },
+  {
     "version": "0.2.7",
     "date": "2026-10-09",
     "changes": [
