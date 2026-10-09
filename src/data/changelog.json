@@ -1,5 +1,12 @@
 [
   {
+    "version": "0.2.7",
+    "date": "2026-10-09",
+    "changes": [
+      "Maintenance release: delivered to 0.2.6 through the new automatic update"
+    ]
+  },
+  {
     "version": "0.2.6",
     "date": "2026-10-09",
     "changes": [
