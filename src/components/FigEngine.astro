@@ -8,7 +8,7 @@
  * Không đưa chi tiết patch lên đây: repo này công khai (CLAUDE.md của website).
  */
 import type { Lang } from '../i18n/utils';
-import { t, defaultLang } from '../i18n/utils';
+import { t, defaultLang, docsUrl } from '../i18n/utils';
 import { FINGERPRINT_FIELDS } from '../data/facts.js';
 
 interface Props {
@@ -16,6 +16,7 @@ interface Props {
 }
 const lang = Astro.props.lang || defaultLang;
 const f = t(lang).home.engine;
+const more = t(lang).home.more;
 const delay = (s: number) => `--d:${s.toFixed(2)}s`;
 const ASK = 'navigator.hardwareConcurrency';
 ---
@@ -59,9 +60,13 @@ const ASK = 'navigator.hardwareConcurrency';
     </figure>
   </div>
   <p class="k-eng-foot"><b>{FINGERPRINT_FIELDS}</b> {f.fields} <span>{f.surfaces}</span></p>
+  <p class="k-more"><a href={docsUrl('engine/chromium', lang)}>{more.engine}</a></p>
 </section>
 
 <style>
+  .k-more { margin: 18px 0 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+  .k-more a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .k-more a:hover { color: var(--acc); }
   /* .k-sub chung bỏ giới hạn ngang; đoạn ở đây dài hai dòng nên giữ số đo đọc được. */
   .k-sub { max-width: 64ch; }
   .k-eng { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }

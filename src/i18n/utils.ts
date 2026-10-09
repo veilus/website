@@ -56,6 +56,21 @@ export function getLocalizedPath(path: string, lang: Lang): string {
 }
 
 /** hreflang của trang đang dựng cho mọi ngôn ngữ, cùng dạng URL với canonical: https://veilus.io/vi/download/; code là mã khai (zh-Hans, pt-BR). */
+/**
+ * URL một trang docs theo ngôn ngữ. Chỉ 10 trang có bản dịch tiếng Việt thật (đếm docs 989e4fc, 2026-10-09);
+ * trang /vi/ khác là bản dự phòng noindex, link vào đó là đổ PageRank vào trang không được index.
+ * Ngôn ngữ khác tiếng Việt chưa có docs riêng → bản tiếng Anh.
+ */
+export const DOCS_URL = 'https://docs.veilus.io';
+const DOCS_VI = new Set([
+  'getting-started/installation', 'getting-started/quickstart', 'profiles/datasets', 'profiles/fingerprinting',
+  'profiles/proxy', 'recipes/llm-scripts', 'reference/faq', 'reference/mcp', 'reference/plans-and-license', 'reference/rest-api',
+]);
+export function docsUrl(page: string, lang: Lang): string {
+  const prefix = lang === 'vi' && DOCS_VI.has(page) ? '/vi' : '';
+  return `${DOCS_URL}${prefix}/${page}/`;
+}
+
 export function getHreflangs(currentPath: string, siteUrl: string) {
     const cleanPath = stripLang(currentPath);
     return supportedLangs.map((lang) => ({ lang, code: languages[lang].hreflang, href: `${siteUrl}${getLocalizedPath(cleanPath, lang)}` }));

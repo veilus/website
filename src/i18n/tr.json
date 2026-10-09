@@ -484,6 +484,13 @@
             "fig": "sonraki adım",
             "title": "Veilus'u indirin. Yapay zekâ asistanınızı bağlayın. Talimat verin.",
             "micro": "Kart gerekmez · profiller varsayılan olarak bilgisayarınızda kalır"
+        },
+        "more": {
+            "faq": "Daha fazla",
+            "mcp": "Tüm MCP araçları ve nasıl bağlanılır",
+            "mcpDocs": "Belgelerdeki MCP başvurusu",
+            "engine": "Chromium motoru hakkında",
+            "backup": "Veilus Sync'i kurun"
         }
     },
     "legal": {

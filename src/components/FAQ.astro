@@ -5,7 +5,7 @@
  * FAQPage (VEIL-1031; trước đó Layout.astro khai nó trên mọi trang).
  */
 import type { Lang } from '../i18n/utils';
-import { t, defaultLang } from '../i18n/utils';
+import { t, defaultLang, getLocalizedPath, docsUrl } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -13,6 +13,19 @@ interface Props {
 const lang = Astro.props.lang || defaultLang;
 const i = t(lang);
 const q = i.faq;
+// Link đọc thêm theo thứ tự 9 câu trong faq.items (VEIL-1333): đặt ngoài <p> trả lời để acceptedAnswer.text không đổi.
+const MORE = [
+  docsUrl('profiles/fingerprinting', lang),
+  getLocalizedPath('/pricing', lang),
+  docsUrl('reference/plans-and-license', lang),
+  getLocalizedPath('/download', lang),
+  docsUrl('sync/overview', lang),
+  docsUrl('profiles/proxy', lang),
+  getLocalizedPath('/features/mcp', lang),
+  docsUrl('automation/overview', lang),
+  getLocalizedPath('/refund', lang),
+];
+if (MORE.length !== q.items.length) throw new Error(`FAQ: ${MORE.length} link cho ${q.items.length} câu`);
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -35,6 +48,7 @@ const faqJsonLd = {
           <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" data-icon="add" aria-hidden="true"></span>
         </summary>
         <p>{item.a}</p>
+        <p class="k-faq-more"><a href={MORE[n]}>{i.home.more.faq}</a></p>
       </details>
     ))}
   </div>
@@ -52,9 +66,12 @@ const faqJsonLd = {
   .k-faq summary .ms { display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; transition: transform 0.2s ease; }
   .k-faq details[open] summary .ms { transform: rotate(45deg); }
   .k-faq p { max-width: 54em; margin: 0; padding: 0 48px 20px 72px; font-size: 15px; line-height: 1.65; color: var(--muted); }
+  .k-faq .k-faq-more { margin-top: -10px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+  .k-faq .k-faq-more a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
   @media (max-width: 720px) {
     .k-faq summary { grid-template-columns: 36px minmax(0, 1fr) 24px; padding: 16px 8px; font-size: 15.5px; }
     .k-faq p { padding: 0 16px 18px 52px; }
+    .k-faq .k-faq-more { margin-top: -8px; }
   }
 </style>

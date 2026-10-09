@@ -484,6 +484,13 @@
             "fig": "bước tiếp theo",
             "title": "Tải Veilus. Nối trợ lý AI. Ra lệnh.",
             "micro": "Không cần thẻ · hồ sơ mặc định nằm trên máy bạn"
+        },
+        "more": {
+            "faq": "Đọc thêm",
+            "mcp": "Toàn bộ công cụ MCP và cách kết nối",
+            "mcpDocs": "Tài liệu tham chiếu MCP",
+            "engine": "Về engine Chromium",
+            "backup": "Thiết lập Veilus Sync"
         }
     },
     "legal": {

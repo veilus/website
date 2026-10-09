@@ -7,7 +7,7 @@
  * Không câu nào ở đây được nói dữ liệu đồng bộ được mã hoá.
  */
 import type { Lang } from '../i18n/utils';
-import { t, defaultLang } from '../i18n/utils';
+import { t, defaultLang, docsUrl } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -15,6 +15,7 @@ interface Props {
 const lang = Astro.props.lang || defaultLang;
 const h = t(lang).home;
 const f = h.fig5;
+const more = h.more;
 const delay = (s: number) => `--d:${s.toFixed(2)}s`;
 ---
 
@@ -72,9 +73,13 @@ const delay = (s: number) => `--d:${s.toFixed(2)}s`;
       <div class="k-bkc">{f.syncNote}</div>
     </div>
   </div>
+  <p class="k-more"><a href={docsUrl('sync/overview', lang)}>{more.backup}</a></p>
 </section>
 
 <style>
+  .k-more { margin: 18px 0 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+  .k-more a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .k-more a:hover { color: var(--acc); }
   .k-bk { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .k-bkp { display: flex; flex-direction: column; gap: 18px; min-height: 330px; padding: 20px 20px 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); }
   .k-bkh { display: flex; align-items: center; gap: 10px; }

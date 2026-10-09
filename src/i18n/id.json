@@ -484,6 +484,13 @@
             "fig": "langkah berikutnya",
             "title": "Unduh Veilus. Sambungkan asisten AI Anda. Beri perintah.",
             "micro": "Tanpa kartu · secara default, profil tetap di komputer Anda"
+        },
+        "more": {
+            "faq": "Baca selengkapnya",
+            "mcp": "Semua alat MCP dan cara menghubungkannya",
+            "mcpDocs": "Referensi MCP di dokumentasi",
+            "engine": "Tentang mesin Chromium",
+            "backup": "Siapkan Veilus Sync"
         }
     },
     "legal": {

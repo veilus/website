@@ -484,6 +484,13 @@
             "fig": "next step",
             "title": "Download Veilus. Connect your AI assistant. Give the order.",
             "micro": "No card needed · profiles stay on your machine by default"
+        },
+        "more": {
+            "faq": "Read more",
+            "mcp": "All MCP tools, and how to connect",
+            "mcpDocs": "MCP reference in the docs",
+            "engine": "About the Chromium engine",
+            "backup": "Set up Veilus Sync"
         }
     },
     "legal": {

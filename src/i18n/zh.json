@@ -484,6 +484,13 @@
             "fig": "下一步",
             "title": "下载 Veilus。连接你的 AI 助手。下指令。",
             "micro": "无需绑卡 · 配置文件默认留在你的电脑上"
+        },
+        "more": {
+            "faq": "了解更多",
+            "mcp": "全部 MCP 工具与连接方式",
+            "mcpDocs": "文档中的 MCP 参考",
+            "engine": "关于 Chromium 引擎",
+            "backup": "设置 Veilus Sync"
         }
     },
     "legal": {

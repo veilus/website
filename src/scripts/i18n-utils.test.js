@@ -7,7 +7,13 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { stripLang, getLocalizedPath, getHreflangs, supportedLangs, languages } from '../i18n/utils.ts';
+import { stripLang, getLocalizedPath, getHreflangs, supportedLangs, languages, docsUrl } from '../i18n/utils.ts';
+
+test('docsUrl: /vi/ chỉ cho trang có bản dịch thật, ngôn ngữ khác về bản tiếng Anh (VEIL-1333)', () => {
+  assert.equal(docsUrl('profiles/proxy', 'vi'), 'https://docs.veilus.io/vi/profiles/proxy/');
+  assert.equal(docsUrl('sync/overview', 'vi'), 'https://docs.veilus.io/sync/overview/');
+  assert.equal(docsUrl('profiles/proxy', 'ru'), 'https://docs.veilus.io/profiles/proxy/');
+});
 
 test('stripLang: bỏ tiền tố ngôn ngữ, ranh giới (?=\\/|$) giữ /vietnam và /identity nguyên vẹn', () => {
   assert.equal(stripLang('/'), '/');

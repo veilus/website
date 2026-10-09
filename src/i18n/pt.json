@@ -484,6 +484,13 @@
             "fig": "próximo passo",
             "title": "Baixe o Veilus. Conecte seu assistente de IA. Dê a ordem.",
             "micro": "Sem cartão · por padrão, seus perfis ficam no seu computador"
+        },
+        "more": {
+            "faq": "Saiba mais",
+            "mcp": "Todas as ferramentas MCP e como conectar",
+            "mcpDocs": "Referência MCP na documentação",
+            "engine": "Sobre o motor Chromium",
+            "backup": "Configurar o Veilus Sync"
         }
     },
     "legal": {

@@ -1,11 +1,11 @@
 ---
 /**
  * Hình 4 — vòng làm việc với trợ lý AI (spec trang chủ §4 dòng 4). Tên tool là tên thật trong
- * api-catalog của app; create_schedule chưa có (VEIL-962) nên mang nhãn "sắp có".
+ * api-catalog của app (create_schedule có từ 0.2.2; nhãn "sắp có" đã gỡ).
  * Hiệu ứng: sáu bước hiện theo thứ tự, rồi sáng lần lượt 01→06 và lặp khi phần này trên màn hình.
  */
 import type { Lang } from '../i18n/utils';
-import { t, defaultLang } from '../i18n/utils';
+import { t, defaultLang, getLocalizedPath, docsUrl } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
@@ -17,6 +17,8 @@ const page = Astro.props.page ?? false;
 const i = t(lang);
 const f = i.home.fig4;
 const Heading = page ? 'h1' : 'h2';
+// Trang chủ trỏ sang /features/mcp/; chính trang đó trỏ sang docs (không tự link, VEIL-1333)
+const more = page ? [docsUrl('reference/mcp', lang), i.home.more.mcpDocs] : [getLocalizedPath('/features/mcp', lang), i.home.more.mcp];
 // --d: độ trễ khi hiện; --i: thứ tự sáng trong vòng lặp
 const node = (n: number) => `--d:${(0.15 + n * 0.25).toFixed(2)}s;--i:${n}`;
 const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
@@ -71,9 +73,13 @@ const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;
       <div class="k-conn-foot"><span class="ms" data-icon="lock" aria-hidden="true"></span>{f.local}</div>
     </div>
   </div>
+  <p class="k-more"><a href={more[0]}>{more[1]}</a></p>
 </section>
 
 <style>
+  .k-more { margin: 18px 0 0; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; }
+  .k-more a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .k-more a:hover { color: var(--acc); }
   .k-page { padding-top: 56px; }
   .k-mcp { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: stretch; }
   .k-loop { display: grid; grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr) 48px minmax(0, 1fr); grid-template-areas: 'n1 a1 n2 a2 n3' '. . . . a3' 'n6 a5 n5 a4 n4'; align-items: center; padding: 34px 30px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.92); }
