@@ -213,6 +213,11 @@
         "expired": "Este pedido ha caducado.",
         "usdtExpired": "Este pedido ha caducado. ¿Ya enviaste el importe exacto? No lo envíes de nuevo: aun así asociaremos tu transferencia a este pedido. Si no, crea un pedido nuevo.",
         "newOrder": "Crear un pedido nuevo",
+        "sendTo": "Enviaremos la clave a:",
+        "editEmail": "Editar",
+        "paidCode": "Código del pedido:",
+        "support": "¿Perdiste la clave? Guarda el código del pedido y el comprobante de pago, y escríbenos para que te la reenviemos:",
+        "buyMore": "Comprar más",
         "err": {
             "input": "Revisa tu correo y la clave de licencia.",
             "wrongSku": "Esta opción no corresponde a tu clave.",

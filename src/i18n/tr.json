@@ -213,6 +213,11 @@
         "expired": "Bu siparişin süresi doldu.",
         "usdtExpired": "Bu siparişin süresi doldu. Tam tutarı zaten gönderdiniz mi? Tekrar göndermeyin — işleminizi yine de bu siparişle eşleştireceğiz. Göndermediyseniz yeni bir sipariş oluşturun.",
         "newOrder": "Yeni sipariş oluştur",
+        "sendTo": "Anahtar şu adrese gönderilecek:",
+        "editEmail": "Düzenle",
+        "paidCode": "Sipariş kodu:",
+        "support": "Anahtarınızı mı kaybettiniz? Sipariş kodunu ve ödeme makbuzunu saklayın, yeniden gönderilmesi için bize yazın:",
+        "buyMore": "Daha fazla satın al",
         "err": {
             "input": "E-postanızı ve lisans anahtarınızı kontrol edin.",
             "wrongSku": "Bu seçenek anahtarınızla eşleşmiyor.",

@@ -213,6 +213,11 @@
         "expired": "Đơn đã hết hạn.",
         "usdtExpired": "Đơn đã hết hạn. Bạn đã chuyển đúng số tiền rồi? Đừng chuyển lại — chúng tôi vẫn ghép giao dịch của bạn với đơn này. Nếu chưa, hãy tạo đơn mới.",
         "newOrder": "Tạo đơn mới",
+        "sendTo": "Key sẽ gửi tới:",
+        "editEmail": "Sửa",
+        "paidCode": "Mã đơn:",
+        "support": "Mất key? Giữ mã đơn và biên lai thanh toán, rồi nhắn chúng tôi để được gửi lại:",
+        "buyMore": "Mua thêm",
         "err": {
             "input": "Kiểm tra lại email và key license.",
             "wrongSku": "Lựa chọn này không khớp với key của bạn.",

@@ -120,6 +120,10 @@ const skusOf = (kind: string) =>
             >
           </dd>
         </dl>
+        <p class="buy-sendto">
+          {b.sendTo} <strong class="buy-email-echo"></strong>
+          <button type="button" class="buy-edit-email">{b.editEmail}</button>
+        </p>
         <p>{b.expires}</p>
         <p>{b.qrHint}</p>
         <p class="buy-status">{b.waiting}</p>
@@ -143,6 +147,10 @@ const skusOf = (kind: string) =>
             >
           </dd>
         </dl>
+        <p class="buy-sendto">
+          {b.sendTo} <strong class="buy-email-echo"></strong>
+          <button type="button" class="buy-edit-email">{b.editEmail}</button>
+        </p>
         <p><strong>{b.usdtNetworkWarn}</strong></p>
         <p>{b.usdtExactWarn}</p>
         {/* Không có dòng "hết hạn sau 24 giờ" như màn VNĐ: đồng hồ dưới đây đã cho thấy thời gian còn lại thật. */}
@@ -162,6 +170,14 @@ const skusOf = (kind: string) =>
         <p>{b.paidKeyHint}</p>
       </div>
       <p id="buy-paid-added" hidden>{b.paidAdded}</p>
+      <div id="buy-paid-after" hidden>
+        <p id="buy-paid-code-row" hidden>{b.paidCode} <code id="buy-paid-code"></code></p>
+        <p>
+          {b.support}
+          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">{b.telegramCta}</a>
+        </p>
+        <button type="button" class="btn btn-primary" id="buy-more">{b.buyMore}</button>
+      </div>
       <div id="buy-expired" hidden>
         <p id="buy-expired-msg">{b.expired}</p>
         <button type="button" class="btn btn-primary" id="buy-new-order"
@@ -354,6 +370,7 @@ const skusOf = (kind: string) =>
       code: r.data.code,
       amount: r.data.amount,
       qr_url: r.data.qr_url,
+      email: f.email,
     };
     try {
       sessionStorage.setItem(STORE, JSON.stringify(order));
@@ -383,6 +400,7 @@ const skusOf = (kind: string) =>
     amount_usdt: string; // chuỗi để hiện, ví dụ "99.0173"
     address: string;
     expires_at: string | null; // ISO; GET /orders/:id không trả lại, nên giữ ở đây cho đồng hồ sau khi tải lại trang
+    email?: string; // chỉ để hiện lại "key sẽ gửi tới" sau khi tải lại trang
   };
 
   async function payUsdt() {
@@ -411,6 +429,7 @@ const skusOf = (kind: string) =>
       amount_usdt: d.amount_usdt,
       address: d.address,
       expires_at: typeof d.expires_at === "string" ? d.expires_at : null,
+      email: f.email,
     };
     try {
       sessionStorage.setItem(STORE, JSON.stringify(order));
@@ -422,7 +441,7 @@ const skusOf = (kind: string) =>
 
   usdtBtn?.addEventListener("click", () => withBusy(payUsdt));
 
-  type Order = { id: string; code: string; amount: number; qr_url: string };
+  type Order = { id: string; code: string; amount: number; qr_url: string; email?: string };
 
   function show(id: string, on: boolean) {
     $(id).hidden = !on;
@@ -433,11 +452,12 @@ const skusOf = (kind: string) =>
     show("buy-order", true);
     show("buy-pending", true);
     show("buy-usdt-pending", false);
-    ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
+    ["buy-paid-key", "buy-paid-added", "buy-paid-after", "buy-expired"].forEach((id) => show(id, false));
     const qr = safeCheckoutUrl(o.qr_url);
     if (qr) ($("buy-qr") as HTMLImageElement).src = qr;
     $("buy-amount").textContent = formatPrice(o.amount, "VND", lang);
     $("buy-code").textContent = o.code;
+    echoEmail(o.email);
     poll(o.id);
   }
 
@@ -484,12 +504,20 @@ const skusOf = (kind: string) =>
     show("buy-pending", false);
     show("buy-usdt-pending", true);
     show("buy-sub", false); // phụ đề "trả bằng thẻ quốc tế" không còn đúng trên màn chuyển USDT
-    ["buy-paid-key", "buy-paid-added", "buy-expired"].forEach((id) => show(id, false));
+    ["buy-paid-key", "buy-paid-added", "buy-paid-after", "buy-expired"].forEach((id) => show(id, false));
     $("buy-usdt-address").textContent = o.address;
     $("buy-usdt-amount").textContent = o.amount_usdt;
+    echoEmail(o.email);
     void renderQr($("buy-usdt-qr"), o.address); // tự bắt lỗi bên trong; không chờ để địa chỉ và đồng hồ hiện ngay
     startCountdown(o.expires_at);
     poll(o.id, true);
+  }
+
+  // Email khách gõ hiện lại trên màn chuyển tiền: gõ sai thì thấy TRƯỚC khi trả (key cũng hiện trên trang khi đã trả).
+  // Bản ghi cũ trong sessionStorage không có email thì ẩn dòng này.
+  function echoEmail(email: string | undefined) {
+    document.querySelectorAll<HTMLElement>(".buy-email-echo").forEach((el) => (el.textContent = email ?? ""));
+    document.querySelectorAll<HTMLElement>(".buy-sendto").forEach((el) => (el.hidden = !email));
   }
 
   function clearStore() {
@@ -537,6 +565,10 @@ const skusOf = (kind: string) =>
             $("buy-new-key").textContent = d.key;
             show("buy-paid-key", true);
           } else show("buy-paid-added", true);
+          const code = typeof d.code === "string" ? d.code : "";
+          $("buy-paid-code").textContent = code;
+          show("buy-paid-code-row", !!code);
+          show("buy-paid-after", true);
           return;
         }
         if (d.status === "expired") {
@@ -555,13 +587,29 @@ const skusOf = (kind: string) =>
     tick();
   }
 
-  $("buy-new-order").addEventListener("click", () => {
+  // Về form cho đơn mới: sau khi hết hạn, sau khi đã trả ("Mua thêm"), hoặc để sửa email trước khi trả.
+  // Đơn cũ chưa trả thì cứ để máy chủ cho hết hạn; ô email giữ nguyên chữ đã gõ để sửa.
+  function backToForm() {
+    pollGen++; // vòng poll đang chạy bỏ kết quả của nó
+    clearTimeout(timer);
+    // Tải lại trang thì ô email trống: điền lại email của đơn vừa bỏ để sửa chứ không gõ lại từ đầu.
+    if (!emailEl.value) {
+      try {
+        const saved = JSON.parse(sessionStorage.getItem(STORE) || "null");
+        if (typeof saved?.email === "string") emailEl.value = saved.email;
+      } catch {
+        /* không đọc được: để trống */
+      }
+    }
     clearStore();
     clearInterval(clock);
     show("buy-order", false);
     form.hidden = false;
     syncPayRow(); // #buy-sub nằm ngoài form và màn USDT đã ẩn nó: tính lại theo gói đang chọn
-  });
+  }
+  $("buy-new-order").addEventListener("click", backToForm);
+  $("buy-more").addEventListener("click", backToForm);
+  document.querySelectorAll(".buy-edit-email").forEach((b) => b.addEventListener("click", backToForm));
 
   // 6. Tải lại trang vẫn theo dõi đơn đang chờ.
   try {
@@ -595,6 +643,16 @@ const skusOf = (kind: string) =>
   }
   .buy-sub {
     margin-bottom: var(--space-xl);
+  }
+  .buy-edit-email {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: var(--space-xs);
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
   }
   .buy-choose {
     border: none;

@@ -213,6 +213,11 @@
         "expired": "This order has expired.",
         "usdtExpired": "This order has expired. Already sent the exact amount? Don't send it again — we'll still match your transfer to this order. Otherwise, create a new order.",
         "newOrder": "Create a new order",
+        "sendTo": "Your key will be sent to:",
+        "editEmail": "Edit",
+        "paidCode": "Order code:",
+        "support": "Lost your key? Keep the order code and your payment receipt, then message us to get it resent:",
+        "buyMore": "Buy more",
         "err": {
             "input": "Please check your email and license key.",
             "wrongSku": "This option does not match your key.",

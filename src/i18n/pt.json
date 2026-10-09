@@ -213,6 +213,11 @@
         "expired": "Este pedido expirou.",
         "usdtExpired": "Este pedido expirou. Já enviou o valor exato? Não envie de novo — ainda vamos associar sua transferência a este pedido. Caso contrário, crie um novo pedido.",
         "newOrder": "Criar novo pedido",
+        "sendTo": "A chave será enviada para:",
+        "editEmail": "Editar",
+        "paidCode": "Código do pedido:",
+        "support": "Perdeu a chave? Guarde o código do pedido e o comprovante de pagamento e fale conosco para recebê-la de novo:",
+        "buyMore": "Comprar mais",
         "err": {
             "input": "Verifique seu e-mail e a chave de licença.",
             "wrongSku": "Esta opção não corresponde à sua chave.",

@@ -213,6 +213,11 @@
         "expired": "Pesanan ini sudah kedaluwarsa.",
         "usdtExpired": "Pesanan ini sudah kedaluwarsa. Sudah mengirim jumlah yang tepat? Jangan kirim lagi — kami tetap akan mencocokkan transfer Anda dengan pesanan ini. Jika belum, buat pesanan baru.",
         "newOrder": "Buat pesanan baru",
+        "sendTo": "Key akan dikirim ke:",
+        "editEmail": "Ubah",
+        "paidCode": "Kode pesanan:",
+        "support": "Kehilangan key? Simpan kode pesanan dan bukti pembayaran, lalu hubungi kami agar key dikirim ulang:",
+        "buyMore": "Beli lagi",
         "err": {
             "input": "Periksa email dan kunci lisensi Anda.",
             "wrongSku": "Opsi ini tidak cocok dengan kunci Anda.",
