@@ -45,7 +45,9 @@ const xDefault = hreflangs.find((h) => h.lang === defaultLang)!.href;
 const GA_ID = "G-CZ9G6B0L4M";
 
 // Ảnh chia sẻ: tên file mang tháng làm ra nó. Thay ảnh thì đổi tên, mạng xã hội cache theo URL nên mới lấy ảnh mới.
-const ogImage = `${siteUrl}/og-image-2026-09.png`;
+// Ảnh chụp phần đầu trang chủ theo ngôn ngữ, sinh bằng scripts/render-og.cjs (VEIL-1336). Đổi tháng khi chụp lại.
+const OG_IMAGE_STAMP = '2026-10';
+const ogImage = `${siteUrl}/og-image-${OG_IMAGE_STAMP}-${lang}.png`;
 
 // JSON-LD Structured Data. Giá theo loại tiền trang đang hiện: bảng giá (Pricing.astro) dùng cùng currencyForLang.
 const currency = currencyForLang(lang);

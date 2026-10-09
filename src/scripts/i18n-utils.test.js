@@ -7,7 +7,17 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
 import { stripLang, getLocalizedPath, getHreflangs, supportedLangs, languages, docsUrl } from '../i18n/utils.ts';
+
+test('og:image: Layout.astro trỏ ảnh có thật cho cả 8 ngôn ngữ (VEIL-1336)', () => {
+  const layout = readFileSync(new URL('../layouts/Layout.astro', import.meta.url), 'utf8');
+  const stamp = layout.match(/OG_IMAGE_STAMP = '([^']+)'/)?.[1];
+  assert.ok(stamp, 'Layout.astro thiếu OG_IMAGE_STAMP');
+  for (const lang of supportedLangs) {
+    assert.ok(existsSync(new URL(`../../public/og-image-${stamp}-${lang}.png`, import.meta.url)), `thiếu og-image-${stamp}-${lang}.png`);
+  }
+});
 
 test('docsUrl: /vi/ chỉ cho trang có bản dịch thật, ngôn ngữ khác về bản tiếng Anh (VEIL-1333)', () => {
   assert.equal(docsUrl('profiles/proxy', 'vi'), 'https://docs.veilus.io/vi/profiles/proxy/');
