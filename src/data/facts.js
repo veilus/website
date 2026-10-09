@@ -24,7 +24,7 @@ export const MAX_BROWSERS = 16;
  */
 export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheckS: 3, holdMaxS: 60 };
 
-// Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.7 (repo công khai veilus/releases, đăng 2026-10-09, VEIL-1327)
+// Trang tải về (VEIL-1000): đo trên bản phát hành mới nhất v0.2.8 (repo công khai veilus/releases, đăng 2026-10-10, VEIL-1342)
 // và engine mới nhất 154.0.8037.58 (cả hai nền tảng). Chuỗi có "MB" đổi thì đổi cùng lượt dòng ALLOWED của nó trong
 // src/scripts/claims.js — claims.test.js đỏ khi dòng đó không còn nằm nguyên văn trong file này.
 
@@ -39,21 +39,21 @@ export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheck
 export const OS_SUPPORT = { windows: 'Windows 10/11 · x64', macos: 'macOS 13.5+ · Apple Silicon' };
 
 /**
- * Cỡ bộ cài, MB thập phân (10^6) làm tròn. Nguồn: `gh release view v0.2.7 -R veilus/releases --json assets`.
- * Đo 2026-10-09: Veilus_0.2.7_x64-setup.exe 39085645 byte, Veilus_0.2.7_aarch64.dmg 61823459 byte. Lớn hơn v0.2.1
+ * Cỡ bộ cài, MB thập phân (10^6) làm tròn. Nguồn: `gh release view v0.2.8 -R veilus/releases --json assets`.
+ * Đo 2026-10-10: Veilus_0.2.8_x64-setup.exe 39083219 byte, Veilus_0.2.8_aarch64.dmg 61823381 byte. Lớn hơn v0.2.1
  * (6552683 và 9630666 byte) vì từ 0.2.2 bộ cài kèm runtime Node và Playwright (quyết định 0108).
  */
 export const INSTALLER_SIZE = { windows: '.exe · ~39 MB', macos: '.dmg · ~62 MB' };
 
 /**
- * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-10-09: v0.2.7
- * (bản đầu tiên được cài qua tự cập nhật từ 0.2.6, VEIL-1327). Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE
+ * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-10-10: v0.2.8
+ * (VEIL-1342; v0.2.7 là bản đầu tiên được cài qua tự cập nhật từ 0.2.6, VEIL-1327). Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE
  * (đo lại bằng `gh release view v<bản> -R veilus/releases --json assets`); app chưa có updater nên trang giữ bản cũ tới
  * khi hằng này đổi.
  */
-export const APP_VERSION = '0.2.7';
+export const APP_VERSION = '0.2.8';
 
-/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-10-09 (v0.2.7): cả hai URL trả 200 sau chuyển hướng. */
+/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-10-10 (v0.2.8): cả hai URL trả 200 sau chuyển hướng. */
 const RELEASE_BASE = `https://github.com/veilus/releases/releases/download/v${APP_VERSION}`;
 export const DOWNLOAD_URL = {
   windows: `${RELEASE_BASE}/Veilus_${APP_VERSION}_x64-setup.exe`,
