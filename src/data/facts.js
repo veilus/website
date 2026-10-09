@@ -5,9 +5,9 @@
 
 /**
  * Số trường cấu hình fingerprint mà engine Chromium của Veilus nhận; mỗi trường có mã tiêu thụ trong engine.
- * Nguồn: bảng trường engine (field-matrix) ở repo gốc. Đếm 2026-10-01: 58.
+ * Nguồn: bảng trường engine (field-matrix) ở repo gốc. Đếm 2026-10-09: 59 (VEIL-1332 thêm gpuInfo.webgl2Extensions).
  */
-export const FINGERPRINT_FIELDS = 58;
+export const FINGERPRINT_FIELDS = 59;
 
 /**
  * Số trình duyệt app mở cùng lúc, mọi đường mở (tay, lịch, API, trợ lý AI) dùng chung một giới hạn — VEIL-1128.
