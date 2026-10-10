@@ -56,7 +56,7 @@ const availableOn = i.download.availableOn.replace(
           </div>
           <h2 class="platform-name">Windows</h2>
           <p class="platform-version">{OS_SUPPORT.windows}</p>
-          <a class="btn btn-primary platform-download" data-release="open" hidden={!DOWNLOADS_OPEN} href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
+          <a class="btn btn-primary platform-download" data-release="open" data-download="windows" hidden={!DOWNLOADS_OPEN} href={DOWNLOAD_URL.windows}>{i.download.cta.replace("{os}", "Windows")}</a>
           <span class="release-badge" data-release="soon" hidden={DOWNLOADS_OPEN}>{availableOn}</span>
           <span class="platform-size">{INSTALLER_SIZE.windows}</span>
         </div>
@@ -71,7 +71,7 @@ const availableOn = i.download.availableOn.replace(
           </div>
           <h2 class="platform-name">macOS</h2>
           <p class="platform-version">{OS_SUPPORT.macos}</p>
-          <a class="btn btn-primary platform-download" data-release="open" hidden={!DOWNLOADS_OPEN} href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
+          <a class="btn btn-primary platform-download" data-release="open" data-download="macos" hidden={!DOWNLOADS_OPEN} href={DOWNLOAD_URL.macos}>{i.download.cta.replace("{os}", "macOS")}</a>
           <span class="release-badge" data-release="soon" hidden={DOWNLOADS_OPEN}>{availableOn}</span>
           <span class="platform-size">{INSTALLER_SIZE.macos}</span>
         </div>

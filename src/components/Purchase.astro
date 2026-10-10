@@ -29,7 +29,8 @@ const skusOf = (kind: string) =>
     <h1>{b.title}</h1>
     <p class="buy-sub" id="buy-sub">{vnd ? b.subtitleVnd : b.subtitleUsd}</p>
 
-    <form id="buy-form" class="buy-form" novalidate>
+    {/* action="./": GA (đo form tự động) gửi đích của form; không khai thì đích là URL hiện tại có query (quyết định ga-trang-mua-cat-url). */}
+    <form id="buy-form" class="buy-form" action="./" novalidate>
       <fieldset class="buy-choose">
         <legend>{b.choose}</legend>
         {
@@ -206,6 +207,26 @@ const skusOf = (kind: string) =>
     usdtShown,
     countdownText,
   } from "../scripts/purchase-core.js";
+  import { SKUS } from "../data/skus.js";
+
+  /**
+   * Sự kiện GA4 của luồng mua (VEIL-1344, quyết định ga-trang-mua-cat-url). Chỉ gửi gói, loại tiền, giá niêm yết, cách trả —
+   * KHÔNG email, key, mã đơn hay id đơn (id đơn đọc được key qua GET /orders/:id). Không có gtag (preview,
+   * localhost) thì không làm gì. page_location đã bị ép về origin+pathname ở Layout.
+   */
+  type PayType = "vnd_transfer" | "card" | "usdt";
+  function trackPay(name: string, sku: string, cur: "VND" | "USD", payType?: PayType) {
+    const gtag = (window as any).gtag;
+    const s = (SKUS as Record<string, { vnd: number; usd: number }>)[sku];
+    if (typeof gtag !== "function" || !s) return;
+    const price = cur === "VND" ? s.vnd : s.usd;
+    gtag("event", name, {
+      currency: cur,
+      value: price,
+      payment_type: payType,
+      items: [{ item_id: sku, item_name: sku, price, quantity: 1 }],
+    });
+  }
 
   const STORE = "veilus-order"; // chỉ id + dữ liệu hiển thị của đơn, KHÔNG key
 
@@ -232,6 +253,8 @@ const skusOf = (kind: string) =>
   }
 
   const form = $("buy-form") as HTMLFormElement;
+  // Form chỉ đi qua các nút bấm: Enter không được gửi form kiểu GET (đưa email/key lên thanh địa chỉ).
+  form.addEventListener("submit", (e) => e.preventDefault());
   const payBtn = form.querySelector(".buy-actions button") as HTMLButtonElement;
   const usdtBtn = document.getElementById("buy-usdt") as HTMLButtonElement | null;
   const currency = payCurrency(lang, q);
@@ -371,6 +394,7 @@ const skusOf = (kind: string) =>
       amount: r.data.amount,
       qr_url: r.data.qr_url,
       email: f.email,
+      sku: f.sku,
     };
     try {
       sessionStorage.setItem(STORE, JSON.stringify(order));
@@ -391,7 +415,13 @@ const skusOf = (kind: string) =>
     location.assign(url);
   }
 
-  payBtn.addEventListener("click", () => withBusy(currency === "VND" ? payVnd : payUsd));
+  payBtn.addEventListener("click", () => {
+    const sku = selectedSku();
+    const cur = currency === "VND" ? "VND" : "USD";
+    trackPay("begin_checkout", sku, cur);
+    trackPay("add_payment_info", sku, cur, currency === "VND" ? "vnd_transfer" : "card");
+    return withBusy(currency === "VND" ? payVnd : payUsd);
+  });
 
   type UsdtOrder = {
     id: string;
@@ -401,6 +431,7 @@ const skusOf = (kind: string) =>
     address: string;
     expires_at: string | null; // ISO; GET /orders/:id không trả lại, nên giữ ở đây cho đồng hồ sau khi tải lại trang
     email?: string; // chỉ để hiện lại "key sẽ gửi tới" sau khi tải lại trang
+    sku?: string; // cho sự kiện purchase sau khi tải lại trang
   };
 
   async function payUsdt() {
@@ -430,6 +461,7 @@ const skusOf = (kind: string) =>
       address: d.address,
       expires_at: typeof d.expires_at === "string" ? d.expires_at : null,
       email: f.email,
+      sku: f.sku,
     };
     try {
       sessionStorage.setItem(STORE, JSON.stringify(order));
@@ -439,9 +471,13 @@ const skusOf = (kind: string) =>
     showUsdtOrder(order);
   }
 
-  usdtBtn?.addEventListener("click", () => withBusy(payUsdt));
+  usdtBtn?.addEventListener("click", () => {
+    trackPay("begin_checkout", selectedSku(), "USD");
+    trackPay("add_payment_info", selectedSku(), "USD", "usdt");
+    return withBusy(payUsdt);
+  });
 
-  type Order = { id: string; code: string; amount: number; qr_url: string; email?: string };
+  type Order = { id: string; code: string; amount: number; qr_url: string; email?: string; sku?: string };
 
   function show(id: string, on: boolean) {
     $(id).hidden = !on;
@@ -458,7 +494,7 @@ const skusOf = (kind: string) =>
     $("buy-amount").textContent = formatPrice(o.amount, "VND", lang);
     $("buy-code").textContent = o.code;
     echoEmail(o.email);
-    poll(o.id);
+    poll(o.id, false, o.sku);
   }
 
   /**
@@ -510,7 +546,7 @@ const skusOf = (kind: string) =>
     echoEmail(o.email);
     void renderQr($("buy-usdt-qr"), o.address); // tự bắt lỗi bên trong; không chờ để địa chỉ và đồng hồ hiện ngay
     startCountdown(o.expires_at);
-    poll(o.id, true);
+    poll(o.id, true, o.sku);
   }
 
   // Email khách gõ hiện lại trên màn chuyển tiền: gõ sai thì thấy TRƯỚC khi trả (key cũng hiện trên trang khi đã trả).
@@ -537,10 +573,26 @@ const skusOf = (kind: string) =>
     clearInterval(clock);
   }
 
+  /**
+   * `purchase` một lần cho mỗi đơn: tải lại trang đơn đã trả thì poll lại thấy `paid` — dấu nhớ theo id đơn nằm
+   * trong sessionStorage của chính trình duyệt, id KHÔNG gửi lên GA. Đơn thẻ trả trên LemonSqueezy không quay về
+   * trang này nên không có purchase.
+   */
+  function reportPurchase(id: string, usdt: boolean, sku?: string) {
+    const mark = `veilus-order-tracked:${id}`;
+    try {
+      if (sessionStorage.getItem(mark)) return;
+      sessionStorage.setItem(mark, "1");
+    } catch {
+      /* storage bị chặn: có thể đếm hai lần khi tải lại — chấp nhận */
+    }
+    if (sku) trackPay("purchase", sku, usdt ? "USD" : "VND", usdt ? "usdt" : "vnd_transfer");
+  }
+
   let timer: ReturnType<typeof setTimeout> | undefined;
   let pollGen = 0; // huỷ hiệu lực response của vòng poll cũ khi vòng mới đã bắt đầu
 
-  function poll(id: string, usdt = false) {
+  function poll(id: string, usdt = false, sku?: string) {
     const gen = ++pollGen;
     let last: string | null = null;
     let changedAt = Date.now();
@@ -561,6 +613,7 @@ const skusOf = (kind: string) =>
         }
         if (d.status === "paid") {
           finish(false);
+          reportPurchase(id, usdt, sku);
           if (typeof d.key === "string" && d.key) {
             $("buy-new-key").textContent = d.key;
             show("buy-paid-key", true);

@@ -17,7 +17,7 @@ const i = t(lang);
 const description = currencyForLang(lang) === "VND" ? i.buy.subtitleVnd : i.buy.subtitleUsd;
 ---
 
-<Layout lang={lang} title={`${i.buy.title} — Veilus`} description={description} noTracking>
+<Layout lang={lang} title={`${i.buy.title} — Veilus`} description={description} privateUrl>
   <Navbar lang={lang} />
   <main>
     <Purchase lang={lang} />

@@ -19,8 +19,8 @@ interface Props {
   lang?: Lang;
   title?: string;
   description?: string;
-  /** Trang mang key license trên URL (/mua): không GA, không analytics.js, không Referer, không index. */
-  noTracking?: boolean;
+  /** Trang mang key license trên URL (/mua): GA vẫn đo nhưng chỉ nhận origin+pathname (quyết định ga-trang-mua-cat-url), không Referer, không index. */
+  privateUrl?: boolean;
   /** Trang 404: không có URL riêng nên không canonical, không og:url, không hreflang; không index. */
   notFound?: boolean;
 }
@@ -30,7 +30,7 @@ const i = t(lang);
 const {
   title = i.meta.title,
   description = i.meta.description,
-  noTracking = false,
+  privateUrl = false,
   notFound = false,
 } = Astro.props;
 
@@ -130,9 +130,9 @@ const websiteJsonLd = {
 <html lang={languages[lang].hreflang} dir={languages[lang].dir}>
   <head>
     <meta charset="UTF-8" />
-    {noTracking && <meta name="referrer" content="no-referrer" />}
+    {privateUrl && <meta name="referrer" content="no-referrer" />}
     {/* noindex bằng meta, không bằng robots.txt: chặn crawl thì Google không đọc được noindex */}
-    {(noTracking || notFound) && <meta name="robots" content="noindex" />}
+    {(privateUrl || notFound) && <meta name="robots" content="noindex" />}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script is:inline>
       // Hiệu ứng khi cuộn chỉ bật khi có IntersectionObserver; không có thì trang đứng ở trạng thái cuối.
@@ -146,13 +146,14 @@ const websiteJsonLd = {
     <slot name="head" />
 
     {/* Google Analytics chỉ đo production (veilus.io): bản preview trên pages.dev, localhost và wrangler không gửi
-        page_view. Tắt hẳn trên trang noTracking: page_view gửi cả URL, kể cả ?renew=<key>. gtag.js nạp bằng script
+        page_view. Trang privateUrl (URL có thể mang ?renew=<key>): config ép page_location về origin+pathname nên mọi sự kiện
+        của trang không mang query (quyết định ga-trang-mua-cat-url); lệnh config chạy trước script trang xoá key khỏi thanh địa chỉ. gtag.js nạp bằng script
         vì thẻ <script src> tĩnh không có điều kiện; public/analytics.js không làm gì khi không có window.gtag.
         window.veilusLangTo: trang đang tự chuyển ngôn ngữ — page_view để trang đích gửi. */}
     {
-      !noTracking && (
+      (
         <script
-          set:html={`if(location.hostname==='veilus.io'&&!window.veilusLangTo){window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}');const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.append(s)}`}
+          set:html={`if(location.hostname==='veilus.io'&&!window.veilusLangTo){window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}'${privateUrl ? ",{page_location:location.origin+location.pathname}" : ""});const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.append(s)}`}
         />
       )
     }
@@ -261,7 +262,7 @@ const websiteJsonLd = {
     </script>
 
     <!-- GA4 Custom Events -->
-    {!noTracking && <script src="/analytics.js" defer />}
+    <script src="/analytics.js" defer />
   </body>
 </html>
 
