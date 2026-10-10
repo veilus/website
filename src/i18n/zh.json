@@ -526,9 +526,9 @@
             "数据集：给每个配置文件分配自己的账号、帖子或关键词行"
         ],
         "safety": "通过 MCP 添加的脚本在你于应用中审批之前最多只在 3 个配置文件上运行。API 只监听你的本机。",
-        "videoTitle": "30 秒看完整个流程",
+        "videoTitle": "55 秒看完整个流程",
         "videoPlay": "播放演示视频（YouTube）",
-        "videoNote": "视频中的文字为英文。播放时会加载 YouTube。"
+        "videoNote": "视频为英文。播放时会加载 YouTube。"
     },
     "about": {
         "metaTitle": "关于 Veilus — 由独立开发者打造的指纹浏览器",

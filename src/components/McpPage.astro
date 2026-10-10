@@ -18,20 +18,22 @@ const { lang } = Astro.props;
 const m = t(lang).mcpPage;
 const DOCS_MCP = 'https://docs.veilus.io/reference/mcp/';
 const CLAUDE_CODE = 'claude mcp add --scope user veilus -e VEILUS_API_TOKEN=<token> -- "<path to Veilus>" mcp';
-// Video demo trên kênh YouTube @veilusbrowser (VEIL-1348). Ảnh bìa là khung giây 16 của file gốc
-// veilus-ad-16x9.mp4, tự host: trang không gọi YouTube cho tới khi người xem bấm phát.
-const VIDEO_ID = '-b3ClSFCEuo';
-const VIDEO_POSTER = '/video/mcp-demo-poster.jpg';
+// Video demo film 55 giây trên kênh YouTube @veilusbrowser (VEIL-1348): bản tiếng Việt (giọng VieNeu) cho /vi/,
+// bản tiếng Anh (giọng Kokoro) cho các ngôn ngữ còn lại. Ảnh bìa là khung giây 49,6 của file gốc, tự host:
+// trang không gọi YouTube cho tới khi người xem bấm phát.
+const VIDEO = lang === 'vi'
+  ? { id: 'Zyt34L6yZ2k', poster: '/video/mcp-demo-poster-vi.jpg', name: 'Một câu lệnh, nhiều trình duyệt: trợ lý AI điều khiển Veilus qua MCP' }
+  : { id: '8NRDNW_4KNU', poster: '/video/mcp-demo-poster-en.jpg', name: 'One sentence, many browsers: an AI assistant drives Veilus over MCP' };
 const videoJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
-  name: 'Veilus — One sentence. One AI. Many browsers.',
+  name: VIDEO.name,
   description: m.pageLead,
-  thumbnailUrl: new URL(VIDEO_POSTER, Astro.site).href,
-  uploadDate: '2026-10-04T12:29:36-07:00',
-  duration: 'PT30S',
-  embedUrl: `https://www.youtube-nocookie.com/embed/${VIDEO_ID}`,
-  url: `https://www.youtube.com/watch?v=${VIDEO_ID}`,
+  thumbnailUrl: new URL(VIDEO.poster, Astro.site).href,
+  uploadDate: '2026-10-11',
+  duration: 'PT55S',
+  embedUrl: `https://www.youtube-nocookie.com/embed/${VIDEO.id}`,
+  url: `https://www.youtube.com/watch?v=${VIDEO.id}`,
 };
 const CLIENT_JSON = `{
   "mcpServers": {
@@ -51,8 +53,8 @@ const CLIENT_JSON = `{
   <section class="k-wrap k-sec" id="demo" data-reveal>
     <h2 class="k-h2">{m.videoTitle}</h2>
     <div class="k-video">
-      <button type="button" class="k-play" data-video={VIDEO_ID} aria-label={m.videoPlay}>
-        <img src={VIDEO_POSTER} alt="" width="1280" height="720" loading="lazy" decoding="async" />
+      <button type="button" class="k-play" data-video={VIDEO.id} aria-label={m.videoPlay}>
+        <img src={VIDEO.poster} alt="" width="1280" height="720" loading="lazy" decoding="async" />
         <span class="ms" data-icon="play_circle" aria-hidden="true"></span>
       </button>
     </div>

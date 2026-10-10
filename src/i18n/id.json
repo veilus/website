@@ -526,9 +526,9 @@
             "Dataset: memberi setiap profil baris akun, postingan, atau kata kunci miliknya sendiri"
         ],
         "safety": "Skrip yang ditambahkan lewat MCP berjalan paling banyak di 3 profil sampai Anda menyetujuinya di aplikasi. API hanya mendengarkan di komputer Anda.",
-        "videoTitle": "Lihat seluruh alurnya dalam 30 detik",
+        "videoTitle": "Lihat seluruh alurnya dalam 55 detik",
         "videoPlay": "Putar video demo (YouTube)",
-        "videoNote": "Teks di video berbahasa Inggris. Memutarnya akan memuat YouTube."
+        "videoNote": "Video berbahasa Inggris. Memutarnya akan memuat YouTube."
     },
     "about": {
         "metaTitle": "Tentang Veilus — peramban anti-deteksi buatan pengembang independen",
