@@ -525,7 +525,10 @@
             "Toplu ve zamanlanmış: betiği onayladıktan sonra birçok profilde aynı anda ya da her gün belirli saatte çalıştırma",
             "Veri kümeleri: her profile kendi hesap, gönderi veya anahtar kelime satırlarını verme"
         ],
-        "safety": "MCP üzerinden eklenen betikler, siz uygulamada onaylayana kadar en fazla 3 profilde çalışır. API yalnızca kendi makinenizde dinler."
+        "safety": "MCP üzerinden eklenen betikler, siz uygulamada onaylayana kadar en fazla 3 profilde çalışır. API yalnızca kendi makinenizde dinler.",
+        "videoTitle": "Tüm döngüyü 30 saniyede izleyin",
+        "videoPlay": "Tanıtım videosunu oynat (YouTube)",
+        "videoNote": "Videodaki yazılar İngilizcedir. Oynatınca YouTube yüklenir."
     },
     "about": {
         "metaTitle": "Veilus Hakkında — bağımsız bir geliştiricinin yaptığı anti-tespit tarayıcı",

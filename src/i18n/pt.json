@@ -525,7 +525,10 @@
             "Lote e agendamentos: executar em muitos perfis de uma vez ou todo dia em um horário definido, depois que você aprovar o script",
             "Conjuntos de dados: dar a cada perfil suas próprias linhas de contas, posts ou palavras-chave"
         ],
-        "safety": "Scripts adicionados via MCP rodam em no máximo 3 perfis até você aprová-los no app. A API escuta apenas na sua máquina."
+        "safety": "Scripts adicionados via MCP rodam em no máximo 3 perfis até você aprová-los no app. A API escuta apenas na sua máquina.",
+        "videoTitle": "Veja o ciclo completo em 30 segundos",
+        "videoPlay": "Reproduzir o vídeo de demonstração (YouTube)",
+        "videoNote": "Os textos do vídeo estão em inglês. Ao reproduzir, o YouTube é carregado."
     },
     "about": {
         "metaTitle": "Sobre o Veilus — um navegador antidetecção criado por um desenvolvedor independente",

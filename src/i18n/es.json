@@ -525,7 +525,10 @@
             "Lotes y programaciones: ejecutar en muchos perfiles a la vez o cada día a una hora fija, después de que apruebes el script",
             "Conjuntos de datos: dar a cada perfil sus propias filas de cuentas, publicaciones o palabras clave"
         ],
-        "safety": "Los scripts añadidos por MCP se ejecutan en 3 perfiles como máximo hasta que los apruebes en la app. La API solo escucha en tu equipo."
+        "safety": "Los scripts añadidos por MCP se ejecutan en 3 perfiles como máximo hasta que los apruebes en la app. La API solo escucha en tu equipo.",
+        "videoTitle": "Mira el ciclo completo en 30 segundos",
+        "videoPlay": "Reproducir el vídeo de demostración (YouTube)",
+        "videoNote": "Los textos del vídeo están en inglés. Al reproducirlo se carga YouTube."
     },
     "about": {
         "metaTitle": "Acerca de Veilus — un navegador antidetección creado por un desarrollador independiente",

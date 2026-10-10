@@ -525,7 +525,10 @@
             "Batch and schedules: run on many profiles at once or every day at a set time, after you approve the script",
             "Datasets: give each profile its own rows of accounts, posts or keywords"
         ],
-        "safety": "Scripts added over MCP run on at most 3 profiles until you approve them in the app. The API listens on your machine only."
+        "safety": "Scripts added over MCP run on at most 3 profiles until you approve them in the app. The API listens on your machine only.",
+        "videoTitle": "See the whole loop in 30 seconds",
+        "videoPlay": "Play the demo video (YouTube)",
+        "videoNote": "Text in the video is in English. Playing it loads YouTube."
     },
     "about": {
         "metaTitle": "About Veilus — an anti-detect browser built by an independent developer",

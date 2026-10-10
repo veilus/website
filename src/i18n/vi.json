@@ -525,7 +525,10 @@
             "Chạy hàng loạt và lịch: chạy trên nhiều profile cùng lúc hoặc mỗi ngày vào giờ định sẵn, sau khi bạn duyệt script",
             "Bộ dữ liệu: cho mỗi profile phần tài khoản, bài đăng hay từ khoá của riêng nó"
         ],
-        "safety": "Script thêm qua MCP chỉ chạy tối đa 3 profile cho tới khi bạn duyệt trong app. API chỉ lắng nghe trên máy bạn."
+        "safety": "Script thêm qua MCP chỉ chạy tối đa 3 profile cho tới khi bạn duyệt trong app. API chỉ lắng nghe trên máy bạn.",
+        "videoTitle": "Xem trọn vòng lặp trong 30 giây",
+        "videoPlay": "Phát video demo (YouTube)",
+        "videoNote": "Chữ trong video là tiếng Anh. Bấm phát sẽ tải YouTube."
     },
     "about": {
         "metaTitle": "Giới thiệu Veilus — trình duyệt antidetect do một nhà phát triển độc lập xây dựng",
