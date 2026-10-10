@@ -8,7 +8,7 @@ export const privacyTranslations: Record<string, {
     en: {
         title: "Privacy Policy",
         description: "How Veilus collects, uses, and protects your data.",
-        lastUpdated: "March 6, 2026",
+        lastUpdated: "October 11, 2026",
         content: `
 <h2>1. Introduction</h2>
 <p>Veilus ("we", "our", "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use the Veilus application and website (collectively, the "Service").</p>
@@ -62,6 +62,7 @@ export const privacyTranslations: Record<string, {
   <tr><td>Bank (VND transfers)</td><td>Bank transfer payment processing</td><td>The transfer details our bank sends us, including the sender's name and transfer content</td></tr>
   <tr><td>Resend</td><td>Transactional email</td><td>Email address</td></tr>
   <tr><td>Google Analytics</td><td>Website analytics</td><td>Anonymized usage statistics</td></tr>
+  <tr><td>YouTube (Google)</td><td>Demo video on the MCP page, loaded from youtube-nocookie.com only after you click play</td><td>IP address and browser data; YouTube may set its own cookies once the video plays</td></tr>
   <tr><td>Cloudflare</td><td>Hosting, CDN & database (D1)</td><td>Standard web request data; email, license and order records</td></tr>
 </tbody></table>
 <p>We do not sell, rent, or share your personal data with third parties for advertising purposes.</p>
@@ -110,7 +111,7 @@ export const privacyTranslations: Record<string, {
     vi: {
         title: "Chính sách Bảo mật",
         description: "Cách Veilus thu thập, sử dụng và bảo vệ dữ liệu của bạn.",
-        lastUpdated: "6 tháng 3, 2026",
+        lastUpdated: "11 tháng 10, 2026",
         content: `
 <h2>1. Giới thiệu</h2>
 <p>Veilus ("chúng tôi") tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân. Chính sách Bảo mật này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin khi bạn sử dụng ứng dụng và website Veilus (gọi chung là "Dịch vụ").</p>
@@ -164,6 +165,7 @@ export const privacyTranslations: Record<string, {
   <tr><td>Ngân hàng (chuyển khoản VNĐ)</td><td>Xử lý thanh toán chuyển khoản</td><td>Chi tiết giao dịch ngân hàng gửi cho chúng tôi, gồm tên người chuyển và nội dung chuyển khoản</td></tr>
   <tr><td>Resend</td><td>Email giao dịch</td><td>Địa chỉ email</td></tr>
   <tr><td>Google Analytics</td><td>Phân tích website</td><td>Thống kê sử dụng ẩn danh</td></tr>
+  <tr><td>YouTube (Google)</td><td>Video demo trên trang MCP, chỉ nạp từ youtube-nocookie.com sau khi bạn bấm phát</td><td>Địa chỉ IP và dữ liệu trình duyệt; YouTube có thể đặt cookie riêng khi video phát</td></tr>
   <tr><td>Cloudflare</td><td>Hosting, CDN & cơ sở dữ liệu (D1)</td><td>Dữ liệu yêu cầu web tiêu chuẩn; email, license và đơn hàng</td></tr>
 </tbody></table>
 <p>Chúng tôi không bán, cho thuê hoặc chia sẻ dữ liệu cá nhân với bên thứ ba cho mục đích quảng cáo.</p>
@@ -212,7 +214,7 @@ export const privacyTranslations: Record<string, {
     zh: {
         title: "隐私政策",
         description: "Veilus如何收集、使用和保护您的数据。",
-        lastUpdated: "2026年3月6日",
+        lastUpdated: "2026年10月11日",
         content: `
 <h2>1. 简介</h2>
 <p>Veilus（"我们"）尊重您的隐私，并致力于保护您的个人数据。本隐私政策说明了当您使用Veilus应用程序和网站（统称"服务"）时，我们如何收集、使用和保护您的信息。</p>
@@ -234,7 +236,7 @@ export const privacyTranslations: Record<string, {
 <ul><li><strong>本地存储：</strong>配置文件数据存储在您的本地计算机上。</li><li><strong>云基础设施：</strong>账户数据（邮箱、许可证和订单记录）存储在 Cloudflare D1 中。</li><li><strong>同步：</strong>Veilus Sync 将配置文件数据存储在您选择的 Git 仓库或 Google Drive 中；该数据不会被 Veilus 加密。只有远程访问令牌会被加密（仅在本地设备完成），且不会传输到我们的服务器。将配置文件导出为 .veiluspack 文件时，您可以设置可选密码，使用 AES-256-GCM 加密该文件。</li></ul>
 
 <h2>5. 第三方服务</h2>
-<p>我们使用LemonSqueezy（银行卡支付，记录商家）、银行（越南盾转账）、Resend（邮件）、Google Analytics（分析）和Cloudflare（托管、D1 数据库）。我们不出售或分享您的个人数据用于广告目的。</p>
+<p>我们使用LemonSqueezy（银行卡支付，记录商家）、银行（越南盾转账）、Resend（邮件）、Google Analytics（分析）、Cloudflare（托管、D1 数据库），以及 YouTube（Google，MCP 页面的演示视频，仅在您点击播放后才从 youtube-nocookie.com 加载；之后 YouTube 可能收到您的 IP 地址和浏览器数据，并设置自己的 Cookie）。我们不出售或分享您的个人数据用于广告目的。</p>
 
 <h2>6. 您的权利（GDPR及全球）</h2>
 <p>您有权：访问、更正、删除、导出您的数据，撤回同意，以及反对处理。联系 <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>。</p>
@@ -258,7 +260,7 @@ export const privacyTranslations: Record<string, {
     ru: {
         title: "Политика конфиденциальности",
         description: "Как Veilus собирает, использует и защищает ваши данные.",
-        lastUpdated: "6 марта 2026",
+        lastUpdated: "11 октября 2026",
         content: `
 <h2>1. Введение</h2>
 <p>Veilus ("мы") уважает вашу конфиденциальность и стремится защитить ваши персональные данные. Эта Политика конфиденциальности описывает, как мы собираем, используем и защищаем вашу информацию при использовании приложения и веб-сайта Veilus (далее "Сервис").</p>
@@ -278,7 +280,7 @@ export const privacyTranslations: Record<string, {
 <ul><li>Локальное хранение данных профилей</li><li>Облако: данные аккаунта (email, лицензия и заказы) хранятся в Cloudflare D1</li><li>Синхронизация: данные в вашем Git-репозитории или Google Drive не шифруются Veilus; шифруется только токен удалённого доступа. При экспорте профиля в файл .veiluspack можно задать пароль, тогда файл шифруется AES-256-GCM</li></ul>
 
 <h2>5. Сторонние сервисы</h2>
-<p>LemonSqueezy (оплата картой), банк (переводы VND), Resend, Google Analytics, Cloudflare (хостинг, база данных D1). Мы не продаём ваши данные.</p>
+<p>LemonSqueezy (оплата картой), банк (переводы VND), Resend, Google Analytics, Cloudflare (хостинг, база данных D1), YouTube (Google; демо-видео на странице MCP загружается с youtube-nocookie.com только после нажатия на воспроизведение; после этого YouTube может получить ваш IP-адрес и данные браузера и установить свои cookie). Мы не продаём ваши данные.</p>
 
 <h2>6. Ваши права (GDPR)</h2>
 <p>Доступ, исправление, удаление, экспорт, отзыв согласия. Контакт: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -302,7 +304,7 @@ export const privacyTranslations: Record<string, {
     es: {
         title: "Política de Privacidad",
         description: "Cómo Veilus recopila, utiliza y protege sus datos.",
-        lastUpdated: "6 de marzo de 2026",
+        lastUpdated: "11 de octubre de 2026",
         content: `
 <h2>1. Introducción</h2>
 <p>Veilus ("nosotros") respeta su privacidad y se compromete a proteger sus datos personales. Esta Política de Privacidad explica cómo recopilamos, utilizamos y protegemos su información al usar la aplicación y el sitio web de Veilus (el "Servicio").</p>
@@ -316,7 +318,7 @@ export const privacyTranslations: Record<string, {
 <p>Todos los datos se almacenan <strong>localmente en su dispositivo</strong>. Si usa Veilus Sync, los datos se sincronizan con un repositorio Git o Google Drive que usted elija; esos datos no están cifrados por Veilus, use uno privado. Solo el token de acceso remoto se cifra, localmente en su dispositivo. Al exportar un perfil a un archivo .veiluspack, puede establecer una contraseña opcional para cifrar el archivo (AES-256-GCM).</p>
 
 <h2>3-5. Uso de datos, Almacenamiento y Terceros</h2>
-<p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos LemonSqueezy (pagos con tarjeta), nuestro banco (transferencias en VND), Resend, Google Analytics y Cloudflare (hosting, base de datos D1). No vendemos sus datos.</p>
+<p>Usamos sus datos para operar el servicio y procesar pagos. Utilizamos LemonSqueezy (pagos con tarjeta), nuestro banco (transferencias en VND), Resend, Google Analytics, Cloudflare (hosting, base de datos D1) y YouTube (Google; el vídeo de demostración de la página de MCP se carga desde youtube-nocookie.com solo cuando usted pulsa reproducir; después YouTube puede recibir su dirección IP y datos del navegador y establecer sus propias cookies). No vendemos sus datos.</p>
 
 <h2>6. Sus derechos (GDPR)</h2>
 <p>Acceso, corrección, eliminación, exportación, retiro de consentimiento. Contacto: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -331,7 +333,7 @@ export const privacyTranslations: Record<string, {
     pt: {
         title: "Política de Privacidade",
         description: "Como a Veilus coleta, usa e protege seus dados.",
-        lastUpdated: "6 de março de 2026",
+        lastUpdated: "11 de outubro de 2026",
         content: `
 <h2>1. Introdução</h2>
 <p>Veilus ("nós") respeita sua privacidade e compromete-se a proteger seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações ao usar o aplicativo e website Veilus (o "Serviço").</p>
@@ -342,7 +344,7 @@ export const privacyTranslations: Record<string, {
 <p><strong>Nunca coletamos:</strong> histórico de navegação, conteúdo de perfis, scripts, endereços IP.</p>
 
 <h2>3-5. Uso, Armazenamento e Terceiros</h2>
-<p>LemonSqueezy (pagamento com cartão), banco (transferências VND), Resend, Google Analytics, Cloudflare (hospedagem, banco de dados D1). Não vendemos seus dados.</p>
+<p>LemonSqueezy (pagamento com cartão), banco (transferências VND), Resend, Google Analytics, Cloudflare (hospedagem, banco de dados D1), YouTube (Google; o vídeo de demonstração da página de MCP é carregado de youtube-nocookie.com somente depois que você clica em reproduzir; depois disso o YouTube pode receber seu endereço IP e dados do navegador e definir os próprios cookies). Não vendemos seus dados.</p>
 
 <h2>6. Seus direitos (GDPR)</h2>
 <p>Acesso, correção, exclusão, exportação. Contato: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -354,7 +356,7 @@ export const privacyTranslations: Record<string, {
     id: {
         title: "Kebijakan Privasi",
         description: "Bagaimana Veilus mengumpulkan, menggunakan, dan melindungi data Anda.",
-        lastUpdated: "6 Maret 2026",
+        lastUpdated: "11 Oktober 2026",
         content: `
 <h2>1. Pendahuluan</h2>
 <p>Veilus ("kami") menghormati privasi Anda dan berkomitmen melindungi data pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan aplikasi dan situs web Veilus ("Layanan").</p>
@@ -365,7 +367,7 @@ export const privacyTranslations: Record<string, {
 <p><strong>Tidak pernah mengumpulkan:</strong> riwayat browsing, konten profil, skrip, alamat IP.</p>
 
 <h2>3-5. Penggunaan, Penyimpanan, dan Pihak Ketiga</h2>
-<p>LemonSqueezy (pembayaran kartu), bank (transfer VND), Resend, Google Analytics, Cloudflare (hosting, database D1). Kami tidak menjual data Anda.</p>
+<p>LemonSqueezy (pembayaran kartu), bank (transfer VND), Resend, Google Analytics, Cloudflare (hosting, database D1), YouTube (Google; video demo di halaman MCP dimuat dari youtube-nocookie.com hanya setelah Anda menekan putar; setelah itu YouTube dapat menerima alamat IP dan data browser Anda serta memasang cookie sendiri). Kami tidak menjual data Anda.</p>
 
 <h2>6. Hak Anda (GDPR)</h2>
 <p>Akses, koreksi, hapus, ekspor data. Hubungi: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>
@@ -377,7 +379,7 @@ export const privacyTranslations: Record<string, {
     tr: {
         title: "Gizlilik Politikası",
         description: "Veilus verilerinizi nasıl toplar, kullanır ve korur.",
-        lastUpdated: "6 Mart 2026",
+        lastUpdated: "11 Ekim 2026",
         content: `
 <h2>1. Giriş</h2>
 <p>Veilus ("biz") gizliliğinize saygı duyar ve kişisel verilerinizi korumaya kararlıdır. Bu Gizlilik Politikası, Veilus uygulamasını ve web sitesini ("Hizmet") kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>
@@ -388,7 +390,7 @@ export const privacyTranslations: Record<string, {
 <p><strong>Asla toplamayız:</strong> tarama geçmişi, profil içeriği, otomasyon betikleri, IP adresleri.</p>
 
 <h2>3-5. Kullanım, Depolama ve Üçüncü Taraflar</h2>
-<p>LemonSqueezy (kart ödemesi), banka (VND havaleleri), Resend, Google Analytics, Cloudflare (barındırma, D1 veritabanı). Verilerinizi satmıyoruz.</p>
+<p>LemonSqueezy (kart ödemesi), banka (VND havaleleri), Resend, Google Analytics, Cloudflare (barındırma, D1 veritabanı), YouTube (Google; MCP sayfasındaki tanıtım videosu yalnızca oynat düğmesine bastığınızda youtube-nocookie.com üzerinden yüklenir; bundan sonra YouTube IP adresinizi ve tarayıcı verilerinizi alabilir ve kendi çerezlerini yerleştirebilir). Verilerinizi satmıyoruz.</p>
 
 <h2>6. Haklarınız (GDPR)</h2>
 <p>Erişim, düzeltme, silme, dışa aktarma. İletişim: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a>.</p>

@@ -8,7 +8,7 @@ export const cookieTranslations: Record<string, {
     en: {
         title: "Cookie Policy",
         description: "How Veilus uses cookies and similar technologies on our website.",
-        lastUpdated: "March 7, 2026",
+        lastUpdated: "October 11, 2026",
         content: `
 <h2>1. Introduction</h2>
 <p>This Cookie Policy explains how Veilus ("we", "our", "us") uses cookies and similar technologies on our website <strong>veilus.io</strong> and related subdomains. By using our website, you consent to the use of cookies as described in this policy.</p>
@@ -66,6 +66,7 @@ export const cookieTranslations: Record<string, {
   <li>Third-party analytics beyond GA4</li>
   <li>Any cookies that sell your data to third parties</li>
 </ul>
+<p><strong>YouTube:</strong> the demo video on the MCP page is not loaded until you click play. Only then does your browser load the player from youtube-nocookie.com, and YouTube (Google) may set its own cookies or local storage under Google's privacy policy.</p>
 
 <h2>8. The Veilus Desktop Application</h2>
 <p>This Cookie Policy applies to the <strong>veilus.io website only</strong>. The Veilus desktop application does not use tracking cookies. Browser profiles within Veilus have their own isolated cookie stores that are entirely under your control.</p>
@@ -100,7 +101,7 @@ export const cookieTranslations: Record<string, {
     vi: {
         title: "Chính sách Cookie",
         description: "Cách Veilus sử dụng cookie và công nghệ tương tự trên website.",
-        lastUpdated: "7 tháng 3, 2026",
+        lastUpdated: "11 tháng 10, 2026",
         content: `
 <h2>1. Giới thiệu</h2>
 <p>Chính sách Cookie này giải thích cách Veilus ("chúng tôi") sử dụng cookie và công nghệ tương tự trên website <strong>veilus.io</strong> và các tên miền phụ liên quan.</p>
@@ -141,6 +142,7 @@ export const cookieTranslations: Record<string, {
 
 <h2>7. Cookie Bên thứ ba</h2>
 <p>Chúng tôi <strong>không</strong> sử dụng cookie quảng cáo, pixel theo dõi mạng xã hội, hoặc bất kỳ cookie nào bán dữ liệu của bạn cho bên thứ ba.</p>
+<p><strong>YouTube:</strong> video demo trên trang MCP chỉ được nạp khi bạn bấm phát. Lúc đó trình duyệt mới tải trình phát từ youtube-nocookie.com, và YouTube (Google) có thể đặt cookie hoặc lưu dữ liệu cục bộ riêng theo chính sách quyền riêng tư của Google.</p>
 
 <h2>8. Ứng dụng Veilus Desktop</h2>
 <p>Chính sách Cookie này chỉ áp dụng cho <strong>website veilus.io</strong>. Ứng dụng Veilus không sử dụng cookie theo dõi. Các hồ sơ trình duyệt trong Veilus có kho cookie riêng biệt hoàn toàn do bạn kiểm soát.</p>
@@ -161,7 +163,7 @@ export const cookieTranslations: Record<string, {
     zh: {
         title: "Cookie政策",
         description: "Veilus如何在网站上使用Cookie和类似技术。",
-        lastUpdated: "2026年3月7日",
+        lastUpdated: "2026年10月11日",
         content: `
 <h2>1. 简介</h2><p>本Cookie政策说明Veilus如何在<strong>veilus.io</strong>网站上使用Cookie。</p>
 <h2>2. Cookie类型</h2>
@@ -171,7 +173,7 @@ export const cookieTranslations: Record<string, {
 <tr><td><strong>分析</strong></td><td>匿名使用统计(GA4)</td><td>2年</td><td>否</td></tr>
 </tbody></table>
 <h2>3-7. 详细说明</h2>
-<p>必要Cookie包括：<code>veilus_session</code>(认证)、<code>csrf_token</code>(安全)、<code>cf_clearance</code>(Cloudflare)。分析Cookie使用Google Analytics 4，启用IP匿名化，无广告功能。我们<strong>不</strong>使用广告Cookie、社交媒体追踪或向第三方出售数据。</p>
+<p>必要Cookie包括：<code>veilus_session</code>(认证)、<code>csrf_token</code>(安全)、<code>cf_clearance</code>(Cloudflare)。分析Cookie使用Google Analytics 4，启用IP匿名化，无广告功能。我们<strong>不</strong>使用广告Cookie、社交媒体追踪或向第三方出售数据。MCP 页面的演示视频仅在您点击播放后才从 youtube-nocookie.com 加载，之后 YouTube（Google）可能会设置其自己的 Cookie。</p>
 <h2>8. 桌面应用</h2><p>本政策仅适用于veilus.io网站。Veilus桌面应用不使用追踪Cookie。</p>
 <h2>9-11. 管理与联系</h2>
 <p>通过浏览器设置管理Cookie，或安装<a href="https://tools.google.com/dlpage/gaoptout">GA opt-out插件</a>。联系：<a href="mailto:privacy@veilus.io">privacy@veilus.io</a></p>`
@@ -180,7 +182,7 @@ export const cookieTranslations: Record<string, {
     ru: {
         title: "Политика файлов Cookie",
         description: "Как Veilus использует файлы cookie на своём сайте.",
-        lastUpdated: "7 марта 2026",
+        lastUpdated: "11 октября 2026",
         content: `
 <h2>1. Введение</h2><p>Эта политика объясняет, как Veilus использует cookie на сайте <strong>veilus.io</strong>.</p>
 <h2>2. Типы Cookie</h2>
@@ -190,7 +192,7 @@ export const cookieTranslations: Record<string, {
 <tr><td><strong>Аналитика</strong></td><td>Анонимная статистика (GA4)</td><td>2 года</td><td>Нет</td></tr>
 </tbody></table>
 <h2>3-7. Подробности</h2>
-<p>Мы <strong>не</strong> используем рекламные cookie или пиксели соцсетей. Google Analytics 4 настроен с анонимизацией IP.</p>
+<p>Мы <strong>не</strong> используем рекламные cookie или пиксели соцсетей. Google Analytics 4 настроен с анонимизацией IP. Демо-видео на странице MCP загружается с youtube-nocookie.com только после нажатия на воспроизведение; после этого YouTube (Google) может установить свои cookie.</p>
 <h2>8-11. Приложение и контакты</h2>
 <p>Эта политика касается только сайта. Приложение Veilus не использует отслеживающие cookie. Контакт: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a></p>`
     },
@@ -198,7 +200,7 @@ export const cookieTranslations: Record<string, {
     es: {
         title: "Política de Cookies",
         description: "Cómo Veilus utiliza cookies en nuestro sitio web.",
-        lastUpdated: "7 de marzo de 2026",
+        lastUpdated: "11 de octubre de 2026",
         content: `
 <h2>1. Introducción</h2><p>Esta política explica cómo Veilus usa cookies en <strong>veilus.io</strong>.</p>
 <h2>2. Tipos de Cookies</h2>
@@ -208,7 +210,7 @@ export const cookieTranslations: Record<string, {
 <tr><td><strong>Analíticas</strong></td><td>Estadísticas anónimas (GA4)</td><td>2 años</td><td>No</td></tr>
 </tbody></table>
 <h2>3-7. Detalles</h2>
-<p><strong>No</strong> usamos cookies publicitarias ni píxeles de redes sociales. GA4 configurado con anonimización de IP.</p>
+<p><strong>No</strong> usamos cookies publicitarias ni píxeles de redes sociales. GA4 configurado con anonimización de IP. El vídeo de demostración de la página de MCP se carga desde youtube-nocookie.com solo cuando usted pulsa reproducir; a partir de ese momento YouTube (Google) puede establecer sus propias cookies.</p>
 <h2>8-11. Aplicación y contacto</h2>
 <p>Esta política aplica solo al sitio web. La app Veilus no usa cookies de rastreo. Contacto: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a></p>`
     },
@@ -216,7 +218,7 @@ export const cookieTranslations: Record<string, {
     pt: {
         title: "Política de Cookies",
         description: "Como a Veilus utiliza cookies no nosso site.",
-        lastUpdated: "7 de março de 2026",
+        lastUpdated: "11 de outubro de 2026",
         content: `
 <h2>1. Introdução</h2><p>Esta política explica como a Veilus usa cookies em <strong>veilus.io</strong>.</p>
 <h2>2. Tipos de Cookies</h2>
@@ -226,7 +228,7 @@ export const cookieTranslations: Record<string, {
 <tr><td><strong>Analíticos</strong></td><td>Estatísticas anônimas (GA4)</td><td>2 anos</td><td>Não</td></tr>
 </tbody></table>
 <h2>3-7. Detalhes</h2>
-<p><strong>Não</strong> usamos cookies de publicidade ou pixels de redes sociais. GA4 com anonimização de IP.</p>
+<p><strong>Não</strong> usamos cookies de publicidade ou pixels de redes sociais. GA4 com anonimização de IP. O vídeo de demonstração da página de MCP é carregado de youtube-nocookie.com somente depois que você clica em reproduzir; a partir daí o YouTube (Google) pode definir os próprios cookies.</p>
 <h2>8-11. Aplicativo e contato</h2>
 <p>Esta política aplica-se apenas ao site. O app Veilus não usa cookies de rastreamento. Contato: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a></p>`
     },
@@ -234,7 +236,7 @@ export const cookieTranslations: Record<string, {
     id: {
         title: "Kebijakan Cookie",
         description: "Bagaimana Veilus menggunakan cookie di situs web kami.",
-        lastUpdated: "7 Maret 2026",
+        lastUpdated: "11 Oktober 2026",
         content: `
 <h2>1. Pendahuluan</h2><p>Kebijakan ini menjelaskan bagaimana Veilus menggunakan cookie di <strong>veilus.io</strong>.</p>
 <h2>2. Jenis Cookie</h2>
@@ -244,7 +246,7 @@ export const cookieTranslations: Record<string, {
 <tr><td><strong>Analitik</strong></td><td>Statistik anonim (GA4)</td><td>2 tahun</td><td>Tidak</td></tr>
 </tbody></table>
 <h2>3-7. Detail</h2>
-<p>Kami <strong>tidak</strong> menggunakan cookie iklan atau pixel media sosial. GA4 dengan anonimisasi IP.</p>
+<p>Kami <strong>tidak</strong> menggunakan cookie iklan atau pixel media sosial. GA4 dengan anonimisasi IP. Video demo di halaman MCP dimuat dari youtube-nocookie.com hanya setelah Anda menekan putar; setelah itu YouTube (Google) dapat memasang cookie sendiri.</p>
 <h2>8-11. Aplikasi dan kontak</h2>
 <p>Kebijakan ini hanya berlaku untuk situs web. Aplikasi Veilus tidak menggunakan cookie pelacakan. Kontak: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a></p>`
     },
@@ -252,7 +254,7 @@ export const cookieTranslations: Record<string, {
     tr: {
         title: "Çerez Politikası",
         description: "Veilus web sitesinde çerezleri nasıl kullanır.",
-        lastUpdated: "7 Mart 2026",
+        lastUpdated: "11 Ekim 2026",
         content: `
 <h2>1. Giriş</h2><p>Bu politika, Veilus'un <strong>veilus.io</strong> web sitesinde çerezleri nasıl kullandığını açıklar.</p>
 <h2>2. Çerez Türleri</h2>
@@ -262,7 +264,7 @@ export const cookieTranslations: Record<string, {
 <tr><td><strong>Analitik</strong></td><td>Anonim istatistikler (GA4)</td><td>2 yıl</td><td>Hayır</td></tr>
 </tbody></table>
 <h2>3-7. Detaylar</h2>
-<p>Reklam çerezleri veya sosyal medya pikselleri <strong>kullanmıyoruz</strong>. GA4 IP anonimleştirme ile yapılandırılmıştır.</p>
+<p>Reklam çerezleri veya sosyal medya pikselleri <strong>kullanmıyoruz</strong>. GA4 IP anonimleştirme ile yapılandırılmıştır. MCP sayfasındaki tanıtım videosu yalnızca oynat düğmesine bastığınızda youtube-nocookie.com üzerinden yüklenir; bundan sonra YouTube (Google) kendi çerezlerini yerleştirebilir.</p>
 <h2>8-11. Uygulama ve iletişim</h2>
 <p>Bu politika yalnızca web sitesi için geçerlidir. Veilus uygulaması izleme çerezi kullanmaz. İletişim: <a href="mailto:privacy@veilus.io">privacy@veilus.io</a></p>`
     }
