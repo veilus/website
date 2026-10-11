@@ -493,7 +493,17 @@
             "micro": "Không cần thẻ · hồ sơ mặc định nằm trên máy bạn"
         },
         "more": {
-            "faq": "Đọc thêm",
+            "faqLinks": [
+                "Cách fingerprint của hồ sơ hoạt động",
+                "So sánh các gói và giá",
+                "Gói và license trong tài liệu",
+                "Tải về cho Windows hoặc macOS",
+                "Cách Veilus Sync hoạt động",
+                "Thiết lập proxy trong tài liệu",
+                "Trợ lý AI dùng Veilus qua MCP thế nào",
+                "Cách tự động hóa trong Veilus hoạt động",
+                "Chính sách hoàn tiền"
+            ],
             "mcp": "Toàn bộ công cụ MCP và cách kết nối",
             "mcpDocs": "Tài liệu tham chiếu MCP",
             "engine": "Về engine Chromium",

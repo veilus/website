@@ -493,7 +493,17 @@
             "micro": "Sin tarjeta · por defecto, tus perfiles se quedan en tu equipo"
         },
         "more": {
-            "faq": "Leer más",
+            "faqLinks": [
+                "Cómo funcionan las huellas de los perfiles",
+                "Comparar planes y precios",
+                "Planes y licencia en la documentación",
+                "Descargar para Windows o macOS",
+                "Cómo funciona Veilus Sync",
+                "Configuración de proxies en la documentación",
+                "Cómo usan Veilus los asistentes de IA mediante MCP",
+                "Cómo funciona la automatización en Veilus",
+                "Política de reembolsos"
+            ],
             "mcp": "Todas las herramientas MCP y cómo conectarte",
             "mcpDocs": "Referencia MCP en la documentación",
             "engine": "Sobre el motor Chromium",

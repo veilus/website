@@ -493,7 +493,17 @@
             "micro": "Tanpa kartu · secara default, profil tetap di komputer Anda"
         },
         "more": {
-            "faq": "Baca selengkapnya",
+            "faqLinks": [
+                "Cara kerja sidik jari profil",
+                "Bandingkan paket dan harga",
+                "Paket dan lisensi di dokumentasi",
+                "Unduh untuk Windows atau macOS",
+                "Cara kerja Veilus Sync",
+                "Pengaturan proxy di dokumentasi",
+                "Cara asisten AI memakai Veilus lewat MCP",
+                "Cara kerja otomatisasi di Veilus",
+                "Kebijakan pengembalian dana"
+            ],
             "mcp": "Semua alat MCP dan cara menghubungkannya",
             "mcpDocs": "Referensi MCP di dokumentasi",
             "engine": "Tentang mesin Chromium",

@@ -26,6 +26,8 @@ const MORE = [
   getLocalizedPath('/refund', lang),
 ];
 if (MORE.length !== q.items.length) throw new Error(`FAQ: ${MORE.length} link cho ${q.items.length} câu`);
+// Chữ link nói đích đến (Lighthouse link-text, VEIL-1360): mỗi câu một chuỗi, cùng thứ tự với MORE.
+if (i.home.more.faqLinks.length !== MORE.length) throw new Error(`FAQ: ${i.home.more.faqLinks.length} chữ link cho ${MORE.length} link`);
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -48,7 +50,7 @@ const faqJsonLd = {
           <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" data-icon="add" aria-hidden="true"></span>
         </summary>
         <p>{item.a}</p>
-        <p class="k-faq-more"><a href={MORE[n]}>{i.home.more.faq}</a></p>
+        <p class="k-faq-more"><a href={MORE[n]}>{i.home.more.faqLinks[n]}</a></p>
       </details>
     ))}
   </div>

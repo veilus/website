@@ -493,7 +493,17 @@
             "micro": "No card needed · profiles stay on your machine by default"
         },
         "more": {
-            "faq": "Read more",
+            "faqLinks": [
+                "How profile fingerprints work",
+                "Compare plans and prices",
+                "Plans and license in the docs",
+                "Download for Windows or macOS",
+                "How Veilus Sync works",
+                "Proxy setup in the docs",
+                "How AI assistants use Veilus over MCP",
+                "How automation works in Veilus",
+                "Refund policy"
+            ],
             "mcp": "All MCP tools, and how to connect",
             "mcpDocs": "MCP reference in the docs",
             "engine": "About the Chromium engine",

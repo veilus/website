@@ -493,7 +493,17 @@
             "micro": "Kart gerekmez · profiller varsayılan olarak bilgisayarınızda kalır"
         },
         "more": {
-            "faq": "Daha fazla",
+            "faqLinks": [
+                "Profil parmak izleri nasıl çalışır",
+                "Planları ve fiyatları karşılaştırın",
+                "Belgelerde planlar ve lisans",
+                "Windows veya macOS için indirin",
+                "Veilus Sync nasıl çalışır",
+                "Belgelerde proxy kurulumu",
+                "Yapay zekâ asistanları Veilus'u MCP ile nasıl kullanır",
+                "Veilus'ta otomasyon nasıl çalışır",
+                "İade politikası"
+            ],
             "mcp": "Tüm MCP araçları ve nasıl bağlanılır",
             "mcpDocs": "Belgelerdeki MCP başvurusu",
             "engine": "Chromium motoru hakkında",

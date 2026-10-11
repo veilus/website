@@ -493,7 +493,17 @@
             "micro": "无需绑卡 · 配置文件默认留在你的电脑上"
         },
         "more": {
-            "faq": "了解更多",
+            "faqLinks": [
+                "配置文件指纹的工作原理",
+                "比较套餐与价格",
+                "文档中的套餐与许可证",
+                "下载 Windows 或 macOS 版",
+                "Veilus Sync 的工作原理",
+                "文档中的代理设置",
+                "AI 助手如何通过 MCP 使用 Veilus",
+                "Veilus 的自动化如何工作",
+                "退款政策"
+            ],
             "mcp": "全部 MCP 工具与连接方式",
             "mcpDocs": "文档中的 MCP 参考",
             "engine": "关于 Chromium 引擎",

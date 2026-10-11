@@ -493,7 +493,17 @@
             "micro": "Sem cartão · por padrão, seus perfis ficam no seu computador"
         },
         "more": {
-            "faq": "Saiba mais",
+            "faqLinks": [
+                "Como funcionam as impressões digitais dos perfis",
+                "Comparar planos e preços",
+                "Planos e licença na documentação",
+                "Baixar para Windows ou macOS",
+                "Como o Veilus Sync funciona",
+                "Configuração de proxy na documentação",
+                "Como assistentes de IA usam o Veilus via MCP",
+                "Como funciona a automação no Veilus",
+                "Política de reembolso"
+            ],
             "mcp": "Todas as ferramentas MCP e como conectar",
             "mcpDocs": "Referência MCP na documentação",
             "engine": "Sobre o motor Chromium",
