@@ -151,6 +151,17 @@
         "macTitle": "macOS'ta kurulum",
         "macStep": "Veilus'u Uygulamalar'a sürükleyin. macOS Veilus'un hasarlı olduğunu veya açılamadığını söylerse Terminal'i açıp şunu çalıştırın:",
         "macOnce": "Bunu yalnızca bir kez yapmanız yeterlidir. 0.2.6 sürümünden itibaren uygulama yeni sürüm çıktığında haber verir ve Update and restart düğmesine bastığınızda kurar.",
+        "checksums": "SHA-256 sağlama toplamları",
+        "winTitle": "Windows'a kurulum",
+        "winStep": "Yükleyiciyi çalıştırın. Windows SmartScreen “Windows protected your PC” uyarısını gösterirse More info düğmesine, ardından Run anyway düğmesine tıklayın (düğme adları Windows dilinize göre görünür).",
+        "nextTitle": "Kurulumdan sonra",
+        "nextSteps": [
+            "Settings → Engine & updates bölümünü açın ve Latest olarak işaretli sürümün yanındaki Download düğmesine tıklayın. Motor kurulmadan profiller açılmaz.",
+            "New profile düğmesine tıklayın ve profili açın. Veilus her profile, seçtiğiniz işletim sistemine uyan bir parmak izi verir.",
+            "Profilin Network sekmesinden proxy ekleyin. Otomasyon, zamanlamalar ve yerel API/MCP için Pro veya 7 günlük deneme gerekir."
+        ],
+        "guideLink": "Tam kurulum kılavuzu",
+        "quickstartLink": "Hızlı başlangıç",
         "metaTitle": "Anti-tespit tarayıcı Veilus'u indirin: Windows ve macOS",
         "metaDescription": "Anti-tespit tarayıcı Veilus'u Windows ve macOS için indirin. 5 profil süresiz ücretsiz, kart gerekmez."
     },

@@ -3,7 +3,7 @@
  * Trang tải về, dùng chung cho /download (en) và /[lang]/download.
  */
 import type { Lang } from '../i18n/utils';
-import { t } from '../i18n/utils';
+import { t, docsUrl } from '../i18n/utils';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
 import {
@@ -18,6 +18,8 @@ import {
 } from '../data/facts.js';
 
 const MAC_QUARANTINE_CMD = "xattr -dr com.apple.quarantine /Applications/Veilus.app";
+// Trang release của đúng bản đang phát: GitHub hiện SHA-256 cạnh từng file (kiểm 2026-10-11, v0.2.8).
+const RELEASE_TAG_URL = `${RELEASES_URL}/tag/v${APP_VERSION}`;
 
 interface Props {
   lang: Lang;
@@ -77,10 +79,15 @@ const availableOn = i.download.availableOn.replace(
         </div>
       </div>
 
-      <p class="release-links" data-release="open" hidden={!DOWNLOADS_OPEN}>{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
+      <p class="release-links" data-release="open" hidden={!DOWNLOADS_OPEN}>{i.download.version.replace("{version}", APP_VERSION)} · <a href={RELEASE_TAG_URL}>{i.download.checksums}</a> · <a href={RELEASES_URL}>{i.download.allVersions}</a></p>
+
+      <div class="install-note">
+        <h2>{i.download.winTitle}</h2>
+        <p>{i.download.winStep}</p>
+      </div>
 
       <!-- Cài lần đầu trên macOS: bản ký ad-hoc, không công chứng (VEIL-558 đã huỷ) nên dmg tải bằng trình duyệt bị gắn quarantine. -->
-      <div class="mac-note">
+      <div class="install-note">
         <h2>{i.download.macTitle}</h2>
         <p>{i.download.macStep}</p>
         <div class="mac-cmd">
@@ -141,6 +148,19 @@ const availableOn = i.download.availableOn.replace(
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Bước sau khi cài (F08.2): tên mục theo giao diện app của từng ngôn ngữ; app chưa có es/pt/tr/id nên các trang đó giữ tên tiếng Anh. -->
+  <section class="next-steps">
+    <div class="container">
+      <h2>{i.download.nextTitle}</h2>
+      <ol>
+        {i.download.nextSteps.map((step) => <li>{step}</li>)}
+      </ol>
+      <p class="next-links">
+        <a href={docsUrl('getting-started/installation', lang)}>{i.download.guideLink}</a> · <a href={docsUrl('getting-started/quickstart', lang)}>{i.download.quickstartLink}</a>
+      </p>
     </div>
   </section>
 </main>
@@ -275,7 +295,7 @@ const availableOn = i.download.availableOn.replace(
     color: var(--color-text-muted);
     text-align: center;
   }
-  .mac-note {
+  .install-note {
     max-width: 640px;
     margin: var(--space-xl) auto 0;
     padding: var(--space-lg);
@@ -284,11 +304,11 @@ const availableOn = i.download.availableOn.replace(
     border-radius: var(--radius-md);
     text-align: left;
   }
-  .mac-note h2 {
+  .install-note h2 {
     font-size: 1rem;
     margin: 0 0 var(--space-sm);
   }
-  .mac-note p {
+  .install-note p {
     font-size: 0.875rem;
     color: var(--color-text-secondary);
     margin: 0 0 var(--space-sm);
@@ -379,6 +399,29 @@ const availableOn = i.download.availableOn.replace(
   .req-card li::before {
     content: "→ ";
     color: var(--ink);
+  }
+
+  .next-steps {
+    padding: 0 0 var(--space-3xl);
+  }
+  .next-steps h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+  .next-steps ol {
+    max-width: 640px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+  }
+  .next-steps li {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    padding: 4px 0;
+  }
+  .next-links {
+    margin: var(--space-lg) auto 0;
+    font-size: 0.875rem;
+    text-align: center;
   }
 
   @media (max-width: 768px) {

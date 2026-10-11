@@ -151,6 +151,17 @@
         "macTitle": "在 macOS 上安装",
         "macStep": "将 Veilus 拖入“应用程序”。如果 macOS 提示 Veilus 已损坏或无法打开,请打开“终端”并运行:",
         "macOnce": "只需执行一次。从 0.2.6 版起,有新版本时应用会提示你,点击“更新并重启”即可安装。",
+        "checksums": "SHA-256 校验值",
+        "winTitle": "在 Windows 上安装",
+        "winStep": "运行安装程序。如果 Windows SmartScreen 显示“Windows protected your PC”，点击 More info，再点击 Run anyway（按钮名称随 Windows 语言显示）。",
+        "nextTitle": "安装之后",
+        "nextSteps": [
+            "打开 设置 → 引擎与更新，在标为“最新”的版本旁点击“下载”。安装引擎之前，配置文件无法启动。",
+            "点击“新建环境”创建并启动一个配置文件。Veilus 会为每个配置文件生成与所选操作系统相符的指纹。",
+            "在配置文件的“网络”标签页添加代理。自动化、定时任务和本地 API/MCP 需要 Pro 或 7 天试用。"
+        ],
+        "guideLink": "完整安装指南",
+        "quickstartLink": "快速入门",
         "metaTitle": "下载 Veilus 反检测浏览器：Windows 和 macOS 版",
         "metaDescription": "下载 Veilus 反检测浏览器 Windows 和 macOS 版。5 个配置文件永久免费，无需信用卡。"
     },

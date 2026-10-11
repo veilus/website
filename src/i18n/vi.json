@@ -151,6 +151,17 @@
         "macTitle": "Cài đặt trên macOS",
         "macStep": "Kéo Veilus vào thư mục Applications. Nếu macOS báo Veilus bị hỏng hoặc không thể mở, hãy mở Terminal và chạy:",
         "macOnce": "Chỉ cần làm một lần. Từ phiên bản 0.2.6, ứng dụng báo khi có bản mới và cài khi bạn bấm Cập nhật và khởi động lại.",
+        "checksums": "Mã kiểm tra SHA-256",
+        "winTitle": "Cài đặt trên Windows",
+        "winStep": "Chạy bộ cài. Nếu Windows SmartScreen hiện “Windows protected your PC”, bấm More info rồi Run anyway (tên nút hiện theo ngôn ngữ của Windows).",
+        "nextTitle": "Sau khi cài",
+        "nextSteps": [
+            "Mở Cài đặt → Engine & cập nhật và bấm Tải về cạnh phiên bản ghi Mới nhất. Hồ sơ chỉ mở được khi đã cài engine.",
+            "Bấm Hồ sơ mới rồi mở hồ sơ đó. Veilus tạo cho mỗi hồ sơ một fingerprint khớp với hệ điều hành bạn chọn.",
+            "Thêm proxy ở tab Mạng của hồ sơ. Tự động hoá, lịch chạy và API/MCP cục bộ cần gói Pro hoặc bản dùng thử 7 ngày."
+        ],
+        "guideLink": "Hướng dẫn cài đặt đầy đủ",
+        "quickstartLink": "Bắt đầu nhanh",
         "metaTitle": "Tải trình duyệt anti-detect Veilus cho Windows & macOS",
         "metaDescription": "Tải trình duyệt anti-detect Veilus cho Windows và macOS. 5 hồ sơ miễn phí mãi mãi, không cần thẻ."
     },

@@ -151,6 +151,17 @@
         "macTitle": "Installing on macOS",
         "macStep": "Drag Veilus into Applications. If macOS says Veilus is damaged or can't be opened, open Terminal and run:",
         "macOnce": "You only need to do this once. From 0.2.6 on, the app tells you when a new version is out and installs it when you click Update and restart.",
+        "checksums": "SHA-256 checksums",
+        "winTitle": "Installing on Windows",
+        "winStep": "Run the installer. If Windows SmartScreen shows “Windows protected your PC”, click More info, then Run anyway.",
+        "nextTitle": "After you install",
+        "nextSteps": [
+            "Open Settings → Engine & updates and click Download next to the version marked Latest. Profiles can't launch until an engine is installed.",
+            "Click New profile and launch it. Veilus gives each profile a fingerprint that fits the operating system you pick.",
+            "Add a proxy on the profile's Network tab. Automation, schedules and the local API/MCP need Pro or the 7-day trial."
+        ],
+        "guideLink": "Full installation guide",
+        "quickstartLink": "Quickstart",
         "metaTitle": "Download Veilus anti-detect browser for Windows & macOS",
         "metaDescription": "Download the Veilus anti-detect browser for Windows and macOS. 5 free profiles forever, no credit card."
     },

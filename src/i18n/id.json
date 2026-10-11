@@ -151,6 +151,17 @@
         "macTitle": "Memasang di macOS",
         "macStep": "Seret Veilus ke Applications. Jika macOS menyatakan Veilus rusak atau tidak dapat dibuka, buka Terminal dan jalankan:",
         "macOnce": "Cukup dilakukan sekali. Mulai versi 0.2.6, aplikasi memberi tahu saat ada versi baru dan memasangnya saat Anda mengeklik Update and restart.",
+        "checksums": "Checksum SHA-256",
+        "winTitle": "Memasang di Windows",
+        "winStep": "Jalankan file instalasi. Jika Windows SmartScreen menampilkan “Windows protected your PC”, klik More info, lalu Run anyway (nama tombol mengikuti bahasa Windows Anda).",
+        "nextTitle": "Setelah memasang",
+        "nextSteps": [
+            "Buka Settings → Engine & updates dan klik Download di samping versi bertanda Latest. Profil tidak bisa dibuka sebelum mesin terpasang.",
+            "Klik New profile lalu buka profilnya. Veilus memberi setiap profil sidik jari yang sesuai dengan sistem operasi yang Anda pilih.",
+            "Tambahkan proxy di tab Network pada profil. Otomatisasi, jadwal, dan API/MCP lokal memerlukan Pro atau uji coba 7 hari."
+        ],
+        "guideLink": "Panduan instalasi lengkap",
+        "quickstartLink": "Mulai cepat",
         "metaTitle": "Unduh browser anti-deteksi Veilus untuk Windows dan macOS",
         "metaDescription": "Unduh browser anti-deteksi Veilus untuk Windows dan macOS. 5 profil gratis selamanya, tanpa kartu kredit."
     },

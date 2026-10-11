@@ -151,6 +151,17 @@
         "macTitle": "Instalación en macOS",
         "macStep": "Arrastra Veilus a Aplicaciones. Si macOS indica que Veilus está dañado o no se puede abrir, abre Terminal y ejecuta:",
         "macOnce": "Solo hace falta una vez. Desde la versión 0.2.6, la app te avisa cuando hay una versión nueva y la instala cuando pulsas Update and restart.",
+        "checksums": "Sumas de verificación SHA-256",
+        "winTitle": "Instalación en Windows",
+        "winStep": "Ejecuta el instalador. Si Windows SmartScreen muestra “Windows protected your PC”, haz clic en More info y luego en Run anyway (los botones aparecen en el idioma de tu Windows).",
+        "nextTitle": "Después de instalar",
+        "nextSteps": [
+            "Abre Settings → Engine & updates y haz clic en Download junto a la versión marcada como Latest. Los perfiles no se abren hasta que haya un motor instalado.",
+            "Haz clic en New profile y abre el perfil. Veilus da a cada perfil una huella acorde con el sistema operativo que elijas.",
+            "Añade un proxy en la pestaña Network del perfil. La automatización, las programaciones y la API/MCP local requieren Pro o la prueba de 7 días."
+        ],
+        "guideLink": "Guía de instalación completa",
+        "quickstartLink": "Inicio rápido",
         "metaTitle": "Descarga el navegador antidetección Veilus: Windows y macOS",
         "metaDescription": "Descarga el navegador antidetección Veilus para Windows y macOS. 5 perfiles gratis para siempre, sin tarjeta."
     },
