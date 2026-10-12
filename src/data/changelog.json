@@ -1,5 +1,22 @@
 [
   {
+    "version": "0.2.10",
+    "date": "2026-10-12",
+    "changes": [
+      "Diagnostic launch: open a profile through its own proxy but without its fingerprint, in a temporary browser directory deleted on stop, to tell whether a site blocks the fingerprint or the IP (REST and MCP)",
+      "Proxies without a password now also connect through the local proxy bridge, so plain http:// pages no longer receive the proxy request line or the Proxy-Connection header"
+    ]
+  },
+  {
+    "version": "0.2.9",
+    "date": "2026-10-12",
+    "changes": [
+      "Launching a profile over REST or MCP returns its cdpUrl, so other automation tools can drive the profile",
+      "Page tools act like a person: click moves a real pointer and presses the button, type sends real key codes at a human pace, scroll uses mouse-wheel steps",
+      "Clicking an element covered by another one now returns an error instead of clicking it through script"
+    ]
+  },
+  {
     "version": "0.2.8",
     "date": "2026-10-10",
     "changes": [
