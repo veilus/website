@@ -20,17 +20,18 @@ const DOCS_MCP = 'https://docs.veilus.io/reference/mcp/';
 const CLAUDE_CODE = 'claude mcp add --scope user veilus -e VEILUS_API_TOKEN=<token> -- "<path to Veilus>" mcp';
 // Video demo film 55 giây trên kênh YouTube @veilusbrowser (VEIL-1348): bản tiếng Việt (giọng VieNeu) cho /vi/,
 // bản tiếng Anh (giọng Kokoro) cho các ngôn ngữ còn lại. Ảnh bìa là khung giây 49,6 của file gốc, tự host:
-// trang không gọi YouTube cho tới khi người xem bấm phát.
+// trang không gọi YouTube cho tới khi người xem bấm phát. uploadDate là giờ đăng YouTube ghi, có múi giờ:
+// Search Console từ chối ngày không có giờ (VEIL-1390).
 const VIDEO = lang === 'vi'
-  ? { id: 'Zyt34L6yZ2k', poster: '/video/mcp-demo-poster-vi.jpg', name: 'Một câu lệnh, nhiều trình duyệt: trợ lý AI điều khiển Veilus qua MCP' }
-  : { id: '8NRDNW_4KNU', poster: '/video/mcp-demo-poster-en.jpg', name: 'One sentence, many browsers: an AI assistant drives Veilus over MCP' };
+  ? { id: 'Zyt34L6yZ2k', uploadDate: '2026-10-10T13:33:40-07:00', poster: '/video/mcp-demo-poster-vi.jpg', name: 'Một câu lệnh, nhiều trình duyệt: trợ lý AI điều khiển Veilus qua MCP' }
+  : { id: '8NRDNW_4KNU', uploadDate: '2026-10-10T13:31:40-07:00', poster: '/video/mcp-demo-poster-en.jpg', name: 'One sentence, many browsers: an AI assistant drives Veilus over MCP' };
 const videoJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
   name: VIDEO.name,
   description: m.pageLead,
   thumbnailUrl: new URL(VIDEO.poster, Astro.site).href,
-  uploadDate: '2026-10-11',
+  uploadDate: VIDEO.uploadDate,
   duration: 'PT55S',
   embedUrl: `https://www.youtube-nocookie.com/embed/${VIDEO.id}`,
   url: `https://www.youtube.com/watch?v=${VIDEO.id}`,
