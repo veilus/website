@@ -592,5 +592,19 @@
         "allReleases": "GitHub'daki tüm sürümler",
         "download": "En son sürümü indir",
         "englishNote": "Sürüm notları İngilizce yazılmıştır."
+    },
+    "answers": {
+        "mcp": {
+            "q": "Veilus MCP sunucusu nedir?",
+            "a": "MCP sunucusu Veilus masaüstü uygulamasına yerleşiktir (veilus mcp). Claude Code, Cursor veya herhangi bir MCP istemcisinin tarayıcı profilleri oluşturmasını, sayfaları okumasını ve Playwright betiklerini yazıp test etmesini ve zamanlamasını sağlar. Yalnızca bilgisayarınızda dinler, token gerektirir ve yapay zekânın yazdığı bir betik siz onaylayana kadar en fazla 3 profilde çalışır."
+        },
+        "pricing": {
+            "q": "Veilus'un fiyatı ne kadar?",
+            "a": "Veilus, tek cihazda 5 profil için ücretsizdir; kredi kartı gerekmez. Otomasyon, zamanlama, yerel API ve MCP sunucusu Pro gerektirir: cihaz başına ayda {monthly} ya da tek seferlik ömür boyu lisans; tek cihaz için {lifeFrom}, {maxDevices} cihaz için {lifeTo}. Tüm Pro özelliklerini uygulamada 7 gün ücretsiz deneyebilirsiniz."
+        },
+        "download": {
+            "q": "Veilus'u çalıştırmak için ne gerekir?",
+            "a": "Veilus, Windows 10 veya 11 (x64) ile Apple Silicon'lu macOS 13.5 ve sonrasında çalışır. Kurulum dosyası Windows'ta {winSize}, macOS'ta {macSize}'dır; ardından uygulama tarayıcı motorunu ({engineSize}) ayrıca indirir. Veilus'u indirmek ve 5 profile kadar kullanmak ücretsizdir."
+        }
     }
 }

@@ -10,6 +10,8 @@ import Navbar from './Navbar.astro';
 import Fig4McpLoop from './Fig4McpLoop.astro';
 import FinalCTA from './FinalCTA.astro';
 import Footer from './Footer.astro';
+import AnswerBlock from './AnswerBlock.astro';
+import { answer } from '../i18n/answers';
 
 interface Props {
   lang: Lang;
@@ -51,6 +53,7 @@ const CLIENT_JSON = `{
 <Navbar lang={lang} />
 <main>
   <Fig4McpLoop lang={lang} page />
+  <AnswerBlock {...answer(lang, 'mcp')} />
 
   <section class="k-wrap k-sec" id="demo" data-reveal>
     <h2 class="k-h2">{m.videoTitle}</h2>

@@ -1,0 +1,21 @@
+---
+/**
+ * Một câu hỏi H2 và đoạn trả lời 40–60 chữ tự đứng được, đặt sau khối mở đầu trang (VEIL-1393, plan SEO
+ * F04.2/F04.4): đoạn trích và AI trích dẫn lấy nguyên đoạn này. Số liệu điền từ data/, không gõ trong i18n.
+ */
+interface Props {
+  q: string;
+  a: string;
+}
+const { q, a } = Astro.props;
+---
+
+<section class="k-wrap k-answer">
+  <h2 class="k-h2">{q}</h2>
+  <p>{a}</p>
+</section>
+
+<style>
+  .k-answer { padding-top: 72px; }
+  .k-answer p { font-size: 18px; line-height: 1.65; max-width: 64ch; margin: 0; }
+</style>

@@ -7,6 +7,8 @@
 import type { Lang } from '../i18n/utils';
 import Navbar from './Navbar.astro';
 import Pricing from './Pricing.astro';
+import AnswerBlock from './AnswerBlock.astro';
+import { answer } from '../i18n/answers';
 import FinalCTA from './FinalCTA.astro';
 import Footer from './Footer.astro';
 
@@ -19,6 +21,7 @@ const { lang } = Astro.props;
 <Navbar lang={lang} />
 <main>
   <Pricing lang={lang} page />
+  <AnswerBlock {...answer(lang, 'pricing')} />
   <FinalCTA lang={lang} />
 </main>
 <Footer lang={lang} />

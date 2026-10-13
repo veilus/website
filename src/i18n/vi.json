@@ -592,5 +592,19 @@
         "allReleases": "Mọi bản phát hành trên GitHub",
         "download": "Tải phiên bản mới nhất",
         "englishNote": "Ghi chú phát hành viết bằng tiếng Anh."
+    },
+    "answers": {
+        "mcp": {
+            "q": "Máy chủ MCP của Veilus là gì?",
+            "a": "Máy chủ MCP có sẵn trong app Veilus trên máy tính (veilus mcp). Nó cho Claude Code, Cursor hay bất kỳ MCP client nào tạo hồ sơ trình duyệt, đọc trang, viết, chạy thử và đặt lịch cho script Playwright. Nó chỉ chạy trên máy của bạn, cần token, và script do AI viết chỉ chạy trên tối đa 3 hồ sơ cho tới khi bạn duyệt."
+        },
+        "pricing": {
+            "q": "Veilus giá bao nhiêu?",
+            "a": "Veilus miễn phí cho 5 hồ sơ trên một máy, không cần thẻ. Tự động hoá, lịch chạy, API cục bộ và máy chủ MCP cần gói Pro: {monthly} mỗi tháng cho một máy, hoặc license trọn đời trả một lần, từ {lifeFrom} cho một máy đến {lifeTo} cho {maxDevices} máy. Bạn có thể dùng thử mọi tính năng Pro miễn phí 7 ngày ngay trong app."
+        },
+        "download": {
+            "q": "Cần gì để chạy Veilus?",
+            "a": "Veilus chạy trên Windows 10 hoặc 11 (x64) và macOS 13.5 trở lên trên máy Apple Silicon. Bộ cài nặng {winSize} trên Windows và {macSize} trên macOS, sau đó app tải riêng engine trình duyệt ({engineSize}). Tải Veilus và dùng tối đa 5 hồ sơ là miễn phí."
+        }
     }
 }

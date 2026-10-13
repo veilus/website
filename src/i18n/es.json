@@ -592,5 +592,19 @@
         "allReleases": "Todas las versiones en GitHub",
         "download": "Descargar la última versión",
         "englishNote": "Las notas de la versión están escritas en inglés."
+    },
+    "answers": {
+        "mcp": {
+            "q": "¿Qué es el servidor MCP de Veilus?",
+            "a": "El servidor MCP viene integrado en la app de escritorio de Veilus (veilus mcp). Permite que Claude Code, Cursor o cualquier cliente MCP cree perfiles de navegador, lea páginas y escriba, pruebe y programe scripts de Playwright. Solo escucha en tu equipo, requiere un token, y un script escrito por la IA se ejecuta en un máximo de 3 perfiles hasta que lo apruebes."
+        },
+        "pricing": {
+            "q": "¿Cuánto cuesta Veilus?",
+            "a": "Veilus es gratis para 5 perfiles en un dispositivo, sin tarjeta de crédito. La automatización, la programación, la API local y el servidor MCP requieren Pro: {monthly} al mes por dispositivo, o una licencia vitalicia de pago único desde {lifeFrom} para un dispositivo hasta {lifeTo} para {maxDevices} dispositivos. Puedes probar todas las funciones Pro gratis durante 7 días en la app."
+        },
+        "download": {
+            "q": "¿Qué necesito para usar Veilus?",
+            "a": "Veilus funciona en Windows 10 u 11 (x64) y en macOS 13.5 o posterior con Apple Silicon. El instalador ocupa {winSize} en Windows y {macSize} en macOS, y después la app descarga por separado su motor de navegador ({engineSize}). Descargar Veilus y usar hasta 5 perfiles es gratis."
+        }
     }
 }

@@ -592,5 +592,19 @@
         "allReleases": "Semua rilis di GitHub",
         "download": "Unduh versi terbaru",
         "englishNote": "Catatan rilis ditulis dalam bahasa Inggris."
+    },
+    "answers": {
+        "mcp": {
+            "q": "Apa itu server MCP Veilus?",
+            "a": "Server MCP sudah terpasang di aplikasi desktop Veilus (veilus mcp). Server ini memungkinkan Claude Code, Cursor, atau klien MCP apa pun membuat profil browser, membaca halaman, serta menulis, menguji, dan menjadwalkan skrip Playwright. Server hanya berjalan di komputer Anda, memerlukan token, dan skrip yang ditulis AI hanya berjalan di maksimal 3 profil sampai Anda menyetujuinya."
+        },
+        "pricing": {
+            "q": "Berapa harga Veilus?",
+            "a": "Veilus gratis untuk 5 profil di satu perangkat, tanpa kartu kredit. Otomatisasi, penjadwalan, API lokal, dan server MCP memerlukan Pro: {monthly} per bulan per perangkat, atau lisensi seumur hidup sekali bayar mulai {lifeFrom} untuk satu perangkat hingga {lifeTo} untuk {maxDevices} perangkat. Anda bisa mencoba semua fitur Pro gratis selama 7 hari di aplikasi."
+        },
+        "download": {
+            "q": "Apa yang dibutuhkan untuk menjalankan Veilus?",
+            "a": "Veilus berjalan di Windows 10 atau 11 (x64) dan macOS 13.5 atau lebih baru dengan Apple Silicon. Installer-nya {winSize} di Windows dan {macSize} di macOS, lalu aplikasi mengunduh mesin browser ({engineSize}) secara terpisah. Mengunduh Veilus dan memakai hingga 5 profil itu gratis."
+        }
     }
 }

@@ -6,6 +6,8 @@ import type { Lang } from '../i18n/utils';
 import { t, docsUrl } from '../i18n/utils';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
+import AnswerBlock from './AnswerBlock.astro';
+import { answer } from '../i18n/answers';
 import {
   OS_SUPPORT,
   INSTALLER_SIZE,
@@ -128,6 +130,7 @@ const availableOn = i.download.availableOn.replace(
       </div>
     </div>
   </section>
+  <AnswerBlock {...answer(lang, 'download')} />
 
   <section class="system-req">
     <div class="container">

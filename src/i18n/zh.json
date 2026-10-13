@@ -592,5 +592,19 @@
         "allReleases": "GitHub 上的全部版本",
         "download": "下载最新版本",
         "englishNote": "发布说明以英文撰写。"
+    },
+    "answers": {
+        "mcp": {
+            "q": "什么是 Veilus MCP 服务器？",
+            "a": "MCP 服务器内置于 Veilus 桌面应用（veilus mcp）。它让 Claude Code、Cursor 或任何 MCP 客户端创建浏览器配置文件、读取页面，并编写、测试和定时运行 Playwright 脚本。它只在你的电脑上监听，需要令牌；AI 编写的脚本在你批准之前最多只能在 3 个配置文件上运行。"
+        },
+        "pricing": {
+            "q": "Veilus 多少钱？",
+            "a": "Veilus 在一台设备上免费使用 5 个配置文件，无需信用卡。自动化、定时任务、本地 API 和 MCP 服务器需要 Pro：每台设备每月 {monthly}，或一次性付费的终身版，从一台设备 {lifeFrom} 到 {maxDevices} 台设备 {lifeTo}。你可以在应用内免费试用全部 Pro 功能 7 天。"
+        },
+        "download": {
+            "q": "运行 Veilus 需要什么？",
+            "a": "Veilus 支持 Windows 10 或 11（x64），以及搭载 Apple Silicon 的 macOS 13.5 及更高版本。安装包在 Windows 上为 {winSize}，在 macOS 上为 {macSize}，之后应用会单独下载浏览器引擎（{engineSize}）。下载 Veilus 并使用最多 5 个配置文件是免费的。"
+        }
     }
 }
