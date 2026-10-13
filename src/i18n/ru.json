@@ -58,7 +58,7 @@
         ],
         "device": "1 устройство",
         "devices": "{n} устройств",
-        "contact": "Больше 20 устройств?",
+        "contact": "Больше {maxDevices} устройств?",
         "contactCta": "Свяжитесь с нами",
         "viaTelegram": "через Telegram",
         "viaUsdt": "USDT",

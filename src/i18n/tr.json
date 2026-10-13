@@ -58,7 +58,7 @@
         ],
         "device": "1 cihaz",
         "devices": "{n} cihaz",
-        "contact": "20'den fazla cihaz mı?",
+        "contact": "{maxDevices} cihazdan fazla mı?",
         "contactCta": "Bize ulaşın",
         "viaTelegram": "Telegram üzerinden",
         "viaUsdt": "USDT",

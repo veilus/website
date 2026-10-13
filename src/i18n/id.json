@@ -58,7 +58,7 @@
         ],
         "device": "1 perangkat",
         "devices": "{n} perangkat",
-        "contact": "Lebih dari 20 perangkat?",
+        "contact": "Lebih dari {maxDevices} perangkat?",
         "contactCta": "Hubungi kami",
         "viaTelegram": "lewat Telegram",
         "viaUsdt": "USDT",

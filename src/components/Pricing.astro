@@ -36,6 +36,8 @@ const buy = (sku: string): Buy => {
 };
 const monthlyBuy = buy('monthly');
 const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' && listed(id));
+// "Trên N máy? Liên hệ": N là số máy của gói trọn đời lớn nhất đang bán, không gõ trong i18n (gói ẩn đổi thì câu đổi theo).
+const maxDevices = String(Math.max(...lifetime.map(([, s]) => s.devices)));
 ---
 
 <section class:list={["k-wrap", page ? "k-page" : "k-sec"]} id="pricing" data-reveal>
@@ -90,7 +92,7 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
         <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{p.lifetime.everything}</span></li>
         <li><span class="ms" data-icon="check" aria-hidden="true"></span><span>{p.lifetime.terms}</span></li>
       </ul>
-      <div class="k-contact">{p.contact} <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">{p.contactCta}</a></div>
+      <div class="k-contact">{p.contact.replace('{maxDevices}', maxDevices)} <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">{p.contactCta}</a></div>
     </div>
   </div>
   <p class="k-refund"><a href={getLocalizedPath('/refund', lang)}>{p.refund}</a></p>

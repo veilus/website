@@ -58,7 +58,7 @@
         ],
         "device": "1 máy",
         "devices": "{n} máy",
-        "contact": "Trên 20 máy?",
+        "contact": "Trên {maxDevices} máy?",
         "contactCta": "Liên hệ",
         "viaTelegram": "qua Telegram",
         "viaUsdt": "USDT",

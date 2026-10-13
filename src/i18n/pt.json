@@ -58,7 +58,7 @@
         ],
         "device": "1 dispositivo",
         "devices": "{n} dispositivos",
-        "contact": "Mais de 20 dispositivos?",
+        "contact": "Mais de {maxDevices} dispositivos?",
         "contactCta": "Fale conosco",
         "viaTelegram": "pelo Telegram",
         "viaUsdt": "USDT",

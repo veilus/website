@@ -58,7 +58,7 @@
         ],
         "device": "1 台设备",
         "devices": "{n} 台设备",
-        "contact": "超过 20 台设备？",
+        "contact": "超过 {maxDevices} 台设备？",
         "contactCta": "联系我们",
         "viaTelegram": "通过 Telegram",
         "viaUsdt": "USDT",
