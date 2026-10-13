@@ -33,6 +33,9 @@ export default defineConfig({
         // (src/i18n/utils.ts, Layout.astro:35) đều dựa vào việc Astro.url.pathname luôn có / cuối,
         // tức mỗi trang ra .../index.html trong một thư mục riêng — không được đổi ngầm.
         format: 'directory',
+        // Nhúng mọi CSS vào HTML (VEIL-1360): Astro tách CSS dùng chung thành 3–4 file chặn render cho mỗi trang
+        // (Lighthouse mobile ước ~1,8 s ở trang chủ). Đổi lại HTML nặng hơn và không cache CSS giữa các trang.
+        inlineStylesheets: 'always',
     },
     vite: {
         build: {

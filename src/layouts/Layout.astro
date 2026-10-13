@@ -152,11 +152,13 @@ const websiteJsonLd = {
         page_view. Trang privateUrl (URL có thể mang ?renew=<key>): config ép page_location về origin+pathname nên mọi sự kiện
         của trang không mang query (quyết định ga-trang-mua-cat-url); lệnh config chạy trước script trang xoá key khỏi thanh địa chỉ. gtag.js nạp bằng script
         vì thẻ <script src> tĩnh không có điều kiện; public/analytics.js không làm gì khi không có window.gtag.
+        gtag.js (~180 KB) nạp sau sự kiện load (VEIL-1360): lệnh js/config vẫn vào dataLayer ngay, thư viện đến sau
+        mới gửi; nạp sớm thì nó nằm trên đường tới LCP của Lighthouse mobile. Người rời trang trước load mất page_view.
         window.veilusLangTo: trang đang tự chuyển ngôn ngữ — page_view để trang đích gửi. */}
     {
       (
         <script
-          set:html={`if(location.hostname==='veilus.io'&&!window.veilusLangTo){window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}'${privateUrl ? ",{page_location:location.origin+location.pathname}" : ""});const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.append(s)}`}
+          set:html={`if(location.hostname==='veilus.io'&&!window.veilusLangTo){window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${GA_ID}'${privateUrl ? ",{page_location:location.origin+location.pathname}" : ""});addEventListener('load',()=>{const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.append(s)})}`}
         />
       )
     }
