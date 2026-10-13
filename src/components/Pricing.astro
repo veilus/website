@@ -98,8 +98,10 @@ const lifetime = Object.entries(SKUS).filter(([id, s]) => s.kind === 'lifetime' 
 
 <style>
   .k-page { padding-top: 56px; }
-  .k-price { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+  .k-price { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
   .k-pc { position: relative; display: flex; flex-direction: column; gap: 16px; padding: 22px 22px 20px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
+  /* Ba thẻ cao bằng nhau; nút cuối thẻ dồn xuống đáy để thẳng hàng giữa các thẻ. */
+  .k-pc > .k-btn { margin-top: auto; }
   .k-pc-pop { border-width: 2.5px; box-shadow: 10px 10px 0 var(--grid2); }
   .k-pc-tag { position: absolute; top: -13px; right: 16px; padding: 4px 9px; background: var(--acc); color: #FFFFFF; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
   .k-pn { font-size: 19px; font-weight: 600; }
