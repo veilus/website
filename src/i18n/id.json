@@ -606,5 +606,10 @@
             "q": "Apa yang dibutuhkan untuk menjalankan Veilus?",
             "a": "Veilus berjalan di Windows 10 atau 11 (x64) dan macOS 13.5 atau lebih baru dengan Apple Silicon. Installer-nya {winSize} di Windows dan {macSize} di macOS, lalu aplikasi mengunduh mesin browser ({engineSize}) secara terpisah. Mengunduh Veilus dan memakai hingga 5 profil itu gratis."
         }
+    },
+    "developers": {
+        "worksWithTitle": "Bekerja dengan alat yang sudah Anda pakai",
+        "worksWithLead": "Dalam pengujian kami, setiap alat di bawah ini terhubung ke profil Veilus yang sedang berjalan lewat alamat CDP lokalnya dan mengendalikan browser milik profil itu sendiri.",
+        "worksWithDocs": "Lihat kode untuk setiap alat"
     }
 }

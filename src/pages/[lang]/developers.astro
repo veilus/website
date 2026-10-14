@@ -1,10 +1,10 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import McpPage from "../../../components/McpPage.astro";
-import { t, supportedLangs, defaultLang, type Lang } from "../../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+import McpPage from "../../components/McpPage.astro";
+import { t, supportedLangs, defaultLang, type Lang } from "../../i18n/utils";
 
 export function getStaticPaths() {
-  // Ngôn ngữ mặc định (en) do /features/mcp.astro dựng; /en/* chuyển hướng 301 về gốc (public/_redirects)
+  // Ngôn ngữ mặc định (en) do /developers.astro dựng; /en/* chuyển hướng 301 về gốc (public/_redirects)
   return supportedLangs.filter((l) => l !== defaultLang).map((lang) => ({ params: { lang } }));
 }
 
