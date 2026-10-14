@@ -1,5 +1,12 @@
 [
   {
+    "version": "0.2.11",
+    "date": "2026-10-14",
+    "changes": [
+      "The app checks for a newer engine when it opens and every 6 hours, and shows a banner when one is available or when the engine you downloaded was re-released with the same version number"
+    ]
+  },
+  {
     "version": "0.2.10",
     "date": "2026-10-12",
     "changes": [

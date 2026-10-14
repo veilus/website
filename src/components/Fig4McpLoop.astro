@@ -9,7 +9,7 @@ import { t, defaultLang, getLocalizedPath, docsUrl } from '../i18n/utils';
 
 interface Props {
   lang?: Lang;
-  /** Trang /features/mcp/ (VEIL-1314): hình này là nội dung chính — tiêu đề là H1 với câu riêng của trang, không nhãn hình. */
+  /** Trang /developers/ (VEIL-1314): hình này là nội dung chính — tiêu đề là H1 với câu riêng của trang, không nhãn hình. */
   page?: boolean;
 }
 const lang = Astro.props.lang || defaultLang;
@@ -17,8 +17,8 @@ const page = Astro.props.page ?? false;
 const i = t(lang);
 const f = i.home.fig4;
 const Heading = page ? 'h1' : 'h2';
-// Trang chủ trỏ sang /features/mcp/; chính trang đó trỏ sang docs (không tự link, VEIL-1333)
-const more = page ? [docsUrl('reference/mcp', lang), i.home.more.mcpDocs] : [getLocalizedPath('/features/mcp', lang), i.home.more.mcp];
+// Trang chủ trỏ sang /developers/; chính trang đó trỏ sang docs (không tự link, VEIL-1333)
+const more = page ? [docsUrl('reference/mcp', lang), i.home.more.mcpDocs] : [getLocalizedPath('/developers', lang), i.home.more.mcp];
 // --d: độ trễ khi hiện; --i: thứ tự sáng trong vòng lặp
 const node = (n: number) => `--d:${(0.15 + n * 0.25).toFixed(2)}s;--i:${n}`;
 const arrow = (n: number) => `--d:${(0.35 + n * 0.25).toFixed(2)}s`;

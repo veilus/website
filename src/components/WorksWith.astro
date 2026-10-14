@@ -1,0 +1,30 @@
+---
+import { t, docsUrl, type Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const w = t(lang).developers;
+// Only tools whose example PASSed in veilus/sdk examples/TESTED.md (2026-10-14). Names and commands are never translated.
+const TOOLS = ['Playwright', 'Puppeteer', 'browser-use', 'Stagehand', 'Crawl4AI',
+  'LangChain', 'Scrapling', 'Crawlee', 'playwright-mcp', 'agent-browser'];
+const INSTALL = 'npm i veilus\npip install veilus';
+---
+
+<section class="k-wrap k-sec" id="works-with" aria-labelledby="works-with-title" data-reveal>
+  <h2 class="k-h2" id="works-with-title">{w.worksWithTitle}</h2>
+  <p class="k-sub">{w.worksWithLead}</p>
+  <ul class="k-tools">
+    {TOOLS.map((name) => <li>{name}</li>)}
+  </ul>
+  <pre class="k-code">{INSTALL}</pre>
+  <p class="k-docs"><a href={docsUrl('recipes/agent-frameworks', lang)}>{w.worksWithDocs}</a></p>
+</section>
+
+<style>
+  .k-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+  .k-tools li { padding: 6px 12px; border: 1.5px solid var(--ink); font-family: var(--font-mono); font-size: 12.5px; }
+  .k-docs { margin-top: 20px; font-family: var(--font-mono); font-size: 12.5px; }
+  .k-docs a { text-decoration: underline; text-underline-offset: 3px; }
+</style>

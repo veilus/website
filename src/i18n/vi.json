@@ -606,5 +606,10 @@
             "q": "Cần gì để chạy Veilus?",
             "a": "Veilus chạy trên Windows 10 hoặc 11 (x64) và macOS 13.5 trở lên trên máy Apple Silicon. Bộ cài nặng {winSize} trên Windows và {macSize} trên macOS, sau đó app tải riêng engine trình duyệt ({engineSize}). Tải Veilus và dùng tối đa 5 hồ sơ là miễn phí."
         }
+    },
+    "developers": {
+        "worksWithTitle": "Chạy được với những công cụ bạn đang dùng",
+        "worksWithLead": "Trong thử nghiệm của chúng tôi, mỗi công cụ dưới đây đã gắn vào một hồ sơ Veilus đang chạy qua địa chỉ CDP cục bộ của hồ sơ đó và điều khiển chính trình duyệt của hồ sơ ấy.",
+        "worksWithDocs": "Xem mã cho từng công cụ"
     }
 }

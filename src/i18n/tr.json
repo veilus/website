@@ -606,5 +606,10 @@
             "q": "Veilus'u çalıştırmak için ne gerekir?",
             "a": "Veilus, Windows 10 veya 11 (x64) ile Apple Silicon'lu macOS 13.5 ve sonrasında çalışır. Kurulum dosyası Windows'ta {winSize}, macOS'ta {macSize}'dır; ardından uygulama tarayıcı motorunu ({engineSize}) ayrıca indirir. Veilus'u indirmek ve 5 profile kadar kullanmak ücretsizdir."
         }
+    },
+    "developers": {
+        "worksWithTitle": "Zaten kullandığınız araçlarla çalışır",
+        "worksWithLead": "Testlerimizde aşağıdaki her araç, çalışan bir Veilus profiline yerel CDP adresi üzerinden bağlandı ve o profilin kendi tarayıcısını yönetti.",
+        "worksWithDocs": "Her aracın kodunu görün"
     }
 }

@@ -606,5 +606,10 @@
             "q": "运行 Veilus 需要什么？",
             "a": "Veilus 支持 Windows 10 或 11（x64），以及搭载 Apple Silicon 的 macOS 13.5 及更高版本。安装包在 Windows 上为 {winSize}，在 macOS 上为 {macSize}，之后应用会单独下载浏览器引擎（{engineSize}）。下载 Veilus 并使用最多 5 个配置文件是免费的。"
         }
+    },
+    "developers": {
+        "worksWithTitle": "适配你已经在用的工具",
+        "worksWithLead": "在我们的测试中，下面的每个工具都通过本地 CDP 地址连接到一个正在运行的 Veilus 配置文件，并控制了该配置文件自带的浏览器。",
+        "worksWithDocs": "查看每个工具的代码"
     }
 }

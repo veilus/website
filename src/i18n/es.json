@@ -606,5 +606,10 @@
             "q": "¿Qué necesito para usar Veilus?",
             "a": "Veilus funciona en Windows 10 u 11 (x64) y en macOS 13.5 o posterior con Apple Silicon. El instalador ocupa {winSize} en Windows y {macSize} en macOS, y después la app descarga por separado su motor de navegador ({engineSize}). Descargar Veilus y usar hasta 5 perfiles es gratis."
         }
+    },
+    "developers": {
+        "worksWithTitle": "Funciona con las herramientas que ya usas",
+        "worksWithLead": "En nuestras pruebas, cada herramienta de abajo se conectó a un perfil de Veilus en ejecución a través de su dirección CDP local y controló el navegador propio de ese perfil.",
+        "worksWithDocs": "Ver el código de cada herramienta"
     }
 }

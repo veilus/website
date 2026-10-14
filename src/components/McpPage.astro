@@ -1,6 +1,6 @@
 ---
 /**
- * Trang /features/mcp/, dùng chung cho en và /[lang]/ (VEIL-1314): trang đích cho truy vấn về MCP, thứ trước đây
+ * Trang /developers/, dùng chung cho en và /[lang]/ (VEIL-1314): trang đích cho truy vấn về MCP, thứ trước đây
  * chỉ là một mục trên trang chủ. Hình vòng lặp là Fig4McpLoop ở chế độ page (H1); phần kết nối chép lệnh từ
  * docs reference/mcp — docs là nguồn, đổi lệnh ở đó thì sửa đây.
  */
@@ -10,6 +10,7 @@ import Navbar from './Navbar.astro';
 import Fig4McpLoop from './Fig4McpLoop.astro';
 import FinalCTA from './FinalCTA.astro';
 import Footer from './Footer.astro';
+import WorksWith from './WorksWith.astro';
 import AnswerBlock from './AnswerBlock.astro';
 import { answer } from '../i18n/answers';
 
@@ -98,6 +99,8 @@ const CLIENT_JSON = `{
     </ul>
     <p class="k-safety"><span class="ms" data-icon="lock" aria-hidden="true"></span>{m.safety}</p>
   </section>
+
+  <WorksWith lang={lang} />
 
   <FinalCTA lang={lang} />
 </main>
