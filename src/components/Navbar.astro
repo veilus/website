@@ -20,12 +20,12 @@ const basePath = stripLang(Astro.url.pathname);
 // bằng giọng nói gọi nút bằng đúng chữ họ thấy.
 const langLabel = `${lang.toUpperCase()} — ${i.nav.language}`;
 
-// Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này; Giá là trang riêng /pricing/ (VEIL-1304), MCP là /developers/ (VEIL-1314, VEIL-1409)
+// Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này; Giá là trang riêng /pricing/ (VEIL-1304), MCP, API và SDK là /developers/ (VEIL-1314, VEIL-1409, VEIL-1414)
 const anchor = (id: string) => `${home}#${id}`;
 const LINKS = [
   [anchor('anti-detect'), i.nav.antiDetect],
   [anchor('profile'), i.nav.profile],
-  [getLocalizedPath('/developers', lang), i.nav.mcp],
+  [getLocalizedPath('/developers', lang), i.nav.developers],
   [anchor('backup'), i.nav.backup],
   [anchor('features'), i.nav.features],
   [getLocalizedPath('/pricing', lang), i.nav.pricing],
