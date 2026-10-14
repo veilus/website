@@ -39,21 +39,21 @@ export const LOAD_RULES = { cpuSlow: 75, ramSlow: 80, hold: 90, gapS: 5, recheck
 export const OS_SUPPORT = { windows: 'Windows 10/11 · x64', macos: 'macOS 13.5+ · Apple Silicon' };
 
 /**
- * Cỡ bộ cài, MB thập phân (10^6) làm tròn. Nguồn: `gh release view v0.2.10 -R veilus/releases --json assets`.
- * Đo 2026-10-12: Veilus_0.2.10_x64-setup.exe 39100330 byte, Veilus_0.2.10_aarch64.dmg 61837376 byte. Lớn hơn v0.2.1
+ * Cỡ bộ cài, MB thập phân (10^6) làm tròn. Nguồn: `gh release view v0.2.11 -R veilus/releases --json assets`.
+ * Đo 2026-10-14: Veilus_0.2.11_x64-setup.exe 39099368 byte, Veilus_0.2.11_aarch64.dmg 61843398 byte. Lớn hơn v0.2.1
  * (6552683 và 9630666 byte) vì từ 0.2.2 bộ cài kèm runtime Node và Playwright (quyết định 0108).
  */
 export const INSTALLER_SIZE = { windows: '.exe · ~39 MB', macos: '.dmg · ~62 MB' };
 
 /**
- * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-10-12: v0.2.10
- * (VEIL-1388; v0.2.9 phát hành cùng ngày nhưng hằng này không được đổi theo; trước đó v0.2.8, VEIL-1342; v0.2.7 là bản đầu tiên được cài qua tự cập nhật từ 0.2.6, VEIL-1327). Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE
+ * Bản app mà trang tải về phát. Nguồn: `gh release list -R veilus/releases` (bản Latest). Đo 2026-10-14: v0.2.11
+ * (VEIL-1392; trước đó v0.2.10, VEIL-1388; v0.2.9 phát hành cùng ngày nhưng hằng này không được đổi theo; trước đó v0.2.8, VEIL-1342; v0.2.7 là bản đầu tiên được cài qua tự cập nhật từ 0.2.6, VEIL-1327). Phát hành bản mới thì đổi hằng này cùng lượt với INSTALLER_SIZE
  * (đo lại bằng `gh release view v<bản> -R veilus/releases --json assets`); app chưa có updater nên trang giữ bản cũ tới
  * khi hằng này đổi.
  */
-export const APP_VERSION = '0.2.10';
+export const APP_VERSION = '0.2.11';
 
-/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-10-12 (v0.2.10): cả hai URL trả 200 sau chuyển hướng. */
+/** Tên file do release.yml ở repo gốc đặt (Tauri bundler). Kiểm 2026-10-14 (v0.2.11): cả hai URL trả 200 sau chuyển hướng. */
 const RELEASE_BASE = `https://github.com/veilus/releases/releases/download/v${APP_VERSION}`;
 export const DOWNLOAD_URL = {
   windows: `${RELEASE_BASE}/Veilus_${APP_VERSION}_x64-setup.exe`,
