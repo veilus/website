@@ -1,5 +1,12 @@
 [
   {
+    "version": "0.2.12",
+    "date": "2026-10-14",
+    "changes": [
+      "Engine page: only the engine version in use is marked in green; switching to another downloaded version is a neutral \"Use this version\" button"
+    ]
+  },
+  {
     "version": "0.2.11",
     "date": "2026-10-14",
     "changes": [
