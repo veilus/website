@@ -6,7 +6,7 @@
     "nav": {
         "antiDetect": "Anti-detect",
         "profile": "Perfil",
-        "mcp": "MCP",
+        "developers": "Desenvolvedores",
         "backup": "Backup",
         "features": "Recursos",
         "pricing": "Preços",
@@ -529,10 +529,10 @@
         "chromiumEngine": "Motor Chromium modificado pela própria Veilus"
     },
     "mcpPage": {
-        "metaTitle": "Veilus MCP — o navegador antidetecção que seu assistente de IA controla",
+        "metaTitle": "Veilus para desenvolvedores — MCP, API local e SDK do navegador antidetecção",
         "metaDescription": "Conecte o Claude Code, o Cursor ou qualquer cliente MCP ao Veilus Browser. Sua IA cria perfis, importa proxies, escreve e executa scripts Playwright em vários perfis e os agenda. Só local, token obrigatório.",
-        "pageTitle": "O navegador antidetecção que seu assistente de IA controla via MCP",
-        "pageLead": "Um comando MCP conecta o Claude Code, o Cursor ou qualquer cliente MCP ao Veilus. O assistente faz o trabalho nos seus perfis; você aprova uma vez.",
+        "pageTitle": "O navegador antidetecção que você controla via MCP, API local ou SDK",
+        "pageLead": "Um comando MCP conecta o Claude Code, o Cursor ou qualquer cliente MCP ao Veilus. O assistente faz o trabalho nos seus perfis; você aprova uma vez. Seus próprios scripts se conectam a um perfil em execução pelo SDK no npm e no PyPI.",
         "connectTitle": "Conecte com um comando",
         "connectLead": "Ligue a API local no app, crie um token na página API & MCP e registre o Veilus no seu cliente. O app preenche o caminho real e o token para você.",
         "otherClients": "Cursor / Claude Desktop",

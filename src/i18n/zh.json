@@ -6,7 +6,7 @@
     "nav": {
         "antiDetect": "Anti-detect",
         "profile": "配置文件",
-        "mcp": "MCP",
+        "developers": "开发者",
         "backup": "备份",
         "features": "功能",
         "pricing": "价格",
@@ -529,10 +529,10 @@
         "chromiumEngine": "Veilus 自行打补丁的 Chromium 引擎"
     },
     "mcpPage": {
-        "metaTitle": "Veilus MCP — 由你的 AI 助手驱动的指纹浏览器",
+        "metaTitle": "Veilus 开发者 — 指纹浏览器的 MCP、本地 API 与 SDK",
         "metaDescription": "把 Claude Code、Cursor 或任意 MCP 客户端连接到 Veilus 指纹浏览器。AI 创建配置文件、导入代理、编写并在多个配置文件上运行 Playwright 脚本，并安排定时运行。仅限本机，需要令牌。",
-        "pageTitle": "由你的 AI 助手通过 MCP 驱动的指纹浏览器",
-        "pageLead": "一条 MCP 命令即可把 Claude Code、Cursor 或任意 MCP 客户端连到 Veilus。助手在你的配置文件上完成工作，你只需审批一次。",
+        "pageTitle": "通过 MCP、本地 API 或 SDK 驱动的指纹浏览器",
+        "pageLead": "一条 MCP 命令即可把 Claude Code、Cursor 或任意 MCP 客户端连到 Veilus。助手在你的配置文件上完成工作，你只需审批一次。你自己的脚本可以通过 npm 和 PyPI 上的 SDK 连接到正在运行的配置文件。",
         "connectTitle": "一条命令完成连接",
         "connectLead": "在应用里打开本地 API，在 API & MCP 页面创建令牌，然后把 Veilus 注册到你的客户端。应用会替你填好真实路径和令牌。",
         "otherClients": "Cursor / Claude Desktop",

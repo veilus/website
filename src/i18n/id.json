@@ -6,7 +6,7 @@
     "nav": {
         "antiDetect": "Anti-detect",
         "profile": "Profil",
-        "mcp": "MCP",
+        "developers": "Pengembang",
         "backup": "Cadangan",
         "features": "Fitur",
         "pricing": "Harga",
@@ -529,10 +529,10 @@
         "chromiumEngine": "Mesin Chromium yang di-patch sendiri oleh Veilus"
     },
     "mcpPage": {
-        "metaTitle": "Veilus MCP — peramban anti-deteksi yang dikendalikan asisten AI Anda",
+        "metaTitle": "Veilus untuk pengembang — MCP, API lokal, dan SDK untuk peramban anti-deteksi",
         "metaDescription": "Hubungkan Claude Code, Cursor, atau klien MCP apa pun ke Veilus Browser. AI Anda membuat profil, mengimpor proxy, menulis dan menjalankan skrip Playwright di banyak profil, lalu menjadwalkannya. Hanya lokal, perlu token.",
-        "pageTitle": "Peramban anti-deteksi yang asisten AI Anda kendalikan lewat MCP",
-        "pageLead": "Satu perintah MCP menghubungkan Claude Code, Cursor, atau klien MCP apa pun ke Veilus. Asisten mengerjakan tugas di profil Anda; Anda menyetujui sekali.",
+        "pageTitle": "Peramban anti-deteksi yang Anda kendalikan lewat MCP, API lokal, atau SDK",
+        "pageLead": "Satu perintah MCP menghubungkan Claude Code, Cursor, atau klien MCP apa pun ke Veilus. Asisten mengerjakan tugas di profil Anda; Anda menyetujui sekali. Skrip Anda sendiri terhubung ke profil yang sedang berjalan lewat SDK di npm dan PyPI.",
         "connectTitle": "Hubungkan dengan satu perintah",
         "connectLead": "Nyalakan API lokal di aplikasi, buat token di halaman API & MCP, lalu daftarkan Veilus ke klien Anda. Aplikasi mengisi jalur asli dan token untuk Anda.",
         "otherClients": "Cursor / Claude Desktop",

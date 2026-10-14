@@ -6,7 +6,7 @@
     "nav": {
         "antiDetect": "Anti-detect",
         "profile": "Một hồ sơ",
-        "mcp": "MCP",
+        "developers": "Nhà phát triển",
         "backup": "Sao lưu",
         "features": "Tính năng",
         "pricing": "Giá",
@@ -529,10 +529,10 @@
         "chromiumEngine": "Chromium engine do Veilus tự vá"
     },
     "mcpPage": {
-        "metaTitle": "Veilus MCP — trình duyệt antidetect do trợ lý AI của bạn điều khiển",
+        "metaTitle": "Veilus cho nhà phát triển — MCP, API cục bộ và SDK của trình duyệt antidetect",
         "metaDescription": "Kết nối Claude Code, Cursor hay bất kỳ MCP client nào với Veilus Browser. AI tạo profile, nhập proxy, viết và chạy script Playwright trên nhiều profile, rồi đặt lịch. Chỉ trên máy bạn, cần token.",
-        "pageTitle": "Trình duyệt antidetect do trợ lý AI của bạn điều khiển qua MCP",
-        "pageLead": "Một lệnh MCP nối Claude Code, Cursor hay bất kỳ MCP client nào với Veilus. Trợ lý làm việc trên các profile của bạn; bạn duyệt một lần.",
+        "pageTitle": "Trình duyệt antidetect bạn điều khiển qua MCP, API cục bộ hoặc SDK",
+        "pageLead": "Một lệnh MCP nối Claude Code, Cursor hay bất kỳ MCP client nào với Veilus. Trợ lý làm việc trên các profile của bạn; bạn duyệt một lần. Script của chính bạn gắn vào một profile đang chạy qua SDK trên npm và PyPI.",
         "connectTitle": "Kết nối bằng một lệnh",
         "connectLead": "Bật API cục bộ trong app, tạo token ở trang API & MCP, rồi đăng ký Veilus với client của bạn. App điền sẵn đường dẫn thật và token cho bạn.",
         "otherClients": "Cursor / Claude Desktop",
