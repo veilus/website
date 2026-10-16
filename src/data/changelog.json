@@ -1,5 +1,14 @@
 [
   {
+    "version": "0.2.14",
+    "date": "2026-10-17",
+    "changes": [
+      "Cookies now travel with Veilus Sync: each profile's cookies are saved to cookies.json when it stops (and every minute while it runs) and loaded on the next launch, so a profile synced to another computer keeps its cookies. The browser's own cookie database is tied to the computer it was written on and is no longer synced",
+      "API reference in the app: every REST route and MCP tool with its parameters, response schema, code samples in curl, JavaScript and Python, and a panel to send a test request. HTTP methods and code samples are colour-coded",
+      "Fixed: the language tabs on code samples in the API reference can be switched"
+    ]
+  },
+  {
     "version": "0.2.13",
     "date": "2026-10-16",
     "changes": [
