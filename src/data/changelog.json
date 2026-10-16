@@ -1,5 +1,13 @@
 [
   {
+    "version": "0.2.13",
+    "date": "2026-10-16",
+    "changes": [
+      "Headless runs: launch a profile without a window over REST, MCP or the SDK, and run scripts and schedules headless from the app, with the same fingerprint as a windowed launch",
+      "Profiles opened over REST or MCP stop on their own after 30 minutes without a command; change the timeout in Settings, or pass idle_timeout_secs when launching (0 turns it off)"
+    ]
+  },
+  {
     "version": "0.2.12",
     "date": "2026-10-14",
     "changes": [
