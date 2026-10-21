@@ -7,7 +7,7 @@
         "antiDetect": "Anti-detect",
         "profile": "Profil",
         "developers": "Pengembang",
-        "backup": "Cadangan",
+        "backup": "Cadangan & sinkronisasi",
         "features": "Fitur",
         "pricing": "Harga",
         "faq": "FAQ",
@@ -15,7 +15,17 @@
         "blog": "Blog",
         "download": "Unduh gratis",
         "menu": "Buka menu",
-        "language": "Bahasa"
+        "language": "Bahasa",
+        "product": "Produk",
+        "resources": "Sumber daya",
+        "antiDetectDesc": "Yang dilihat situs: satu komputer, browser terpisah",
+        "profileDesc": "Masing-masing dengan sidik jari, proxy, dan cookie sendiri",
+        "backupDesc": "Snapshot, paket profil, sinkronisasi lewat Git dan Drive",
+        "featuresDesc": "Proxy, jalankan massal, jadwal, REST API, MCP",
+        "docsDesc": "Panduan, referensi API dan MCP",
+        "blogDesc": "Artikel dan tutorial",
+        "faqDesc": "Jawaban singkat untuk pertanyaan umum",
+        "allSolutions": "Semua solusi"
     },
     "pricing": {
         "title": "Sederhana,",

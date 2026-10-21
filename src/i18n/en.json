@@ -5,9 +5,9 @@
     },
     "nav": {
         "antiDetect": "Anti-detect",
-        "profile": "Profile",
+        "profile": "Profiles",
         "developers": "Developers",
-        "backup": "Backup",
+        "backup": "Backup & Sync",
         "features": "Features",
         "pricing": "Pricing",
         "faq": "FAQ",
@@ -15,7 +15,17 @@
         "blog": "Blog",
         "download": "Download free",
         "menu": "Open menu",
-        "language": "Language"
+        "language": "Language",
+        "product": "Product",
+        "resources": "Resources",
+        "antiDetectDesc": "What a website sees: one machine, separate browsers",
+        "profileDesc": "Each with its own fingerprint, proxy and cookies",
+        "backupDesc": "Snapshots, profile bundles, sync via Git and Drive",
+        "featuresDesc": "Proxies, batch runs, schedules, REST API, MCP",
+        "docsDesc": "Guides, API and MCP reference",
+        "blogDesc": "Articles and how-tos",
+        "faqDesc": "Short answers to common questions",
+        "allSolutions": "All solutions"
     },
     "pricing": {
         "title": "Simple,",

@@ -7,7 +7,7 @@
         "antiDetect": "Anti-detect",
         "profile": "配置文件",
         "developers": "开发者",
-        "backup": "备份",
+        "backup": "备份与同步",
         "features": "功能",
         "pricing": "价格",
         "faq": "常见问题",
@@ -15,7 +15,17 @@
         "blog": "Blog",
         "download": "免费下载",
         "menu": "打开菜单",
-        "language": "语言"
+        "language": "语言",
+        "product": "产品",
+        "resources": "资源",
+        "antiDetectDesc": "网站看到什么：一台电脑，多个独立浏览器",
+        "profileDesc": "每个配置文件都有独立的指纹、代理和 Cookie",
+        "backupDesc": "快照、配置文件包，通过 Git 和 Drive 同步",
+        "featuresDesc": "代理、批量运行、定时任务、REST API、MCP",
+        "docsDesc": "指南、API 与 MCP 参考",
+        "blogDesc": "文章与教程",
+        "faqDesc": "常见问题的简短解答",
+        "allSolutions": "全部解决方案"
     },
     "pricing": {
         "title": "简单，",
