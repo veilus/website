@@ -6,6 +6,7 @@ import { solutions, entry, VERTICAL_SLUGS, PLATFORM_SLUGS, SOLUTION_LANGS } from
 import Navbar from './Navbar.astro';
 import FinalCTA from './FinalCTA.astro';
 import Footer from './Footer.astro';
+import SolutionArt from './SolutionArt.astro';
 
 interface Props {
   lang: Lang;
@@ -33,6 +34,7 @@ const GROUPS = [
             return (
               <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
                 <a href={getLocalizedPath(`/solutions/${slug}`, lang)}>
+                  <SolutionArt lang={lang} slug={slug} kind="mini" />
                   <h3>{p.h1}</h3>
                   <p>{p.sub}</p>
                   <span class="k-open">{s.index.open}</span>
@@ -54,7 +56,8 @@ const GROUPS = [
   .k-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
   .k-list a { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); color: var(--ink); }
   .k-list a:hover { background: var(--paper); }
-  .k-list h3 { margin: 0; font-size: 1.15rem; }
+  .k-list h3 { margin: 6px 0 0; font-size: 1.15rem; }
+  .k-list a:hover h3 { color: var(--acc); }
   .k-group { margin: 40px 0 18px; font-family: var(--font-mono); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
   .k-list p { margin: 0; line-height: 1.6; color: var(--muted); }
   .k-open { margin-top: auto; font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }

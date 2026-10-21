@@ -1,0 +1,212 @@
+---
+/**
+ * Drawings on the /solutions/ pages (VEIL-1450): HTML mockups of the app, filled from the page's `art` block in
+ * src/i18n/solutions/<lang>.json. Labels are the app's own (app src/lib/i18n/locales), names/regions/times are
+ * examples and the hero says so. No screenshots: the pages stay text + CSS, nothing here can become the LCP image.
+ *   hero    profile list (or run history) with proxy and status, plus the scheduled script
+ *   mini    first three rows, for the cards on /solutions/
+ *   form    step "create profiles": name, language, timezone, proxy of the first profile
+ *   session step "sign in": three profiles, each with its own cookies
+ *   list    step "load URLs": dataset or script variables
+ *   code    step "write the script"
+ *   approve step "approve and schedule": MCP script pending → approved, then its schedule
+ */
+import type { Lang } from '../i18n/utils';
+import { solutions, entry } from '../i18n/solutions';
+
+export type ArtKind = 'hero' | 'mini' | 'form' | 'session' | 'list' | 'code' | 'approve';
+interface Props {
+  lang: Lang;
+  slug: string;
+  kind: ArtKind;
+}
+const { lang, slug, kind } = Astro.props;
+const a = solutions(lang).common.art;
+const p = entry(lang, slug);
+const art = p.art;
+const rows = kind === 'mini' ? art.rows.slice(0, 3) : art.rows;
+const runs = art.view === 'runs';
+const first = art.rows[0];
+const script = art.script ?? a.script;
+const type = a.types[(art.type ?? 'daily') as keyof typeof a.types];
+const delay = (n: number) => `--d:${(0.15 + n * 0.07).toFixed(2)}s`;
+const CODE = [
+  "await page.goto(url);",
+  "const items = await page.locator('h2').allTextContents();",
+  "if (!items.length) throw new Error('nothing found');",
+  "console.log(JSON.stringify(items));",
+];
+---
+
+{kind === 'hero' && (
+  <figure class="sa" aria-label={a.label.replace('{name}', p.name)}>
+    <div class="sa-win" aria-hidden="true">
+      <div class="sa-bar"><i></i><i></i><i></i><span>Veilus</span></div>
+      <div class="sa-tool">
+        <b>{runs ? a.runHistory : a.profiles}</b>
+        <small>{runs ? script : a.count.replace('{n}', String(art.rows.length))}</small>
+        {art.tag && <span class="sa-chip">{a.tag}: {art.tag}</span>}
+      </div>
+      <div class="sa-row sa-head"><span>{runs ? a.profile : a.name}</span><span>{a.proxy}</span><span>{a.status}</span></div>
+      {rows.map((r, n) => (
+        <div class="sa-row k-rise" style={delay(n)}>
+          <span class="sa-name"><b>{r.n}</b><small>{r.l} · {r.tz}</small></span>
+          <span class="sa-px"><span class="ms" data-icon="vpn_lock" aria-hidden="true"></span>{r.px}</span>
+          <span class={`sa-st is-${r.st}`}><i></i>{a.st[r.st as keyof typeof a.st]}</span>
+        </div>
+      ))}
+      {art.script && (
+        <div class="sa-foot k-rise" style={delay(rows.length)}>
+          <span class="ms" data-icon="event_repeat" aria-hidden="true"></span>
+          <b>{art.script}</b>
+          <span>{a.schedule}: {type}</span>
+          <span class="sa-badge">{a.approved}</span>
+        </div>
+      )}
+    </div>
+    <figcaption>{a.note}</figcaption>
+  </figure>
+)}
+
+{kind === 'mini' && (
+  <div class="sa-mini" aria-hidden="true">
+    {rows.map((r) => (
+      <div class="sa-mrow">
+        <span class={`sa-st is-${r.st}`}><i></i></span><b>{r.n}</b><em>{r.px}</em>
+      </div>
+    ))}
+  </div>
+)}
+
+{kind === 'form' && (
+  <dl class="sa-card sa-form" aria-hidden="true">
+    <div><dt>{a.name}</dt><dd>{first.n}</dd></div>
+    <div><dt>{a.language}</dt><dd>{first.l}</dd></div>
+    <div><dt>{a.timezone}</dt><dd>{first.tz}</dd></div>
+    <div><dt>{a.proxy}</dt><dd><span class="ms" data-icon="vpn_lock" aria-hidden="true"></span>{first.px}</dd></div>
+  </dl>
+)}
+
+{kind === 'session' && (
+  <div class="sa-wins" aria-hidden="true">
+    {art.rows.slice(0, 3).map((r) => (
+      <div class="sa-pw">
+        <div class="sa-bar"><i></i><i></i><i></i></div>
+        <b>{r.n}</b>
+        <small><span class="ms" data-icon="cookie" aria-hidden="true"></span>{a.cookies}</small>
+      </div>
+    ))}
+  </div>
+)}
+
+{kind === 'list' && (
+  <div class="sa-card sa-list" aria-hidden="true">
+    <div class="sa-lh">
+      <b>{art.list === 'variables' ? a.variables : a.dataset}</b>
+      {art.list === 'dataset' && <span class="sa-chip">{a.consume}</span>}
+    </div>
+    <ol>{(art.items ?? []).map((u) => <li>{u}</li>)}</ol>
+  </div>
+)}
+
+{kind === 'code' && (
+  <pre class="sa-card sa-code" aria-hidden="true">{CODE.join('\n')}</pre>
+)}
+
+{kind === 'approve' && (
+  <div class="sa-card sa-appr" aria-hidden="true">
+    <div class="sa-lh"><b>{script}</b><span class="sa-chip">{a.fromMcp}</span></div>
+    <div class="sa-flow">
+      <span class="sa-st is-pending"><i></i>{a.pending}</span>
+      <span class="sa-ar"></span>
+      <span class="sa-badge">{a.approved}</span>
+    </div>
+    <div class="sa-sched"><span class="ms" data-icon="event_repeat" aria-hidden="true"></span>{a.schedule}: {type}</div>
+  </div>
+)}
+
+<style>
+  /* ---------- Shared marks ---------- */
+  .sa-bar { display: flex; align-items: center; gap: 4px; height: 22px; padding: 0 10px; border-bottom: 1.5px solid var(--ink); font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .sa-bar i { display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--ink); }
+  .sa-bar span { margin-left: 8px; letter-spacing: 0.08em; }
+  .sa-chip { display: inline-flex; align-items: center; padding: 2px 7px; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: 10.5px; font-weight: 400; white-space: nowrap; }
+  .sa-badge { display: inline-flex; align-items: center; padding: 2px 7px; background: var(--ink); color: var(--paper); font-family: var(--font-mono); font-size: 10.5px; white-space: nowrap; }
+  .sa-st { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 11.5px; white-space: nowrap; }
+  .sa-st i { position: relative; flex: none; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink); }
+  .sa-st.is-running i { border-color: var(--acc); background: var(--acc); }
+  .sa-st.is-running { color: var(--acc); }
+  .sa-st.is-stopped { color: var(--muted); }
+  .sa-st.is-done i { background: var(--ink); }
+  .sa-st.is-failed i { border-color: var(--acc); }
+  .sa-st.is-failed i::before,
+  .sa-st.is-failed i::after { content: ''; position: absolute; left: 50%; top: 50%; width: 9px; height: 1.5px; background: var(--acc); transform: translate(-50%, -50%) rotate(45deg); }
+  .sa-st.is-failed i::after { transform: translate(-50%, -50%) rotate(-45deg); }
+  .sa-st.is-pending i { border-style: dashed; }
+  .sa-card { margin: 0; border: 1.5px solid var(--ink); background: var(--paper); font-size: 13px; }
+  .sa-card .ms, .sa-px .ms, .sa-foot .ms, .sa-pw .ms { font-size: 15px; }
+
+  /* ---------- Hero ---------- */
+  .sa { margin: 0; }
+  .sa-win { border: 1.5px solid var(--ink); background: var(--paper); }
+  .sa-tool { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; padding: 14px 16px 12px; }
+  .sa-tool b { font-size: 17px; font-weight: 600; }
+  .sa-tool small { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  .sa-tool .sa-chip { margin-left: auto; }
+  .sa-row { display: grid; grid-template-columns: minmax(0, 1fr) 64px 104px; align-items: center; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--rule); }
+  .sa-head { padding-block: 6px; border-top: 1.5px solid var(--ink); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .sa-name { display: flex; flex-direction: column; min-width: 0; }
+  .sa-name b { overflow: hidden; font-size: 14px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+  .sa-name small { overflow: hidden; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); text-overflow: ellipsis; white-space: nowrap; }
+  .sa-px { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 12px; }
+  .sa-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 12px 16px; border-top: 1.5px solid var(--ink); background: var(--acc-soft); font-size: 13px; }
+  .sa-foot b { font-weight: 600; }
+  .sa-foot > span:not(.ms):not(.sa-badge) { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+  .sa-foot .sa-badge { margin-left: auto; }
+  .sa figcaption { margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+  /* The running dot breathes while the hero is on screen; one moving thing per page. */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .sa-win .sa-st.is-running i::after { content: ''; position: absolute; inset: -1.5px; border-radius: 50%; border: 1.5px solid var(--acc); animation: sa-ping 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite; animation-play-state: paused; }
+    :global([data-reveal].is-live) .sa-win .sa-st.is-running i::after { animation-play-state: running; }
+  }
+  @keyframes sa-ping { from { transform: scale(1); opacity: 0.9; } 70%, to { transform: scale(2.6); opacity: 0; } }
+
+  /* ---------- Index card ---------- */
+  .sa-mini { display: flex; flex-direction: column; border: 1px solid var(--ink); background: var(--paper); }
+  .sa-mrow { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto; align-items: center; gap: 8px; padding: 6px 10px; font-size: 12.5px; }
+  .sa-mrow + .sa-mrow { border-top: 1px solid var(--rule); }
+  .sa-mrow b { overflow: hidden; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+  .sa-mrow em { font-style: normal; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+  /* ---------- Steps ---------- */
+  .sa-form { display: grid; }
+  .sa-form div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 10px; padding: 7px 12px; }
+  .sa-form div + div { border-top: 1px solid var(--rule); }
+  .sa-form dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); align-self: center; }
+  .sa-form dd { display: flex; align-items: center; gap: 5px; min-width: 0; margin: 0; overflow: hidden; font-family: var(--font-mono); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+  .sa-wins { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .sa-pw { min-width: 0; border: 1.5px solid var(--ink); background: var(--paper); }
+  .sa-pw .sa-bar { height: 14px; padding: 0 6px; gap: 3px; }
+  .sa-pw .sa-bar i { width: 4px; height: 4px; }
+  .sa-pw b { display: block; padding: 8px 8px 2px; overflow: hidden; font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+  .sa-pw small { display: flex; align-items: center; gap: 4px; padding: 0 8px 8px; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+  .sa-lh { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+  .sa-lh b { min-width: 0; font-weight: 600; }
+  .sa-list ol { margin: 0; padding: 4px 12px 8px 36px; font-family: var(--font-mono); font-size: 12px; line-height: 1.9; }
+  .sa-list li::marker { color: var(--muted); }
+  .sa-code { padding: 12px; overflow-x: auto; font-family: var(--font-mono); font-size: 11.5px; line-height: 1.75; white-space: pre; }
+  .sa-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px; }
+  .sa-ar { position: relative; flex: 1 1 24px; min-width: 24px; max-width: 64px; height: 0; border-top: 1.5px solid var(--ink); }
+  .sa-ar::after { content: ''; position: absolute; right: -2px; top: -5px; border-left: 8px solid var(--ink); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+  .sa-sched { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-top: 1px solid var(--rule); font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+
+  @media (max-width: 480px) {
+    .sa-row { grid-template-columns: minmax(0, 1fr) 50px 92px; gap: 8px; padding-inline: 12px; }
+    .sa-tool { padding-inline: 12px; }
+    .sa-foot { padding-inline: 12px; }
+    .sa-wins { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sa-wins .sa-pw:nth-child(3) { display: none; }
+    .sa-form div { grid-template-columns: 72px minmax(0, 1fr); }
+  }
+</style>
