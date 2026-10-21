@@ -1,11 +1,14 @@
 {
+  "nav": "Solutions",
   "index": {
-    "metaTitle": "Manage multiple accounts with Veilus Browser — Instagram, TikTok, YouTube, X, Shopify",
-    "metaDescription": "Keep each account you own or are authorized to manage in its own Veilus browser profile with its own cookies, fingerprint and proxy. Guides for Instagram, TikTok, YouTube, X and Shopify.",
+    "metaTitle": "Veilus Browser solutions — e-commerce, dropshipping, affiliate marketing, advertising, web scraping",
+    "metaDescription": "How Veilus fits e-commerce, dropshipping, affiliate marketing, advertising and web scraping, plus guides for Instagram, TikTok, YouTube, X and Shopify accounts you own or are authorized to manage.",
     "fig": "solutions",
-    "title": "Manage accounts on the platforms you work on",
-    "lead": "One page per platform: how to keep each account you own or are authorized to manage in its own browser profile, and what Veilus does and doesn't do there.",
-    "open": "Read the guide"
+    "title": "Veilus solutions by use case and by platform",
+    "lead": "How Veilus fits e-commerce, dropshipping, affiliate marketing, advertising and web scraping, and how to keep accounts on each platform in their own profiles — for accounts you own or are authorized to manage.",
+    "open": "Read the guide",
+    "byUseCase": "By use case",
+    "byPlatform": "By platform"
   },
   "common": {
     "fig": "solutions",
@@ -22,10 +25,11 @@
       },
       {
         "title": "Repetitive work, automated",
-        "body": "On a paid plan, Veilus Flow runs Playwright scripts on your profiles, in batches or on a schedule. Write a script yourself, or let an AI assistant write and fix it over MCP; scripts added over MCP or the REST API run on at most 3 profiles until you approve them in the app."
+        "body": "On a paid plan, Veilus Flow runs Playwright scripts on your profiles, in batches or on a schedule. Write a script yourself, or let an AI assistant write and fix it over MCP; scripts added over MCP or the REST API run on at most 3 profiles until you approve them in the app.",
+        "href": "/developers",
+        "linkText": "MCP, local API and SDK for developers"
       }
     ],
-    "devLink": "MCP, local API and SDK for developers",
     "stepsTitle": "How to get started",
     "steps": [
       {
@@ -41,10 +45,387 @@
         "body": "Approve a script in Veilus Flow, then run it on the profiles as a batch or put it on a schedule. This needs a paid plan or the 7-day Pro trial."
       }
     ],
-    "guideLink": "Step-by-step guide in the docs",
     "faqTitle": "Questions about {platform}",
     "aupLink": "Read the Acceptable Use Policy",
-    "moreTitle": "More platforms"
+    "guides": [
+      {
+        "href": "docs:recipes/multi-account",
+        "text": "Step-by-step guide in the docs"
+      }
+    ],
+    "moreUseCases": "More use cases",
+    "morePlatforms": "Platforms"
+  },
+  "verticals": {
+    "ecommerce": {
+      "name": "e-commerce",
+      "metaTitle": "Veilus for e-commerce — one browser profile per store, storefront checks per market",
+      "metaDescription": "Keep each store you run in its own Veilus profile, check storefronts, prices and listings in each market's language and timezone, and run the checks on a schedule.",
+      "h1": "Veilus for e-commerce",
+      "sub": "Keep each store you run in its own browser profile, on marketplaces and platforms that allow more than one store, and check your storefronts in every market's language and timezone.",
+      "benefits": [
+        {
+          "title": "One profile per store",
+          "body": "Each store's admin lives in its own profile with its own cookies, site storage, fingerprint and proxy, so every store stays signed in and you switch stores by switching windows."
+        },
+        {
+          "title": "Storefronts per market",
+          "body": "Set each profile's browser language and timezone, or pick a market to fill both. A profile doesn't change your IP address: if a storefront picks language or currency from the IP, give the profile a proxy in that region."
+        },
+        {
+          "title": "Checks that run on their own",
+          "body": "On a paid plan, an approved Playwright script reads what each profile gets — the page's language, prices, listing text — and prints it to Run History, in a batch or on a schedule. An AI assistant can write it for you over MCP.",
+          "href": "/developers",
+          "linkText": "MCP, local API and SDK for developers"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Create profiles for stores and markets",
+          "body": "Install Veilus on Windows 10/11 (x64) or macOS 13.5+ (Apple Silicon). Create one profile per store and one per market you check, each with its language, timezone and proxy."
+        },
+        {
+          "title": "Sign in and tag",
+          "body": "Sign in to each store in its own profile. Tag the market profiles so a saved filter selects them together."
+        },
+        {
+          "title": "Write one check and schedule it",
+          "body": "Ask an AI assistant over MCP to write the check, or write it yourself. Approve it in Veilus Flow and put it on a daily schedule: a page that shows the wrong language or price can fail its profile."
+        }
+      ],
+      "guides": [
+        {
+          "href": "https://blog.veilus.io/blog/localization-qa-profiles/",
+          "text": "Guide: check a site in several languages and time zones"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Can I run several stores on one marketplace?",
+          "a": "Only where the marketplace allows it. Some marketplaces allow more than one store per seller, some only with approval, and some not at all. Check its seller terms first; Veilus is for stores you run where that is allowed."
+        },
+        {
+          "q": "How do I check prices and listings in another market?",
+          "a": "Create a profile with that market's language and timezone, and give it a proxy in the region if the site picks content from the visitor's IP. A script then opens the page in that profile and prints what it shows."
+        },
+        {
+          "q": "Can the check run every day?",
+          "a": "Yes, on a paid plan. Put the approved script on a schedule. A script that exits with a non-zero code marks its profile as failed, and each profile's output and exit code show up in Run History."
+        },
+        {
+          "q": "Where are store logins kept?",
+          "a": "In the profile: cookies and sessions stay there between launches. Account details that a script needs can go in a fixed dataset, where each profile gets its own row and no two profiles share one. Dataset values are stored on your computer in plain text."
+        },
+        {
+          "q": "What does the Free plan cover?",
+          "a": "5 profiles on 1 device, with no time limit and no card. Veilus Flow, schedules, batch runs, the local API/MCP, Veilus Sync and import/export need a paid plan; the app also has a 7-day Pro trial."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow each marketplace's and platform's own terms, including any rule on how many stores a seller may have and on automated access, and use only stores you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "dropshipping": {
+      "name": "dropshipping",
+      "metaTitle": "Veilus for dropshipping — store profiles and supplier checks on a schedule",
+      "metaDescription": "Keep each store you run in its own Veilus profile, check supplier pages for price and stock on a schedule, and check your storefront in each market's language and timezone.",
+      "h1": "Veilus for dropshipping",
+      "sub": "Run your own stores in separate browser profiles, check supplier pages on a schedule, and check your storefront in each market's language and timezone.",
+      "benefits": [
+        {
+          "title": "One profile per store",
+          "body": "Each store you run gets its own profile with its own cookies, site storage, fingerprint and proxy, so all of them stay signed in at once."
+        },
+        {
+          "title": "Supplier pages on a schedule",
+          "body": "On a paid plan, a Playwright script opens the supplier pages you list, reads price and stock and prints them, on a schedule. A consume dataset hands each run new URLs, and a run that fails returns its rows.",
+          "href": "/developers",
+          "linkText": "MCP, local API and SDK for developers"
+        },
+        {
+          "title": "Your storefront per market",
+          "body": "Give a profile a market's browser language and timezone, and a proxy in that region if your storefront picks language or currency from the IP. A script can then check the page's language and how dates look."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Create profiles",
+          "body": "Install Veilus on Windows 10/11 (x64) or macOS 13.5+ (Apple Silicon). Create a profile per store and one per market you sell to, with its language, timezone and proxy."
+        },
+        {
+          "title": "Load supplier URLs",
+          "body": "Import a CSV with a URL column as a consume dataset and assign it to the profiles that run the check. Profiles running at the same time never get the same row."
+        },
+        {
+          "title": "Approve and schedule",
+          "body": "Approve the script in Veilus Flow and put it on a schedule with a low Concurrency and a Stagger Delay. Read each profile's output in Run History."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Web scraping recipe in the docs"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Can Veilus check supplier prices and stock for me?",
+          "a": "A script can, on a paid plan: it opens each supplier page, reads the values and prints them. Veilus keeps the last 4096 characters of each profile's output; for more, the script writes to a file and prints a short summary."
+        },
+        {
+          "q": "Do supplier sites allow automated checks?",
+          "a": "That depends on the site. Check its terms and robots.txt first; some sites prohibit automated collection. Keep Concurrency low and wait between pages inside the script."
+        },
+        {
+          "q": "Can I check my store in another country's language?",
+          "a": "Yes. Create a profile with that market's language and timezone. A profile doesn't change your IP address, so if your storefront picks language or currency from the IP, give the profile a proxy in that region."
+        },
+        {
+          "q": "Do I need to write code?",
+          "a": "No. Describe the check to an AI assistant connected over MCP, such as Claude Code or Cursor. It writes the Playwright script and trial-runs it on up to 3 profiles; you read it and approve it before it runs on more."
+        },
+        {
+          "q": "Can I keep several stores signed in at once?",
+          "a": "Yes. Sign in to each store in its own profile. Each profile keeps its own cookies and site storage between launches, so you switch stores by switching windows."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow the terms of each platform you sell on and of each supplier site you check, and use only stores you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "affiliate-marketing": {
+      "name": "affiliate marketing",
+      "metaTitle": "Veilus for affiliate marketing — check your links and landing pages per country",
+      "metaDescription": "Keep your own affiliate sites and network accounts in separate Veilus profiles, check that your own landing pages and redirects show the right content per country and language, and monitor public offer pages on a schedule.",
+      "h1": "Veilus for affiliate marketing",
+      "sub": "Keep your own sites and network accounts in separate browser profiles, and check that your own landing pages and redirects show the right content in each country and language.",
+      "benefits": [
+        {
+          "title": "Your accounts, kept apart",
+          "body": "Each of your affiliate network accounts and site dashboards lives in its own profile with its own cookies and site storage, so they all stay signed in at once."
+        },
+        {
+          "title": "Your pages checked per country and language",
+          "body": "A profile carries its own browser language and timezone, and a proxy in a region shows what a browser there gets. A script opens each of your own landing pages and redirects and prints where it lands and which language the page declares."
+        },
+        {
+          "title": "Public pages monitored on a schedule",
+          "body": "On a paid plan, an approved script checks your own landing pages and public offer pages on a schedule, and a page that breaks shows up as a failed profile.",
+          "href": "/developers",
+          "linkText": "MCP, local API and SDK for developers"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Create profiles",
+          "body": "Install Veilus on Windows 10/11 (x64) or macOS 13.5+ (Apple Silicon). Create one profile per account you own, and one per country you check, with its language, timezone and a proxy in that region."
+        },
+        {
+          "title": "List your own pages",
+          "body": "Give the script the URLs of your own landing pages and redirects as a variable, so every country profile checks the same list."
+        },
+        {
+          "title": "Approve and schedule",
+          "body": "Ask an AI assistant over MCP to write the check, or write it yourself. Approve it in Veilus Flow, put it on a schedule and read each profile's result in Run History."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:profiles/datasets",
+          "text": "Datasets in the docs"
+        }
+      ],
+      "related": [
+        "instagram",
+        "youtube"
+      ],
+      "faq": [
+        {
+          "q": "Can I use several accounts on one affiliate network?",
+          "a": "Only if the network's terms allow it. Veilus is not for extra accounts that get around a network's limits, fake clicks or traffic, cookie stuffing or paid fake sign-ups: those break our Acceptable Use Policy."
+        },
+        {
+          "q": "How do I check a landing page from another country?",
+          "a": "Create a profile with that country's language and timezone and a proxy in the region. A script opens your page in that profile and prints the final URL and the language the page declares."
+        },
+        {
+          "q": "Can the checks run on a schedule?",
+          "a": "Yes, on a paid plan. Point the checks at your own pages and redirects, not at network tracking links, so automated visits are never counted as clicks; check your network's terms."
+        },
+        {
+          "q": "Where do I see the results?",
+          "a": "In the script's Run History: each profile's output and exit code. An AI assistant connected over MCP can read the same results and tell you which pages failed."
+        },
+        {
+          "q": "Will networks detect my profiles?",
+          "a": "No tool can promise that, and we don't. Each profile keeps its own fingerprint, proxy and cookies; how your accounts are treated also depends on how you use them."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow the terms of each affiliate network and platform you work with, and use only sites and accounts you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "advertising": {
+      "name": "advertising",
+      "metaTitle": "Veilus for advertising — check landing pages by region, client accounts kept apart",
+      "metaDescription": "Check how your landing pages appear in different regions and languages, keep each client ad account you manage with permission in its own Veilus profile, and automate reporting checks.",
+      "h1": "Veilus for advertising",
+      "sub": "Check how your landing pages appear in each region and language, and keep each client ad account you manage, with permission, in its own browser profile.",
+      "benefits": [
+        {
+          "title": "Landing pages per region",
+          "body": "Give a profile a market's browser language and timezone and a proxy in that region, then open your ads' landing pages as a browser there would."
+        },
+        {
+          "title": "Client accounts kept apart",
+          "body": "Each client ad account you manage with the client's permission lives in its own profile with its own cookies and site storage. Name and tag the profiles by client."
+        },
+        {
+          "title": "Reporting checks automated",
+          "body": "On a paid plan, a Playwright script — written by you or by an AI assistant over MCP — opens the pages you check and prints what it finds, in a batch or on a schedule.",
+          "href": "/developers",
+          "linkText": "MCP, local API and SDK for developers"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Create profiles",
+          "body": "Install Veilus on Windows 10/11 (x64) or macOS 13.5+ (Apple Silicon). Create one profile per client account and one per region you check, each with its language, timezone and proxy."
+        },
+        {
+          "title": "Sign in with permission",
+          "body": "Sign in to each client account you are authorized to manage in its own profile, and tag the profiles by client."
+        },
+        {
+          "title": "Automate the checks",
+          "body": "Approve a script in Veilus Flow, run it as a batch or on a schedule, and read each profile's output in Run History."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/multi-account",
+          "text": "Step-by-step guide in the docs"
+        }
+      ],
+      "related": [
+        "instagram",
+        "tiktok"
+      ],
+      "faq": [
+        {
+          "q": "Can I see my ad the way people in another country do?",
+          "a": "A profile with that market's language and timezone, and a proxy in the region, shows what a browser there gets. What an ad platform chooses to show also depends on its own targeting, so treat it as a check, not a guarantee."
+        },
+        {
+          "q": "We manage ad accounts for clients. How do we keep them apart?",
+          "a": "Give each client account you are authorized to manage its own profile, name it after the account and tag it by client. Profiles don't share browser data, so each client's session stays in that client's profile."
+        },
+        {
+          "q": "Can I automate reporting checks?",
+          "a": "Yes, on a paid plan: an approved Playwright script runs on the profiles as a batch or on a schedule. Check each ad platform's terms on automated access before you automate anything there."
+        },
+        {
+          "q": "Can a teammate open the same client profiles?",
+          "a": "With Veilus Sync on a paid plan, profiles, cookies included, are copied between computers through a Git repository or Google Drive you own; keep it private. Syncing is manual, and Veilus has no per-user roles."
+        },
+        {
+          "q": "Can Veilus help after an ad account is suspended?",
+          "a": "No. Running ads again after a ban, getting around an ad platform's review, or creating replacement accounts is against our Acceptable Use Policy. Follow the platform's own process."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow each ad platform's own terms and policies, and use only accounts you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "web-scraping": {
+      "name": "web scraping",
+      "metaTitle": "Veilus for web scraping — Playwright scripts in real browser profiles",
+      "metaDescription": "Collect public data with Playwright scripts that run inside Veilus profiles with their own proxy and cookies, split URLs across profiles with datasets, and schedule the runs.",
+      "h1": "Veilus for web scraping",
+      "sub": "Collect public data with Playwright scripts that run inside your browser profiles, each with its own proxy, cookies and logins.",
+      "benefits": [
+        {
+          "title": "Scripts in a real profile",
+          "body": "A Veilus Flow script runs inside a profile's browser, so each request goes out with that profile's fingerprint, proxy and cookies, and logins stay in the profile between runs."
+        },
+        {
+          "title": "URLs split across profiles",
+          "body": "Put URLs in a consume dataset: each run takes new rows, profiles running at the same time never get the same row, and a run that fails returns its rows, so no URL is lost."
+        },
+        {
+          "title": "Paced, scheduled runs",
+          "body": "Keep Concurrency low with a Delay Between launches in a run or a Stagger Delay on a schedule, wait between pages inside the script, and schedule collection at fixed times. Results land in Run History, and an AI assistant reads them over MCP.",
+          "href": "/developers",
+          "linkText": "MCP, local API and SDK for developers"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Create profiles with proxies",
+          "body": "Install Veilus on Windows 10/11 (x64) or macOS 13.5+ (Apple Silicon), create the profiles and give each one its proxy."
+        },
+        {
+          "title": "Write the script",
+          "body": "Ask an AI assistant over MCP to write it, or write it yourself. Print what you collect as JSON, and throw when nothing is found so the run shows as failed."
+        },
+        {
+          "title": "Load URLs, approve, schedule",
+          "body": "Put the URLs in a consume dataset, approve the script in Veilus Flow, then run it or put it on a schedule. This needs a paid plan or the 7-day Pro trial."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Web scraping recipe in the docs"
+        },
+        {
+          "href": "https://blog.veilus.io/blog/web-scraping-without-getting-blocked/",
+          "text": "Web scraping guide on the blog"
+        }
+      ],
+      "related": [],
+      "faq": [
+        {
+          "q": "Do I need to write code?",
+          "a": "No. Describe what to collect to an AI assistant connected over MCP, such as Claude Code or Cursor. It writes the Playwright script and trial-runs it on up to 3 profiles; you read it and approve it before it runs on more."
+        },
+        {
+          "q": "How much output does a run keep?",
+          "a": "Veilus keeps the last 4096 characters of each profile's output. If you collect more, have the script write it to a file with Node's fs module and print a short summary."
+        },
+        {
+          "q": "Do trial runs get dataset rows?",
+          "a": "No. Dataset values reach approved scripts only; a trial run of an unapproved script gets none and reserves no rows. Pass the values it needs as run variables instead."
+        },
+        {
+          "q": "Can a profile keep its login between runs?",
+          "a": "Yes. Cookies and logins stay in the profile, so reuse the same profile for the same site and its session carries over from run to run."
+        },
+        {
+          "q": "Will sites block my scripts?",
+          "a": "No tool can promise that, and we don't. A profile keeps a consistent fingerprint, proxy and cookies; how a site treats the traffic also depends on how fast and how much you collect."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "It depends on the site and where you are. Check each site's terms and robots.txt before you collect from it; some sites prohibit automated collection. Collect public data, keep the pace low, and read our Acceptable Use Policy.",
+          "aup": true
+        }
+      ]
+    }
   },
   "platforms": {
     "instagram": {
@@ -225,6 +606,10 @@
           "a": "Check Shopify's terms for your stores and plan, and use only stores you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
+      ],
+      "related": [
+        "ecommerce",
+        "dropshipping"
       ]
     }
   }

@@ -2,18 +2,18 @@
 import Layout from "../../../layouts/Layout.astro";
 import SolutionPage from "../../../components/SolutionPage.astro";
 import { defaultLang, type Lang } from "../../../i18n/utils";
-import { solutions, PLATFORM_SLUGS, SOLUTION_LANGS, type PlatformSlug } from "../../../i18n/solutions";
+import { entry, ALL_SLUGS, SOLUTION_LANGS } from "../../../i18n/solutions";
 
 export function getStaticPaths() {
   // Solutions copy exists in en and vi only (VEIL-1448); en is built by /solutions/[slug].astro
   return SOLUTION_LANGS.filter((l) => l !== defaultLang).flatMap((lang) =>
-    PLATFORM_SLUGS.map((slug) => ({ params: { lang, slug } })),
+    ALL_SLUGS.map((slug) => ({ params: { lang, slug } })),
   );
 }
 
 const lang = Astro.params.lang as Lang;
-const slug = Astro.params.slug as PlatformSlug;
-const p = solutions(lang).platforms[slug];
+const slug = Astro.params.slug as string;
+const p = entry(lang, slug);
 ---
 
 <Layout lang={lang} title={p.metaTitle} description={p.metaDescription} langs={SOLUTION_LANGS}>

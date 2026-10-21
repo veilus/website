@@ -1,27 +1,31 @@
 ---
 /**
- * /solutions/<platform>/ (VEIL-1448): one template, copy from src/i18n/solutions/<lang>.json. Every claim in the
- * copy comes from en.json faq/pricing, public/llms.txt or the docs (recipes/multi-account, profiles/datasets,
- * profiles/proxy, sync/overview); platform rules are never stated, only "check <platform>'s terms".
+ * /solutions/<use case or platform>/ (VEIL-1448): one template, copy from src/i18n/solutions/<lang>.json. Every
+ * claim in the copy comes from en.json faq/pricing, public/llms.txt, the docs (recipes, profiles/datasets,
+ * profiles/proxy, sync/overview) or the blog; platform rules are never stated, only "check <platform>'s terms".
  */
 import type { Lang } from '../i18n/utils';
 import { getLocalizedPath, docsUrl } from '../i18n/utils';
-import { solutions, fillPlatform, PLATFORM_SLUGS, SOLUTION_LANGS, type PlatformSlug } from '../i18n/solutions';
+import { solutions, entry, VERTICAL_SLUGS, PLATFORM_SLUGS, SOLUTION_LANGS } from '../i18n/solutions';
 import Navbar from './Navbar.astro';
 import FinalCTA from './FinalCTA.astro';
 import Footer from './Footer.astro';
 
 interface Props {
   lang: Lang;
-  slug: PlatformSlug;
+  slug: string;
 }
 const { lang, slug } = Astro.props;
-const s = solutions(lang);
-const c = s.common;
-const p = s.platforms[slug];
-const fill = (str: string) => fillPlatform(str, p);
+const c = solutions(lang).common;
+const p = entry(lang, slug);
 const aup = getLocalizedPath('/acceptable-use', lang);
-const others = PLATFORM_SLUGS.filter((o) => o !== slug);
+const href = (h: string) => (h.startsWith('docs:') ? docsUrl(h.slice(5), lang) : h.startsWith('/') ? getLocalizedPath(h, lang) : h);
+// Same-group pages first, then the page's hand-picked links into the other group.
+const same = (p.group === 'verticals' ? VERTICAL_SLUGS : PLATFORM_SLUGS).filter((o) => o !== slug);
+const rows = [
+  { title: p.group === 'verticals' ? c.moreUseCases : c.morePlatforms, slugs: same },
+  { title: p.group === 'verticals' ? c.morePlatforms : c.moreUseCases, slugs: p.related },
+].filter((r) => r.slugs.length > 0);
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -47,9 +51,9 @@ const faqJsonLd = {
     <div class="k-cards">
       {c.benefits.map((b, n) => (
         <article class="k-card k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
-          <h3>{fill(b.title)}</h3>
-          <p>{fill(b.body)}</p>
-          {n === 2 && <p class="k-more"><a href={getLocalizedPath('/developers', lang)}>{c.devLink}</a></p>}
+          <h3>{b.title}</h3>
+          <p>{b.body}</p>
+          {b.href && <p class="k-more"><a href={href(b.href)}>{b.linkText}</a></p>}
         </article>
       ))}
     </div>
@@ -61,15 +65,15 @@ const faqJsonLd = {
       {c.steps.map((st, n) => (
         <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
           <em>{String(n + 1).padStart(2, '0')}</em>
-          <div><h3>{fill(st.title)}</h3><p>{fill(st.body)}</p></div>
+          <div><h3>{st.title}</h3><p>{st.body}</p></div>
         </li>
       ))}
     </ol>
-    <p class="k-more"><a href={docsUrl('recipes/multi-account', lang)}>{c.guideLink}</a></p>
+    {p.guides.map((g) => <p class="k-more"><a href={href(g.href)}>{g.text}</a></p>)}
   </section>
 
   <section class="k-wrap k-sec" id="faq" data-reveal>
-    <h2 class="k-h2">{fill(c.faqTitle)}</h2>
+    <h2 class="k-h2">{c.faqTitle.replace('{platform}', p.name)}</h2>
     <div class="k-faq">
       {p.faq.map((item, n) => (
         <details open={n < 2}>
@@ -77,7 +81,7 @@ const faqJsonLd = {
             <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" data-icon="add" aria-hidden="true"></span>
           </summary>
           <p>{item.a}</p>
-          {'aup' in item && <p class="k-more"><a href={aup}>{c.aupLink}</a></p>}
+          {item.aup && <p class="k-more"><a href={aup}>{c.aupLink}</a></p>}
         </details>
       ))}
     </div>
@@ -85,10 +89,14 @@ const faqJsonLd = {
   </section>
 
   <section class="k-wrap k-sec" data-reveal>
-    <h2 class="k-h2">{c.moreTitle}</h2>
-    <p class="k-linkrow">
-      {others.map((o) => <a href={getLocalizedPath(`/solutions/${o}`, lang)}>{s.platforms[o].h1}</a>)}
-    </p>
+    {rows.map((r) => (
+      <>
+        <h2 class="k-h2 k-row-h">{r.title}</h2>
+        <p class="k-linkrow">
+          {r.slugs.map((o) => <a href={getLocalizedPath(`/solutions/${o}`, lang)}>{entry(lang, o).h1}</a>)}
+        </p>
+      </>
+    ))}
   </section>
 
   <FinalCTA lang={lang} />
@@ -117,6 +125,7 @@ const faqJsonLd = {
   .k-faq p { max-width: 54em; margin: 0; padding: 0 48px 20px 72px; font-size: 15px; line-height: 1.65; color: var(--muted); }
   .k-faq .k-more { margin-top: -10px; }
   .k-linkrow { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0; }
+  .k-row-h + .k-linkrow ~ .k-row-h { margin-top: 48px; }
   @media (max-width: 860px) {
     .k-cards { grid-template-columns: 1fr; }
   }
