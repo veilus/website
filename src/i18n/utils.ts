@@ -71,7 +71,7 @@ export function docsUrl(page: string, lang: Lang): string {
   return `${DOCS_URL}${prefix}/${page}/`;
 }
 
-export function getHreflangs(currentPath: string, siteUrl: string) {
+export function getHreflangs(currentPath: string, siteUrl: string, langs: readonly Lang[] = supportedLangs) {
     const cleanPath = stripLang(currentPath);
-    return supportedLangs.map((lang) => ({ lang, code: languages[lang].hreflang, href: `${siteUrl}${getLocalizedPath(cleanPath, lang)}` }));
+    return langs.map((lang) => ({ lang, code: languages[lang].hreflang, href: `${siteUrl}${getLocalizedPath(cleanPath, lang)}` }));
 }

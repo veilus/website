@@ -6,11 +6,15 @@
 import type { Lang } from '../i18n/utils';
 import LogoMark from './LogoMark.astro';
 import { t, languages, supportedLangs, defaultLang, getLocalizedPath, stripLang } from '../i18n/utils';
+import { solutions, SOLUTION_LANGS } from '../i18n/solutions';
 
 interface Props {
   lang?: Lang;
+  /** Languages the current page exists in; the language menu lists only these (VEIL-1448). */
+  langs?: readonly Lang[];
 }
 const lang = Astro.props.lang || defaultLang;
+const langs = Astro.props.langs ?? supportedLangs;
 const i = t(lang);
 const home = getLocalizedPath('/', lang);
 
@@ -26,6 +30,8 @@ const LINKS = [
   [anchor('anti-detect'), i.nav.antiDetect],
   [anchor('profile'), i.nav.profile],
   [getLocalizedPath('/developers', lang), i.nav.developers],
+  // Solutions pages exist in en and vi only (VEIL-1448): other languages get no link rather than a link to a 404.
+  ...(SOLUTION_LANGS.includes(lang) ? [[getLocalizedPath('/solutions', lang), solutions(lang).nav]] : []),
   [anchor('backup'), i.nav.backup],
   [anchor('features'), i.nav.features],
   [getLocalizedPath('/pricing', lang), i.nav.pricing],
@@ -55,7 +61,7 @@ const LINKS = [
           <span class="ms" data-icon="language" aria-hidden="true"></span>{lang.toUpperCase()}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
         </button>
         <div class="k-lang-menu" id="k-lang-menu">
-          {supportedLangs.map((l) => (
+          {langs.map((l) => (
             <a href={getLocalizedPath(basePath, l)} lang={languages[l].hreflang} hreflang={languages[l].hreflang} aria-current={l === lang ? 'true' : undefined}>
               {languages[l].label}
             </a>
@@ -122,6 +128,12 @@ const LINKS = [
   .k-lang-menu a:hover,
   .k-lang-menu a[aria-current='true'] { background: var(--ink); color: var(--paper); }
   .k-menu-btn { display: none; padding: 5px; background: transparent; border: 1.5px solid var(--ink); color: var(--ink); cursor: pointer; }
+
+  /* The Solutions link (en, vi) makes the row 9 links: at 1181–1190px the vi download button wrapped to two lines
+     (measured 2026-10-21, Playwright). A tighter gap just above the collapse point keeps the button on one line. */
+  @media (min-width: 1181px) and (max-width: 1239px) {
+    .k-links { gap: 18px; }
+  }
 
   @media (max-width: 1180px) {
     .k-menu-btn { display: inline-flex; }

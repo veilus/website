@@ -1,0 +1,616 @@
+{
+  "nav": "Giải pháp",
+  "index": {
+    "metaTitle": "Giải pháp Veilus Browser — thương mại điện tử, dropshipping, tiếp thị liên kết, quảng cáo, web scraping",
+    "metaDescription": "Veilus dùng thế nào cho thương mại điện tử, dropshipping, tiếp thị liên kết, quảng cáo và web scraping, kèm hướng dẫn cho tài khoản Instagram, TikTok, YouTube, X và Shopify bạn sở hữu hoặc được ủy quyền quản lý.",
+    "fig": "giải pháp",
+    "title": "Giải pháp Veilus theo nhu cầu và theo nền tảng",
+    "lead": "Veilus dùng thế nào cho thương mại điện tử, dropshipping, tiếp thị liên kết, quảng cáo và web scraping, và cách giữ tài khoản trên từng nền tảng trong hồ sơ riêng — cho những tài khoản bạn sở hữu hoặc được ủy quyền quản lý.",
+    "open": "Xem hướng dẫn",
+    "byUseCase": "Theo nhu cầu",
+    "byPlatform": "Theo nền tảng"
+  },
+  "common": {
+    "fig": "giải pháp",
+    "cta": "Tải Veilus miễn phí",
+    "benefitsTitle": "Veilus giúp bạn những gì",
+    "benefits": [
+      {
+        "title": "Mỗi {unit} một hồ sơ",
+        "body": "Mỗi {unit} nằm trong một hồ sơ riêng, có cookie, bộ nhớ trang, fingerprint và proxy riêng. Các hồ sơ không dùng chung dữ liệu trình duyệt, nên mọi {unit} {platform} của bạn đều đăng nhập cùng lúc — không phải đăng xuất rồi đăng nhập lại."
+      },
+      {
+        "title": "Sang máy khác bằng Veilus Sync",
+        "body": "Ở gói trả phí, Veilus Sync chép hồ sơ — cài đặt, cookie và bộ nhớ trang — giữa các máy qua Git repository hoặc Google Drive của chính bạn. Bạn bấm đồng bộ bằng tay, và Veilus không có phân quyền theo người dùng. Dữ liệu hồ sơ được tải lên nguyên trạng, nên hãy dùng repository riêng tư."
+      },
+      {
+        "title": "Tự động hóa việc lặp lại",
+        "body": "Ở gói trả phí, Veilus Flow chạy script Playwright trên các hồ sơ, hàng loạt hoặc theo lịch. Bạn tự viết script, hoặc để trợ lý AI viết và sửa qua MCP; script thêm qua MCP hay REST API chỉ chạy trên tối đa 3 hồ sơ cho tới khi bạn duyệt trong app.",
+        "href": "/developers",
+        "linkText": "MCP, API cục bộ và SDK cho nhà phát triển"
+      }
+    ],
+    "stepsTitle": "Bắt đầu thế nào",
+    "steps": [
+      {
+        "title": "Tải về và tạo hồ sơ",
+        "body": "Cài Veilus trên Windows 10/11 (x64) hoặc macOS 13.5 trở lên (Apple Silicon). Tạo mỗi {unit} một hồ sơ, đặt ngôn ngữ, múi giờ và proxy cho từng hồ sơ."
+      },
+      {
+        "title": "Đăng nhập một lần trong mỗi hồ sơ",
+        "body": "Mở từng hồ sơ và đăng nhập {unit} {platform} tương ứng. Phiên đăng nhập được giữ trong hồ sơ đó qua các lần mở."
+      },
+      {
+        "title": "Tự động hóa hoặc đặt lịch",
+        "body": "Duyệt script trong Veilus Flow, rồi chạy hàng loạt trên các hồ sơ hoặc đặt lịch. Việc này cần gói trả phí hoặc bản dùng thử Pro 7 ngày."
+      }
+    ],
+    "faqTitle": "Câu hỏi về {platform}",
+    "aupLink": "Đọc Chính sách Sử dụng Chấp nhận được",
+    "guides": [
+      {
+        "href": "docs:recipes/multi-account",
+        "text": "Hướng dẫn từng bước trong tài liệu"
+      }
+    ],
+    "moreUseCases": "Nhu cầu khác",
+    "morePlatforms": "Nền tảng"
+  },
+  "verticals": {
+    "ecommerce": {
+      "name": "thương mại điện tử",
+      "metaTitle": "Veilus cho thương mại điện tử — mỗi cửa hàng một hồ sơ, kiểm tra storefront theo thị trường",
+      "metaDescription": "Mỗi cửa hàng bạn vận hành nằm trong một hồ sơ Veilus riêng; kiểm tra storefront, giá và nội dung sản phẩm theo ngôn ngữ, múi giờ của từng thị trường, và cho các bài kiểm tra chạy theo lịch.",
+      "h1": "Veilus cho thương mại điện tử",
+      "sub": "Mỗi cửa hàng bạn vận hành nằm trong một hồ sơ trình duyệt riêng, trên những sàn và nền tảng cho phép có nhiều cửa hàng, và bạn kiểm tra storefront theo ngôn ngữ, múi giờ của từng thị trường.",
+      "benefits": [
+        {
+          "title": "Mỗi cửa hàng một hồ sơ",
+          "body": "Trang quản trị của mỗi cửa hàng nằm trong một hồ sơ riêng, có cookie, bộ nhớ trang, fingerprint và proxy riêng, nên cửa hàng nào cũng giữ đăng nhập; đổi cửa hàng chỉ là chuyển cửa sổ."
+        },
+        {
+          "title": "Storefront theo từng thị trường",
+          "body": "Đặt ngôn ngữ trình duyệt và múi giờ cho từng hồ sơ, hoặc chọn một thị trường để điền cả hai. Hồ sơ không đổi địa chỉ IP của bạn: nếu storefront chọn ngôn ngữ hay tiền tệ theo IP, hãy gắn cho hồ sơ một proxy ở khu vực đó."
+        },
+        {
+          "title": "Kiểm tra tự chạy",
+          "body": "Ở gói trả phí, một script Playwright đã duyệt đọc những gì mỗi hồ sơ nhận được — ngôn ngữ trang, giá, nội dung sản phẩm — rồi ghi vào Lịch sử chạy, hàng loạt hoặc theo lịch. Trợ lý AI có thể viết script này cho bạn qua MCP.",
+          "href": "/developers",
+          "linkText": "MCP, API cục bộ và SDK cho nhà phát triển"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tạo hồ sơ cho cửa hàng và thị trường",
+          "body": "Cài Veilus trên Windows 10/11 (x64) hoặc macOS 13.5 trở lên (Apple Silicon). Tạo cho mỗi cửa hàng một hồ sơ và cho mỗi thị trường cần kiểm một hồ sơ, đặt ngôn ngữ, múi giờ và proxy cho từng cái."
+        },
+        {
+          "title": "Đăng nhập và gắn thẻ",
+          "body": "Đăng nhập mỗi cửa hàng trong hồ sơ của nó. Gắn thẻ cho các hồ sơ thị trường để một bộ lọc đã lưu chọn được chúng cùng lúc."
+        },
+        {
+          "title": "Viết một bài kiểm tra rồi đặt lịch",
+          "body": "Nhờ trợ lý AI viết qua MCP, hoặc tự viết. Duyệt trong Veilus Flow rồi đặt lịch chạy hằng ngày: trang nào hiện sai ngôn ngữ hay sai giá thì script có thể đánh dấu hồ sơ đó thất bại."
+        }
+      ],
+      "guides": [
+        {
+          "href": "https://blog.veilus.io/blog/localization-qa-profiles-vi/",
+          "text": "Hướng dẫn: kiểm tra website ở nhiều ngôn ngữ và múi giờ"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Tôi có được mở nhiều cửa hàng trên một sàn không?",
+          "a": "Chỉ khi sàn cho phép. Có sàn cho mỗi người bán nhiều cửa hàng, có sàn phải được duyệt trước, có sàn không cho. Hãy đọc điều khoản người bán của sàn trước; Veilus dành cho những cửa hàng bạn vận hành ở nơi được phép."
+        },
+        {
+          "q": "Làm sao kiểm tra giá và nội dung sản phẩm ở thị trường khác?",
+          "a": "Tạo một hồ sơ với ngôn ngữ và múi giờ của thị trường đó, và gắn proxy ở khu vực ấy nếu trang chọn nội dung theo IP của khách. Sau đó một script mở trang trong hồ sơ đó và in ra những gì trang hiển thị."
+        },
+        {
+          "q": "Bài kiểm tra có chạy mỗi ngày được không?",
+          "a": "Được, ở gói trả phí. Đặt lịch cho script đã duyệt. Script thoát với mã khác 0 thì hồ sơ đó bị đánh dấu thất bại, và kết quả in ra cùng mã thoát của từng hồ sơ hiện trong Lịch sử chạy."
+        },
+        {
+          "q": "Thông tin đăng nhập cửa hàng được giữ ở đâu?",
+          "a": "Trong hồ sơ: cookie và phiên đăng nhập nằm đó qua các lần mở. Thông tin tài khoản mà script cần có thể đặt trong một bộ dữ liệu Cố định, mỗi hồ sơ một dòng riêng, không hai hồ sơ nào dùng chung một dòng. Giá trị của bộ dữ liệu được lưu trên máy bạn ở dạng văn bản thường."
+        },
+        {
+          "q": "Gói Free có những gì?",
+          "a": "5 hồ sơ trên 1 máy, không giới hạn thời gian, không cần thẻ. Veilus Flow, lịch chạy, chạy hàng loạt, API/MCP cục bộ, Veilus Sync và xuất/nhập hồ sơ cần gói trả phí; trong app còn có bản dùng thử Pro 7 ngày."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo điều khoản của từng sàn và nền tảng, kể cả quy định về số cửa hàng mỗi người bán được có và về truy cập tự động, và chỉ dùng cửa hàng bạn sở hữu hoặc được ủy quyền quản lý. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "dropshipping": {
+      "name": "dropshipping",
+      "metaTitle": "Veilus cho dropshipping — hồ sơ cho từng cửa hàng, theo dõi nhà cung cấp theo lịch",
+      "metaDescription": "Mỗi cửa hàng bạn vận hành nằm trong một hồ sơ Veilus riêng; theo dõi giá và tồn kho trên trang nhà cung cấp theo lịch, và kiểm tra storefront theo ngôn ngữ, múi giờ của từng thị trường.",
+      "h1": "Veilus cho dropshipping",
+      "sub": "Vận hành các cửa hàng của bạn trong những hồ sơ trình duyệt riêng, theo dõi trang nhà cung cấp theo lịch, và kiểm tra storefront theo ngôn ngữ, múi giờ của từng thị trường.",
+      "benefits": [
+        {
+          "title": "Mỗi cửa hàng một hồ sơ",
+          "body": "Mỗi cửa hàng bạn vận hành có một hồ sơ riêng với cookie, bộ nhớ trang, fingerprint và proxy riêng, nên tất cả cùng giữ đăng nhập."
+        },
+        {
+          "title": "Theo dõi nhà cung cấp theo lịch",
+          "body": "Ở gói trả phí, một script Playwright mở các trang nhà cung cấp bạn liệt kê, đọc giá và tồn kho rồi in ra, theo lịch. Bộ dữ liệu kiểu Rút dần đưa cho mỗi lượt chạy những URL mới, và lượt nào thất bại thì trả lại các dòng của nó.",
+          "href": "/developers",
+          "linkText": "MCP, API cục bộ và SDK cho nhà phát triển"
+        },
+        {
+          "title": "Storefront theo từng thị trường",
+          "body": "Đặt cho hồ sơ ngôn ngữ trình duyệt và múi giờ của một thị trường, kèm proxy ở khu vực đó nếu storefront chọn ngôn ngữ hay tiền tệ theo IP. Rồi một script kiểm tra ngôn ngữ trang và cách hiển thị ngày."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tạo hồ sơ",
+          "body": "Cài Veilus trên Windows 10/11 (x64) hoặc macOS 13.5 trở lên (Apple Silicon). Tạo cho mỗi cửa hàng một hồ sơ và cho mỗi thị trường bạn bán một hồ sơ, đặt ngôn ngữ, múi giờ và proxy."
+        },
+        {
+          "title": "Nạp URL nhà cung cấp",
+          "body": "Nhập một file CSV có cột URL thành bộ dữ liệu kiểu Rút dần và gán cho các hồ sơ chạy bài kiểm tra. Các hồ sơ chạy cùng lúc không bao giờ nhận cùng một dòng."
+        },
+        {
+          "title": "Duyệt và đặt lịch",
+          "body": "Duyệt script trong Veilus Flow rồi đặt lịch với Số luồng song song thấp và một Độ trễ giãn cách. Xem kết quả của từng hồ sơ trong Lịch sử chạy."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Hướng dẫn thu thập dữ liệu web trong tài liệu"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Veilus có theo dõi giá và tồn kho của nhà cung cấp giúp tôi không?",
+          "a": "Script làm được, ở gói trả phí: nó mở từng trang nhà cung cấp, đọc số liệu rồi in ra. Veilus giữ 4096 ký tự cuối trong kết quả in ra của mỗi hồ sơ; cần nhiều hơn thì script ghi ra file và chỉ in một bản tóm tắt ngắn."
+        },
+        {
+          "q": "Trang nhà cung cấp có cho kiểm tra tự động không?",
+          "a": "Tùy từng trang. Hãy đọc điều khoản và robots.txt của trang trước; có trang cấm thu thập tự động. Đặt Số luồng song song thấp và cho script chờ giữa các trang."
+        },
+        {
+          "q": "Tôi có xem cửa hàng mình bằng ngôn ngữ của nước khác được không?",
+          "a": "Được. Tạo một hồ sơ với ngôn ngữ và múi giờ của thị trường đó. Hồ sơ không đổi địa chỉ IP của bạn, nên nếu storefront chọn ngôn ngữ hay tiền tệ theo IP, hãy gắn cho hồ sơ một proxy ở khu vực ấy."
+        },
+        {
+          "q": "Tôi có cần biết viết code không?",
+          "a": "Không. Mô tả bài kiểm tra cho một trợ lý AI nối qua MCP, như Claude Code hay Cursor. Nó viết script Playwright và chạy thử trên tối đa 3 hồ sơ; bạn đọc và duyệt trước khi cho chạy rộng hơn."
+        },
+        {
+          "q": "Tôi có giữ đăng nhập nhiều cửa hàng cùng lúc được không?",
+          "a": "Được. Đăng nhập mỗi cửa hàng trong một hồ sơ riêng. Mỗi hồ sơ giữ cookie và bộ nhớ trang riêng qua các lần mở, nên đổi cửa hàng chỉ là chuyển cửa sổ."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo điều khoản của từng nền tảng bạn bán hàng và của từng trang nhà cung cấp bạn kiểm tra, và chỉ dùng cửa hàng bạn sở hữu hoặc được ủy quyền quản lý. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "affiliate-marketing": {
+      "name": "tiếp thị liên kết",
+      "metaTitle": "Veilus cho tiếp thị liên kết — kiểm tra link và trang đích theo từng nước",
+      "metaDescription": "Website affiliate và tài khoản mạng liên kết của bạn nằm trong các hồ sơ Veilus riêng; kiểm tra trang đích và chuyển hướng của chính bạn có hiện đúng nội dung theo nước và ngôn ngữ, và theo dõi các trang ưu đãi công khai theo lịch.",
+      "h1": "Veilus cho tiếp thị liên kết",
+      "sub": "Website và tài khoản mạng liên kết của bạn nằm trong những hồ sơ trình duyệt riêng, và bạn kiểm tra trang đích, chuyển hướng của chính mình có hiện đúng nội dung ở từng nước, từng ngôn ngữ.",
+      "benefits": [
+        {
+          "title": "Tài khoản của bạn, tách riêng",
+          "body": "Mỗi tài khoản mạng liên kết và mỗi trang quản trị website của bạn nằm trong một hồ sơ riêng với cookie và bộ nhớ trang riêng, nên tất cả cùng giữ đăng nhập."
+        },
+        {
+          "title": "Kiểm tra trang của bạn theo nước và ngôn ngữ",
+          "body": "Mỗi hồ sơ có ngôn ngữ trình duyệt và múi giờ riêng, còn proxy đặt ở một khu vực cho bạn thấy trình duyệt ở đó nhận được gì. Script mở từng trang đích và chuyển hướng của chính bạn, rồi in ra trang cuối cùng và ngôn ngữ trang khai báo."
+        },
+        {
+          "title": "Theo dõi trang công khai theo lịch",
+          "body": "Ở gói trả phí, một script đã duyệt kiểm tra trang đích của bạn và các trang ưu đãi công khai theo lịch; trang nào hỏng thì hồ sơ đó báo thất bại.",
+          "href": "/developers",
+          "linkText": "MCP, API cục bộ và SDK cho nhà phát triển"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tạo hồ sơ",
+          "body": "Cài Veilus trên Windows 10/11 (x64) hoặc macOS 13.5 trở lên (Apple Silicon). Tạo cho mỗi tài khoản của bạn một hồ sơ, và cho mỗi nước cần kiểm một hồ sơ với ngôn ngữ, múi giờ và proxy ở khu vực đó."
+        },
+        {
+          "title": "Liệt kê trang của bạn",
+          "body": "Đưa URL các trang đích và chuyển hướng của chính bạn cho script qua một biến, để mọi hồ sơ theo nước kiểm cùng một danh sách."
+        },
+        {
+          "title": "Duyệt và đặt lịch",
+          "body": "Nhờ trợ lý AI viết bài kiểm tra qua MCP, hoặc tự viết. Duyệt trong Veilus Flow, đặt lịch rồi xem kết quả của từng hồ sơ trong Lịch sử chạy."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:profiles/datasets",
+          "text": "Bộ dữ liệu trong tài liệu"
+        }
+      ],
+      "related": [
+        "instagram",
+        "youtube"
+      ],
+      "faq": [
+        {
+          "q": "Tôi có dùng nhiều tài khoản trên cùng một mạng liên kết được không?",
+          "a": "Chỉ khi điều khoản của mạng đó cho phép. Veilus không dành cho việc lập thêm tài khoản để lách giới hạn của mạng, tạo click hay lượt truy cập giả, nhồi cookie hay trả tiền cho lượt đăng ký giả: những việc đó vi phạm Chính sách Sử dụng Chấp nhận được của chúng tôi."
+        },
+        {
+          "q": "Làm sao kiểm tra trang đích như khi mở từ nước khác?",
+          "a": "Tạo một hồ sơ với ngôn ngữ, múi giờ của nước đó và một proxy ở khu vực ấy. Script mở trang của bạn trong hồ sơ đó rồi in ra URL cuối cùng và ngôn ngữ trang khai báo."
+        },
+        {
+          "q": "Bài kiểm tra có chạy theo lịch được không?",
+          "a": "Được, ở gói trả phí. Hãy cho bài kiểm tra trỏ vào trang và chuyển hướng của chính bạn, không trỏ vào link theo dõi của mạng liên kết, để lượt truy cập tự động không bao giờ bị tính là click; hãy đọc điều khoản của mạng."
+        },
+        {
+          "q": "Xem kết quả ở đâu?",
+          "a": "Trong Lịch sử chạy của script: kết quả in ra và mã thoát của từng hồ sơ. Trợ lý AI nối qua MCP cũng đọc được các kết quả đó và cho bạn biết trang nào hỏng."
+        },
+        {
+          "q": "Mạng liên kết có phát hiện được hồ sơ của tôi không?",
+          "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi hồ sơ giữ fingerprint, proxy và cookie riêng; mạng liên kết đối xử với tài khoản của bạn ra sao còn tùy vào cách bạn dùng."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo điều khoản của từng mạng liên kết và nền tảng bạn làm việc cùng, và chỉ dùng website, tài khoản bạn sở hữu hoặc được ủy quyền quản lý. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "advertising": {
+      "name": "quảng cáo",
+      "metaTitle": "Veilus cho quảng cáo — kiểm tra trang đích theo khu vực, tách riêng tài khoản khách hàng",
+      "metaDescription": "Kiểm tra trang đích của bạn hiện ra thế nào ở từng khu vực, từng ngôn ngữ; mỗi tài khoản quảng cáo khách hàng mà bạn được phép quản lý nằm trong một hồ sơ Veilus riêng; tự động hóa việc kiểm tra báo cáo.",
+      "h1": "Veilus cho quảng cáo",
+      "sub": "Kiểm tra trang đích hiện ra thế nào ở từng khu vực, từng ngôn ngữ, và giữ mỗi tài khoản quảng cáo khách hàng mà bạn được phép quản lý trong một hồ sơ trình duyệt riêng.",
+      "benefits": [
+        {
+          "title": "Trang đích theo khu vực",
+          "body": "Đặt cho hồ sơ ngôn ngữ trình duyệt, múi giờ của một thị trường và một proxy ở khu vực đó, rồi mở trang đích của quảng cáo như một trình duyệt ở đó."
+        },
+        {
+          "title": "Tách riêng tài khoản khách hàng",
+          "body": "Mỗi tài khoản quảng cáo bạn quản lý với sự cho phép của khách nằm trong một hồ sơ riêng với cookie và bộ nhớ trang riêng. Đặt tên và gắn thẻ hồ sơ theo khách hàng."
+        },
+        {
+          "title": "Tự động hóa việc kiểm tra báo cáo",
+          "body": "Ở gói trả phí, một script Playwright — do bạn hoặc trợ lý AI viết qua MCP — mở các trang bạn cần kiểm rồi in ra những gì thấy được, hàng loạt hoặc theo lịch.",
+          "href": "/developers",
+          "linkText": "MCP, API cục bộ và SDK cho nhà phát triển"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tạo hồ sơ",
+          "body": "Cài Veilus trên Windows 10/11 (x64) hoặc macOS 13.5 trở lên (Apple Silicon). Tạo cho mỗi tài khoản khách hàng một hồ sơ và cho mỗi khu vực cần kiểm một hồ sơ, đặt ngôn ngữ, múi giờ và proxy cho từng cái."
+        },
+        {
+          "title": "Đăng nhập khi đã được phép",
+          "body": "Đăng nhập mỗi tài khoản khách hàng mà bạn được ủy quyền quản lý trong hồ sơ của nó, và gắn thẻ hồ sơ theo khách."
+        },
+        {
+          "title": "Tự động hóa việc kiểm tra",
+          "body": "Duyệt một script trong Veilus Flow, chạy hàng loạt hoặc theo lịch, rồi xem kết quả của từng hồ sơ trong Lịch sử chạy."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/multi-account",
+          "text": "Hướng dẫn từng bước trong tài liệu"
+        }
+      ],
+      "related": [
+        "instagram",
+        "tiktok"
+      ],
+      "faq": [
+        {
+          "q": "Tôi có xem được quảng cáo của mình như người ở nước khác thấy không?",
+          "a": "Một hồ sơ với ngôn ngữ, múi giờ của thị trường đó và proxy ở khu vực ấy cho thấy trình duyệt ở đó nhận được gì. Nền tảng quảng cáo chọn hiện gì còn tùy vào cách nhắm mục tiêu của chính họ, nên hãy coi đây là một phép kiểm tra, không phải bảo đảm."
+        },
+        {
+          "q": "Chúng tôi quản lý tài khoản quảng cáo cho khách. Làm sao để chúng không lẫn vào nhau?",
+          "a": "Mỗi tài khoản khách hàng mà bạn được ủy quyền quản lý có một hồ sơ riêng; đặt tên hồ sơ theo tài khoản và gắn thẻ theo khách. Các hồ sơ không dùng chung dữ liệu trình duyệt, nên phiên đăng nhập của khách nào nằm yên trong hồ sơ của khách đó."
+        },
+        {
+          "q": "Tôi có tự động hóa việc kiểm tra báo cáo được không?",
+          "a": "Được, ở gói trả phí: một script Playwright đã duyệt chạy trên các hồ sơ, hàng loạt hoặc theo lịch. Hãy đọc điều khoản của từng nền tảng quảng cáo về truy cập tự động trước khi tự động hóa bất cứ việc gì ở đó."
+        },
+        {
+          "q": "Đồng nghiệp có mở được các hồ sơ khách hàng này không?",
+          "a": "Với Veilus Sync ở gói trả phí, hồ sơ, kể cả cookie, được chép giữa các máy qua Git repository hoặc Google Drive của chính bạn; hãy để ở chế độ riêng tư. Bạn bấm đồng bộ bằng tay, và Veilus không có phân quyền theo người dùng."
+        },
+        {
+          "q": "Veilus có giúp được gì khi tài khoản quảng cáo bị đình chỉ không?",
+          "a": "Không. Chạy quảng cáo lại sau khi bị cấm, lách quy trình xét duyệt của nền tảng quảng cáo, hay lập tài khoản thay thế đều vi phạm Chính sách Sử dụng Chấp nhận được của chúng tôi. Hãy làm theo quy trình của chính nền tảng đó."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo điều khoản và chính sách của từng nền tảng quảng cáo, và chỉ dùng tài khoản bạn sở hữu hoặc được ủy quyền quản lý. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "web-scraping": {
+      "name": "web scraping",
+      "metaTitle": "Veilus cho web scraping — script Playwright chạy trong hồ sơ trình duyệt thật",
+      "metaDescription": "Thu thập dữ liệu công khai bằng script Playwright chạy trong các hồ sơ Veilus có proxy và cookie riêng, chia URL cho các hồ sơ bằng bộ dữ liệu, và đặt lịch chạy.",
+      "h1": "Veilus cho web scraping",
+      "sub": "Thu thập dữ liệu công khai bằng script Playwright chạy ngay trong hồ sơ trình duyệt, mỗi hồ sơ có proxy, cookie và phiên đăng nhập riêng.",
+      "benefits": [
+        {
+          "title": "Script chạy trong hồ sơ thật",
+          "body": "Script Veilus Flow chạy bên trong trình duyệt của hồ sơ, nên mỗi yêu cầu đi ra với fingerprint, proxy và cookie của hồ sơ đó, và phiên đăng nhập được giữ trong hồ sơ qua các lượt chạy."
+        },
+        {
+          "title": "Chia URL cho các hồ sơ",
+          "body": "Đưa URL vào bộ dữ liệu kiểu Rút dần: mỗi lượt chạy lấy dòng mới, các hồ sơ chạy cùng lúc không bao giờ nhận cùng một dòng, và lượt nào thất bại thì trả lại các dòng của nó, nên không mất URL nào."
+        },
+        {
+          "title": "Chạy giãn nhịp, theo lịch",
+          "body": "Để Số luồng song song thấp, kèm Độ trễ giữa các lượt khi chạy hoặc Độ trễ giãn cách khi đặt lịch, cho script chờ giữa các trang, và lên lịch thu thập vào giờ cố định. Kết quả nằm trong Lịch sử chạy, và trợ lý AI đọc được qua MCP.",
+          "href": "/developers",
+          "linkText": "MCP, API cục bộ và SDK cho nhà phát triển"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tạo hồ sơ kèm proxy",
+          "body": "Cài Veilus trên Windows 10/11 (x64) hoặc macOS 13.5 trở lên (Apple Silicon), tạo các hồ sơ và gắn proxy cho từng cái."
+        },
+        {
+          "title": "Viết script",
+          "body": "Nhờ trợ lý AI viết qua MCP, hoặc tự viết. In dữ liệu thu được dưới dạng JSON, và báo lỗi (throw) khi không tìm thấy gì để lượt chạy hiện là thất bại."
+        },
+        {
+          "title": "Nạp URL, duyệt, đặt lịch",
+          "body": "Đưa URL vào bộ dữ liệu kiểu Rút dần, duyệt script trong Veilus Flow rồi chạy hoặc đặt lịch. Việc này cần gói trả phí hoặc bản dùng thử Pro 7 ngày."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Hướng dẫn thu thập dữ liệu web trong tài liệu"
+        },
+        {
+          "href": "https://blog.veilus.io/blog/web-scraping-without-getting-blocked/",
+          "text": "Bài hướng dẫn web scraping trên blog (tiếng Anh)"
+        }
+      ],
+      "related": [],
+      "faq": [
+        {
+          "q": "Tôi có cần biết viết code không?",
+          "a": "Không. Mô tả dữ liệu cần thu thập cho một trợ lý AI nối qua MCP, như Claude Code hay Cursor. Nó viết script Playwright và chạy thử trên tối đa 3 hồ sơ; bạn đọc và duyệt trước khi cho chạy rộng hơn."
+        },
+        {
+          "q": "Mỗi lượt chạy giữ lại bao nhiêu kết quả?",
+          "a": "Veilus giữ 4096 ký tự cuối trong kết quả in ra của mỗi hồ sơ. Nếu thu được nhiều hơn, cho script ghi ra file bằng module fs của Node và chỉ in một bản tóm tắt ngắn."
+        },
+        {
+          "q": "Lượt chạy thử có nhận dòng của bộ dữ liệu không?",
+          "a": "Không. Giá trị của bộ dữ liệu chỉ đến với script đã duyệt; lượt chạy thử của script chưa duyệt không nhận gì và không chiếm dòng nào. Hãy truyền giá trị nó cần bằng biến của lượt chạy."
+        },
+        {
+          "q": "Hồ sơ có giữ đăng nhập giữa các lượt chạy không?",
+          "a": "Có. Cookie và phiên đăng nhập nằm trong hồ sơ, nên hãy dùng lại cùng một hồ sơ cho cùng một trang để phiên được giữ từ lượt này sang lượt sau."
+        },
+        {
+          "q": "Trang web có chặn script của tôi không?",
+          "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Hồ sơ giữ fingerprint, proxy và cookie nhất quán; trang web xử lý lưu lượng ra sao còn tùy vào việc bạn thu thập nhanh và nhiều đến đâu."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Tùy trang web và nơi bạn ở. Hãy đọc điều khoản và robots.txt của từng trang trước khi thu thập; có trang cấm thu thập tự động. Chỉ thu thập dữ liệu công khai, giữ nhịp chậm, và đọc Chính sách Sử dụng Chấp nhận được của chúng tôi.",
+          "aup": true
+        }
+      ]
+    }
+  },
+  "platforms": {
+    "instagram": {
+      "name": "Instagram",
+      "unit": "tài khoản",
+      "units": "tài khoản",
+      "metaTitle": "Quản lý nhiều tài khoản Instagram — mỗi tài khoản một hồ sơ trình duyệt | Veilus",
+      "metaDescription": "Tài khoản thương hiệu, cá nhân và khách hàng trên Instagram, mỗi tài khoản nằm trong một hồ sơ Veilus riêng với cookie, fingerprint và proxy riêng, cùng đăng nhập một lúc.",
+      "h1": "Quản lý nhiều tài khoản Instagram",
+      "sub": "Tài khoản thương hiệu, cá nhân và khách hàng, mỗi tài khoản một hồ sơ trình duyệt riêng, tất cả cùng đăng nhập.",
+      "faq": [
+        {
+          "q": "Tôi có thể mở tài khoản thương hiệu và tài khoản cá nhân cùng lúc không?",
+          "a": "Được. Đặt mỗi tài khoản vào một hồ sơ riêng. Mỗi hồ sơ có cookie và bộ nhớ trang riêng, nên cả hai đều giữ đăng nhập; muốn đổi tài khoản thì chuyển cửa sổ, không phải đăng xuất."
+        },
+        {
+          "q": "Tôi quản lý Instagram cho khách hàng. Làm sao để tài khoản của từng khách không lẫn vào nhau?",
+          "a": "Mỗi tài khoản khách hàng mà bạn được ủy quyền quản lý có một hồ sơ riêng; đặt tên hồ sơ theo tài khoản và gắn thẻ theo khách. Các hồ sơ không dùng chung dữ liệu trình duyệt, nên phiên đăng nhập của khách nào nằm yên trong hồ sơ của khách đó."
+        },
+        {
+          "q": "Mỗi tài khoản có cần một proxy không?",
+          "a": "Veilus không bắt buộc. Nếu muốn một hồ sơ đi ra bằng kết nối riêng, hãy gắn cho nó một proxy HTTP hoặc SOCKS5. Trước mỗi lần mở, Veilus kiểm tra múi giờ của hồ sơ có khớp với nơi proxy đi ra hay không."
+        },
+        {
+          "q": "Đồng nghiệp có mở được các tài khoản này trên máy của họ không?",
+          "a": "Với Veilus Sync ở gói trả phí, hồ sơ, kể cả cookie, được chép giữa các máy qua Git repository hoặc Google Drive của chính bạn. Bạn bấm đồng bộ bằng tay, và không nên mở cùng một hồ sơ trên hai máy một lúc. Veilus không có vai trò hay phân quyền theo người dùng."
+        },
+        {
+          "q": "Instagram có phát hiện được hồ sơ của tôi không?",
+          "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi hồ sơ giữ fingerprint, proxy và cookie riêng; nền tảng xử lý tài khoản của bạn ra sao còn tùy vào cách bạn dùng."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo quy định của chính Instagram, kể cả giới hạn số tài khoản mỗi người được dùng nếu họ có quy định, và những gì họ nói về hoạt động tự động, và chỉ dùng tài khoản bạn sở hữu hoặc được ủy quyền quản lý. Đọc điều khoản của Instagram trước khi bắt đầu. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "unit": "tài khoản",
+      "units": "tài khoản",
+      "metaTitle": "Quản lý nhiều tài khoản TikTok — mỗi tài khoản một hồ sơ trình duyệt | Veilus",
+      "metaDescription": "Quản lý các tài khoản TikTok riêng cho từng thương hiệu, từng khu vực trên một máy, mỗi tài khoản một hồ sơ Veilus với ngôn ngữ, múi giờ, cookie và proxy riêng.",
+      "h1": "Quản lý nhiều tài khoản TikTok",
+      "sub": "Tài khoản TikTok cho từng thương hiệu, từng khu vực, quản lý trên một máy, mỗi tài khoản một hồ sơ với ngôn ngữ, múi giờ và proxy riêng.",
+      "faq": [
+        {
+          "q": "Chúng tôi có tài khoản TikTok riêng cho từng khu vực. Mỗi hồ sơ có khớp với khu vực của nó được không?",
+          "a": "Được. Khi tạo hồ sơ, bạn đặt ngôn ngữ trình duyệt và múi giờ, hoặc chọn một thị trường để điền cả hai. Mục Kiểm cấu hình báo khi ngôn ngữ không khớp múi giờ. Hồ sơ không đổi địa chỉ IP của bạn; muốn vậy, hãy gắn cho nó một proxy ở khu vực đó."
+        },
+        {
+          "q": "Tôi có thể giữ nhiều tài khoản thương hiệu cùng đăng nhập không?",
+          "a": "Được. Đặt mỗi tài khoản vào một hồ sơ riêng. Mỗi hồ sơ giữ cookie và bộ nhớ trang riêng qua các lần mở, nên tài khoản nào cũng còn đăng nhập và bạn không phải đăng xuất cái này để mở cái kia."
+        },
+        {
+          "q": "Vì sao hồ sơ không mở được?",
+          "a": "Trước mỗi lần mở, Veilus so múi giờ của hồ sơ với nơi proxy, hoặc mạng của chính bạn, đi ra, và mặc định chặn lần mở nếu không khớp. Nếu hồ sơ đang dùng một pool proxy, bấm Khớp theo proxy ở tab Mạng; nếu không, đổi múi giờ của hồ sơ, hoặc vào Cài đặt → Kiểm múi giờ, chuyển sang Cảnh báo hay Tắt."
+        },
+        {
+          "q": "Tôi có thể tự động hóa việc thường ngày trên các tài khoản không?",
+          "a": "Ở gói trả phí, Veilus Flow chạy script Playwright trên nhiều hồ sơ cùng lúc hoặc theo lịch, và trợ lý AI nối qua MCP có thể viết script cho bạn. Hãy đọc điều khoản của TikTok về hoạt động tự động trước khi tự động hóa bất cứ việc gì ở đó."
+        },
+        {
+          "q": "TikTok có phát hiện được hồ sơ của tôi không?",
+          "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi hồ sơ giữ fingerprint, proxy và cookie riêng; nền tảng xử lý tài khoản của bạn ra sao còn tùy vào cách bạn dùng."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo quy định của chính TikTok, kể cả giới hạn số tài khoản mỗi người được dùng nếu họ có quy định, và những gì họ nói về hoạt động tự động, và chỉ dùng tài khoản bạn sở hữu hoặc được ủy quyền quản lý. Đọc điều khoản của TikTok trước khi bắt đầu. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "youtube": {
+      "name": "YouTube",
+      "unit": "tài khoản",
+      "units": "tài khoản",
+      "metaTitle": "Quản lý nhiều tài khoản và kênh YouTube — mỗi tài khoản một hồ sơ trình duyệt | Veilus",
+      "metaDescription": "Tài khoản Google đứng sau mỗi kênh YouTube của bạn nằm trong một hồ sơ Veilus riêng với cookie, fingerprint và proxy riêng, tất cả cùng đăng nhập.",
+      "h1": "Quản lý nhiều tài khoản YouTube",
+      "sub": "Tài khoản Google đứng sau mỗi kênh của bạn nằm trong một hồ sơ trình duyệt riêng, tất cả cùng đăng nhập.",
+      "faq": [
+        {
+          "q": "Mỗi kênh có cần một hồ sơ riêng không?",
+          "a": "Hồ sơ tách theo tài khoản Google bạn đăng nhập, không tách theo kênh. Hồ sơ riêng có ích khi các kênh thuộc những tài khoản Google khác nhau và bạn muốn tất cả cùng đăng nhập."
+        },
+        {
+          "q": "Tôi có thể đăng nhập nhiều tài khoản Google cùng lúc không?",
+          "a": "Được. Mỗi hồ sơ đăng nhập một tài khoản. Mỗi hồ sơ có cookie và bộ nhớ trang riêng, nên các phiên không lẫn vào nhau và lần sau mở hồ sơ, phiên vẫn còn đó."
+        },
+        {
+          "q": "Người dựng video của tôi có làm việc với kênh từ máy khác được không?",
+          "a": "Với Veilus Sync ở gói trả phí, hồ sơ được chép, kể cả cookie, qua Git repository hoặc Google Drive của chính bạn. Bản chép mang theo phiên đăng nhập còn hiệu lực, nên ai đọc được repository là dùng được phiên đó: hãy để nó ở chế độ riêng tư. Veilus không có phân quyền theo người dùng."
+        },
+        {
+          "q": "Tôi có thể chạy cùng một quy trình trên mọi kênh không?",
+          "a": "Ở gói trả phí thì được. Một script Playwright đã duyệt chạy trên từng hồ sơ, hàng loạt hoặc theo lịch, và kết quả in ra cùng mã thoát của từng hồ sơ hiện trong Lịch sử chạy. Hãy đọc điều khoản của YouTube về hoạt động tự động trước."
+        },
+        {
+          "q": "YouTube có phát hiện được hồ sơ của tôi không?",
+          "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi hồ sơ giữ fingerprint, proxy và cookie riêng; nền tảng xử lý tài khoản của bạn ra sao còn tùy vào cách bạn dùng."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo quy định của chính YouTube và Google, gồm những gì họ nói về việc có nhiều tài khoản và về hoạt động tự động, và chỉ dùng tài khoản bạn sở hữu hoặc được ủy quyền quản lý. Đọc điều khoản của họ trước khi bắt đầu. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "x": {
+      "name": "X",
+      "unit": "tài khoản",
+      "units": "tài khoản",
+      "metaTitle": "Quản lý nhiều tài khoản X (Twitter) — mỗi tài khoản một hồ sơ trình duyệt | Veilus",
+      "metaDescription": "Tài khoản X cho từng dự án của bạn nằm trong một hồ sơ Veilus riêng với cookie, fingerprint và proxy riêng, tất cả cùng đăng nhập.",
+      "h1": "Quản lý nhiều tài khoản X",
+      "sub": "Tài khoản X cho từng dự án, mỗi tài khoản một hồ sơ trình duyệt riêng, tất cả cùng đăng nhập.",
+      "faq": [
+        {
+          "q": "Tôi có tài khoản X cho nhiều dự án. Làm sao để chúng tách bạch?",
+          "a": "Mỗi tài khoản một hồ sơ; đặt tên hồ sơ theo tài khoản và gắn thẻ theo dự án. Lưu một bộ lọc theo thẻ, rồi cho lịch chạy theo bộ lọc đó: hồ sơ nào gắn thẻ sau này cũng tự được tính vào."
+        },
+        {
+          "q": "Mỗi tài khoản có dùng proxy riêng được không?",
+          "a": "Được. Mỗi hồ sơ có thể có proxy HTTP hoặc SOCKS5 riêng. Với một pool proxy tĩnh đặt chế độ 1:1 riêng, mỗi hồ sơ nhận một proxy riêng từ nhóm."
+        },
+        {
+          "q": "Tôi có thể tự động hóa việc lặp lại trên X không?",
+          "a": "Ở gói trả phí, Veilus Flow chạy script Playwright trên các hồ sơ, hàng loạt hoặc theo lịch. Hãy đọc điều khoản của X về tự động hóa trước, và giữ mọi script trong khuôn khổ đó."
+        },
+        {
+          "q": "Làm sao chuyển hồ sơ của một tài khoản sang máy khác?",
+          "a": "Ở gói trả phí, xuất hồ sơ ra file .veiluspack rồi nhập trên máy kia, hoặc dùng Veilus Sync để chép hồ sơ qua Git repository hoặc Google Drive của chính bạn. Đừng mở cùng một hồ sơ trên hai máy một lúc."
+        },
+        {
+          "q": "X có phát hiện được hồ sơ của tôi không?",
+          "a": "Không công cụ nào hứa được điều đó, và chúng tôi cũng không hứa. Mỗi hồ sơ giữ fingerprint, proxy và cookie riêng; nền tảng xử lý tài khoản của bạn ra sao còn tùy vào cách bạn dùng."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy tuân theo quy định của chính X, gồm những gì họ nói về việc dùng nhiều hơn một tài khoản và về tự động hóa, và chỉ dùng tài khoản bạn sở hữu hoặc được ủy quyền quản lý. Đọc điều khoản của X trước khi bắt đầu. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ]
+    },
+    "shopify": {
+      "name": "Shopify",
+      "unit": "cửa hàng",
+      "units": "cửa hàng",
+      "metaTitle": "Vận hành nhiều cửa hàng Shopify — mỗi cửa hàng một hồ sơ trình duyệt | Veilus",
+      "metaDescription": "Trang quản trị của mỗi cửa hàng Shopify bạn sở hữu nằm trong một hồ sơ Veilus riêng, và bạn xem từng storefront bằng ngôn ngữ, múi giờ của mỗi thị trường bạn bán.",
+      "h1": "Vận hành nhiều cửa hàng Shopify",
+      "sub": "Mỗi cửa hàng Shopify bạn sở hữu nằm trong một hồ sơ trình duyệt riêng, và bạn xem storefront theo ngôn ngữ và múi giờ của từng thị trường.",
+      "faq": [
+        {
+          "q": "Tôi có vài cửa hàng Shopify. Có giữ đăng nhập tất cả cùng lúc được không?",
+          "a": "Được. Đăng nhập mỗi cửa hàng trong một hồ sơ riêng. Mỗi hồ sơ có cookie và bộ nhớ trang riêng, nên cửa hàng nào cũng còn đăng nhập; đổi cửa hàng chỉ là chuyển cửa sổ."
+        },
+        {
+          "q": "Làm sao xem storefront ở ngôn ngữ hoặc thị trường khác?",
+          "a": "Tạo một hồ sơ cho thị trường đó với ngôn ngữ trình duyệt và múi giờ tương ứng. Hồ sơ không đổi địa chỉ IP của bạn: nếu storefront chọn ngôn ngữ hay tiền tệ theo IP của khách, hãy gắn cho hồ sơ đó một proxy ở khu vực ấy."
+        },
+        {
+          "q": "Tôi có thể kiểm tra mọi storefront theo lịch không?",
+          "a": "Ở gói trả phí thì được. Một script Playwright đã duyệt đọc được mỗi hồ sơ thị trường nhận về gì — URL, ngôn ngữ trang khai báo và cách hiển thị ngày — rồi đánh dấu hồ sơ đó là thất bại khi có gì sai. Đặt lịch chạy hằng ngày để sớm thấy bản dịch hay chuyển hướng bị hỏng."
+        },
+        {
+          "q": "Nhân viên của tôi có dùng chung các hồ sơ được không?",
+          "a": "Veilus Sync ở gói trả phí chép hồ sơ giữa các máy qua Git repository hoặc Google Drive của chính bạn. Veilus không có phân quyền theo người dùng, nên không quy định được ai được làm gì trong cửa hàng."
+        },
+        {
+          "q": "Gói Free có những gì?",
+          "a": "5 hồ sơ trên 1 máy, không giới hạn thời gian, không cần thẻ. Veilus Flow, lịch chạy, chạy hàng loạt, API/MCP cục bộ, Veilus Sync và xuất/nhập hồ sơ cần gói trả phí; trong app còn có bản dùng thử Pro 7 ngày."
+        },
+        {
+          "q": "Làm vậy có được phép không?",
+          "a": "Hãy đọc điều khoản của Shopify cho cửa hàng và gói bạn dùng, và chỉ dùng cửa hàng bạn sở hữu hoặc được ủy quyền quản lý. Chính sách Sử dụng Chấp nhận được của chúng tôi liệt kê những việc không được dùng Veilus để làm.",
+          "aup": true
+        }
+      ],
+      "related": [
+        "ecommerce",
+        "dropshipping"
+      ]
+    }
+  }
+}
