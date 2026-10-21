@@ -66,7 +66,7 @@
       "proxy": "Proxy",
       "status": "Estado",
       "st": {
-        "running": "En ejecución",
+        "running": "Ejecutando",
         "stopped": "Detenido",
         "done": "Completado",
         "failed": "Fallido"
@@ -295,14 +295,14 @@
             "st": "stopped"
           },
           {
-            "n": "Revisión de proveedor – 1",
+            "n": "Proveedor – 1",
             "l": "en-US",
             "tz": "America/New_York",
             "px": "US",
             "st": "running"
           },
           {
-            "n": "Revisión de proveedor – 2",
+            "n": "Proveedor – 2",
             "l": "en-US",
             "tz": "America/New_York",
             "px": "US",

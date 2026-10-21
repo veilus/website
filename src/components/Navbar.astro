@@ -285,10 +285,13 @@ const SOL_GROUPS = sol
     .k-dd-sol.open { grid-template-columns: 1fr; }
   }
 
-  /* Dưới 360px nút ngôn ngữ, nút tải về và nút menu vượt lề phải tới 7px (ru "Скачать бесплатно"): khít lại. */
+  /* Dưới 360px nút ngôn ngữ, nút tải về và nút menu vượt lề phải tới 7px (ru "Скачать бесплатно"): khít lại.
+     Khít rồi vẫn thiếu 3px: ở 320px nút tải về còn 146px mà chữ ru cần 149px nên xuống dòng (thanh 91px thay vì 74px).
+     Đệm ngang 10px thay 14px trả lại 8px; nowrap để chữ không bao giờ gãy đôi. */
   @media (max-width: 359px) {
     .k-nav { gap: 8px; }
     .k-act { gap: 6px; }
     .k-lang-btn { padding: 7px 6px; }
+    .k-act .k-btn-sm { padding: 9px 10px; white-space: nowrap; }
   }
 </style>
