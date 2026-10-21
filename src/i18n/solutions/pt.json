@@ -1,0 +1,1005 @@
+{
+  "nav": "Soluções",
+  "index": {
+    "metaTitle": "Soluções do Veilus Browser — e-commerce, dropshipping, marketing de afiliados, publicidade, web scraping",
+    "metaDescription": "Como o Veilus se encaixa em e-commerce, dropshipping, marketing de afiliados, publicidade e web scraping, além de guias para contas do Instagram, TikTok, YouTube, X e Shopify que você possui ou está autorizado a gerenciar.",
+    "fig": "soluções",
+    "title": "Soluções do Veilus por caso de uso e por plataforma",
+    "lead": "Como o Veilus se encaixa em e-commerce, dropshipping, marketing de afiliados, publicidade e web scraping, e como manter as contas de cada plataforma em perfis próprios — para contas que você possui ou está autorizado a gerenciar.",
+    "open": "Ler o guia",
+    "byUseCase": "Por caso de uso",
+    "byPlatform": "Por plataforma"
+  },
+  "common": {
+    "fig": "soluções",
+    "cta": "Baixar o Veilus grátis",
+    "benefitsTitle": "O que o Veilus faz por você",
+    "benefits": [
+      {
+        "title": "Um perfil por {unit}",
+        "body": "Cada {unit} fica em um perfil próprio, com cookies, armazenamento do site, impressão digital e proxy próprios. Os perfis não compartilham dados do navegador, então todas as suas {units} de {platform} ficam conectadas ao mesmo tempo — sem sair e entrar de novo."
+      },
+      {
+        "title": "Seus outros computadores, pelo Veilus Sync",
+        "body": "Em um plano pago, o Veilus Sync copia perfis — configurações, cookies e armazenamento do site — entre computadores por meio de um repositório Git ou Google Drive seu. A sincronização é manual, e o Veilus não tem funções por usuário. Os dados do perfil são enviados como estão, então use um repositório privado."
+      },
+      {
+        "title": "Trabalho repetitivo, automatizado",
+        "body": "Em um plano pago, o Veilus Flow roda scripts Playwright nos seus perfis, em lote ou por agendamento. Escreva o script você mesmo, ou deixe um assistente de IA escrever e corrigir via MCP; scripts adicionados via MCP ou REST API rodam em no máximo 3 perfis até você aprová-los no app.",
+        "href": "/developers",
+        "linkText": "MCP, API local e SDK para desenvolvedores"
+      }
+    ],
+    "stepsTitle": "Como começar",
+    "steps": [
+      {
+        "title": "Baixe e crie os perfis",
+        "body": "Instale o Veilus no Windows 10/11 (x64) ou no macOS 13.5+ (Apple Silicon). Crie um perfil por {unit} e defina idioma, fuso horário e proxy de cada um."
+      },
+      {
+        "title": "Faça login uma vez em cada perfil",
+        "body": "Abra cada perfil e faça login na {unit} de {platform} correspondente. A sessão fica guardada naquele perfil entre uma abertura e outra."
+      },
+      {
+        "title": "Automatize ou agende",
+        "body": "Aprove um script no Veilus Flow e rode-o nos perfis em lote ou por agendamento. Isso exige um plano pago ou o teste de 7 dias do Pro."
+      }
+    ],
+    "faqTitle": "Perguntas sobre {platform}",
+    "aupLink": "Leia a Política de uso aceitável",
+    "guides": [
+      {
+        "href": "docs:recipes/multi-account",
+        "text": "Guia passo a passo na documentação (em inglês)"
+      }
+    ],
+    "moreUseCases": "Mais casos de uso",
+    "morePlatforms": "Plataformas",
+    "art": {
+      "profiles": "Perfis",
+      "runHistory": "Histórico de execuções (Run History)",
+      "count": "{n} perfis",
+      "name": "Nome",
+      "profile": "Perfil",
+      "language": "Idioma",
+      "timezone": "Fuso horário",
+      "proxy": "Proxy",
+      "status": "Status",
+      "st": {
+        "running": "Em execução",
+        "stopped": "Parado",
+        "done": "Concluído",
+        "failed": "Falhou"
+      },
+      "tag": "Tag",
+      "schedule": "Agendamento",
+      "types": {
+        "daily": "diário",
+        "interval": "intervalo"
+      },
+      "pending": "Aguardando aprovação",
+      "approved": "Aprovado",
+      "fromMcp": "Do MCP",
+      "script": "Meu script",
+      "cookies": "Cookies",
+      "dataset": "Dataset",
+      "consume": "Consumo (Consume)",
+      "variables": "Variáveis",
+      "label": "Ilustração: perfis do Veilus para {name}",
+      "note": "Ilustração — nomes, regiões e horários são exemplos."
+    }
+  },
+  "verticals": {
+    "ecommerce": {
+      "name": "e-commerce",
+      "metaTitle": "Veilus para e-commerce — um perfil de navegador por loja, verificação de vitrines por mercado",
+      "metaDescription": "Mantenha cada loja que você administra em um perfil próprio do Veilus, verifique vitrines, preços e anúncios no idioma e fuso horário de cada mercado e rode as verificações por agendamento.",
+      "h1": "Veilus para e-commerce",
+      "sub": "Mantenha cada loja que você administra em um perfil de navegador próprio, em marketplaces e plataformas que permitem mais de uma loja, e verifique suas vitrines no idioma e fuso horário de cada mercado.",
+      "benefits": [
+        {
+          "title": "Um perfil por loja",
+          "body": "O painel de cada loja fica em um perfil próprio, com cookies, armazenamento do site, impressão digital e proxy próprios, então todas as lojas continuam conectadas e você troca de loja trocando de janela."
+        },
+        {
+          "title": "Vitrines por mercado",
+          "body": "Defina o idioma do navegador e o fuso horário de cada perfil, ou escolha um mercado para preencher os dois. Um perfil não muda o seu endereço IP: se a vitrine escolhe idioma ou moeda pelo IP, dê ao perfil um proxy naquela região."
+        },
+        {
+          "title": "Verificações que rodam sozinhas",
+          "body": "Em um plano pago, um script Playwright aprovado lê o que cada perfil recebe — o idioma da página, os preços, o texto dos anúncios — e imprime no histórico de execuções (Run History), em lote ou por agendamento. Um assistente de IA pode escrevê-lo para você via MCP.",
+          "href": "/developers",
+          "linkText": "MCP, API local e SDK para desenvolvedores"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Crie perfis para lojas e mercados",
+          "body": "Instale o Veilus no Windows 10/11 (x64) ou no macOS 13.5+ (Apple Silicon). Crie um perfil por loja e um por mercado que você verifica, cada um com seu idioma, fuso horário e proxy."
+        },
+        {
+          "title": "Faça login e marque com tags",
+          "body": "Faça login em cada loja no perfil dela. Marque os perfis de mercado com tags para que um filtro salvo selecione todos juntos."
+        },
+        {
+          "title": "Escreva uma verificação e agende",
+          "body": "Peça a um assistente de IA via MCP para escrever a verificação, ou escreva você mesmo. Aprove-a no Veilus Flow e coloque-a em um agendamento diário: uma página que mostra o idioma ou o preço errado pode marcar o perfil como falho."
+        }
+      ],
+      "guides": [
+        {
+          "href": "https://blog.veilus.io/blog/localization-qa-profiles/",
+          "text": "Guia: verificar um site em vários idiomas e fusos horários (em inglês)"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Posso ter várias lojas no mesmo marketplace?",
+          "a": "Só onde o marketplace permitir. Alguns marketplaces permitem mais de uma loja por vendedor, outros só com aprovação, e outros não permitem. Confira primeiro os termos para vendedores; o Veilus é para lojas que você administra onde isso é permitido."
+        },
+        {
+          "q": "Como verifico preços e anúncios em outro mercado?",
+          "a": "Crie um perfil com o idioma e o fuso horário daquele mercado e dê a ele um proxy na região se o site escolhe o conteúdo pelo IP do visitante. Depois, um script abre a página nesse perfil e imprime o que ela mostra."
+        },
+        {
+          "q": "A verificação pode rodar todo dia?",
+          "a": "Sim, em um plano pago. Coloque o script aprovado em um agendamento. Um script que termina com código diferente de zero marca o perfil como falho, e a saída e o código de saída de cada perfil aparecem no histórico de execuções (Run History)."
+        },
+        {
+          "q": "Onde ficam os logins das lojas?",
+          "a": "No perfil: cookies e sessões ficam lá entre uma abertura e outra. Dados de conta de que um script precisa podem ir para um dataset fixo (Fixed), em que cada perfil recebe sua própria linha e dois perfis nunca compartilham a mesma linha. Os valores do dataset ficam no seu computador em texto simples."
+        },
+        {
+          "q": "O que o plano Free inclui?",
+          "a": "5 perfis em 1 dispositivo, sem prazo e sem cartão. Veilus Flow, agendamentos, execução em lote, a API/MCP local, o Veilus Sync e importar/exportar exigem um plano pago; o app também oferece um teste de 7 dias do Pro."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga os termos de cada marketplace e plataforma, incluindo qualquer regra sobre quantas lojas um vendedor pode ter e sobre acesso automatizado, e use apenas lojas que você possui ou está autorizado a gerenciar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "tag": "mercado",
+        "script": "Verificação da vitrine",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Loja – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Loja – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          },
+          {
+            "n": "Mercado – FR",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "stopped"
+          },
+          {
+            "n": "Mercado – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ]
+      }
+    },
+    "dropshipping": {
+      "name": "dropshipping",
+      "metaTitle": "Veilus para dropshipping — perfis por loja e verificação de fornecedores por agendamento",
+      "metaDescription": "Mantenha cada loja que você administra em um perfil próprio do Veilus, verifique preço e estoque nas páginas dos fornecedores por agendamento e confira sua vitrine no idioma e fuso horário de cada mercado.",
+      "h1": "Veilus para dropshipping",
+      "sub": "Administre suas lojas em perfis de navegador separados, verifique as páginas dos fornecedores por agendamento e confira sua vitrine no idioma e fuso horário de cada mercado.",
+      "benefits": [
+        {
+          "title": "Um perfil por loja",
+          "body": "Cada loja que você administra ganha um perfil próprio, com cookies, armazenamento do site, impressão digital e proxy próprios, então todas ficam conectadas ao mesmo tempo."
+        },
+        {
+          "title": "Páginas de fornecedores por agendamento",
+          "body": "Em um plano pago, um script Playwright abre as páginas de fornecedores que você listar, lê preço e estoque e imprime os valores, por agendamento. Um dataset de consumo (Consume) entrega URLs novas a cada execução, e uma execução que falha devolve suas linhas.",
+          "href": "/developers",
+          "linkText": "MCP, API local e SDK para desenvolvedores"
+        },
+        {
+          "title": "Sua vitrine por mercado",
+          "body": "Dê a um perfil o idioma do navegador e o fuso horário de um mercado, e um proxy naquela região se sua vitrine escolhe idioma ou moeda pelo IP. Um script pode então verificar o idioma da página e como as datas aparecem."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Crie os perfis",
+          "body": "Instale o Veilus no Windows 10/11 (x64) ou no macOS 13.5+ (Apple Silicon). Crie um perfil por loja e um por mercado para o qual você vende, com idioma, fuso horário e proxy."
+        },
+        {
+          "title": "Carregue as URLs dos fornecedores",
+          "body": "Importe um CSV com uma coluna de URL como dataset de consumo (Consume) e atribua-o aos perfis que rodam a verificação. Perfis rodando ao mesmo tempo nunca recebem a mesma linha."
+        },
+        {
+          "title": "Aprove e agende",
+          "body": "Aprove o script no Veilus Flow e coloque-o em um agendamento com concorrência baixa (Concurrency) e um intervalo escalonado (Stagger Delay). Leia a saída de cada perfil no histórico de execuções (Run History)."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Receita de web scraping na documentação (em inglês)"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "O Veilus pode verificar preços e estoque dos fornecedores para mim?",
+          "a": "Um script pode, em um plano pago: ele abre cada página de fornecedor, lê os valores e os imprime. O Veilus guarda os últimos 4096 caracteres da saída de cada perfil; para mais que isso, o script grava em um arquivo e imprime um resumo curto."
+        },
+        {
+          "q": "Os sites de fornecedores permitem verificações automatizadas?",
+          "a": "Depende do site. Confira antes os termos e o robots.txt; alguns sites proíbem a coleta automatizada. Mantenha a concorrência (Concurrency) baixa e espere entre as páginas dentro do script."
+        },
+        {
+          "q": "Posso conferir minha loja no idioma de outro país?",
+          "a": "Sim. Crie um perfil com o idioma e o fuso horário daquele mercado. Um perfil não muda o seu endereço IP, então, se sua vitrine escolhe idioma ou moeda pelo IP, dê ao perfil um proxy naquela região."
+        },
+        {
+          "q": "Preciso escrever código?",
+          "a": "Não. Descreva a verificação para um assistente de IA conectado via MCP, como Claude Code ou Cursor. Ele escreve o script Playwright e faz execuções de teste em até 3 perfis; você lê e aprova antes de ele rodar em mais perfis."
+        },
+        {
+          "q": "Posso manter várias lojas conectadas ao mesmo tempo?",
+          "a": "Sim. Faça login em cada loja no perfil dela. Cada perfil guarda seus próprios cookies e armazenamento do site entre uma abertura e outra, então você troca de loja trocando de janela."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga os termos de cada plataforma em que você vende e de cada site de fornecedor que você verifica, e use apenas lojas que você possui ou está autorizado a gerenciar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "script": "Verificação de fornecedor",
+        "type": "daily",
+        "list": "dataset",
+        "items": [
+          "example.com/item-1",
+          "example.com/item-2",
+          "example.com/item-3"
+        ],
+        "rows": [
+          {
+            "n": "Loja – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Loja – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Verificação de fornecedor – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Verificação de fornecedor – 2",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "affiliate-marketing": {
+      "name": "marketing de afiliados",
+      "metaTitle": "Veilus para marketing de afiliados — verifique seus links e landing pages por país",
+      "metaDescription": "Mantenha seus próprios sites de afiliado e contas de rede em perfis separados do Veilus, verifique se suas landing pages e redirecionamentos mostram o conteúdo certo por país e idioma, e monitore páginas públicas de ofertas por agendamento.",
+      "h1": "Veilus para marketing de afiliados",
+      "sub": "Mantenha seus próprios sites e contas de rede em perfis de navegador separados, e verifique se suas landing pages e redirecionamentos mostram o conteúdo certo em cada país e idioma.",
+      "benefits": [
+        {
+          "title": "Suas contas, separadas",
+          "body": "Cada uma das suas contas em redes de afiliados e cada painel dos seus sites fica em um perfil próprio, com cookies e armazenamento do site próprios, então todas ficam conectadas ao mesmo tempo."
+        },
+        {
+          "title": "Suas páginas verificadas por país e idioma",
+          "body": "Um perfil tem seu próprio idioma do navegador e fuso horário, e um proxy em uma região mostra o que um navegador de lá recebe. Um script abre cada uma das suas landing pages e redirecionamentos e imprime onde ele vai parar e qual idioma a página declara."
+        },
+        {
+          "title": "Páginas públicas monitoradas por agendamento",
+          "body": "Em um plano pago, um script aprovado verifica suas landing pages e páginas públicas de ofertas por agendamento, e uma página quebrada aparece como um perfil falho.",
+          "href": "/developers",
+          "linkText": "MCP, API local e SDK para desenvolvedores"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Crie os perfis",
+          "body": "Instale o Veilus no Windows 10/11 (x64) ou no macOS 13.5+ (Apple Silicon). Crie um perfil por conta que você possui e um por país que você verifica, com idioma, fuso horário e um proxy naquela região."
+        },
+        {
+          "title": "Liste suas próprias páginas",
+          "body": "Passe ao script as URLs das suas landing pages e redirecionamentos como uma variável, para que todos os perfis de país verifiquem a mesma lista."
+        },
+        {
+          "title": "Aprove e agende",
+          "body": "Peça a um assistente de IA via MCP para escrever a verificação, ou escreva você mesmo. Aprove-a no Veilus Flow, coloque-a em um agendamento e leia o resultado de cada perfil no histórico de execuções (Run History)."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:profiles/datasets",
+          "text": "Datasets na documentação (em inglês)"
+        }
+      ],
+      "related": [
+        "instagram",
+        "youtube"
+      ],
+      "faq": [
+        {
+          "q": "Posso usar várias contas na mesma rede de afiliados?",
+          "a": "Só se os termos da rede permitirem. O Veilus não serve para contas extras que driblam os limites de uma rede, cliques ou tráfego falsos, cookie stuffing ou cadastros falsos pagos: isso viola nossa Política de uso aceitável."
+        },
+        {
+          "q": "Como verifico uma landing page a partir de outro país?",
+          "a": "Crie um perfil com o idioma e o fuso horário daquele país e um proxy na região. Um script abre sua página nesse perfil e imprime a URL final e o idioma que a página declara."
+        },
+        {
+          "q": "As verificações podem rodar por agendamento?",
+          "a": "Sim, em um plano pago. Aponte as verificações para suas próprias páginas e redirecionamentos, não para os links de rastreamento da rede, para que as visitas automatizadas nunca sejam contadas como cliques; confira os termos da sua rede."
+        },
+        {
+          "q": "Onde vejo os resultados?",
+          "a": "No histórico de execuções (Run History) do script: a saída e o código de saída de cada perfil. Um assistente de IA conectado via MCP pode ler os mesmos resultados e dizer quais páginas falharam."
+        },
+        {
+          "q": "As redes vão detectar meus perfis?",
+          "a": "Nenhuma ferramenta pode prometer isso, e nós não prometemos. Cada perfil mantém sua própria impressão digital, proxy e cookies; a forma como suas contas são tratadas também depende de como você as usa."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga os termos de cada rede de afiliados e plataforma com que você trabalha, e use apenas sites e contas que você possui ou está autorizado a gerenciar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "script": "Verificação de landing",
+        "type": "daily",
+        "list": "variables",
+        "items": [
+          "example.com/landing",
+          "example.com/go/offer",
+          "example.com/review"
+        ],
+        "rows": [
+          {
+            "n": "Conta – principal",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Landing – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "advertising": {
+      "name": "publicidade",
+      "metaTitle": "Veilus para publicidade — verifique landing pages por região, contas de clientes separadas",
+      "metaDescription": "Verifique como suas landing pages aparecem em diferentes regiões e idiomas, mantenha cada conta de anúncios de cliente que você gerencia com permissão em um perfil próprio do Veilus e automatize verificações de relatórios.",
+      "h1": "Veilus para publicidade",
+      "sub": "Verifique como suas landing pages aparecem em cada região e idioma, e mantenha cada conta de anúncios de cliente que você gerencia, com permissão, em um perfil de navegador próprio.",
+      "benefits": [
+        {
+          "title": "Landing pages por região",
+          "body": "Dê a um perfil o idioma do navegador e o fuso horário de um mercado e um proxy naquela região, e então abra as landing pages dos seus anúncios como um navegador de lá abriria."
+        },
+        {
+          "title": "Contas de clientes separadas",
+          "body": "Cada conta de anúncios que você gerencia com a permissão do cliente fica em um perfil próprio, com cookies e armazenamento do site próprios. Nomeie os perfis e marque-os com tags por cliente."
+        },
+        {
+          "title": "Verificações de relatórios automatizadas",
+          "body": "Em um plano pago, um script Playwright — escrito por você ou por um assistente de IA via MCP — abre as páginas que você verifica e imprime o que encontra, em lote ou por agendamento.",
+          "href": "/developers",
+          "linkText": "MCP, API local e SDK para desenvolvedores"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Crie os perfis",
+          "body": "Instale o Veilus no Windows 10/11 (x64) ou no macOS 13.5+ (Apple Silicon). Crie um perfil por conta de cliente e um por região que você verifica, cada um com seu idioma, fuso horário e proxy."
+        },
+        {
+          "title": "Faça login com permissão",
+          "body": "Faça login em cada conta de cliente que você está autorizado a gerenciar, cada uma no perfil dela, e marque os perfis com tags por cliente."
+        },
+        {
+          "title": "Automatize as verificações",
+          "body": "Aprove um script no Veilus Flow, rode-o em lote ou por agendamento e leia a saída de cada perfil no histórico de execuções (Run History)."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/multi-account",
+          "text": "Guia passo a passo na documentação (em inglês)"
+        }
+      ],
+      "related": [
+        "instagram",
+        "tiktok"
+      ],
+      "faq": [
+        {
+          "q": "Posso ver meu anúncio como as pessoas de outro país veem?",
+          "a": "Um perfil com o idioma e o fuso horário daquele mercado, e um proxy na região, mostra o que um navegador de lá recebe. O que uma plataforma de anúncios decide mostrar também depende da segmentação dela, então trate isso como uma verificação, não como garantia."
+        },
+        {
+          "q": "Gerenciamos contas de anúncios de clientes. Como mantê-las separadas?",
+          "a": "Dê a cada conta de cliente que você está autorizado a gerenciar um perfil próprio, dê ao perfil o nome da conta e marque-o com uma tag do cliente. Os perfis não compartilham dados do navegador, então a sessão de cada cliente fica no perfil daquele cliente."
+        },
+        {
+          "q": "Posso automatizar verificações de relatórios?",
+          "a": "Sim, em um plano pago: um script Playwright aprovado roda nos perfis em lote ou por agendamento. Confira os termos de cada plataforma de anúncios sobre acesso automatizado antes de automatizar qualquer coisa nela."
+        },
+        {
+          "q": "Um colega pode abrir os mesmos perfis de clientes?",
+          "a": "Com o Veilus Sync em um plano pago, os perfis, incluindo cookies, são copiados entre computadores por meio de um repositório Git ou Google Drive seu; mantenha-o privado. A sincronização é manual, e o Veilus não tem funções por usuário."
+        },
+        {
+          "q": "O Veilus pode ajudar depois que uma conta de anúncios é suspensa?",
+          "a": "Não. Voltar a veicular anúncios depois de um banimento, driblar a revisão de uma plataforma de anúncios ou criar contas substitutas vai contra nossa Política de uso aceitável. Siga o processo da própria plataforma."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga os termos e as políticas de cada plataforma de anúncios, e use apenas contas que você possui ou está autorizado a gerenciar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "tag": "Cliente A",
+        "script": "Verificação de landing por região",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Cliente A – Anúncios",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Cliente B – Anúncios",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "web-scraping": {
+      "name": "web scraping",
+      "metaTitle": "Veilus para web scraping — scripts Playwright em perfis de navegador reais",
+      "metaDescription": "Colete dados públicos com scripts Playwright que rodam dentro de perfis do Veilus com proxy e cookies próprios, divida URLs entre perfis com datasets e agende as execuções.",
+      "h1": "Veilus para web scraping",
+      "sub": "Colete dados públicos com scripts Playwright que rodam dentro dos seus perfis de navegador, cada um com seu próprio proxy, cookies e logins.",
+      "benefits": [
+        {
+          "title": "Scripts em um perfil real",
+          "body": "Um script do Veilus Flow roda dentro do navegador de um perfil, então cada requisição sai com a impressão digital, o proxy e os cookies daquele perfil, e os logins ficam no perfil entre uma execução e outra."
+        },
+        {
+          "title": "URLs divididas entre perfis",
+          "body": "Coloque as URLs em um dataset de consumo (Consume): cada execução pega linhas novas, perfis rodando ao mesmo tempo nunca recebem a mesma linha, e uma execução que falha devolve suas linhas, então nenhuma URL se perde."
+        },
+        {
+          "title": "Execuções cadenciadas e agendadas",
+          "body": "Mantenha a concorrência (Concurrency) baixa com um intervalo entre aberturas (Delay Between) em uma execução ou um intervalo escalonado (Stagger Delay) em um agendamento, espere entre as páginas dentro do script e agende a coleta em horários fixos. Os resultados vão para o histórico de execuções (Run History), e um assistente de IA os lê via MCP.",
+          "href": "/developers",
+          "linkText": "MCP, API local e SDK para desenvolvedores"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Crie perfis com proxies",
+          "body": "Instale o Veilus no Windows 10/11 (x64) ou no macOS 13.5+ (Apple Silicon), crie os perfis e dê a cada um o seu proxy."
+        },
+        {
+          "title": "Escreva o script",
+          "body": "Peça a um assistente de IA via MCP para escrevê-lo, ou escreva você mesmo. Imprima o que coletar como JSON e lance um erro quando nada for encontrado, para que a execução apareça como falha."
+        },
+        {
+          "title": "Carregue as URLs, aprove, agende",
+          "body": "Coloque as URLs em um dataset de consumo (Consume), aprove o script no Veilus Flow e então rode-o ou coloque-o em um agendamento. Isso exige um plano pago ou o teste de 7 dias do Pro."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Receita de web scraping na documentação (em inglês)"
+        },
+        {
+          "href": "https://blog.veilus.io/blog/web-scraping-without-getting-blocked/",
+          "text": "Guia de web scraping no blog (em inglês)"
+        }
+      ],
+      "related": [],
+      "faq": [
+        {
+          "q": "Preciso escrever código?",
+          "a": "Não. Descreva o que coletar para um assistente de IA conectado via MCP, como Claude Code ou Cursor. Ele escreve o script Playwright e faz execuções de teste em até 3 perfis; você lê e aprova antes de ele rodar em mais perfis."
+        },
+        {
+          "q": "Quanto da saída uma execução guarda?",
+          "a": "O Veilus guarda os últimos 4096 caracteres da saída de cada perfil. Se você coletar mais, faça o script gravar em um arquivo com o módulo fs do Node e imprimir um resumo curto."
+        },
+        {
+          "q": "Execuções de teste recebem linhas do dataset?",
+          "a": "Não. Os valores do dataset chegam só a scripts aprovados; uma execução de teste de um script não aprovado não recebe nenhum e não reserva linhas. Passe os valores de que ele precisa como variáveis da execução."
+        },
+        {
+          "q": "Um perfil pode manter o login entre execuções?",
+          "a": "Sim. Cookies e logins ficam no perfil, então reutilize o mesmo perfil para o mesmo site e a sessão continua de uma execução para a outra."
+        },
+        {
+          "q": "Os sites vão bloquear meus scripts?",
+          "a": "Nenhuma ferramenta pode prometer isso, e nós não prometemos. Um perfil mantém impressão digital, proxy e cookies consistentes; a forma como um site trata o tráfego também depende de quão rápido e de quanto você coleta."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Depende do site e de onde você está. Confira os termos e o robots.txt de cada site antes de coletar dele; alguns sites proíbem a coleta automatizada. Colete dados públicos, mantenha um ritmo baixo e leia nossa Política de uso aceitável.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "view": "runs",
+        "script": "Páginas de produto",
+        "type": "interval",
+        "list": "dataset",
+        "items": [
+          "example.com/product/1",
+          "example.com/product/2",
+          "example.com/product/3"
+        ],
+        "rows": [
+          {
+            "n": "Coletor – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "done"
+          },
+          {
+            "n": "Coletor – 2",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "done"
+          },
+          {
+            "n": "Coletor – 3",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "running"
+          },
+          {
+            "n": "Coletor – 4",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "failed"
+          }
+        ]
+      }
+    }
+  },
+  "platforms": {
+    "instagram": {
+      "name": "Instagram",
+      "unit": "conta",
+      "units": "contas",
+      "metaTitle": "Gerencie várias contas do Instagram — um perfil de navegador para cada | Veilus",
+      "metaDescription": "Mantenha suas contas do Instagram de marca, pessoais e de clientes, cada uma em um perfil de navegador do Veilus com cookies, impressão digital e proxy próprios, todas conectadas ao mesmo tempo.",
+      "h1": "Gerencie várias contas do Instagram",
+      "sub": "Mantenha suas contas do Instagram de marca, pessoais e de clientes, cada uma em um perfil de navegador próprio, todas conectadas ao mesmo tempo.",
+      "faq": [
+        {
+          "q": "Posso manter minha conta de marca e minha conta pessoal abertas ao mesmo tempo?",
+          "a": "Sim. Coloque cada uma em um perfil próprio. Cada perfil tem seus próprios cookies e armazenamento do site, então as duas continuam conectadas e você troca de conta trocando de janela, não saindo da conta."
+        },
+        {
+          "q": "Gerencio o Instagram de clientes. Como mantenho as contas deles separadas?",
+          "a": "Dê a cada conta de cliente que você está autorizado a gerenciar um perfil próprio, dê ao perfil o nome da conta e marque-o com uma tag do cliente. Os perfis não compartilham dados do navegador, então a sessão de cada cliente fica no perfil daquele cliente."
+        },
+        {
+          "q": "Preciso de um proxy para cada conta?",
+          "a": "O Veilus não exige. Se você quer que um perfil saia por uma conexão própria, dê a ele um proxy HTTP ou SOCKS5. Antes de cada abertura, o Veilus verifica se o fuso horário do perfil corresponde ao local de saída do proxy."
+        },
+        {
+          "q": "Um colega pode abrir as mesmas contas no computador dele?",
+          "a": "Com o Veilus Sync em um plano pago, os perfis, incluindo cookies, são copiados entre computadores por meio de um repositório Git ou Google Drive seu. A sincronização é manual, e o mesmo perfil não deve ficar aberto em dois computadores ao mesmo tempo. O Veilus não tem funções nem permissões por usuário."
+        },
+        {
+          "q": "O Instagram vai detectar meus perfis?",
+          "a": "Nenhuma ferramenta pode prometer isso, e nós não prometemos. Cada perfil mantém sua própria impressão digital, proxy e cookies; a forma como suas contas são tratadas também depende de como você as usa."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga as regras do próprio Instagram, incluindo qualquer limite de quantas contas você pode ter e o que ele diz sobre atividade automatizada, e use apenas contas que você possui ou está autorizado a gerenciar. Confira os termos do Instagram antes de começar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Marca",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Pessoal",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Cliente A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Cliente B",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Instagram"
+      }
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "unit": "conta",
+      "units": "contas",
+      "metaTitle": "Gerencie várias contas do TikTok — um perfil de navegador para cada | Veilus",
+      "metaDescription": "Administre contas do TikTok separadas por marca e por região em um só computador, cada uma em um perfil próprio do Veilus com idioma, fuso horário, cookies e proxy próprios.",
+      "h1": "Gerencie várias contas do TikTok",
+      "sub": "Administre contas do TikTok separadas por marca e por região em um só computador, cada uma em um perfil próprio com idioma, fuso horário e proxy próprios.",
+      "faq": [
+        {
+          "q": "Temos uma conta do TikTok separada para cada região. Cada perfil pode corresponder à sua região?",
+          "a": "Sim. Ao criar um perfil, você define o idioma do navegador e o fuso horário, ou escolhe um mercado para preencher os dois. Uma verificação de configuração (Config check) sinaliza um idioma que não combina com o fuso horário. Um perfil não muda o seu endereço IP; para isso, dê a ele um proxy na região."
+        },
+        {
+          "q": "Posso manter várias contas de marca conectadas ao mesmo tempo?",
+          "a": "Sim. Coloque cada conta em um perfil próprio. Cada perfil guarda seus próprios cookies e armazenamento do site entre uma abertura e outra, então todas as contas continuam conectadas e você nunca precisa sair de uma para abrir outra."
+        },
+        {
+          "q": "Por que um perfil não abre?",
+          "a": "Antes de cada abertura, o Veilus compara o fuso horário do perfil com o local de saída do proxy, ou da sua própria rede, e por padrão bloqueia uma abertura que não corresponde. Com um pool de proxies selecionado, use a opção de ajustar ao proxy (Match to proxy) na aba de rede (Network) do perfil; caso contrário, mude o fuso horário do perfil ou mude a verificação de fuso horário (Settings → Timezone check) para avisar (Warn) ou desligar (Off)."
+        },
+        {
+          "q": "Posso automatizar tarefas de rotina nas contas?",
+          "a": "Em um plano pago, o Veilus Flow roda scripts Playwright em muitos perfis de uma vez ou por agendamento, e um assistente de IA conectado via MCP pode escrevê-los. Leia os termos do TikTok sobre atividade automatizada antes de automatizar qualquer coisa nele."
+        },
+        {
+          "q": "O TikTok vai detectar meus perfis?",
+          "a": "Nenhuma ferramenta pode prometer isso, e nós não prometemos. Cada perfil mantém sua própria impressão digital, proxy e cookies; a forma como suas contas são tratadas também depende de como você as usa."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga as regras do próprio TikTok, incluindo qualquer limite de quantas contas você pode ter e o que ele diz sobre atividade automatizada, e use apenas contas que você possui ou está autorizado a gerenciar. Confira os termos do TikTok antes de começar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Marca – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Marca – VN",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Marca – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "stopped"
+          },
+          {
+            "n": "Cliente A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          }
+        ],
+        "tag": "TikTok"
+      }
+    },
+    "youtube": {
+      "name": "YouTube",
+      "unit": "conta",
+      "units": "contas",
+      "metaTitle": "Gerencie várias contas e canais do YouTube — um perfil de navegador para cada | Veilus",
+      "metaDescription": "Mantenha a conta Google por trás de cada um dos seus canais do YouTube em um perfil de navegador próprio do Veilus, com cookies, impressão digital e proxy próprios, todas conectadas ao mesmo tempo.",
+      "h1": "Gerencie várias contas do YouTube",
+      "sub": "Mantenha a conta Google por trás de cada um dos seus canais em um perfil de navegador próprio, todas conectadas ao mesmo tempo.",
+      "faq": [
+        {
+          "q": "Preciso de um perfil separado para cada canal?",
+          "a": "Um perfil guarda a conta Google em que você fizer login nele, então os perfis separam contas, não canais. Perfis separados ajudam quando seus canais pertencem a contas Google diferentes e você quer todas conectadas ao mesmo tempo."
+        },
+        {
+          "q": "Posso ficar conectado a várias contas Google ao mesmo tempo?",
+          "a": "Sim. Faça login em uma conta por perfil. Cada perfil tem seus próprios cookies e armazenamento do site, então as sessões não se misturam e cada uma continua lá na próxima vez que você abrir o perfil."
+        },
+        {
+          "q": "Meu editor pode trabalhar em um canal a partir de outro computador?",
+          "a": "Com o Veilus Sync em um plano pago, um perfil é copiado, incluindo cookies, por meio de um repositório Git ou Google Drive seu. Essa cópia leva o login ativo, então qualquer pessoa que possa ler o repositório pode usar a sessão: mantenha-o privado. O Veilus não tem funções por usuário."
+        },
+        {
+          "q": "Posso rodar a mesma rotina em todos os canais?",
+          "a": "Em um plano pago, sim. Um script Playwright aprovado roda em cada perfil em lote ou por agendamento, e a saída e o código de saída de cada perfil aparecem no histórico de execuções (Run History). Confira antes os termos do YouTube sobre atividade automatizada."
+        },
+        {
+          "q": "O YouTube vai detectar meus perfis?",
+          "a": "Nenhuma ferramenta pode prometer isso, e nós não prometemos. Cada perfil mantém sua própria impressão digital, proxy e cookies; a forma como suas contas são tratadas também depende de como você as usa."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga as regras do próprio YouTube e do Google, incluindo o que dizem sobre várias contas e atividade automatizada, e use apenas contas que você possui ou está autorizado a gerenciar. Confira os termos deles antes de começar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Canal – Marca",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Canal – Pessoal",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Canal – Cliente A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Canal – Cliente B",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "YouTube"
+      }
+    },
+    "x": {
+      "name": "X",
+      "unit": "conta",
+      "units": "contas",
+      "metaTitle": "Gerencie várias contas do X (Twitter) — um perfil de navegador para cada | Veilus",
+      "metaDescription": "Mantenha as contas do X dos seus diferentes projetos, cada uma em um perfil de navegador próprio do Veilus com cookies, impressão digital e proxy próprios, todas conectadas ao mesmo tempo.",
+      "h1": "Gerencie várias contas do X",
+      "sub": "Mantenha as contas do X dos seus diferentes projetos, cada uma em um perfil de navegador próprio, todas conectadas ao mesmo tempo.",
+      "faq": [
+        {
+          "q": "Tenho contas do X para vários projetos. Como mantenho todas separadas?",
+          "a": "Dê a cada conta um perfil próprio, dê ao perfil o nome da conta e marque-o com uma tag do projeto. Salve um filtro por tag, e um agendamento pode rodar nesse filtro, então os perfis que você marcar depois também entram."
+        },
+        {
+          "q": "Cada conta pode usar seu próprio proxy?",
+          "a": "Sim. Cada perfil pode ter seu próprio proxy HTTP ou SOCKS5. Com um pool de proxies estático definido como dedicado 1:1 (1:1 Dedicated), cada perfil recebe seu próprio proxy do pool."
+        },
+        {
+          "q": "Posso automatizar trabalho repetitivo no X?",
+          "a": "Em um plano pago, o Veilus Flow roda scripts Playwright nos seus perfis em lote ou por agendamento. Confira antes os termos do X sobre automação e mantenha qualquer script dentro deles."
+        },
+        {
+          "q": "Como levo o perfil de uma conta para outro computador?",
+          "a": "Em um plano pago, exporte o perfil para um arquivo .veiluspack e importe-o no outro computador, ou use o Veilus Sync para copiar perfis por meio de um repositório Git ou Google Drive seu. Não abra o mesmo perfil em dois computadores ao mesmo tempo."
+        },
+        {
+          "q": "O X vai detectar meus perfis?",
+          "a": "Nenhuma ferramenta pode prometer isso, e nós não prometemos. Cada perfil mantém sua própria impressão digital, proxy e cookies; a forma como suas contas são tratadas também depende de como você as usa."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Siga as regras do próprio X, incluindo o que dizem sobre ter mais de uma conta e sobre automação, e use apenas contas que você possui ou está autorizado a gerenciar. Confira os termos do X antes de começar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Marca",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Suporte",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Pessoal",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Cliente A",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "X"
+      }
+    },
+    "shopify": {
+      "name": "Shopify",
+      "unit": "loja",
+      "units": "lojas",
+      "metaTitle": "Administre várias lojas Shopify — um perfil de navegador por loja | Veilus",
+      "metaDescription": "Mantenha o painel de cada loja Shopify que você possui em um perfil de navegador próprio do Veilus, e confira cada vitrine no idioma e fuso horário de cada mercado para o qual você vende.",
+      "h1": "Administre várias lojas Shopify",
+      "sub": "Mantenha cada loja Shopify que você possui em um perfil de navegador próprio, e confira cada vitrine no idioma e fuso horário de cada mercado.",
+      "faq": [
+        {
+          "q": "Tenho várias lojas Shopify. Posso ficar conectado a todas elas?",
+          "a": "Sim. Faça login em cada loja no perfil dela. Cada perfil tem seus próprios cookies e armazenamento do site, então todas as lojas continuam conectadas e você troca de loja trocando de janela."
+        },
+        {
+          "q": "Como confiro uma vitrine em outro idioma ou mercado?",
+          "a": "Crie um perfil para o mercado com o idioma do navegador e o fuso horário dele. Um perfil não muda o seu endereço IP: se a vitrine escolhe idioma ou moeda pelo IP do visitante, dê a esse perfil um proxy na região."
+        },
+        {
+          "q": "Posso conferir todas as vitrines por agendamento?",
+          "a": "Em um plano pago, sim. Um script Playwright aprovado pode ler o que cada perfil de mercado recebe — a URL, o idioma da página e como as datas aparecem — e marcar o perfil como falho quando algo estiver errado. Coloque-o em um agendamento diário para pegar uma tradução ou um redirecionamento quebrado."
+        },
+        {
+          "q": "Minha equipe pode usar os mesmos perfis?",
+          "a": "O Veilus Sync, em um plano pago, copia perfis entre computadores por meio de um repositório Git ou Google Drive seu. O Veilus não tem funções por usuário, então não controla o que cada pessoa pode fazer em uma loja."
+        },
+        {
+          "q": "O que o plano Free inclui?",
+          "a": "5 perfis em 1 dispositivo, sem prazo e sem cartão. Veilus Flow, agendamentos, execução em lote, a API/MCP local, o Veilus Sync e importar/exportar exigem um plano pago; o app também oferece um teste de 7 dias do Pro."
+        },
+        {
+          "q": "Isso é permitido?",
+          "a": "Confira os termos da Shopify para suas lojas e seu plano, e use apenas lojas que você possui ou está autorizado a gerenciar. Nossa Política de uso aceitável lista para o que o Veilus não pode ser usado.",
+          "aup": true
+        }
+      ],
+      "related": [
+        "ecommerce",
+        "dropshipping"
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Loja A",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Loja B",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Loja C",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          },
+          {
+            "n": "Mercado – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Shopify"
+      }
+    }
+  }
+}

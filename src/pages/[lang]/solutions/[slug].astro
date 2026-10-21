@@ -5,7 +5,7 @@ import { defaultLang, type Lang } from "../../../i18n/utils";
 import { entry, ALL_SLUGS, SOLUTION_LANGS } from "../../../i18n/solutions";
 
 export function getStaticPaths() {
-  // Solutions copy exists in en and vi only (VEIL-1448); en is built by /solutions/[slug].astro
+  // en is built by /solutions/[slug].astro
   return SOLUTION_LANGS.filter((l) => l !== defaultLang).flatMap((lang) =>
     ALL_SLUGS.map((slug) => ({ params: { lang, slug } })),
   );

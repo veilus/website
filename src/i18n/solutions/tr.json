@@ -1,0 +1,1005 @@
+{
+  "nav": "Çözümler",
+  "index": {
+    "metaTitle": "Veilus Browser çözümleri — e-ticaret, dropshipping, affiliate pazarlama, reklamcılık, web scraping",
+    "metaDescription": "Veilus'un e-ticaret, dropshipping, affiliate pazarlama, reklamcılık ve web scraping işlerine nasıl uyduğu; ayrıca sahip olduğunuz veya yönetmeye yetkili olduğunuz Instagram, TikTok, YouTube, X ve Shopify hesapları için rehberler.",
+    "fig": "çözümler",
+    "title": "Kullanım alanına ve platforma göre Veilus çözümleri",
+    "lead": "Veilus'un e-ticaret, dropshipping, affiliate pazarlama, reklamcılık ve web scraping işlerine nasıl uyduğu ve her platformdaki hesapları kendi profillerinde nasıl tutacağınız — sahip olduğunuz veya yönetmeye yetkili olduğunuz hesaplar için.",
+    "open": "Rehberi okuyun",
+    "byUseCase": "Kullanım alanına göre",
+    "byPlatform": "Platforma göre"
+  },
+  "common": {
+    "fig": "çözümler",
+    "cta": "Veilus'u ücretsiz indirin",
+    "benefitsTitle": "Veilus sizin için ne yapar",
+    "benefits": [
+      {
+        "title": "Her {unit} için bir profil",
+        "body": "Her {unit} kendi profilinde, kendi çerezleri, site depolaması, parmak izi ve proxy'siyle durur. Profiller tarayıcı verilerini paylaşmaz; böylece tüm {platform} {units} aynı anda açık kalır — çıkış yapıp yeniden giriş yapmanız gerekmez."
+      },
+      {
+        "title": "Veilus Sync ile diğer bilgisayarlarınızda",
+        "body": "Ücretli planda Veilus Sync, profilleri — ayarlar, çerezler ve site depolaması dahil — size ait bir Git deposu veya Google Drive üzerinden bilgisayarlar arasında kopyalar. Eşitleme elle yapılır ve Veilus'ta kullanıcı başına rol yoktur. Profil verileri olduğu gibi yüklenir, bu yüzden özel (private) bir depo kullanın."
+      },
+      {
+        "title": "Tekrarlayan işler otomatik",
+        "body": "Ücretli planda Veilus Flow, Playwright betiklerini profillerinizde toplu olarak veya bir zamanlamayla çalıştırır. Betiği kendiniz yazın ya da bir yapay zekâ asistanının MCP üzerinden yazıp düzeltmesine bırakın; MCP veya REST API üzerinden eklenen betikler, siz uygulamada onaylayana kadar en fazla 3 profilde çalışır.",
+        "href": "/developers",
+        "linkText": "Geliştiriciler için MCP, yerel API ve SDK"
+      }
+    ],
+    "stepsTitle": "Nasıl başlanır",
+    "steps": [
+      {
+        "title": "İndirin ve profil oluşturun",
+        "body": "Veilus'u Windows 10/11 (x64) veya macOS 13.5+ (Apple Silicon) üzerine kurun. Her {unit} için bir profil oluşturun ve dilini, saat dilimini ve proxy'sini ayarlayın."
+      },
+      {
+        "title": "Her profilde bir kez oturum açın",
+        "body": "Her profili açın ve {platform} üzerinde o profile ait {unit} ile oturum açın. Oturum, açılışlar arasında o profilde kalır."
+      },
+      {
+        "title": "Otomatikleştirin veya zamanlayın",
+        "body": "Veilus Flow'da bir betiği onaylayın, ardından profillerde toplu olarak çalıştırın ya da bir zamanlamaya bağlayın. Bunun için ücretli bir plan veya 7 günlük Pro denemesi gerekir."
+      }
+    ],
+    "faqTitle": "{platform} hakkında sorular",
+    "aupLink": "Kabul Edilebilir Kullanım Politikası'nı okuyun",
+    "guides": [
+      {
+        "href": "docs:recipes/multi-account",
+        "text": "Belgelerde adım adım rehber (İngilizce)"
+      }
+    ],
+    "moreUseCases": "Diğer kullanım alanları",
+    "morePlatforms": "Platformlar",
+    "art": {
+      "profiles": "Profiller",
+      "runHistory": "Çalıştırma geçmişi (Run History)",
+      "count": "{n} profil",
+      "name": "Ad",
+      "profile": "Profil",
+      "language": "Dil",
+      "timezone": "Saat dilimi",
+      "proxy": "Proxy",
+      "status": "Durum",
+      "st": {
+        "running": "Çalışıyor",
+        "stopped": "Durduruldu",
+        "done": "Tamamlandı",
+        "failed": "Başarısız"
+      },
+      "tag": "Etiket",
+      "schedule": "Zamanlama",
+      "types": {
+        "daily": "günlük",
+        "interval": "aralıklı"
+      },
+      "pending": "Onay bekliyor",
+      "approved": "Onaylandı",
+      "fromMcp": "MCP'den",
+      "script": "Betiğim",
+      "cookies": "Çerezler",
+      "dataset": "Veri kümesi",
+      "consume": "Tüketilen (Consume)",
+      "variables": "Değişkenler",
+      "label": "Görsel: {name} için Veilus profilleri",
+      "note": "Temsili görsel — adlar, bölgeler ve saatler örnektir."
+    }
+  },
+  "verticals": {
+    "ecommerce": {
+      "name": "e-ticaret",
+      "metaTitle": "E-ticaret için Veilus — mağaza başına bir tarayıcı profili, pazar başına vitrin kontrolü",
+      "metaDescription": "Yönettiğiniz her mağazayı kendi Veilus profilinde tutun; vitrinleri, fiyatları ve ilanları her pazarın dilinde ve saat diliminde kontrol edin, kontrolleri bir zamanlamayla çalıştırın.",
+      "h1": "E-ticaret için Veilus",
+      "sub": "Birden fazla mağazaya izin veren pazar yerlerinde ve platformlarda, yönettiğiniz her mağazayı kendi tarayıcı profilinde tutun ve vitrinlerinizi her pazarın dilinde ve saat diliminde kontrol edin.",
+      "benefits": [
+        {
+          "title": "Mağaza başına bir profil",
+          "body": "Her mağazanın yönetim paneli kendi profilinde, kendi çerezleri, site depolaması, parmak izi ve proxy'siyle durur; böylece her mağazada oturum açık kalır ve mağaza değiştirmek için pencere değiştirmeniz yeterlidir."
+        },
+        {
+          "title": "Pazar başına vitrin",
+          "body": "Her profilin tarayıcı dilini ve saat dilimini ayarlayın ya da ikisini birden doldurmak için bir pazar seçin. Profil IP adresinizi değiştirmez: vitrin dili veya para birimini IP'ye göre seçiyorsa profile o bölgede bir proxy verin."
+        },
+        {
+          "title": "Kendiliğinden çalışan kontroller",
+          "body": "Ücretli planda onaylanmış bir Playwright betiği, her profilin ne gördüğünü — sayfanın dilini, fiyatları, ilan metnini — okur ve toplu olarak veya bir zamanlamayla Çalıştırma Geçmişi'ne (Run History) yazdırır. Bir yapay zekâ asistanı betiği sizin için MCP üzerinden yazabilir.",
+          "href": "/developers",
+          "linkText": "Geliştiriciler için MCP, yerel API ve SDK"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Mağazalar ve pazarlar için profil oluşturun",
+          "body": "Veilus'u Windows 10/11 (x64) veya macOS 13.5+ (Apple Silicon) üzerine kurun. Her mağaza için bir profil ve kontrol ettiğiniz her pazar için bir profil oluşturun; her birinin kendi dili, saat dilimi ve proxy'si olsun."
+        },
+        {
+          "title": "Oturum açın ve etiketleyin",
+          "body": "Her mağazada kendi profilinden oturum açın. Pazar profillerini etiketleyin; böylece kayıtlı bir filtre hepsini birlikte seçer."
+        },
+        {
+          "title": "Tek bir kontrol yazın ve zamanlayın",
+          "body": "Kontrolü bir yapay zekâ asistanına MCP üzerinden yazdırın ya da kendiniz yazın. Veilus Flow'da onaylayın ve günlük bir zamanlamaya bağlayın: yanlış dil veya fiyat gösteren bir sayfa, profilini başarısız olarak işaretleyebilir."
+        }
+      ],
+      "guides": [
+        {
+          "href": "https://blog.veilus.io/blog/localization-qa-profiles/",
+          "text": "Rehber: bir siteyi birkaç dilde ve saat diliminde kontrol edin (İngilizce)"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Bir pazar yerinde birden fazla mağaza işletebilir miyim?",
+          "a": "Yalnızca pazar yeri buna izin veriyorsa. Bazı pazar yerleri satıcı başına birden fazla mağazaya izin verir, bazıları yalnızca onayla, bazıları ise hiç izin vermez. Önce satıcı koşullarını kontrol edin; Veilus, buna izin verilen yerlerde işlettiğiniz mağazalar içindir."
+        },
+        {
+          "q": "Başka bir pazardaki fiyatları ve ilanları nasıl kontrol ederim?",
+          "a": "O pazarın dili ve saat dilimiyle bir profil oluşturun; site içeriği ziyaretçinin IP'sine göre seçiyorsa profile o bölgede bir proxy verin. Ardından bir betik sayfayı o profilde açar ve gösterdiklerini yazdırır."
+        },
+        {
+          "q": "Kontrol her gün çalışabilir mi?",
+          "a": "Evet, ücretli planda. Onaylanmış betiği bir zamanlamaya bağlayın. Sıfırdan farklı bir kodla çıkan betik, profilini başarısız olarak işaretler; her profilin çıktısı ve çıkış kodu Çalıştırma Geçmişi'nde (Run History) görünür."
+        },
+        {
+          "q": "Mağaza girişleri nerede saklanır?",
+          "a": "Profilde: çerezler ve oturumlar açılışlar arasında orada kalır. Bir betiğin ihtiyaç duyduğu hesap bilgileri sabit (Fixed) bir veri kümesine konabilir; burada her profil kendi satırını alır ve iki profil aynı satırı paylaşmaz. Veri kümesi değerleri bilgisayarınızda düz metin olarak saklanır."
+        },
+        {
+          "q": "Free plan neleri kapsar?",
+          "a": "1 cihazda 5 profil; süre sınırı ve kart yok. Veilus Flow, zamanlamalar, toplu çalıştırmalar, yerel API/MCP, Veilus Sync ve içe/dışa aktarma için ücretli plan gerekir; uygulamada ayrıca 7 günlük Pro denemesi vardır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Her pazar yerinin ve platformun kendi koşullarına uyun; bir satıcının kaç mağazası olabileceğine ve otomatik erişime dair kurallar da buna dahildir. Yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz mağazaları kullanın. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "tag": "pazar",
+        "script": "Vitrin kontrolü",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Mağaza – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Mağaza – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          },
+          {
+            "n": "Pazar – FR",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "stopped"
+          },
+          {
+            "n": "Pazar – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ]
+      }
+    },
+    "dropshipping": {
+      "name": "dropshipping",
+      "metaTitle": "Dropshipping için Veilus — mağaza profilleri ve zamanlanmış tedarikçi kontrolleri",
+      "metaDescription": "Yönettiğiniz her mağazayı kendi Veilus profilinde tutun, tedarikçi sayfalarında fiyat ve stoku bir zamanlamayla kontrol edin ve vitrininizi her pazarın dilinde ve saat diliminde kontrol edin.",
+      "h1": "Dropshipping için Veilus",
+      "sub": "Kendi mağazalarınızı ayrı tarayıcı profillerinde işletin, tedarikçi sayfalarını bir zamanlamayla kontrol edin ve vitrininizi her pazarın dilinde ve saat diliminde kontrol edin.",
+      "benefits": [
+        {
+          "title": "Mağaza başına bir profil",
+          "body": "Yönettiğiniz her mağaza, kendi çerezleri, site depolaması, parmak izi ve proxy'siyle kendi profilini alır; böylece hepsinde aynı anda oturum açık kalır."
+        },
+        {
+          "title": "Zamanlanmış tedarikçi kontrolleri",
+          "body": "Ücretli planda bir Playwright betiği, listelediğiniz tedarikçi sayfalarını açar, fiyatı ve stoku okur ve bir zamanlamayla yazdırır. Tüketilen (Consume) bir veri kümesi her çalıştırmaya yeni URL'ler verir; başarısız olan bir çalıştırma satırlarını geri bırakır.",
+          "href": "/developers",
+          "linkText": "Geliştiriciler için MCP, yerel API ve SDK"
+        },
+        {
+          "title": "Pazar başına vitrininiz",
+          "body": "Bir profile o pazarın tarayıcı dilini ve saat dilimini verin; vitrininiz dili veya para birimini IP'ye göre seçiyorsa o bölgede bir proxy de verin. Ardından bir betik sayfanın dilini ve tarihlerin nasıl göründüğünü kontrol edebilir."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Profil oluşturun",
+          "body": "Veilus'u Windows 10/11 (x64) veya macOS 13.5+ (Apple Silicon) üzerine kurun. Her mağaza için ve satış yaptığınız her pazar için dili, saat dilimi ve proxy'siyle bir profil oluşturun."
+        },
+        {
+          "title": "Tedarikçi URL'lerini yükleyin",
+          "body": "URL sütunu olan bir CSV'yi tüketilen (Consume) veri kümesi olarak içe aktarın ve kontrolü çalıştıran profillere atayın. Aynı anda çalışan profiller hiçbir zaman aynı satırı almaz."
+        },
+        {
+          "title": "Onaylayın ve zamanlayın",
+          "body": "Betiği Veilus Flow'da onaylayın ve düşük bir eşzamanlılık (Concurrency) ve kademeli gecikme (Stagger Delay) ile bir zamanlamaya bağlayın. Her profilin çıktısını Çalıştırma Geçmişi'nde (Run History) okuyun."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Belgelerde web scraping tarifi (İngilizce)"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Veilus tedarikçi fiyatlarını ve stoklarını benim için kontrol edebilir mi?",
+          "a": "Ücretli planda bir betik bunu yapabilir: her tedarikçi sayfasını açar, değerleri okur ve yazdırır. Veilus her profilin çıktısının son 4096 karakterini saklar; daha fazlası için betik bir dosyaya yazar ve kısa bir özet yazdırır."
+        },
+        {
+          "q": "Tedarikçi siteleri otomatik kontrollere izin verir mi?",
+          "a": "Bu, siteye bağlıdır. Önce sitenin koşullarını ve robots.txt dosyasını kontrol edin; bazı siteler otomatik veri toplamayı yasaklar. Eşzamanlılığı (Concurrency) düşük tutun ve betiğin içinde sayfalar arasında bekleyin."
+        },
+        {
+          "q": "Mağazamı başka bir ülkenin dilinde kontrol edebilir miyim?",
+          "a": "Evet. O pazarın dili ve saat dilimiyle bir profil oluşturun. Profil IP adresinizi değiştirmez; vitrininiz dili veya para birimini IP'ye göre seçiyorsa profile o bölgede bir proxy verin."
+        },
+        {
+          "q": "Kod yazmam gerekir mi?",
+          "a": "Hayır. Kontrolü, MCP üzerinden bağlı bir yapay zekâ asistanına — örneğin Claude Code veya Cursor — anlatın. Asistan Playwright betiğini yazar ve en fazla 3 profilde deneme çalıştırması yapar; daha fazla profilde çalışmadan önce betiği siz okuyup onaylarsınız."
+        },
+        {
+          "q": "Birkaç mağazada aynı anda oturum açık tutabilir miyim?",
+          "a": "Evet. Her mağazada kendi profilinden oturum açın. Her profil, açılışlar arasında kendi çerezlerini ve site depolamasını saklar; böylece mağaza değiştirmek için pencere değiştirmeniz yeterlidir."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Satış yaptığınız her platformun ve kontrol ettiğiniz her tedarikçi sitesinin koşullarına uyun; yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz mağazaları kullanın. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "script": "Tedarikçi kontrolü",
+        "type": "daily",
+        "list": "dataset",
+        "items": [
+          "example.com/item-1",
+          "example.com/item-2",
+          "example.com/item-3"
+        ],
+        "rows": [
+          {
+            "n": "Mağaza – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Mağaza – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Tedarikçi kontrolü – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Tedarikçi kontrolü – 2",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "affiliate-marketing": {
+      "name": "affiliate pazarlama",
+      "metaTitle": "Affiliate pazarlama için Veilus — bağlantılarınızı ve açılış sayfalarınızı ülke ülke kontrol edin",
+      "metaDescription": "Kendi affiliate sitelerinizi ve ağ hesaplarınızı ayrı Veilus profillerinde tutun, kendi açılış sayfalarınızın ve yönlendirmelerinizin her ülke ve dilde doğru içeriği gösterdiğini kontrol edin ve herkese açık teklif sayfalarını bir zamanlamayla izleyin.",
+      "h1": "Affiliate pazarlama için Veilus",
+      "sub": "Kendi sitelerinizi ve ağ hesaplarınızı ayrı tarayıcı profillerinde tutun; kendi açılış sayfalarınızın ve yönlendirmelerinizin her ülkede ve dilde doğru içeriği gösterdiğini kontrol edin.",
+      "benefits": [
+        {
+          "title": "Hesaplarınız birbirinden ayrı",
+          "body": "Her affiliate ağ hesabınız ve site paneliniz, kendi çerezleri ve site depolamasıyla kendi profilinde durur; böylece hepsinde aynı anda oturum açık kalır."
+        },
+        {
+          "title": "Sayfalarınız ülke ve dil bazında kontrol edilir",
+          "body": "Bir profil kendi tarayıcı dilini ve saat dilimini taşır; bir bölgedeki proxy, oradaki bir tarayıcının ne gördüğünü gösterir. Bir betik kendi açılış sayfalarınızı ve yönlendirmelerinizi tek tek açar, nereye vardığını ve sayfanın hangi dili beyan ettiğini yazdırır."
+        },
+        {
+          "title": "Herkese açık sayfalar zamanlamayla izlenir",
+          "body": "Ücretli planda onaylanmış bir betik, kendi açılış sayfalarınızı ve herkese açık teklif sayfalarını bir zamanlamayla kontrol eder; bozulan bir sayfa başarısız bir profil olarak görünür.",
+          "href": "/developers",
+          "linkText": "Geliştiriciler için MCP, yerel API ve SDK"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Profil oluşturun",
+          "body": "Veilus'u Windows 10/11 (x64) veya macOS 13.5+ (Apple Silicon) üzerine kurun. Sahip olduğunuz her hesap için bir profil ve kontrol ettiğiniz her ülke için dili, saat dilimi ve o bölgede bir proxy'si olan bir profil oluşturun."
+        },
+        {
+          "title": "Kendi sayfalarınızı listeleyin",
+          "body": "Kendi açılış sayfalarınızın ve yönlendirmelerinizin URL'lerini betiğe bir değişken olarak verin; böylece her ülke profili aynı listeyi kontrol eder."
+        },
+        {
+          "title": "Onaylayın ve zamanlayın",
+          "body": "Kontrolü bir yapay zekâ asistanına MCP üzerinden yazdırın ya da kendiniz yazın. Veilus Flow'da onaylayın, bir zamanlamaya bağlayın ve her profilin sonucunu Çalıştırma Geçmişi'nde (Run History) okuyun."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:profiles/datasets",
+          "text": "Belgelerde veri kümeleri (İngilizce)"
+        }
+      ],
+      "related": [
+        "instagram",
+        "youtube"
+      ],
+      "faq": [
+        {
+          "q": "Bir affiliate ağında birkaç hesap kullanabilir miyim?",
+          "a": "Yalnızca ağın koşulları buna izin veriyorsa. Veilus; bir ağın sınırlarını aşmaya yarayan ek hesaplar, sahte tıklama veya trafik, cookie stuffing ya da ücretli sahte kayıtlar için değildir: bunlar Kabul Edilebilir Kullanım Politikamızı ihlal eder."
+        },
+        {
+          "q": "Bir açılış sayfasını başka bir ülkeden nasıl kontrol ederim?",
+          "a": "O ülkenin dili ve saat dilimiyle ve o bölgede bir proxy ile bir profil oluşturun. Bir betik sayfanızı o profilde açar, son URL'yi ve sayfanın beyan ettiği dili yazdırır."
+        },
+        {
+          "q": "Kontroller bir zamanlamayla çalışabilir mi?",
+          "a": "Evet, ücretli planda. Kontrolleri ağın izleme bağlantılarına değil, kendi sayfalarınıza ve yönlendirmelerinize yöneltin; böylece otomatik ziyaretler hiçbir zaman tıklama olarak sayılmaz. Ağınızın koşullarını kontrol edin."
+        },
+        {
+          "q": "Sonuçları nerede görürüm?",
+          "a": "Betiğin Çalıştırma Geçmişi'nde (Run History): her profilin çıktısı ve çıkış kodu. MCP üzerinden bağlı bir yapay zekâ asistanı aynı sonuçları okuyup hangi sayfaların başarısız olduğunu size söyleyebilir."
+        },
+        {
+          "q": "Ağlar profillerimi tespit eder mi?",
+          "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Her profil kendi parmak izini, proxy'sini ve çerezlerini korur; hesaplarınıza nasıl davranılacağı, onları nasıl kullandığınıza da bağlıdır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Birlikte çalıştığınız her affiliate ağının ve platformun koşullarına uyun; yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz siteleri ve hesapları kullanın. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "script": "Landing kontrolü",
+        "type": "daily",
+        "list": "variables",
+        "items": [
+          "example.com/landing",
+          "example.com/go/offer",
+          "example.com/review"
+        ],
+        "rows": [
+          {
+            "n": "Hesap – ana",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Landing – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "advertising": {
+      "name": "reklamcılık",
+      "metaTitle": "Reklamcılık için Veilus — açılış sayfalarını bölgeye göre kontrol edin, müşteri hesaplarını ayrı tutun",
+      "metaDescription": "Açılış sayfalarınızın farklı bölgelerde ve dillerde nasıl göründüğünü kontrol edin, izinle yönettiğiniz her müşteri reklam hesabını kendi Veilus profilinde tutun ve raporlama kontrollerini otomatikleştirin.",
+      "h1": "Reklamcılık için Veilus",
+      "sub": "Açılış sayfalarınızın her bölgede ve dilde nasıl göründüğünü kontrol edin; izinle yönettiğiniz her müşteri reklam hesabını kendi tarayıcı profilinde tutun.",
+      "benefits": [
+        {
+          "title": "Bölge başına açılış sayfaları",
+          "body": "Bir profile o pazarın tarayıcı dilini, saat dilimini ve o bölgede bir proxy verin; ardından reklamlarınızın açılış sayfalarını oradaki bir tarayıcı gibi açın."
+        },
+        {
+          "title": "Müşteri hesapları ayrı",
+          "body": "Müşterinin izniyle yönettiğiniz her müşteri reklam hesabı, kendi çerezleri ve site depolamasıyla kendi profilinde durur. Profilleri müşteriye göre adlandırın ve etiketleyin."
+        },
+        {
+          "title": "Raporlama kontrolleri otomatik",
+          "body": "Ücretli planda bir Playwright betiği — sizin ya da MCP üzerinden bir yapay zekâ asistanının yazdığı — kontrol ettiğiniz sayfaları açar ve bulduklarını toplu olarak veya bir zamanlamayla yazdırır.",
+          "href": "/developers",
+          "linkText": "Geliştiriciler için MCP, yerel API ve SDK"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Profil oluşturun",
+          "body": "Veilus'u Windows 10/11 (x64) veya macOS 13.5+ (Apple Silicon) üzerine kurun. Her müşteri hesabı için bir profil ve kontrol ettiğiniz her bölge için bir profil oluşturun; her birinin kendi dili, saat dilimi ve proxy'si olsun."
+        },
+        {
+          "title": "İzinle oturum açın",
+          "body": "Yönetmeye yetkili olduğunuz her müşteri hesabında kendi profilinden oturum açın ve profilleri müşteriye göre etiketleyin."
+        },
+        {
+          "title": "Kontrolleri otomatikleştirin",
+          "body": "Veilus Flow'da bir betiği onaylayın, toplu olarak veya bir zamanlamayla çalıştırın ve her profilin çıktısını Çalıştırma Geçmişi'nde (Run History) okuyun."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/multi-account",
+          "text": "Belgelerde adım adım rehber (İngilizce)"
+        }
+      ],
+      "related": [
+        "instagram",
+        "tiktok"
+      ],
+      "faq": [
+        {
+          "q": "Reklamımı başka bir ülkedeki insanların gördüğü gibi görebilir miyim?",
+          "a": "O pazarın dili ve saat dilimiyle, o bölgede bir proxy'si olan bir profil, oradaki bir tarayıcının ne gördüğünü gösterir. Bir reklam platformunun ne göstermeyi seçtiği kendi hedeflemesine de bağlıdır; bu yüzden bunu bir garanti değil, bir kontrol olarak görün."
+        },
+        {
+          "q": "Müşteriler için reklam hesapları yönetiyoruz. Onları nasıl ayrı tutarız?",
+          "a": "Yönetmeye yetkili olduğunuz her müşteri hesabına kendi profilini verin, profili hesabın adıyla adlandırın ve müşteriye göre etiketleyin. Profiller tarayıcı verilerini paylaşmaz; böylece her müşterinin oturumu o müşterinin profilinde kalır."
+        },
+        {
+          "q": "Raporlama kontrollerini otomatikleştirebilir miyim?",
+          "a": "Evet, ücretli planda: onaylanmış bir Playwright betiği profillerde toplu olarak veya bir zamanlamayla çalışır. Bir reklam platformunda herhangi bir şeyi otomatikleştirmeden önce o platformun otomatik erişimle ilgili koşullarını kontrol edin."
+        },
+        {
+          "q": "Bir ekip arkadaşım aynı müşteri profillerini açabilir mi?",
+          "a": "Ücretli planda Veilus Sync ile profiller, çerezler dahil, size ait bir Git deposu veya Google Drive üzerinden bilgisayarlar arasında kopyalanır; depoyu özel tutun. Eşitleme elle yapılır ve Veilus'ta kullanıcı başına rol yoktur."
+        },
+        {
+          "q": "Bir reklam hesabı askıya alındıktan sonra Veilus yardımcı olabilir mi?",
+          "a": "Hayır. Bir yasaktan sonra yeniden reklam yayınlamak, bir reklam platformunun incelemesini aşmaya çalışmak veya yerine yeni hesaplar açmak Kabul Edilebilir Kullanım Politikamıza aykırıdır. Platformun kendi sürecini izleyin."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Her reklam platformunun kendi koşullarına ve politikalarına uyun; yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz hesapları kullanın. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "tag": "Müşteri A",
+        "script": "Bölgeye göre landing kontrolü",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Müşteri A – Reklam",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Müşteri B – Reklam",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "web-scraping": {
+      "name": "web scraping",
+      "metaTitle": "Web scraping için Veilus — gerçek tarayıcı profillerinde Playwright betikleri",
+      "metaDescription": "Kendi proxy'si ve çerezleri olan Veilus profillerinde çalışan Playwright betikleriyle herkese açık verileri toplayın, URL'leri veri kümeleriyle profillere bölüştürün ve çalıştırmaları zamanlayın.",
+      "h1": "Web scraping için Veilus",
+      "sub": "Her birinin kendi proxy'si, çerezleri ve oturumları olan tarayıcı profillerinizin içinde çalışan Playwright betikleriyle herkese açık verileri toplayın.",
+      "benefits": [
+        {
+          "title": "Gerçek bir profilde betikler",
+          "body": "Bir Veilus Flow betiği bir profilin tarayıcısı içinde çalışır; böylece her istek o profilin parmak izi, proxy'si ve çerezleriyle gider ve oturumlar çalıştırmalar arasında profilde kalır."
+        },
+        {
+          "title": "Profillere bölüştürülen URL'ler",
+          "body": "URL'leri tüketilen (Consume) bir veri kümesine koyun: her çalıştırma yeni satırlar alır, aynı anda çalışan profiller hiçbir zaman aynı satırı almaz ve başarısız olan bir çalıştırma satırlarını geri bırakır; böylece hiçbir URL kaybolmaz."
+        },
+        {
+          "title": "Hızı ayarlı, zamanlanmış çalıştırmalar",
+          "body": "Eşzamanlılığı (Concurrency) düşük tutun; bir çalıştırmada açılışlar arası gecikme (Delay Between), bir zamanlamada kademeli gecikme (Stagger Delay) kullanın, betiğin içinde sayfalar arasında bekleyin ve toplamayı sabit saatlere zamanlayın. Sonuçlar Çalıştırma Geçmişi'ne (Run History) düşer ve bir yapay zekâ asistanı onları MCP üzerinden okur.",
+          "href": "/developers",
+          "linkText": "Geliştiriciler için MCP, yerel API ve SDK"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Proxy'li profiller oluşturun",
+          "body": "Veilus'u Windows 10/11 (x64) veya macOS 13.5+ (Apple Silicon) üzerine kurun, profilleri oluşturun ve her birine kendi proxy'sini verin."
+        },
+        {
+          "title": "Betiği yazın",
+          "body": "Betiği bir yapay zekâ asistanına MCP üzerinden yazdırın ya da kendiniz yazın. Topladıklarınızı JSON olarak yazdırın ve hiçbir şey bulunamadığında hata fırlatın; böylece çalıştırma başarısız olarak görünür."
+        },
+        {
+          "title": "URL'leri yükleyin, onaylayın, zamanlayın",
+          "body": "URL'leri tüketilen (Consume) bir veri kümesine koyun, betiği Veilus Flow'da onaylayın, ardından çalıştırın ya da bir zamanlamaya bağlayın. Bunun için ücretli bir plan veya 7 günlük Pro denemesi gerekir."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Belgelerde web scraping tarifi (İngilizce)"
+        },
+        {
+          "href": "https://blog.veilus.io/blog/web-scraping-without-getting-blocked/",
+          "text": "Blogda web scraping rehberi (İngilizce)"
+        }
+      ],
+      "related": [],
+      "faq": [
+        {
+          "q": "Kod yazmam gerekir mi?",
+          "a": "Hayır. Neyin toplanacağını MCP üzerinden bağlı bir yapay zekâ asistanına — örneğin Claude Code veya Cursor — anlatın. Asistan Playwright betiğini yazar ve en fazla 3 profilde deneme çalıştırması yapar; daha fazla profilde çalışmadan önce betiği siz okuyup onaylarsınız."
+        },
+        {
+          "q": "Bir çalıştırma ne kadar çıktı saklar?",
+          "a": "Veilus her profilin çıktısının son 4096 karakterini saklar. Daha fazlasını topluyorsanız betiğin bunu Node'un fs modülüyle bir dosyaya yazmasını ve kısa bir özet yazdırmasını sağlayın."
+        },
+        {
+          "q": "Deneme çalıştırmaları veri kümesi satırı alır mı?",
+          "a": "Hayır. Veri kümesi değerleri yalnızca onaylanmış betiklere ulaşır; onaylanmamış bir betiğin deneme çalıştırması hiç değer almaz ve satır ayırmaz. Gereken değerleri bunun yerine çalıştırma değişkenleri olarak verin."
+        },
+        {
+          "q": "Bir profil oturumunu çalıştırmalar arasında koruyabilir mi?",
+          "a": "Evet. Çerezler ve oturumlar profilde kalır; aynı site için aynı profili yeniden kullanın, oturum bir çalıştırmadan diğerine taşınır."
+        },
+        {
+          "q": "Siteler betiklerimi engeller mi?",
+          "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Bir profil tutarlı bir parmak izi, proxy ve çerezleri korur; bir sitenin trafiğe nasıl davrandığı, ne kadar hızlı ve ne kadar çok topladığınıza da bağlıdır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Bu, siteye ve bulunduğunuz yere bağlıdır. Bir siteden veri toplamadan önce sitenin koşullarını ve robots.txt dosyasını kontrol edin; bazı siteler otomatik veri toplamayı yasaklar. Herkese açık verileri toplayın, hızı düşük tutun ve Kabul Edilebilir Kullanım Politikamızı okuyun.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "view": "runs",
+        "script": "Ürün sayfaları",
+        "type": "interval",
+        "list": "dataset",
+        "items": [
+          "example.com/product/1",
+          "example.com/product/2",
+          "example.com/product/3"
+        ],
+        "rows": [
+          {
+            "n": "Toplayıcı – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "done"
+          },
+          {
+            "n": "Toplayıcı – 2",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "done"
+          },
+          {
+            "n": "Toplayıcı – 3",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "running"
+          },
+          {
+            "n": "Toplayıcı – 4",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "failed"
+          }
+        ]
+      }
+    }
+  },
+  "platforms": {
+    "instagram": {
+      "name": "Instagram",
+      "unit": "hesap",
+      "units": "hesapları",
+      "metaTitle": "Birden fazla Instagram hesabını yönetin — her biri için bir tarayıcı profili | Veilus",
+      "metaDescription": "Marka, kişisel ve müşteri Instagram hesaplarınızın her birini kendi çerezleri, parmak izi ve proxy'si olan ayrı bir Veilus tarayıcı profilinde tutun; hepsinde aynı anda oturum açık kalsın.",
+      "h1": "Birden fazla Instagram hesabını yönetin",
+      "sub": "Marka, kişisel ve müşteri Instagram hesaplarınızın her birini kendi tarayıcı profilinde tutun; hepsinde aynı anda oturum açık kalsın.",
+      "faq": [
+        {
+          "q": "Marka hesabımı ve kişisel hesabımı aynı anda açık tutabilir miyim?",
+          "a": "Evet. Her birini kendi profiline koyun. Her profilin kendi çerezleri ve site depolaması vardır; böylece ikisinde de oturum açık kalır ve hesap değiştirmek için çıkış yapmak yerine pencere değiştirirsiniz."
+        },
+        {
+          "q": "Müşteriler için Instagram yönetiyorum. Hesaplarını nasıl ayrı tutarım?",
+          "a": "Yönetmeye yetkili olduğunuz her müşteri hesabına kendi profilini verin, profili hesabın adıyla adlandırın ve müşteriye göre etiketleyin. Profiller tarayıcı verilerini paylaşmaz; böylece her müşterinin oturumu o müşterinin profilinde kalır."
+        },
+        {
+          "q": "Her hesap için proxy gerekir mi?",
+          "a": "Veilus bunu zorunlu tutmaz. Bir profilin kendi bağlantısı üzerinden çıkmasını istiyorsanız ona bir HTTP veya SOCKS5 proxy verin. Veilus her açılıştan önce profilin saat diliminin, proxy'nin çıktığı yerle eşleşip eşleşmediğini kontrol eder."
+        },
+        {
+          "q": "Bir iş arkadaşım aynı hesapları kendi bilgisayarında açabilir mi?",
+          "a": "Ücretli planda Veilus Sync ile profiller, çerezler dahil, size ait bir Git deposu veya Google Drive üzerinden bilgisayarlar arasında kopyalanır. Eşitleme elle yapılır ve aynı profil aynı anda iki bilgisayarda açık olmamalıdır. Veilus'ta kullanıcı başına rol veya izin yoktur."
+        },
+        {
+          "q": "Instagram profillerimi tespit eder mi?",
+          "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Her profil kendi parmak izini, proxy'sini ve çerezlerini korur; hesaplarınıza nasıl davranılacağı, onları nasıl kullandığınıza da bağlıdır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Instagram'ın kendi kurallarına uyun; kaç hesabınız olabileceğine dair sınırlar ve otomatik etkinlik hakkında söyledikleri de buna dahildir. Yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz hesapları kullanın. Başlamadan önce Instagram'ın koşullarını kontrol edin. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Marka",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Kişisel",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Müşteri A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Müşteri B",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Instagram"
+      }
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "unit": "hesap",
+      "units": "hesapları",
+      "metaTitle": "Birden fazla TikTok hesabını yönetin — her biri için bir tarayıcı profili | Veilus",
+      "metaDescription": "Ayrı marka ve bölge TikTok hesaplarını tek bir bilgisayardan, her birini kendi dili, saat dilimi, çerezleri ve proxy'si olan ayrı bir Veilus profilinde yönetin.",
+      "h1": "Birden fazla TikTok hesabını yönetin",
+      "sub": "Ayrı marka ve bölge TikTok hesaplarını tek bir bilgisayardan, her birini kendi dili, saat dilimi ve proxy'si olan ayrı bir profilde yönetin.",
+      "faq": [
+        {
+          "q": "Her bölge için ayrı bir TikTok hesabı işletiyoruz. Her profil kendi bölgesine uyabilir mi?",
+          "a": "Evet. Profil oluştururken tarayıcı dilini ve saat dilimini ayarlarsınız ya da ikisini birden doldurmak için bir pazar seçersiniz. Yapılandırma denetimi (Config check), saat dilimiyle uyuşmayan bir dili işaretler. Profil IP adresinizi değiştirmez; bunun için profile o bölgede bir proxy verin."
+        },
+        {
+          "q": "Birkaç marka hesabında aynı anda oturum açık tutabilir miyim?",
+          "a": "Evet. Her hesabı kendi profiline koyun. Her profil, açılışlar arasında kendi çerezlerini ve site depolamasını saklar; böylece her hesapta oturum açık kalır ve birini açmak için diğerinden çıkış yapmanız hiç gerekmez."
+        },
+        {
+          "q": "Bir profil neden açılmıyor?",
+          "a": "Veilus her açılıştan önce profilin saat dilimini, proxy'sinin ya da kendi ağınızın çıktığı yerle karşılaştırır ve varsayılan olarak eşleşmeyen bir açılışı engeller. Bir proxy havuzu seçiliyse profilin Ağ sekmesinde (Network) Proxy'ye eşle (Match to proxy) seçeneğini kullanın; aksi halde profilin saat dilimini değiştirin ya da Ayarlar → Saat dilimi denetimi (Settings → Timezone check) seçeneğini Uyar (Warn) veya Kapalı (Off) yapın."
+        },
+        {
+          "q": "Hesaplardaki rutin işleri otomatikleştirebilir miyim?",
+          "a": "Ücretli planda Veilus Flow, Playwright betiklerini birçok profilde aynı anda veya bir zamanlamayla çalıştırır ve MCP üzerinden bağlı bir yapay zekâ asistanı bunları yazabilir. TikTok'ta herhangi bir şeyi otomatikleştirmeden önce TikTok'un otomatik etkinlikle ilgili koşullarını okuyun."
+        },
+        {
+          "q": "TikTok profillerimi tespit eder mi?",
+          "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Her profil kendi parmak izini, proxy'sini ve çerezlerini korur; hesaplarınıza nasıl davranılacağı, onları nasıl kullandığınıza da bağlıdır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "TikTok'un kendi kurallarına uyun; kaç hesabınız olabileceğine dair sınırlar ve otomatik etkinlik hakkında söyledikleri de buna dahildir. Yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz hesapları kullanın. Başlamadan önce TikTok'un koşullarını kontrol edin. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Marka – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Marka – VN",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Marka – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "stopped"
+          },
+          {
+            "n": "Müşteri A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          }
+        ],
+        "tag": "TikTok"
+      }
+    },
+    "youtube": {
+      "name": "YouTube",
+      "unit": "hesap",
+      "units": "hesapları",
+      "metaTitle": "Birden fazla YouTube hesabını ve kanalını yönetin — her biri için bir tarayıcı profili | Veilus",
+      "metaDescription": "YouTube kanallarınızın her birinin arkasındaki Google hesabını kendi çerezleri, parmak izi ve proxy'si olan ayrı bir Veilus tarayıcı profilinde tutun; hepsinde aynı anda oturum açık kalsın.",
+      "h1": "Birden fazla YouTube hesabını yönetin",
+      "sub": "Kanallarınızın her birinin arkasındaki Google hesabını kendi tarayıcı profilinde tutun; hepsinde aynı anda oturum açık kalsın.",
+      "faq": [
+        {
+          "q": "Her kanal için ayrı bir profil gerekir mi?",
+          "a": "Bir profil, içinde oturum açtığınız Google hesabını tutar; yani profiller kanalları değil, hesapları ayırır. Kanallarınız farklı Google hesaplarına aitse ve hepsinde aynı anda oturum açık kalmasını istiyorsanız ayrı profiller işe yarar."
+        },
+        {
+          "q": "Birkaç Google hesabında aynı anda oturum açık kalabilir miyim?",
+          "a": "Evet. Her profilde bir hesapla oturum açın. Her profilin kendi çerezleri ve site depolaması vardır; böylece oturumlar karışmaz ve profili bir sonraki açışınızda her biri yerinde durur."
+        },
+        {
+          "q": "Editörüm bir kanal üzerinde başka bir bilgisayardan çalışabilir mi?",
+          "a": "Ücretli planda Veilus Sync ile bir profil, çerezler dahil, size ait bir Git deposu veya Google Drive üzerinden kopyalanır. Bu kopya etkin oturumu da taşır; yani depoyu okuyabilen herkes oturumu kullanabilir: depoyu özel tutun. Veilus'ta kullanıcı başına rol yoktur."
+        },
+        {
+          "q": "Her kanalda aynı rutini çalıştırabilir miyim?",
+          "a": "Ücretli planda evet. Onaylanmış bir Playwright betiği her profilde toplu olarak veya bir zamanlamayla çalışır; her profilin çıktısı ve çıkış kodu Çalıştırma Geçmişi'nde (Run History) görünür. Önce YouTube'un otomatik etkinlikle ilgili koşullarını kontrol edin."
+        },
+        {
+          "q": "YouTube profillerimi tespit eder mi?",
+          "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Her profil kendi parmak izini, proxy'sini ve çerezlerini korur; hesaplarınıza nasıl davranılacağı, onları nasıl kullandığınıza da bağlıdır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "YouTube'un ve Google'ın kendi kurallarına uyun; birden fazla hesap ve otomatik etkinlik hakkında söyledikleri de buna dahildir. Yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz hesapları kullanın. Başlamadan önce koşullarını kontrol edin. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Kanal – Marka",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Kanal – Kişisel",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Kanal – Müşteri A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Kanal – Müşteri B",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "YouTube"
+      }
+    },
+    "x": {
+      "name": "X",
+      "unit": "hesap",
+      "units": "hesapları",
+      "metaTitle": "Birden fazla X (Twitter) hesabını yönetin — her biri için bir tarayıcı profili | Veilus",
+      "metaDescription": "Farklı projeleriniz için kullandığınız X hesaplarının her birini kendi çerezleri, parmak izi ve proxy'si olan ayrı bir Veilus tarayıcı profilinde tutun; hepsinde aynı anda oturum açık kalsın.",
+      "h1": "Birden fazla X hesabını yönetin",
+      "sub": "Farklı projeleriniz için kullandığınız X hesaplarının her birini kendi tarayıcı profilinde tutun; hepsinde aynı anda oturum açık kalsın.",
+      "faq": [
+        {
+          "q": "Birkaç proje için X hesapları işletiyorum. Onları nasıl ayrı tutarım?",
+          "a": "Her hesaba kendi profilini verin, profili hesabın adıyla adlandırın ve projeye göre etiketleyin. Etikete göre bir filtre kaydedin; bir zamanlama bu filtre üzerinde çalışabilir, böylece sonradan etiketlediğiniz profiller de dahil edilir."
+        },
+        {
+          "q": "Her hesap kendi proxy'sini kullanabilir mi?",
+          "a": "Evet. Her profilin kendi HTTP veya SOCKS5 proxy'si olabilir. 1:1 ayrılmış (1:1 Dedicated) olarak ayarlanmış statik bir proxy havuzuyla her profil havuzdan kendi proxy'sini alır."
+        },
+        {
+          "q": "X'te tekrarlayan işleri otomatikleştirebilir miyim?",
+          "a": "Ücretli planda Veilus Flow, Playwright betiklerini profillerinizde toplu olarak veya bir zamanlamayla çalıştırır. Önce X'in otomasyonla ilgili koşullarını kontrol edin ve her betiği bu koşulların içinde tutun."
+        },
+        {
+          "q": "Bir hesabın profilini başka bir bilgisayara nasıl taşırım?",
+          "a": "Ücretli planda profili bir .veiluspack dosyasına dışa aktarıp diğer bilgisayarda içe aktarın ya da Veilus Sync ile profilleri size ait bir Git deposu veya Google Drive üzerinden kopyalayın. Aynı profili aynı anda iki bilgisayarda açmayın."
+        },
+        {
+          "q": "X profillerimi tespit eder mi?",
+          "a": "Hiçbir araç bunu garanti edemez, biz de etmiyoruz. Her profil kendi parmak izini, proxy'sini ve çerezlerini korur; hesaplarınıza nasıl davranılacağı, onları nasıl kullandığınıza da bağlıdır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "X'in kendi kurallarına uyun; birden fazla hesap işletmek ve otomasyon hakkında söyledikleri de buna dahildir. Yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz hesapları kullanın. Başlamadan önce X'in koşullarını kontrol edin. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Marka",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Destek",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Kişisel",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Müşteri A",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "X"
+      }
+    },
+    "shopify": {
+      "name": "Shopify",
+      "unit": "mağaza",
+      "units": "mağazaları",
+      "metaTitle": "Birden fazla Shopify mağazası işletin — mağaza başına bir tarayıcı profili | Veilus",
+      "metaDescription": "Sahip olduğunuz her Shopify mağazasının yönetim panelini kendi Veilus tarayıcı profilinde tutun ve her vitrini satış yaptığınız her pazarın dilinde ve saat diliminde kontrol edin.",
+      "h1": "Birden fazla Shopify mağazası işletin",
+      "sub": "Sahip olduğunuz her Shopify mağazasını kendi tarayıcı profilinde tutun ve her vitrini her pazarın dilinde ve saat diliminde kontrol edin.",
+      "faq": [
+        {
+          "q": "Birkaç Shopify mağazam var. Hepsinde aynı anda oturum açık kalabilir mi?",
+          "a": "Evet. Her mağazada kendi profilinden oturum açın. Her profilin kendi çerezleri ve site depolaması vardır; böylece her mağazada oturum açık kalır ve mağaza değiştirmek için pencere değiştirmeniz yeterlidir."
+        },
+        {
+          "q": "Bir vitrini başka bir dilde veya pazarda nasıl kontrol ederim?",
+          "a": "O pazar için tarayıcı dili ve saat dilimiyle bir profil oluşturun. Profil IP adresinizi değiştirmez: vitrin dili veya para birimini ziyaretçinin IP'sine göre seçiyorsa o profile o bölgede bir proxy verin."
+        },
+        {
+          "q": "Her vitrini bir zamanlamayla kontrol edebilir miyim?",
+          "a": "Ücretli planda evet. Onaylanmış bir Playwright betiği, her pazar profilinin ne gördüğünü — URL'yi, sayfanın dilini ve tarihlerin nasıl göründüğünü — okuyabilir ve bir sorun olduğunda profili başarısız olarak işaretleyebilir. Bozuk bir çeviriyi veya yönlendirmeyi yakalamak için betiği günlük bir zamanlamaya bağlayın."
+        },
+        {
+          "q": "Çalışanlarım aynı profilleri kullanabilir mi?",
+          "a": "Ücretli planda Veilus Sync, profilleri size ait bir Git deposu veya Google Drive üzerinden bilgisayarlar arasında kopyalar. Veilus'ta kullanıcı başına rol yoktur; bu yüzden her kişinin bir mağazada neler yapabileceğini denetlemez."
+        },
+        {
+          "q": "Free plan neleri kapsar?",
+          "a": "1 cihazda 5 profil; süre sınırı ve kart yok. Veilus Flow, zamanlamalar, toplu çalıştırmalar, yerel API/MCP, Veilus Sync ve içe/dışa aktarma için ücretli plan gerekir; uygulamada ayrıca 7 günlük Pro denemesi vardır."
+        },
+        {
+          "q": "Buna izin veriliyor mu?",
+          "a": "Mağazalarınız ve planınız için Shopify'ın koşullarını kontrol edin; yalnızca sahip olduğunuz veya yönetmeye yetkili olduğunuz mağazaları kullanın. Kabul Edilebilir Kullanım Politikamız, Veilus'un hangi amaçlarla kullanılamayacağını listeler.",
+          "aup": true
+        }
+      ],
+      "related": [
+        "ecommerce",
+        "dropshipping"
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Mağaza A",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Mağaza B",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Mağaza C",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          },
+          {
+            "n": "Pazar – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Shopify"
+      }
+    }
+  }
+}

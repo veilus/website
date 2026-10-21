@@ -72,3 +72,33 @@ test('khoá có {tên} trong en giữ đúng tập chỗ giữ ở 7 ngôn ngữ
     }
   }
 });
+
+// VEIL-1452 — trang /solutions/ đọc src/i18n/solutions/<lang>.json, không nằm trong 8 file trên.
+// Thiếu khoá thì entry() trả undefined và trang vỡ lúc build; mất {platform}/{unit}/{units} thì trang nền tảng
+// hiện chữ trơn mà không bài nào đỏ. KHÔNG ĐO: nghĩa bản dịch, ngữ pháp sau khi điền chỗ giữ.
+const loadSolutions = (lang) => JSON.parse(readFileSync(new URL(`../i18n/solutions/${lang}.json`, import.meta.url), 'utf8'));
+
+test('solutions/<lang>.json: 8 ngôn ngữ cùng khoá, cùng độ dài mảng, cùng tập chỗ giữ với en', () => {
+  const index = readFileSync(new URL('../i18n/solutions/index.ts', import.meta.url), 'utf8');
+  const imported = [...index.matchAll(/^import (\w+) from '\.\/\1\.json'/gm)].map((m) => m[1]);
+  assert.deepEqual([...imported].sort(), [...LANGS].sort(), 'solutions/index.ts không nạp đủ 8 ngôn ngữ');
+
+  const en = loadSolutions('en');
+  const enShape = shape(en);
+  assert.ok(enShape.length > 100, `solutions/en.json chỉ có ${enShape.length} khoá — bài đang đọc sai file?`);
+  const enSet = new Set(enShape);
+  const enLeaves = leafStrings(en);
+  for (const lang of LANGS.slice(1)) {
+    const got = loadSolutions(lang);
+    const gotSet = new Set(shape(got));
+    const missing = enShape.filter((k) => !gotSet.has(k));
+    const extra = [...gotSet].filter((k) => !enSet.has(k));
+    assert.deepEqual({ missing, extra }, { missing: [], extra: [] }, `solutions/${lang}.json lệch en`);
+    const gotMap = new Map(leafStrings(got));
+    // {units} là số nhiều của {unit}; tiếng không chia số nhiều (vi) dùng {unit} cho cả hai — coi là một.
+    const slots = (str) => [...new Set(sortedPlaceholders(str ?? '').map((p) => (p === '{units}' ? '{unit}' : p)))].sort();
+    for (const [key, value] of enLeaves) {
+      assert.deepEqual(slots(gotMap.get(key)), slots(value), `solutions/${lang}.json "${key}" lệch chỗ giữ`);
+    }
+  }
+});

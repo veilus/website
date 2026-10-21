@@ -1,0 +1,1005 @@
+{
+  "nav": "Solusi",
+  "index": {
+    "metaTitle": "Solusi Veilus Browser — e-commerce, dropshipping, pemasaran afiliasi, periklanan, web scraping",
+    "metaDescription": "Cara Veilus dipakai untuk e-commerce, dropshipping, pemasaran afiliasi, periklanan, dan web scraping, plus panduan untuk akun Instagram, TikTok, YouTube, X, dan Shopify yang Anda miliki atau berwenang Anda kelola.",
+    "fig": "solusi",
+    "title": "Solusi Veilus menurut kebutuhan dan menurut platform",
+    "lead": "Cara Veilus dipakai untuk e-commerce, dropshipping, pemasaran afiliasi, periklanan, dan web scraping, serta cara menyimpan akun di setiap platform dalam profilnya masing-masing — untuk akun yang Anda miliki atau berwenang Anda kelola.",
+    "open": "Baca panduannya",
+    "byUseCase": "Menurut kebutuhan",
+    "byPlatform": "Menurut platform"
+  },
+  "common": {
+    "fig": "solusi",
+    "cta": "Unduh Veilus gratis",
+    "benefitsTitle": "Yang dikerjakan Veilus untuk Anda",
+    "benefits": [
+      {
+        "title": "Satu profil untuk setiap {unit}",
+        "body": "Setiap {unit} punya profilnya sendiri, dengan cookie, penyimpanan situs, sidik jari, dan proxy sendiri. Profil tidak berbagi data browser, jadi semua {units} {platform} Anda tetap login sekaligus — tanpa logout lalu login lagi."
+      },
+      {
+        "title": "Komputer Anda yang lain, lewat Veilus Sync",
+        "body": "Di paket berbayar, Veilus Sync menyalin profil — pengaturan, cookie, dan penyimpanan situs — antar-komputer lewat repository Git atau Google Drive milik Anda sendiri. Sinkronisasi dilakukan secara manual, dan Veilus tidak punya peran per pengguna. Data profil diunggah apa adanya, jadi gunakan repository privat."
+      },
+      {
+        "title": "Pekerjaan berulang, diotomatiskan",
+        "body": "Di paket berbayar, Veilus Flow menjalankan skrip Playwright di profil Anda, secara massal atau terjadwal. Tulis skripnya sendiri, atau biarkan asisten AI menulis dan memperbaikinya lewat MCP; skrip yang ditambahkan lewat MCP atau REST API hanya berjalan di maksimal 3 profil sampai Anda menyetujuinya di aplikasi.",
+        "href": "/developers",
+        "linkText": "MCP, API lokal, dan SDK untuk pengembang"
+      }
+    ],
+    "stepsTitle": "Cara memulai",
+    "steps": [
+      {
+        "title": "Unduh dan buat profil",
+        "body": "Pasang Veilus di Windows 10/11 (x64) atau macOS 13.5+ (Apple Silicon). Buat satu profil untuk setiap {unit}, lalu atur bahasa, zona waktu, dan proxy-nya."
+      },
+      {
+        "title": "Login sekali di setiap profil",
+        "body": "Buka setiap profil dan login ke {unit} {platform} miliknya. Sesinya tetap tersimpan di profil itu dari satu pembukaan ke pembukaan berikutnya."
+      },
+      {
+        "title": "Otomatiskan atau jadwalkan",
+        "body": "Setujui skrip di Veilus Flow, lalu jalankan secara massal di profil-profil itu atau pasang jadwal. Fitur ini butuh paket berbayar atau uji coba Pro 7 hari."
+      }
+    ],
+    "faqTitle": "Pertanyaan tentang {platform}",
+    "aupLink": "Baca Kebijakan Penggunaan yang Dapat Diterima",
+    "guides": [
+      {
+        "href": "docs:recipes/multi-account",
+        "text": "Panduan langkah demi langkah di dokumentasi (dalam bahasa Inggris)"
+      }
+    ],
+    "moreUseCases": "Kebutuhan lainnya",
+    "morePlatforms": "Platform",
+    "art": {
+      "profiles": "Profil",
+      "runHistory": "Riwayat eksekusi (Run History)",
+      "count": "{n} profil",
+      "name": "Nama",
+      "profile": "Profil",
+      "language": "Bahasa",
+      "timezone": "Zona waktu",
+      "proxy": "Proxy",
+      "status": "Status",
+      "st": {
+        "running": "Berjalan",
+        "stopped": "Berhenti",
+        "done": "Selesai",
+        "failed": "Gagal"
+      },
+      "tag": "Tag",
+      "schedule": "Jadwal",
+      "types": {
+        "daily": "harian",
+        "interval": "interval"
+      },
+      "pending": "Menunggu persetujuan",
+      "approved": "Disetujui",
+      "fromMcp": "Dari MCP",
+      "script": "Skrip saya",
+      "cookies": "Cookie",
+      "dataset": "Dataset",
+      "consume": "Habis pakai (Consume)",
+      "variables": "Variabel",
+      "label": "Ilustrasi: profil Veilus untuk {name}",
+      "note": "Ilustrasi — nama, wilayah, dan waktu hanya contoh."
+    }
+  },
+  "verticals": {
+    "ecommerce": {
+      "name": "e-commerce",
+      "metaTitle": "Veilus untuk e-commerce — satu profil browser per toko, cek etalase per pasar",
+      "metaDescription": "Simpan setiap toko yang Anda kelola di profil Veilus sendiri, cek etalase, harga, dan listing dalam bahasa dan zona waktu setiap pasar, dan jalankan pengecekannya secara terjadwal.",
+      "h1": "Veilus untuk e-commerce",
+      "sub": "Simpan setiap toko yang Anda kelola di profil browser sendiri, di marketplace dan platform yang mengizinkan lebih dari satu toko, dan cek etalase toko Anda dalam bahasa dan zona waktu setiap pasar.",
+      "benefits": [
+        {
+          "title": "Satu profil per toko",
+          "body": "Halaman admin setiap toko ada di profilnya sendiri, dengan cookie, penyimpanan situs, sidik jari, dan proxy sendiri, jadi setiap toko tetap login dan Anda berpindah toko cukup dengan berpindah jendela."
+        },
+        {
+          "title": "Etalase per pasar",
+          "body": "Atur bahasa browser dan zona waktu setiap profil, atau pilih pasar untuk mengisi keduanya. Profil tidak mengubah alamat IP Anda: jika etalase memilih bahasa atau mata uang dari IP, beri profil itu proxy di wilayah tersebut."
+        },
+        {
+          "title": "Pengecekan yang berjalan sendiri",
+          "body": "Di paket berbayar, skrip Playwright yang sudah disetujui membaca apa yang didapat setiap profil — bahasa halaman, harga, teks listing — dan mencetaknya ke riwayat eksekusi (Run History), secara massal atau terjadwal. Asisten AI bisa menuliskannya untuk Anda lewat MCP.",
+          "href": "/developers",
+          "linkText": "MCP, API lokal, dan SDK untuk pengembang"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Buat profil untuk toko dan pasar",
+          "body": "Pasang Veilus di Windows 10/11 (x64) atau macOS 13.5+ (Apple Silicon). Buat satu profil per toko dan satu per pasar yang Anda cek, masing-masing dengan bahasa, zona waktu, dan proxy-nya."
+        },
+        {
+          "title": "Login dan beri tag",
+          "body": "Login ke setiap toko di profilnya sendiri. Beri tag pada profil pasar agar satu filter tersimpan bisa memilih semuanya sekaligus."
+        },
+        {
+          "title": "Tulis satu pengecekan dan jadwalkan",
+          "body": "Minta asisten AI lewat MCP untuk menulis pengecekannya, atau tulis sendiri. Setujui di Veilus Flow dan pasang jadwal harian: halaman yang menampilkan bahasa atau harga yang salah bisa membuat profilnya gagal."
+        }
+      ],
+      "guides": [
+        {
+          "href": "https://blog.veilus.io/blog/localization-qa-profiles/",
+          "text": "Panduan: cek situs dalam beberapa bahasa dan zona waktu (dalam bahasa Inggris)"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Bisakah saya menjalankan beberapa toko di satu marketplace?",
+          "a": "Hanya jika marketplace mengizinkannya. Ada marketplace yang mengizinkan lebih dari satu toko per penjual, ada yang hanya dengan persetujuan, dan ada yang sama sekali tidak. Periksa dulu ketentuan penjualnya; Veilus ditujukan untuk toko yang Anda kelola di tempat yang mengizinkannya."
+        },
+        {
+          "q": "Bagaimana cara mengecek harga dan listing di pasar lain?",
+          "a": "Buat profil dengan bahasa dan zona waktu pasar itu, dan beri proxy di wilayahnya jika situs memilih konten dari IP pengunjung. Lalu skrip membuka halamannya di profil itu dan mencetak apa yang ditampilkan."
+        },
+        {
+          "q": "Bisakah pengecekan berjalan setiap hari?",
+          "a": "Bisa, di paket berbayar. Pasang jadwal untuk skrip yang sudah disetujui. Skrip yang keluar dengan kode bukan nol menandai profilnya gagal, dan output serta kode keluar setiap profil muncul di riwayat eksekusi (Run History)."
+        },
+        {
+          "q": "Di mana login toko disimpan?",
+          "a": "Di profil: cookie dan sesi tetap di sana dari satu pembukaan ke pembukaan berikutnya. Detail akun yang dibutuhkan skrip bisa disimpan di dataset tetap (Fixed), tempat setiap profil mendapat barisnya sendiri dan tidak ada dua profil yang memakai baris yang sama. Nilai dataset disimpan di komputer Anda sebagai teks biasa."
+        },
+        {
+          "q": "Apa saja yang didapat di paket Free?",
+          "a": "5 profil di 1 perangkat, tanpa batas waktu dan tanpa kartu. Veilus Flow, jadwal, jalankan massal, API/MCP lokal, Veilus Sync, serta impor/ekspor butuh paket berbayar; aplikasi juga menyediakan uji coba Pro 7 hari."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti ketentuan setiap marketplace dan platform, termasuk aturan tentang berapa banyak toko yang boleh dimiliki satu penjual dan tentang akses otomatis, dan gunakan hanya toko yang Anda miliki atau berwenang Anda kelola. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "tag": "pasar",
+        "script": "Cek etalase",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Toko – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Toko – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          },
+          {
+            "n": "Pasar – FR",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "stopped"
+          },
+          {
+            "n": "Pasar – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ]
+      }
+    },
+    "dropshipping": {
+      "name": "dropshipping",
+      "metaTitle": "Veilus untuk dropshipping — profil toko dan cek supplier secara terjadwal",
+      "metaDescription": "Simpan setiap toko yang Anda kelola di profil Veilus sendiri, cek halaman supplier untuk harga dan stok secara terjadwal, dan cek etalase toko Anda dalam bahasa dan zona waktu setiap pasar.",
+      "h1": "Veilus untuk dropshipping",
+      "sub": "Jalankan toko Anda sendiri di profil browser yang terpisah, cek halaman supplier secara terjadwal, dan cek etalase toko Anda dalam bahasa dan zona waktu setiap pasar.",
+      "benefits": [
+        {
+          "title": "Satu profil per toko",
+          "body": "Setiap toko yang Anda kelola mendapat profil sendiri dengan cookie, penyimpanan situs, sidik jari, dan proxy sendiri, jadi semuanya tetap login sekaligus."
+        },
+        {
+          "title": "Halaman supplier secara terjadwal",
+          "body": "Di paket berbayar, skrip Playwright membuka halaman supplier yang Anda daftarkan, membaca harga dan stok, lalu mencetaknya, sesuai jadwal. Dataset habis pakai (Consume) memberi setiap eksekusi URL baru, dan eksekusi yang gagal mengembalikan barisnya.",
+          "href": "/developers",
+          "linkText": "MCP, API lokal, dan SDK untuk pengembang"
+        },
+        {
+          "title": "Etalase toko Anda per pasar",
+          "body": "Beri profil bahasa browser dan zona waktu sebuah pasar, serta proxy di wilayah itu jika etalase Anda memilih bahasa atau mata uang dari IP. Lalu skrip bisa mengecek bahasa halaman dan format tanggalnya."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Buat profil",
+          "body": "Pasang Veilus di Windows 10/11 (x64) atau macOS 13.5+ (Apple Silicon). Buat satu profil per toko dan satu per pasar tujuan penjualan Anda, dengan bahasa, zona waktu, dan proxy-nya."
+        },
+        {
+          "title": "Muat URL supplier",
+          "body": "Impor CSV dengan kolom URL sebagai dataset habis pakai (Consume) dan tetapkan ke profil yang menjalankan pengecekan. Profil yang berjalan bersamaan tidak pernah mendapat baris yang sama."
+        },
+        {
+          "title": "Setujui dan jadwalkan",
+          "body": "Setujui skrip di Veilus Flow dan pasang jadwal dengan jumlah eksekusi bersamaan (Concurrency) yang rendah dan jeda bertahap (Stagger Delay). Baca output setiap profil di riwayat eksekusi (Run History)."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Resep web scraping di dokumentasi (dalam bahasa Inggris)"
+        }
+      ],
+      "related": [
+        "shopify"
+      ],
+      "faq": [
+        {
+          "q": "Bisakah Veilus mengecek harga dan stok supplier untuk saya?",
+          "a": "Skrip bisa melakukannya, di paket berbayar: skrip membuka setiap halaman supplier, membaca nilainya, lalu mencetaknya. Veilus menyimpan 4096 karakter terakhir dari output setiap profil; untuk lebih dari itu, skrip menulis ke file dan mencetak ringkasan singkat."
+        },
+        {
+          "q": "Apakah situs supplier mengizinkan pengecekan otomatis?",
+          "a": "Tergantung situsnya. Periksa dulu ketentuan dan robots.txt-nya; sebagian situs melarang pengumpulan data otomatis. Jaga jumlah eksekusi bersamaan (Concurrency) tetap rendah dan beri jeda antarhalaman di dalam skrip."
+        },
+        {
+          "q": "Bisakah saya mengecek toko saya dalam bahasa negara lain?",
+          "a": "Bisa. Buat profil dengan bahasa dan zona waktu pasar itu. Profil tidak mengubah alamat IP Anda, jadi jika etalase Anda memilih bahasa atau mata uang dari IP, beri profil itu proxy di wilayah tersebut."
+        },
+        {
+          "q": "Apakah saya harus menulis kode?",
+          "a": "Tidak. Jelaskan pengecekannya kepada asisten AI yang terhubung lewat MCP, seperti Claude Code atau Cursor. Asisten menulis skrip Playwright dan mencobanya di maksimal 3 profil; Anda membaca dan menyetujuinya sebelum skrip berjalan di lebih banyak profil."
+        },
+        {
+          "q": "Bisakah beberapa toko tetap login sekaligus?",
+          "a": "Bisa. Login ke setiap toko di profilnya sendiri. Setiap profil menyimpan cookie dan penyimpanan situsnya sendiri dari satu pembukaan ke pembukaan berikutnya, jadi Anda berpindah toko cukup dengan berpindah jendela."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti ketentuan setiap platform tempat Anda berjualan dan setiap situs supplier yang Anda cek, dan gunakan hanya toko yang Anda miliki atau berwenang Anda kelola. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "script": "Cek pemasok",
+        "type": "daily",
+        "list": "dataset",
+        "items": [
+          "example.com/item-1",
+          "example.com/item-2",
+          "example.com/item-3"
+        ],
+        "rows": [
+          {
+            "n": "Toko – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Toko – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Cek pemasok – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Cek pemasok – 2",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "affiliate-marketing": {
+      "name": "pemasaran afiliasi",
+      "metaTitle": "Veilus untuk pemasaran afiliasi — cek tautan dan landing page Anda per negara",
+      "metaDescription": "Simpan situs afiliasi dan akun jaringan afiliasi Anda sendiri di profil Veilus yang terpisah, cek apakah landing page dan redirect milik Anda menampilkan konten yang tepat per negara dan bahasa, dan pantau halaman penawaran publik secara terjadwal.",
+      "h1": "Veilus untuk pemasaran afiliasi",
+      "sub": "Simpan situs dan akun jaringan afiliasi Anda sendiri di profil browser yang terpisah, dan cek apakah landing page dan redirect milik Anda menampilkan konten yang tepat di setiap negara dan bahasa.",
+      "benefits": [
+        {
+          "title": "Akun Anda, tetap terpisah",
+          "body": "Setiap akun jaringan afiliasi dan dasbor situs Anda ada di profilnya sendiri dengan cookie dan penyimpanan situs sendiri, jadi semuanya tetap login sekaligus."
+        },
+        {
+          "title": "Halaman Anda dicek per negara dan bahasa",
+          "body": "Profil membawa bahasa browser dan zona waktunya sendiri, dan proxy di suatu wilayah menunjukkan apa yang didapat browser di sana. Skrip membuka setiap landing page dan redirect milik Anda, lalu mencetak ke mana halaman itu berakhir dan bahasa apa yang dinyatakan halaman tersebut."
+        },
+        {
+          "title": "Halaman publik dipantau secara terjadwal",
+          "body": "Di paket berbayar, skrip yang sudah disetujui mengecek landing page milik Anda dan halaman penawaran publik sesuai jadwal, dan halaman yang rusak muncul sebagai profil yang gagal.",
+          "href": "/developers",
+          "linkText": "MCP, API lokal, dan SDK untuk pengembang"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Buat profil",
+          "body": "Pasang Veilus di Windows 10/11 (x64) atau macOS 13.5+ (Apple Silicon). Buat satu profil untuk setiap akun milik Anda, dan satu untuk setiap negara yang Anda cek, dengan bahasa, zona waktu, dan proxy di wilayah itu."
+        },
+        {
+          "title": "Daftarkan halaman milik Anda",
+          "body": "Berikan URL landing page dan redirect milik Anda kepada skrip sebagai variabel, agar setiap profil negara mengecek daftar yang sama."
+        },
+        {
+          "title": "Setujui dan jadwalkan",
+          "body": "Minta asisten AI lewat MCP untuk menulis pengecekannya, atau tulis sendiri. Setujui di Veilus Flow, pasang jadwal, dan baca hasil setiap profil di riwayat eksekusi (Run History)."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:profiles/datasets",
+          "text": "Dataset di dokumentasi (dalam bahasa Inggris)"
+        }
+      ],
+      "related": [
+        "instagram",
+        "youtube"
+      ],
+      "faq": [
+        {
+          "q": "Bisakah saya memakai beberapa akun di satu jaringan afiliasi?",
+          "a": "Hanya jika ketentuan jaringan itu mengizinkannya. Veilus bukan untuk akun tambahan yang mengakali batasan jaringan, klik atau trafik palsu, cookie stuffing, atau pendaftaran palsu berbayar: semua itu melanggar Kebijakan Penggunaan yang Dapat Diterima kami."
+        },
+        {
+          "q": "Bagaimana cara mengecek landing page dari negara lain?",
+          "a": "Buat profil dengan bahasa dan zona waktu negara itu serta proxy di wilayahnya. Skrip membuka halaman Anda di profil itu dan mencetak URL akhir serta bahasa yang dinyatakan halaman tersebut."
+        },
+        {
+          "q": "Bisakah pengecekan berjalan secara terjadwal?",
+          "a": "Bisa, di paket berbayar. Arahkan pengecekan ke halaman dan redirect milik Anda sendiri, bukan ke tautan pelacakan jaringan, agar kunjungan otomatis tidak pernah dihitung sebagai klik; periksa ketentuan jaringan Anda."
+        },
+        {
+          "q": "Di mana saya melihat hasilnya?",
+          "a": "Di riwayat eksekusi skrip (Run History): output dan kode keluar setiap profil. Asisten AI yang terhubung lewat MCP bisa membaca hasil yang sama dan memberi tahu Anda halaman mana yang gagal."
+        },
+        {
+          "q": "Apakah jaringan afiliasi akan mendeteksi profil saya?",
+          "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Setiap profil menyimpan sidik jari, proxy, dan cookie-nya sendiri; bagaimana akun Anda diperlakukan juga bergantung pada cara Anda memakainya."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti ketentuan setiap jaringan afiliasi dan platform yang bekerja sama dengan Anda, dan gunakan hanya situs dan akun yang Anda miliki atau berwenang Anda kelola. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "script": "Cek landing",
+        "type": "daily",
+        "list": "variables",
+        "items": [
+          "example.com/landing",
+          "example.com/go/offer",
+          "example.com/review"
+        ],
+        "rows": [
+          {
+            "n": "Akun – utama",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Landing – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "advertising": {
+      "name": "periklanan",
+      "metaTitle": "Veilus untuk periklanan — cek landing page per wilayah, akun klien tetap terpisah",
+      "metaDescription": "Cek tampilan landing page Anda di berbagai wilayah dan bahasa, simpan setiap akun iklan klien yang Anda kelola dengan izin di profil Veilus sendiri, dan otomatiskan pengecekan laporan.",
+      "h1": "Veilus untuk periklanan",
+      "sub": "Cek tampilan landing page Anda di setiap wilayah dan bahasa, dan simpan setiap akun iklan klien yang Anda kelola, dengan izin, di profil browser sendiri.",
+      "benefits": [
+        {
+          "title": "Landing page per wilayah",
+          "body": "Beri profil bahasa browser dan zona waktu sebuah pasar serta proxy di wilayah itu, lalu buka landing page iklan Anda seperti yang dilihat browser di sana."
+        },
+        {
+          "title": "Akun klien tetap terpisah",
+          "body": "Setiap akun iklan klien yang Anda kelola dengan izin klien ada di profilnya sendiri dengan cookie dan penyimpanan situs sendiri. Beri nama dan tag pada profil sesuai kliennya."
+        },
+        {
+          "title": "Pengecekan laporan diotomatiskan",
+          "body": "Di paket berbayar, skrip Playwright — yang Anda tulis sendiri atau ditulis asisten AI lewat MCP — membuka halaman yang Anda cek dan mencetak temuannya, secara massal atau terjadwal.",
+          "href": "/developers",
+          "linkText": "MCP, API lokal, dan SDK untuk pengembang"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Buat profil",
+          "body": "Pasang Veilus di Windows 10/11 (x64) atau macOS 13.5+ (Apple Silicon). Buat satu profil per akun klien dan satu per wilayah yang Anda cek, masing-masing dengan bahasa, zona waktu, dan proxy-nya."
+        },
+        {
+          "title": "Login dengan izin",
+          "body": "Login ke setiap akun klien yang berwenang Anda kelola di profilnya sendiri, dan beri tag pada profil sesuai kliennya."
+        },
+        {
+          "title": "Otomatiskan pengecekan",
+          "body": "Setujui skrip di Veilus Flow, jalankan secara massal atau terjadwal, dan baca output setiap profil di riwayat eksekusi (Run History)."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/multi-account",
+          "text": "Panduan langkah demi langkah di dokumentasi (dalam bahasa Inggris)"
+        }
+      ],
+      "related": [
+        "instagram",
+        "tiktok"
+      ],
+      "faq": [
+        {
+          "q": "Bisakah saya melihat iklan saya seperti yang dilihat orang di negara lain?",
+          "a": "Profil dengan bahasa dan zona waktu pasar itu, serta proxy di wilayahnya, menunjukkan apa yang didapat browser di sana. Apa yang dipilih platform iklan untuk ditampilkan juga bergantung pada penargetannya sendiri, jadi anggap ini sebagai pengecekan, bukan jaminan."
+        },
+        {
+          "q": "Kami mengelola akun iklan untuk klien. Bagaimana cara memisahkannya?",
+          "a": "Beri setiap akun klien yang berwenang Anda kelola profilnya sendiri, namai sesuai akunnya, dan beri tag sesuai kliennya. Profil tidak berbagi data browser, jadi sesi setiap klien tetap di profil klien itu."
+        },
+        {
+          "q": "Bisakah saya mengotomatiskan pengecekan laporan?",
+          "a": "Bisa, di paket berbayar: skrip Playwright yang sudah disetujui berjalan di profil secara massal atau terjadwal. Periksa ketentuan setiap platform iklan tentang akses otomatis sebelum Anda mengotomatiskan apa pun di sana."
+        },
+        {
+          "q": "Bisakah rekan tim membuka profil klien yang sama?",
+          "a": "Dengan Veilus Sync di paket berbayar, profil, termasuk cookie, disalin antar-komputer lewat repository Git atau Google Drive milik Anda sendiri; jaga agar tetap privat. Sinkronisasi dilakukan secara manual, dan Veilus tidak punya peran per pengguna."
+        },
+        {
+          "q": "Bisakah Veilus membantu setelah akun iklan ditangguhkan?",
+          "a": "Tidak. Menjalankan iklan lagi setelah diblokir, mengakali peninjauan platform iklan, atau membuat akun pengganti melanggar Kebijakan Penggunaan yang Dapat Diterima kami. Ikuti prosedur resmi platform itu."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti ketentuan dan kebijakan setiap platform iklan, dan gunakan hanya akun yang Anda miliki atau berwenang Anda kelola. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "tag": "Klien A",
+        "script": "Cek landing per wilayah",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Klien A – Iklan",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Klien B – Iklan",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "running"
+          }
+        ]
+      }
+    },
+    "web-scraping": {
+      "name": "web scraping",
+      "metaTitle": "Veilus untuk web scraping — skrip Playwright di profil browser sungguhan",
+      "metaDescription": "Kumpulkan data publik dengan skrip Playwright yang berjalan di dalam profil Veilus dengan proxy dan cookie sendiri, bagi URL ke beberapa profil dengan dataset, dan jadwalkan eksekusinya.",
+      "h1": "Veilus untuk web scraping",
+      "sub": "Kumpulkan data publik dengan skrip Playwright yang berjalan di dalam profil browser Anda, masing-masing dengan proxy, cookie, dan login sendiri.",
+      "benefits": [
+        {
+          "title": "Skrip di profil sungguhan",
+          "body": "Skrip Veilus Flow berjalan di dalam browser milik profil, jadi setiap permintaan keluar dengan sidik jari, proxy, dan cookie profil itu, dan login tetap tersimpan di profil dari satu eksekusi ke eksekusi berikutnya."
+        },
+        {
+          "title": "URL dibagi ke beberapa profil",
+          "body": "Masukkan URL ke dataset habis pakai (Consume): setiap eksekusi mengambil baris baru, profil yang berjalan bersamaan tidak pernah mendapat baris yang sama, dan eksekusi yang gagal mengembalikan barisnya, jadi tidak ada URL yang hilang."
+        },
+        {
+          "title": "Eksekusi berjeda dan terjadwal",
+          "body": "Jaga jumlah eksekusi bersamaan (Concurrency) tetap rendah dengan jeda antarpembukaan (Delay Between) di eksekusi atau jeda bertahap (Stagger Delay) di jadwal, beri jeda antarhalaman di dalam skrip, dan jadwalkan pengumpulan di jam-jam tetap. Hasilnya masuk ke riwayat eksekusi (Run History), dan asisten AI membacanya lewat MCP.",
+          "href": "/developers",
+          "linkText": "MCP, API lokal, dan SDK untuk pengembang"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Buat profil dengan proxy",
+          "body": "Pasang Veilus di Windows 10/11 (x64) atau macOS 13.5+ (Apple Silicon), buat profilnya, dan beri setiap profil proxy-nya sendiri."
+        },
+        {
+          "title": "Tulis skripnya",
+          "body": "Minta asisten AI lewat MCP untuk menulisnya, atau tulis sendiri. Cetak data yang Anda kumpulkan sebagai JSON, dan lemparkan error saat tidak ada yang ditemukan agar eksekusinya tercatat gagal."
+        },
+        {
+          "title": "Muat URL, setujui, jadwalkan",
+          "body": "Masukkan URL ke dataset habis pakai (Consume), setujui skrip di Veilus Flow, lalu jalankan atau pasang jadwal. Fitur ini butuh paket berbayar atau uji coba Pro 7 hari."
+        }
+      ],
+      "guides": [
+        {
+          "href": "docs:recipes/web-scraping",
+          "text": "Resep web scraping di dokumentasi (dalam bahasa Inggris)"
+        },
+        {
+          "href": "https://blog.veilus.io/blog/web-scraping-without-getting-blocked/",
+          "text": "Panduan web scraping di blog (dalam bahasa Inggris)"
+        }
+      ],
+      "related": [],
+      "faq": [
+        {
+          "q": "Apakah saya harus menulis kode?",
+          "a": "Tidak. Jelaskan data yang ingin dikumpulkan kepada asisten AI yang terhubung lewat MCP, seperti Claude Code atau Cursor. Asisten menulis skrip Playwright dan mencobanya di maksimal 3 profil; Anda membaca dan menyetujuinya sebelum skrip berjalan di lebih banyak profil."
+        },
+        {
+          "q": "Berapa banyak output yang disimpan dari satu eksekusi?",
+          "a": "Veilus menyimpan 4096 karakter terakhir dari output setiap profil. Jika Anda mengumpulkan lebih banyak, minta skrip menulisnya ke file dengan modul fs dari Node dan mencetak ringkasan singkat."
+        },
+        {
+          "q": "Apakah uji coba skrip mendapat baris dataset?",
+          "a": "Tidak. Nilai dataset hanya diberikan ke skrip yang sudah disetujui; uji coba skrip yang belum disetujui tidak mendapat nilai apa pun dan tidak memesan baris. Berikan nilai yang dibutuhkannya sebagai variabel eksekusi."
+        },
+        {
+          "q": "Bisakah profil tetap login dari satu eksekusi ke eksekusi berikutnya?",
+          "a": "Bisa. Cookie dan login tetap di profil, jadi pakai profil yang sama untuk situs yang sama dan sesinya berlanjut dari eksekusi ke eksekusi."
+        },
+        {
+          "q": "Apakah situs akan memblokir skrip saya?",
+          "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Profil menyimpan sidik jari, proxy, dan cookie yang konsisten; bagaimana situs memperlakukan trafiknya juga bergantung pada seberapa cepat dan seberapa banyak Anda mengumpulkan data."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Tergantung situsnya dan di mana Anda berada. Periksa ketentuan dan robots.txt setiap situs sebelum Anda mengumpulkan data darinya; sebagian situs melarang pengumpulan data otomatis. Kumpulkan data publik, jaga kecepatannya tetap rendah, dan baca Kebijakan Penggunaan yang Dapat Diterima kami.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "view": "runs",
+        "script": "Halaman produk",
+        "type": "interval",
+        "list": "dataset",
+        "items": [
+          "example.com/product/1",
+          "example.com/product/2",
+          "example.com/product/3"
+        ],
+        "rows": [
+          {
+            "n": "Pengumpul – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "done"
+          },
+          {
+            "n": "Pengumpul – 2",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "done"
+          },
+          {
+            "n": "Pengumpul – 3",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "running"
+          },
+          {
+            "n": "Pengumpul – 4",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "failed"
+          }
+        ]
+      }
+    }
+  },
+  "platforms": {
+    "instagram": {
+      "name": "Instagram",
+      "unit": "akun",
+      "units": "akun",
+      "metaTitle": "Kelola banyak akun Instagram — satu profil browser per akun | Veilus",
+      "metaDescription": "Simpan akun Instagram brand, pribadi, dan klien Anda masing-masing di profil browser Veilus sendiri dengan cookie, sidik jari, dan proxy sendiri, semuanya tetap login sekaligus.",
+      "h1": "Kelola banyak akun Instagram",
+      "sub": "Simpan akun Instagram brand, pribadi, dan klien Anda masing-masing di profil browser sendiri, semuanya tetap login sekaligus.",
+      "faq": [
+        {
+          "q": "Bisakah akun brand dan akun pribadi saya terbuka bersamaan?",
+          "a": "Bisa. Simpan masing-masing di profilnya sendiri. Setiap profil punya cookie dan penyimpanan situs sendiri, jadi keduanya tetap login dan Anda berpindah akun dengan berpindah jendela, bukan dengan logout."
+        },
+        {
+          "q": "Saya mengelola Instagram untuk klien. Bagaimana cara memisahkan akun mereka?",
+          "a": "Beri setiap akun klien yang berwenang Anda kelola profilnya sendiri, namai profil sesuai akunnya, dan beri tag sesuai kliennya. Profil tidak berbagi data browser, jadi sesi setiap klien tetap di profil klien itu."
+        },
+        {
+          "q": "Apakah saya butuh proxy untuk setiap akun?",
+          "a": "Veilus tidak mewajibkannya. Jika Anda ingin sebuah profil keluar lewat koneksinya sendiri, beri profil itu proxy HTTP atau SOCKS5. Sebelum setiap pembukaan, Veilus memeriksa apakah zona waktu profil cocok dengan lokasi keluar proxy."
+        },
+        {
+          "q": "Bisakah rekan kerja membuka akun yang sama di komputernya?",
+          "a": "Dengan Veilus Sync di paket berbayar, profil, termasuk cookie, disalin antar-komputer lewat repository Git atau Google Drive milik Anda sendiri. Sinkronisasi dilakukan secara manual, dan profil yang sama sebaiknya tidak dibuka di dua komputer sekaligus. Veilus tidak punya peran atau izin per pengguna."
+        },
+        {
+          "q": "Apakah Instagram akan mendeteksi profil saya?",
+          "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Setiap profil menyimpan sidik jari, proxy, dan cookie-nya sendiri; bagaimana akun Anda diperlakukan juga bergantung pada cara Anda memakainya."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti aturan Instagram sendiri, termasuk batas jumlah akun yang boleh Anda miliki dan ketentuannya tentang aktivitas otomatis, dan gunakan hanya akun yang Anda miliki atau berwenang Anda kelola. Periksa ketentuan Instagram sebelum Anda mulai. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Merek",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Pribadi",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Klien A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Klien B",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Instagram"
+      }
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "unit": "akun",
+      "units": "akun",
+      "metaTitle": "Kelola banyak akun TikTok — satu profil browser per akun | Veilus",
+      "metaDescription": "Jalankan akun TikTok brand dan regional yang terpisah dari satu komputer, masing-masing di profil Veilus sendiri dengan bahasa, zona waktu, cookie, dan proxy sendiri.",
+      "h1": "Kelola banyak akun TikTok",
+      "sub": "Jalankan akun TikTok brand dan regional yang terpisah dari satu komputer, masing-masing di profil sendiri dengan bahasa, zona waktu, dan proxy sendiri.",
+      "faq": [
+        {
+          "q": "Kami punya akun TikTok terpisah untuk setiap wilayah. Bisakah setiap profil disesuaikan dengan wilayahnya?",
+          "a": "Bisa. Saat membuat profil, Anda mengatur bahasa browser dan zona waktunya, atau memilih pasar untuk mengisi keduanya. Pemeriksaan konfigurasi (Config check) menandai bahasa yang tidak cocok dengan zona waktu. Profil tidak mengubah alamat IP Anda; untuk itu, beri profil proxy di wilayah tersebut."
+        },
+        {
+          "q": "Bisakah beberapa akun brand tetap login sekaligus?",
+          "a": "Bisa. Simpan setiap akun di profilnya sendiri. Setiap profil menyimpan cookie dan penyimpanan situsnya sendiri dari satu pembukaan ke pembukaan berikutnya, jadi setiap akun tetap login dan Anda tidak perlu logout dari satu akun untuk membuka akun lain."
+        },
+        {
+          "q": "Kenapa profil tidak mau terbuka?",
+          "a": "Sebelum setiap pembukaan, Veilus membandingkan zona waktu profil dengan lokasi keluar proxy-nya, atau jaringan Anda sendiri, dan secara default memblokir pembukaan yang tidak cocok. Jika pool proxy dipilih, gunakan opsi sesuaikan dengan proxy (Match to proxy) di tab jaringan profil (Network); jika tidak, ubah zona waktu profil, atau atur pemeriksaan zona waktu di pengaturan (Settings → Timezone check) ke peringatan (Warn) atau nonaktif (Off)."
+        },
+        {
+          "q": "Bisakah saya mengotomatiskan pekerjaan rutin di semua akun?",
+          "a": "Di paket berbayar, Veilus Flow menjalankan skrip Playwright di banyak profil sekaligus atau secara terjadwal, dan asisten AI yang terhubung lewat MCP bisa menuliskannya. Baca ketentuan TikTok tentang aktivitas otomatis sebelum Anda mengotomatiskan apa pun di sana."
+        },
+        {
+          "q": "Apakah TikTok akan mendeteksi profil saya?",
+          "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Setiap profil menyimpan sidik jari, proxy, dan cookie-nya sendiri; bagaimana akun Anda diperlakukan juga bergantung pada cara Anda memakainya."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti aturan TikTok sendiri, termasuk batas jumlah akun yang boleh Anda miliki dan ketentuannya tentang aktivitas otomatis, dan gunakan hanya akun yang Anda miliki atau berwenang Anda kelola. Periksa ketentuan TikTok sebelum Anda mulai. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Merek – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Merek – VN",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Merek – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "stopped"
+          },
+          {
+            "n": "Klien A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          }
+        ],
+        "tag": "TikTok"
+      }
+    },
+    "youtube": {
+      "name": "YouTube",
+      "unit": "akun",
+      "units": "akun",
+      "metaTitle": "Kelola banyak akun dan kanal YouTube — satu profil browser per akun | Veilus",
+      "metaDescription": "Simpan akun Google di balik setiap kanal YouTube Anda di profil browser Veilus sendiri dengan cookie, sidik jari, dan proxy sendiri, semuanya tetap login sekaligus.",
+      "h1": "Kelola banyak akun YouTube",
+      "sub": "Simpan akun Google di balik setiap kanal Anda di profil browser sendiri, semuanya tetap login sekaligus.",
+      "faq": [
+        {
+          "q": "Apakah saya butuh profil terpisah untuk setiap kanal?",
+          "a": "Profil menyimpan akun Google apa pun yang Anda pakai untuk login di dalamnya, jadi profil memisahkan akun, bukan kanal. Profil terpisah berguna saat kanal Anda dimiliki akun Google yang berbeda dan Anda ingin semuanya tetap login sekaligus."
+        },
+        {
+          "q": "Bisakah saya tetap login ke beberapa akun Google sekaligus?",
+          "a": "Bisa. Login ke satu akun per profil. Setiap profil punya cookie dan penyimpanan situs sendiri, jadi sesinya tidak tercampur dan setiap sesi masih ada saat Anda membuka profil itu lagi."
+        },
+        {
+          "q": "Bisakah editor saya mengerjakan kanal dari komputer lain?",
+          "a": "Dengan Veilus Sync di paket berbayar, profil disalin, termasuk cookie, lewat repository Git atau Google Drive milik Anda sendiri. Salinan itu membawa sesi login yang aktif, jadi siapa pun yang bisa membaca repository dapat memakai sesi tersebut: jaga agar tetap privat. Veilus tidak punya peran per pengguna."
+        },
+        {
+          "q": "Bisakah saya menjalankan rutinitas yang sama di setiap kanal?",
+          "a": "Bisa, di paket berbayar. Skrip Playwright yang sudah disetujui berjalan di setiap profil secara massal atau terjadwal, dan output serta kode keluar setiap profil muncul di riwayat eksekusi (Run History). Periksa dulu ketentuan YouTube tentang aktivitas otomatis."
+        },
+        {
+          "q": "Apakah YouTube akan mendeteksi profil saya?",
+          "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Setiap profil menyimpan sidik jari, proxy, dan cookie-nya sendiri; bagaimana akun Anda diperlakukan juga bergantung pada cara Anda memakainya."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti aturan YouTube dan Google sendiri, termasuk ketentuannya tentang banyak akun dan aktivitas otomatis, dan gunakan hanya akun yang Anda miliki atau berwenang Anda kelola. Periksa ketentuan mereka sebelum Anda mulai. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Kanal – Merek",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Kanal – Pribadi",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Kanal – Klien A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Kanal – Klien B",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "YouTube"
+      }
+    },
+    "x": {
+      "name": "X",
+      "unit": "akun",
+      "units": "akun",
+      "metaTitle": "Kelola banyak akun X (Twitter) — satu profil browser per akun | Veilus",
+      "metaDescription": "Simpan akun X untuk berbagai proyek Anda masing-masing di profil browser Veilus sendiri dengan cookie, sidik jari, dan proxy sendiri, semuanya tetap login sekaligus.",
+      "h1": "Kelola banyak akun X",
+      "sub": "Simpan akun X untuk berbagai proyek Anda masing-masing di profil browser sendiri, semuanya tetap login sekaligus.",
+      "faq": [
+        {
+          "q": "Saya menjalankan akun X untuk beberapa proyek. Bagaimana cara memisahkannya?",
+          "a": "Beri setiap akun profilnya sendiri, namai sesuai akunnya, dan beri tag sesuai proyeknya. Simpan filter berdasarkan tag, dan jadwal bisa berjalan pada filter itu, jadi profil yang Anda beri tag belakangan ikut terpilih."
+        },
+        {
+          "q": "Bisakah setiap akun memakai proxy sendiri?",
+          "a": "Bisa. Setiap profil bisa punya proxy HTTP atau SOCKS5 sendiri. Dengan pool proxy statis yang diatur ke mode khusus satu-satu (1:1 Dedicated), setiap profil mendapat proxy-nya sendiri dari pool."
+        },
+        {
+          "q": "Bisakah saya mengotomatiskan pekerjaan berulang di X?",
+          "a": "Di paket berbayar, Veilus Flow menjalankan skrip Playwright di profil Anda secara massal atau terjadwal. Periksa dulu ketentuan X tentang otomatisasi dan pastikan setiap skrip tetap di dalam batasnya."
+        },
+        {
+          "q": "Bagaimana cara memindahkan profil sebuah akun ke komputer lain?",
+          "a": "Di paket berbayar, ekspor profil ke file .veiluspack dan impor di komputer lain, atau gunakan Veilus Sync untuk menyalin profil lewat repository Git atau Google Drive milik Anda sendiri. Jangan buka profil yang sama di dua komputer sekaligus."
+        },
+        {
+          "q": "Apakah X akan mendeteksi profil saya?",
+          "a": "Tidak ada alat yang bisa menjanjikan itu, dan kami juga tidak. Setiap profil menyimpan sidik jari, proxy, dan cookie-nya sendiri; bagaimana akun Anda diperlakukan juga bergantung pada cara Anda memakainya."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Ikuti aturan X sendiri, termasuk ketentuannya tentang menjalankan lebih dari satu akun dan tentang otomatisasi, dan gunakan hanya akun yang Anda miliki atau berwenang Anda kelola. Periksa ketentuan X sebelum Anda mulai. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Merek",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Dukungan",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Pribadi",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Klien A",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "X"
+      }
+    },
+    "shopify": {
+      "name": "Shopify",
+      "unit": "toko",
+      "units": "toko",
+      "metaTitle": "Jalankan banyak toko Shopify — satu profil browser per toko | Veilus",
+      "metaDescription": "Simpan admin setiap toko Shopify milik Anda di profil browser Veilus sendiri, dan cek setiap etalase dalam bahasa dan zona waktu setiap pasar tujuan penjualan Anda.",
+      "h1": "Jalankan banyak toko Shopify",
+      "sub": "Simpan setiap toko Shopify milik Anda di profil browser sendiri, dan cek setiap etalase dalam bahasa dan zona waktu setiap pasar.",
+      "faq": [
+        {
+          "q": "Saya punya beberapa toko Shopify. Bisakah semuanya tetap login?",
+          "a": "Bisa. Login ke setiap toko di profilnya sendiri. Setiap profil punya cookie dan penyimpanan situs sendiri, jadi setiap toko tetap login dan Anda berpindah toko cukup dengan berpindah jendela."
+        },
+        {
+          "q": "Bagaimana cara mengecek etalase dalam bahasa atau pasar lain?",
+          "a": "Buat profil untuk pasar itu dengan bahasa browser dan zona waktunya. Profil tidak mengubah alamat IP Anda: jika etalase memilih bahasa atau mata uang dari IP pengunjung, beri profil itu proxy di wilayah tersebut."
+        },
+        {
+          "q": "Bisakah saya mengecek semua etalase secara terjadwal?",
+          "a": "Bisa, di paket berbayar. Skrip Playwright yang sudah disetujui bisa membaca apa yang didapat setiap profil pasar — URL, bahasa halaman, dan format tanggalnya — dan menggagalkan profil saat ada yang salah. Pasang jadwal harian untuk menangkap terjemahan atau redirect yang rusak."
+        },
+        {
+          "q": "Bisakah staf saya memakai profil yang sama?",
+          "a": "Veilus Sync di paket berbayar menyalin profil antar-komputer lewat repository Git atau Google Drive milik Anda sendiri. Veilus tidak punya peran per pengguna, jadi Veilus tidak mengatur apa yang boleh dilakukan setiap orang di sebuah toko."
+        },
+        {
+          "q": "Apa saja yang didapat di paket Free?",
+          "a": "5 profil di 1 perangkat, tanpa batas waktu dan tanpa kartu. Veilus Flow, jadwal, jalankan massal, API/MCP lokal, Veilus Sync, serta impor/ekspor butuh paket berbayar; aplikasi juga menyediakan uji coba Pro 7 hari."
+        },
+        {
+          "q": "Apakah ini diperbolehkan?",
+          "a": "Periksa ketentuan Shopify untuk toko dan paket Anda, dan gunakan hanya toko yang Anda miliki atau berwenang Anda kelola. Kebijakan Penggunaan yang Dapat Diterima kami mencantumkan hal-hal yang tidak boleh dilakukan dengan Veilus.",
+          "aup": true
+        }
+      ],
+      "related": [
+        "ecommerce",
+        "dropshipping"
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Toko A",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Toko B",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Toko C",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          },
+          {
+            "n": "Pasar – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Shopify"
+      }
+    }
+  }
+}
