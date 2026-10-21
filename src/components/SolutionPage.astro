@@ -10,6 +10,7 @@ import { solutions, entry, VERTICAL_SLUGS, PLATFORM_SLUGS, SOLUTION_LANGS } from
 import Navbar from './Navbar.astro';
 import FinalCTA from './FinalCTA.astro';
 import Footer from './Footer.astro';
+import SolutionArt, { type ArtKind } from './SolutionArt.astro';
 
 interface Props {
   lang: Lang;
@@ -26,6 +27,31 @@ const rows = [
   { title: p.group === 'verticals' ? c.moreUseCases : c.morePlatforms, slugs: same },
   { title: p.group === 'verticals' ? c.morePlatforms : c.moreUseCases, slugs: p.related },
 ].filter((r) => r.slugs.length > 0);
+// Drawing next to each step, and an icon per benefit (inline SVG, 24px grid, 1.5 stroke, square ends).
+const STEP_ART: Record<string, ArtKind[]> = {
+  'dropshipping': ['form', 'list', 'approve'],
+  'affiliate-marketing': ['form', 'list', 'approve'],
+  'web-scraping': ['form', 'code', 'approve'],
+};
+const stepArt = STEP_ART[slug] ?? ['form', 'session', 'approve'];
+const ICON: Record<string, string> = {
+  profiles: 'M7 7V3h14v12h-4M3 7h14v14H3zM3 11h14',
+  globe: 'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 3c-2.5 2.5-3.8 5.5-3.8 9s1.3 6.5 3.8 9M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9M3 12h18',
+  clock: 'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7v5l3.5 3.5',
+  sync: 'M4.5 12a7.5 7.5 0 0 1 13-5.1M18 3v4h-4M19.5 12a7.5 7.5 0 0 1-13 5.1M6 21v-4h4',
+  flow: 'M3 3h7v7H3zM14 14h7v7h-7zM10 6.5h7.5V14',
+  apart: 'M3 5h7v14H3zM14 5h7v14h-7zM3 9h7M14 9h7',
+  split: 'M3 12h6M9 5v14M9 5h5M9 12h5M9 19h5M14 3h7v4h-7zM14 10h7v4h-7zM14 17h7v4h-7z',
+  code: 'M3 4h18v16H3zM3 8h18M9 12l-2.5 2.5L9 17M15 12l2.5 2.5L15 17',
+};
+const BENEFIT_ICONS: Record<string, string[]> = {
+  'ecommerce': ['profiles', 'globe', 'clock'],
+  'dropshipping': ['profiles', 'clock', 'globe'],
+  'affiliate-marketing': ['apart', 'globe', 'clock'],
+  'advertising': ['globe', 'apart', 'flow'],
+  'web-scraping': ['code', 'split', 'clock'],
+};
+const benefitIcons = BENEFIT_ICONS[slug] ?? ['profiles', 'sync', 'flow'];
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -39,18 +65,22 @@ const faqJsonLd = {
 
 <Navbar lang={lang} langs={SOLUTION_LANGS} />
 <main>
-  <section class="k-wrap k-page" data-reveal>
-    <div class="k-fig"><a href={getLocalizedPath('/solutions', lang)}>{c.fig}</a> / {p.name}</div>
-    <h1 class="k-h2">{p.h1}</h1>
-    <p class="k-sub">{p.sub}</p>
-    <a class="k-btn" href={getLocalizedPath('/download', lang)} data-cta={`solution_${slug}_hero`}>{c.cta}</a>
+  <section class="k-wrap k-page k-hero" data-reveal>
+    <div>
+      <div class="k-fig"><a href={getLocalizedPath('/solutions', lang)}>{c.fig}</a> / {p.name}</div>
+      <h1 class="k-h2">{p.h1}</h1>
+      <p class="k-sub">{p.sub}</p>
+      <a class="k-btn" href={getLocalizedPath('/download', lang)} data-cta={`solution_${slug}_hero`}>{c.cta}</a>
+    </div>
+    <SolutionArt lang={lang} slug={slug} kind="hero" />
   </section>
 
   <section class="k-wrap k-sec" data-reveal>
     <h2 class="k-h2">{c.benefitsTitle}</h2>
     <div class="k-cards">
-      {c.benefits.map((b, n) => (
+      {p.benefits.map((b, n) => (
         <article class="k-card k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+          <svg class="k-ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d={ICON[benefitIcons[n]] ?? ICON.profiles} /></svg>
           <h3>{b.title}</h3>
           <p>{b.body}</p>
           {b.href && <p class="k-more"><a href={href(b.href)}>{b.linkText}</a></p>}
@@ -62,10 +92,11 @@ const faqJsonLd = {
   <section class="k-wrap k-sec" data-reveal>
     <h2 class="k-h2">{c.stepsTitle}</h2>
     <ol class="k-steps">
-      {c.steps.map((st, n) => (
+      {p.steps.map((st, n) => (
         <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
           <em>{String(n + 1).padStart(2, '0')}</em>
           <div><h3>{st.title}</h3><p>{st.body}</p></div>
+          {stepArt[n] && <div class="k-step-art"><SolutionArt lang={lang} slug={slug} kind={stepArt[n]} /></div>}
         </li>
       ))}
     </ol>
@@ -105,13 +136,18 @@ const faqJsonLd = {
 
 <style>
   .k-page { padding-top: 56px; }
+  .k-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; }
+  .k-hero .k-sub { margin-top: -18px; }
+  .k-ico { display: block; width: 44px; height: 44px; margin-bottom: 14px; padding: 9px; border: 1.5px solid var(--ink); background: var(--paper); fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; overflow: visible; }
+  .k-card:first-child .k-ico { background: var(--ink); stroke: var(--paper); }
+  .k-step-art { align-self: center; margin-left: 24px; }
   .k-page .k-fig a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   .k-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .k-card { padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
   .k-card h3, .k-steps h3 { margin: 0 0 10px; font-size: 1.15rem; }
   .k-card p, .k-steps p { margin: 0; line-height: 1.6; }
   .k-steps { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
-  .k-steps li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 8px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .k-steps li { display: grid; grid-template-columns: 52px minmax(0, 1fr) minmax(0, 380px); gap: 8px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
   .k-steps em, .k-faq summary em { font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--acc); padding-top: 4px; }
   .k-more { margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; }
   .k-more a, .k-linkrow a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
@@ -126,8 +162,14 @@ const faqJsonLd = {
   .k-faq .k-more { margin-top: -10px; }
   .k-linkrow { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0; }
   .k-row-h + .k-linkrow ~ .k-row-h { margin-top: 48px; }
+  @media (max-width: 1080px) {
+    .k-hero { grid-template-columns: 1fr; gap: 40px; }
+    .k-hero .sa { max-width: 600px; }
+  }
   @media (max-width: 860px) {
     .k-cards { grid-template-columns: 1fr; }
+    .k-steps li { grid-template-columns: 52px minmax(0, 1fr); }
+    .k-step-art { grid-column: 2; max-width: 420px; margin: 8px 0 0; }
   }
   @media (max-width: 720px) {
     .k-steps li { grid-template-columns: 36px minmax(0, 1fr); }

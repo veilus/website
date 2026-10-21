@@ -24,6 +24,16 @@ export function solutions(lang: Lang): Copy {
 }
 
 type Item = { title: string; body: string; href?: string; linkText?: string };
+/** Example data for the page's drawings (SolutionArt.astro). `st` keys common.art.st, `type` keys common.art.types. */
+export type Art = {
+  rows: { n: string; l: string; tz: string; px: string; st: string }[];
+  tag?: string;
+  script?: string;
+  type?: string;
+  list?: 'dataset' | 'variables';
+  items?: string[];
+  view?: 'runs';
+};
 export type Entry = {
   group: Group;
   name: string;
@@ -36,6 +46,7 @@ export type Entry = {
   guides: { href: string; text: string }[];
   related: string[];
   faq: { q: string; a: string; aup?: boolean }[];
+  art: Art;
 };
 
 /** One page's copy; platform pages fall back to the shared benefits/steps/guides with {platform}/{unit}/{units} filled. */

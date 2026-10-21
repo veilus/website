@@ -54,7 +54,40 @@
       }
     ],
     "moreUseCases": "More use cases",
-    "morePlatforms": "Platforms"
+    "morePlatforms": "Platforms",
+    "art": {
+      "profiles": "Profiles",
+      "runHistory": "Run History",
+      "count": "{n} profiles",
+      "name": "Name",
+      "profile": "Profile",
+      "language": "Language",
+      "timezone": "Timezone",
+      "proxy": "Proxy",
+      "status": "Status",
+      "st": {
+        "running": "Running",
+        "stopped": "Stopped",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "tag": "Tag",
+      "schedule": "Schedule",
+      "types": {
+        "daily": "daily",
+        "interval": "interval"
+      },
+      "pending": "Pending approval",
+      "approved": "Approved",
+      "fromMcp": "From MCP",
+      "script": "My script",
+      "cookies": "Cookies",
+      "dataset": "Dataset",
+      "consume": "Consume",
+      "variables": "Variables",
+      "label": "Illustration: Veilus profiles for {name}",
+      "note": "Illustration — names, regions and times are examples."
+    }
   },
   "verticals": {
     "ecommerce": {
@@ -128,7 +161,42 @@
           "a": "Follow each marketplace's and platform's own terms, including any rule on how many stores a seller may have and on automated access, and use only stores you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "tag": "market",
+        "script": "Storefront check",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Store – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Store – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          },
+          {
+            "n": "Market – FR",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "stopped"
+          },
+          {
+            "n": "Market – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ]
+      }
     },
     "dropshipping": {
       "name": "dropshipping",
@@ -201,7 +269,47 @@
           "a": "Follow the terms of each platform you sell on and of each supplier site you check, and use only stores you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "script": "Supplier check",
+        "type": "daily",
+        "list": "dataset",
+        "items": [
+          "example.com/item-1",
+          "example.com/item-2",
+          "example.com/item-3"
+        ],
+        "rows": [
+          {
+            "n": "Store – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Store – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Supplier check – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Supplier check – 2",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          }
+        ]
+      }
     },
     "affiliate-marketing": {
       "name": "affiliate marketing",
@@ -275,7 +383,47 @@
           "a": "Follow the terms of each affiliate network and platform you work with, and use only sites and accounts you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "script": "Landing check",
+        "type": "daily",
+        "list": "variables",
+        "items": [
+          "example.com/landing",
+          "example.com/go/offer",
+          "example.com/review"
+        ],
+        "rows": [
+          {
+            "n": "Account – main",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – UK",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Landing – DE",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "running"
+          }
+        ]
+      }
     },
     "advertising": {
       "name": "advertising",
@@ -349,7 +497,42 @@
           "a": "Follow each ad platform's own terms and policies, and use only accounts you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "tag": "Client A",
+        "script": "Landing check per region",
+        "type": "daily",
+        "rows": [
+          {
+            "n": "Client A – Ads",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "stopped"
+          },
+          {
+            "n": "Client B – Ads",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Landing – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Landing – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "running"
+          }
+        ]
+      }
     },
     "web-scraping": {
       "name": "web scraping",
@@ -424,7 +607,48 @@
           "a": "It depends on the site and where you are. Check each site's terms and robots.txt before you collect from it; some sites prohibit automated collection. Collect public data, keep the pace low, and read our Acceptable Use Policy.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "view": "runs",
+        "script": "Product pages",
+        "type": "interval",
+        "list": "dataset",
+        "items": [
+          "example.com/product/1",
+          "example.com/product/2",
+          "example.com/product/3"
+        ],
+        "rows": [
+          {
+            "n": "Scraper – 1",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "done"
+          },
+          {
+            "n": "Scraper – 2",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "done"
+          },
+          {
+            "n": "Scraper – 3",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "running"
+          },
+          {
+            "n": "Scraper – 4",
+            "l": "fr-FR",
+            "tz": "Europe/Paris",
+            "px": "FR",
+            "st": "failed"
+          }
+        ]
+      }
     }
   },
   "platforms": {
@@ -462,7 +686,40 @@
           "a": "Follow Instagram's own rules, including any limit on how many accounts you may have and what it says about automated activity, and use only accounts you own or are authorized to manage. Check Instagram's terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Brand",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Personal",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Client A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          },
+          {
+            "n": "Client B",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Instagram"
+      }
     },
     "tiktok": {
       "name": "TikTok",
@@ -498,7 +755,40 @@
           "a": "Follow TikTok's own rules, including any limit on how many accounts you may have and what it says about automated activity, and use only accounts you own or are authorized to manage. Check TikTok's terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Brand – US",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Brand – VN",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "running"
+          },
+          {
+            "n": "Brand – SG",
+            "l": "en-SG",
+            "tz": "Asia/Singapore",
+            "px": "SG",
+            "st": "stopped"
+          },
+          {
+            "n": "Client A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "stopped"
+          }
+        ],
+        "tag": "TikTok"
+      }
     },
     "youtube": {
       "name": "YouTube",
@@ -534,7 +824,40 @@
           "a": "Follow YouTube's and Google's own rules, including what they say about multiple accounts and automated activity, and use only accounts you own or are authorized to manage. Check their terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Channel – Brand",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Channel – Personal",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Channel – Client A",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Channel – Client B",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "YouTube"
+      }
     },
     "x": {
       "name": "X",
@@ -570,7 +893,40 @@
           "a": "Follow X's own rules, including what they say about running more than one account and about automation, and use only accounts you own or are authorized to manage. Check X's terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
           "aup": true
         }
-      ]
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Brand",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Support",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Personal",
+            "l": "vi-VN",
+            "tz": "Asia/Ho_Chi_Minh",
+            "px": "VN",
+            "st": "stopped"
+          },
+          {
+            "n": "Client A",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          }
+        ],
+        "tag": "X"
+      }
     },
     "shopify": {
       "name": "Shopify",
@@ -610,7 +966,40 @@
       "related": [
         "ecommerce",
         "dropshipping"
-      ]
+      ],
+      "art": {
+        "rows": [
+          {
+            "n": "Store A",
+            "l": "en-US",
+            "tz": "America/New_York",
+            "px": "US",
+            "st": "running"
+          },
+          {
+            "n": "Store B",
+            "l": "en-GB",
+            "tz": "Europe/London",
+            "px": "GB",
+            "st": "running"
+          },
+          {
+            "n": "Store C",
+            "l": "de-DE",
+            "tz": "Europe/Berlin",
+            "px": "DE",
+            "st": "stopped"
+          },
+          {
+            "n": "Market – JP",
+            "l": "ja-JP",
+            "tz": "Asia/Tokyo",
+            "px": "JP",
+            "st": "stopped"
+          }
+        ],
+        "tag": "Shopify"
+      }
     }
   }
 }
