@@ -5,17 +5,27 @@
     },
     "nav": {
         "antiDetect": "Anti-detect",
-        "profile": "Perfil",
+        "profile": "Perfis",
         "developers": "Desenvolvedores",
-        "backup": "Backup",
-        "features": "Recursos",
+        "backup": "Backup e sincronização",
+        "features": "Funcionalidades",
         "pricing": "Preços",
         "faq": "FAQ",
         "docs": "Docs",
         "blog": "Blog",
         "download": "Baixar grátis",
         "menu": "Abrir menu",
-        "language": "Idioma"
+        "language": "Idioma",
+        "product": "Produto",
+        "resources": "Recursos",
+        "antiDetectDesc": "O que um site vê: um computador, navegadores separados",
+        "profileDesc": "Cada um com impressão digital, proxy e cookies próprios",
+        "backupDesc": "Snapshots, pacotes de perfil, sincronização via Git e Drive",
+        "featuresDesc": "Proxies, execução em lote, agendamentos, REST API, MCP",
+        "docsDesc": "Guias, referência de API e MCP",
+        "blogDesc": "Artigos e tutoriais",
+        "faqDesc": "Respostas curtas às dúvidas mais comuns",
+        "allSolutions": "Todas as soluções"
     },
     "pricing": {
         "title": "Simples,",
@@ -460,7 +470,7 @@
             ]
         },
         "bento": {
-            "fig": "recursos",
+            "fig": "funcionalidades",
             "title": "Suficiente para rodar muitas contas em um só computador.",
             "fields": "{n} campos de impressão digital",
             "fpChips": [

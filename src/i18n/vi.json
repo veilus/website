@@ -5,9 +5,9 @@
     },
     "nav": {
         "antiDetect": "Anti-detect",
-        "profile": "Một hồ sơ",
+        "profile": "Hồ sơ",
         "developers": "Nhà phát triển",
-        "backup": "Sao lưu",
+        "backup": "Sao lưu & đồng bộ",
         "features": "Tính năng",
         "pricing": "Giá",
         "faq": "FAQ",
@@ -15,7 +15,17 @@
         "blog": "Blog",
         "download": "Tải miễn phí",
         "menu": "Mở menu",
-        "language": "Ngôn ngữ"
+        "language": "Ngôn ngữ",
+        "product": "Sản phẩm",
+        "resources": "Tài nguyên",
+        "antiDetectDesc": "Website thấy gì: một máy, nhiều trình duyệt tách biệt",
+        "profileDesc": "Fingerprint, proxy và cookie riêng cho từng hồ sơ",
+        "backupDesc": "Bản chụp, gói hồ sơ, đồng bộ qua Git và Drive",
+        "featuresDesc": "Proxy, chạy hàng loạt, lịch chạy, REST API, MCP",
+        "docsDesc": "Hướng dẫn, tham chiếu API và MCP",
+        "blogDesc": "Bài viết và mẹo thực hành",
+        "faqDesc": "Trả lời ngắn cho câu hỏi thường gặp",
+        "allSolutions": "Tất cả giải pháp"
     },
     "pricing": {
         "title": "Đơn giản,",

@@ -1,12 +1,13 @@
 ---
 /**
- * Thanh điều hướng dùng chung mọi trang (spec trang chủ §2): mark "VEILUS / BẢN VẼ 02", liên kết tới
- * các phần của trang chủ, docs và blog, chọn ngôn ngữ, nút tải về. Dưới 1180px liên kết gập vào nút menu.
+ * Thanh điều hướng dùng chung mọi trang (spec trang chủ §2, gom nhóm ở VEIL-1451): mark, năm mục
+ * Product ▾ · Solutions ▾ · Developers · Pricing · Resources ▾, chọn ngôn ngữ, nút tải về.
+ * Dưới 1180px các mục gập vào nút menu, mỗi nhóm thành một mục mở/gập.
  */
 import type { Lang } from '../i18n/utils';
 import LogoMark from './LogoMark.astro';
 import { t, languages, supportedLangs, defaultLang, getLocalizedPath, stripLang } from '../i18n/utils';
-import { solutions, SOLUTION_LANGS } from '../i18n/solutions';
+import { solutions, entry, VERTICAL_SLUGS, PLATFORM_SLUGS, SOLUTION_LANGS } from '../i18n/solutions';
 
 interface Props {
   lang?: Lang;
@@ -24,29 +25,84 @@ const basePath = stripLang(Astro.url.pathname);
 // bằng giọng nói gọi nút bằng đúng chữ họ thấy.
 const langLabel = `${lang.toUpperCase()} — ${i.nav.language}`;
 
-// Neo của các phần trang chủ — task 6–13 dựng phần có đúng id này; Giá là trang riêng /pricing/ (VEIL-1304), MCP, API và SDK là /developers/ (VEIL-1314, VEIL-1409, VEIL-1414)
+// Neo của các phần trang chủ; từ trang khác chúng trỏ về /<lang>/#neo
 const anchor = (id: string) => `${home}#${id}`;
-const LINKS = [
-  [anchor('anti-detect'), i.nav.antiDetect],
-  [anchor('profile'), i.nav.profile],
-  [getLocalizedPath('/developers', lang), i.nav.developers],
-  // Solutions pages exist in en and vi only (VEIL-1448): other languages get no link rather than a link to a 404.
-  ...(SOLUTION_LANGS.includes(lang) ? [[getLocalizedPath('/solutions', lang), solutions(lang).nav]] : []),
-  [anchor('backup'), i.nav.backup],
-  [anchor('features'), i.nav.features],
-  [getLocalizedPath('/pricing', lang), i.nav.pricing],
-  [anchor('faq'), i.nav.faq],
-  // Docs và blog là site riêng (VEIL-1335): mọi ngôn ngữ trỏ gốc site — docs /vi/ gốc là trang dự phòng noindex
-  ['https://docs.veilus.io/', i.nav.docs],
-  ['https://blog.veilus.io/', i.nav.blog],
+const PRODUCT = [
+  { href: anchor('anti-detect'), label: i.nav.antiDetect, desc: i.nav.antiDetectDesc },
+  { href: anchor('profile'), label: i.nav.profile, desc: i.nav.profileDesc },
+  { href: anchor('backup'), label: i.nav.backup, desc: i.nav.backupDesc },
+  { href: anchor('features'), label: i.nav.features, desc: i.nav.featuresDesc },
 ];
+// Docs và blog là site riêng (VEIL-1335): mọi ngôn ngữ trỏ gốc site — docs /vi/ gốc là trang dự phòng noindex
+const RESOURCES = [
+  { href: 'https://docs.veilus.io/', label: i.nav.docs, desc: i.nav.docsDesc },
+  { href: 'https://blog.veilus.io/', label: i.nav.blog, desc: i.nav.blogDesc },
+  { href: anchor('faq'), label: i.nav.faq, desc: i.nav.faqDesc },
+];
+
+// Solutions shows for exactly the languages src/i18n/solutions has copy for: no link rather than a link to a 404.
+const sol = SOLUTION_LANGS.includes(lang) ? solutions(lang) : null;
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const solItems = (slugs: string[]) =>
+  slugs.map((slug) => ({ href: getLocalizedPath(`/solutions/${slug}`, lang), label: cap(entry(lang, slug).name) }));
+const SOL_GROUPS = sol
+  ? [
+      { id: 'k-sol-use', title: sol.index.byUseCase, items: solItems(VERTICAL_SLUGS) },
+      { id: 'k-sol-platform', title: sol.index.byPlatform, items: solItems(PLATFORM_SLUGS) },
+    ]
+  : [];
 ---
 
 <header class="k-wrap">
   <nav class="k-nav" aria-label="Veilus">
     <a class="k-mark" href={home} aria-label="Veilus"><LogoMark /><span class="k-mark-text">VEILUS</span></a>
     <div class="k-links" id="k-links">
-      {LINKS.map(([href, label]) => <a href={href}>{label}</a>)}
+      <div class="k-dd">
+        <button class="k-dd-btn" type="button" data-dd aria-expanded="false" aria-controls="k-dd-product">
+          {i.nav.product}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
+        </button>
+        <div class="k-dd-panel" id="k-dd-product">
+          <ul>
+            {PRODUCT.map((it) => (
+              <li><a href={it.href}><span class="k-dd-t">{it.label}</span><span class="k-dd-d">{it.desc}</span></a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {sol && (
+        <div class="k-dd">
+          <button class="k-dd-btn" type="button" data-dd aria-expanded="false" aria-controls="k-dd-solutions">
+            {sol.nav}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
+          </button>
+          <div class="k-dd-panel k-dd-sol" id="k-dd-solutions">
+            {SOL_GROUPS.map((g) => (
+              <div class="k-dd-grp">
+                <p class="k-dd-h" id={g.id}>{g.title}</p>
+                <ul aria-labelledby={g.id}>
+                  {g.items.map((it) => <li><a href={it.href}>{it.label}</a></li>)}
+                </ul>
+              </div>
+            ))}
+            <a class="k-dd-all" href={getLocalizedPath('/solutions', lang)}>
+              {i.nav.allSolutions}<span class="ms" data-icon="arrow_forward" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      )}
+      <a class="k-top" href={getLocalizedPath('/developers', lang)}>{i.nav.developers}</a>
+      <a class="k-top" href={getLocalizedPath('/pricing', lang)}>{i.nav.pricing}</a>
+      <div class="k-dd">
+        <button class="k-dd-btn" type="button" data-dd aria-expanded="false" aria-controls="k-dd-resources">
+          {i.nav.resources}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
+        </button>
+        <div class="k-dd-panel" id="k-dd-resources">
+          <ul>
+            {RESOURCES.map((it) => (
+              <li><a href={it.href}><span class="k-dd-t">{it.label}</span><span class="k-dd-d">{it.desc}</span></a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="k-act">
       <div class="k-lang">
@@ -54,6 +110,7 @@ const LINKS = [
           class="k-lang-btn"
           id="k-lang-btn"
           type="button"
+          data-dd
           aria-expanded="false"
           aria-controls="k-lang-menu"
           aria-label={langLabel}
@@ -77,46 +134,114 @@ const LINKS = [
 </header>
 
 <script>
-  const langBtn = document.getElementById('k-lang-btn');
-  const langMenu = document.getElementById('k-lang-menu');
+  // Disclosure buttons (the three nav groups and the language menu): click/tap, Enter or Space toggles,
+  // ArrowDown opens and focuses the first link, ArrowUp/ArrowDown move inside, Escape closes and returns focus.
+  // Only one is open at a time; a click outside or focus leaving the group closes it.
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-dd]')];
   const menuBtn = document.getElementById('k-menu-btn');
   const links = document.getElementById('k-links');
+  const collapsed = matchMedia('(max-width: 1180px)');
 
-  const setLang = (open: boolean) => {
-    langMenu?.classList.toggle('open', open);
-    langBtn?.setAttribute('aria-expanded', String(open));
+  const panelOf = (b: HTMLButtonElement) => document.getElementById(b.getAttribute('aria-controls') ?? '');
+  const linksOf = (b: HTMLButtonElement) => [...(panelOf(b)?.querySelectorAll<HTMLAnchorElement>('a') ?? [])];
+  const isOpen = (b: HTMLButtonElement) => b.getAttribute('aria-expanded') === 'true';
+  const setOpen = (b: HTMLButtonElement, open: boolean) => {
+    panelOf(b)?.classList.toggle('open', open);
+    b.setAttribute('aria-expanded', String(open));
   };
+  const closeAll = (except?: HTMLButtonElement) => buttons.forEach((b) => b !== except && isOpen(b) && setOpen(b, false));
   const setMenu = (open: boolean) => {
     links?.classList.toggle('open', open);
     menuBtn?.setAttribute('aria-expanded', String(open));
   };
 
-  langBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    setLang(!langMenu?.classList.contains('open'));
+  buttons.forEach((b) => {
+    const wrap = b.parentElement;
+    b.addEventListener('click', () => {
+      const open = !isOpen(b);
+      closeAll(b);
+      setOpen(b, open);
+    });
+    b.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowDown') return;
+      e.preventDefault();
+      closeAll(b);
+      setOpen(b, true);
+      linksOf(b)[0]?.focus();
+    });
+    panelOf(b)?.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+      const list = linksOf(b);
+      const at = list.indexOf(document.activeElement as HTMLAnchorElement);
+      const next = e.key === 'ArrowDown' ? Math.min(at + 1, list.length - 1) : at - 1;
+      if (next < 0) b.focus();
+      else list[next].focus();
+    });
+    // Desktop only: in the collapsed menu, closing on mousedown-focus would shift the accordion under the pointer
+    // and the click would land on a different row.
+    wrap?.addEventListener('focusout', (e) => {
+      if (collapsed.matches || !isOpen(b) || !e.relatedTarget || wrap.contains(e.relatedTarget as Node)) return;
+      setOpen(b, false);
+    });
   });
-  document.addEventListener('click', () => setLang(false));
-  // Escape đóng menu đang mở và trả focus về nút đã mở nó. Không menu nào mở thì không đụng tới focus.
+
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.k-dd, .k-lang')) closeAll();
+  });
+  // Escape đóng nhóm đang mở và trả focus về nút đã mở nó; không nhóm nào mở thì đóng menu gập.
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    if (langMenu?.classList.contains('open')) {
-      setLang(false);
-      langBtn?.focus();
-    }
-    if (links?.classList.contains('open')) {
+    const open = buttons.find(isOpen);
+    if (open) {
+      setOpen(open, false);
+      open.focus();
+    } else if (links?.classList.contains('open')) {
       setMenu(false);
       menuBtn?.focus();
     }
   });
   menuBtn?.addEventListener('click', () => setMenu(!links?.classList.contains('open')));
-  links?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  links?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      closeAll();
+      setMenu(false);
+    }),
+  );
 </script>
 
 <style>
   .k-nav { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1.5px solid var(--ink); }
-  .k-links { display: flex; gap: 22px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
-  .k-links a { color: var(--ink); white-space: nowrap; }
-  .k-links a:hover { color: var(--acc); }
+  .k-nav :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .k-links { display: flex; align-items: center; gap: 28px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .k-top, .k-dd-btn { color: var(--ink); white-space: nowrap; }
+  .k-dd-btn { display: inline-flex; align-items: center; gap: 2px; padding: 4px 0; background: transparent; border: 0; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
+  .k-dd-btn .ms { font-size: 17px; transition: transform var(--transition-fast); }
+  .k-dd-btn[aria-expanded='true'] .ms { transform: rotate(180deg); }
+  .k-top:hover, .k-dd-btn:hover, .k-dd-btn[aria-expanded='true'] { color: var(--acc); }
+
+  /* Panels share the language menu's paper, ink border and offset shadow */
+  .k-dd { position: relative; }
+  .k-dd-panel { display: none; position: absolute; left: -16px; top: calc(100% + 18px); width: 320px; background: var(--paper); border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--grid2); z-index: 20; font-family: var(--font-sans); letter-spacing: normal; text-transform: none; }
+  .k-dd-panel.open { display: block; }
+  .k-dd-panel ul { list-style: none; margin: 0; padding: 0; }
+  .k-dd-panel li + li { border-top: 1px solid var(--rule); }
+  .k-dd-panel a { display: block; padding: 12px 16px; color: var(--ink); }
+  .k-dd-t { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.3; }
+  .k-dd-d { display: block; margin-top: 3px; font-size: 13px; line-height: 1.4; color: var(--muted); }
+  .k-dd-panel a:hover, .k-dd-panel a:focus-visible { background: var(--ink); color: var(--paper); outline-offset: -2px; }
+  .k-dd-panel a:hover .k-dd-d, .k-dd-panel a:focus-visible .k-dd-d { color: inherit; opacity: 0.78; }
+
+  .k-dd-sol { width: 460px; }
+  .k-dd-sol.open { display: grid; grid-template-columns: 1fr 1fr; }
+  .k-dd-grp { padding: 14px 0 10px; }
+  .k-dd-grp + .k-dd-grp { border-left: 1px solid var(--rule); }
+  .k-dd-h { margin: 0 0 6px; padding: 0 16px; font: 600 11px/1.4 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .k-dd-sol li + li { border-top: 0; }
+  .k-dd-sol .k-dd-grp a { padding: 7px 16px; font-size: 14.5px; }
+  .k-dd-sol a.k-dd-all { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-top: 1px solid var(--rule); font: 600 12px/1.3 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+  .k-dd-all .ms { font-size: 17px; }
+
   .k-act { display: flex; align-items: center; gap: 12px; }
   .k-lang { position: relative; }
   .k-lang-btn { display: inline-flex; align-items: center; gap: 4px; padding: 7px 8px; background: transparent; border: 1.5px solid var(--ink); color: var(--ink); font: 600 12px/1 var(--font-mono); letter-spacing: 0.06em; cursor: pointer; }
@@ -129,18 +254,22 @@ const LINKS = [
   .k-lang-menu a[aria-current='true'] { background: var(--ink); color: var(--paper); }
   .k-menu-btn { display: none; padding: 5px; background: transparent; border: 1.5px solid var(--ink); color: var(--ink); cursor: pointer; }
 
-  /* The Solutions link (en, vi) makes the row 9 links: at 1181–1190px the vi download button wrapped to two lines
-     (measured 2026-10-21, Playwright). A tighter gap just above the collapse point keeps the button on one line. */
-  @media (min-width: 1181px) and (max-width: 1239px) {
-    .k-links { gap: 18px; }
-  }
-
+  /* Collapsed: one column, each group an accordion with its links indented beneath it */
   @media (max-width: 1180px) {
     .k-menu-btn { display: inline-flex; }
-    .k-links { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--paper); border: 1.5px solid var(--ink); border-top: 0; z-index: 20; }
+    .k-links { display: none; position: absolute; left: 0; right: 0; top: 100%; max-height: calc(100vh - 90px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border: 1.5px solid var(--ink); border-top: 0; z-index: 20; }
     .k-links.open { display: flex; }
-    .k-links a { padding: 14px 16px; }
-    .k-links a + a { border-top: 1px solid var(--rule); }
+    .k-links > * + * { border-top: 1px solid var(--rule); }
+    .k-top { padding: 15px 16px; }
+    .k-dd-btn { width: 100%; justify-content: space-between; padding: 15px 16px; }
+    .k-dd-panel, .k-dd-sol { position: static; width: auto; border: 0; box-shadow: none; background: transparent; padding: 0 0 10px; }
+    .k-dd-panel li + li { border-top: 0; }
+    .k-dd-panel a, .k-dd-sol .k-dd-grp a { padding: 9px 16px 9px 28px; }
+    .k-dd-d { display: none; }
+    .k-dd-grp { padding: 4px 0 0; }
+    .k-dd-grp + .k-dd-grp { border-left: 0; }
+    .k-dd-h { padding: 6px 16px 0 28px; }
+    .k-dd-sol a.k-dd-all { margin: 6px 16px 0 28px; padding: 10px 0; }
   }
 
   @media (max-width: 640px) {
@@ -150,6 +279,10 @@ const LINKS = [
        Khiên cạnh chữ làm nút tải về xuống thêm dòng và đẩy nút menu ra ngoài mép ở 320px: chỉ giữ khiên, tên đọc
        lên vẫn là aria-label của liên kết. */
     .k-mark-text { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .k-dd-sol.open { grid-template-columns: 1fr; }
   }
 
   /* Dưới 360px nút ngôn ngữ, nút tải về và nút menu vượt lề phải tới 7px (ru "Скачать бесплатно"): khít lại. */

@@ -5,9 +5,9 @@
     },
     "nav": {
         "antiDetect": "Anti-detect",
-        "profile": "Perfil",
+        "profile": "Perfiles",
         "developers": "Desarrolladores",
-        "backup": "Respaldo",
+        "backup": "Respaldo y sincronización",
         "features": "Funciones",
         "pricing": "Precios",
         "faq": "FAQ",
@@ -15,7 +15,17 @@
         "blog": "Blog",
         "download": "Descargar gratis",
         "menu": "Abrir menú",
-        "language": "Idioma"
+        "language": "Idioma",
+        "product": "Producto",
+        "resources": "Recursos",
+        "antiDetectDesc": "Lo que ve un sitio: un equipo, navegadores separados",
+        "profileDesc": "Cada uno con su huella digital, proxy y cookies",
+        "backupDesc": "Instantáneas, paquetes de perfil, sincronización vía Git y Drive",
+        "featuresDesc": "Proxies, ejecución por lotes, programaciones, REST API, MCP",
+        "docsDesc": "Guías, referencia de API y MCP",
+        "blogDesc": "Artículos y tutoriales",
+        "faqDesc": "Respuestas breves a las dudas comunes",
+        "allSolutions": "Todas las soluciones"
     },
     "pricing": {
         "title": "Simple,",
