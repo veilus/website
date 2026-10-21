@@ -23,7 +23,7 @@ interface Props {
   privateUrl?: boolean;
   /** Trang 404: không có URL riêng nên không canonical, không og:url, không hreflang; không index. */
   notFound?: boolean;
-  /** Languages this page exists in (VEIL-1448: solutions pages are en + vi only); hreflang and og:locale:alternate list only these. */
+  /** Languages this page exists in (e.g. solutions pages: SOLUTION_LANGS); hreflang and og:locale:alternate list only these. */
   langs?: readonly Lang[];
 }
 

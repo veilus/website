@@ -1,16 +1,21 @@
 /**
- * Solutions pages (VEIL-1448): copy exists in English and Vietnamese only, so it lives here instead of the
- * 8 top-level locale files (i18n-parity.test.js requires every key in all 8). Pages are built for these
- * languages only, and Layout/Navbar list only these in hreflang, the language menu and the Solutions nav link.
- * claims.test.js still scans these files: it lists src/i18n/ recursively.
+ * Solutions pages (VEIL-1448, VEIL-1452): copy lives in its own files, one per site language. Pages are built
+ * for SOLUTION_LANGS only, and Layout/Navbar list only these in hreflang, the language menu and the Solutions
+ * nav link. i18n-parity.test.js checks these files share en's keys; claims.test.js scans src/i18n/ recursively.
  */
 import en from './en.json' with { type: 'json' };
 import vi from './vi.json' with { type: 'json' };
+import zh from './zh.json' with { type: 'json' };
+import ru from './ru.json' with { type: 'json' };
+import pt from './pt.json' with { type: 'json' };
+import es from './es.json' with { type: 'json' };
+import tr from './tr.json' with { type: 'json' };
+import id from './id.json' with { type: 'json' };
 import type { Lang } from '../utils';
 
-export const SOLUTION_LANGS: readonly Lang[] = ['en', 'vi'];
 type Copy = typeof en;
-const COPY: Partial<Record<Lang, Copy>> = { en, vi };
+const COPY: Partial<Record<Lang, Copy>> = { en, vi, zh, ru, pt, es, tr, id };
+export const SOLUTION_LANGS = Object.keys(COPY) as readonly Lang[];
 
 export type Group = 'verticals' | 'platforms';
 export const VERTICAL_SLUGS = Object.keys(en.verticals);
