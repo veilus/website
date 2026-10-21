@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SolutionPage from "../../components/SolutionPage.astro";
+import { defaultLang } from "../../i18n/utils";
+import { solutions, PLATFORM_SLUGS, SOLUTION_LANGS, type PlatformSlug } from "../../i18n/solutions";
+
+export function getStaticPaths() {
+  return PLATFORM_SLUGS.map((slug) => ({ params: { slug } }));
+}
+
+const slug = Astro.params.slug as PlatformSlug;
+const p = solutions(defaultLang).platforms[slug];
+---
+
+<Layout lang={defaultLang} title={p.metaTitle} description={p.metaDescription} langs={SOLUTION_LANGS}>
+  <SolutionPage lang={defaultLang} slug={slug} />
+</Layout>

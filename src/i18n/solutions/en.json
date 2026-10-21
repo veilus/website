@@ -1,0 +1,231 @@
+{
+  "index": {
+    "metaTitle": "Manage multiple accounts with Veilus Browser — Instagram, TikTok, YouTube, X, Shopify",
+    "metaDescription": "Keep each account you own or are authorized to manage in its own Veilus browser profile with its own cookies, fingerprint and proxy. Guides for Instagram, TikTok, YouTube, X and Shopify.",
+    "fig": "solutions",
+    "title": "Manage accounts on the platforms you work on",
+    "lead": "One page per platform: how to keep each account you own or are authorized to manage in its own browser profile, and what Veilus does and doesn't do there.",
+    "open": "Read the guide"
+  },
+  "common": {
+    "fig": "solutions",
+    "cta": "Download Veilus free",
+    "benefitsTitle": "What Veilus does for you",
+    "benefits": [
+      {
+        "title": "One profile per {unit}",
+        "body": "Each {unit} lives in its own profile with its own cookies, site storage, fingerprint and proxy. Profiles don't share browser data, so all your {platform} {units} stay signed in at once — no logging out and back in."
+      },
+      {
+        "title": "Your other computers, through Veilus Sync",
+        "body": "On a paid plan, Veilus Sync copies profiles — settings, cookies and site storage — between computers through a Git repository or Google Drive you own. Syncing is manual, and Veilus has no per-user roles. Profile data is uploaded as-is, so use a private repository."
+      },
+      {
+        "title": "Repetitive work, automated",
+        "body": "On a paid plan, Veilus Flow runs Playwright scripts on your profiles, in batches or on a schedule. Write a script yourself, or let an AI assistant write and fix it over MCP; scripts added over MCP or the REST API run on at most 3 profiles until you approve them in the app."
+      }
+    ],
+    "devLink": "MCP, local API and SDK for developers",
+    "stepsTitle": "How to get started",
+    "steps": [
+      {
+        "title": "Download and create profiles",
+        "body": "Install Veilus on Windows 10/11 (x64) or macOS 13.5+ (Apple Silicon). Create one profile per {unit} and set its language, timezone and proxy."
+      },
+      {
+        "title": "Sign in once in each profile",
+        "body": "Open each profile and sign in to its {platform} {unit}. The session stays in that profile between launches."
+      },
+      {
+        "title": "Automate or schedule",
+        "body": "Approve a script in Veilus Flow, then run it on the profiles as a batch or put it on a schedule. This needs a paid plan or the 7-day Pro trial."
+      }
+    ],
+    "guideLink": "Step-by-step guide in the docs",
+    "faqTitle": "Questions about {platform}",
+    "aupLink": "Read the Acceptable Use Policy",
+    "moreTitle": "More platforms"
+  },
+  "platforms": {
+    "instagram": {
+      "name": "Instagram",
+      "unit": "account",
+      "units": "accounts",
+      "metaTitle": "Manage multiple Instagram accounts — one browser profile each | Veilus",
+      "metaDescription": "Keep your brand, personal and client Instagram accounts each in its own Veilus browser profile with its own cookies, fingerprint and proxy, all signed in at once.",
+      "h1": "Manage multiple Instagram accounts",
+      "sub": "Keep your brand, personal and client Instagram accounts each in its own browser profile, all signed in at once.",
+      "faq": [
+        {
+          "q": "Can I keep my brand account and my personal account open at the same time?",
+          "a": "Yes. Put each one in its own profile. Each profile has its own cookies and site storage, so both stay signed in and you switch accounts by switching windows, not by logging out."
+        },
+        {
+          "q": "I manage Instagram for clients. How do I keep their accounts apart?",
+          "a": "Give each client account you are authorized to manage its own profile, name the profile after the account and tag it by client. Profiles don't share browser data, so each client's session stays in that client's profile."
+        },
+        {
+          "q": "Do I need a proxy for every account?",
+          "a": "Veilus doesn't require one. If you want a profile to go out through its own connection, give it an HTTP or SOCKS5 proxy. Before every launch, Veilus checks that the profile's timezone matches where the proxy exits."
+        },
+        {
+          "q": "Can a colleague open the same accounts on their computer?",
+          "a": "With Veilus Sync on a paid plan, profiles, cookies included, are copied between computers through a Git repository or Google Drive you own. Syncing is manual, and the same profile shouldn't be open on two computers at once. Veilus has no per-user roles or permissions."
+        },
+        {
+          "q": "Will Instagram detect my profiles?",
+          "a": "No tool can promise that, and we don't. Each profile keeps its own fingerprint, proxy and cookies; how your accounts are treated also depends on how you use them."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow Instagram's own rules, including any limit on how many accounts you may have and what it says about automated activity, and use only accounts you own or are authorized to manage. Check Instagram's terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "tiktok": {
+      "name": "TikTok",
+      "unit": "account",
+      "units": "accounts",
+      "metaTitle": "Manage multiple TikTok accounts — one browser profile each | Veilus",
+      "metaDescription": "Run separate brand and regional TikTok accounts from one computer, each in its own Veilus profile with its own language, timezone, cookies and proxy.",
+      "h1": "Manage multiple TikTok accounts",
+      "sub": "Run separate brand and regional TikTok accounts from one computer, each in its own profile with its own language, timezone and proxy.",
+      "faq": [
+        {
+          "q": "We run a separate TikTok account for each region. Can each profile match its region?",
+          "a": "Yes. When you create a profile you set its browser language and timezone, or pick a market to fill both. A Config check flags a language that doesn't match the timezone. A profile doesn't change your IP address; for that, give it a proxy in the region."
+        },
+        {
+          "q": "Can I keep several brand accounts signed in at once?",
+          "a": "Yes. Put each account in its own profile. Each profile keeps its own cookies and site storage between launches, so every account stays signed in and you never log one out to open another."
+        },
+        {
+          "q": "Why won't a profile open?",
+          "a": "Before every launch, Veilus compares the profile's timezone with where its proxy, or your own network, exits, and by default blocks a launch that doesn't match. With a proxy pool selected, use Match to proxy in the profile's Network tab; otherwise change the profile's timezone, or set Settings → Timezone check to Warn or Off."
+        },
+        {
+          "q": "Can I automate routine work across the accounts?",
+          "a": "On a paid plan, Veilus Flow runs Playwright scripts on many profiles at once or on a schedule, and an AI assistant connected over MCP can write them. Read TikTok's terms on automated activity before you automate anything there."
+        },
+        {
+          "q": "Will TikTok detect my profiles?",
+          "a": "No tool can promise that, and we don't. Each profile keeps its own fingerprint, proxy and cookies; how your accounts are treated also depends on how you use them."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow TikTok's own rules, including any limit on how many accounts you may have and what it says about automated activity, and use only accounts you own or are authorized to manage. Check TikTok's terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "youtube": {
+      "name": "YouTube",
+      "unit": "account",
+      "units": "accounts",
+      "metaTitle": "Manage multiple YouTube accounts and channels — one browser profile each | Veilus",
+      "metaDescription": "Keep the Google account behind each of your YouTube channels in its own Veilus browser profile with its own cookies, fingerprint and proxy, all signed in at once.",
+      "h1": "Manage multiple YouTube accounts",
+      "sub": "Keep the Google account behind each of your channels in its own browser profile, all signed in at once.",
+      "faq": [
+        {
+          "q": "Do I need a separate profile for each channel?",
+          "a": "A profile holds whatever Google account you sign in to in it, so profiles separate accounts, not channels. Separate profiles help when your channels belong to different Google accounts and you want them all signed in at once."
+        },
+        {
+          "q": "Can I stay signed in to several Google accounts at the same time?",
+          "a": "Yes. Sign in to one account per profile. Each profile has its own cookies and site storage, so the sessions don't mix and each one is still there the next time you open the profile."
+        },
+        {
+          "q": "Can my editor work on a channel from another computer?",
+          "a": "With Veilus Sync on a paid plan, a profile is copied, cookies included, through a Git repository or Google Drive you own. That copy carries the live sign-in, so anyone who can read the repository can use the session: keep it private. Veilus has no per-user roles."
+        },
+        {
+          "q": "Can I run the same routine on every channel?",
+          "a": "On a paid plan, yes. An approved Playwright script runs on each profile as a batch or on a schedule, and each profile's output and exit code show up in Run History. Check YouTube's terms on automated activity first."
+        },
+        {
+          "q": "Will YouTube detect my profiles?",
+          "a": "No tool can promise that, and we don't. Each profile keeps its own fingerprint, proxy and cookies; how your accounts are treated also depends on how you use them."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow YouTube's and Google's own rules, including what they say about multiple accounts and automated activity, and use only accounts you own or are authorized to manage. Check their terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "x": {
+      "name": "X",
+      "unit": "account",
+      "units": "accounts",
+      "metaTitle": "Manage multiple X (Twitter) accounts — one browser profile each | Veilus",
+      "metaDescription": "Keep the X accounts for your different projects each in its own Veilus browser profile with its own cookies, fingerprint and proxy, all signed in at once.",
+      "h1": "Manage multiple X accounts",
+      "sub": "Keep the X accounts for your different projects each in its own browser profile, all signed in at once.",
+      "faq": [
+        {
+          "q": "I run X accounts for several projects. How do I keep them apart?",
+          "a": "Give each account its own profile, name it after the account and tag it by project. Save a filter by tag, and a schedule can run on that filter, so profiles you tag later are picked up."
+        },
+        {
+          "q": "Can each account use its own proxy?",
+          "a": "Yes. Each profile can have its own HTTP or SOCKS5 proxy. With a static proxy pool set to 1:1 Dedicated, each profile gets its own proxy from the pool."
+        },
+        {
+          "q": "Can I automate repetitive work on X?",
+          "a": "On a paid plan, Veilus Flow runs Playwright scripts on your profiles in batches or on a schedule. Check X's terms on automation first and keep any script within them."
+        },
+        {
+          "q": "How do I move an account's profile to another computer?",
+          "a": "On a paid plan, export the profile to a .veiluspack file and import it on the other computer, or use Veilus Sync to copy profiles through a Git repository or Google Drive you own. Don't open the same profile on two computers at once."
+        },
+        {
+          "q": "Will X detect my profiles?",
+          "a": "No tool can promise that, and we don't. Each profile keeps its own fingerprint, proxy and cookies; how your accounts are treated also depends on how you use them."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Follow X's own rules, including what they say about running more than one account and about automation, and use only accounts you own or are authorized to manage. Check X's terms before you start. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    },
+    "shopify": {
+      "name": "Shopify",
+      "unit": "store",
+      "units": "stores",
+      "metaTitle": "Run multiple Shopify stores — one browser profile per store | Veilus",
+      "metaDescription": "Keep the admin of each Shopify store you own in its own Veilus browser profile, and check each storefront in the language and timezone of every market you sell to.",
+      "h1": "Run multiple Shopify stores",
+      "sub": "Keep each Shopify store you own in its own browser profile, and check each storefront in the language and timezone of each market.",
+      "faq": [
+        {
+          "q": "I own several Shopify stores. Can I stay signed in to all of them?",
+          "a": "Yes. Sign in to each store in its own profile. Each profile has its own cookies and site storage, so every store stays signed in and you switch stores by switching windows."
+        },
+        {
+          "q": "How do I check a storefront in another language or market?",
+          "a": "Create a profile for the market with its browser language and timezone. A profile doesn't change your IP address: if the storefront picks language or currency from the visitor's IP, give that profile a proxy in the region."
+        },
+        {
+          "q": "Can I check every storefront on a schedule?",
+          "a": "On a paid plan, yes. An approved Playwright script can read what each market profile gets — the URL, the page's language and how dates look — and fail the profile when something is wrong. Put it on a daily schedule to catch a broken translation or redirect."
+        },
+        {
+          "q": "Can my staff use the same profiles?",
+          "a": "Veilus Sync on a paid plan copies profiles between computers through a Git repository or Google Drive you own. Veilus has no per-user roles, so it doesn't control what each person may do in a store."
+        },
+        {
+          "q": "What does the Free plan cover?",
+          "a": "5 profiles on 1 device, with no time limit and no card. Veilus Flow, schedules, batch runs, the local API/MCP, Veilus Sync and import/export need a paid plan; the app also has a 7-day Pro trial."
+        },
+        {
+          "q": "Is this allowed?",
+          "a": "Check Shopify's terms for your stores and plan, and use only stores you own or are authorized to manage. Our Acceptable Use Policy lists what Veilus may not be used for.",
+          "aup": true
+        }
+      ]
+    }
+  }
+}

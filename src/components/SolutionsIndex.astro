@@ -1,0 +1,54 @@
+---
+/** /solutions/ (VEIL-1448): lists the platform pages; copy from src/i18n/solutions/<lang>.json. */
+import type { Lang } from '../i18n/utils';
+import { getLocalizedPath } from '../i18n/utils';
+import { solutions, PLATFORM_SLUGS, SOLUTION_LANGS } from '../i18n/solutions';
+import Navbar from './Navbar.astro';
+import FinalCTA from './FinalCTA.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const s = solutions(lang);
+---
+
+<Navbar lang={lang} langs={SOLUTION_LANGS} />
+<main>
+  <section class="k-wrap k-page" data-reveal>
+    <div class="k-fig">{s.index.fig}</div>
+    <h1 class="k-h2">{s.index.title}</h1>
+    <p class="k-sub">{s.index.lead}</p>
+    <ul class="k-list">
+      {PLATFORM_SLUGS.map((slug, n) => {
+        const p = s.platforms[slug];
+        return (
+          <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+            <a href={getLocalizedPath(`/solutions/${slug}`, lang)}>
+              <h2>{p.h1}</h2>
+              <p>{p.sub}</p>
+              <span class="k-open">{s.index.open}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  <FinalCTA lang={lang} />
+</main>
+<Footer lang={lang} />
+
+<style>
+  .k-page { padding-top: 56px; }
+  .k-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .k-list a { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); color: var(--ink); }
+  .k-list a:hover { background: var(--paper); }
+  .k-list h2 { margin: 0; font-size: 1.15rem; }
+  .k-list p { margin: 0; line-height: 1.6; color: var(--muted); }
+  .k-open { margin-top: auto; font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 720px) {
+    .k-list { grid-template-columns: 1fr; }
+  }
+</style>

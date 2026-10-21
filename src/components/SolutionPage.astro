@@ -1,0 +1,128 @@
+---
+/**
+ * /solutions/<platform>/ (VEIL-1448): one template, copy from src/i18n/solutions/<lang>.json. Every claim in the
+ * copy comes from en.json faq/pricing, public/llms.txt or the docs (recipes/multi-account, profiles/datasets,
+ * profiles/proxy, sync/overview); platform rules are never stated, only "check <platform>'s terms".
+ */
+import type { Lang } from '../i18n/utils';
+import { getLocalizedPath, docsUrl } from '../i18n/utils';
+import { solutions, fillPlatform, PLATFORM_SLUGS, SOLUTION_LANGS, type PlatformSlug } from '../i18n/solutions';
+import Navbar from './Navbar.astro';
+import FinalCTA from './FinalCTA.astro';
+import Footer from './Footer.astro';
+
+interface Props {
+  lang: Lang;
+  slug: PlatformSlug;
+}
+const { lang, slug } = Astro.props;
+const s = solutions(lang);
+const c = s.common;
+const p = s.platforms[slug];
+const fill = (str: string) => fillPlatform(str, p);
+const aup = getLocalizedPath('/acceptable-use', lang);
+const others = PLATFORM_SLUGS.filter((o) => o !== slug);
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: p.faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+
+<Navbar lang={lang} langs={SOLUTION_LANGS} />
+<main>
+  <section class="k-wrap k-page" data-reveal>
+    <div class="k-fig"><a href={getLocalizedPath('/solutions', lang)}>{c.fig}</a> / {p.name}</div>
+    <h1 class="k-h2">{p.h1}</h1>
+    <p class="k-sub">{p.sub}</p>
+    <a class="k-btn" href={getLocalizedPath('/download', lang)} data-cta={`solution_${slug}_hero`}>{c.cta}</a>
+  </section>
+
+  <section class="k-wrap k-sec" data-reveal>
+    <h2 class="k-h2">{c.benefitsTitle}</h2>
+    <div class="k-cards">
+      {c.benefits.map((b, n) => (
+        <article class="k-card k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+          <h3>{fill(b.title)}</h3>
+          <p>{fill(b.body)}</p>
+          {n === 2 && <p class="k-more"><a href={getLocalizedPath('/developers', lang)}>{c.devLink}</a></p>}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="k-wrap k-sec" data-reveal>
+    <h2 class="k-h2">{c.stepsTitle}</h2>
+    <ol class="k-steps">
+      {c.steps.map((st, n) => (
+        <li class="k-rise" style={`--d:${(0.1 + n * 0.08).toFixed(2)}s`}>
+          <em>{String(n + 1).padStart(2, '0')}</em>
+          <div><h3>{fill(st.title)}</h3><p>{fill(st.body)}</p></div>
+        </li>
+      ))}
+    </ol>
+    <p class="k-more"><a href={docsUrl('recipes/multi-account', lang)}>{c.guideLink}</a></p>
+  </section>
+
+  <section class="k-wrap k-sec" id="faq" data-reveal>
+    <h2 class="k-h2">{fill(c.faqTitle)}</h2>
+    <div class="k-faq">
+      {p.faq.map((item, n) => (
+        <details open={n < 2}>
+          <summary>
+            <em>{String(n + 1).padStart(2, '0')}</em><span>{item.q}</span><span class="ms" data-icon="add" aria-hidden="true"></span>
+          </summary>
+          <p>{item.a}</p>
+          {'aup' in item && <p class="k-more"><a href={aup}>{c.aupLink}</a></p>}
+        </details>
+      ))}
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}></script>
+  </section>
+
+  <section class="k-wrap k-sec" data-reveal>
+    <h2 class="k-h2">{c.moreTitle}</h2>
+    <p class="k-linkrow">
+      {others.map((o) => <a href={getLocalizedPath(`/solutions/${o}`, lang)}>{s.platforms[o].h1}</a>)}
+    </p>
+  </section>
+
+  <FinalCTA lang={lang} />
+</main>
+<Footer lang={lang} />
+
+<style>
+  .k-page { padding-top: 56px; }
+  .k-page .k-fig a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .k-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .k-card { padding: 18px; border: 1.5px solid var(--ink); background: rgba(242, 239, 231, 0.95); }
+  .k-card h3, .k-steps h3 { margin: 0 0 10px; font-size: 1.15rem; }
+  .k-card p, .k-steps p { margin: 0; line-height: 1.6; }
+  .k-steps { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
+  .k-steps li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 8px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+  .k-steps em, .k-faq summary em { font-style: normal; font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--acc); padding-top: 4px; }
+  .k-more { margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; }
+  .k-more a, .k-linkrow a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .k-faq { border-top: 1.5px solid var(--ink); }
+  .k-faq details { border-bottom: 1px solid var(--rule); background: rgba(242, 239, 231, 0.92); }
+  .k-faq summary { display: grid; grid-template-columns: 52px minmax(0, 1fr) 28px; align-items: center; gap: 8px; padding: 18px 12px; list-style: none; cursor: pointer; font-size: 16.5px; font-weight: 600; }
+  .k-faq summary::-webkit-details-marker { display: none; }
+  .k-faq summary em { padding-top: 0; }
+  .k-faq summary .ms { display: inline-flex; align-items: center; justify-content: center; width: 1em; height: 1em; transition: transform 0.2s ease; }
+  .k-faq details[open] summary .ms { transform: rotate(45deg); }
+  .k-faq p { max-width: 54em; margin: 0; padding: 0 48px 20px 72px; font-size: 15px; line-height: 1.65; color: var(--muted); }
+  .k-faq .k-more { margin-top: -10px; }
+  .k-linkrow { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0; }
+  @media (max-width: 860px) {
+    .k-cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .k-steps li { grid-template-columns: 36px minmax(0, 1fr); }
+    .k-faq summary { grid-template-columns: 36px minmax(0, 1fr) 24px; padding: 16px 8px; font-size: 15.5px; }
+    .k-faq p { padding: 0 16px 18px 52px; }
+  }
+</style>

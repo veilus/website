@@ -1,0 +1,12 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SolutionsIndex from "../../components/SolutionsIndex.astro";
+import { defaultLang } from "../../i18n/utils";
+import { solutions, SOLUTION_LANGS } from "../../i18n/solutions";
+
+const s = solutions(defaultLang).index;
+---
+
+<Layout lang={defaultLang} title={s.metaTitle} description={s.metaDescription} langs={SOLUTION_LANGS}>
+  <SolutionsIndex lang={defaultLang} />
+</Layout>

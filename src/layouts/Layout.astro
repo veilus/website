@@ -23,6 +23,8 @@ interface Props {
   privateUrl?: boolean;
   /** Trang 404: không có URL riêng nên không canonical, không og:url, không hreflang; không index. */
   notFound?: boolean;
+  /** Languages this page exists in (VEIL-1448: solutions pages are en + vi only); hreflang and og:locale:alternate list only these. */
+  langs?: readonly Lang[];
 }
 
 const lang = Astro.props.lang || defaultLang;
@@ -32,10 +34,11 @@ const {
   description = i.meta.description,
   privateUrl = false,
   notFound = false,
+  langs = supportedLangs,
 } = Astro.props;
 
 const siteUrl = "https://veilus.io";
-const hreflangs = getHreflangs(Astro.url.pathname, siteUrl);
+const hreflangs = getHreflangs(Astro.url.pathname, siteUrl, langs);
 // Canonical là chính trang. Lúc build (format 'directory') pathname luôn có / cuối, cùng dạng với sitemap.
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 // x-default là bản en của CHÍNH trang này, không phải trang chủ.
@@ -183,7 +186,7 @@ const websiteJsonLd = {
     <meta property="og:site_name" content="Veilus" />
     <meta property="og:locale" content={languages[lang].ogLocale} />
     {
-      !notFound && supportedLangs.filter((l) => l !== lang).map((l) => (
+      !notFound && langs.filter((l) => l !== lang).map((l) => (
         <meta property="og:locale:alternate" content={languages[l].ogLocale} />
       ))
     }

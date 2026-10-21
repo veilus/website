@@ -9,8 +9,11 @@ import { t, languages, supportedLangs, defaultLang, getLocalizedPath, stripLang 
 
 interface Props {
   lang?: Lang;
+  /** Languages the current page exists in; the language menu lists only these (VEIL-1448). */
+  langs?: readonly Lang[];
 }
 const lang = Astro.props.lang || defaultLang;
+const langs = Astro.props.langs ?? supportedLangs;
 const i = t(lang);
 const home = getLocalizedPath('/', lang);
 
@@ -55,7 +58,7 @@ const LINKS = [
           <span class="ms" data-icon="language" aria-hidden="true"></span>{lang.toUpperCase()}<span class="ms" data-icon="expand_more" aria-hidden="true"></span>
         </button>
         <div class="k-lang-menu" id="k-lang-menu">
-          {supportedLangs.map((l) => (
+          {langs.map((l) => (
             <a href={getLocalizedPath(basePath, l)} lang={languages[l].hreflang} hreflang={languages[l].hreflang} aria-current={l === lang ? 'true' : undefined}>
               {languages[l].label}
             </a>
