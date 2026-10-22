@@ -1,6 +1,6 @@
-/features/mcp      /developers      301
+/features/mcp      /developers/     301
 /features/mcp/     /developers/     301
-/:lang/features/mcp   /:lang/developers   301
+/:lang/features/mcp   /:lang/developers/  301
 /:lang/features/mcp/  /:lang/developers/  301
 /blog      https://blog.veilus.io/blog/        301
 /blog/*    https://blog.veilus.io/blog/:splat  301
