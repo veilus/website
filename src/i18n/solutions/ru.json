@@ -129,7 +129,7 @@
       "guides": [
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
-          "text": "Готовый к запуску скрипт: мониторинг цен (GitHub)"
+          "text": "Готовый скрипт: мониторинг цен (GitHub)"
         },
         {
           "href": "https://blog.veilus.io/blog/localization-qa-profiles/",
@@ -354,7 +354,7 @@
       "guides": [
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/geo-landing-check",
-          "text": "Готовый к запуску скрипт: проверка посадочной страницы по странам (GitHub)"
+          "text": "Готовый скрипт: проверка лендингов по странам (GitHub)"
         },
         {
           "href": "docs:profiles/datasets",
@@ -472,7 +472,7 @@
       "guides": [
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/geo-landing-check",
-          "text": "Готовый к запуску скрипт: проверка посадочной страницы по странам (GitHub)"
+          "text": "Готовый скрипт: проверка лендингов по странам (GitHub)"
         },
         {
           "href": "docs:recipes/multi-account",
@@ -585,7 +585,7 @@
       "guides": [
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
-          "text": "Готовый к запуску скрипт: мониторинг цен (GitHub)"
+          "text": "Готовый скрипт: мониторинг цен (GitHub)"
         },
         {
           "href": "docs:recipes/web-scraping",
