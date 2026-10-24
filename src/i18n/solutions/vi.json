@@ -128,6 +128,10 @@
       ],
       "guides": [
         {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Script chạy được ngay: theo dõi giá (GitHub)"
+        },
+        {
           "href": "https://blog.veilus.io/blog/localization-qa-profiles-vi/",
           "text": "Hướng dẫn: kiểm tra website ở nhiều ngôn ngữ và múi giờ"
         }
@@ -349,6 +353,10 @@
       ],
       "guides": [
         {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/geo-landing-check",
+          "text": "Script chạy được ngay: kiểm landing page theo quốc gia (GitHub)"
+        },
+        {
           "href": "docs:profiles/datasets",
           "text": "Bộ dữ liệu trong tài liệu"
         }
@@ -463,6 +471,10 @@
       ],
       "guides": [
         {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/geo-landing-check",
+          "text": "Script chạy được ngay: kiểm landing page theo quốc gia (GitHub)"
+        },
+        {
           "href": "docs:recipes/multi-account",
           "text": "Hướng dẫn từng bước trong tài liệu"
         }
@@ -571,6 +583,10 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Script chạy được ngay: theo dõi giá (GitHub)"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "Hướng dẫn thu thập dữ liệu web trong tài liệu"
