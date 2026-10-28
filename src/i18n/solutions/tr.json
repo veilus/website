@@ -49,6 +49,14 @@
     "aupLink": "Kabul Edilebilir Kullanım Politikası'nı okuyun",
     "guides": [
       {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
+        "text": "Hemen çalıştırılabilir betik: hesap sağlığı kontrolü (GitHub)"
+      },
+      {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+        "text": "MCP üzerinden Claude ile kendi kontrolünüzü oluşturun (GitHub)"
+      },
+      {
         "href": "docs:recipes/multi-account",
         "text": "Belgelerde adım adım rehber (İngilizce)"
       }
@@ -239,6 +247,14 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Hemen çalıştırılabilir betik: fiyat takibi (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "MCP üzerinden Claude ile kendi kontrolünüzü oluşturun (GitHub)"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "Belgelerde web scraping tarifi (İngilizce)"
@@ -586,6 +602,10 @@
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
           "text": "Hemen çalıştırılabilir betik: fiyat takibi (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "MCP üzerinden Claude ile kendi kontrolünüzü oluşturun (GitHub)"
         },
         {
           "href": "docs:recipes/web-scraping",
