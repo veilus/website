@@ -50,7 +50,7 @@
     "guides": [
       {
         "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
-        "text": "Script listo para ejecutar: revisión del estado de la cuenta (GitHub)"
+        "text": "Script listo para ejecutar: comprobación del estado de la cuenta (GitHub)"
       },
       {
         "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
