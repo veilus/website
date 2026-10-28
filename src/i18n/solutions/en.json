@@ -49,6 +49,14 @@
     "aupLink": "Read the Acceptable Use Policy",
     "guides": [
       {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
+        "text": "Ready-to-run script: account health check (GitHub)"
+      },
+      {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+        "text": "Build your own check with Claude over MCP (GitHub)"
+      },
+      {
         "href": "docs:recipes/multi-account",
         "text": "Step-by-step guide in the docs"
       }
@@ -239,6 +247,14 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Ready-to-run script: price monitor (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Build your own check with Claude over MCP (GitHub)"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "Web scraping recipe in the docs"
@@ -586,6 +602,10 @@
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
           "text": "Ready-to-run script: price monitor (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Build your own check with Claude over MCP (GitHub)"
         },
         {
           "href": "docs:recipes/web-scraping",

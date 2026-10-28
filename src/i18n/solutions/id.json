@@ -49,6 +49,14 @@
     "aupLink": "Baca Kebijakan Penggunaan yang Dapat Diterima",
     "guides": [
       {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
+        "text": "Skrip siap jalan: pengecekan kesehatan akun (GitHub)"
+      },
+      {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+        "text": "Bangun pengecekan Anda sendiri dengan Claude lewat MCP (GitHub)"
+      },
+      {
         "href": "docs:recipes/multi-account",
         "text": "Panduan langkah demi langkah di dokumentasi (dalam bahasa Inggris)"
       }
@@ -239,6 +247,14 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Skrip siap jalan: pemantau harga (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Bangun pengecekan Anda sendiri dengan Claude lewat MCP (GitHub)"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "Resep web scraping di dokumentasi (dalam bahasa Inggris)"
@@ -586,6 +602,10 @@
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
           "text": "Skrip siap jalan: pemantau harga (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Bangun pengecekan Anda sendiri dengan Claude lewat MCP (GitHub)"
         },
         {
           "href": "docs:recipes/web-scraping",

@@ -49,6 +49,14 @@
     "aupLink": "Đọc Chính sách Sử dụng Chấp nhận được",
     "guides": [
       {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
+        "text": "Script chạy được ngay: kiểm tài khoản còn đăng nhập (GitHub)"
+      },
+      {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+        "text": "Tự dựng phép kiểm với Claude qua MCP (GitHub)"
+      },
+      {
         "href": "docs:recipes/multi-account",
         "text": "Hướng dẫn từng bước trong tài liệu"
       }
@@ -239,6 +247,14 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Script chạy được ngay: theo dõi giá (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Tự dựng phép kiểm với Claude qua MCP (GitHub)"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "Hướng dẫn thu thập dữ liệu web trong tài liệu"
@@ -586,6 +602,10 @@
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
           "text": "Script chạy được ngay: theo dõi giá (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Tự dựng phép kiểm với Claude qua MCP (GitHub)"
         },
         {
           "href": "docs:recipes/web-scraping",

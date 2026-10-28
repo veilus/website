@@ -49,6 +49,14 @@
     "aupLink": "Lee la Política de uso aceptable",
     "guides": [
       {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
+        "text": "Script listo para ejecutar: comprobación del estado de la cuenta (GitHub)"
+      },
+      {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+        "text": "Crea tu propia revisión con Claude mediante MCP (GitHub)"
+      },
+      {
         "href": "docs:recipes/multi-account",
         "text": "Guía paso a paso en la documentación (en inglés)"
       }
@@ -239,6 +247,14 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "Script listo para ejecutar: monitor de precios (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Crea tu propia revisión con Claude mediante MCP (GitHub)"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "Receta de web scraping en la documentación (en inglés)"
@@ -586,6 +602,10 @@
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
           "text": "Script listo para ejecutar: monitor de precios (GitHub)"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "Crea tu propia revisión con Claude mediante MCP (GitHub)"
         },
         {
           "href": "docs:recipes/web-scraping",

@@ -18,7 +18,7 @@
 - [Changelog](https://veilus.io/changelog/): What changed in each release, with dates
 - [Download](https://veilus.io/download/): Installers for Windows 10/11 (x64, .exe) and macOS 13.5+ (Apple Silicon, .dmg), available from October 9, 2026; the browser engine is downloaded separately inside the app
 - [Documentation](https://docs.veilus.io): User guides, API reference
-- [Ready-to-run solutions](https://github.com/veilus/sdk/tree/main/solutions): price monitor, geo landing check, AI agent over MCP — scripts tested daily on a real Veilus profile.
+- [Ready-to-run solutions](https://github.com/veilus/sdk/tree/main/solutions): price monitor, geo landing check, account health check, AI agent over MCP — tested daily on a real Veilus profile (account health: its demo entry; real-platform selectors measured by hand).
 - [Blog](https://blog.veilus.io): Articles on anti-detect browsers, automation, privacy
 - [Privacy Policy](https://veilus.io/privacy/): Data collection and protection
 - [Terms of Service](https://veilus.io/terms/): Usage terms

@@ -49,6 +49,14 @@
     "aupLink": "阅读可接受使用政策",
     "guides": [
       {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/account-health",
+        "text": "开箱即用脚本：账号健康检查（GitHub）"
+      },
+      {
+        "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+        "text": "通过 MCP 用 Claude 编写你自己的检查脚本（GitHub）"
+      },
+      {
         "href": "docs:recipes/multi-account",
         "text": "文档中的分步指南（英文）"
       }
@@ -239,6 +247,14 @@
         }
       ],
       "guides": [
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
+          "text": "开箱即用脚本：价格监控（GitHub）"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "通过 MCP 用 Claude 编写你自己的检查脚本（GitHub）"
+        },
         {
           "href": "docs:recipes/web-scraping",
           "text": "文档中的网页数据采集教程（英文）"
@@ -586,6 +602,10 @@
         {
           "href": "https://github.com/veilus/sdk/tree/main/solutions/price-monitor",
           "text": "开箱即用脚本：价格监控（GitHub）"
+        },
+        {
+          "href": "https://github.com/veilus/sdk/tree/main/solutions/ai-agent-mcp",
+          "text": "通过 MCP 用 Claude 编写你自己的检查脚本（GitHub）"
         },
         {
           "href": "docs:recipes/web-scraping",
